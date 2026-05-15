@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmode/GmapMode.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapMode")]
-    #[parent(crate::system::object::Object)]
-    pub struct GmapMode {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapmode/GmapMode_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -61,6 +56,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmode/GmapMode.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapMode")]
+    #[parent(crate::system::object::Object)]
+    pub struct GmapMode {}
 }
 
 #[cfg(feature = "app-gmapmode-types")]

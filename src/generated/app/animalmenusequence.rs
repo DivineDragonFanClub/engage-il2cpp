@@ -20,6 +20,26 @@ mod __types {
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct AnimalMenuSequence_ConfirmYes {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)]
+    pub struct AnimalMenuSequence {
+        #[rename(name = "AnimalPID")]
+        pub animal_pid: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[rename(name = "m_RootAnim")]
+        pub m_root_anim: crate::unity_engine::animator::Animator,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]
+    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct AnimalMenuSequence_ConfirmNo {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -79,26 +99,6 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalmenusequence :: AnimalMenuSequence >)]
-    pub struct AnimalMenuSequence {
-        #[rename(name = "AnimalPID")]
-        pub animal_pid: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_RootAnim")]
-        pub m_root_anim: crate::unity_engine::animator::Animator,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]
-    #[::unity2::class(namespace = "App", name = "AnimalMenuSequence.ConfirmNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct AnimalMenuSequence_ConfirmNo {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]
     #[repr(C)]

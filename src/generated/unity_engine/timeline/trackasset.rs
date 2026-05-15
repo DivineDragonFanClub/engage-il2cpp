@@ -11,6 +11,42 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TrackAsset_TransientBuildData {
+        pub track_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::trackasset::TrackAsset,
+        >,
+        pub clip_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::timelineclip::TimelineClip,
+        >,
+        pub marker_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
+        >,
+    }
+
+    impl ::unity2::ClassIdentity for TrackAsset_TransientBuildData {
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        const NAME: &'static str = "TrackAsset.TransientBuildData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TrackAsset_TransientBuildData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackasset/TrackAsset.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackAsset")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -88,46 +124,119 @@ mod __types {
         #[rename(name = "m_Markers")]
         pub m_markers: crate::unity_engine::timeline::markerlist::MarkerList,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/trackasset/TrackAsset_TransientBuildData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TrackAsset_TransientBuildData {
-        pub track_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-        >,
-        pub clip_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::timelineclip::TimelineClip,
-        >,
-        pub marker_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-        >,
-    }
-
-    impl ::unity2::ClassIdentity for TrackAsset_TransientBuildData {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TrackAsset.TransientBuildData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TrackAsset_TransientBuildData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 }
 
 #[cfg(feature = "unity_engine-timeline-trackasset-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TrackAsset_TransientBuildData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset_TransientBuildData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(
+        this: TrackAsset_TransientBuildData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TrackAsset_TransientBuildData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+impl TrackAsset_TransientBuildData {
+    #[doc = "`Create()` overload"]
+    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
+        unsafe { __TrackAsset_TransientBuildData_unity2_raw::create(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-trackasset")]
+impl TrackAsset_TransientBuildData {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe {
+            __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None)
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-timeline-trackasset")]
 #[doc(hidden)]
@@ -6385,115 +6494,6 @@ impl TrackAsset {
         });
         <Self as ITrackAssetMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TrackAsset_TransientBuildData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: trackasset :: TrackAsset_TransientBuildData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackAsset_TransientBuildData as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: TrackAsset_TransientBuildData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TrackAsset_TransientBuildData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-impl TrackAsset_TransientBuildData {
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::unity_engine::timeline::trackasset::TrackAsset_TransientBuildData {
-        unsafe { __TrackAsset_TransientBuildData_unity2_raw::create(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-trackasset")]
-impl TrackAsset_TransientBuildData {
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe {
-            __TrackAsset_TransientBuildData_unity2_raw::clear(self, ::core::option::Option::None)
-        }
     }
 }
 

@@ -57,16 +57,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Stream")]
-    pub struct Stream {
-        #[static_field]
-        #[rename(name = "Null")]
-        pub null: crate::system::io::stream::Stream,
-        #[rename(name = "_activeReadWriteTask")]
-        pub active_read_write_task: crate::system::io::stream::Stream_ReadWriteTask,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_ReadWriteTask.md"))]
     #[::unity2::class(namespace = "System.IO", name = "Stream.ReadWriteTask")]
     pub struct Stream_ReadWriteTask {
@@ -80,6 +70,16 @@ mod __types {
         pub offset: i32,
         #[rename(name = "_count")]
         pub count: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Stream")]
+    pub struct Stream {
+        #[static_field]
+        #[rename(name = "Null")]
+        pub null: crate::system::io::stream::Stream,
+        #[rename(name = "_activeReadWriteTask")]
+        pub active_read_write_task: crate::system::io::stream::Stream_ReadWriteTask,
     }
 }
 
@@ -1430,6 +1430,138 @@ impl Stream_SynchronousAsyncResult {
         this
     }
 }
+
+#[cfg(feature = "system-io-stream")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Stream_ReadWriteTask_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear_begin_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadWriteTask as ::unity2::ClassIdentity>::class(),
+                "ClearBeginState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_ReadWriteTask as ::unity2::ClassIdentity>::NAME,
+                    "ClearBeginState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear_begin_state(
+        this: Stream_ReadWriteTask,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Stream_ReadWriteTask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear_begin_state::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_async_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_ReadWriteTask as ::unity2::ClassIdentity>::class(),
+                "InvokeAsyncCallback",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_ReadWriteTask as ::unity2::ClassIdentity>::NAME,
+                    "InvokeAsyncCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_async_callback(
+        completed_task: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke_async_callback::get_offset() as isize),
+            );
+        inner(completed_task, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+impl Stream_ReadWriteTask {
+    #[doc = "`InvokeAsyncCallback(crate::system::object::Object)` overload"]
+    pub fn invoke_async_callback(
+        completed_task: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            __Stream_ReadWriteTask_unity2_raw::invoke_async_callback(
+                ::core::convert::Into::into(completed_task),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+pub trait IStream_ReadWriteTaskMethods: IStream_ReadWriteTask {
+    #[doc = "`ClearBeginState()` overload"]
+    fn clear_begin_state(self) -> () {
+        unsafe {
+            let __receiver = <Stream_ReadWriteTask as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Stream_ReadWriteTask_unity2_raw::clear_begin_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+impl<__T: IStream_ReadWriteTask> IStream_ReadWriteTaskMethods for __T {}
 
 #[cfg(feature = "system-io-stream")]
 #[doc(hidden)]
@@ -2833,138 +2965,6 @@ impl Stream {
         this
     }
 }
-
-#[cfg(feature = "system-io-stream")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Stream_ReadWriteTask_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear_begin_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadWriteTask as ::unity2::ClassIdentity>::class(),
-                "ClearBeginState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_ReadWriteTask as ::unity2::ClassIdentity>::NAME,
-                    "ClearBeginState",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear_begin_state(
-        this: Stream_ReadWriteTask,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Stream_ReadWriteTask, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_begin_state::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_async_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_ReadWriteTask as ::unity2::ClassIdentity>::class(),
-                "InvokeAsyncCallback",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_ReadWriteTask as ::unity2::ClassIdentity>::NAME,
-                    "InvokeAsyncCallback",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_async_callback(
-        completed_task: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_async_callback::get_offset() as isize),
-            );
-        inner(completed_task, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-impl Stream_ReadWriteTask {
-    #[doc = "`InvokeAsyncCallback(crate::system::object::Object)` overload"]
-    pub fn invoke_async_callback(
-        completed_task: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            __Stream_ReadWriteTask_unity2_raw::invoke_async_callback(
-                ::core::convert::Into::into(completed_task),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-pub trait IStream_ReadWriteTaskMethods: IStream_ReadWriteTask {
-    #[doc = "`ClearBeginState()` overload"]
-    fn clear_begin_state(self) -> () {
-        unsafe {
-            let __receiver = <Stream_ReadWriteTask as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Stream_ReadWriteTask_unity2_raw::clear_begin_state(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-impl<__T: IStream_ReadWriteTask> IStream_ReadWriteTaskMethods for __T {}
 
 #[cfg(feature = "system-io-stream")]
 pub mod prelude {

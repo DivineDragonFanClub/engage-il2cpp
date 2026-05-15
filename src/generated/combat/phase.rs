@@ -9,6 +9,50 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Phase_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Phase_Kind {
+        const NAMESPACE: &'static str = "Combat";
+
+        const NAME: &'static str = "Phase.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Phase_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Phase_Kind {
+        pub fn unknown() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_Detail.md"))]
     #[repr(C)]
     #[derive(
@@ -109,6 +153,36 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/phase/Phase.md"))]
+    #[::unity2::class(namespace = "Combat", name = "Phase")]
+    #[parent(crate::system::object::Object)]
+    pub struct Phase {
+        #[rename(name = "kind")]
+        pub kind: crate::combat::phase::Phase_Kind,
+        #[rename(name = "hitType")]
+        pub hit_type: crate::combat::phase::Phase_HitType,
+        #[rename(name = "detail")]
+        pub detail: crate::combat::phase::Phase_Detail,
+        #[rename(name = "AttackSide")]
+        pub attack_side: i32,
+        #[rename(name = "AttackHash")]
+        pub attack_hash: i32,
+        #[rename(name = "DamageHash")]
+        pub damage_hash: i32,
+        #[rename(name = "Skills")]
+        pub skills: crate::combat::skillstack::SkillStack,
+        #[rename(name = "Decorators")]
+        pub decorators: crate::combat::decorators::Decorators,
+        #[rename(name = "MaxHP")]
+        pub max_hp: ::unity2::Array<i32>,
+        #[rename(name = "HP")]
+        pub hp: ::unity2::Array<i32>,
+        #[rename(name = "Damage")]
+        pub damage: ::unity2::Array<i32>,
+        #[rename(name = "EngageCount")]
+        pub engage_count: ::unity2::Array<i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_HitType.md"))]
     #[repr(C)]
     #[derive(
@@ -190,80 +264,6 @@ mod __types {
 
         pub fn miss系() -> Self {
             Self { value: 82 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/phase/Phase.md"))]
-    #[::unity2::class(namespace = "Combat", name = "Phase")]
-    #[parent(crate::system::object::Object)]
-    pub struct Phase {
-        #[rename(name = "kind")]
-        pub kind: crate::combat::phase::Phase_Kind,
-        #[rename(name = "hitType")]
-        pub hit_type: crate::combat::phase::Phase_HitType,
-        #[rename(name = "detail")]
-        pub detail: crate::combat::phase::Phase_Detail,
-        #[rename(name = "AttackSide")]
-        pub attack_side: i32,
-        #[rename(name = "AttackHash")]
-        pub attack_hash: i32,
-        #[rename(name = "DamageHash")]
-        pub damage_hash: i32,
-        #[rename(name = "Skills")]
-        pub skills: crate::combat::skillstack::SkillStack,
-        #[rename(name = "Decorators")]
-        pub decorators: crate::combat::decorators::Decorators,
-        #[rename(name = "MaxHP")]
-        pub max_hp: ::unity2::Array<i32>,
-        #[rename(name = "HP")]
-        pub hp: ::unity2::Array<i32>,
-        #[rename(name = "Damage")]
-        pub damage: ::unity2::Array<i32>,
-        #[rename(name = "EngageCount")]
-        pub engage_count: ::unity2::Array<i32>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Phase_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Phase_Kind {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "Phase.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Phase_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Phase_Kind {
-        pub fn unknown() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack() -> Self {
-            Self { value: 1 }
         }
     }
 }

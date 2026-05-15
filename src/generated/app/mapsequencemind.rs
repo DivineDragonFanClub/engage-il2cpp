@@ -27,6 +27,14 @@ mod __types {
     #[parent(crate::app::procinst::ProcInst)]
     pub struct MapSequenceMind_ProcMindBase {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcEscape")]
+    #[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]
+    pub struct MapSequenceMind_ProcEscape {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -181,14 +189,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 29 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcEscape")]
-    #[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]
-    pub struct MapSequenceMind_ProcEscape {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
     }
 }
 

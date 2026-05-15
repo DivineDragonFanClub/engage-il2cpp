@@ -7,12 +7,25 @@ mod __types {
     use crate::app::bitfield64::{BitField64, IBitField64};
     use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
     use crate::app::bitfieldtemplate64_1::{BitFieldTemplate64_1, IBitFieldTemplate64_1};
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::delegate::{Delegate, IDelegate};
     use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
+    pub struct MapPanelActive_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]
     #[repr(C)]
@@ -90,13 +103,14 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
-    pub struct MapPanelActive_FlagField {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MapPanelActive_TargetFunc {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))]
     #[::unity2::class(namespace = "App", name = "MapPanelActive")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelactive :: MapPanelActive >)]
     pub struct MapPanelActive {
         #[rename(name = "m_ImageList")]
         pub m_image_list: ::unity2::Array<
@@ -188,11 +202,6 @@ mod __types {
         #[rename(name = "FLAG")]
         pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MapPanelActive_TargetFunc {}
 }
 
 #[cfg(feature = "app-mappanelactive-types")]
@@ -356,6 +365,182 @@ impl MapPanelActive_FlagField {
             )
         });
         <Self as IMapPanelActive_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapPanelActive_TargetFunc_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapPanelActive_TargetFunc,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapPanelActive_TargetFunc,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MapPanelActive_TargetFunc,
+        x: i32,
+        z: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            MapPanelActive_TargetFunc,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, x, z, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+pub trait IMapPanelActive_TargetFuncMethods: IMapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapPanelActive_TargetFunc_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(i32, i32)` overload"]
+    fn invoke(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapPanelActive_TargetFunc_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl<__T: IMapPanelActive_TargetFunc> IMapPanelActive_TargetFuncMethods for __T {}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_TargetFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_TargetFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1243,6 +1428,81 @@ mod __MapPanelActive_unity2_raw {
                 .offset(__lookup_each_target_cell::get_offset() as isize),
         );
         inner(this, x, z, min_range, max_range, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_cell {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::rangedata::RangeData_Offset,
+                > as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <crate::root::mappanelbase_1::MapPanelBase_1_PanelType<
+                    crate::app::mappanelactive::MapPanelActive,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelActive as ::unity2::ClassIdentity>::class(),
+                "AddCell",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelActive as ::unity2::ClassIdentity>::NAME,
+                    "AddCell",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_cell(
+        this: MapPanelActive,
+        ranges: crate::system::collections::generic::list_1::List_1<
+            crate::app::rangedata::RangeData_Offset,
+        >,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        r#type: crate::root::mappanelbase_1::MapPanelBase_1_PanelType<
+            crate::app::mappanelactive::MapPanelActive,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapPanelActive,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::rangedata::RangeData_Offset,
+            >,
+            i32,
+            i32,
+            crate::unity_engine::color::Color,
+            crate::root::mappanelbase_1::MapPanelBase_1_PanelType<
+                crate::app::mappanelactive::MapPanelActive,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_cell::get_offset() as isize),
+        );
+        inner(this, ranges, x, z, color, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2621,6 +2881,38 @@ pub trait IMapPanelActiveMethods: IMapPanelActive {
             )
         }
     }
+    #[doc = "`AddCell(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>, i32, i32, crate::unity_engine::color::Color, crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive>)` overload"]
+    fn add_cell(
+        self,
+        ranges: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::rangedata::RangeData_Offset,
+            >,
+        >,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        r#type: impl ::core::convert::Into<
+            crate::root::mappanelbase_1::MapPanelBase_1_PanelType<
+                crate::app::mappanelactive::MapPanelActive,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapPanelActive as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapPanelActive_unity2_raw::add_cell(
+                __receiver,
+                ::core::convert::Into::into(ranges),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`SetVertex()` overload"]
     fn set_vertex(self) -> () {
         unsafe {
@@ -2936,182 +3228,6 @@ impl MapPanelActive {
 }
 
 #[cfg(feature = "app-mappanelactive")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapPanelActive_TargetFunc_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapPanelActive_TargetFunc,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapPanelActive_TargetFunc,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapPanelActive_TargetFunc as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MapPanelActive_TargetFunc,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapPanelActive_TargetFunc,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, x, z, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mappanelactive")]
-pub trait IMapPanelActive_TargetFuncMethods: IMapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapPanelActive_TargetFunc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, i32)` overload"]
-    fn invoke(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <MapPanelActive_TargetFunc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapPanelActive_TargetFunc_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mappanelactive")]
-impl<__T: IMapPanelActive_TargetFunc> IMapPanelActive_TargetFuncMethods for __T {}
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_TargetFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelActive_TargetFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-mappanelactive")]
 pub mod prelude {
     pub use super::IMapPanelActive;
     pub use super::IMapPanelActiveMethods;
@@ -3132,6 +3248,12 @@ pub mod prelude {
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;
     #[cfg(feature = "app-bitfieldtemplate64_1")]
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1Methods;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
+    #[cfg(feature = "root-mappanelbase_1")]
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
     pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
@@ -3147,4 +3269,16 @@ pub mod prelude {
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

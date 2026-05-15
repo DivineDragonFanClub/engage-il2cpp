@@ -4,10 +4,17 @@
 mod __types {
     use super::*;
 
+    use crate::root::simpleanimation::{ISimpleAnimation, SimpleAnimation};
+    use crate::system::object::{IObject, Object};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactersimpleanimation/EventCharacterSimpleAnimation.md"))]
     #[::unity2::class(namespace = "App", name = "EventCharacterSimpleAnimation")]
+    #[parent(crate::root::simpleanimation::SimpleAnimation)]
     pub struct EventCharacterSimpleAnimation {}
 }
 
@@ -107,4 +114,22 @@ pub mod prelude {
     pub use super::EventCharacterSimpleAnimation;
     pub use super::IEventCharacterSimpleAnimation;
     pub use super::IEventCharacterSimpleAnimationMethods;
+    pub use crate::root::simpleanimation::ISimpleAnimation;
+    #[cfg(feature = "root-simpleanimation")]
+    pub use crate::root::simpleanimation::ISimpleAnimationMethods;
+    pub use crate::system::object::IObject;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

@@ -20,11 +20,6 @@ mod __types {
     # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: chartgoddata :: ChartGodData_Flags >)]
     pub struct ChartGodData_FlagField {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData.md"))]
-    #[::unity2::class(namespace = "App", name = "ChartGodData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chartgoddata :: ChartGodData >)]
-    pub struct ChartGodData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/chartgoddata/ChartGodData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +59,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData.md"))]
+    #[::unity2::class(namespace = "App", name = "ChartGodData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chartgoddata :: ChartGodData >)]
+    pub struct ChartGodData {}
 }
 
 #[cfg(feature = "app-chartgoddata-types")]

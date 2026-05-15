@@ -9,15 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptutil/ScriptUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptUtil {
-        #[static_field]
-        #[rename(name = "MAX_CURSOR_STACK")]
-        pub max_cursor_stack: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptutil/ScriptUtil_MenuCondtion.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +55,15 @@ mod __types {
         pub fn disable() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptutil/ScriptUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "ScriptUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptUtil {
+        #[static_field]
+        #[rename(name = "MAX_CURSOR_STACK")]
+        pub max_cursor_stack: i32,
     }
 }
 

@@ -10,6 +10,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "AudioClip.PCMSetPositionCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct AudioClip_PCMSetPositionCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AudioClip")]
     #[parent(crate::unity_engine::object_2::Object_2)]
@@ -21,11 +26,6 @@ mod __types {
             crate::unity_engine::audioclip::AudioClip_PCMSetPositionCallback,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "AudioClip.PCMSetPositionCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct AudioClip_PCMSetPositionCallback {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMReaderCallback.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AudioClip.PCMReaderCallback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -34,148 +34,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-audioclip-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-audioclip")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AudioClip_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_pcm_reader_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AudioClip as ::unity2::ClassIdentity>::class(),
-                "InvokePCMReaderCallback_Internal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioClip as ::unity2::ClassIdentity>::NAME,
-                    "InvokePCMReaderCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_pcm_reader_callback_internal(
-        this: AudioClip,
-        data: ::unity2::Array<f32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AudioClip, ::unity2::Array<f32>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_pcm_reader_callback_internal::get_offset() as isize),
-            );
-        inner(this, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_pcm_set_position_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AudioClip as ::unity2::ClassIdentity>::class(),
-                "InvokePCMSetPositionCallback_Internal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AudioClip as ::unity2::ClassIdentity>::NAME,
-                    "InvokePCMSetPositionCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_pcm_set_position_callback_internal(
-        this: AudioClip,
-        position: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AudioClip, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_invoke_pcm_set_position_callback_internal::get_offset() as isize,
-                    ),
-            );
-        inner(this, position, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-audioclip")]
-pub trait IAudioClipMethods: IAudioClip {
-    #[doc = "`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"]
-    fn invoke_pcm_reader_callback_internal(
-        self,
-        data: impl ::core::convert::Into<::unity2::Array<f32>>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AudioClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AudioClip_unity2_raw::invoke_pcm_reader_callback_internal(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokePCMSetPositionCallback_Internal(i32)` overload"]
-    fn invoke_pcm_set_position_callback_internal(
-        self,
-        position: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <AudioClip as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AudioClip_unity2_raw::invoke_pcm_set_position_callback_internal(
-                __receiver,
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-audioclip")]
-impl<__T: IAudioClip> IAudioClipMethods for __T {}
 
 #[cfg(feature = "unity_engine-audioclip")]
 #[doc(hidden)]
@@ -343,6 +201,148 @@ impl AudioClip_PCMSetPositionCallback {
         this
     }
 }
+
+#[cfg(feature = "unity_engine-audioclip")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AudioClip_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_pcm_reader_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<f32> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioClip as ::unity2::ClassIdentity>::class(),
+                "InvokePCMReaderCallback_Internal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioClip as ::unity2::ClassIdentity>::NAME,
+                    "InvokePCMReaderCallback_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_pcm_reader_callback_internal(
+        this: AudioClip,
+        data: ::unity2::Array<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AudioClip, ::unity2::Array<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invoke_pcm_reader_callback_internal::get_offset() as isize),
+            );
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_pcm_set_position_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AudioClip as ::unity2::ClassIdentity>::class(),
+                "InvokePCMSetPositionCallback_Internal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AudioClip as ::unity2::ClassIdentity>::NAME,
+                    "InvokePCMSetPositionCallback_Internal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke_pcm_set_position_callback_internal(
+        this: AudioClip,
+        position: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AudioClip, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(
+                        __lookup_invoke_pcm_set_position_callback_internal::get_offset() as isize,
+                    ),
+            );
+        inner(this, position, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-audioclip")]
+pub trait IAudioClipMethods: IAudioClip {
+    #[doc = "`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"]
+    fn invoke_pcm_reader_callback_internal(
+        self,
+        data: impl ::core::convert::Into<::unity2::Array<f32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AudioClip as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AudioClip_unity2_raw::invoke_pcm_reader_callback_internal(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`InvokePCMSetPositionCallback_Internal(i32)` overload"]
+    fn invoke_pcm_set_position_callback_internal(
+        self,
+        position: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AudioClip as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AudioClip_unity2_raw::invoke_pcm_set_position_callback_internal(
+                __receiver,
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-audioclip")]
+impl<__T: IAudioClip> IAudioClipMethods for __T {}
 
 #[cfg(feature = "unity_engine-audioclip")]
 #[doc(hidden)]

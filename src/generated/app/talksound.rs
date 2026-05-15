@@ -10,6 +10,39 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
+    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TalkSound_WaitSE {
+        #[static_field]
+        #[rename(name = "MinimumWaitSec")]
+        pub minimum_wait_sec: f32,
+        #[rename(name = "m_Sec")]
+        pub m_sec: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))]
+    #[::unity2::class(namespace = "App", name = "TalkSound")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkSound {
+        #[rename(name = "m_Mid")]
+        pub m_mid: ::unity2::Il2CppString,
+        #[rename(name = "m_SoundCmdExecBefore")]
+        pub m_sound_cmd_exec_before: ::unity2::Il2CppString,
+        #[rename(name = "m_SoundCmdExecAfter")]
+        pub m_sound_cmd_exec_after: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservedTalkVoice")]
+        pub m_reserved_talk_voice: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservedPersonVoice")]
+        pub m_reserved_person_voice: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservedPersonPid")]
+        pub m_reserved_person_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservedPersonSwitchName")]
+        pub m_reserved_person_switch_name: ::unity2::Il2CppString,
+        #[rename(name = "m_PersonVoice")]
+        pub m_person_voice: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
     #[repr(C)]
     #[derive(
@@ -64,39 +97,6 @@ mod __types {
         pub fn env() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
-    #[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TalkSound_WaitSE {
-        #[static_field]
-        #[rename(name = "MinimumWaitSec")]
-        pub minimum_wait_sec: f32,
-        #[rename(name = "m_Sec")]
-        pub m_sec: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))]
-    #[::unity2::class(namespace = "App", name = "TalkSound")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkSound {
-        #[rename(name = "m_Mid")]
-        pub m_mid: ::unity2::Il2CppString,
-        #[rename(name = "m_SoundCmdExecBefore")]
-        pub m_sound_cmd_exec_before: ::unity2::Il2CppString,
-        #[rename(name = "m_SoundCmdExecAfter")]
-        pub m_sound_cmd_exec_after: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservedTalkVoice")]
-        pub m_reserved_talk_voice: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservedPersonVoice")]
-        pub m_reserved_person_voice: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservedPersonPid")]
-        pub m_reserved_person_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservedPersonSwitchName")]
-        pub m_reserved_person_switch_name: ::unity2::Il2CppString,
-        #[rename(name = "m_PersonVoice")]
-        pub m_person_voice: ::unity2::Il2CppString,
     }
 }
 

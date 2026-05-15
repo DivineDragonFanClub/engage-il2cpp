@@ -165,54 +165,6 @@ mod __types {
         pub custom_gradation_filter_params2: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PostProcessPass_CaptureMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "PostProcessPass.CaptureMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostProcessPass_CaptureMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PostProcessPass_CaptureMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn capture() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn copy() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -276,6 +228,54 @@ mod __types {
 # [rename (name = "m_HableCurve")] pub m_hable_curve : crate :: unity_engine :: rendering :: hablecurve :: HableCurve ,
 # [static_field] # [rename (name = "viewProjMatrixStereo")] pub view_proj_matrix_stereo : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
 }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PostProcessPass_CaptureMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "PostProcessPass.CaptureMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostProcessPass_CaptureMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PostProcessPass_CaptureMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn capture() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn copy() -> Self {
+            Self { value: 2 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
     #[::unity2::class(

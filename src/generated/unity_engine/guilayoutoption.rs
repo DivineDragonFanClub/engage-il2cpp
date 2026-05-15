@@ -9,6 +9,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
+    #[parent(crate::system::object::Object)]
+    pub struct GUILayoutOption {
+        #[rename(name = "type")]
+        pub r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+        #[rename(name = "value")]
+        pub value: ::unity2::IlInstance,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -99,16 +109,6 @@ mod __types {
         pub fn spacing() -> Self {
             Self { value: 13 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
-    #[parent(crate::system::object::Object)]
-    pub struct GUILayoutOption {
-        #[rename(name = "type")]
-        pub r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
-        #[rename(name = "value")]
-        pub value: ::unity2::IlInstance,
     }
 }
 

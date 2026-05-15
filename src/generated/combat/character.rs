@@ -39,8 +39,12 @@ mod __types {
         pub 同じアニメ再生時の前回の再生時刻: f32,
         #[rename(name = "m_PlayEndWorldPos")]
         pub m_play_end_world_pos: crate::combat::fxz::FXZ,
+        #[rename(name = "_DitherFade")]
+        pub dither_fade: crate::root::iron19characterfader::Iron19CharacterFader,
         #[rename(name = "cached_DitherFade")]
         pub cached_dither_fade: bool,
+        #[rename(name = "_MaterialEngage")]
+        pub material_engage: crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage,
         #[rename(name = "cached_MaterialEngage")]
         pub cached_material_engage: bool,
         #[rename(name = "_Signal")]
@@ -4849,6 +4853,94 @@ mod __Character_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
+    pub mod __lookup_get_dither_fade {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Character as ::unity2::ClassIdentity>::class(),
+                "get_DitherFade",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Character as ::unity2::ClassIdentity>::NAME,
+                    "get_DitherFade",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_dither_fade(
+        this: Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        let inner: extern "C" fn(
+            Character,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::root::iron19characterfader::Iron19CharacterFader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_dither_fade::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_material_engage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Character as ::unity2::ClassIdentity>::class(),
+                "get_MaterialEngage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Character as ::unity2::ClassIdentity>::NAME,
+                    "get_MaterialEngage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_material_engage(
+        this: Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage {
+        let inner : extern "C" fn (Character , :: unity2 :: OptionalMethod ,) -> crate :: root :: iron19charactersuperengage :: Iron19CharacterSuperEngage = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_material_engage :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
     pub mod __lookup_get_signal {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -7096,6 +7188,26 @@ pub trait ICharacterMethods: ICharacter {
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
             __Character_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DitherFade()` overload"]
+    fn get_dither_fade(self) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        unsafe {
+            let __receiver = <Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Character_unity2_raw::get_dither_fade(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MaterialEngage()` overload"]
+    fn get_material_engage(
+        self,
+    ) -> crate::root::iron19charactersuperengage::Iron19CharacterSuperEngage {
+        unsafe {
+            let __receiver = <Character as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Character_unity2_raw::get_material_engage(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Signal()` overload"]

@@ -10,30 +10,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "ColorGradingLutPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct ColorGradingLutPass {
-        #[rename(name = "m_LutBuilderLdr")]
-        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
-        #[rename(name = "m_LutBuilderHdr")]
-        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
-        #[rename(name = "m_HdrLutFormat")]
-        pub m_hdr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_LdrLutFormat")]
-        pub m_ldr_lut_format:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-        #[rename(name = "m_InternalLut")]
-        pub m_internal_lut:
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        #[rename(name = "m_HableCurve")]
-        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -114,10 +90,92 @@ mod __types {
         #[rename(name = "_CurveSatVsSat")]
         pub curve_sat_vs_sat: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "ColorGradingLutPass"
+    )]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct ColorGradingLutPass {
+        #[rename(name = "m_LutBuilderLdr")]
+        pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+        #[rename(name = "m_LutBuilderHdr")]
+        pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+        #[rename(name = "m_HdrLutFormat")]
+        pub m_hdr_lut_format:
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_LdrLutFormat")]
+        pub m_ldr_lut_format:
+            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        #[rename(name = "m_InternalLut")]
+        pub m_internal_lut:
+            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        #[rename(name = "m_HableCurve")]
+        pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ColorGradingLutPass_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+impl ColorGradingLutPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __ColorGradingLutPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None)
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
 #[doc(hidden)]
@@ -483,64 +541,6 @@ impl ColorGradingLutPass {
         });
         <Self as IColorGradingLutPassMethods>::ctor(this, evt, data);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ColorGradingLutPass_ShaderConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ColorGradingLutPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-impl ColorGradingLutPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ColorGradingLutPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None)
-        }
     }
 }
 

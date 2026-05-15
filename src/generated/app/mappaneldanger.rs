@@ -4,147 +4,18 @@
 mod __types {
     use super::*;
 
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelDanger_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapPanelDanger.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelDanger_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelDanger_Mode {
-        pub fn hide() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDanger")]
-    pub struct MapPanelDanger {
-        #[rename(name = "m_ImageList")]
-        pub m_image_list: ::unity2::Array<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
-            >,
-        >,
-        #[rename(name = "m_AttackDanger_0")]
-        pub m_attack_danger_0: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_1")]
-        pub m_attack_danger_1: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_2")]
-        pub m_attack_danger_2: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackDanger_3")]
-        pub m_attack_danger_3: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_0")]
-        pub m_rod_danger_0: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_1")]
-        pub m_rod_danger_1: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_2")]
-        pub m_rod_danger_2: crate::unity_engine::material::Material,
-        #[rename(name = "m_RodDanger_3")]
-        pub m_rod_danger_3: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mappaneldanger::MapPanelDanger_Mode,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_RodColor")]
-        pub m_rod_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SwitchCurve")]
-        pub m_switch_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_IsLoopAnime")]
-        pub m_is_loop_anime: bool,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelDanger_DangerType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapPanelDanger.DangerType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelDanger_DangerType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelDanger_DangerType {
-        pub fn rod() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 2 }
-        }
-    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_MeshIndex.md"))]
     #[repr(C)]
@@ -215,6 +86,144 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelDanger_DangerType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapPanelDanger.DangerType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelDanger_DangerType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelDanger_DangerType {
+        pub fn rod() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDanger")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldanger :: MapPanelDanger >)]
+    pub struct MapPanelDanger {
+        #[rename(name = "m_ImageList")]
+        pub m_image_list: ::unity2::Array<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
+            >,
+        >,
+        #[rename(name = "m_AttackDanger_0")]
+        pub m_attack_danger_0: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_1")]
+        pub m_attack_danger_1: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_2")]
+        pub m_attack_danger_2: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackDanger_3")]
+        pub m_attack_danger_3: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_0")]
+        pub m_rod_danger_0: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_1")]
+        pub m_rod_danger_1: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_2")]
+        pub m_rod_danger_2: crate::unity_engine::material::Material,
+        #[rename(name = "m_RodDanger_3")]
+        pub m_rod_danger_3: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mappaneldanger::MapPanelDanger_Mode,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_RodColor")]
+        pub m_rod_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_SwitchCurve")]
+        pub m_switch_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_IsLoopAnime")]
+        pub m_is_loop_anime: bool,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelDanger_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapPanelDanger.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelDanger_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelDanger_Mode {
+        pub fn hide() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 1 }
         }
     }
 }
@@ -851,7 +860,7 @@ mod __MapPanelDanger_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldanger :: MapPanelDanger_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappaneldanger :: MapPanelDanger_DangerType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimagecorebit :: MapImageCoreBit > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldanger :: MapPanelDanger_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappaneldanger :: MapPanelDanger_DangerType as :: unity2 :: IlType > :: il_type () , < crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: app :: mappaneldanger :: MapPanelDanger > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapPanelDanger as ::unity2::ClassIdentity>::class(),
                 "SetMesh",
@@ -882,6 +891,65 @@ mod __MapPanelDanger_unity2_raw {
         index: crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
         color: crate::unity_engine::color::Color,
         r#type: crate::app::mappaneldanger::MapPanelDanger_DangerType,
+        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+            crate::app::mappaneldanger::MapPanelDanger,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapPanelDanger,
+            crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
+            crate::unity_engine::color::Color,
+            crate::app::mappaneldanger::MapPanelDanger_DangerType,
+            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+                crate::app::mappaneldanger::MapPanelDanger,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_mesh::get_offset() as isize),
+        );
+        inner(this, index, color, r#type, func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mesh_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mappaneldanger :: MapPanelDanger_MeshIndex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: app :: mappaneldanger :: MapPanelDanger_DangerType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimagecorebit :: MapImageCoreBit > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapPanelDanger as ::unity2::ClassIdentity>::class(),
+                "SetMesh",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapPanelDanger as ::unity2::ClassIdentity>::NAME,
+                    "SetMesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_mesh_2(
+        this: MapPanelDanger,
+        index: crate::app::mappaneldanger::MapPanelDanger_MeshIndex,
+        color: crate::unity_engine::color::Color,
+        r#type: crate::app::mappaneldanger::MapPanelDanger_DangerType,
         list: crate::system::collections::generic::list_1::List_1<
             crate::app::mapimagecorebit::MapImageCoreBit,
         >,
@@ -899,7 +967,7 @@ mod __MapPanelDanger_unity2_raw {
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_set_mesh::get_offset() as isize),
+                .offset(__lookup_set_mesh_2::get_offset() as isize),
         );
         inner(this, index, color, r#type, list, __unity2_method_info)
     }
@@ -1169,8 +1237,34 @@ pub trait IMapPanelDangerMethods: IMapPanelDanger {
             __MapPanelDanger_unity2_raw::set_vertex(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::system::collections::generic::list_1::List_1<crate::app::mapimagecorebit::MapImageCoreBit>)` overload"]
+    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::app::mappaneldanger::MapPanelDanger>)` overload"]
     fn set_mesh(
+        self,
+        index: impl ::core::convert::Into<crate::app::mappaneldanger::MapPanelDanger_MeshIndex>,
+        color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        r#type: impl ::core::convert::Into<crate::app::mappaneldanger::MapPanelDanger_DangerType>,
+        func: impl ::core::convert::Into<
+            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+                crate::app::mappaneldanger::MapPanelDanger,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapPanelDanger as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapPanelDanger_unity2_raw::set_mesh(
+                __receiver,
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(color),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(func),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMesh(crate::app::mappaneldanger::MapPanelDanger_MeshIndex, crate::unity_engine::color::Color, crate::app::mappaneldanger::MapPanelDanger_DangerType, crate::system::collections::generic::list_1::List_1<crate::app::mapimagecorebit::MapImageCoreBit>)` overload"]
+    fn set_mesh_2(
         self,
         index: impl ::core::convert::Into<crate::app::mappaneldanger::MapPanelDanger_MeshIndex>,
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
@@ -1185,7 +1279,7 @@ pub trait IMapPanelDangerMethods: IMapPanelDanger {
             let __receiver = <MapPanelDanger as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __MapPanelDanger_unity2_raw::set_mesh(
+            __MapPanelDanger_unity2_raw::set_mesh_2(
                 __receiver,
                 ::core::convert::Into::into(index),
                 ::core::convert::Into::into(color),
@@ -1255,6 +1349,12 @@ pub mod prelude {
     pub use super::MapPanelDanger_DangerType;
     pub use super::MapPanelDanger_MeshIndex;
     pub use super::MapPanelDanger_Mode;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
+    #[cfg(feature = "root-mappanelbase_1")]
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
@@ -1264,4 +1364,16 @@ pub mod prelude {
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

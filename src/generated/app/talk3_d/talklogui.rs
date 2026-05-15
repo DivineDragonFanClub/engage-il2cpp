@@ -7,24 +7,18 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
     #[parent(crate::system::object::Object)]
-    pub struct TalkLogUI_ScrollBar {
+    pub struct TalkLogUI_Cursor {
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ScrollBar")]
-        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
-        #[rename(name = "m_ScrollAreaImage")]
-        pub m_scroll_area_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SlideHandleImage")]
-        pub m_slide_handle_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ItemMax")]
-        pub m_item_max: i32,
-        #[rename(name = "m_SlideHandlePosFrom")]
-        pub m_slide_handle_pos_from: f32,
-        #[rename(name = "m_SlideHandlePosTo")]
-        pub m_slide_handle_pos_to: f32,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_PosFrom")]
+        pub m_pos_from: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_PosTo")]
+        pub m_pos_to: crate::unity_engine::vector3::Vector3,
         #[rename(name = "m_Time")]
         pub m_time: f32,
         #[rename(name = "m_Duration")]
@@ -62,18 +56,24 @@ mod __types {
         pub win_up_down_anim_speed: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
     #[parent(crate::system::object::Object)]
-    pub struct TalkLogUI_Cursor {
+    pub struct TalkLogUI_ScrollBar {
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_PosFrom")]
-        pub m_pos_from: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_PosTo")]
-        pub m_pos_to: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_ScrollBar")]
+        pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
+        #[rename(name = "m_ScrollAreaImage")]
+        pub m_scroll_area_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SlideHandleImage")]
+        pub m_slide_handle_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ItemMax")]
+        pub m_item_max: i32,
+        #[rename(name = "m_SlideHandlePosFrom")]
+        pub m_slide_handle_pos_from: f32,
+        #[rename(name = "m_SlideHandlePosTo")]
+        pub m_slide_handle_pos_to: f32,
         #[rename(name = "m_Time")]
         pub m_time: f32,
         #[rename(name = "m_Duration")]
@@ -92,7 +92,7 @@ pub use __types::*;
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkLogUI_ScrollBar_unity2_raw {
+mod __TalkLogUI_Cursor_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -101,14 +101,12 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -118,7 +116,7 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -131,22 +129,20 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TalkLogUI_ScrollBar,
+        this: TalkLogUI_Cursor,
         root_object: crate::unity_engine::gameobject::GameObject,
-        item_max: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkLogUI_ScrollBar,
+            TalkLogUI_Cursor,
             crate::unity_engine::gameobject::GameObject,
-            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, root_object, item_max, __unity2_method_info)
+        inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -157,7 +153,7 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
                 "Update",
                 0,
                 param_types,
@@ -169,7 +165,7 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
                     "Update",
                     e
                 ),
@@ -182,10 +178,10 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
         }
     }
     pub unsafe fn update(
-        this: TalkLogUI_ScrollBar,
+        this: TalkLogUI_Cursor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -195,20 +191,19 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_move_slide_handle_pos {
+    pub mod __lookup_move_position {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
-                "MoveSlideHandlePos",
-                3,
+                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                "MovePosition",
+                2,
                 param_types,
                 false,
             )
@@ -218,8 +213,8 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "MoveSlideHandlePos",
+                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    "MovePosition",
                     e
                 ),
             }
@@ -230,181 +225,40 @@ mod __TalkLogUI_ScrollBar_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn move_slide_handle_pos(
-        this: TalkLogUI_ScrollBar,
-        scroll_index: f32,
-        log_num: f32,
+    pub unsafe fn move_position(
+        this: TalkLogUI_Cursor,
+        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
         msec: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkLogUI_ScrollBar,
-            f32,
-            f32,
+            TalkLogUI_Cursor,
+            crate::app::talk3_d::talklogui::TalkLogUI_Window,
             f32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_move_slide_handle_pos::get_offset() as isize),
+                .offset(__lookup_move_position::get_offset() as isize),
         );
-        inner(this, scroll_index, log_num, msec, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_slide_handle_size {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
-                "SetSlideHandleSize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "SetSlideHandleSize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_slide_handle_size(
-        this: TalkLogUI_ScrollBar,
-        log_num: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkLogUI_ScrollBar, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_slide_handle_size::get_offset() as isize),
-            );
-        inner(this, log_num, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: TalkLogUI_ScrollBar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide(
-        this: TalkLogUI_ScrollBar,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        inner(this, win, msec, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]
+pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        item_max: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_ScrollBar_unity2_raw::ctor(
+            __TalkLogUI_Cursor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(item_max),
                 ::core::option::Option::None,
             )
         }
@@ -412,80 +266,47 @@ pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_ScrollBar_unity2_raw::update(__receiver, ::core::option::Option::None)
+            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`MoveSlideHandlePos(f32, f32, f32)` overload"]
-    fn move_slide_handle_pos(
+    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
+    fn move_position(
         self,
-        scroll_index: impl ::core::convert::Into<f32>,
-        log_num: impl ::core::convert::Into<f32>,
+        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
         msec: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_ScrollBar_unity2_raw::move_slide_handle_pos(
+            __TalkLogUI_Cursor_unity2_raw::move_position(
                 __receiver,
-                ::core::convert::Into::into(scroll_index),
-                ::core::convert::Into::into(log_num),
+                ::core::convert::Into::into(win),
                 ::core::convert::Into::into(msec),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetSlideHandleSize(f32)` overload"]
-    fn set_slide_handle_size(self, log_num: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_ScrollBar_unity2_raw::set_slide_handle_size(
-                __receiver,
-                ::core::convert::Into::into(log_num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_ScrollBar_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkLogUI_ScrollBar_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-impl<__T: ITalkLogUI_ScrollBar> ITalkLogUI_ScrollBarMethods for __T {}
+impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_ScrollBar {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject, item_max: i32) -> Self {
+impl TalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_ScrollBar),
+                ::core::stringify!(TalkLogUI_Cursor),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkLogUI_ScrollBarMethods>::ctor(this, root_object, item_max);
+        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
         this
     }
 }
@@ -1570,7 +1391,7 @@ impl TalkLogUI_Window {
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkLogUI_Cursor_unity2_raw {
+mod __TalkLogUI_ScrollBar_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1579,12 +1400,14 @@ mod __TalkLogUI_Cursor_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -1594,7 +1417,7 @@ mod __TalkLogUI_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1607,20 +1430,22 @@ mod __TalkLogUI_Cursor_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TalkLogUI_Cursor,
+        this: TalkLogUI_ScrollBar,
         root_object: crate::unity_engine::gameobject::GameObject,
+        item_max: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkLogUI_Cursor,
+            TalkLogUI_ScrollBar,
             crate::unity_engine::gameobject::GameObject,
+            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, root_object, __unity2_method_info)
+        inner(this, root_object, item_max, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1631,7 +1456,7 @@ mod __TalkLogUI_Cursor_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
                 "Update",
                 0,
                 param_types,
@@ -1643,7 +1468,7 @@ mod __TalkLogUI_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
                     "Update",
                     e
                 ),
@@ -1656,10 +1481,10 @@ mod __TalkLogUI_Cursor_unity2_raw {
         }
     }
     pub unsafe fn update(
-        this: TalkLogUI_Cursor,
+        this: TalkLogUI_ScrollBar,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkLogUI_Cursor, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -1669,19 +1494,20 @@ mod __TalkLogUI_Cursor_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_move_position {
+    pub mod __lookup_move_slide_handle_pos {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::talk3_d::talklogui::TalkLogUI_Window as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkLogUI_Cursor as ::unity2::ClassIdentity>::class(),
-                "MovePosition",
-                2,
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                "MoveSlideHandlePos",
+                3,
                 param_types,
                 false,
             )
@@ -1691,8 +1517,8 @@ mod __TalkLogUI_Cursor_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkLogUI_Cursor as ::unity2::ClassIdentity>::NAME,
-                    "MovePosition",
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    "MoveSlideHandlePos",
                     e
                 ),
             }
@@ -1703,40 +1529,181 @@ mod __TalkLogUI_Cursor_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn move_position(
-        this: TalkLogUI_Cursor,
-        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
+    pub unsafe fn move_slide_handle_pos(
+        this: TalkLogUI_ScrollBar,
+        scroll_index: f32,
+        log_num: f32,
         msec: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkLogUI_Cursor,
-            crate::app::talk3_d::talklogui::TalkLogUI_Window,
+            TalkLogUI_ScrollBar,
+            f32,
+            f32,
             f32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_move_position::get_offset() as isize),
+                .offset(__lookup_move_slide_handle_pos::get_offset() as isize),
         );
-        inner(this, win, msec, __unity2_method_info)
+        inner(this, scroll_index, log_num, msec, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_slide_handle_size {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                "SetSlideHandleSize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    "SetSlideHandleSize",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_slide_handle_size(
+        this: TalkLogUI_ScrollBar,
+        log_num: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_slide_handle_size::get_offset() as isize),
+            );
+        inner(this, log_num, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    "Show",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show(
+        this: TalkLogUI_ScrollBar,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkLogUI_ScrollBar as ::unity2::ClassIdentity>::NAME,
+                    "Hide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hide(
+        this: TalkLogUI_ScrollBar,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkLogUI_ScrollBar, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hide::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+pub trait ITalkLogUI_ScrollBarMethods: ITalkLogUI_ScrollBar {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]
     fn ctor(
         self,
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        item_max: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_Cursor_unity2_raw::ctor(
+            __TalkLogUI_ScrollBar_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(item_max),
                 ::core::option::Option::None,
             )
         }
@@ -1744,47 +1711,80 @@ pub trait ITalkLogUI_CursorMethods: ITalkLogUI_Cursor {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_Cursor_unity2_raw::update(__receiver, ::core::option::Option::None)
+            __TalkLogUI_ScrollBar_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
-    fn move_position(
+    #[doc = "`MoveSlideHandlePos(f32, f32, f32)` overload"]
+    fn move_slide_handle_pos(
         self,
-        win: impl ::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window>,
+        scroll_index: impl ::core::convert::Into<f32>,
+        log_num: impl ::core::convert::Into<f32>,
         msec: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkLogUI_Cursor as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkLogUI_Cursor_unity2_raw::move_position(
+            __TalkLogUI_ScrollBar_unity2_raw::move_slide_handle_pos(
                 __receiver,
-                ::core::convert::Into::into(win),
+                ::core::convert::Into::into(scroll_index),
+                ::core::convert::Into::into(log_num),
                 ::core::convert::Into::into(msec),
                 ::core::option::Option::None,
             )
         }
     }
+    #[doc = "`SetSlideHandleSize(f32)` overload"]
+    fn set_slide_handle_size(self, log_num: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_ScrollBar_unity2_raw::set_slide_handle_size(
+                __receiver,
+                ::core::convert::Into::into(log_num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_ScrollBar_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver = <TalkLogUI_ScrollBar as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkLogUI_ScrollBar_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
 }
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-impl<__T: ITalkLogUI_Cursor> ITalkLogUI_CursorMethods for __T {}
+impl<__T: ITalkLogUI_ScrollBar> ITalkLogUI_ScrollBarMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+impl TalkLogUI_ScrollBar {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject, item_max: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_Cursor),
+                ::core::stringify!(TalkLogUI_ScrollBar),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
+        <Self as ITalkLogUI_ScrollBarMethods>::ctor(this, root_object, item_max);
         this
     }
 }

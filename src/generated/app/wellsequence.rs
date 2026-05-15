@@ -18,6 +18,58 @@ mod __types {
     #[parent(crate::app::basicdialogitem::BasicDialogItem)]
     pub struct WellSequence_DialogItemGotoEvilFirst {}
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct WellSequence_EvilWeaponEventStates {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "WellSequence.EvilWeaponEventStates";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for WellSequence_EvilWeaponEventStates {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl WellSequence_EvilWeaponEventStates {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn can_get() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn already_get() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn already_talk() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -110,56 +162,30 @@ mod __types {
         pub yes_event_handler: crate::system::action::Action,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct WellSequence_EvilWeaponEventStates {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "WellSequence.EvilWeaponEventStates";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for WellSequence_EvilWeaponEventStates {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl WellSequence_EvilWeaponEventStates {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn can_get() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn already_get() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn already_talk() -> Self {
-            Self { value: 3 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "WellSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct WellSequence {
+        #[static_field]
+        #[rename(name = "UseFlagName")]
+        pub use_flag_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "ExchangeLevelName")]
+        pub exchange_level_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "SeedName")]
+        pub seed_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "EvilWeaponState")]
+        pub evil_weapon_state: ::unity2::Il2CppString,
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
+        #[static_field]
+        #[rename(name = "m_WellEffectManager")]
+        pub m_well_effect_manager: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "EFF_NAME_TABLE")]
+        pub eff_name_table: ::unity2::Array<::unity2::Il2CppString>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellsequence/WellSequence_UseFlags.md"))]
@@ -208,32 +234,6 @@ mod __types {
         pub fn item_return() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellsequence/WellSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "WellSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct WellSequence {
-        #[static_field]
-        #[rename(name = "UseFlagName")]
-        pub use_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ExchangeLevelName")]
-        pub exchange_level_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SeedName")]
-        pub seed_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EvilWeaponState")]
-        pub evil_weapon_state: ::unity2::Il2CppString,
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::welltopmenu::WellTopMenu_MenuResult,
-        #[static_field]
-        #[rename(name = "m_WellEffectManager")]
-        pub m_well_effect_manager: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "EFF_NAME_TABLE")]
-        pub eff_name_table: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 

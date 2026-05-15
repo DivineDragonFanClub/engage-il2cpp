@@ -12,6 +12,14 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Timeline",
+        name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]
     #[repr(C)]
     #[derive(
@@ -90,18 +98,64 @@ mod __types {
         #[rename(name = "m_Rotation")]
         pub m_rotation: crate::unity_engine::quaternion::Quaternion,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
 }
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AnimationPlayableAsset_AnimationPlayableAssetUpgrade_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_convert_rotation_to_euler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableAsset_AnimationPlayableAssetUpgrade as :: unity2 :: ClassIdentity > :: class () , "ConvertRotationToEuler" , 1 , param_types , true ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableAsset_AnimationPlayableAssetUpgrade as :: unity2 :: ClassIdentity > :: NAME , "ConvertRotationToEuler" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn convert_rotation_to_euler(
+        asset: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_convert_rotation_to_euler::get_offset() as isize),
+        );
+        inner(asset, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
+    #[doc = "`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]
+    pub fn convert_rotation_to_euler(
+        asset: impl ::core::convert::Into<
+            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
+        >,
+    ) -> () {
+        unsafe {
+            __AnimationPlayableAsset_AnimationPlayableAssetUpgrade_unity2_raw :: convert_rotation_to_euler (:: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None)
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset")]
 #[doc(hidden)]
@@ -2316,60 +2370,6 @@ impl AnimationPlayableAsset {
         });
         <Self as IAnimationPlayableAssetMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AnimationPlayableAsset_AnimationPlayableAssetUpgrade_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_convert_rotation_to_euler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AnimationPlayableAsset_AnimationPlayableAssetUpgrade as :: unity2 :: ClassIdentity > :: class () , "ConvertRotationToEuler" , 1 , param_types , true ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AnimationPlayableAsset_AnimationPlayableAssetUpgrade as :: unity2 :: ClassIdentity > :: NAME , "ConvertRotationToEuler" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn convert_rotation_to_euler(
-        asset: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_rotation_to_euler::get_offset() as isize),
-        );
-        inner(asset, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
-    #[doc = "`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]
-    pub fn convert_rotation_to_euler(
-        asset: impl ::core::convert::Into<
-            crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
-        >,
-    ) -> () {
-        unsafe {
-            __AnimationPlayableAsset_AnimationPlayableAssetUpgrade_unity2_raw :: convert_rotation_to_euler (:: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None)
-        }
     }
 }
 

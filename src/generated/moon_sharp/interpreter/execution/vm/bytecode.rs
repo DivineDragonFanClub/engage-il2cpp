@@ -8,17 +8,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Execution.VM",
-        name = "ByteCode.SourceCodeStackGuard"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ByteCode_SourceCodeStackGuard {
-        #[rename(name = "m_Bc")]
-        pub m_bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "ByteCode")]
     #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
@@ -36,175 +25,21 @@ mod __types {
         #[rename(name = "LoopTracker")]
         pub loop_tracker: crate::moon_sharp::interpreter::execution::looptracker::LoopTracker,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Execution.VM",
+        name = "ByteCode.SourceCodeStackGuard"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ByteCode_SourceCodeStackGuard {
+        #[rename(name = "m_Bc")]
+        pub m_bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode-types")]
 pub use __types::*;
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ByteCode_SourceCodeStackGuard_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ByteCode_SourceCodeStackGuard,
-        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ByteCode_SourceCodeStackGuard,
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, sref, bc, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: ByteCode_SourceCodeStackGuard,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ByteCode_SourceCodeStackGuard, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-pub trait IByteCode_SourceCodeStackGuardMethods: IByteCode_SourceCodeStackGuard {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn ctor(
-        self,
-        sref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ByteCode_SourceCodeStackGuard_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(sref),
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ByteCode_SourceCodeStackGuard_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-impl<__T: IByteCode_SourceCodeStackGuard> IByteCode_SourceCodeStackGuardMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-impl ByteCode_SourceCodeStackGuard {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` — overload selector"]
-    pub fn new(
-        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ByteCode_SourceCodeStackGuard),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IByteCode_SourceCodeStackGuardMethods>::ctor(this, sref, bc);
-        this
-    }
-}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
 #[doc(hidden)]
@@ -2902,6 +2737,171 @@ impl ByteCode {
             )
         });
         <Self as IByteCodeMethods>::ctor(this, script);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ByteCode_SourceCodeStackGuard_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ByteCode_SourceCodeStackGuard,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ByteCode_SourceCodeStackGuard,
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, sref, bc, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ByteCode_SourceCodeStackGuard as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: ByteCode_SourceCodeStackGuard,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ByteCode_SourceCodeStackGuard, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+pub trait IByteCode_SourceCodeStackGuardMethods: IByteCode_SourceCodeStackGuard {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn ctor(
+        self,
+        sref: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+        bc: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ByteCode_SourceCodeStackGuard_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(sref),
+                ::core::convert::Into::into(bc),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <ByteCode_SourceCodeStackGuard as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ByteCode_SourceCodeStackGuard_unity2_raw::dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+impl<__T: IByteCode_SourceCodeStackGuard> IByteCode_SourceCodeStackGuardMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+impl ByteCode_SourceCodeStackGuard {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` — overload selector"]
+    pub fn new(
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ByteCode_SourceCodeStackGuard),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IByteCode_SourceCodeStackGuardMethods>::ctor(this, sref, bc);
         this
     }
 }

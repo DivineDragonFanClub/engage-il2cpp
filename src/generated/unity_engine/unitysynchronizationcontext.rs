@@ -8,15 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UnitySynchronizationContext")]
-    pub struct UnitySynchronizationContext {
-# [rename (name = "m_AsyncWorkQueue")] pub m_async_work_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
-# [rename (name = "m_CurrentFrameWork")] pub m_current_frame_work : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
-# [rename (name = "m_MainThreadID")] pub m_main_thread_id : i32 ,
-# [rename (name = "m_TrackedCount")] pub m_tracked_count : i32 ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -42,10 +33,86 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "UnitySynchronizationContext")]
+    pub struct UnitySynchronizationContext {
+# [rename (name = "m_AsyncWorkQueue")] pub m_async_work_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
+# [rename (name = "m_CurrentFrameWork")] pub m_current_frame_work : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest > ,
+# [rename (name = "m_MainThreadID")] pub m_main_thread_id : i32 ,
+# [rename (name = "m_TrackedCount")] pub m_tracked_count : i32 ,
+}
 }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitySynchronizationContext_WorkRequest_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: UnitySynchronizationContext_WorkRequest,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitySynchronizationContext_WorkRequest,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+impl UnitySynchronizationContext_WorkRequest {
+    #[doc = "`Invoke()` overload"]
+    pub fn invoke(self) -> () {
+        unsafe {
+            __UnitySynchronizationContext_WorkRequest_unity2_raw::invoke(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
 #[doc(hidden)]
@@ -597,73 +664,6 @@ impl UnitySynchronizationContext {
         });
         <Self as IUnitySynchronizationContextMethods>::ctor_2(this, queue, main_thread_id);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitySynchronizationContext_WorkRequest_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitySynchronizationContext_WorkRequest as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: UnitySynchronizationContext_WorkRequest,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitySynchronizationContext_WorkRequest,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-impl UnitySynchronizationContext_WorkRequest {
-    #[doc = "`Invoke()` overload"]
-    pub fn invoke(self) -> () {
-        unsafe {
-            __UnitySynchronizationContext_WorkRequest_unity2_raw::invoke(
-                self,
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

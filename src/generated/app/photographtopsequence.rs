@@ -11,20 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographTopSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)]
-    pub struct PhotographTopSequence {
-        #[rename(name = "m_NextLabel")]
-        pub m_next_label: crate::app::photographtopsequence::PhotographTopSequence_Label,
-        #[rename(name = "m_SelectAreaData")]
-        pub m_select_area_data: crate::app::photographspotdata::PhotographSpotData,
-        #[rename(name = "m_UnitAccDataSetList")]
-        pub m_unit_acc_data_set_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -75,6 +61,20 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographTopSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)]
+    pub struct PhotographTopSequence {
+        #[rename(name = "m_NextLabel")]
+        pub m_next_label: crate::app::photographtopsequence::PhotographTopSequence_Label,
+        #[rename(name = "m_SelectAreaData")]
+        pub m_select_area_data: crate::app::photographspotdata::PhotographSpotData,
+        #[rename(name = "m_UnitAccDataSetList")]
+        pub m_unit_acc_data_set_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet,
+        >,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]

@@ -12,34 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublookatcontroller/HubLookAtController.md"))]
-    #[::unity2::class(namespace = "App", name = "HubLookAtController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubLookAtController {
-        #[rename(name = "m_curve")]
-        pub m_curve: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_lookAtIKParam")]
-        pub m_look_at_ik_param:
-            ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam>,
-        #[rename(name = "m_lookAtTarget")]
-        pub m_look_at_target: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_target")]
-        pub m_target: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_targetPosition")]
-        pub m_target_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_headTransform")]
-        pub m_head_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_disableFollow")]
-        pub m_disable_follow: bool,
-        #[rename(name = "m_verticalLimit")]
-        pub m_vertical_limit: bool,
-        #[rename(name = "m_verticalLimitValue")]
-        pub m_vertical_limit_value: f32,
-        #[static_field]
-        #[rename(name = "DefaultParam")]
-        pub default_param: crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublookatcontroller/HubLookAtController_LookAtIKParam.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -69,10 +41,123 @@ mod __types {
                 .byval_arg
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublookatcontroller/HubLookAtController.md"))]
+    #[::unity2::class(namespace = "App", name = "HubLookAtController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubLookAtController {
+        #[rename(name = "m_curve")]
+        pub m_curve: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_lookAtIKParam")]
+        pub m_look_at_ik_param:
+            ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam>,
+        #[rename(name = "m_lookAtTarget")]
+        pub m_look_at_target: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_target")]
+        pub m_target: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_targetPosition")]
+        pub m_target_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_headTransform")]
+        pub m_head_transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_disableFollow")]
+        pub m_disable_follow: bool,
+        #[rename(name = "m_verticalLimit")]
+        pub m_vertical_limit: bool,
+        #[rename(name = "m_verticalLimitValue")]
+        pub m_vertical_limit_value: f32,
+        #[static_field]
+        #[rename(name = "DefaultParam")]
+        pub default_param: crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,
+    }
 }
 
 #[cfg(feature = "app-hublookatcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-hublookatcontroller")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubLookAtController_LookAtIKParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubLookAtController_LookAtIKParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubLookAtController_LookAtIKParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubLookAtController_LookAtIKParam,
+        body: f32,
+        head: f32,
+        eyes: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubLookAtController_LookAtIKParam,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, body, head, eyes, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hublookatcontroller")]
+impl HubLookAtController_LookAtIKParam {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    pub fn ctor(
+        self,
+        body: impl ::core::convert::Into<f32>,
+        head: impl ::core::convert::Into<f32>,
+        eyes: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __HubLookAtController_LookAtIKParam_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(body),
+                ::core::convert::Into::into(head),
+                ::core::convert::Into::into(eyes),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "app-hublookatcontroller")]
 #[doc(hidden)]
@@ -1125,91 +1210,6 @@ impl HubLookAtController {
         });
         <Self as IHubLookAtControllerMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-hublookatcontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubLookAtController_LookAtIKParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubLookAtController_LookAtIKParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubLookAtController_LookAtIKParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubLookAtController_LookAtIKParam,
-        body: f32,
-        head: f32,
-        eyes: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubLookAtController_LookAtIKParam,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, body, head, eyes, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hublookatcontroller")]
-impl HubLookAtController_LookAtIKParam {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    pub fn ctor(
-        self,
-        body: impl ::core::convert::Into<f32>,
-        head: impl ::core::convert::Into<f32>,
-        eyes: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __HubLookAtController_LookAtIKParam_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(body),
-                ::core::convert::Into::into(head),
-                ::core::convert::Into::into(eyes),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

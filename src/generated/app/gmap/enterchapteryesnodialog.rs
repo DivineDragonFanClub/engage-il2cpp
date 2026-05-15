@@ -17,17 +17,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemYes.md"))]
-    #[::unity2::class(
-        namespace = "App.Gmap",
-        name = "EnterChapterYesNoDialog.EnterChapterDialogMainItemYes"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemYes {
-        #[rename(name = "m_Callback")]
-        pub m_callback: crate::system::action::Action,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemNo.md"))]
     #[::unity2::class(
         namespace = "App.Gmap",
@@ -46,11 +35,6 @@ mod __types {
         #[rename(name = "m_Callback")]
         pub m_callback: crate::system::action::Action,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]
-    #[::unity2::class(namespace = "App.Gmap", name = "EnterChapterYesNoDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct EnterChapterYesNoDialog {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_Type.md"))]
     #[repr(C)]
@@ -108,6 +92,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]
+    #[::unity2::class(namespace = "App.Gmap", name = "EnterChapterYesNoDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct EnterChapterYesNoDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes.md"))]
     #[::unity2::class(
         namespace = "App.Gmap",
@@ -118,137 +107,21 @@ mod __types {
         #[rename(name = "m_Callback")]
         pub m_callback: crate::system::action::Action,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemYes.md"))]
+    #[::unity2::class(
+        namespace = "App.Gmap",
+        name = "EnterChapterYesNoDialog.EnterChapterDialogMainItemYes"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemYes {
+        #[rename(name = "m_Callback")]
+        pub m_callback: crate::system::action::Action,
+    }
 }
 
 #[cfg(feature = "app-gmap-enterchapteryesnodialog-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
-        callback: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-pub trait IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods:
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes
-{
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    fn ctor(self, callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
-        unsafe {
-            let __receiver = < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-impl<__T: IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes>
-    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods for __T
-{
-}
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-impl EnterChapterYesNoDialog_EnterChapterDialogMainItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(callback: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogMainItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods>::ctor(
-            this, callback,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-gmap-enterchapteryesnodialog")]
 #[doc(hidden)]
@@ -989,6 +862,133 @@ impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes {
         });
         <Self as IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods>::ctor_2(
             this, label, callback,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action::Action as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
+        callback: crate::system::action::Action,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+pub trait IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods:
+    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes
+{
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    fn ctor(self, callback: impl ::core::convert::Into<crate::system::action::Action>) -> () {
+        unsafe {
+            let __receiver = < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+impl<__T: IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes>
+    IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods for __T
+{
+}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+impl EnterChapterYesNoDialog_EnterChapterDialogMainItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(callback: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogMainItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods>::ctor(
+            this, callback,
         );
         this
     }

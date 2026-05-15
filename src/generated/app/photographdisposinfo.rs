@@ -12,64 +12,65 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PhotographDisposInfo_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "PhotographDisposInfo.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PhotographDisposInfo_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PhotographDisposInfo_Flags {
-        pub fn training() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn pool_side() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn in_pool() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn can_dispos_god() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn mascot() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn sitting() -> Self {
-            Self { value: 32 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct PhotographDisposInfo {
+        #[static_field]
+        #[rename(name = "s_FruitsPath")]
+        pub s_fruits_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_WaterCanPath")]
+        pub s_water_can_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_BrushPath")]
+        pub s_brush_path: ::unity2::Il2CppString,
+        #[rename(name = "m_IsVisible")]
+        pub m_is_visible: bool,
+        #[rename(name = "m_Locator")]
+        pub m_locator: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_LookTarget")]
+        pub m_look_target: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PauseGroupNameList")]
+        pub m_pause_group_name_list: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_AnimeControllerDic")]
+        pub m_anime_controller_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+        >,
+        #[rename(name = "m_Flag")]
+        pub m_flag: crate::app::photographdisposinfo::PhotographDisposInfo_FlagField,
+        #[rename(name = "m_IsLoadingCharacter")]
+        pub m_is_loading_character: bool,
+        #[rename(name = "m_CharacterIdList")]
+        pub m_character_id_list:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "m_CurrentCharacterId")]
+        pub m_current_character_id: ::unity2::Il2CppString,
+        #[rename(name = "m_CharacterType")]
+        pub m_character_type: crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType,
+        #[rename(name = "m_CharacterCmp")]
+        pub m_character_cmp: crate::combat::character::Character,
+        #[rename(name = "m_IsLookAtCamera")]
+        pub m_is_look_at_camera: bool,
+        #[rename(name = "m_LookAtRate")]
+        pub m_look_at_rate: f32,
+        #[rename(name = "m_PauseDataList")]
+        pub m_pause_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::photographpausedata::PhotographPauseData,
+        >,
+        #[rename(name = "m_CurrentPauseData")]
+        pub m_current_pause_data: crate::app::photographpausedata::PhotographPauseData,
+        #[rename(name = "m_HoldItem")]
+        pub m_hold_item: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_HoldWeapon")]
+        pub m_hold_weapon: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_HoldWeaponData")]
+        pub m_hold_weapon_data: crate::app::itemdata::ItemData,
+        #[rename(name = "m_HoldWeaponPath")]
+        pub m_hold_weapon_path: ::unity2::Il2CppString,
+        #[rename(name = "m_IsLoadingWeapon")]
+        pub m_is_loading_weapon: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
@@ -137,224 +138,69 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographDisposInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct PhotographDisposInfo {
-        #[static_field]
-        #[rename(name = "s_FruitsPath")]
-        pub s_fruits_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_WaterCanPath")]
-        pub s_water_can_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_BrushPath")]
-        pub s_brush_path: ::unity2::Il2CppString,
-        #[rename(name = "m_IsVisible")]
-        pub m_is_visible: bool,
-        #[rename(name = "m_Locator")]
-        pub m_locator: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_LookTarget")]
-        pub m_look_target: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PauseGroupNameList")]
-        pub m_pause_group_name_list: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_AnimeControllerDic")]
-        pub m_anime_controller_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-        >,
-        #[rename(name = "m_Flag")]
-        pub m_flag: crate::app::photographdisposinfo::PhotographDisposInfo_FlagField,
-        #[rename(name = "m_IsLoadingCharacter")]
-        pub m_is_loading_character: bool,
-        #[rename(name = "m_CharacterIdList")]
-        pub m_character_id_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_CurrentCharacterId")]
-        pub m_current_character_id: ::unity2::Il2CppString,
-        #[rename(name = "m_CharacterType")]
-        pub m_character_type: crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType,
-        #[rename(name = "m_CharacterCmp")]
-        pub m_character_cmp: crate::combat::character::Character,
-        #[rename(name = "m_IsLookAtCamera")]
-        pub m_is_look_at_camera: bool,
-        #[rename(name = "m_LookAtRate")]
-        pub m_look_at_rate: f32,
-        #[rename(name = "m_PauseDataList")]
-        pub m_pause_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::photographpausedata::PhotographPauseData,
-        >,
-        #[rename(name = "m_CurrentPauseData")]
-        pub m_current_pause_data: crate::app::photographpausedata::PhotographPauseData,
-        #[rename(name = "m_HoldItem")]
-        pub m_hold_item: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HoldWeapon")]
-        pub m_hold_weapon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HoldWeaponData")]
-        pub m_hold_weapon_data: crate::app::itemdata::ItemData,
-        #[rename(name = "m_HoldWeaponPath")]
-        pub m_hold_weapon_path: ::unity2::Il2CppString,
-        #[rename(name = "m_IsLoadingWeapon")]
-        pub m_is_loading_weapon: bool,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PhotographDisposInfo_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "PhotographDisposInfo.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PhotographDisposInfo_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PhotographDisposInfo_Flags {
+        pub fn training() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn pool_side() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn in_pool() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn can_dispos_god() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn mascot() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn sitting() -> Self {
+            Self { value: 32 }
+        }
     }
 }
 
 #[cfg(feature = "app-photographdisposinfo-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-photographdisposinfo")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographDisposInfo_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: PhotographDisposInfo_FlagField,
-        value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            PhotographDisposInfo_FlagField,
-            crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PhotographDisposInfo_FlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PhotographDisposInfo_FlagField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-photographdisposinfo")]
-pub trait IPhotographDisposInfo_FlagFieldMethods: IPhotographDisposInfo_FlagField {
-    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographDisposInfo_FlagField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographDisposInfo_FlagField_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl<__T: IPhotographDisposInfo_FlagField> IPhotographDisposInfo_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographDisposInfo_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-photographdisposinfo")]
 #[doc(hidden)]
@@ -2661,6 +2507,160 @@ impl PhotographDisposInfo {
             locator_no,
             anime_controller_dic,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PhotographDisposInfo_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: PhotographDisposInfo_FlagField,
+        value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            PhotographDisposInfo_FlagField,
+            crate::app::photographdisposinfo::PhotographDisposInfo_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PhotographDisposInfo_FlagField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PhotographDisposInfo_FlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PhotographDisposInfo_FlagField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+pub trait IPhotographDisposInfo_FlagFieldMethods: IPhotographDisposInfo_FlagField {
+    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposInfo_FlagField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <PhotographDisposInfo_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __PhotographDisposInfo_FlagField_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl<__T: IPhotographDisposInfo_FlagField> IPhotographDisposInfo_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl PhotographDisposInfo_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
         this
     }
 }

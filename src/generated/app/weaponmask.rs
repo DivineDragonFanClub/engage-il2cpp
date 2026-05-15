@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmask/WeaponMask.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponMask")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: weaponmask :: WeaponMask_Flag >)]
-    pub struct WeaponMask {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponmask/WeaponMask_Flag.md"))]
     #[repr(C)]
     #[derive(
@@ -92,6 +87,11 @@ mod __types {
             Self { value: 512 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmask/WeaponMask.md"))]
+    #[::unity2::class(namespace = "App", name = "WeaponMask")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: weaponmask :: WeaponMask_Flag >)]
+    pub struct WeaponMask {}
 }
 
 #[cfg(feature = "app-weaponmask-types")]

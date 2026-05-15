@@ -9,32 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMaterial")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapMaterial {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mapmaterial::MapMaterial_Node,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))]
-    #[::unity2::class(namespace = "App", name = "MapMaterial.Node")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapMaterial_Node {
-        #[rename(name = "kind")]
-        pub kind: crate::app::mapmaterial::MapMaterial_Kinds,
-        #[rename(name = "material")]
-        pub material: ::unity2::Il2CppString,
-        #[rename(name = "property")]
-        pub property: ::unity2::Il2CppString,
-        #[rename(name = "value")]
-        pub value: f32,
-        #[rename(name = "color")]
-        pub color: crate::unity_engine::color::Color,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmaterial/MapMaterial_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -81,6 +55,32 @@ mod __types {
         pub fn color() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMaterial")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapMaterial {
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapmaterial::MapMaterial_Node,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmaterial/MapMaterial_Node.md"))]
+    #[::unity2::class(namespace = "App", name = "MapMaterial.Node")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapMaterial_Node {
+        #[rename(name = "kind")]
+        pub kind: crate::app::mapmaterial::MapMaterial_Kinds,
+        #[rename(name = "material")]
+        pub material: ::unity2::Il2CppString,
+        #[rename(name = "property")]
+        pub property: ::unity2::Il2CppString,
+        #[rename(name = "value")]
+        pub value: f32,
+        #[rename(name = "color")]
+        pub color: crate::unity_engine::color::Color,
     }
 }
 

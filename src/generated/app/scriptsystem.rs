@@ -16,11 +16,6 @@ mod __types {
     #[parent(crate::app::scriptutil::ScriptUtil)]
     pub struct ScriptSystem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem_CameraList.md"))]
-    #[::unity2::class(namespace = "App", name = "ScriptSystem.CameraList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera >)]
-    pub struct ScriptSystem_CameraList {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptsystem/ScriptSystem_DebugButton.md"))]
     #[repr(C)]
     #[derive(
@@ -104,6 +99,11 @@ mod __types {
             Self { value: 2048 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem_CameraList.md"))]
+    #[::unity2::class(namespace = "App", name = "ScriptSystem.CameraList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera >)]
+    pub struct ScriptSystem_CameraList {}
 }
 
 #[cfg(feature = "app-scriptsystem-types")]

@@ -14,10 +14,251 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/camera/Camera_CameraCallback.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Camera.CameraCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Camera_CameraCallback {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_MonoOrStereoscopicEye.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Camera_MonoOrStereoscopicEye {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Camera_MonoOrStereoscopicEye {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Camera.MonoOrStereoscopicEye";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Camera_MonoOrStereoscopicEye {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Camera_MonoOrStereoscopicEye {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn mono() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_StereoscopicEye.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Camera_StereoscopicEye {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Camera_StereoscopicEye {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Camera.StereoscopicEye";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Camera_StereoscopicEye {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Camera_StereoscopicEye {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_RenderRequestOutputSpace.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Camera_RenderRequestOutputSpace {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Camera_RenderRequestOutputSpace {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Camera.RenderRequestOutputSpace";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Camera_RenderRequestOutputSpace {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Camera_RenderRequestOutputSpace {
+        pub fn screen_space() -> Self {
+            Self { value: -1 }
+        }
+
+        pub fn uv0() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn uv1() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn uv2() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn uv3() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn uv4() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn uv5() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn uv6() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn uv7() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn uv8() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_ProjectionMatrixMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Camera_ProjectionMatrixMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Camera_ProjectionMatrixMode {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Camera.ProjectionMatrixMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Camera_ProjectionMatrixMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Camera_ProjectionMatrixMode {
+        pub fn explicit() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn implicit() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn physical_properties_based() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_RenderRequest.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Camera_RenderRequest {
+        pub m_camera_render_mode: crate::unity_engine::camera::Camera_RenderRequestMode,
+        pub m_result_rt: crate::unity_engine::rendertexture::RenderTexture,
+        pub m_output_space: crate::unity_engine::camera::Camera_RenderRequestOutputSpace,
+    }
+
+    impl ::unity2::ClassIdentity for Camera_RenderRequest {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Camera.RenderRequest";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Camera_RenderRequest {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_RenderRequestMode.md"))]
     #[repr(C)]
@@ -167,49 +408,10 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_StereoscopicEye.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Camera_StereoscopicEye {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Camera_StereoscopicEye {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Camera.StereoscopicEye";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Camera_StereoscopicEye {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Camera_StereoscopicEye {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/camera/Camera_CameraCallback.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "Camera.CameraCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Camera_CameraCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/camera/Camera.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Camera")]
@@ -224,102 +426,6 @@ mod __types {
         #[static_field]
         #[rename(name = "onPostRender")]
         pub on_post_render: crate::unity_engine::camera::Camera_CameraCallback,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_ProjectionMatrixMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Camera_ProjectionMatrixMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Camera_ProjectionMatrixMode {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Camera.ProjectionMatrixMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Camera_ProjectionMatrixMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Camera_ProjectionMatrixMode {
-        pub fn explicit() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn implicit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn physical_properties_based() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_MonoOrStereoscopicEye.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Camera_MonoOrStereoscopicEye {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Camera_MonoOrStereoscopicEye {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Camera.MonoOrStereoscopicEye";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Camera_MonoOrStereoscopicEye {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Camera_MonoOrStereoscopicEye {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn mono() -> Self {
-            Self { value: 2 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_GateFitParameters.md"))]
@@ -340,112 +446,6 @@ mod __types {
     }
 
     impl ::unity2::IlType for Camera_GateFitParameters {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_RenderRequestOutputSpace.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Camera_RenderRequestOutputSpace {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Camera_RenderRequestOutputSpace {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Camera.RenderRequestOutputSpace";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Camera_RenderRequestOutputSpace {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Camera_RenderRequestOutputSpace {
-        pub fn screen_space() -> Self {
-            Self { value: -1 }
-        }
-
-        pub fn uv0() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn uv1() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn uv2() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn uv3() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn uv4() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn uv5() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn uv6() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn uv7() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn uv8() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/camera/Camera_RenderRequest.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Camera_RenderRequest {
-        pub m_camera_render_mode: crate::unity_engine::camera::Camera_RenderRequestMode,
-        pub m_result_rt: crate::unity_engine::rendertexture::RenderTexture,
-        pub m_output_space: crate::unity_engine::camera::Camera_RenderRequestOutputSpace,
-    }
-
-    impl ::unity2::ClassIdentity for Camera_RenderRequest {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Camera.RenderRequest";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Camera_RenderRequest {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()

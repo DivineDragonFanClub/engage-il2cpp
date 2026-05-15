@@ -9,16 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange_ChangeJobData.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChange.ChangeJobData")]
-    #[parent(crate::system::object::Object)]
-    pub struct ClassChange_ChangeJobData {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChange")]
-    #[parent(crate::system::object::Object)]
-    pub struct ClassChange {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
     #[repr(C)]
     #[derive(
@@ -70,6 +60,16 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange_ChangeJobData.md"))]
+    #[::unity2::class(namespace = "App", name = "ClassChange.ChangeJobData")]
+    #[parent(crate::system::object::Object)]
+    pub struct ClassChange_ChangeJobData {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
+    #[::unity2::class(namespace = "App", name = "ClassChange")]
+    #[parent(crate::system::object::Object)]
+    pub struct ClassChange {}
 }
 
 #[cfg(feature = "app-classchange-types")]

@@ -32,6 +32,10 @@ mod __types {
         pub m_unhandled_events: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
         >,
+        #[rename(name = "s_EventHandlers")]
+        pub s_event_handlers: crate::root::delegatelist_1::DelegateList_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
         #[rename(name = "m_lastTickSent")]
         pub m_last_tick_sent: f32,
         #[rename(name = "m_lastFrame")]

@@ -13,32 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubballoon/HubBalloon.md"))]
-    #[::unity2::class(namespace = "App", name = "HubBalloon")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubBalloon {
-        #[rename(name = "m_propetyToID")]
-        pub m_propety_to_id: i32,
-        #[rename(name = "m_talkDefault")]
-        pub m_talk_default: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_talkChapter")]
-        pub m_talk_chapter: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_talkReliance")]
-        pub m_talk_reliance: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_rendererList")]
-        pub m_renderer_list: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-        #[rename(name = "m_materials")]
-        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_alpha")]
-        pub m_alpha: f32,
-        #[rename(name = "m_talkDefaultActive")]
-        pub m_talk_default_active: bool,
-        #[rename(name = "m_talkChapterActive")]
-        pub m_talk_chapter_active: bool,
-        #[rename(name = "m_talkRelianceActive")]
-        pub m_talk_reliance_active: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubballoon/HubBalloon_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -85,6 +59,32 @@ mod __types {
         pub fn reliance() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubballoon/HubBalloon.md"))]
+    #[::unity2::class(namespace = "App", name = "HubBalloon")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubBalloon {
+        #[rename(name = "m_propetyToID")]
+        pub m_propety_to_id: i32,
+        #[rename(name = "m_talkDefault")]
+        pub m_talk_default: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_talkChapter")]
+        pub m_talk_chapter: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_talkReliance")]
+        pub m_talk_reliance: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_rendererList")]
+        pub m_renderer_list: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+        #[rename(name = "m_materials")]
+        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_alpha")]
+        pub m_alpha: f32,
+        #[rename(name = "m_talkDefaultActive")]
+        pub m_talk_default_active: bool,
+        #[rename(name = "m_talkChapterActive")]
+        pub m_talk_chapter_active: bool,
+        #[rename(name = "m_talkRelianceActive")]
+        pub m_talk_reliance_active: bool,
     }
 }
 
@@ -379,6 +379,103 @@ mod __HubBalloon_unity2_raw {
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_set_target_access::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubBalloon as ::unity2::ClassIdentity>::class(),
+                "get_CharaFader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubBalloon as ::unity2::ClassIdentity>::NAME,
+                    "get_CharaFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chara_fader(
+        this: HubBalloon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        let inner: extern "C" fn(
+            HubBalloon,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::root::iron19characterfader::Iron19CharacterFader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chara_fader::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: iron19characterfader :: Iron19CharacterFader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubBalloon as ::unity2::ClassIdentity>::class(),
+                "set_CharaFader",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubBalloon as ::unity2::ClassIdentity>::NAME,
+                    "set_CharaFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_fader(
+        this: HubBalloon,
+        value: crate::root::iron19characterfader::Iron19CharacterFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubBalloon,
+            crate::root::iron19characterfader::Iron19CharacterFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_chara_fader::get_offset() as isize),
         );
         inner(this, value, __unity2_method_info)
     }
@@ -1317,6 +1414,31 @@ pub trait IHubBalloonMethods: IHubBalloon {
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
             __HubBalloon_unity2_raw::set_target_access(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CharaFader()` overload"]
+    fn get_chara_fader(self) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        unsafe {
+            let __receiver = <HubBalloon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubBalloon_unity2_raw::get_chara_fader(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"]
+    fn set_chara_fader(
+        self,
+        value: impl ::core::convert::Into<crate::root::iron19characterfader::Iron19CharacterFader>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubBalloon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubBalloon_unity2_raw::set_chara_fader(
                 __receiver,
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,

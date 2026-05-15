@@ -12,23 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ActionGranBase")]
-    #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
-    pub struct ActionGranBase {
-        #[static_field]
-        #[rename(name = "AttackLineBehind")]
-        pub attack_line_behind: f32,
-        #[static_field]
-        #[rename(name = "DamageLineBehind")]
-        pub damage_line_behind: f32,
-        #[static_field]
-        #[rename(name = "BackstepDistance")]
-        pub backstep_distance: f32,
-        #[rename(name = "warpedGoal")]
-        pub warped_goal: crate::combat::fxz::FXZ,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]
     #[repr(C)]
     #[derive(
@@ -79,6 +62,23 @@ mod __types {
         pub fn warp() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))]
+    #[::unity2::class(namespace = "Combat", name = "ActionGranBase")]
+    #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
+    pub struct ActionGranBase {
+        #[static_field]
+        #[rename(name = "AttackLineBehind")]
+        pub attack_line_behind: f32,
+        #[static_field]
+        #[rename(name = "DamageLineBehind")]
+        pub damage_line_behind: f32,
+        #[static_field]
+        #[rename(name = "BackstepDistance")]
+        pub backstep_distance: f32,
+        #[rename(name = "warpedGoal")]
+        pub warped_goal: crate::combat::fxz::FXZ,
     }
 }
 

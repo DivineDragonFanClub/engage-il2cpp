@@ -10,7 +10,12 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortieInventoryManager_SelectionInfo {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -19,14 +24,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SortieInventoryManager_SelectionInfo_Modes {
+    pub struct SortieInventoryManager_Modes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes {
+    impl ::unity2::ClassIdentity for SortieInventoryManager_Modes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
+        const NAME: &'static str = "SortieInventoryManager.Modes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,7 +40,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes {
+    impl ::unity2::IlType for SortieInventoryManager_Modes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -44,12 +49,12 @@ mod __types {
         }
     }
 
-    impl SortieInventoryManager_SelectionInfo_Modes {
-        pub fn none() -> Self {
+    impl SortieInventoryManager_Modes {
+        pub fn sortie() -> Self {
             Self { value: 0 }
         }
 
-        pub fn trade() -> Self {
+        pub fn transporter() -> Self {
             Self { value: 1 }
         }
     }
@@ -102,7 +107,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -111,14 +116,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SortieInventoryManager_Modes {
+    pub struct SortieInventoryManager_SelectionInfo_Modes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SortieInventoryManager_Modes {
+    impl ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SortieInventoryManager.Modes";
+        const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -127,7 +132,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SortieInventoryManager_Modes {
+    impl ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -136,20 +141,15 @@ mod __types {
         }
     }
 
-    impl SortieInventoryManager_Modes {
-        pub fn sortie() -> Self {
+    impl SortieInventoryManager_SelectionInfo_Modes {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn transporter() -> Self {
+        pub fn trade() -> Self {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortieInventoryManager_SelectionInfo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md"))]
     #[::unity2::class(namespace = "App", name = "SortieInventoryManager")]

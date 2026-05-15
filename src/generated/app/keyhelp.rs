@@ -18,6 +18,31 @@ mod __types {
         pub m_ui: crate::app::keyhelp::KeyHelp_UI,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md"))]
+    #[::unity2::class(namespace = "App", name = "KeyHelp.UI")]
+    #[parent(crate::system::object::Object)]
+    pub struct KeyHelp_UI {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "ElementNames")]
+        pub element_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Elements")]
+        pub m_elements: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::keyhelp::KeyHelp_Type,
+            crate::app::keyhelp::KeyHelp_UI_Element,
+        >,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelp/KeyHelp_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -100,31 +125,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 11 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md"))]
-    #[::unity2::class(namespace = "App", name = "KeyHelp.UI")]
-    #[parent(crate::system::object::Object)]
-    pub struct KeyHelp_UI {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "ElementNames")]
-        pub element_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Elements")]
-        pub m_elements: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::keyhelp::KeyHelp_Type,
-            crate::app::keyhelp::KeyHelp_UI_Element,
-        >,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI_Element.md"))]

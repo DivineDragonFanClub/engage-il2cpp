@@ -4,12 +4,21 @@
 mod __types {
     use super::*;
 
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))]
     #[::unity2::class(namespace = "App", name = "MapPanelDebug")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldebug :: MapPanelDebug >)]
     pub struct MapPanelDebug {
         #[rename(name = "m_Entitys")]
         pub m_entitys: crate::system::collections::generic::list_1::List_1<
@@ -212,10 +221,28 @@ pub mod prelude {
     pub use super::IMapPanelDebugMethods;
     pub use super::MapPanelDebug;
     pub use super::MapPanelDebug_Entity;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
+    #[cfg(feature = "root-mappanelbase_1")]
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

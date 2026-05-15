@@ -11,6 +11,19 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceSkillEdit")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceskilledit :: SortieSequenceSkillEdit >)]
+    pub struct SortieSequenceSkillEdit {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::skilleditroot::SkillEditRoot,
+        #[rename(name = "m_BackInheriteCallback")]
+        pub m_back_inherite_callback: crate::system::action::Action,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,19 +74,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceskilledit/SortieSequenceSkillEdit.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceSkillEdit")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceskilledit :: SortieSequenceSkillEdit >)]
-    pub struct SortieSequenceSkillEdit {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::skilleditroot::SkillEditRoot,
-        #[rename(name = "m_BackInheriteCallback")]
-        pub m_back_inherite_callback: crate::system::action::Action,
     }
 }
 

@@ -30,64 +30,6 @@ mod __types {
         >,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSkip.ProcWaitTime")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GameSkip_ProcWaitTime {
-        #[rename(name = "m_WaitTime")]
-        pub m_wait_time: f32,
-        #[rename(name = "m_DeltaTime")]
-        pub m_delta_time: f32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameSkip_Result {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameSkip_Result {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameSkip.Result";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameSkip_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameSkip_Result {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn short_skip() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn long_skip() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
     #[repr(C)]
     #[derive(
@@ -138,6 +80,64 @@ mod __types {
         pub fn fade_in() -> Self {
             Self { value: 3 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameSkip_Result {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameSkip_Result {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameSkip.Result";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameSkip_Result {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameSkip_Result {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn short_skip() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn long_skip() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSkip.ProcWaitTime")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GameSkip_ProcWaitTime {
+        #[rename(name = "m_WaitTime")]
+        pub m_wait_time: f32,
+        #[rename(name = "m_DeltaTime")]
+        pub m_delta_time: f32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Status.md"))]

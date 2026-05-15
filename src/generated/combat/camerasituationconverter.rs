@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraSituationConverter")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraSituationConverter {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]
     #[repr(C)]
     #[derive(
@@ -69,6 +64,11 @@ mod __types {
             Self { value: 512 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraSituationConverter")]
+    #[parent(crate::system::object::Object)]
+    pub struct CameraSituationConverter {}
 }
 
 #[cfg(feature = "combat-camerasituationconverter-types")]

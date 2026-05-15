@@ -11,14 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotFoodEatSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)]
-    pub struct MascotFoodEatSequence {
-        #[rename(name = "m_foodStuffData")]
-        pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,6 +53,14 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotFoodEatSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)]
+    pub struct MascotFoodEatSequence {
+        #[rename(name = "m_foodStuffData")]
+        pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
     }
 }
 

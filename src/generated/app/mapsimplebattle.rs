@@ -29,6 +29,10 @@ mod __types {
         pub m_is_valid: bool,
         #[rename(name = "m_GameObject")]
         pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_GaugeControllerLeft")]
+        pub m_gauge_controller_left: crate::root::combatgaugecontroller::CombatGaugeController,
+        #[rename(name = "m_GaugeControllerRight")]
+        pub m_gauge_controller_right: crate::root::combatgaugecontroller::CombatGaugeController,
     }
 }
 
@@ -84,6 +88,59 @@ mod __MapSimpleBattle_unity2_raw {
                     .offset(__lookup_is_loading::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_object {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleinfo :: BattleInfo as :: unity2 :: IlType > :: il_type () , < * mut crate :: root :: combatgaugecontroller :: CombatGaugeController as :: unity2 :: IlType > :: il_type () , < * mut crate :: root :: combatgaugecontroller :: CombatGaugeController as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSimpleBattle as ::unity2::ClassIdentity>::class(),
+                "GetObject",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSimpleBattle as ::unity2::ClassIdentity>::NAME,
+                    "GetObject",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_object(
+        this: MapSimpleBattle,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: *mut crate::root::combatgaugecontroller::CombatGaugeController,
+        defense: *mut crate::root::combatgaugecontroller::CombatGaugeController,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapSimpleBattle,
+            crate::app::battleinfo::BattleInfo,
+            *mut crate::root::combatgaugecontroller::CombatGaugeController,
+            *mut crate::root::combatgaugecontroller::CombatGaugeController,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_object::get_offset() as isize),
+        );
+        inner(this, info, offense, defense, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -742,6 +799,34 @@ pub trait IMapSimpleBattleMethods: IMapSimpleBattle {
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
             __MapSimpleBattle_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetObject(crate::app::battleinfo::BattleInfo, *mutcrate::root::combatgaugecontroller::CombatGaugeController, *mutcrate::root::combatgaugecontroller::CombatGaugeController)` overload"]
+    fn get_object(
+        self,
+        info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>,
+    ) -> (
+        crate::root::combatgaugecontroller::CombatGaugeController,
+        crate::root::combatgaugecontroller::CombatGaugeController,
+    ) {
+        unsafe {
+            let __receiver = <MapSimpleBattle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::root::combatgaugecontroller::CombatGaugeController,
+            >::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<
+                crate::root::combatgaugecontroller::CombatGaugeController,
+            >::uninit();
+            __MapSimpleBattle_unity2_raw::get_object(
+                __receiver,
+                ::core::convert::Into::into(info),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
         }
     }
     #[doc = "`SetSimpleBattle(crate::app::battlecalculator::BattleCalculator)` overload"]

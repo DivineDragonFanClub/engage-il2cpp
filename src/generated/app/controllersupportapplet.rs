@@ -9,23 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/controllersupportapplet/ControllerSupportApplet.md"))]
-    #[::unity2::class(namespace = "App", name = "ControllerSupportApplet")]
-    #[parent(crate::system::object::Object)]
-    pub struct ControllerSupportApplet {
-        #[static_field]
-        #[rename(name = "c_appletWaitTime")]
-        pub c_applet_wait_time: f32,
-        #[rename(name = "m_preOperationMode")]
-        pub m_pre_operation_mode: crate::unity_engine::switch::operation::Operation_OperationMode,
-        #[rename(name = "m_npadIds")]
-        pub m_npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId>,
-        #[rename(name = "m_isHandheldMode")]
-        pub m_is_handheld_mode: bool,
-        #[rename(name = "m_DisableCallCount")]
-        pub m_disable_call_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/controllersupportapplet/ControllerSupportApplet_CallState.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +59,23 @@ mod __types {
         pub fn immediate() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/controllersupportapplet/ControllerSupportApplet.md"))]
+    #[::unity2::class(namespace = "App", name = "ControllerSupportApplet")]
+    #[parent(crate::system::object::Object)]
+    pub struct ControllerSupportApplet {
+        #[static_field]
+        #[rename(name = "c_appletWaitTime")]
+        pub c_applet_wait_time: f32,
+        #[rename(name = "m_preOperationMode")]
+        pub m_pre_operation_mode: crate::unity_engine::switch::operation::Operation_OperationMode,
+        #[rename(name = "m_npadIds")]
+        pub m_npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId>,
+        #[rename(name = "m_isHandheldMode")]
+        pub m_is_handheld_mode: bool,
+        #[rename(name = "m_DisableCallCount")]
+        pub m_disable_call_count: i32,
     }
 }
 

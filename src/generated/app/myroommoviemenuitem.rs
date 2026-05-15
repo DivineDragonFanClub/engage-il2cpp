@@ -12,18 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomMovieMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MyRoomMovieMenuItem {
-        #[rename(name = "m_movieFileName")]
-        pub m_movie_file_name: ::unity2::Il2CppString,
-        #[rename(name = "m_help")]
-        pub m_help: ::unity2::Il2CppString,
-        #[rename(name = "m_label")]
-        pub m_label: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -70,6 +58,18 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomMovieMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MyRoomMovieMenuItem {
+        #[rename(name = "m_movieFileName")]
+        pub m_movie_file_name: ::unity2::Il2CppString,
+        #[rename(name = "m_help")]
+        pub m_help: ::unity2::Il2CppString,
+        #[rename(name = "m_label")]
+        pub m_label: ::unity2::Il2CppString,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]

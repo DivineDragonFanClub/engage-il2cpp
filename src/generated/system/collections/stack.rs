@@ -7,11 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack_StackDebugView.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "Stack.StackDebugView")]
-    #[parent(crate::system::object::Object)]
-    pub struct Stack_StackDebugView {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack_StackEnumerator.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "Stack.StackEnumerator")]
     #[parent(crate::system::object::Object)]
@@ -39,6 +34,11 @@ mod __types {
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack_StackDebugView.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "Stack.StackDebugView")]
+    #[parent(crate::system::object::Object)]
+    pub struct Stack_StackDebugView {}
 }
 
 #[cfg(feature = "system-collections-stack-types")]

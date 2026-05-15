@@ -14,29 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopDataBase`1")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)]
-    # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)]
-    #[parent(crate::app::structbase::StructBase)]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopDataBase_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "Infinity")]
-        pub infinity: i32,
-        #[static_field]
-        #[rename(name = "m_RandomGiftList")]
-        pub m_random_gift_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockAddedKeyFunc")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity> {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopdatabase_1/ShopDataBase_1_AttributeType.md"))]
     #[repr(C)]
     #[derive(
@@ -87,6 +64,29 @@ mod __types {
             }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopDataBase`1")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)]
+    # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)]
+    #[parent(crate::app::structbase::StructBase)]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopDataBase_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "Infinity")]
+        pub infinity: i32,
+        #[static_field]
+        #[rename(name = "m_RandomGiftList")]
+        pub m_random_gift_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockAddedKeyFunc")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdatabase_1/ShopDataBase_1_GetStockKeyFunc.md"))]
     #[::unity2::class(namespace = "App", name = "ShopDataBase`1.GetStockKeyFunc")]

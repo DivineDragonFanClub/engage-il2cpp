@@ -12,19 +12,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_GmapTeleportMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.GmapTeleportMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct GmapTeleportMenu_GmapTeleportMenuItem {
-        #[rename(name = "m_GmapSpot")]
-        pub m_gmap_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_SpotPosition")]
-        pub m_spot_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_CloseMapAndBarFunc")]
-        pub m_close_map_and_bar_func: crate::system::action::Action,
-        #[rename(name = "m_IsCameraFocus")]
-        pub m_is_camera_focus: bool,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GmapTeleportMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu.md"))]
     #[::unity2::class(namespace = "App", name = "GmapTeleportMenu")]
@@ -42,10 +33,19 @@ mod __types {
         pub m_close_map_and_bar_func: crate::system::action::Action,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GmapTeleportMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapteleportmenu/GmapTeleportMenu_GmapTeleportMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapTeleportMenu.GmapTeleportMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct GmapTeleportMenu_GmapTeleportMenuItem {
+        #[rename(name = "m_GmapSpot")]
+        pub m_gmap_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_SpotPosition")]
+        pub m_spot_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_CloseMapAndBarFunc")]
+        pub m_close_map_and_bar_func: crate::system::action::Action,
+        #[rename(name = "m_IsCameraFocus")]
+        pub m_is_camera_focus: bool,
+    }
 }
 
 #[cfg(feature = "app-gmapteleportmenu-types")]
@@ -54,7 +54,7 @@ pub use __types::*;
 #[cfg(feature = "app-gmapteleportmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
+mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -64,11 +64,11 @@ mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -80,7 +80,7 @@ mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -93,40 +93,36 @@ mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
-        gmap_spot: crate::app::gmapspot::GmapSpot,
-        close_map_and_bar_func: crate::system::action::Action,
+        this: GmapTeleportMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
-            crate::app::gmapspot::GmapSpot,
-            crate::system::action::Action,
+            GmapTeleportMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(
-            this,
-            gmap_spot,
-            close_map_and_bar_func,
-            __unity2_method_info,
-        )
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
+                <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
                 param_types,
                 false,
             )
@@ -136,8 +132,8 @@ mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
+                    <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
                     e
                 ),
             }
@@ -148,276 +144,57 @@ mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn build_attribute(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
+    pub unsafe fn invoke(
+        this: GmapTeleportMenu_DecideEventHandler,
+        gmap_spot: crate::app::gmapspot::GmapSpot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
+            GmapTeleportMenu_DecideEventHandler,
+            crate::app::gmapspot::GmapSpot,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_spot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_Spot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_Spot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_spot(
-        this: GmapTeleportMenu_GmapTeleportMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gmapspot::GmapSpot {
-        let inner: extern "C" fn(
-            GmapTeleportMenu_GmapTeleportMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gmapspot::GmapSpot = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_spot::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(this, gmap_spot, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-pub trait IGmapTeleportMenu_GmapTeleportMenuItemMethods:
-    IGmapTeleportMenu_GmapTeleportMenuItem
+pub trait IGmapTeleportMenu_DecideEventHandlerMethods:
+    IGmapTeleportMenu_DecideEventHandler
 {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` overload"]
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
-        gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
-        close_map_and_bar_func: impl ::core::convert::Into<crate::system::action::Action>,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::ctor(
+            let __receiver =
+                <GmapTeleportMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapTeleportMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::gmapspot::GmapSpot)` overload"]
+    fn invoke(self, gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> () {
+        unsafe {
+            let __receiver =
+                <GmapTeleportMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapTeleportMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(gmap_spot),
-                ::core::convert::Into::into(close_map_and_bar_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Spot()` overload"]
-    fn get_spot(self) -> crate::app::gmapspot::GmapSpot {
-        unsafe {
-            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::get_spot(
-                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -425,30 +202,23 @@ pub trait IGmapTeleportMenu_GmapTeleportMenuItemMethods:
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-impl<__T: IGmapTeleportMenu_GmapTeleportMenuItem> IGmapTeleportMenu_GmapTeleportMenuItemMethods
+impl<__T: IGmapTeleportMenu_DecideEventHandler> IGmapTeleportMenu_DecideEventHandlerMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-impl GmapTeleportMenu_GmapTeleportMenuItem {
-    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        gmap_spot: crate::app::gmapspot::GmapSpot,
-        close_map_and_bar_func: crate::system::action::Action,
-    ) -> Self {
+impl GmapTeleportMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapTeleportMenu_GmapTeleportMenuItem),
+                ::core::stringify!(GmapTeleportMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapTeleportMenu_GmapTeleportMenuItemMethods>::ctor(
-            this,
-            gmap_spot,
-            close_map_and_bar_func,
-        );
+        <Self as IGmapTeleportMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -942,7 +712,7 @@ impl GmapTeleportMenu {
 #[cfg(feature = "app-gmapteleportmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
+mod __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -952,11 +722,11 @@ mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -968,7 +738,7 @@ mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -981,36 +751,40 @@ mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GmapTeleportMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
+        gmap_spot: crate::app::gmapspot::GmapSpot,
+        close_map_and_bar_func: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapTeleportMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            GmapTeleportMenu_GmapTeleportMenuItem,
+            crate::app::gmapspot::GmapSpot,
+            crate::system::action::Action,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
+        inner(
+            this,
+            gmap_spot,
+            close_map_and_bar_func,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_build_attribute {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
                 param_types,
                 false,
             )
@@ -1020,8 +794,8 @@ mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapTeleportMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
                     e
                 ),
             }
@@ -1032,57 +806,276 @@ mod __GmapTeleportMenu_DecideEventHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: GmapTeleportMenu_DecideEventHandler,
-        gmap_spot: crate::app::gmapspot::GmapSpot,
+    pub unsafe fn build_attribute(
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            GmapTeleportMenu_GmapTeleportMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapTeleportMenu_DecideEventHandler,
-            crate::app::gmapspot::GmapSpot,
+            GmapTeleportMenu_GmapTeleportMenuItem,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_on_select::get_offset() as isize),
         );
-        inner(this, gmap_spot, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GmapTeleportMenu_GmapTeleportMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            GmapTeleportMenu_GmapTeleportMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_spot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::class(),
+                "get_Spot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapTeleportMenu_GmapTeleportMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "get_Spot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_spot(
+        this: GmapTeleportMenu_GmapTeleportMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gmapspot::GmapSpot {
+        let inner: extern "C" fn(
+            GmapTeleportMenu_GmapTeleportMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::gmapspot::GmapSpot = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_spot::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-pub trait IGmapTeleportMenu_DecideEventHandlerMethods:
-    IGmapTeleportMenu_DecideEventHandler
+pub trait IGmapTeleportMenu_GmapTeleportMenuItemMethods:
+    IGmapTeleportMenu_GmapTeleportMenuItem
 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` overload"]
     fn ctor(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>,
+        close_map_and_bar_func: impl ::core::convert::Into<crate::system::action::Action>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <GmapTeleportMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapTeleportMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(gmap_spot),
+                ::core::convert::Into::into(close_map_and_bar_func),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::gmapspot::GmapSpot)` overload"]
-    fn invoke(self, gmap_spot: impl ::core::convert::Into<crate::app::gmapspot::GmapSpot>) -> () {
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver =
-                <GmapTeleportMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapTeleportMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::build_attribute(
                 __receiver,
-                ::core::convert::Into::into(gmap_spot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::on_select(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Spot()` overload"]
+    fn get_spot(self) -> crate::app::gmapspot::GmapSpot {
+        unsafe {
+            let __receiver = < GmapTeleportMenu_GmapTeleportMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapTeleportMenu_GmapTeleportMenuItem_unity2_raw::get_spot(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -1090,23 +1083,30 @@ pub trait IGmapTeleportMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-impl<__T: IGmapTeleportMenu_DecideEventHandler> IGmapTeleportMenu_DecideEventHandlerMethods
+impl<__T: IGmapTeleportMenu_GmapTeleportMenuItem> IGmapTeleportMenu_GmapTeleportMenuItemMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-gmapteleportmenu")]
-impl GmapTeleportMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl GmapTeleportMenu_GmapTeleportMenuItem {
+    #[doc = "`.ctor(crate::app::gmapspot::GmapSpot, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        gmap_spot: crate::app::gmapspot::GmapSpot,
+        close_map_and_bar_func: crate::system::action::Action,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapTeleportMenu_DecideEventHandler),
+                ::core::stringify!(GmapTeleportMenu_GmapTeleportMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapTeleportMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IGmapTeleportMenu_GmapTeleportMenuItemMethods>::ctor(
+            this,
+            gmap_spot,
+            close_map_and_bar_func,
+        );
         this
     }
 }

@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endingsequence/EndingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "EndingSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct EndingSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endingsequence/EndingSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -62,6 +57,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endingsequence/EndingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "EndingSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct EndingSequence {}
 }
 
 #[cfg(feature = "app-endingsequence-types")]

@@ -15,6 +15,199 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: itemdata :: ItemData_Flags >)]
+    pub struct ItemData_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_Flags {
+        pub fn rarity() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn not_trade() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn can_use() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn only_chapter() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn only_enemy() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn only_male() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn only_female() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn engage() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn ignore_weapon_level() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn unpublic() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn not_entrust() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn invert_interact() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn download() -> Self {
+            Self { value: 4096 }
+        }
+
+        pub fn key_door() -> Self {
+            Self { value: 8192 }
+        }
+
+        pub fn key_treasure_box() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn ai_unequipable() -> Self {
+            Self { value: 32768 }
+        }
+
+        pub fn reverse_attribute() -> Self {
+            Self { value: 65536 }
+        }
+
+        pub fn lunch_box() -> Self {
+            Self { value: 131072 }
+        }
+
+        pub fn simple_help() -> Self {
+            Self { value: 262144 }
+        }
+
+        pub fn range_target() -> Self {
+            Self { value: 524288 }
+        }
+
+        pub fn ignore_combat() -> Self {
+            Self { value: 1048576 }
+        }
+
+        pub fn forced_combat() -> Self {
+            Self { value: 2097152 }
+        }
+
+        pub fn bless() -> Self {
+            Self { value: 16777216 }
+        }
+
+        pub fn breath() -> Self {
+            Self { value: 33554432 }
+        }
+
+        pub fn dragon() -> Self {
+            Self { value: 67108864 }
+        }
+
+        pub fn bullet() -> Self {
+            Self { value: 134217728 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Attrs.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_Attrs {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_Attrs {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.Attrs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_Attrs {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_Attrs {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn physical() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn magic() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_UseTypes.md"))]
     #[repr(C)]
     #[derive(
@@ -223,6 +416,45 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemdata :: ItemData >)]
+    pub struct ItemData {
+        #[static_field]
+        #[rename(name = "MAX_NAME_LENGTH")]
+        pub max_name_length: i32,
+        #[static_field]
+        #[rename(name = "RANGE_INF")]
+        pub range_inf: i32,
+        #[static_field]
+        #[rename(name = "ENDURANCE_INF")]
+        pub endurance_inf: i32,
+        #[static_field]
+        #[rename(name = "HIT_INF")]
+        pub hit_inf: i32,
+        #[rename(name = "m_IsWeapon")]
+        pub m_is_weapon: bool,
+        #[rename(name = "FlagName")]
+        pub flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_PrefixlessIid")]
+        pub m_prefixless_iid: ::unity2::Il2CppString,
+        #[rename(name = "m_EnchantHash")]
+        pub m_enchant_hash: i32,
+        #[rename(name = "m_WeaponLevel")]
+        pub m_weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
+        #[rename(name = "m_UnitItem")]
+        pub m_unit_item: crate::app::unititem::UnitItem,
+        #[static_field]
+        #[rename(name = "EmptyEnchantHash")]
+        pub empty_enchant_hash: i32,
+        #[static_field]
+        #[rename(name = "MaxInventory")]
+        pub max_inventory: i32,
+        #[static_field]
+        #[rename(name = "MaxRefine")]
+        pub max_refine: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_AddTargets.md"))]
     #[repr(C)]
     #[derive(
@@ -271,285 +503,6 @@ mod __types {
         }
 
         pub fn whole() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemdata :: ItemData >)]
-    pub struct ItemData {
-        #[static_field]
-        #[rename(name = "MAX_NAME_LENGTH")]
-        pub max_name_length: i32,
-        #[static_field]
-        #[rename(name = "RANGE_INF")]
-        pub range_inf: i32,
-        #[static_field]
-        #[rename(name = "ENDURANCE_INF")]
-        pub endurance_inf: i32,
-        #[static_field]
-        #[rename(name = "HIT_INF")]
-        pub hit_inf: i32,
-        #[rename(name = "m_IsWeapon")]
-        pub m_is_weapon: bool,
-        #[rename(name = "FlagName")]
-        pub flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_PrefixlessIid")]
-        pub m_prefixless_iid: ::unity2::Il2CppString,
-        #[rename(name = "m_EnchantHash")]
-        pub m_enchant_hash: i32,
-        #[rename(name = "m_WeaponLevel")]
-        pub m_weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
-        #[rename(name = "m_UnitItem")]
-        pub m_unit_item: crate::app::unititem::UnitItem,
-        #[static_field]
-        #[rename(name = "EmptyEnchantHash")]
-        pub empty_enchant_hash: i32,
-        #[static_field]
-        #[rename(name = "MaxInventory")]
-        pub max_inventory: i32,
-        #[static_field]
-        #[rename(name = "MaxRefine")]
-        pub max_refine: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Attrs.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_Attrs {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_Attrs {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.Attrs";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_Attrs {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_Attrs {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn physical() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn magic() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_Flags {
-        pub fn rarity() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn not_trade() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn can_use() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn only_chapter() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn only_enemy() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn only_male() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn only_female() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn engage() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn ignore_weapon_level() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn unpublic() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn not_entrust() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn invert_interact() -> Self {
-            Self { value: 2048 }
-        }
-
-        pub fn download() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn key_door() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn key_treasure_box() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn ai_unequipable() -> Self {
-            Self { value: 32768 }
-        }
-
-        pub fn reverse_attribute() -> Self {
-            Self { value: 65536 }
-        }
-
-        pub fn lunch_box() -> Self {
-            Self { value: 131072 }
-        }
-
-        pub fn simple_help() -> Self {
-            Self { value: 262144 }
-        }
-
-        pub fn range_target() -> Self {
-            Self { value: 524288 }
-        }
-
-        pub fn ignore_combat() -> Self {
-            Self { value: 1048576 }
-        }
-
-        pub fn forced_combat() -> Self {
-            Self { value: 2097152 }
-        }
-
-        pub fn bless() -> Self {
-            Self { value: 16777216 }
-        }
-
-        pub fn breath() -> Self {
-            Self { value: 33554432 }
-        }
-
-        pub fn dragon() -> Self {
-            Self { value: 67108864 }
-        }
-
-        pub fn bullet() -> Self {
-            Self { value: 134217728 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_RodTypes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemData_RodTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemData_RodTypes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemData.RodTypes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemData_RodTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemData_RodTypes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn basic() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn heal() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn interference() -> Self {
             Self { value: 3 }
         }
     }
@@ -618,10 +571,57 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemdata/ItemData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: itemdata :: ItemData_Flags >)]
-    pub struct ItemData_FlagField {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_RodTypes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemData_RodTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemData_RodTypes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemData.RodTypes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemData_RodTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemData_RodTypes {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn basic() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn heal() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn interference() -> Self {
+            Self { value: 3 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Kinds.md"))]
     #[repr(C)]
@@ -746,6 +746,238 @@ mod __types {
 
 #[cfg(feature = "app-itemdata-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-itemdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemData_FlagField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemData_FlagField,
+        f: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemData_FlagField, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: ItemData_FlagField,
+        f: crate::app::itemdata::ItemData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ItemData_FlagField,
+            crate::app::itemdata::ItemData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: ItemData_FlagField,
+        value: crate::app::itemdata::ItemData_Flags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ItemData_FlagField,
+            crate::app::itemdata::ItemData_Flags,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-itemdata")]
+pub trait IItemData_FlagFieldMethods: IItemData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemData_FlagField_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(f),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::itemdata::ItemData_Flags)` overload"]
+    fn ctor_2(self, f: impl ::core::convert::Into<crate::app::itemdata::ItemData_Flags>) -> () {
+        unsafe {
+            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemData_FlagField_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(f),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToInt(crate::app::itemdata::ItemData_Flags)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<crate::app::itemdata::ItemData_Flags>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ItemData_FlagField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemdata")]
+impl<__T: IItemData_FlagField> IItemData_FlagFieldMethods for __T {}
+
+#[cfg(feature = "app-itemdata")]
+impl ItemData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::itemdata::ItemData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::itemdata::ItemData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IItemData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
 
 #[cfg(feature = "app-itemdata")]
 #[doc(hidden)]
@@ -10162,238 +10394,6 @@ impl ItemData {
             )
         });
         <Self as IItemDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemdata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemData_FlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ItemData_FlagField,
-        f: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ItemData_FlagField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: ItemData_FlagField,
-        f: crate::app::itemdata::ItemData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ItemData_FlagField,
-            crate::app::itemdata::ItemData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemData_FlagField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemData_FlagField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: ItemData_FlagField,
-        value: crate::app::itemdata::ItemData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ItemData_FlagField,
-            crate::app::itemdata::ItemData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-itemdata")]
-pub trait IItemData_FlagFieldMethods: IItemData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemData_FlagField_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::itemdata::ItemData_Flags)` overload"]
-    fn ctor_2(self, f: impl ::core::convert::Into<crate::app::itemdata::ItemData_Flags>) -> () {
-        unsafe {
-            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemData_FlagField_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToInt(crate::app::itemdata::ItemData_Flags)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::itemdata::ItemData_Flags>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <ItemData_FlagField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemData_FlagField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-itemdata")]
-impl<__T: IItemData_FlagField> IItemData_FlagFieldMethods for __T {}
-
-#[cfg(feature = "app-itemdata")]
-impl ItemData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::itemdata::ItemData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::itemdata::ItemData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IItemData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

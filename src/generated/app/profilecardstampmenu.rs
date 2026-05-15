@@ -14,12 +14,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_DialogMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.DialogMenuItem")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct ProfileCardStampMenu_DialogMenuItem {
-# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler ,
-}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_DisposeEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.DisposeEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardStampMenu_DisposeEventHandler {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardstampmenu/ProfileCardStampMenu_EditMode.md"))]
     #[repr(C)]
@@ -73,15 +71,20 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.ConfirmToCloseDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardStampMenu_ConfirmToCloseDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_DialogMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.DialogMenuItem")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct ProfileCardStampMenu_DialogMenuItem {
+# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler ,
+}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.ConfirmToClearDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardStampMenu_ConfirmToClearDialog {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardStampMenu.ConfirmToCloseDialog.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu")]
@@ -125,18 +128,10 @@ mod __types {
         pub m_arrow_key_repeat_time: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardStampMenu.ConfirmToCloseDialog.DecideEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_DisposeEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.DisposeEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampMenu_DisposeEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.ConfirmToClearDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardStampMenu_ConfirmToClearDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler.md"))]
     #[::unity2::class(
@@ -145,10 +140,177 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampMenu.ConfirmToCloseDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardStampMenu_ConfirmToCloseDialog {}
 }
 
 #[cfg(feature = "app-profilecardstampmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-profilecardstampmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardStampMenu_DisposeEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardStampMenu_DisposeEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardStampMenu_DisposeEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardStampMenu_DisposeEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardStampMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+pub trait IProfileCardStampMenu_DisposeEventHandlerMethods:
+    IProfileCardStampMenu_DisposeEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardStampMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_DisposeEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardStampMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_DisposeEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+impl<__T: IProfileCardStampMenu_DisposeEventHandler>
+    IProfileCardStampMenu_DisposeEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+impl ProfileCardStampMenu_DisposeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardStampMenu_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardStampMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-profilecardstampmenu")]
 #[doc(hidden)]
@@ -316,55 +478,8 @@ impl ProfileCardStampMenu_DialogMenuItem {
 #[cfg(feature = "app-profilecardstampmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw {
+mod __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_and_close_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-        no_save_and_close_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicdialog::BasicDialog {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
-        inner(
-            super_,
-            save_and_close_event_handler,
-            no_save_and_close_event_handler,
-            __unity2_method_info,
-        )
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -372,25 +487,14 @@ mod __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -399,150 +503,35 @@ mod __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardStampMenu_ConfirmToCloseDialog,
+        this: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampMenu_ConfirmToCloseDialog,
+            ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_ConfirmToCloseDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        save_and_close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
-        no_save_and_close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
-    ) -> crate::app::basicdialog::BasicDialog {
-        unsafe {
-            __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(save_and_close_event_handler),
-                ::core::convert::Into::into(no_save_and_close_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-pub trait IProfileCardStampMenu_ConfirmToCloseDialogMethods:
-    IProfileCardStampMenu_ConfirmToCloseDialog
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-impl<__T: IProfileCardStampMenu_ConfirmToCloseDialog>
-    IProfileCardStampMenu_ConfirmToCloseDialogMethods for __T
-{
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_ConfirmToCloseDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampMenu_ConfirmToCloseDialogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        yes_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicdialog::BasicDialog {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
-        inner(super_, yes_event_handler, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -550,48 +539,47 @@ mod __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: ProfileCardStampMenu_ConfirmToClearDialog,
+    pub unsafe fn invoke(
+        this: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampMenu_ConfirmToClearDialog,
+            ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_ConfirmToClearDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
-    ) -> crate::app::basicdialog::BasicDialog {
+pub trait IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods:
+    IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
         unsafe {
-            __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(yes_event_handler),
+            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-pub trait IProfileCardStampMenu_ConfirmToClearDialogMethods:
-    IProfileCardStampMenu_ConfirmToClearDialog
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampMenu_ConfirmToClearDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw::ctor(
+            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -600,23 +588,25 @@ pub trait IProfileCardStampMenu_ConfirmToClearDialogMethods:
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-impl<__T: IProfileCardStampMenu_ConfirmToClearDialog>
-    IProfileCardStampMenu_ConfirmToClearDialogMethods for __T
+impl<__T: IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>
+    IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_ConfirmToClearDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampMenu_ConfirmToClearDialog),
+                ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardStampMenu_ConfirmToClearDialogMethods>::ctor(this);
+        <Self as IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }
@@ -3722,23 +3712,34 @@ impl ProfileCardStampMenu {
 #[cfg(feature = "app-profilecardstampmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw {
+mod __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -3746,135 +3747,26 @@ mod __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        yes_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
+    ) -> crate::app::basicdialog::BasicDialog {
+        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        inner(super_, yes_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-pub trait IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods:
-    IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-impl<__T: IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>
-    IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardstampmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampMenu_DisposeEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                0,
                 param_types,
                 false,
             )
@@ -3884,7 +3776,7 @@ mod __ProfileCardStampMenu_DisposeEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardStampMenu_ConfirmToClearDialog as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -3897,97 +3789,47 @@ mod __ProfileCardStampMenu_DisposeEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardStampMenu_DisposeEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: ProfileCardStampMenu_ConfirmToClearDialog,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampMenu_DisposeEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            ProfileCardStampMenu_ConfirmToClearDialog,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ProfileCardStampMenu_DisposeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardStampMenu_DisposeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-pub trait IProfileCardStampMenu_DisposeEventHandlerMethods:
-    IProfileCardStampMenu_DisposeEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+impl ProfileCardStampMenu_ConfirmToClearDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        yes_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
+    ) -> crate::app::basicdialog::BasicDialog {
         unsafe {
-            let __receiver = < ProfileCardStampMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_DisposeEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+            __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(yes_event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+pub trait IProfileCardStampMenu_ConfirmToClearDialogMethods:
+    IProfileCardStampMenu_ConfirmToClearDialog
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampMenu_DisposeEventHandler_unity2_raw::invoke(
+            let __receiver = < ProfileCardStampMenu_ConfirmToClearDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_ConfirmToClearDialog_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -3996,23 +3838,23 @@ pub trait IProfileCardStampMenu_DisposeEventHandlerMethods:
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-impl<__T: IProfileCardStampMenu_DisposeEventHandler>
-    IProfileCardStampMenu_DisposeEventHandlerMethods for __T
+impl<__T: IProfileCardStampMenu_ConfirmToClearDialog>
+    IProfileCardStampMenu_ConfirmToClearDialogMethods for __T
 {
 }
 
 #[cfg(feature = "app-profilecardstampmenu")]
-impl ProfileCardStampMenu_DisposeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl ProfileCardStampMenu_ConfirmToClearDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampMenu_DisposeEventHandler),
+                ::core::stringify!(ProfileCardStampMenu_ConfirmToClearDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardStampMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardStampMenu_ConfirmToClearDialogMethods>::ctor(this);
         this
     }
 }
@@ -4149,6 +3991,164 @@ impl ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler {
         <Self as IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_and_close_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
+        no_save_and_close_event_handler : crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicdialog::BasicDialog {
+        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialog :: BasicDialog = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        inner(
+            super_,
+            save_and_close_event_handler,
+            no_save_and_close_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardStampMenu_ConfirmToCloseDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardStampMenu_ConfirmToCloseDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardStampMenu_ConfirmToCloseDialog,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+impl ProfileCardStampMenu_ConfirmToCloseDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        save_and_close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
+        no_save_and_close_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstampmenu :: ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler >,
+    ) -> crate::app::basicdialog::BasicDialog {
+        unsafe {
+            __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(save_and_close_event_handler),
+                ::core::convert::Into::into(no_save_and_close_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+pub trait IProfileCardStampMenu_ConfirmToCloseDialogMethods:
+    IProfileCardStampMenu_ConfirmToCloseDialog
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardStampMenu_ConfirmToCloseDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampMenu_ConfirmToCloseDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+impl<__T: IProfileCardStampMenu_ConfirmToCloseDialog>
+    IProfileCardStampMenu_ConfirmToCloseDialogMethods for __T
+{
+}
+
+#[cfg(feature = "app-profilecardstampmenu")]
+impl ProfileCardStampMenu_ConfirmToCloseDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardStampMenu_ConfirmToCloseDialogMethods>::ctor(this);
         this
     }
 }

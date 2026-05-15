@@ -14,14 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "CapeTowerSequence.ConfirmEnableOnlineDialog"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -37,6 +29,26 @@ mod __types {
     )]
     #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
     pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "CapeTowerSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct CapeTowerSequence {
+        #[rename(name = "m_CapeTowerTopMenuResult")]
+        pub m_cape_tower_top_menu_result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::menubg::MenuBg,
+        #[rename(name = "m_FromDebugMenu")]
+        pub m_from_debug_menu: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "CapeTowerSequence.ConfirmEnableOnlineDialog"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]
     #[repr(C)]
@@ -101,88 +113,10 @@ mod __types {
             Self { value: 6 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "CapeTowerSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct CapeTowerSequence {
-        #[rename(name = "m_CapeTowerTopMenuResult")]
-        pub m_cape_tower_top_menu_result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-        #[rename(name = "m_FromDebugMenu")]
-        pub m_from_debug_menu: bool,
-    }
 }
 
 #[cfg(feature = "app-capetowersequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-capetowersequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "app-capetowersequence")]
 #[doc(hidden)]
@@ -1559,6 +1493,72 @@ impl CapeTowerSequence {
         });
         <Self as ICapeTowerSequenceMethods>::ctor(this, initial_selected, from_debug_menu);
         this
+    }
+}
+
+#[cfg(feature = "app-capetowersequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CapeTowerSequence_ConfirmEnableOnlineDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-capetowersequence")]
+impl CapeTowerSequence_ConfirmEnableOnlineDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __CapeTowerSequence_ConfirmEnableOnlineDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

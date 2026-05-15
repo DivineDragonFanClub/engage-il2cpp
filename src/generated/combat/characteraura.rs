@@ -89,6 +89,54 @@ mod __CharacterAura_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
+    pub mod __lookup_get_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CharacterAura as ::unity2::ClassIdentity>::class(),
+                "get_fader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CharacterAura as ::unity2::ClassIdentity>::NAME,
+                    "get_fader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fader(
+        this: CharacterAura,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        let inner: extern "C" fn(
+            CharacterAura,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::root::iron19characterfader::Iron19CharacterFader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fader::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
     pub mod __lookup_get_is_visible {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -698,6 +746,15 @@ pub trait ICharacterAuraMethods: ICharacterAura {
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
             __CharacterAura_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_fader()` overload"]
+    fn get_fader(self) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        unsafe {
+            let __receiver = <CharacterAura as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CharacterAura_unity2_raw::get_fader(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsVisible()` overload"]

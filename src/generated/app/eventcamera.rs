@@ -21,6 +21,8 @@ mod __types {
         pub m_main_camera: crate::unity_engine::camera::Camera,
         #[rename(name = "m_Camera")]
         pub m_camera: crate::unity_engine::camera::Camera,
+        #[rename(name = "m_Animation")]
+        pub m_animation: crate::root::simpleanimation::SimpleAnimation,
     }
 }
 

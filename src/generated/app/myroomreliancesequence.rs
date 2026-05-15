@@ -11,14 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomreliancesequence :: MyRoomRelianceSequence >)]
-    pub struct MyRoomRelianceSequence {
-        #[rename(name = "m_mainContent")]
-        pub m_main_content: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesequence/MyRoomRelianceSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -73,6 +65,14 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomRelianceSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomreliancesequence :: MyRoomRelianceSequence >)]
+    pub struct MyRoomRelianceSequence {
+        #[rename(name = "m_mainContent")]
+        pub m_main_content: crate::unity_engine::gameobject::GameObject,
     }
 }
 

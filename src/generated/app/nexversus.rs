@@ -16,558 +16,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadSequence`1")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_DownloadSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_Result")]
-        pub m_result: T0,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.UploadSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_UploadSequence {
-        #[rename(name = "m_PlayerName")]
-        pub m_player_name: ::unity2::Il2CppString,
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        #[rename(name = "m_DataType")]
-        pub m_data_type: u16,
-        #[rename(name = "m_PNGBytes")]
-        pub m_png_bytes: ::unity2::Array<u8>,
-        #[rename(name = "m_PNGDataId")]
-        pub m_png_data_id: u64,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_EndCallback.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.DownloadMetaDataSequence`1.EndCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_DownloadMetaDataSequence_1_EndCallback<T0: ::unity2::ClassIdentity> {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_UploadType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_UploadType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.UploadType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_UploadType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_UploadType {
-        pub fn none() -> Self {
-            Self { value: -1 }
-        }
-
-        pub fn new() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn overwrite() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadCasualSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.UploadCasualSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_UploadCasualSequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::versusservercasualdata::VersusServerCasualData,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaSequence_1_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_DownloadMetaSequence_1_Label<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for NexVersus_DownloadMetaSequence_1_Label<T0>
-    {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.DownloadMetaSequence`1.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_Label<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1_Label<T0> {
-        pub fn error() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn error_app() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn end() -> Self {
-            Self {
-                value: 2,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_RatingSpotId.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.RatingSpotId")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_RatingSpotId {
-        #[static_field]
-        #[rename(name = "Win")]
-        pub win: i8,
-        #[static_field]
-        #[rename(name = "Lose")]
-        pub lose: i8,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeVersusRankedMetaDataSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_ChangeVersusRankedMetaDataSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeVersusRankedMetaDataSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_ChangeVersusRankedMetaDataSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_ChangeVersusRankedMetaDataSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_Results.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_Results {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_Results {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.Results";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_Results {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_Results {
-        pub fn failed() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn cancelled() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn failed_not_found() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn failed_different_type() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeVersusDataSequence`1")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_ChangeVersusDataSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_Data")]
-        pub m_data: T0,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaSequence_1_DataType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_DownloadMetaSequence_1_DataType<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for NexVersus_DownloadMetaSequence_1_DataType<T0>
-    {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.DownloadMetaSequence`1.DataType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
-        for NexVersus_DownloadMetaSequence_1_DataType<T0>
-    {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1_DataType<T0> {
-        pub fn casual() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn ranked() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_DownloadMetaDataSequence_1_Label<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for NexVersus_DownloadMetaDataSequence_1_Label<T0>
-    {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.DownloadMetaDataSequence`1.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
-        for NexVersus_DownloadMetaDataSequence_1_Label<T0>
-    {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaDataSequence_1_Label<T0> {
-        pub fn error() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn error_app() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn end() -> Self {
-            Self {
-                value: 2,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadReplaySequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_DownloadReplaySequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_DownloadReplaySequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.DownloadReplaySequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_DownloadReplaySequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_DownloadReplaySequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeVersusDataSequence_1_Label<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for NexVersus_ChangeVersusDataSequence_1_Label<T0>
-    {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeVersusDataSequence`1.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
-        for NexVersus_ChangeVersusDataSequence_1_Label<T0>
-    {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1_Label<T0> {
-        pub fn error() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn end() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_SearchCasualSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_SearchCasualSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_SearchCasualSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.SearchCasualSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_SearchCasualSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_SearchCasualSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ReplaySlotMetaResultData.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ReplaySlotMetaResultData")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_ReplaySlotMetaResultData {
-        #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_TargetSlotList_Results.md"))]
     #[repr(C)]
     #[derive(
@@ -624,7 +72,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_TargetType.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -633,17 +81,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity> {
+    pub struct NexVersus_ChangeMetaDataTypeSequence_TargetType {
         pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
     }
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>
-    {
+    impl ::unity2::ClassIdentity for NexVersus_ChangeMetaDataTypeSequence_TargetType {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexVersus.GetMetaDataFromPersistenceSlotSequence`1.Label";
+        const NAME: &'static str = "NexVersus.ChangeMetaDataTypeSequence.TargetType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -652,9 +97,7 @@ mod __types {
         }
     }
 
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
-        for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>
-    {
+    impl ::unity2::IlType for NexVersus_ChangeMetaDataTypeSequence_TargetType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -663,41 +106,39 @@ mod __types {
         }
     }
 
-    impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0> {
-        pub fn error() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
+    impl NexVersus_ChangeMetaDataTypeSequence_TargetType {
+        pub fn principal_slot() -> Self {
+            Self { value: 0 }
         }
 
-        pub fn end() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
+        pub fn data_id() -> Self {
+            Self { value: 1 }
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeReplaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeReplaySequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_ChangeReplaySequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::versusserverreplaydata::VersusServerReplayData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_EndCallback.md"))]
     #[::unity2::class(
         namespace = "App",
-        name = "NexVersus.NexSequenceBase.ConfirmRetryDialog"
+        name = "NexVersus.DownloadMetaDataSequence`1.EndCallback"
     )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
     #[parent(crate::system::object::Object)]
-    pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog {}
+    pub struct NexVersus_DownloadMetaDataSequence_1_EndCallback<T0: ::unity2::ClassIdentity> {}
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_AddRatingSequence_Label.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_RatingSpotId.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.RatingSpotId")]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_RatingSpotId {
+        #[static_field]
+        #[rename(name = "Win")]
+        pub win: i8,
+        #[static_field]
+        #[rename(name = "Lose")]
+        pub lose: i8,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_SearchSequence_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -706,14 +147,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexVersus_AddRatingSequence_Label {
+    pub struct NexVersus_SearchSequence_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexVersus_AddRatingSequence_Label {
+    impl ::unity2::ClassIdentity for NexVersus_SearchSequence_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexVersus.AddRatingSequence.Label";
+        const NAME: &'static str = "NexVersus.SearchSequence.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -722,7 +163,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexVersus_AddRatingSequence_Label {
+    impl ::unity2::IlType for NexVersus_SearchSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -731,75 +172,13 @@ mod __types {
         }
     }
 
-    impl NexVersus_AddRatingSequence_Label {
+    impl NexVersus_SearchSequence_Label {
         pub fn error() -> Self {
             Self { value: 0 }
         }
 
         pub fn end() -> Self {
             Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_AddRatingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.AddRatingSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_AddRatingSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_MapResult")]
-        pub m_map_result: crate::app::versus::Versus_MapResult,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadReplaySequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_UploadReplaySequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_UploadReplaySequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.UploadReplaySequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_UploadReplaySequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_UploadReplaySequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn post() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn invalid() -> Self {
-            Self { value: 3 }
         }
     }
 
@@ -860,216 +239,16 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadReplaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadReplaySequence")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeVersusDataSequence`1")]
     #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_DownloadReplaySequence {
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_ChangeVersusDataSequence_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_DataId")]
         pub m_data_id: u64,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::versusserverreplaydata::VersusServerReplayData,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_SearchSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_SearchSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_SearchSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.SearchSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_SearchSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_SearchSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeMetaDataTypeSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_ChangeMetaDataTypeSequence {
-        #[rename(name = "m_TargetType")]
-        pub m_target_type: crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence_TargetType,
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_TargetPrincipalId")]
-        pub m_target_principal_id: u64,
-        #[rename(name = "m_TargetSlotId")]
-        pub m_target_slot_id: u16,
-        #[rename(name = "m_DataType")]
-        pub m_data_type: u16,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplaySequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeReplaySequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_ChangeReplaySequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeReplaySequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_ChangeReplaySequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_ChangeReplaySequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_TargetType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeMetaDataTypeSequence_TargetType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_ChangeMetaDataTypeSequence_TargetType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeMetaDataTypeSequence.TargetType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_ChangeMetaDataTypeSequence_TargetType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_ChangeMetaDataTypeSequence_TargetType {
-        pub fn principal_slot() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn data_id() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadReportMetaSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.UploadReportMetaSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_UploadReportMetaSequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::nexversus::NexVersus_UploadType,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeReplayMetaSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeReplayMetaSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_ChangeReplayMetaSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
+        #[rename(name = "m_Data")]
+        pub m_data: T0,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadSequence_1_Label.md"))]
@@ -1132,7 +311,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadSequence_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_Results.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1141,14 +320,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexVersus_UploadSequence_Label {
+    pub struct NexVersus_Results {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexVersus_UploadSequence_Label {
+    impl ::unity2::ClassIdentity for NexVersus_Results {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexVersus.UploadSequence.Label";
+        const NAME: &'static str = "NexVersus.Results";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1157,7 +336,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexVersus_UploadSequence_Label {
+    impl ::unity2::IlType for NexVersus_Results {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1166,17 +345,454 @@ mod __types {
         }
     }
 
-    impl NexVersus_UploadSequence_Label {
-        pub fn post() -> Self {
+    impl NexVersus_Results {
+        pub fn failed() -> Self {
             Self { value: 0 }
         }
 
-        pub fn error() -> Self {
+        pub fn succeeded() -> Self {
             Self { value: 1 }
         }
 
-        pub fn end() -> Self {
+        pub fn cancelled() -> Self {
             Self { value: 2 }
+        }
+
+        pub fn failed_not_found() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn failed_different_type() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_AddRatingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.AddRatingSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_AddRatingSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_MapResult")]
+        pub m_map_result: crate::app::versus::Versus_MapResult,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadCasualSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.UploadCasualSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_UploadCasualSequence {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::versusservercasualdata::VersusServerCasualData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_RankedMetaDataEndCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.RankedMetaDataEndCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NexVersus_RankedMetaDataEndCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeReplayMetaSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_ChangeReplayMetaSequence {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexversus::NexVersus_ChangeReplayMetaSequence_Mode,
+        #[rename(name = "m_TargetPrincipalId")]
+        pub m_target_principal_id: u64,
+        #[rename(name = "m_TargetSlotId")]
+        pub m_target_slot_id: u16,
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        #[rename(name = "m_IsSetMetaParam")]
+        pub m_is_set_meta_param: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ResultInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ResultInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_ResultInfo {
+        #[rename(name = "m_IsValid")]
+        pub m_is_valid: bool,
+        #[rename(name = "m_DataType")]
+        pub m_data_type: u16,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaSequence_1.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadMetaSequence`1")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_DownloadMetaSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_DataType")]
+        pub m_data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ReplaySlotMetaResultData.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ReplaySlotMetaResultData")]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_ReplaySlotMetaResultData {
+        #[rename(name = "m_List")]
+        pub m_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.NexSequenceBase.ConfirmRetryDialog"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeReplayMetaSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeReplayMetaSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ChangeReplayMetaSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetReplayMetaDataFromPersistenceSlotSequence.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.GetReplayMetaDataFromPersistenceSlotSequence"
+    )]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
+        #[static_field]
+        #[rename(name = "AllSlot")]
+        pub all_slot: u16,
+        #[rename(name = "m_PrincipalId")]
+        pub m_principal_id: u64,
+        #[rename(name = "m_SlotId")]
+        pub m_slot_id: u16,
+        #[rename(name = "m_PersistenceDataId")]
+        pub m_persistence_data_id: u64,
+        #[rename(name = "m_ResultData")]
+        pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_SearchCasualSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.SearchCasualSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_SearchCasualSequence {
+        #[rename(name = "m_Results")]
+        pub m_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_RatingData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NexVersus_RatingData {
+        pub total_value: i64,
+        pub count: u32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_RatingData {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.RatingData";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_RatingData {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadSequence_1.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadSequence`1")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_DownloadSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_Result")]
+        pub m_result: T0,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.GetRankedMetaDataFromPersistenceSlotSequence"
+    )]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ReportSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ReportSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_ReportSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_ScreenShotId")]
+        pub m_screen_shot_id: u64,
+        #[rename(name = "m_Reason")]
+        pub m_reason: ::unity2::Il2CppString,
+        #[rename(name = "m_Language")]
+        pub m_language: ::unity2::Il2CppString,
+        #[rename(name = "m_IsNotSendSucceed")]
+        pub m_is_not_send_succeed: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplaySequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeReplaySequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ChangeReplaySequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeReplaySequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ChangeReplaySequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ChangeReplaySequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeUpdatedTimeSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ChangeUpdatedTimeSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeUpdatedTimeSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ChangeUpdatedTimeSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ChangeUpdatedTimeSequence_Label {
+        pub fn end() -> Self {
+            Self { value: 0 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_CheckAccessibleSlotSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_CheckAccessibleSlotSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.CheckAccessibleSlotSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_CheckAccessibleSlotSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_CheckAccessibleSlotSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_SearchSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.SearchSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_SearchSequence {
+        #[rename(name = "m_Results")]
+        pub m_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        >,
+        #[rename(name = "m_DataType")]
+        pub m_data_type: u16,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.CheckAccessibleSlotSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_CheckAccessibleSlotSequence {
+        #[rename(name = "m_TargetInfoList")]
+        pub m_target_info_list: crate::app::nexversus::NexVersus_TargetSlotList,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode,
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback: crate::app::nexversus::NexVersus_EndCallback,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+        for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>
+    {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.GetMetaDataFromPersistenceSlotSequence`1.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
+        for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>
+    {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0> {
+        pub fn error() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn end() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
         }
     }
 
@@ -1224,323 +840,23 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.GetRankedMetaDataFromPersistenceSlotSequence"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadReplaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.UploadReplaySequence")]
     #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_RankedMetaDataEndCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.RankedMetaDataEndCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NexVersus_RankedMetaDataEndCallback {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_CheckAccessibleSlotSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_CheckAccessibleSlotSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.CheckAccessibleSlotSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_CheckAccessibleSlotSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_CheckAccessibleSlotSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.NexSequenceBase")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexVersus_NexSequenceBase {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_SearchSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.SearchSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_SearchSequence {
-        #[rename(name = "m_Results")]
-        pub m_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        #[rename(name = "m_DataType")]
-        pub m_data_type: u16,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.CheckAccessibleSlotSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_CheckAccessibleSlotSequence {
-        #[rename(name = "m_TargetInfoList")]
-        pub m_target_info_list: crate::app::nexversus::NexVersus_TargetSlotList,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback: crate::app::nexversus::NexVersus_EndCallback,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_TargetSlotList.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.TargetSlotList")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_TargetSlotList {
-        #[rename(name = "m_Dict")]
-        pub m_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            u64,
-            crate::app::nexversus::NexVersus_TargetSlotList_Results,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.GetMetaDataListFromPersistenceSlotSequence`1"
-    )]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_PrincipalIdList")]
-        pub m_principal_id_list: crate::system::collections::generic::list_1::List_1<u64>,
-        #[rename(name = "m_SlotId")]
-        pub m_slot_id: u16,
-        #[rename(name = "m_ResultList")]
-        pub m_result_list: crate::system::collections::generic::list_1::List_1<T0>,
-        #[rename(name = "m_ResultRatingList")]
-        pub m_result_rating_list: crate::system::collections::generic::list_1::List_1<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::nexversus::NexVersus_RatingData,
-            >,
-        >,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadCasualSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_UploadCasualSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_UploadCasualSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.UploadCasualSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_UploadCasualSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_UploadCasualSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ResultInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ResultInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_ResultInfo {
-        #[rename(name = "m_IsValid")]
-        pub m_is_valid: bool,
-        #[rename(name = "m_DataType")]
-        pub m_data_type: u16,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_EndCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.EndCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NexVersus_EndCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadMetaDataSequence`1")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_DownloadMetaDataSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_PrincipalID")]
-        pub m_principal_id: u64,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback:
-            crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>,
-        #[rename(name = "m_ResultMeta")]
-        pub m_result_meta: T0,
-        #[rename(name = "m_Info")]
-        pub m_info: crate::app::nexversus::NexVersus_ResultInfo,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.NexSequenceBase.ConfirmRetryDialog.YesMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem {
-        #[rename(name = "m_Label")]
-        pub m_label: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ReportSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ReportSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_ReportSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_ScreenShotId")]
-        pub m_screen_shot_id: u64,
-        #[rename(name = "m_Reason")]
-        pub m_reason: ::unity2::Il2CppString,
-        #[rename(name = "m_Language")]
-        pub m_language: ::unity2::Il2CppString,
-        #[rename(name = "m_IsNotSendSucceed")]
-        pub m_is_not_send_succeed: bool,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadReportMetaSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_UploadReportMetaSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_UploadReportMetaSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.UploadReportMetaSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_UploadReportMetaSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_UploadReportMetaSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn error_app() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_SearchCasualSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.SearchCasualSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_SearchCasualSequence {
-        #[rename(name = "m_Results")]
-        pub m_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeReplayMetaSequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_ChangeReplayMetaSequence {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexversus::NexVersus_ChangeReplayMetaSequence_Mode,
-        #[rename(name = "m_TargetPrincipalId")]
-        pub m_target_principal_id: u64,
-        #[rename(name = "m_TargetSlotId")]
-        pub m_target_slot_id: u16,
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
+    pub struct NexVersus_UploadReplaySequence {
         #[rename(name = "m_MetaData")]
         pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[rename(name = "m_IsSetMetaParam")]
-        pub m_is_set_meta_param: bool,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::versusserverreplaydata::VersusServerReplayData,
+        #[rename(name = "m_Slot")]
+        pub m_slot: u16,
+        #[rename(name = "m_ExistsMetaData")]
+        pub m_exists_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        #[rename(name = "m_PrincipalId")]
+        pub m_principal_id: u64,
+        #[rename(name = "m_ResultData")]
+        pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaSequence_1.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadMetaSequence`1")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_DownloadMetaSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_DataType")]
-        pub m_data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_CasualMetaDataEndCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.CasualMetaDataEndCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NexVersus_CasualMetaDataEndCallback {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_Label.md"))]
     #[repr(C)]
@@ -1577,219 +893,6 @@ mod __types {
     }
 
     impl NexVersus_ChangeMetaDataTypeSequence_Label {
-        pub fn error() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexversus :: NexVersus >)]
-    pub struct NexVersus {
-        #[static_field]
-        #[rename(name = "Period")]
-        pub period: u16,
-        #[static_field]
-        #[rename(name = "MaxSearchCount")]
-        pub max_search_count: u32,
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-        #[rename(name = "m_LastResult")]
-        pub m_last_result: crate::app::nexversus::NexVersus_Results,
-        #[rename(name = "m_LastResultMessage")]
-        pub m_last_result_message: ::unity2::Il2CppString,
-        #[rename(name = "m_LastUploadedDataId")]
-        pub m_last_uploaded_data_id: u64,
-        #[rename(name = "m_LastPersistenceMetaData")]
-        pub m_last_persistence_meta_data: crate::app::versusservermetadata::VersusServerMetaData,
-        #[rename(name = "m_LastPersistenceRatingList")]
-        pub m_last_persistence_rating_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::nexversus::NexVersus_RatingData,
-        >,
-        #[rename(name = "m_LastPersistenceDataType")]
-        pub m_last_persistence_data_type: u16,
-        #[rename(name = "m_LastPersistenceReplayMetaData")]
-        pub m_last_persistence_replay_meta_data:
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[rename(name = "m_LastPersistenceReportMetaData")]
-        pub m_last_persistence_report_meta_data:
-            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadReplaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.UploadReplaySequence")]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_UploadReplaySequence {
-        #[rename(name = "m_MetaData")]
-        pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        #[rename(name = "m_Slot")]
-        pub m_slot: u16,
-        #[rename(name = "m_ExistsMetaData")]
-        pub m_exists_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        #[rename(name = "m_PrincipalId")]
-        pub m_principal_id: u64,
-        #[rename(name = "m_ResultData")]
-        pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_ChangeReplayMetaSequence_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.ChangeReplayMetaSequence.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_ChangeReplayMetaSequence_Mode {
-        pub fn principal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn data_id() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetReplayMetaDataFromPersistenceSlotSequence.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.GetReplayMetaDataFromPersistenceSlotSequence"
-    )]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    pub struct NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
-        #[static_field]
-        #[rename(name = "AllSlot")]
-        pub all_slot: u16,
-        #[rename(name = "m_PrincipalId")]
-        pub m_principal_id: u64,
-        #[rename(name = "m_SlotId")]
-        pub m_slot_id: u16,
-        #[rename(name = "m_PersistenceDataId")]
-        pub m_persistence_data_id: u64,
-        #[rename(name = "m_ResultData")]
-        pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeUpdatedTimeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexVersus_ChangeUpdatedTimeSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexVersus.GetMetaDataFromPersistenceSlotSequence`1"
-    )]
-    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
-    #[parent(crate::app::procinst::ProcInst)]
-    #[parent(crate::system::object::Object)]
-    pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_SlotId")]
-        pub m_slot_id: u16,
-        #[rename(name = "m_PrincipalId")]
-        pub m_principal_id: u64,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_RatingData.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct NexVersus_RatingData {
-        pub total_value: i64,
-        pub count: u32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_RatingData {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.RatingData";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_RatingData {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexVersus.GetRankedMetaDataFromPersistenceSlotSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
         pub fn error() -> Self {
             Self { value: 0 }
         }
@@ -1843,7 +946,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ReportSequence_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_SearchCasualSequence_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1852,14 +955,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexVersus_ReportSequence_Label {
+    pub struct NexVersus_SearchCasualSequence_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexVersus_ReportSequence_Label {
+    impl ::unity2::ClassIdentity for NexVersus_SearchCasualSequence_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexVersus.ReportSequence.Label";
+        const NAME: &'static str = "NexVersus.SearchCasualSequence.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1868,7 +971,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexVersus_ReportSequence_Label {
+    impl ::unity2::IlType for NexVersus_SearchCasualSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1877,22 +980,110 @@ mod __types {
         }
     }
 
-    impl NexVersus_ReportSequence_Label {
-        pub fn login() -> Self {
+    impl NexVersus_SearchCasualSequence_Label {
+        pub fn error() -> Self {
             Self { value: 0 }
         }
 
-        pub fn report() -> Self {
+        pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeReplayMetaSequence_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeReplayMetaSequence.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ChangeReplayMetaSequence_Mode {
+        pub fn principal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn data_id() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadReplaySequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_DownloadReplaySequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_DownloadReplaySequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.DownloadReplaySequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_DownloadReplaySequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_DownloadReplaySequence_Label {
         pub fn error() -> Self {
-            Self { value: 2 }
+            Self { value: 0 }
         }
 
         pub fn end() -> Self {
-            Self { value: 3 }
+            Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeUpdatedTimeSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexVersus_ChangeUpdatedTimeSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Mode.md"))]
@@ -1965,7 +1156,22 @@ mod __types {
         pub m_player_name: ::unity2::Il2CppString,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence_Label.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadReportMetaSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.UploadReportMetaSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_UploadReportMetaSequence {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::nexversus::NexVersus_UploadType,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_CasualMetaDataEndCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.CasualMetaDataEndCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NexVersus_CasualMetaDataEndCallback {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadSequence_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1974,14 +1180,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexVersus_ChangeUpdatedTimeSequence_Label {
+    pub struct NexVersus_UploadSequence_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexVersus_ChangeUpdatedTimeSequence_Label {
+    impl ::unity2::ClassIdentity for NexVersus_UploadSequence_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexVersus.ChangeUpdatedTimeSequence.Label";
+        const NAME: &'static str = "NexVersus.UploadSequence.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1990,7 +1196,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexVersus_ChangeUpdatedTimeSequence_Label {
+    impl ::unity2::IlType for NexVersus_UploadSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1999,449 +1205,809 @@ mod __types {
         }
     }
 
-    impl NexVersus_ChangeUpdatedTimeSequence_Label {
-        pub fn end() -> Self {
+    impl NexVersus_UploadSequence_Label {
+        pub fn post() -> Self {
             Self { value: 0 }
+        }
+
+        pub fn error() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.GetMetaDataListFromPersistenceSlotSequence`1"
+    )]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_PrincipalIdList")]
+        pub m_principal_id_list: crate::system::collections::generic::list_1::List_1<u64>,
+        #[rename(name = "m_SlotId")]
+        pub m_slot_id: u16,
+        #[rename(name = "m_ResultList")]
+        pub m_result_list: crate::system::collections::generic::list_1::List_1<T0>,
+        #[rename(name = "m_ResultRatingList")]
+        pub m_result_rating_list: crate::system::collections::generic::list_1::List_1<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::nexversus::NexVersus_RatingData,
+            >,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeReplaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeReplaySequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_ChangeReplaySequence {
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::versusserverreplaydata::VersusServerReplayData,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaSequence_1_DataType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_DownloadMetaSequence_1_DataType<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+        for NexVersus_DownloadMetaSequence_1_DataType<T0>
+    {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.DownloadMetaSequence`1.DataType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
+        for NexVersus_DownloadMetaSequence_1_DataType<T0>
+    {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1_DataType<T0> {
+        pub fn casual() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn ranked() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadMetaDataSequence`1")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_DownloadMetaDataSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_PrincipalID")]
+        pub m_principal_id: u64,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>,
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback:
+            crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>,
+        #[rename(name = "m_ResultMeta")]
+        pub m_result_meta: T0,
+        #[rename(name = "m_Info")]
+        pub m_info: crate::app::nexversus::NexVersus_ResultInfo,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_DownloadMetaDataSequence_1_Label<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+        for NexVersus_DownloadMetaDataSequence_1_Label<T0>
+    {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.DownloadMetaDataSequence`1.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
+        for NexVersus_DownloadMetaDataSequence_1_Label<T0>
+    {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaDataSequence_1_Label<T0> {
+        pub fn error() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn error_app() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn end() -> Self {
+            Self {
+                value: 2,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_AddRatingSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_AddRatingSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_AddRatingSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.AddRatingSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_AddRatingSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_AddRatingSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadReplaySequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_UploadReplaySequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_UploadReplaySequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.UploadReplaySequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_UploadReplaySequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_UploadReplaySequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn post() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn invalid() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_UploadType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_UploadType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.UploadType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_UploadType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_UploadType {
+        pub fn none() -> Self {
+            Self { value: -1 }
+        }
+
+        pub fn new() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn overwrite() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.NexSequenceBase.ConfirmRetryDialog.YesMenuItem"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem {
+        #[rename(name = "m_Label")]
+        pub m_label: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadReportMetaSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_UploadReportMetaSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_UploadReportMetaSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.UploadReportMetaSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_UploadReportMetaSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_UploadReportMetaSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn error_app() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ReportSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ReportSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ReportSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ReportSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ReportSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ReportSequence_Label {
+        pub fn login() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn report() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn error() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_UploadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.UploadSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_UploadSequence {
+        #[rename(name = "m_PlayerName")]
+        pub m_player_name: ::unity2::Il2CppString,
+        #[rename(name = "m_MetaData")]
+        pub m_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::versusserverrankeddata::VersusServerRankedData,
+        #[rename(name = "m_DataType")]
+        pub m_data_type: u16,
+        #[rename(name = "m_PNGBytes")]
+        pub m_png_bytes: ::unity2::Array<u8>,
+        #[rename(name = "m_PNGDataId")]
+        pub m_png_data_id: u64,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_NexSequenceBase.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.NexSequenceBase")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexVersus_NexSequenceBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexVersus.GetMetaDataFromPersistenceSlotSequence`1"
+    )]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    #[parent(crate::app::procinst::ProcInst)]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_SlotId")]
+        pub m_slot_id: u16,
+        #[rename(name = "m_PrincipalId")]
+        pub m_principal_id: u64,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeVersusRankedMetaDataSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_ChangeVersusRankedMetaDataSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeVersusRankedMetaDataSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_ChangeVersusRankedMetaDataSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_ChangeVersusRankedMetaDataSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_UploadCasualSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_UploadCasualSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_UploadCasualSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.UploadCasualSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_UploadCasualSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_UploadCasualSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexversus :: NexVersus >)]
+    pub struct NexVersus {
+        #[static_field]
+        #[rename(name = "Period")]
+        pub period: u16,
+        #[static_field]
+        #[rename(name = "MaxSearchCount")]
+        pub max_search_count: u32,
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+        #[rename(name = "m_LastResult")]
+        pub m_last_result: crate::app::nexversus::NexVersus_Results,
+        #[rename(name = "m_LastResultMessage")]
+        pub m_last_result_message: ::unity2::Il2CppString,
+        #[rename(name = "m_LastUploadedDataId")]
+        pub m_last_uploaded_data_id: u64,
+        #[rename(name = "m_LastPersistenceMetaData")]
+        pub m_last_persistence_meta_data: crate::app::versusservermetadata::VersusServerMetaData,
+        #[rename(name = "m_LastPersistenceRatingList")]
+        pub m_last_persistence_rating_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::nexversus::NexVersus_RatingData,
+        >,
+        #[rename(name = "m_LastPersistenceDataType")]
+        pub m_last_persistence_data_type: u16,
+        #[rename(name = "m_LastPersistenceReplayMetaData")]
+        pub m_last_persistence_replay_meta_data:
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        #[rename(name = "m_LastPersistenceReportMetaData")]
+        pub m_last_persistence_report_meta_data:
+            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_ChangeVersusDataSequence_1_Label<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+        for NexVersus_ChangeVersusDataSequence_1_Label<T0>
+    {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.ChangeVersusDataSequence`1.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType
+        for NexVersus_ChangeVersusDataSequence_1_Label<T0>
+    {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1_Label<T0> {
+        pub fn error() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn end() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_DownloadMetaSequence_1_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_DownloadMetaSequence_1_Label<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+        for NexVersus_DownloadMetaSequence_1_Label<T0>
+    {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.DownloadMetaSequence`1.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_Label<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1_Label<T0> {
+        pub fn error() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn error_app() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn end() -> Self {
+            Self {
+                value: 2,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_EndCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.EndCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NexVersus_EndCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_DownloadReplaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.DownloadReplaySequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_DownloadReplaySequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::versusserverreplaydata::VersusServerReplayData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.ChangeMetaDataTypeSequence")]
+    #[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]
+    pub struct NexVersus_ChangeMetaDataTypeSequence {
+        #[rename(name = "m_TargetType")]
+        pub m_target_type: crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence_TargetType,
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_TargetPrincipalId")]
+        pub m_target_principal_id: u64,
+        #[rename(name = "m_TargetSlotId")]
+        pub m_target_slot_id: u16,
+        #[rename(name = "m_DataType")]
+        pub m_data_type: u16,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexversus/NexVersus_TargetSlotList.md"))]
+    #[::unity2::class(namespace = "App", name = "NexVersus.TargetSlotList")]
+    #[parent(crate::system::object::Object)]
+    pub struct NexVersus_TargetSlotList {
+        #[rename(name = "m_Dict")]
+        pub m_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            u64,
+            crate::app::nexversus::NexVersus_TargetSlotList_Results,
+        >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexVersus.GetRankedMetaDataFromPersistenceSlotSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 1 }
         }
     }
 }
 
 #[cfg(feature = "app-nexversus-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-nexversus")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadSequence_1<T0> {
-    #[doc = "`.ctor(u64, T0)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, data_id: u64, result: T0) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`GetData()` overload"]
-    #[method(name = "GetData", args = 0)]
-    pub fn get_data(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, data_id: u64, result: T0) -> ();
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadSequence_1<T0> {
-    #[doc = "`.ctor(u64, T0)` — overload selector"]
-    pub fn new(data_id: u64, result: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_DownloadSequence_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_DownloadSequence_1Methods<T0>>::ctor(this, data_id, result);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_UploadSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankeddata :: VersusServerRankedData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_UploadSequence,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        data_type: u16,
-        png_bytes: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadSequence,
-            ::unity2::Il2CppString,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            crate::app::versusserverrankeddata::VersusServerRankedData,
-            u16,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            player_name,
-            meta_data,
-            data,
-            data_type,
-            png_bytes,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_png {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "UploadPNG",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "UploadPNG",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_png(
-        this: NexVersus_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upload_png::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "Post",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Post",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post(
-        this: NexVersus_UploadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankeddata :: VersusServerRankedData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        data_type: u16,
-        png_bytes: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            crate::app::versusserverrankeddata::VersusServerRankedData,
-            u16,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            player_name,
-            meta_data,
-            data,
-            data_type,
-            png_bytes,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData>,
-        data_type: impl ::core::convert::Into<u16>,
-        png_bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> () {
-        unsafe {
-            __NexVersus_UploadSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(player_name),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(data_type),
-                ::core::convert::Into::into(png_bytes),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_UploadSequenceMethods: INexVersus_UploadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]
-    fn ctor(
-        self,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData>,
-        data_type: impl ::core::convert::Into<u16>,
-        png_bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(player_name),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(data_type),
-                ::core::convert::Into::into(png_bytes),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadPNG()` overload"]
-    fn upload_png(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadSequence_unity2_raw::upload_png(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Post()` overload"]
-    fn post(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadSequence_unity2_raw::post(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_UploadSequence> INexVersus_UploadSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` — overload selector"]
-    pub fn new(
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        data_type: u16,
-        png_bytes: ::unity2::Array<u8>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_UploadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_UploadSequenceMethods>::ctor(
-            this,
-            player_name,
-            meta_data,
-            data,
-            data_type,
-            png_bytes,
-        );
-        this
-    }
-}
 
 #[cfg(feature = "app-nexversus")]
 #[::unity2::methods]
@@ -2474,6 +2040,402 @@ impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaDataSequence_1_EndCallba
         <Self as INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods<T0>>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1<T0> {
+    #[doc = "`.ctor(u64, T0)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, data_id: u64, data: T0) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`ChangeData()` overload"]
+    #[method(name = "ChangeData", args = 0)]
+    pub fn change_data(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, data_id: u64, data: T0) -> ();
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1<T0> {
+    #[doc = "`.ctor(u64, T0)` — overload selector"]
+    pub fn new(data_id: u64, data: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_ChangeVersusDataSequence_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_ChangeVersusDataSequence_1Methods<T0>>::ctor(this, data_id, data);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_AddRatingSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_AddRatingSequence,
+        data_id: u64,
+        map_result: crate::app::versus::Versus_MapResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_AddRatingSequence,
+            u64,
+            crate::app::versus::Versus_MapResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, map_result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexVersus_AddRatingSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_AddRatingSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_slot_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
+                "GetSlotId",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetSlotId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_slot_id(
+        this: NexVersus_AddRatingSequence,
+        result: crate::app::versus::Versus_MapResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i8 {
+        let inner: extern "C" fn(
+            NexVersus_AddRatingSequence,
+            crate::app::versus::Versus_MapResult,
+            ::unity2::OptionalMethod,
+        ) -> i8 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_slot_id::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
+                "UpdateRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
+                    "UpdateRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update_rate(
+        this: NexVersus_AddRatingSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_AddRatingSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update_rate::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        map_result: crate::app::versus::Versus_MapResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::versus::Versus_MapResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, data_id, map_result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_AddRatingSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versus::Versus_MapResult)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        map_result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
+    ) -> () {
+        unsafe {
+            __NexVersus_AddRatingSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(map_result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_AddRatingSequenceMethods: INexVersus_AddRatingSequence {
+    #[doc = "`.ctor(u64, crate::app::versus::Versus_MapResult)` overload"]
+    fn ctor(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        map_result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_AddRatingSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(map_result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_AddRatingSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSlotId(crate::app::versus::Versus_MapResult)` overload"]
+    fn get_slot_id(
+        self,
+        result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
+    ) -> i8 {
+        unsafe {
+            let __receiver =
+                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_AddRatingSequence_unity2_raw::get_slot_id(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateRate()` overload"]
+    fn update_rate(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_AddRatingSequence_unity2_raw::update_rate(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_AddRatingSequence> INexVersus_AddRatingSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_AddRatingSequence {
+    #[doc = "`.ctor(u64, crate::app::versus::Versus_MapResult)` — overload selector"]
+    pub fn new(data_id: u64, map_result: crate::app::versus::Versus_MapResult) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_AddRatingSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_AddRatingSequenceMethods>::ctor(this, data_id, map_result);
         this
     }
 }
@@ -2904,37 +2866,1159 @@ impl NexVersus_UploadCasualSequence {
 }
 
 #[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_RankedMetaDataEndCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_RankedMetaDataEndCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_RankedMetaDataEndCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ResultInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: NexVersus_RankedMetaDataEndCallback,
+        result: crate::app::nexversus::NexVersus_Results,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        info: crate::app::nexversus::NexVersus_ResultInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_RankedMetaDataEndCallback,
+            crate::app::nexversus::NexVersus_Results,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+            crate::app::nexversus::NexVersus_ResultInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, meta_data, info, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_RankedMetaDataEndCallbackMethods:
+    INexVersus_RankedMetaDataEndCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_RankedMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_RankedMetaDataEndCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        >,
+        info: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_RankedMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_RankedMetaDataEndCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_RankedMetaDataEndCallback> INexVersus_RankedMetaDataEndCallbackMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_RankedMetaDataEndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_RankedMetaDataEndCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_RankedMetaDataEndCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_ChangeReplayMetaSequence,
+        data_id: u64,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            u64,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            data_id,
+            meta_data,
+            is_set_meta_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: NexVersus_ChangeReplayMetaSequence,
+        principal_id: u64,
+        slot_id: u16,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            u64,
+            u16,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            principal_id,
+            slot_id,
+            meta_data,
+            is_set_meta_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexVersus_ChangeReplayMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_postlogin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_meta_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "SetMetaParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetMetaParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_meta_param(
+        this: NexVersus_ChangeReplayMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_meta_param::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_meta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "ChangeMeta",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeMeta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_meta(
+        this: NexVersus_ChangeReplayMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_meta::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_meta_binary {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "SetMetaBinary",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetMetaBinary",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_meta_binary(
+        this: NexVersus_ChangeReplayMetaSequence,
+        param_meta_bytes: crate::system::collections::generic::list_1::List_1<u8>,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            crate::system::collections::generic::list_1::List_1<u8>,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_meta_binary::get_offset() as isize),
+        );
+        inner(this, param_meta_bytes, meta_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+        is_show_dialog: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            data_id,
+            meta_data,
+            is_set_meta_param,
+            is_show_dialog,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        principal_id: u64,
+        slot_id: u16,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+        is_show_dialog: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            u16,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(
+            super_,
+            principal_id,
+            slot_id,
+            meta_data,
+            is_set_meta_param,
+            is_show_dialog,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: NexVersus_ChangeReplayMetaSequence,
+        is_show_dialog: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            NexVersus_ChangeReplayMetaSequence,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_desc::get_offset() as isize),
+        );
+        inner(this, is_show_dialog, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ChangeReplayMetaSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        is_set_meta_param: impl ::core::convert::Into<bool>,
+        is_show_dialog: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_set_meta_param),
+                ::core::convert::Into::into(is_show_dialog),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        principal_id: impl ::core::convert::Into<u64>,
+        slot_id: impl ::core::convert::Into<u16>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        is_set_meta_param: impl ::core::convert::Into<bool>,
+        is_show_dialog: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_bind_2(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(slot_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_set_meta_param),
+                ::core::convert::Into::into(is_show_dialog),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_ChangeReplayMetaSequenceMethods: INexVersus_ChangeReplayMetaSequence {
+    #[doc = "`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]
+    fn ctor(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        is_set_meta_param: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_set_meta_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]
+    fn ctor_2(
+        self,
+        principal_id: impl ::core::convert::Into<u64>,
+        slot_id: impl ::core::convert::Into<u16>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        is_set_meta_param: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(slot_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(is_set_meta_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMetaParam()` overload"]
+    fn set_meta_param(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::set_meta_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeMeta()` overload"]
+    fn change_meta(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::change_meta(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
+    fn set_meta_binary(
+        self,
+        param_meta_bytes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u8>,
+        >,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::set_meta_binary(
+                __receiver,
+                ::core::convert::Into::into(param_meta_bytes),
+                ::core::convert::Into::into(meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDesc(bool)` overload"]
+    fn create_desc(
+        self,
+        is_show_dialog: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_desc(
+                __receiver,
+                ::core::convert::Into::into(is_show_dialog),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_ChangeReplayMetaSequence> INexVersus_ChangeReplayMetaSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ChangeReplayMetaSequence {
+    #[doc = "`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]
+    pub fn new(
+        data_id: u64,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_ChangeReplayMetaSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_ChangeReplayMetaSequenceMethods>::ctor(
+            this,
+            data_id,
+            meta_data,
+            is_set_meta_param,
+        );
+        this
+    }
+
+    #[doc = "`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]
+    pub fn new_2(
+        principal_id: u64,
+        slot_id: u16,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        is_set_meta_param: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_ChangeReplayMetaSequence),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as INexVersus_ChangeReplayMetaSequenceMethods>::ctor_2(
+            this,
+            principal_id,
+            slot_id,
+            meta_data,
+            is_set_meta_param,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_ResultInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_ResultInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        this: NexVersus_ResultInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
+                "get_DataType",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_DataType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_type(
+        this: NexVersus_ResultInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u16 {
+        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data_type::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_ResultInfoMethods: INexVersus_ResultInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexVersus_ResultInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsValid()` overload"]
+    fn is_valid(self) -> bool {
+        unsafe {
+            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexVersus_ResultInfo_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataType()` overload"]
+    fn get_data_type(self) -> u16 {
+        unsafe {
+            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexVersus_ResultInfo_unity2_raw::get_data_type(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_ResultInfo> INexVersus_ResultInfoMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ResultInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_ResultInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_ResultInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1<T0> {
-    #[doc = "`.ctor(u64, T0)` overload"]
+impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1<T0> {
+    #[doc = "`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, data_id: u64, data: T0) -> ();
+    pub fn ctor(
+        self,
+        data_id: u64,
+        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
+    ) -> ();
 
     #[doc = "`Postlogin()` overload"]
     #[method(name = "Postlogin", args = 0)]
     pub fn postlogin(self) -> ();
 
-    #[doc = "`ChangeData()` overload"]
-    #[method(name = "ChangeData", args = 0)]
-    pub fn change_data(self) -> ();
+    #[doc = "`GetData()` overload"]
+    #[method(name = "GetData", args = 0)]
+    pub fn get_data(self) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]
+    #[doc = "`IsValidDataType(u16)` overload"]
+    #[method(name = "IsValidDataType", args = 1)]
+    pub fn is_valid_data_type(self, data_type: u16) -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]
     #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, data_id: u64, data: T0) -> ();
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
+    ) -> ();
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<T0: ::unity2::ClassIdentity> NexVersus_ChangeVersusDataSequence_1<T0> {
-    #[doc = "`.ctor(u64, T0)` — overload selector"]
-    pub fn new(data_id: u64, data: T0) -> Self {
+impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1<T0> {
+    #[doc = "`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` — overload selector"]
+    pub fn new(
+        data_id: u64,
+        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeVersusDataSequence_1),
+                ::core::stringify!(NexVersus_DownloadMetaSequence_1),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_ChangeVersusDataSequence_1Methods<T0>>::ctor(this, data_id, data);
+        <Self as INexVersus_DownloadMetaSequence_1Methods<T0>>::ctor(this, data_id, data_type);
         this
     }
 }
@@ -3466,299 +4550,6 @@ impl NexVersus_ReplaySlotMetaResultData {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ChangeReplaySequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_ChangeReplaySequence,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplaySequence,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            crate::app::versusserverreplaydata::VersusServerReplayData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, meta_data, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_ChangeReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ChangeReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_replay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
-                "ChangeReplay",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeReplay",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_replay(
-        this: NexVersus_ChangeReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ChangeReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_replay::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            crate::app::versusserverreplaydata::VersusServerReplayData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, meta_data, data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeReplaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-    ) -> () {
-        unsafe {
-            __NexVersus_ChangeReplaySequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ChangeReplaySequenceMethods: INexVersus_ChangeReplaySequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
-    fn ctor(
-        self,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplaySequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplaySequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeReplay()` overload"]
-    fn change_replay(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplaySequence_unity2_raw::change_replay(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ChangeReplaySequence> INexVersus_ChangeReplaySequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeReplaySequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeReplaySequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_ChangeReplaySequenceMethods>::ctor(this, meta_data, data);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __NexVersus_NexSequenceBase_ConfirmRetryDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -3835,8 +4626,41 @@ impl NexVersus_NexSequenceBase_ConfirmRetryDialog {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_AddRatingSequence_unity2_raw {
+mod __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_all_slot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "IsAllSlot" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "IsAllSlot" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_all_slot(
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_all_slot::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -3844,28 +4668,11 @@ mod __NexVersus_AddRatingSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ReplaySlotMetaResultData as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -3874,22 +4681,24 @@ mod __NexVersus_AddRatingSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_AddRatingSequence,
-        data_id: u64,
-        map_result: crate::app::versus::Versus_MapResult,
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+        principal_id: u64,
+        slot_id: u16,
+        result: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_AddRatingSequence,
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
             u64,
-            crate::app::versus::Versus_MapResult,
+            u16,
+            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, data_id, map_result, __unity2_method_info)
+        inner(this, principal_id, slot_id, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -3899,24 +4708,10 @@ mod __NexVersus_AddRatingSequence_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "Postlogin" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "Postlogin" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -3925,723 +4720,11 @@ mod __NexVersus_AddRatingSequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_AddRatingSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_AddRatingSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_slot_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
-                "GetSlotId",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSlotId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_slot_id(
-        this: NexVersus_AddRatingSequence,
-        result: crate::app::versus::Versus_MapResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
-        let inner: extern "C" fn(
-            NexVersus_AddRatingSequence,
-            crate::app::versus::Versus_MapResult,
-            ::unity2::OptionalMethod,
-        ) -> i8 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_slot_id::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
-                "UpdateRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
-                    "UpdateRate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_rate(
-        this: NexVersus_AddRatingSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_AddRatingSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_rate::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::versus::Versus_MapResult as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_AddRatingSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        map_result: crate::app::versus::Versus_MapResult,
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::versus::Versus_MapResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, data_id, map_result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_AddRatingSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versus::Versus_MapResult)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        map_result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
-    ) -> () {
-        unsafe {
-            __NexVersus_AddRatingSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(map_result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_AddRatingSequenceMethods: INexVersus_AddRatingSequence {
-    #[doc = "`.ctor(u64, crate::app::versus::Versus_MapResult)` overload"]
-    fn ctor(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-        map_result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_AddRatingSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(map_result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_AddRatingSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSlotId(crate::app::versus::Versus_MapResult)` overload"]
-    fn get_slot_id(
-        self,
-        result: impl ::core::convert::Into<crate::app::versus::Versus_MapResult>,
-    ) -> i8 {
-        unsafe {
-            let __receiver =
-                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_AddRatingSequence_unity2_raw::get_slot_id(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateRate()` overload"]
-    fn update_rate(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_AddRatingSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_AddRatingSequence_unity2_raw::update_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_AddRatingSequence> INexVersus_AddRatingSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_AddRatingSequence {
-    #[doc = "`.ctor(u64, crate::app::versus::Versus_MapResult)` — overload selector"]
-    pub fn new(data_id: u64, map_result: crate::app::versus::Versus_MapResult) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_AddRatingSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_AddRatingSequenceMethods>::ctor(this, data_id, map_result);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_DownloadReplaySequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_DownloadReplaySequence,
-        data_id: u64,
-        result: crate::app::versusserverreplaydata::VersusServerReplayData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_DownloadReplaySequence,
-            u64,
-            crate::app::versusserverreplaydata::VersusServerReplayData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data_id, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_DownloadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_DownloadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "GetData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "GetData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: NexVersus_DownloadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_DownloadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        result: crate::app::versusserverreplaydata::VersusServerReplayData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::versusserverreplaydata::VersusServerReplayData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, data_id, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_DownloadReplaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-    ) -> () {
-        unsafe {
-            __NexVersus_DownloadReplaySequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_DownloadReplaySequenceMethods: INexVersus_DownloadReplaySequence {
-    #[doc = "`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
-    fn ctor(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_DownloadReplaySequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_DownloadReplaySequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetData()` overload"]
-    fn get_data(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_DownloadReplaySequence_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_DownloadReplaySequence> INexVersus_DownloadReplaySequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_DownloadReplaySequence {
-    #[doc = "`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        result: crate::app::versusserverreplaydata::VersusServerReplayData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_DownloadReplaySequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_DownloadReplaySequenceMethods>::ctor(this, data_id, result);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_ChangeMetaDataTypeSequence,
-        target_principal_id: u64,
-        target_slot_id: u16,
-        data_type: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeMetaDataTypeSequence,
-            u64,
-            u16,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            target_principal_id,
-            target_slot_id,
-            data_type,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: NexVersus_ChangeMetaDataTypeSequence,
-        data_id: u64,
-        data_type: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeMetaDataTypeSequence,
-            u64,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, data_id, data_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_ChangeMetaDataTypeSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeMetaDataTypeSequence,
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -4652,30 +4735,16 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_change_meta {
+    pub mod __lookup_get_persistence_meta_data {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                "ChangeMeta",
-                0,
-                param_types,
-                false,
-            )
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetPersistenceMetaData" , 0 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeMeta",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetPersistenceMetaData" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -4683,17 +4752,83 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn change_meta(
-        this: NexVersus_ChangeMetaDataTypeSequence,
+    pub unsafe fn get_persistence_meta_data(
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeMetaDataTypeSequence,
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_change_meta::get_offset() as isize),
+                .offset(__lookup_get_persistence_meta_data::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_all_slot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetAllSlot" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetAllSlot" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_all_slot(
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_all_slot::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_single_slot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetSingleSlot" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetSingleSlot" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_single_slot(
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_single_slot::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
@@ -4704,30 +4839,11 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ReplaySlotMetaResultData as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 5 , param_types , true ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -4737,16 +4853,18 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        target_principal_id: u64,
-        target_slot_id: u16,
-        data_type: u16,
+        principal_id: u64,
+        slot_id: u16,
+        is_show_dialog: bool,
+        result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
             u64,
             u16,
-            u16,
+            bool,
+            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -4755,42 +4873,26 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
         );
         inner(
             super_,
-            target_principal_id,
-            target_slot_id,
-            data_type,
+            principal_id,
+            slot_id,
+            is_show_dialog,
+            result_data,
             __unity2_method_info,
         )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_2 {
+    pub mod __lookup_create_desc {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -4798,114 +4900,78 @@ mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        data_type: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_2::get_offset() as isize),
-        );
-        inner(super_, data_id, data_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_proc_descs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
-                "GetProcDescs",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetProcDescs",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_proc_descs(
-        p: crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence,
+    pub unsafe fn create_desc(
+        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+        is_show_dialog: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         let inner: extern "C" fn(
-            crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence,
+            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
+            bool,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_proc_descs::get_offset() as isize),
+                .offset(__lookup_create_desc::get_offset() as isize),
         );
-        inner(p, __unity2_method_info)
+        inner(this, is_show_dialog, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeMetaDataTypeSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, u16)` overload"]
+impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, bool, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        target_principal_id: impl ::core::convert::Into<u64>,
-        target_slot_id: impl ::core::convert::Into<u16>,
-        data_type: impl ::core::convert::Into<u16>,
+        principal_id: impl ::core::convert::Into<u64>,
+        slot_id: impl ::core::convert::Into<u16>,
+        is_show_dialog: impl ::core::convert::Into<bool>,
+        result_data: impl ::core::convert::Into<
+            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
+        >,
     ) -> () {
         unsafe {
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::create_bind(
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(target_principal_id),
-                ::core::convert::Into::into(target_slot_id),
-                ::core::convert::Into::into(data_type),
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(slot_id),
+                ::core::convert::Into::into(is_show_dialog),
+                ::core::convert::Into::into(result_data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16)` overload"]
-    pub fn create_bind_2(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        data_type: impl ::core::convert::Into<u16>,
-    ) -> () {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
         unsafe {
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::create_bind_2(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(data_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetProcDescs(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)` overload"]
-    pub fn get_proc_descs(
-        p: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence>,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::get_proc_descs(
-                ::core::convert::Into::into(p),
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::cctor(
                 ::core::option::Option::None,
             )
         }
@@ -4913,39 +4979,33 @@ impl NexVersus_ChangeMetaDataTypeSequence {
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:
-    INexVersus_ChangeMetaDataTypeSequence
+pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:
+    INexVersus_GetReplayMetaDataFromPersistenceSlotSequence
 {
-    #[doc = "`.ctor(u64, u16, u16)` overload"]
-    fn ctor(
-        self,
-        target_principal_id: impl ::core::convert::Into<u64>,
-        target_slot_id: impl ::core::convert::Into<u16>,
-        data_type: impl ::core::convert::Into<u16>,
-    ) -> () {
+    #[doc = "`IsAllSlot()` overload"]
+    fn is_all_slot(self) -> bool {
         unsafe {
-            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::ctor(
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::is_all_slot(
                 __receiver,
-                ::core::convert::Into::into(target_principal_id),
-                ::core::convert::Into::into(target_slot_id),
-                ::core::convert::Into::into(data_type),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor(u64, u16)` overload"]
-    fn ctor_2(
+    #[doc = "`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]
+    fn ctor(
         self,
-        data_id: impl ::core::convert::Into<u64>,
-        data_type: impl ::core::convert::Into<u16>,
+        principal_id: impl ::core::convert::Into<u64>,
+        slot_id: impl ::core::convert::Into<u16>,
+        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>,
     ) -> () {
         unsafe {
-            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::ctor_2(
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(data_type),
+                ::core::convert::Into::into(principal_id),
+                ::core::convert::Into::into(slot_id),
+                ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
         }
@@ -4953,19 +5013,50 @@ pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:
     #[doc = "`Postlogin()` overload"]
     fn postlogin(self) -> () {
         unsafe {
-            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::postlogin(
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ChangeMeta()` overload"]
-    fn change_meta(self) -> () {
+    #[doc = "`GetPersistenceMetaData()` overload"]
+    fn get_persistence_meta_data(self) -> () {
         unsafe {
-            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::change_meta(
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw :: get_persistence_meta_data (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`GetAllSlot()` overload"]
+    fn get_all_slot(self) -> () {
+        unsafe {
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::get_all_slot(
                 __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSingleSlot()` overload"]
+    fn get_single_slot(self) -> () {
+        unsafe {
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::get_single_slot(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDesc(bool)` overload"]
+    fn create_desc(
+        self,
+        is_show_dialog: impl ::core::convert::Into<bool>,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::create_desc(
+                __receiver,
+                ::core::convert::Into::into(is_show_dialog),
                 ::core::option::Option::None,
             )
         }
@@ -4973,41 +5064,32 @@ pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ChangeMetaDataTypeSequence> INexVersus_ChangeMetaDataTypeSequenceMethods
-    for __T
+impl<__T: INexVersus_GetReplayMetaDataFromPersistenceSlotSequence>
+    INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods for __T
 {
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeMetaDataTypeSequence {
-    #[doc = "`.ctor(u64, u16, u16)` — overload selector"]
-    pub fn new(target_principal_id: u64, target_slot_id: u16, data_type: u16) -> Self {
+impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
+    #[doc = "`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` — overload selector"]
+    pub fn new(
+        principal_id: u64,
+        slot_id: u16,
+        result: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence),
+                ::core::stringify!(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_ChangeMetaDataTypeSequenceMethods>::ctor(
+        <Self as INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods>::ctor(
             this,
-            target_principal_id,
-            target_slot_id,
-            data_type,
+            principal_id,
+            slot_id,
+            result,
         );
-        this
-    }
-
-    #[doc = "`.ctor(u64, u16)` — overload selector"]
-    pub fn new_2(data_id: u64, data_type: u16) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as INexVersus_ChangeMetaDataTypeSequenceMethods>::ctor_2(this, data_id, data_type);
         this
     }
 }
@@ -5015,7 +5097,7 @@ impl NexVersus_ChangeMetaDataTypeSequence {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_UploadReportMetaSequence_unity2_raw {
+mod __NexVersus_SearchCasualSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -5024,11 +5106,14 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreportmetadata :: VersusServerReportMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_UploadType as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+                > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -5038,7 +5123,7 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -5051,22 +5136,69 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_UploadReportMetaSequence,
-        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-        r#type: crate::app::nexversus::NexVersus_UploadType,
+        this: NexVersus_SearchCasualSequence,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_UploadReportMetaSequence,
-            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-            crate::app::nexversus::NexVersus_UploadType,
+            NexVersus_SearchCasualSequence,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+            >,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, data, r#type, __unity2_method_info)
+        inner(this, results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
+                "Search",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
+                    "Search",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search(
+        this: NexVersus_SearchCasualSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_SearchCasualSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_search::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -5077,7 +5209,7 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
                 "Postlogin",
                 0,
                 param_types,
@@ -5089,7 +5221,7 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -5102,158 +5234,15 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_UploadReportMetaSequence,
+        this: NexVersus_SearchCasualSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadReportMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_postlogin::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
-                "Upload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "Upload",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload(
-        this: NexVersus_UploadReportMetaSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadReportMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
-                "UploadNew",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "UploadNew",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_new(
-        this: NexVersus_UploadReportMetaSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadReportMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload_new::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_overwrite {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
-                "UploadOverwrite",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "UploadOverwrite",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_overwrite(
-        this: NexVersus_UploadReportMetaSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadReportMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload_overwrite::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NexVersus_SearchCasualSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -5263,11 +5252,16 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreportmetadata :: VersusServerReportMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_UploadType as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                3,
+                2,
                 param_types,
                 true,
             )
@@ -5277,7 +5271,7 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -5291,39 +5285,41 @@ mod __NexVersus_UploadReportMetaSequence_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-        r#type: crate::app::nexversus::NexVersus_UploadType,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
-            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-            crate::app::nexversus::NexVersus_UploadType,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+            >,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(super_, data, r#type, __unity2_method_info)
+        inner(super_, results, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadReportMetaSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]
+impl NexVersus_SearchCasualSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data: impl ::core::convert::Into<
-            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+            >,
         >,
-        r#type: impl ::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>,
     ) -> () {
         unsafe {
-            __NexVersus_UploadReportMetaSequence_unity2_raw::create_bind(
+            __NexVersus_SearchCasualSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(results),
                 ::core::option::Option::None,
             )
         }
@@ -5331,24 +5327,37 @@ impl NexVersus_UploadReportMetaSequence {
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_UploadReportMetaSequenceMethods: INexVersus_UploadReportMetaSequence {
-    #[doc = "`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]
+pub trait INexVersus_SearchCasualSequenceMethods: INexVersus_SearchCasualSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
     fn ctor(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+            >,
         >,
-        r#type: impl ::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>,
     ) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_UploadReportMetaSequence_unity2_raw::ctor(
+            __NexVersus_SearchCasualSequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Search()` overload"]
+    fn search(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_SearchCasualSequence_unity2_raw::search(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -5357,49 +5366,10 @@ pub trait INexVersus_UploadReportMetaSequenceMethods: INexVersus_UploadReportMet
     fn postlogin(self) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_UploadReportMetaSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Upload()` overload"]
-    fn upload(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReportMetaSequence_unity2_raw::upload(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadNew()` overload"]
-    fn upload_new(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReportMetaSequence_unity2_raw::upload_new(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadOverwrite()` overload"]
-    fn upload_overwrite(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReportMetaSequence_unity2_raw::upload_overwrite(
+            __NexVersus_SearchCasualSequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -5408,23 +5378,60 @@ pub trait INexVersus_UploadReportMetaSequenceMethods: INexVersus_UploadReportMet
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_UploadReportMetaSequence> INexVersus_UploadReportMetaSequenceMethods for __T {}
+impl<__T: INexVersus_SearchCasualSequence> INexVersus_SearchCasualSequenceMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadReportMetaSequence {
-    #[doc = "`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` — overload selector"]
+impl NexVersus_SearchCasualSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` — overload selector"]
     pub fn new(
-        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
-        r#type: crate::app::nexversus::NexVersus_UploadType,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_UploadReportMetaSequence),
+                ::core::stringify!(NexVersus_SearchCasualSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_UploadReportMetaSequenceMethods>::ctor(this, data, r#type);
+        <Self as INexVersus_SearchCasualSequenceMethods>::ctor(this, results);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadSequence_1<T0> {
+    #[doc = "`.ctor(u64, T0)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, data_id: u64, result: T0) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`GetData()` overload"]
+    #[method(name = "GetData", args = 0)]
+    pub fn get_data(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, data_id: u64, result: T0) -> ();
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadSequence_1<T0> {
+    #[doc = "`.ctor(u64, T0)` — overload selector"]
+    pub fn new(data_id: u64, result: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_DownloadSequence_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_DownloadSequence_1Methods<T0>>::ctor(this, data_id, result);
         this
     }
 }
@@ -5681,203 +5688,19 @@ impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_RankedMetaDataEndCallback_unity2_raw {
+mod __NexVersus_ReportSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_RankedMetaDataEndCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_RankedMetaDataEndCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ResultInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_RankedMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: NexVersus_RankedMetaDataEndCallback,
-        result: crate::app::nexversus::NexVersus_Results,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        info: crate::app::nexversus::NexVersus_ResultInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_RankedMetaDataEndCallback,
-            crate::app::nexversus::NexVersus_Results,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            crate::app::nexversus::NexVersus_ResultInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, meta_data, info, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_RankedMetaDataEndCallbackMethods:
-    INexVersus_RankedMetaDataEndCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_RankedMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_RankedMetaDataEndCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        info: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_RankedMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_RankedMetaDataEndCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_RankedMetaDataEndCallback> INexVersus_RankedMetaDataEndCallbackMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_RankedMetaDataEndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_RankedMetaDataEndCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_RankedMetaDataEndCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_NexSequenceBase_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_login {
+    pub mod __lookup_postlogin {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "Login",
+                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
                 0,
                 param_types,
                 false,
@@ -5888,55 +5711,7 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "Login",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn login(
-        this: NexVersus_NexSequenceBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_login::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -5949,39 +5724,28 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_NexSequenceBase,
-        label_when_cancelled: i32,
-        label_when_failed: i32,
+        this: NexVersus_ReportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_postlogin::get_offset() as isize),
-        );
-        inner(
-            this,
-            label_when_cancelled,
-            label_when_failed,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_show_error {
+    pub mod __lookup_report {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "ShowError",
+                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
+                "Report",
                 0,
                 param_types,
                 false,
@@ -5992,8 +5756,8 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "ShowError",
+                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "Report",
                     e
                 ),
             }
@@ -6004,238 +5768,29 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn show_error(
-        this: NexVersus_NexSequenceBase,
+    pub unsafe fn report(
+        this: NexVersus_ReportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_show_error::get_offset() as isize),
+                    .offset(__lookup_report::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_meta_binary {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetMetaBinary",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetMetaBinary",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_meta_binary(
-        this: NexVersus_NexSequenceBase,
-        param_meta_bytes: crate::system::collections::generic::list_1::List_1<u8>,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            crate::system::collections::generic::list_1::List_1<u8>,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_meta_binary::get_offset() as isize),
-        );
-        inner(this, param_meta_bytes, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::nexversus::NexVersus_Results as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetResult",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_result(
-        this: NexVersus_NexSequenceBase,
-        result: crate::app::nexversus::NexVersus_Results,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            crate::app::nexversus::NexVersus_Results,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_result::get_offset() as isize),
-        );
-        inner(this, result, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::neterror::NetError_App as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetResultError",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetResultError",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_result_error(
-        this: NexVersus_NexSequenceBase,
-        error: crate::app::neterror::NetError_App,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            crate::app::neterror::NetError_App,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_result_error::get_offset() as isize),
-        );
-        inner(this, error, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result_failed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetResultFailed",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetResultFailed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_result_failed(
-        this: NexVersus_NexSequenceBase,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_result_failed::get_offset() as isize),
-        );
-        inner(this, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result_not_found {
+    pub mod __lookup_confirm_retry {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetResultNotFound",
+                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
+                "ConfirmRetry",
                 0,
                 param_types,
                 false,
@@ -6246,8 +5801,8 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetResultNotFound",
+                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
+                    "ConfirmRetry",
                     e
                 ),
             }
@@ -6258,294 +5813,62 @@ mod __NexVersus_NexSequenceBase_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_result_not_found(
-        this: NexVersus_NexSequenceBase,
+    pub unsafe fn confirm_retry(
+        this: NexVersus_ReportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_set_result_not_found::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result_different_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                "SetResultDifferentType",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetResultDifferentType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_result_different_type(
-        this: NexVersus_NexSequenceBase,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_NexSequenceBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_result_different_type::get_offset() as isize),
-        );
-        inner(this, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_NexSequenceBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_confirm_retry::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_NexSequenceBaseMethods: INexVersus_NexSequenceBase {
-    #[doc = "`Login()` overload"]
-    fn login(self) -> () {
+pub trait INexVersus_ReportSequenceMethods: INexVersus_ReportSequence {
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_NexSequenceBase_unity2_raw::login(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Postlogin(i32, i32)` overload"]
-    fn postlogin(
-        self,
-        label_when_cancelled: impl ::core::convert::Into<i32>,
-        label_when_failed: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::postlogin(
-                __receiver,
-                ::core::convert::Into::into(label_when_cancelled),
-                ::core::convert::Into::into(label_when_failed),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowError()` overload"]
-    fn show_error(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::show_error(
+            __NexVersus_ReportSequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    fn set_meta_binary(
-        self,
-        param_meta_bytes: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<u8>,
-        >,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-    ) -> () {
+    #[doc = "`Report()` overload"]
+    fn report(self) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_NexSequenceBase_unity2_raw::set_meta_binary(
-                __receiver,
-                ::core::convert::Into::into(param_meta_bytes),
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
+            __NexVersus_ReportSequence_unity2_raw::report(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetResult(crate::app::nexversus::NexVersus_Results, ::unity2::Il2CppString)` overload"]
-    fn set_result(
-        self,
-        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    #[doc = "`ConfirmRetry()` overload"]
+    fn confirm_retry(self) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_NexSequenceBase_unity2_raw::set_result(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetResultError(crate::app::neterror::NetError_App, ::unity2::Il2CppString)` overload"]
-    fn set_result_error(
-        self,
-        error: impl ::core::convert::Into<crate::app::neterror::NetError_App>,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::set_result_error(
-                __receiver,
-                ::core::convert::Into::into(error),
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetResultFailed(::unity2::Il2CppString)` overload"]
-    fn set_result_failed(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::set_result_failed(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetResultNotFound()` overload"]
-    fn set_result_not_found(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::set_result_not_found(
+            __NexVersus_ReportSequence_unity2_raw::confirm_retry(
                 __receiver,
                 ::core::option::Option::None,
             )
-        }
-    }
-    #[doc = "`SetResultDifferentType(::unity2::Il2CppString)` overload"]
-    fn set_result_different_type(
-        self,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::set_result_different_type(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_NexSequenceBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_NexSequenceBase> INexVersus_NexSequenceBaseMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_NexSequenceBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_NexSequenceBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_NexSequenceBaseMethods>::ctor(this);
-        this
-    }
-}
+impl<__T: INexVersus_ReportSequence> INexVersus_ReportSequenceMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
@@ -7298,7 +6621,7 @@ impl NexVersus_CheckAccessibleSlotSequence {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_TargetSlotList_unity2_raw {
+mod __NexVersus_UploadReplaySequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -7307,11 +6630,11 @@ mod __NexVersus_TargetSlotList_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                3,
                 param_types,
                 false,
             )
@@ -7321,7 +6644,7 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -7334,124 +6657,36 @@ mod __NexVersus_TargetSlotList_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_TargetSlotList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: NexVersus_TargetSlotList,
-        id: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, u64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add::get_offset() as isize),
-            );
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u64 > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_2(
-        this: NexVersus_TargetSlotList,
-        list: crate::system::collections::generic::list_1::List_1<u64>,
+        this: NexVersus_UploadReplaySequence,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
+        slot: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            crate::system::collections::generic::list_1::List_1<u64>,
+            NexVersus_UploadReplaySequence,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            crate::app::versusserverreplaydata::VersusServerReplayData,
+            u16,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, list, __unity2_method_info)
+        inner(this, meta_data, data, slot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_clear {
+    pub mod __lookup_postlogin {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "Clear",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
                 0,
                 param_types,
                 false,
@@ -7462,8 +6697,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
                     e
                 ),
             }
@@ -7474,29 +6709,29 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn clear(
-        this: NexVersus_TargetSlotList,
+    pub unsafe fn postlogin(
+        this: NexVersus_UploadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
+                    .offset(__lookup_postlogin::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
+    pub mod __lookup_check_exist {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "get_Count",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "CheckExist",
                 0,
                 param_types,
                 false,
@@ -7507,8 +6742,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "CheckExist",
                     e
                 ),
             }
@@ -7519,29 +6754,29 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_count(
-        this: NexVersus_TargetSlotList,
+    pub unsafe fn check_exist(
+        this: NexVersus_UploadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> i32 =
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
+                    .offset(__lookup_check_exist::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_count_valid {
+    pub mod __lookup_branch {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "GetCountValid",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "Branch",
                 0,
                 param_types,
                 false,
@@ -7552,8 +6787,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "GetCountValid",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "Branch",
                     e
                 ),
             }
@@ -7564,29 +6799,29 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_count_valid(
-        this: NexVersus_TargetSlotList,
+    pub unsafe fn branch(
+        this: NexVersus_UploadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> i32 =
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_get_count_valid::get_offset() as isize),
+                    .offset(__lookup_branch::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_id_list {
+    pub mod __lookup_post {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "GetIDList",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "Post",
                 0,
                 param_types,
                 false,
@@ -7597,8 +6832,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "GetIDList",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "Post",
                     e
                 ),
             }
@@ -7609,32 +6844,29 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_id_list(
-        this: NexVersus_TargetSlotList,
+    pub unsafe fn post(
+        this: NexVersus_UploadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<u64> {
-        let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<u64> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id_list::get_offset() as isize),
-        );
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_post::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_result {
+    pub mod __lookup_set_meta_binary {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_TargetSlotList_Results as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "SetResult",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "SetMetaBinary",
                 2,
                 param_types,
                 false,
@@ -7645,8 +6877,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "SetResult",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "SetMetaBinary",
                     e
                 ),
             }
@@ -7657,133 +6889,35 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_result(
-        this: NexVersus_TargetSlotList,
-        id: u64,
-        result: crate::app::nexversus::NexVersus_TargetSlotList_Results,
+    pub unsafe fn set_meta_binary(
+        this: NexVersus_UploadReplaySequence,
+        param_meta_bytes: crate::system::collections::generic::list_1::List_1<u8>,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            u64,
-            crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            NexVersus_UploadReplaySequence,
+            crate::system::collections::generic::list_1::List_1<u8>,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_set_result::get_offset() as isize),
+                .offset(__lookup_set_meta_binary::get_offset() as isize),
         );
-        inner(this, id, result, __unity2_method_info)
+        inner(this, param_meta_bytes, meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "GetResult",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "GetResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_result(
-        this: NexVersus_TargetSlotList,
-        id: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nexversus::NexVersus_TargetSlotList_Results {
-        let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            u64,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::nexversus::NexVersus_TargetSlotList_Results = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_result::get_offset() as isize),
-        );
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_valid(
-        this: NexVersus_TargetSlotList,
-        id: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NexVersus_TargetSlotList, u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dump {
+    pub mod __lookup_invalid {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "Dump",
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "Invalid",
                 0,
                 param_types,
                 false,
@@ -7794,8 +6928,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "Invalid",
                     e
                 ),
             }
@@ -7806,36 +6940,406 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn dump(
-        this: NexVersus_TargetSlotList,
+    pub unsafe fn invalid(
+        this: NexVersus_UploadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_invalid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_invalid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "PostInvalid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "PostInvalid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_invalid(
+        this: NexVersus_UploadReplaySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_post_invalid::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
+        slot: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
         let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
+            crate::app::procinst::ProcInst,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            crate::app::versusserverreplaydata::VersusServerReplayData,
+            u16,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_dump::get_offset() as isize),
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, meta_data, data, slot, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_UploadReplaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
+        slot: impl ::core::convert::Into<u16>,
+    ) -> () {
+        unsafe {
+            __NexVersus_UploadReplaySequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(slot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_UploadReplaySequenceMethods: INexVersus_UploadReplaySequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]
+    fn ctor(
+        self,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
+        slot: impl ::core::convert::Into<u16>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(slot),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CheckExist()` overload"]
+    fn check_exist(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::check_exist(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Branch()` overload"]
+    fn branch(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::branch(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Post()` overload"]
+    fn post(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::post(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
+    fn set_meta_binary(
+        self,
+        param_meta_bytes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u8>,
+        >,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::set_meta_binary(
+                __receiver,
+                ::core::convert::Into::into(param_meta_bytes),
+                ::core::convert::Into::into(meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invalid()` overload"]
+    fn invalid(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::invalid(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PostInvalid()` overload"]
+    fn post_invalid(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReplaySequence_unity2_raw::post_invalid(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_UploadReplaySequence> INexVersus_UploadReplaySequenceMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_UploadReplaySequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` — overload selector"]
+    pub fn new(
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
+        slot: u16,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_UploadReplaySequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_UploadReplaySequenceMethods>::ctor(this, meta_data, data, slot);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_ChangeUpdatedTimeSequence,
+        data_id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeUpdatedTimeSequence,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_login {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                "Login",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    "Login",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn login(
+        this: NexVersus_ChangeUpdatedTimeSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeUpdatedTimeSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_login::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_for_each {
+    pub mod __lookup_postlogin {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_2::Action_2<
-                    u64,
-                    crate::app::nexversus::NexVersus_TargetSlotList_Results,
-                > as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "ForEach",
-                1,
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
                 param_types,
                 false,
             )
@@ -7845,8 +7349,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "ForEach",
+                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
                     e
                 ),
             }
@@ -7857,45 +7361,32 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn for_each(
-        this: NexVersus_TargetSlotList,
-        action: crate::system::action_2::Action_2<
-            u64,
-            crate::app::nexversus::NexVersus_TargetSlotList_Results,
-        >,
+    pub unsafe fn postlogin(
+        this: NexVersus_ChangeUpdatedTimeSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            crate::system::action_2::Action_2<
-                u64,
-                crate::app::nexversus::NexVersus_TargetSlotList_Results,
-            >,
+            NexVersus_ChangeUpdatedTimeSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_for_each::get_offset() as isize),
+                .offset(__lookup_postlogin::get_offset() as isize),
         );
-        inner(this, action, __unity2_method_info)
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_for_each_2 {
+    pub mod __lookup_change_meta {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_3::Action_3<
-                    i32,
-                    u64,
-                    crate::app::nexversus::NexVersus_TargetSlotList_Results,
-                > as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
-                "ForEach",
-                1,
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                "ChangeMeta",
+                0,
                 param_types,
                 false,
             )
@@ -7905,8 +7396,8 @@ mod __NexVersus_TargetSlotList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
-                    "ForEach",
+                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeMeta",
                     e
                 ),
             }
@@ -7917,225 +7408,85 @@ mod __NexVersus_TargetSlotList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn for_each_2(
-        this: NexVersus_TargetSlotList,
-        action: crate::system::action_3::Action_3<
-            i32,
-            u64,
-            crate::app::nexversus::NexVersus_TargetSlotList_Results,
-        >,
+    pub unsafe fn change_meta(
+        this: NexVersus_ChangeUpdatedTimeSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_TargetSlotList,
-            crate::system::action_3::Action_3<
-                i32,
-                u64,
-                crate::app::nexversus::NexVersus_TargetSlotList_Results,
-            >,
+            NexVersus_ChangeUpdatedTimeSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_for_each_2::get_offset() as isize),
+                .offset(__lookup_change_meta::get_offset() as isize),
         );
-        inner(this, action, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, data_id, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_TargetSlotListMethods: INexVersus_TargetSlotList {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Add(u64)` overload"]
-    fn add(self, id: impl ::core::convert::Into<u64>) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<u64>)` overload"]
-    fn add_2(
-        self,
-        list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64>>,
+impl NexVersus_ChangeUpdatedTimeSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::add_2(
-                __receiver,
-                ::core::convert::Into::into(list),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCountValid()` overload"]
-    fn get_count_valid(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::get_count_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetIDList()` overload"]
-    fn get_id_list(self) -> crate::system::collections::generic::list_1::List_1<u64> {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::get_id_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetResult(u64, crate::app::nexversus::NexVersus_TargetSlotList_Results)` overload"]
-    fn set_result(
-        self,
-        id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList_Results>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::set_result(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetResult(u64)` overload"]
-    fn get_result(
-        self,
-        id: impl ::core::convert::Into<u64>,
-    ) -> crate::app::nexversus::NexVersus_TargetSlotList_Results {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::get_result(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsValid(u64)` overload"]
-    fn is_valid(self, id: impl ::core::convert::Into<u64>) -> bool {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::is_valid(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dump()` overload"]
-    fn dump(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::dump(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ForEach(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]
-    fn for_each(
-        self,
-        action: impl ::core::convert::Into<
-            crate::system::action_2::Action_2<
-                u64,
-                crate::app::nexversus::NexVersus_TargetSlotList_Results,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::for_each(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ForEach(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]
-    fn for_each_2(
-        self,
-        action: impl ::core::convert::Into<
-            crate::system::action_3::Action_3<
-                i32,
-                u64,
-                crate::app::nexversus::NexVersus_TargetSlotList_Results,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_TargetSlotList_unity2_raw::for_each_2(
-                __receiver,
-                ::core::convert::Into::into(action),
+            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
                 ::core::option::Option::None,
             )
         }
@@ -8143,20 +7494,1053 @@ pub trait INexVersus_TargetSlotListMethods: INexVersus_TargetSlotList {
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_TargetSlotList> INexVersus_TargetSlotListMethods for __T {}
+pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:
+    INexVersus_ChangeUpdatedTimeSequence
+{
+    #[doc = "`.ctor(u64)` overload"]
+    fn ctor(self, data_id: impl ::core::convert::Into<u64>) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::login(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeMeta()` overload"]
+    fn change_meta(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::change_meta(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_TargetSlotList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl<__T: INexVersus_ChangeUpdatedTimeSequence> INexVersus_ChangeUpdatedTimeSequenceMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ChangeUpdatedTimeSequence {
+    #[doc = "`.ctor(u64)` — overload selector"]
+    pub fn new(data_id: u64) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_TargetSlotList),
+                ::core::stringify!(NexVersus_ChangeUpdatedTimeSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_TargetSlotListMethods>::ctor(this);
+        <Self as INexVersus_ChangeUpdatedTimeSequenceMethods>::ctor(this, data_id);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+        data_id: u64,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        player_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeVersusRankedMetaDataSequence,
+            u64,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, meta_data, player_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeVersusRankedMetaDataSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_postlogin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_meta_param {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                "SetMetaParam",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "SetMetaParam",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_meta_param(
+        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeVersusRankedMetaDataSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_meta_param::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_meta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                "ChangeMeta",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeMeta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_meta(
+        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_ChangeVersusRankedMetaDataSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_change_meta::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        player_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            data_id,
+            meta_data,
+            player_name,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ChangeVersusRankedMetaDataSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        >,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(player_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_ChangeVersusRankedMetaDataSequenceMethods:
+    INexVersus_ChangeVersusRankedMetaDataSequence
+{
+    #[doc = "`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        >,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(player_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMetaParam()` overload"]
+    fn set_meta_param(self) -> () {
+        unsafe {
+            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::set_meta_param(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeMeta()` overload"]
+    fn change_meta(self) -> () {
+        unsafe {
+            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::change_meta(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_ChangeVersusRankedMetaDataSequence>
+    INexVersus_ChangeVersusRankedMetaDataSequenceMethods for __T
+{
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_ChangeVersusRankedMetaDataSequence {
+    #[doc = "`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        data_id: u64,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        player_name: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_ChangeVersusRankedMetaDataSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_ChangeVersusRankedMetaDataSequenceMethods>::ctor(
+            this,
+            data_id,
+            meta_data,
+            player_name,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_UploadReportMetaSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreportmetadata :: VersusServerReportMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_UploadType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_UploadReportMetaSequence,
+        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        r#type: crate::app::nexversus::NexVersus_UploadType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_UploadReportMetaSequence,
+            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+            crate::app::nexversus::NexVersus_UploadType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data, r#type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexVersus_UploadReportMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_UploadReportMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_postlogin::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                "Upload",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "Upload",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload(
+        this: NexVersus_UploadReportMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_UploadReportMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                "UploadNew",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadNew",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_new(
+        this: NexVersus_UploadReportMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_UploadReportMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload_new::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_overwrite {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                "UploadOverwrite",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadOverwrite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_overwrite(
+        this: NexVersus_UploadReportMetaSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_UploadReportMetaSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload_overwrite::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreportmetadata :: VersusServerReportMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_UploadType as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadReportMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        r#type: crate::app::nexversus::NexVersus_UploadType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+            crate::app::nexversus::NexVersus_UploadType,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, data, r#type, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_UploadReportMetaSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data: impl ::core::convert::Into<
+            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        >,
+        r#type: impl ::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>,
+    ) -> () {
+        unsafe {
+            __NexVersus_UploadReportMetaSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_UploadReportMetaSequenceMethods: INexVersus_UploadReportMetaSequence {
+    #[doc = "`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]
+    fn ctor(
+        self,
+        data: impl ::core::convert::Into<
+            crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        >,
+        r#type: impl ::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReportMetaSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(r#type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReportMetaSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Upload()` overload"]
+    fn upload(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReportMetaSequence_unity2_raw::upload(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadNew()` overload"]
+    fn upload_new(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReportMetaSequence_unity2_raw::upload_new(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadOverwrite()` overload"]
+    fn upload_overwrite(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadReportMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadReportMetaSequence_unity2_raw::upload_overwrite(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_UploadReportMetaSequence> INexVersus_UploadReportMetaSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_UploadReportMetaSequence {
+    #[doc = "`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` — overload selector"]
+    pub fn new(
+        data: crate::app::versusserverreportmetadata::VersusServerReportMetaData,
+        r#type: crate::app::nexversus::NexVersus_UploadType,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_UploadReportMetaSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_UploadReportMetaSequenceMethods>::ctor(this, data, r#type);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_CasualMetaDataEndCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_CasualMetaDataEndCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_CasualMetaDataEndCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ResultInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: NexVersus_CasualMetaDataEndCallback,
+        result: crate::app::nexversus::NexVersus_Results,
+        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        info: crate::app::nexversus::NexVersus_ResultInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_CasualMetaDataEndCallback,
+            crate::app::nexversus::NexVersus_Results,
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+            crate::app::nexversus::NexVersus_ResultInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, meta_data, info, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_CasualMetaDataEndCallbackMethods:
+    INexVersus_CasualMetaDataEndCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_CasualMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_CasualMetaDataEndCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
+        info: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_CasualMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_CasualMetaDataEndCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_CasualMetaDataEndCallback> INexVersus_CasualMetaDataEndCallbackMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_CasualMetaDataEndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_CasualMetaDataEndCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_CasualMetaDataEndCallbackMethods>::ctor(this, object, method);
         this
     }
 }
@@ -8235,7 +8619,7 @@ impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataListFromPersistenceSlotSe
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ResultInfo_unity2_raw {
+mod __NexVersus_ChangeReplaySequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -8244,207 +8628,9 @@ mod __NexVersus_ResultInfo_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_ResultInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_valid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
-                "IsValid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_valid(
-        this: NexVersus_ResultInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ResultInfo as ::unity2::ClassIdentity>::class(),
-                "get_DataType",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ResultInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_DataType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_type(
-        this: NexVersus_ResultInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(NexVersus_ResultInfo, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_type::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ResultInfoMethods: INexVersus_ResultInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexVersus_ResultInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsValid()` overload"]
-    fn is_valid(self) -> bool {
-        unsafe {
-            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexVersus_ResultInfo_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_DataType()` overload"]
-    fn get_data_type(self) -> u16 {
-        unsafe {
-            let __receiver = <NexVersus_ResultInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexVersus_ResultInfo_unity2_raw::get_data_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ResultInfo> INexVersus_ResultInfoMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_ResultInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ResultInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_ResultInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_EndCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_EndCallback as ::unity2::ClassIdentity>::class(),
+                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -8456,7 +8642,7 @@ mod __NexVersus_EndCallback_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_EndCallback as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -8469,36 +8655,35 @@ mod __NexVersus_EndCallback_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_EndCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: NexVersus_ChangeReplaySequence,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_EndCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            NexVersus_ChangeReplaySequence,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            crate::app::versusserverreplaydata::VersusServerReplayData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
+        inner(this, meta_data, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_postlogin {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::nexversus::NexVersus_Results as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_EndCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
+                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
                 param_types,
                 false,
             )
@@ -8508,8 +8693,8 @@ mod __NexVersus_EndCallback_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_EndCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
+                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
                     e
                 ),
             }
@@ -8520,56 +8705,182 @@ mod __NexVersus_EndCallback_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: NexVersus_EndCallback,
-        result: crate::app::nexversus::NexVersus_Results,
+    pub unsafe fn postlogin(
+        this: NexVersus_ChangeReplaySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_ChangeReplaySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_replay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
+                "ChangeReplay",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeReplay",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_replay(
+        this: NexVersus_ChangeReplaySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_ChangeReplaySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_replay::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_EndCallback,
-            crate::app::nexversus::NexVersus_Results,
+            crate::app::procinst::ProcInst,
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            crate::app::versusserverreplaydata::VersusServerReplayData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(this, result, __unity2_method_info)
+        inner(super_, meta_data, data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_EndCallbackMethods: INexVersus_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+impl NexVersus_ChangeReplaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
+    ) -> () {
+        unsafe {
+            __NexVersus_ChangeReplaySequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_ChangeReplaySequenceMethods: INexVersus_ChangeReplaySequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
     fn ctor(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        >,
+        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
     ) -> () {
         unsafe {
-            let __receiver = <NexVersus_EndCallback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexVersus_EndCallback_unity2_raw::ctor(
+            let __receiver =
+                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplaySequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
-    ) -> () {
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
         unsafe {
-            let __receiver = <NexVersus_EndCallback as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexVersus_EndCallback_unity2_raw::invoke(
+            let __receiver =
+                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplaySequence_unity2_raw::postlogin(
                 __receiver,
-                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeReplay()` overload"]
+    fn change_replay(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_ChangeReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_ChangeReplaySequence_unity2_raw::change_replay(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -8577,20 +8888,23 @@ pub trait INexVersus_EndCallbackMethods: INexVersus_EndCallback {
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_EndCallback> INexVersus_EndCallbackMethods for __T {}
+impl<__T: INexVersus_ChangeReplaySequence> INexVersus_ChangeReplaySequenceMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl NexVersus_ChangeReplaySequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]
+    pub fn new(
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        data: crate::app::versusserverreplaydata::VersusServerReplayData,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_EndCallback),
+                ::core::stringify!(NexVersus_ChangeReplaySequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_EndCallbackMethods>::ctor(this, object, method);
+        <Self as INexVersus_ChangeReplaySequenceMethods>::ctor(this, meta_data, data);
         this
     }
 }
@@ -8835,192 +9149,7 @@ impl NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ReportSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_ReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_report {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
-                "Report",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "Report",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn report(
-        this: NexVersus_ReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_report::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_confirm_retry {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ReportSequence as ::unity2::ClassIdentity>::class(),
-                "ConfirmRetry",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ReportSequence as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmRetry",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn confirm_retry(
-        this: NexVersus_ReportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_ReportSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_retry::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ReportSequenceMethods: INexVersus_ReportSequence {
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ReportSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Report()` overload"]
-    fn report(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ReportSequence_unity2_raw::report(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ConfirmRetry()` overload"]
-    fn confirm_retry(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ReportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ReportSequence_unity2_raw::confirm_retry(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ReportSequence> INexVersus_ReportSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_SearchCasualSequence_unity2_raw {
+mod __NexVersus_UploadSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -9029,14 +9158,11 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-                > as ::unity2::IlType>::il_type()];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankeddata :: VersusServerRankedData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                5,
                 param_types,
                 false,
             )
@@ -9046,7 +9172,7 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -9059,69 +9185,36 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_SearchCasualSequence,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
+        this: NexVersus_UploadSequence,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        data: crate::app::versusserverrankeddata::VersusServerRankedData,
+        data_type: u16,
+        png_bytes: ::unity2::Array<u8>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_SearchCasualSequence,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-            >,
+            NexVersus_UploadSequence,
+            ::unity2::Il2CppString,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+            crate::app::versusserverrankeddata::VersusServerRankedData,
+            u16,
+            ::unity2::Array<u8>,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, results, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_search {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
-                "Search",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
-                    "Search",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn search(
-        this: NexVersus_SearchCasualSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_SearchCasualSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_search::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        inner(
+            this,
+            player_name,
+            meta_data,
+            data,
+            data_type,
+            png_bytes,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -9132,7 +9225,7 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
                 "Postlogin",
                 0,
                 param_types,
@@ -9144,7 +9237,7 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -9157,14 +9250,104 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_SearchCasualSequence,
+        this: NexVersus_UploadSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_SearchCasualSequence, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
                     .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_png {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "UploadPNG",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                    "UploadPNG",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_png(
+        this: NexVersus_UploadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_upload_png::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
+                "Post",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
+                    "Post",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post(
+        this: NexVersus_UploadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_UploadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_post::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -9175,16 +9358,11 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-                > as ::unity2::IlType>::il_type(),
-            ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankeddata :: VersusServerRankedData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_UploadSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                2,
+                6,
                 param_types,
                 true,
             )
@@ -9194,7 +9372,7 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_SearchCasualSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_UploadSequence as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -9208,41 +9386,59 @@ mod __NexVersus_SearchCasualSequence_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        data: crate::app::versusserverrankeddata::VersusServerRankedData,
+        data_type: u16,
+        png_bytes: ::unity2::Array<u8>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-            >,
+            ::unity2::Il2CppString,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+            crate::app::versusserverrankeddata::VersusServerRankedData,
+            u16,
+            ::unity2::Array<u8>,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(super_, results, __unity2_method_info)
+        inner(
+            super_,
+            player_name,
+            meta_data,
+            data,
+            data_type,
+            png_bytes,
+            __unity2_method_info,
+        )
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_SearchCasualSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
+impl NexVersus_UploadSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-            >,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
         >,
+        data: impl ::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData>,
+        data_type: impl ::core::convert::Into<u16>,
+        png_bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
     ) -> () {
         unsafe {
-            __NexVersus_SearchCasualSequence_unity2_raw::create_bind(
+            __NexVersus_UploadSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(results),
+                ::core::convert::Into::into(player_name),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_type),
+                ::core::convert::Into::into(png_bytes),
                 ::core::option::Option::None,
             )
         }
@@ -9250,37 +9446,30 @@ impl NexVersus_SearchCasualSequence {
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_SearchCasualSequenceMethods: INexVersus_SearchCasualSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
+pub trait INexVersus_UploadSequenceMethods: INexVersus_UploadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]
     fn ctor(
         self,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-            >,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
         >,
+        data: impl ::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData>,
+        data_type: impl ::core::convert::Into<u16>,
+        png_bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
     ) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_SearchCasualSequence_unity2_raw::ctor(
+            __NexVersus_UploadSequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Search()` overload"]
-    fn search(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_SearchCasualSequence_unity2_raw::search(
-                __receiver,
+                ::core::convert::Into::into(player_name),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(data_type),
+                ::core::convert::Into::into(png_bytes),
                 ::core::option::Option::None,
             )
         }
@@ -9289,36 +9478,68 @@ pub trait INexVersus_SearchCasualSequenceMethods: INexVersus_SearchCasualSequenc
     fn postlogin(self) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_SearchCasualSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_SearchCasualSequence_unity2_raw::postlogin(
+            __NexVersus_UploadSequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
+    #[doc = "`UploadPNG()` overload"]
+    fn upload_png(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadSequence_unity2_raw::upload_png(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Post()` overload"]
+    fn post(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_UploadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_UploadSequence_unity2_raw::post(__receiver, ::core::option::Option::None)
+        }
+    }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_SearchCasualSequence> INexVersus_SearchCasualSequenceMethods for __T {}
+impl<__T: INexVersus_UploadSequence> INexVersus_UploadSequenceMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_SearchCasualSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` — overload selector"]
+impl NexVersus_UploadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` — overload selector"]
     pub fn new(
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        data: crate::app::versusserverrankeddata::VersusServerRankedData,
+        data_type: u16,
+        png_bytes: ::unity2::Array<u8>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_SearchCasualSequence),
+                ::core::stringify!(NexVersus_UploadSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_SearchCasualSequenceMethods>::ctor(this, results);
+        <Self as INexVersus_UploadSequenceMethods>::ctor(
+            this,
+            player_name,
+            meta_data,
+            data,
+            data_type,
+            png_bytes,
+        );
         this
     }
 }
@@ -9326,140 +9547,19 @@ impl NexVersus_SearchCasualSequence {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
+mod __NexVersus_NexSequenceBase_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_ChangeReplayMetaSequence,
-        data_id: u64,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
-            u64,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            data_id,
-            meta_data,
-            is_set_meta_param,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: NexVersus_ChangeReplayMetaSequence,
-        principal_id: u64,
-        slot_id: u16,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
-            u64,
-            u16,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            principal_id,
-            slot_id,
-            meta_data,
-            is_set_meta_param,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
+    pub mod __lookup_login {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "Login",
                 0,
                 param_types,
                 false,
@@ -9470,7 +9570,55 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "Login",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn login(
+        this: NexVersus_NexSequenceBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_login::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -9483,30 +9631,39 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_ChangeReplayMetaSequence,
+        this: NexVersus_NexSequenceBase,
+        label_when_cancelled: i32,
+        label_when_failed: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
+            NexVersus_NexSequenceBase,
+            i32,
+            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_postlogin::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(
+            this,
+            label_when_cancelled,
+            label_when_failed,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_meta_param {
+    pub mod __lookup_show_error {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "SetMetaParam",
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "ShowError",
                 0,
                 param_types,
                 false,
@@ -9517,8 +9674,8 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetMetaParam",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "ShowError",
                     e
                 ),
             }
@@ -9529,65 +9686,16 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_meta_param(
-        this: NexVersus_ChangeReplayMetaSequence,
+    pub unsafe fn show_error(
+        this: NexVersus_NexSequenceBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_meta_param::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_meta {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "ChangeMeta",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeMeta",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_meta(
-        this: NexVersus_ChangeReplayMetaSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_meta::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show_error::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
@@ -9597,9 +9705,9 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
                 "SetMetaBinary",
                 2,
                 param_types,
@@ -9611,7 +9719,7 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
                     "SetMetaBinary",
                     e
                 ),
@@ -9624,15 +9732,15 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
         }
     }
     pub unsafe fn set_meta_binary(
-        this: NexVersus_ChangeReplayMetaSequence,
+        this: NexVersus_NexSequenceBase,
         param_meta_bytes: crate::system::collections::generic::list_1::List_1<u8>,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
+            NexVersus_NexSequenceBase,
             crate::system::collections::generic::list_1::List_1<u8>,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -9643,484 +9751,18 @@ mod __NexVersus_ChangeReplayMetaSequence_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-        is_show_dialog: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            data_id,
-            meta_data,
-            is_set_meta_param,
-            is_show_dialog,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        principal_id: u64,
-        slot_id: u16,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-        is_show_dialog: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            u16,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_2::get_offset() as isize),
-        );
-        inner(
-            super_,
-            principal_id,
-            slot_id,
-            meta_data,
-            is_set_meta_param,
-            is_show_dialog,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeReplayMetaSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: NexVersus_ChangeReplayMetaSequence,
-        is_show_dialog: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            NexVersus_ChangeReplayMetaSequence,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
-        inner(this, is_show_dialog, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeReplayMetaSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        is_set_meta_param: impl ::core::convert::Into<bool>,
-        is_show_dialog: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_set_meta_param),
-                ::core::convert::Into::into(is_show_dialog),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]
-    pub fn create_bind_2(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        principal_id: impl ::core::convert::Into<u64>,
-        slot_id: impl ::core::convert::Into<u16>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        is_set_meta_param: impl ::core::convert::Into<bool>,
-        is_show_dialog: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_bind_2(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(principal_id),
-                ::core::convert::Into::into(slot_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_set_meta_param),
-                ::core::convert::Into::into(is_show_dialog),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ChangeReplayMetaSequenceMethods: INexVersus_ChangeReplayMetaSequence {
-    #[doc = "`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]
-    fn ctor(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        is_set_meta_param: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_set_meta_param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]
-    fn ctor_2(
-        self,
-        principal_id: impl ::core::convert::Into<u64>,
-        slot_id: impl ::core::convert::Into<u16>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        is_set_meta_param: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(principal_id),
-                ::core::convert::Into::into(slot_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(is_set_meta_param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMetaParam()` overload"]
-    fn set_meta_param(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::set_meta_param(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeMeta()` overload"]
-    fn change_meta(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::change_meta(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
-    fn set_meta_binary(
-        self,
-        param_meta_bytes: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<u8>,
-        >,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::set_meta_binary(
-                __receiver,
-                ::core::convert::Into::into(param_meta_bytes),
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDesc(bool)` overload"]
-    fn create_desc(
-        self,
-        is_show_dialog: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <NexVersus_ChangeReplayMetaSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeReplayMetaSequence_unity2_raw::create_desc(
-                __receiver,
-                ::core::convert::Into::into(is_show_dialog),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ChangeReplayMetaSequence> INexVersus_ChangeReplayMetaSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeReplayMetaSequence {
-    #[doc = "`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeReplayMetaSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_ChangeReplayMetaSequenceMethods>::ctor(
-            this,
-            data_id,
-            meta_data,
-            is_set_meta_param,
-        );
-        this
-    }
-
-    #[doc = "`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]
-    pub fn new_2(
-        principal_id: u64,
-        slot_id: u16,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        is_set_meta_param: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeReplayMetaSequence),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as INexVersus_ChangeReplayMetaSequenceMethods>::ctor_2(
-            this,
-            principal_id,
-            slot_id,
-            meta_data,
-            is_set_meta_param,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1<T0> {
-    #[doc = "`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        data_id: u64,
-        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
-    ) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`GetData()` overload"]
-    #[method(name = "GetData", args = 0)]
-    pub fn get_data(self) -> ();
-
-    #[doc = "`IsValidDataType(u16)` overload"]
-    #[method(name = "IsValidDataType", args = 1)]
-    pub fn is_valid_data_type(self, data_type: u16) -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<T0: ::unity2::ClassIdentity> NexVersus_DownloadMetaSequence_1<T0> {
-    #[doc = "`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        data_type: crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_DownloadMetaSequence_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_DownloadMetaSequence_1Methods<T0>>::ctor(this, data_id, data_type);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_CasualMetaDataEndCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_set_result {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::app::nexversus::NexVersus_Results as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetResult",
                 2,
                 param_types,
                 false,
@@ -10131,7 +9773,257 @@ mod __NexVersus_CasualMetaDataEndCallback_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result(
+        this: NexVersus_NexSequenceBase,
+        result: crate::app::nexversus::NexVersus_Results,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_NexSequenceBase,
+            crate::app::nexversus::NexVersus_Results,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result::get_offset() as isize),
+        );
+        inner(this, result, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::neterror::NetError_App as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetResultError",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetResultError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result_error(
+        this: NexVersus_NexSequenceBase,
+        error: crate::app::neterror::NetError_App,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_NexSequenceBase,
+            crate::app::neterror::NetError_App,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result_error::get_offset() as isize),
+        );
+        inner(this, error, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result_failed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetResultFailed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetResultFailed",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result_failed(
+        this: NexVersus_NexSequenceBase,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_NexSequenceBase,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result_failed::get_offset() as isize),
+        );
+        inner(this, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result_not_found {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetResultNotFound",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetResultNotFound",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result_not_found(
+        this: NexVersus_NexSequenceBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_result_not_found::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result_different_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                "SetResultDifferentType",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
+                    "SetResultDifferentType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result_different_type(
+        this: NexVersus_NexSequenceBase,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_NexSequenceBase,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result_different_type::get_offset() as isize),
+        );
+        inner(this, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_NexSequenceBase as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -10144,144 +10036,243 @@ mod __NexVersus_CasualMetaDataEndCallback_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_CasualMetaDataEndCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: NexVersus_NexSequenceBase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_CasualMetaDataEndCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ResultInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_CasualMetaDataEndCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: NexVersus_CasualMetaDataEndCallback,
-        result: crate::app::nexversus::NexVersus_Results,
-        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        info: crate::app::nexversus::NexVersus_ResultInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_CasualMetaDataEndCallback,
-            crate::app::nexversus::NexVersus_Results,
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-            crate::app::nexversus::NexVersus_ResultInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, meta_data, info, __unity2_method_info)
+        let inner: extern "C" fn(NexVersus_NexSequenceBase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_CasualMetaDataEndCallbackMethods:
-    INexVersus_CasualMetaDataEndCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
+pub trait INexVersus_NexSequenceBaseMethods: INexVersus_NexSequenceBase {
+    #[doc = "`Login()` overload"]
+    fn login(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::login(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Postlogin(i32, i32)` overload"]
+    fn postlogin(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        label_when_cancelled: impl ::core::convert::Into<i32>,
+        label_when_failed: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_CasualMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_CasualMetaDataEndCallback_unity2_raw::ctor(
+            __NexVersus_NexSequenceBase_unity2_raw::postlogin(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(label_when_cancelled),
+                ::core::convert::Into::into(label_when_failed),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]
-    fn invoke(
+    #[doc = "`ShowError()` overload"]
+    fn show_error(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::show_error(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
+    fn set_meta_binary(
+        self,
+        param_meta_bytes: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<u8>,
+        >,
+        meta_data: impl ::core::convert::Into<
+            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::set_meta_binary(
+                __receiver,
+                ::core::convert::Into::into(param_meta_bytes),
+                ::core::convert::Into::into(meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetResult(crate::app::nexversus::NexVersus_Results, ::unity2::Il2CppString)` overload"]
+    fn set_result(
         self,
         result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
-        info: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_CasualMetaDataEndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_CasualMetaDataEndCallback_unity2_raw::invoke(
+            __NexVersus_NexSequenceBase_unity2_raw::set_result(
                 __receiver,
                 ::core::convert::Into::into(result),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(message),
                 ::core::option::Option::None,
             )
+        }
+    }
+    #[doc = "`SetResultError(crate::app::neterror::NetError_App, ::unity2::Il2CppString)` overload"]
+    fn set_result_error(
+        self,
+        error: impl ::core::convert::Into<crate::app::neterror::NetError_App>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::set_result_error(
+                __receiver,
+                ::core::convert::Into::into(error),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetResultFailed(::unity2::Il2CppString)` overload"]
+    fn set_result_failed(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::set_result_failed(
+                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetResultNotFound()` overload"]
+    fn set_result_not_found(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::set_result_not_found(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetResultDifferentType(::unity2::Il2CppString)` overload"]
+    fn set_result_different_type(
+        self,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::set_result_different_type(
+                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_NexSequenceBase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_NexSequenceBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_CasualMetaDataEndCallback> INexVersus_CasualMetaDataEndCallbackMethods
-    for __T
-{
-}
+impl<__T: INexVersus_NexSequenceBase> INexVersus_NexSequenceBaseMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_CasualMetaDataEndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl NexVersus_NexSequenceBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_CasualMetaDataEndCallback),
+                ::core::stringify!(NexVersus_NexSequenceBase),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_CasualMetaDataEndCallbackMethods>::ctor(this, object, method);
+        <Self as INexVersus_NexSequenceBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0> {
+    #[doc = "`GetPrincipalId()` overload"]
+    #[method(name = "GetPrincipalId", args = 0)]
+    pub fn get_principal_id(self) -> u64;
+
+    #[doc = "`.ctor(u16, u64)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, slot_id: u16, principal_id: u64) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`GetPersistenceMetaData()` overload"]
+    #[method(name = "GetPersistenceMetaData", args = 0)]
+    pub fn get_persistence_meta_data(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u16, u64)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        slot_id: u16,
+        principal_id: u64,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0> {
+    #[doc = "`.ctor(u16, u64)` — overload selector"]
+    pub fn new(slot_id: u16, principal_id: u64) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_GetMetaDataFromPersistenceSlotSequence_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods<T0>>::ctor(
+            this,
+            slot_id,
+            principal_id,
+        );
         this
     }
 }
@@ -14079,7 +14070,7 @@ impl NexVersus {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_UploadReplaySequence_unity2_raw {
+mod __NexVersus_EndCallback_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -14088,11 +14079,14 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_EndCallback as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                2,
                 param_types,
                 false,
             )
@@ -14102,7 +14096,7 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_EndCallback as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -14115,24 +14109,187 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_UploadReplaySequence,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        slot: u16,
+        this: NexVersus_EndCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_UploadReplaySequence,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            crate::app::versusserverreplaydata::VersusServerReplayData,
-            u16,
+            NexVersus_EndCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, meta_data, data, slot, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::nexversus::NexVersus_Results as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_EndCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_EndCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: NexVersus_EndCallback,
+        result: crate::app::nexversus::NexVersus_Results,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_EndCallback,
+            crate::app::nexversus::NexVersus_Results,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+pub trait INexVersus_EndCallbackMethods: INexVersus_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexVersus_EndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexVersus_EndCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_Results>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexVersus_EndCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexVersus_EndCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+impl<__T: INexVersus_EndCallback> INexVersus_EndCallbackMethods for __T {}
+
+#[cfg(feature = "app-nexversus")]
+impl NexVersus_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexVersus_EndCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexVersus_EndCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexversus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexVersus_DownloadReplaySequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexVersus_DownloadReplaySequence,
+        data_id: u64,
+        result: crate::app::versusserverreplaydata::VersusServerReplayData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_DownloadReplaySequence,
+            u64,
+            crate::app::versusserverreplaydata::VersusServerReplayData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -14143,7 +14300,7 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
                 "Postlogin",
                 0,
                 param_types,
@@ -14155,7 +14312,7 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -14168,10 +14325,10 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_UploadReplaySequence,
+        this: NexVersus_DownloadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_DownloadReplaySequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -14181,15 +14338,15 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_check_exist {
+    pub mod __lookup_get_data {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "CheckExist",
+                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
+                "GetData",
                 0,
                 param_types,
                 false,
@@ -14200,8 +14357,8 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "CheckExist",
+                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    "GetData",
                     e
                 ),
             }
@@ -14212,246 +14369,15 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn check_exist(
-        this: NexVersus_UploadReplaySequence,
+    pub unsafe fn get_data(
+        this: NexVersus_DownloadReplaySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(NexVersus_DownloadReplaySequence, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_check_exist::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_branch {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "Branch",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "Branch",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn branch(
-        this: NexVersus_UploadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "Post",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "Post",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post(
-        this: NexVersus_UploadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_meta_binary {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "SetMetaBinary",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SetMetaBinary",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_meta_binary(
-        this: NexVersus_UploadReplaySequence,
-        param_meta_bytes: crate::system::collections::generic::list_1::List_1<u8>,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_UploadReplaySequence,
-            crate::system::collections::generic::list_1::List_1<u8>,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_meta_binary::get_offset() as isize),
-        );
-        inner(this, param_meta_bytes, meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invalid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "Invalid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "Invalid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invalid(
-        this: NexVersus_UploadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invalid::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_invalid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
-                "PostInvalid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
-                    "PostInvalid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post_invalid(
-        this: NexVersus_UploadReplaySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexVersus_UploadReplaySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_invalid::get_offset() as isize),
+                    .offset(__lookup_get_data::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -14462,11 +14388,11 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverreplaydata :: VersusServerReplayData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                4,
+                3,
                 param_types,
                 true,
             )
@@ -14476,7 +14402,7 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_UploadReplaySequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_DownloadReplaySequence as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -14490,43 +14416,37 @@ mod __NexVersus_UploadReplaySequence_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        slot: u16,
+        data_id: u64,
+        result: crate::app::versusserverreplaydata::VersusServerReplayData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+            u64,
             crate::app::versusserverreplaydata::VersusServerReplayData,
-            u16,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(super_, meta_data, data, slot, __unity2_method_info)
+        inner(super_, data_id, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadReplaySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]
+impl NexVersus_DownloadReplaySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-        slot: impl ::core::convert::Into<u16>,
+        data_id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
     ) -> () {
         unsafe {
-            __NexVersus_UploadReplaySequence_unity2_raw::create_bind(
+            __NexVersus_DownloadReplaySequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(slot),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
         }
@@ -14534,538 +14454,21 @@ impl NexVersus_UploadReplaySequence {
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_UploadReplaySequenceMethods: INexVersus_UploadReplaySequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]
+pub trait INexVersus_DownloadReplaySequenceMethods: INexVersus_DownloadReplaySequence {
+    #[doc = "`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]
     fn ctor(
         self,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-        data: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
-        slot: impl ::core::convert::Into<u16>,
+        data_id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>,
     ) -> () {
         unsafe {
             let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NexVersus_UploadReplaySequence_unity2_raw::ctor(
+            __NexVersus_DownloadReplaySequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(slot),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CheckExist()` overload"]
-    fn check_exist(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::check_exist(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Branch()` overload"]
-    fn branch(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::branch(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Post()` overload"]
-    fn post(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::post(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
-    fn set_meta_binary(
-        self,
-        param_meta_bytes: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<u8>,
-        >,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::set_meta_binary(
-                __receiver,
-                ::core::convert::Into::into(param_meta_bytes),
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invalid()` overload"]
-    fn invalid(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::invalid(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostInvalid()` overload"]
-    fn post_invalid(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexVersus_UploadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_UploadReplaySequence_unity2_raw::post_invalid(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_UploadReplaySequence> INexVersus_UploadReplaySequenceMethods for __T {}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_UploadReplaySequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        data: crate::app::versusserverreplaydata::VersusServerReplayData,
-        slot: u16,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_UploadReplaySequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexVersus_UploadReplaySequenceMethods>::ctor(this, meta_data, data, slot);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_all_slot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "IsAllSlot" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "IsAllSlot" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_all_slot(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_all_slot::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ReplaySlotMetaResultData as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        principal_id: u64,
-        slot_id: u16,
-        result: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            u64,
-            u16,
-            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, principal_id, slot_id, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "Postlogin" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "Postlogin" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_postlogin::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_persistence_meta_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetPersistenceMetaData" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetPersistenceMetaData" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_persistence_meta_data(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_persistence_meta_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_all_slot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetAllSlot" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetAllSlot" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_all_slot(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_all_slot::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_single_slot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "GetSingleSlot" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "GetSingleSlot" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_single_slot(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_single_slot::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_ReplaySlotMetaResultData as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 5 , param_types , true ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        principal_id: u64,
-        slot_id: u16,
-        is_show_dialog: bool,
-        result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            u16,
-            bool,
-            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            principal_id,
-            slot_id,
-            is_show_dialog,
-            result_data,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , "CreateDesc" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , "CreateDesc" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-        is_show_dialog: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            NexVersus_GetReplayMetaDataFromPersistenceSlotSequence,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
-        inner(this, is_show_dialog, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, bool, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        principal_id: impl ::core::convert::Into<u64>,
-        slot_id: impl ::core::convert::Into<u16>,
-        is_show_dialog: impl ::core::convert::Into<bool>,
-        result_data: impl ::core::convert::Into<
-            crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
-        >,
-    ) -> () {
-        unsafe {
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(principal_id),
-                ::core::convert::Into::into(slot_id),
-                ::core::convert::Into::into(is_show_dialog),
-                ::core::convert::Into::into(result_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:
-    INexVersus_GetReplayMetaDataFromPersistenceSlotSequence
-{
-    #[doc = "`IsAllSlot()` overload"]
-    fn is_all_slot(self) -> bool {
-        unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::is_all_slot(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]
-    fn ctor(
-        self,
-        principal_id: impl ::core::convert::Into<u64>,
-        slot_id: impl ::core::convert::Into<u16>,
-        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(principal_id),
-                ::core::convert::Into::into(slot_id),
+                ::core::convert::Into::into(data_id),
                 ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
@@ -15074,50 +14477,25 @@ pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:
     #[doc = "`Postlogin()` overload"]
     fn postlogin(self) -> () {
         unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::postlogin(
+            let __receiver =
+                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_DownloadReplaySequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetPersistenceMetaData()` overload"]
-    fn get_persistence_meta_data(self) -> () {
+    #[doc = "`GetData()` overload"]
+    fn get_data(self) -> () {
         unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw :: get_persistence_meta_data (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`GetAllSlot()` overload"]
-    fn get_all_slot(self) -> () {
-        unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::get_all_slot(
+            let __receiver =
+                <NexVersus_DownloadReplaySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_DownloadReplaySequence_unity2_raw::get_data(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSingleSlot()` overload"]
-    fn get_single_slot(self) -> () {
-        unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::get_single_slot(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDesc(bool)` overload"]
-    fn create_desc(
-        self,
-        is_show_dialog: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = < NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_unity2_raw::create_desc(
-                __receiver,
-                ::core::convert::Into::into(is_show_dialog),
                 ::core::option::Option::None,
             )
         }
@@ -15125,32 +14503,23 @@ pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_GetReplayMetaDataFromPersistenceSlotSequence>
-    INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods for __T
-{
-}
+impl<__T: INexVersus_DownloadReplaySequence> INexVersus_DownloadReplaySequenceMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
-    #[doc = "`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` — overload selector"]
+impl NexVersus_DownloadReplaySequence {
+    #[doc = "`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]
     pub fn new(
-        principal_id: u64,
-        slot_id: u16,
-        result: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
+        data_id: u64,
+        result: crate::app::versusserverreplaydata::VersusServerReplayData,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence),
+                ::core::stringify!(NexVersus_DownloadReplaySequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods>::ctor(
-            this,
-            principal_id,
-            slot_id,
-            result,
-        );
+        <Self as INexVersus_DownloadReplaySequenceMethods>::ctor(this, data_id, result);
         this
     }
 }
@@ -15158,7 +14527,7 @@ impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence {
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
+mod __NexVersus_ChangeMetaDataTypeSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -15167,12 +14536,15 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                3,
                 param_types,
                 false,
             )
@@ -15182,7 +14554,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -15195,33 +14567,46 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_ChangeUpdatedTimeSequence,
-        data_id: u64,
+        this: NexVersus_ChangeMetaDataTypeSequence,
+        target_principal_id: u64,
+        target_slot_id: u16,
+        data_type: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeUpdatedTimeSequence,
+            NexVersus_ChangeMetaDataTypeSequence,
             u64,
+            u16,
+            u16,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, data_id, __unity2_method_info)
+        inner(
+            this,
+            target_principal_id,
+            target_slot_id,
+            data_type,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_login {
+    pub mod __lookup_ctor_2 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
-                "Login",
-                0,
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
                 param_types,
                 false,
             )
@@ -15231,8 +14616,8 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
-                    "Login",
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -15243,19 +14628,23 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn login(
-        this: NexVersus_ChangeUpdatedTimeSequence,
+    pub unsafe fn ctor_2(
+        this: NexVersus_ChangeMetaDataTypeSequence,
+        data_id: u64,
+        data_type: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeUpdatedTimeSequence,
+            NexVersus_ChangeMetaDataTypeSequence,
+            u64,
+            u16,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_login::get_offset() as isize),
+                .offset(__lookup_ctor_2::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(this, data_id, data_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -15266,7 +14655,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
                 "Postlogin",
                 0,
                 param_types,
@@ -15278,7 +14667,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
                     "Postlogin",
                     e
                 ),
@@ -15291,11 +14680,11 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         }
     }
     pub unsafe fn postlogin(
-        this: NexVersus_ChangeUpdatedTimeSequence,
+        this: NexVersus_ChangeMetaDataTypeSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeUpdatedTimeSequence,
+            NexVersus_ChangeMetaDataTypeSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -15313,7 +14702,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
                 "ChangeMeta",
                 0,
                 param_types,
@@ -15325,7 +14714,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
                     "ChangeMeta",
                     e
                 ),
@@ -15338,11 +14727,11 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
         }
     }
     pub unsafe fn change_meta(
-        this: NexVersus_ChangeUpdatedTimeSequence,
+        this: NexVersus_ChangeMetaDataTypeSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeUpdatedTimeSequence,
+            NexVersus_ChangeMetaDataTypeSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -15361,11 +14750,13 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                2,
+                4,
                 param_types,
                 true,
             )
@@ -15375,7 +14766,7 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeUpdatedTimeSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -15389,33 +14780,175 @@ mod __NexVersus_ChangeUpdatedTimeSequence_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        data_id: u64,
+        target_principal_id: u64,
+        target_slot_id: u16,
+        data_type: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
             u64,
+            u16,
+            u16,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(super_, data_id, __unity2_method_info)
+        inner(
+            super_,
+            target_principal_id,
+            target_slot_id,
+            data_type,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        data_type: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            u16,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_2::get_offset() as isize),
+        );
+        inner(super_, data_id, data_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_proc_descs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: nexversus :: NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::class(),
+                "GetProcDescs",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_ChangeMetaDataTypeSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetProcDescs",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_proc_descs(
+        p: crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(
+            crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_proc_descs::get_offset() as isize),
+        );
+        inner(p, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeUpdatedTimeSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64)` overload"]
+impl NexVersus_ChangeMetaDataTypeSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16, u16)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
+        target_principal_id: impl ::core::convert::Into<u64>,
+        target_slot_id: impl ::core::convert::Into<u16>,
+        data_type: impl ::core::convert::Into<u16>,
     ) -> () {
         unsafe {
-            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::create_bind(
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(target_principal_id),
+                ::core::convert::Into::into(target_slot_id),
+                ::core::convert::Into::into(data_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, u16)` overload"]
+    pub fn create_bind_2(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        data_type: impl ::core::convert::Into<u16>,
+    ) -> () {
+        unsafe {
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::create_bind_2(
                 ::core::convert::Into::into(super_),
                 ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(data_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetProcDescs(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)` overload"]
+    pub fn get_proc_descs(
+        p: impl ::core::convert::Into<crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence>,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::get_proc_descs(
+                ::core::convert::Into::into(p),
                 ::core::option::Option::None,
             )
         }
@@ -15423,32 +14956,39 @@ impl NexVersus_ChangeUpdatedTimeSequence {
 }
 
 #[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:
-    INexVersus_ChangeUpdatedTimeSequence
+pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:
+    INexVersus_ChangeMetaDataTypeSequence
 {
-    #[doc = "`.ctor(u64)` overload"]
-    fn ctor(self, data_id: impl ::core::convert::Into<u64>) -> () {
+    #[doc = "`.ctor(u64, u16, u16)` overload"]
+    fn ctor(
+        self,
+        target_principal_id: impl ::core::convert::Into<u64>,
+        target_slot_id: impl ::core::convert::Into<u16>,
+        data_type: impl ::core::convert::Into<u16>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::ctor(
+            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(target_principal_id),
+                ::core::convert::Into::into(target_slot_id),
+                ::core::convert::Into::into(data_type),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Login()` overload"]
-    fn login(self) -> () {
+    #[doc = "`.ctor(u64, u16)` overload"]
+    fn ctor_2(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        data_type: impl ::core::convert::Into<u16>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::login(
+            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::ctor_2(
                 __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(data_type),
                 ::core::option::Option::None,
             )
         }
@@ -15456,11 +14996,8 @@ pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:
     #[doc = "`Postlogin()` overload"]
     fn postlogin(self) -> () {
         unsafe {
-            let __receiver =
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::postlogin(
+            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::postlogin(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -15469,11 +15006,8 @@ pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:
     #[doc = "`ChangeMeta()` overload"]
     fn change_meta(self) -> () {
         unsafe {
-            let __receiver =
-                <NexVersus_ChangeUpdatedTimeSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexVersus_ChangeUpdatedTimeSequence_unity2_raw::change_meta(
+            let __receiver = < NexVersus_ChangeMetaDataTypeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexVersus_ChangeMetaDataTypeSequence_unity2_raw::change_meta(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -15482,71 +15016,41 @@ pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ChangeUpdatedTimeSequence> INexVersus_ChangeUpdatedTimeSequenceMethods
+impl<__T: INexVersus_ChangeMetaDataTypeSequence> INexVersus_ChangeMetaDataTypeSequenceMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeUpdatedTimeSequence {
-    #[doc = "`.ctor(u64)` — overload selector"]
-    pub fn new(data_id: u64) -> Self {
+impl NexVersus_ChangeMetaDataTypeSequence {
+    #[doc = "`.ctor(u64, u16, u16)` — overload selector"]
+    pub fn new(target_principal_id: u64, target_slot_id: u16, data_type: u16) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeUpdatedTimeSequence),
+                ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_ChangeUpdatedTimeSequenceMethods>::ctor(this, data_id);
+        <Self as INexVersus_ChangeMetaDataTypeSequenceMethods>::ctor(
+            this,
+            target_principal_id,
+            target_slot_id,
+            data_type,
+        );
         this
     }
-}
 
-#[cfg(feature = "app-nexversus")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0> {
-    #[doc = "`GetPrincipalId()` overload"]
-    #[method(name = "GetPrincipalId", args = 0)]
-    pub fn get_principal_id(self) -> u64;
-
-    #[doc = "`.ctor(u16, u64)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, slot_id: u16, principal_id: u64) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`GetPersistenceMetaData()` overload"]
-    #[method(name = "GetPersistenceMetaData", args = 0)]
-    pub fn get_persistence_meta_data(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u16, u64)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        slot_id: u16,
-        principal_id: u64,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexversus")]
-impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0> {
-    #[doc = "`.ctor(u16, u64)` — overload selector"]
-    pub fn new(slot_id: u16, principal_id: u64) -> Self {
+    #[doc = "`.ctor(u64, u16)` — overload selector"]
+    pub fn new_2(data_id: u64, data_type: u16) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_GetMetaDataFromPersistenceSlotSequence_1),
-                ::core::stringify!(new),
+                ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence),
+                ::core::stringify!(new_2),
             )
         });
-        <Self as INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods<T0>>::ctor(
-            this,
-            slot_id,
-            principal_id,
-        );
+        <Self as INexVersus_ChangeMetaDataTypeSequenceMethods>::ctor_2(this, data_id, data_type);
         this
     }
 }
@@ -15554,7 +15058,7 @@ impl<T0: ::unity2::ClassIdentity> NexVersus_GetMetaDataFromPersistenceSlotSequen
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
+mod __NexVersus_TargetSlotList_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -15563,11 +15067,11 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                0,
                 param_types,
                 false,
             )
@@ -15577,7 +15081,7 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -15590,36 +15094,124 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NexVersus_ChangeVersusRankedMetaDataSequence,
-        data_id: u64,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        player_name: ::unity2::Il2CppString,
+        this: NexVersus_TargetSlotList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: NexVersus_TargetSlotList,
+        id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexVersus_TargetSlotList, u64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_add::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u64 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add_2(
+        this: NexVersus_TargetSlotList,
+        list: crate::system::collections::generic::list_1::List_1<u64>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexVersus_ChangeVersusRankedMetaDataSequence,
-            u64,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            ::unity2::Il2CppString,
+            NexVersus_TargetSlotList,
+            crate::system::collections::generic::list_1::List_1<u64>,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_add_2::get_offset() as isize),
         );
-        inner(this, data_id, meta_data, player_name, __unity2_method_info)
+        inner(this, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
+    pub mod __lookup_clear {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "Clear",
                 0,
                 param_types,
                 false,
@@ -15630,8 +15222,8 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
                     e
                 ),
             }
@@ -15642,31 +15234,29 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn postlogin(
-        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+    pub unsafe fn clear(
+        this: NexVersus_TargetSlotList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeVersusRankedMetaDataSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_postlogin::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_meta_param {
+    pub mod __lookup_get_count {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
-                "SetMetaParam",
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "get_Count",
                 0,
                 param_types,
                 false,
@@ -15677,8 +15267,8 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetMetaParam",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "get_Count",
                     e
                 ),
             }
@@ -15689,31 +15279,29 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_meta_param(
-        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+    pub unsafe fn get_count(
+        this: NexVersus_TargetSlotList,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeVersusRankedMetaDataSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_meta_param::get_offset() as isize),
-        );
+    ) -> i32 {
+        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_change_meta {
+    pub mod __lookup_get_count_valid {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
-                "ChangeMeta",
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "GetCountValid",
                 0,
                 param_types,
                 false,
@@ -15724,8 +15312,8 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeMeta",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "GetCountValid",
                     e
                 ),
             }
@@ -15736,34 +15324,32 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn change_meta(
-        this: NexVersus_ChangeVersusRankedMetaDataSequence,
+    pub unsafe fn get_count_valid(
+        this: NexVersus_TargetSlotList,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexVersus_ChangeVersusRankedMetaDataSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_meta::get_offset() as isize),
-        );
+    ) -> i32 {
+        let inner: extern "C" fn(NexVersus_TargetSlotList, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count_valid::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_get_id_list {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "GetIDList",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -15771,8 +15357,8 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NexVersus_ChangeVersusRankedMetaDataSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "GetIDList",
                     e
                 ),
             }
@@ -15783,107 +15369,533 @@ mod __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        player_name: ::unity2::Il2CppString,
+    pub unsafe fn get_id_list(
+        this: NexVersus_TargetSlotList,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::system::collections::generic::list_1::List_1<u64> {
         let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-            ::unity2::Il2CppString,
+            NexVersus_TargetSlotList,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            data_id,
-            meta_data,
-            player_name,
-            __unity2_method_info,
         )
+            -> crate::system::collections::generic::list_1::List_1<u64> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_id_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u64 as :: unity2 :: IlType > :: il_type () , < crate :: app :: nexversus :: NexVersus_TargetSlotList_Results as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "SetResult",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "SetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_result(
+        this: NexVersus_TargetSlotList,
+        id: u64,
+        result: crate::app::nexversus::NexVersus_TargetSlotList_Results,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_TargetSlotList,
+            u64,
+            crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_result::get_offset() as isize),
+        );
+        inner(this, id, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "GetResult",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "GetResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_result(
+        this: NexVersus_TargetSlotList,
+        id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::nexversus::NexVersus_TargetSlotList_Results {
+        let inner: extern "C" fn(
+            NexVersus_TargetSlotList,
+            u64,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::app::nexversus::NexVersus_TargetSlotList_Results = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_result::get_offset() as isize),
+        );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_valid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "IsValid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "IsValid",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_valid(
+        this: NexVersus_TargetSlotList,
+        id: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(NexVersus_TargetSlotList, u64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_valid::get_offset() as isize),
+            );
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dump {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "Dump",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "Dump",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dump(
+        this: NexVersus_TargetSlotList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            NexVersus_TargetSlotList,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dump::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_for_each {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_2::Action_2<
+                    u64,
+                    crate::app::nexversus::NexVersus_TargetSlotList_Results,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "ForEach",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "ForEach",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn for_each(
+        this: NexVersus_TargetSlotList,
+        action: crate::system::action_2::Action_2<
+            u64,
+            crate::app::nexversus::NexVersus_TargetSlotList_Results,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_TargetSlotList,
+            crate::system::action_2::Action_2<
+                u64,
+                crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_for_each::get_offset() as isize),
+        );
+        inner(this, action, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_for_each_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_3::Action_3<
+                    i32,
+                    u64,
+                    crate::app::nexversus::NexVersus_TargetSlotList_Results,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::class(),
+                "ForEach",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexVersus_TargetSlotList as ::unity2::ClassIdentity>::NAME,
+                    "ForEach",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn for_each_2(
+        this: NexVersus_TargetSlotList,
+        action: crate::system::action_3::Action_3<
+            i32,
+            u64,
+            crate::app::nexversus::NexVersus_TargetSlotList_Results,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexVersus_TargetSlotList,
+            crate::system::action_3::Action_3<
+                i32,
+                u64,
+                crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_for_each_2::get_offset() as isize),
+        );
+        inner(this, action, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeVersusRankedMetaDataSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+pub trait INexVersus_TargetSlotListMethods: INexVersus_TargetSlotList {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(player_name),
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Add(u64)` overload"]
+    fn add(self, id: impl ::core::convert::Into<u64>) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(id),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-nexversus")]
-pub trait INexVersus_ChangeVersusRankedMetaDataSequenceMethods:
-    INexVersus_ChangeVersusRankedMetaDataSequence
-{
-    #[doc = "`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]
-    fn ctor(
+    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<u64>)` overload"]
+    fn add_2(
         self,
-        data_id: impl ::core::convert::Into<u64>,
-        meta_data: impl ::core::convert::Into<
-            crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        >,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64>>,
     ) -> () {
         unsafe {
-            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::ctor(
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::add_2(
                 __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(player_name),
+                ::core::convert::Into::into(list),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
         unsafe {
-            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::postlogin(
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::get_count(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetMetaParam()` overload"]
-    fn set_meta_param(self) -> () {
+    #[doc = "`GetCountValid()` overload"]
+    fn get_count_valid(self) -> i32 {
         unsafe {
-            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::set_meta_param(
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::get_count_valid(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ChangeMeta()` overload"]
-    fn change_meta(self) -> () {
+    #[doc = "`GetIDList()` overload"]
+    fn get_id_list(self) -> crate::system::collections::generic::list_1::List_1<u64> {
         unsafe {
-            let __receiver = < NexVersus_ChangeVersusRankedMetaDataSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexVersus_ChangeVersusRankedMetaDataSequence_unity2_raw::change_meta(
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::get_id_list(
                 __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetResult(u64, crate::app::nexversus::NexVersus_TargetSlotList_Results)` overload"]
+    fn set_result(
+        self,
+        id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList_Results>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::set_result(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetResult(u64)` overload"]
+    fn get_result(
+        self,
+        id: impl ::core::convert::Into<u64>,
+    ) -> crate::app::nexversus::NexVersus_TargetSlotList_Results {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::get_result(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsValid(u64)` overload"]
+    fn is_valid(self, id: impl ::core::convert::Into<u64>) -> bool {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::is_valid(
+                __receiver,
+                ::core::convert::Into::into(id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dump()` overload"]
+    fn dump(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::dump(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ForEach(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]
+    fn for_each(
+        self,
+        action: impl ::core::convert::Into<
+            crate::system::action_2::Action_2<
+                u64,
+                crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::for_each(
+                __receiver,
+                ::core::convert::Into::into(action),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ForEach(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]
+    fn for_each_2(
+        self,
+        action: impl ::core::convert::Into<
+            crate::system::action_3::Action_3<
+                i32,
+                u64,
+                crate::app::nexversus::NexVersus_TargetSlotList_Results,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexVersus_TargetSlotList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexVersus_TargetSlotList_unity2_raw::for_each_2(
+                __receiver,
+                ::core::convert::Into::into(action),
                 ::core::option::Option::None,
             )
         }
@@ -15891,32 +15903,20 @@ pub trait INexVersus_ChangeVersusRankedMetaDataSequenceMethods:
 }
 
 #[cfg(feature = "app-nexversus")]
-impl<__T: INexVersus_ChangeVersusRankedMetaDataSequence>
-    INexVersus_ChangeVersusRankedMetaDataSequenceMethods for __T
-{
-}
+impl<__T: INexVersus_TargetSlotList> INexVersus_TargetSlotListMethods for __T {}
 
 #[cfg(feature = "app-nexversus")]
-impl NexVersus_ChangeVersusRankedMetaDataSequence {
-    #[doc = "`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        player_name: ::unity2::Il2CppString,
-    ) -> Self {
+impl NexVersus_TargetSlotList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexVersus_ChangeVersusRankedMetaDataSequence),
+                ::core::stringify!(NexVersus_TargetSlotList),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexVersus_ChangeVersusRankedMetaDataSequenceMethods>::ctor(
-            this,
-            data_id,
-            meta_data,
-            player_name,
-        );
+        <Self as INexVersus_TargetSlotListMethods>::ctor(this);
         this
     }
 }

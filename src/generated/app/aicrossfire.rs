@@ -9,6 +9,67 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire.md"))]
+    #[::unity2::class(namespace = "App", name = "AICrossfire")]
+    #[parent(crate::system::object::Object)]
+    pub struct AICrossfire {
+        #[static_field]
+        #[rename(name = "PositionMax")]
+        pub position_max: i32,
+        #[static_field]
+        #[rename(name = "RangeFar")]
+        pub range_far: i32,
+        #[static_field]
+        #[rename(name = "aPositionTable")]
+        pub a_position_table:
+            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
+                crate::app::aicrossfire::AICrossfire_PositionTable,
+            >,
+        #[rename(name = "m_aCrossfire")]
+        pub m_a_crossfire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Crossfire>,
+        #[rename(name = "m_Num")]
+        pub m_num: i32,
+        #[rename(name = "m_Ahead")]
+        pub m_ahead: crate::app::aicrossfire::AICrossfire_Ahead,
+        #[rename(name = "m_SimulatorForAhead")]
+        pub m_simulator_for_ahead: crate::app::aibattlesimulator::AIBattleSimulator,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_FireComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "AICrossfire.FireComparer")]
+    #[parent(crate::system::object::Object)]
+    pub struct AICrossfire_FireComparer {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_Ahead.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AICrossfire_Ahead {
+        pub kill: f32,
+        pub x: i32,
+        pub z: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AICrossfire_Ahead {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AICrossfire.Ahead";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AICrossfire_Ahead {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_Fire_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -69,62 +130,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire.md"))]
-    #[::unity2::class(namespace = "App", name = "AICrossfire")]
-    #[parent(crate::system::object::Object)]
-    pub struct AICrossfire {
-        #[static_field]
-        #[rename(name = "PositionMax")]
-        pub position_max: i32,
-        #[static_field]
-        #[rename(name = "RangeFar")]
-        pub range_far: i32,
-        #[static_field]
-        #[rename(name = "aPositionTable")]
-        pub a_position_table:
-            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
-                crate::app::aicrossfire::AICrossfire_PositionTable,
-            >,
-        #[rename(name = "m_aCrossfire")]
-        pub m_a_crossfire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Crossfire>,
-        #[rename(name = "m_Num")]
-        pub m_num: i32,
-        #[rename(name = "m_Ahead")]
-        pub m_ahead: crate::app::aicrossfire::AICrossfire_Ahead,
-        #[rename(name = "m_SimulatorForAhead")]
-        pub m_simulator_for_ahead: crate::app::aibattlesimulator::AIBattleSimulator,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_Ahead.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AICrossfire_Ahead {
-        pub kill: f32,
-        pub x: i32,
-        pub z: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AICrossfire_Ahead {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AICrossfire.Ahead";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AICrossfire_Ahead {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_Fire.md"))]
     #[::unity2::class(namespace = "App", name = "AICrossfire.Fire")]
     #[parent(crate::system::object::Object)]
@@ -141,10 +146,23 @@ mod __types {
         pub m_strongest: crate::app::aicrossfire::AICrossfire_Fire_Type,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_FireComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "AICrossfire.FireComparer")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_Crossfire.md"))]
+    #[::unity2::class(namespace = "App", name = "AICrossfire.Crossfire")]
     #[parent(crate::system::object::Object)]
-    pub struct AICrossfire_FireComparer {}
+    pub struct AICrossfire_Crossfire {
+        #[rename(name = "m_Target")]
+        pub m_target: crate::app::unit::Unit,
+        #[rename(name = "m_aFire")]
+        pub m_a_fire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Fire>,
+        #[rename(name = "m_Num")]
+        pub m_num: i32,
+        #[rename(name = "m_ActorFireIndex")]
+        pub m_actor_fire_index: i32,
+        #[rename(name = "m_ActorPositionIndex")]
+        pub m_actor_position_index: i32,
+        #[rename(name = "m_Times")]
+        pub m_times: i32,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicrossfire/AICrossfire_PositionTable.md"))]
     #[repr(C)]
@@ -174,24 +192,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicrossfire/AICrossfire_Crossfire.md"))]
-    #[::unity2::class(namespace = "App", name = "AICrossfire.Crossfire")]
-    #[parent(crate::system::object::Object)]
-    pub struct AICrossfire_Crossfire {
-        #[rename(name = "m_Target")]
-        pub m_target: crate::app::unit::Unit,
-        #[rename(name = "m_aFire")]
-        pub m_a_fire: ::unity2::Array<crate::app::aicrossfire::AICrossfire_Fire>,
-        #[rename(name = "m_Num")]
-        pub m_num: i32,
-        #[rename(name = "m_ActorFireIndex")]
-        pub m_actor_fire_index: i32,
-        #[rename(name = "m_ActorPositionIndex")]
-        pub m_actor_position_index: i32,
-        #[rename(name = "m_Times")]
-        pub m_times: i32,
     }
 }
 
@@ -654,6 +654,164 @@ impl AICrossfire {
             )
         });
         <Self as IAICrossfireMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-aicrossfire")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AICrossfire_FireComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::aicrossfire::AICrossfire_Fire as ::unity2::IlType>::il_type(),
+                <crate::app::aicrossfire::AICrossfire_Fire as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AICrossfire_FireComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AICrossfire_FireComparer as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: AICrossfire_FireComparer,
+        x: crate::app::aicrossfire::AICrossfire_Fire,
+        y: crate::app::aicrossfire::AICrossfire_Fire,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            AICrossfire_FireComparer,
+            crate::app::aicrossfire::AICrossfire_Fire,
+            crate::app::aicrossfire::AICrossfire_Fire,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AICrossfire_FireComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AICrossfire_FireComparer as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AICrossfire_FireComparer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AICrossfire_FireComparer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aicrossfire")]
+pub trait IAICrossfire_FireComparerMethods: IAICrossfire_FireComparer {
+    #[doc = "`Compare(crate::app::aicrossfire::AICrossfire_Fire, crate::app::aicrossfire::AICrossfire_Fire)` overload"]
+    fn compare(
+        self,
+        x: impl ::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire>,
+        y: impl ::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <AICrossfire_FireComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AICrossfire_FireComparer_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AICrossfire_FireComparer as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AICrossfire_FireComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aicrossfire")]
+impl<__T: IAICrossfire_FireComparer> IAICrossfire_FireComparerMethods for __T {}
+
+#[cfg(feature = "app-aicrossfire")]
+impl AICrossfire_FireComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AICrossfire_FireComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAICrossfire_FireComparerMethods>::ctor(this);
         this
     }
 }
@@ -1426,300 +1584,6 @@ impl AICrossfire_Fire {
 #[cfg(feature = "app-aicrossfire")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AICrossfire_FireComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::aicrossfire::AICrossfire_Fire as ::unity2::IlType>::il_type(),
-                <crate::app::aicrossfire::AICrossfire_Fire as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AICrossfire_FireComparer as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AICrossfire_FireComparer as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: AICrossfire_FireComparer,
-        x: crate::app::aicrossfire::AICrossfire_Fire,
-        y: crate::app::aicrossfire::AICrossfire_Fire,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AICrossfire_FireComparer,
-            crate::app::aicrossfire::AICrossfire_Fire,
-            crate::app::aicrossfire::AICrossfire_Fire,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AICrossfire_FireComparer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AICrossfire_FireComparer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AICrossfire_FireComparer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AICrossfire_FireComparer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aicrossfire")]
-pub trait IAICrossfire_FireComparerMethods: IAICrossfire_FireComparer {
-    #[doc = "`Compare(crate::app::aicrossfire::AICrossfire_Fire, crate::app::aicrossfire::AICrossfire_Fire)` overload"]
-    fn compare(
-        self,
-        x: impl ::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire>,
-        y: impl ::core::convert::Into<crate::app::aicrossfire::AICrossfire_Fire>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <AICrossfire_FireComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AICrossfire_FireComparer_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AICrossfire_FireComparer as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AICrossfire_FireComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aicrossfire")]
-impl<__T: IAICrossfire_FireComparer> IAICrossfire_FireComparerMethods for __T {}
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_FireComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AICrossfire_FireComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAICrossfire_FireComparerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aicrossfire")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AICrossfire_PositionTable_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i8 as ::unity2::IlType>::il_type(),
-                <i8 as ::unity2::IlType>::il_type(),
-                <i8 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AICrossfire_PositionTable as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AICrossfire_PositionTable as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AICrossfire_PositionTable,
-        x: i8,
-        z: i8,
-        range: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AICrossfire_PositionTable,
-            i8,
-            i8,
-            i8,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, x, z, range, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_far {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AICrossfire_PositionTable as ::unity2::ClassIdentity>::class(),
-                "IsFar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AICrossfire_PositionTable as ::unity2::ClassIdentity>::NAME,
-                    "IsFar",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_far(
-        this: AICrossfire_PositionTable,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AICrossfire_PositionTable, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_far::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aicrossfire")]
-impl AICrossfire_PositionTable {
-    #[doc = "`.ctor(i8, i8, i8)` overload"]
-    pub fn ctor(
-        self,
-        x: impl ::core::convert::Into<i8>,
-        z: impl ::core::convert::Into<i8>,
-        range: impl ::core::convert::Into<i8>,
-    ) -> () {
-        unsafe {
-            __AICrossfire_PositionTable_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(range),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsFar()` overload"]
-    pub fn is_far(self) -> bool {
-        unsafe {
-            __AICrossfire_PositionTable_unity2_raw::is_far(self, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aicrossfire")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AICrossfire_Crossfire_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2278,6 +2142,142 @@ impl AICrossfire_Crossfire {
         });
         <Self as IAICrossfire_CrossfireMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-aicrossfire")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AICrossfire_PositionTable_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i8 as ::unity2::IlType>::il_type(),
+                <i8 as ::unity2::IlType>::il_type(),
+                <i8 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AICrossfire_PositionTable as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AICrossfire_PositionTable as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AICrossfire_PositionTable,
+        x: i8,
+        z: i8,
+        range: i8,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AICrossfire_PositionTable,
+            i8,
+            i8,
+            i8,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, x, z, range, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_far {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AICrossfire_PositionTable as ::unity2::ClassIdentity>::class(),
+                "IsFar",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AICrossfire_PositionTable as ::unity2::ClassIdentity>::NAME,
+                    "IsFar",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_far(
+        this: AICrossfire_PositionTable,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(AICrossfire_PositionTable, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_far::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aicrossfire")]
+impl AICrossfire_PositionTable {
+    #[doc = "`.ctor(i8, i8, i8)` overload"]
+    pub fn ctor(
+        self,
+        x: impl ::core::convert::Into<i8>,
+        z: impl ::core::convert::Into<i8>,
+        range: impl ::core::convert::Into<i8>,
+    ) -> () {
+        unsafe {
+            __AICrossfire_PositionTable_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(range),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsFar()` overload"]
+    pub fn is_far(self) -> bool {
+        unsafe {
+            __AICrossfire_PositionTable_unity2_raw::is_far(self, ::core::option::Option::None)
+        }
     }
 }
 

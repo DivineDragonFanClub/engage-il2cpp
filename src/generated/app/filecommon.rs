@@ -9,29 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filecommon/FileCommon.md"))]
-    #[::unity2::class(namespace = "App", name = "FileCommon")]
-    #[parent(crate::system::object::Object)]
-    pub struct FileCommon {
-        #[static_field]
-        #[rename(name = "s_LockObject")]
-        pub s_lock_object: ::unity2::IlInstance,
-        #[static_field]
-        #[rename(name = "s_Dictionary")]
-        pub s_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::filedata::FileData,
-        >,
-        #[static_field]
-        #[rename(name = "s_PreAsyncList")]
-        pub s_pre_async_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData>,
-        #[static_field]
-        #[rename(name = "s_PostAsyncList")]
-        pub s_post_async_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/filecommon/FileCommon_State.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +55,29 @@ mod __types {
         pub fn done() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filecommon/FileCommon.md"))]
+    #[::unity2::class(namespace = "App", name = "FileCommon")]
+    #[parent(crate::system::object::Object)]
+    pub struct FileCommon {
+        #[static_field]
+        #[rename(name = "s_LockObject")]
+        pub s_lock_object: ::unity2::IlInstance,
+        #[static_field]
+        #[rename(name = "s_Dictionary")]
+        pub s_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::filedata::FileData,
+        >,
+        #[static_field]
+        #[rename(name = "s_PreAsyncList")]
+        pub s_pre_async_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData>,
+        #[static_field]
+        #[rename(name = "s_PostAsyncList")]
+        pub s_post_async_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::filedata::FileData>,
     }
 }
 

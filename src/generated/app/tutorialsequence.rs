@@ -36,6 +36,8 @@ mod __types {
         pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
         #[rename(name = "m_SubSpriteAtlas")]
         pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_LocatorRoot")]
+        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
         #[rename(name = "m_TutorialData")]
         pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<
             crate::app::tutorialdata::TutorialData,
@@ -64,6 +66,54 @@ mod __types {
         #[static_field]
         #[rename(name = "ClassChangeKey")]
         pub class_change_key: ::unity2::Il2CppString,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TutorialSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TutorialSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TutorialSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TutorialSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TutorialSequence_Label {
+        pub fn load() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unload() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]
@@ -135,54 +185,6 @@ mod __types {
 
         pub fn korean() -> Self {
             Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TutorialSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TutorialSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TutorialSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TutorialSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TutorialSequence_Label {
-        pub fn load() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn unload() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
         }
     }
 }

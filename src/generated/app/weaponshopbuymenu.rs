@@ -11,6 +11,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "WeaponShopBuyMenu.ChangeUnitToPrevEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_RequestCloseEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.RequestCloseEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -24,16 +32,6 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct WeaponShopBuyMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct WeaponShopBuyMenu_SelectEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToNextEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -42,13 +40,10 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct WeaponShopBuyMenu_ChangeUnitToNextEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "WeaponShopBuyMenu.ChangeUnitToPrevEventHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {}
+    pub struct WeaponShopBuyMenu_SelectEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu.md"))]
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu")]
@@ -81,10 +76,169 @@ mod __types {
         pub m_switch_detail_displayway_event_handler:
             crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct WeaponShopBuyMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "app-weaponshopbuymenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(
+                ),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        unit_item: crate::app::unititem::UnitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+            crate::app::unititem::UnitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, unit_item, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:
+    IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    fn invoke(self, unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
+        unsafe {
+            let __receiver = < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(unit_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl<__T: IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>
+    IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-weaponshopbuymenu")]
 #[doc(hidden)]
@@ -387,7 +541,7 @@ impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler {
 #[cfg(feature = "app-weaponshopbuymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
+mod __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -401,7 +555,8 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(
+                ),
                 ".ctor",
                 2,
                 param_types,
@@ -409,15 +564,7 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -426,13 +573,13 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: WeaponShopBuyMenu_DecideEventHandler,
+        this: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            WeaponShopBuyMenu_DecideEventHandler,
+            WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -451,9 +598,10 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(
+                ),
                 "Invoke",
                 1,
                 param_types,
@@ -461,15 +609,7 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -478,26 +618,26 @@ mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: WeaponShopBuyMenu_DecideEventHandler,
-        item_data: crate::app::itemdata::ItemData,
+        this: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+        unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    ) -> () {
         let inner: extern "C" fn(
-            WeaponShopBuyMenu_DecideEventHandler,
-            crate::app::itemdata::ItemData,
+            WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+            crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, item_data, __unity2_method_info)
+        inner(this, unit_item, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-weaponshopbuymenu")]
-pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:
-    IWeaponShopBuyMenu_DecideEventHandler
+pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:
+    IWeaponShopBuyMenu_ChangeUnitToNextEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -506,8 +646,8 @@ pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < WeaponShopBuyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -515,13 +655,13 @@ pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::itemdata::ItemData)` overload"]
-    fn invoke(self, item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    fn invoke(self, unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
         unsafe {
-            let __receiver = < WeaponShopBuyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(item_data),
+                ::core::convert::Into::into(unit_item),
                 ::core::option::Option::None,
             )
         }
@@ -529,23 +669,25 @@ pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-weaponshopbuymenu")]
-impl<__T: IWeaponShopBuyMenu_DecideEventHandler> IWeaponShopBuyMenu_DecideEventHandlerMethods
-    for __T
+impl<__T: IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>
+    IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-weaponshopbuymenu")]
-impl WeaponShopBuyMenu_DecideEventHandler {
+impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyMenu_DecideEventHandler),
+                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWeaponShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }
@@ -712,314 +854,6 @@ impl WeaponShopBuyMenu_SelectEventHandler {
             )
         });
         <Self as IWeaponShopBuyMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
-        unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, unit_item, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:
-    IWeaponShopBuyMenu_ChangeUnitToNextEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    fn invoke(self, unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-impl<__T: IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>
-    IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
-        unit_item: crate::app::unititem::UnitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, unit_item, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:
-    IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    fn invoke(self, unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
-        unsafe {
-            let __receiver = < WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(unit_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-impl<__T: IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>
-    IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-weaponshopbuymenu")]
-impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(
-            this, object, method,
-        );
         this
     }
 }
@@ -2218,6 +2052,172 @@ impl WeaponShopBuyMenu {
             change_unit_to_next_event_handler,
             switch_detail_displayway_event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: WeaponShopBuyMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            WeaponShopBuyMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WeaponShopBuyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: WeaponShopBuyMenu_DecideEventHandler,
+        item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            WeaponShopBuyMenu_DecideEventHandler,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, item_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:
+    IWeaponShopBuyMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < WeaponShopBuyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::itemdata::ItemData)` overload"]
+    fn invoke(self, item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe {
+            let __receiver = < WeaponShopBuyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WeaponShopBuyMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(item_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl<__T: IWeaponShopBuyMenu_DecideEventHandler> IWeaponShopBuyMenu_DecideEventHandlerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

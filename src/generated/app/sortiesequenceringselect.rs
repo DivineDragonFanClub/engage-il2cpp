@@ -11,6 +11,24 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceringselect/SortieSequenceRingSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequenceRingSelect")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceringselect :: SortieSequenceRingSelect >)]
+    pub struct SortieSequenceRingSelect {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "HelpPrefabPath")]
+        pub help_prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_GameObject")]
+        pub m_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Window")]
+        pub m_window: crate::app::ringselectroot::RingSelectRoot,
+        #[rename(name = "m_RingMenu")]
+        pub m_ring_menu: crate::app::ringselectmenu::RingSelectMenu,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceringselect/SortieSequenceRingSelect_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,24 +79,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceringselect/SortieSequenceRingSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequenceRingSelect")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceringselect :: SortieSequenceRingSelect >)]
-    pub struct SortieSequenceRingSelect {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "HelpPrefabPath")]
-        pub help_prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_GameObject")]
-        pub m_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Window")]
-        pub m_window: crate::app::ringselectroot::RingSelectRoot,
-        #[rename(name = "m_RingMenu")]
-        pub m_ring_menu: crate::app::ringselectmenu::RingSelectMenu,
     }
 }
 

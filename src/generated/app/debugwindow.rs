@@ -25,6 +25,8 @@ mod __types {
         pub m_font: crate::unity_engine::font::Font,
         #[rename(name = "m_Material")]
         pub m_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::root::debugmesh::DebugMesh,
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::debugmenu::DebugMenu,
         #[rename(name = "m_FontMaterial")]
@@ -107,6 +109,53 @@ mod __DebugWindow_unity2_raw {
                 .offset(__lookup_set_menu::get_offset() as isize),
         );
         inner(this, menu, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mesh {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugWindow as ::unity2::ClassIdentity>::class(),
+                "get_Mesh",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugWindow as ::unity2::ClassIdentity>::NAME,
+                    "get_Mesh",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_mesh(
+        this: DebugWindow,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::debugmesh::DebugMesh {
+        let inner: extern "C" fn(
+            DebugWindow,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::debugmesh::DebugMesh = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_mesh::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1150,6 +1199,15 @@ pub trait IDebugWindowMethods: IDebugWindow {
                 ::core::convert::Into::into(menu),
                 ::core::option::Option::None,
             )
+        }
+    }
+    #[doc = "`get_Mesh()` overload"]
+    fn get_mesh(self) -> crate::root::debugmesh::DebugMesh {
+        unsafe {
+            let __receiver = <DebugWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DebugWindow_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTextWidth(::unity2::Il2CppString)` overload"]

@@ -14,14 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
-    #[parent(crate::app::mapinfobase::MapInfoBase)]
-    pub struct MapInfoGaugeMainLocatorRoot {
-        #[rename(name = "m_MainLocatorRoot")]
-        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +68,19 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
+    #[parent(crate::app::mapinfobase::MapInfoBase)]
+    pub struct MapInfoGaugeMainLocatorRoot {
+        #[rename(name = "m_MainLocatorRoot")]
+        pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SubLocatorRoots")]
+        pub m_sub_locator_roots:
+            ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot>,
+        #[rename(name = "m_SubLocatorRoot")]
+        pub m_sub_locator_root: crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,
     }
 }
 
@@ -421,6 +426,46 @@ mod __MapInfoGaugeMainLocatorRoot_unity2_raw {
                 .offset(__lookup_delete_disuse_locator_root::get_offset() as isize),
         );
         inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sub_locator_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapInfoGaugeMainLocatorRoot as ::unity2::ClassIdentity>::class(),
+                "get_SubLocatorRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapInfoGaugeMainLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                    "get_SubLocatorRoot",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sub_locator_root(
+        this: MapInfoGaugeMainLocatorRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot {
+        let inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_sub_locator_root :: get_offset () as isize) ,) ;
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -914,6 +959,21 @@ pub trait IMapInfoGaugeMainLocatorRootMethods: IMapInfoGaugeMainLocatorRoot {
             __MapInfoGaugeMainLocatorRoot_unity2_raw::delete_disuse_locator_root(
                 __receiver,
                 ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SubLocatorRoot()` overload"]
+    fn get_sub_locator_root(
+        self,
+    ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot {
+        unsafe {
+            let __receiver =
+                <MapInfoGaugeMainLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapInfoGaugeMainLocatorRoot_unity2_raw::get_sub_locator_root(
+                __receiver,
                 ::core::option::Option::None,
             )
         }

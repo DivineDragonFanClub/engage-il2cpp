@@ -11,25 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Expressions",
-        name = "BinaryOperatorExpression"
-    )]
-    #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
-    pub struct BinaryOperatorExpression {
-# [static_field] # [rename (name = "POWER")] pub power : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "MUL_DIV_MOD")] pub mul_div_mod : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "ADD_SUB")] pub add_sub : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "STRCAT")] pub strcat : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "COMPARES")] pub compares : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "LOGIC_AND")] pub logic_and : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [static_field] # [rename (name = "LOGIC_OR")] pub logic_or : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [rename (name = "m_Exp1")] pub m_exp1 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
-# [rename (name = "m_Exp2")] pub m_exp2 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
-# [rename (name = "m_Operator")] pub m_operator : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md"))]
     #[::unity2::class(
         namespace = "MoonSharp.Interpreter.Tree.Expressions",
@@ -154,10 +135,212 @@ mod __types {
 # [rename (name = "Prev")] pub prev : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
 # [rename (name = "Next")] pub next : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Tree.Expressions",
+        name = "BinaryOperatorExpression"
+    )]
+    #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+    pub struct BinaryOperatorExpression {
+# [static_field] # [rename (name = "POWER")] pub power : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "MUL_DIV_MOD")] pub mul_div_mod : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "ADD_SUB")] pub add_sub : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "STRCAT")] pub strcat : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "COMPARES")] pub compares : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "LOGIC_AND")] pub logic_and : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "LOGIC_OR")] pub logic_or : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [rename (name = "m_Exp1")] pub m_exp1 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "m_Exp2")] pub m_exp2 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "m_Operator")] pub m_operator : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BinaryOperatorExpression_LinkedList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinaryOperatorExpression_LinkedList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinaryOperatorExpression_LinkedList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BinaryOperatorExpression_LinkedList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BinaryOperatorExpression_LinkedList,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+pub trait IBinaryOperatorExpression_LinkedListMethods:
+    IBinaryOperatorExpression_LinkedList
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BinaryOperatorExpression_LinkedList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BinaryOperatorExpression_LinkedList_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl<__T: IBinaryOperatorExpression_LinkedList> IBinaryOperatorExpression_LinkedListMethods
+    for __T
+{
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression_LinkedList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression_LinkedList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpression_LinkedListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BinaryOperatorExpression_Node_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BinaryOperatorExpression_Node as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BinaryOperatorExpression_Node as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BinaryOperatorExpression_Node,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BinaryOperatorExpression_Node, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+pub trait IBinaryOperatorExpression_NodeMethods: IBinaryOperatorExpression_Node {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BinaryOperatorExpression_Node as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BinaryOperatorExpression_Node_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl<__T: IBinaryOperatorExpression_Node> IBinaryOperatorExpression_NodeMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression_Node {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpression_NodeMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
 #[doc(hidden)]
@@ -1201,189 +1384,6 @@ impl BinaryOperatorExpression {
             )
         });
         <Self as IBinaryOperatorExpressionMethods>::ctor(this, exp1, exp2, op, lcontext);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BinaryOperatorExpression_LinkedList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BinaryOperatorExpression_LinkedList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryOperatorExpression_LinkedList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BinaryOperatorExpression_LinkedList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BinaryOperatorExpression_LinkedList,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-pub trait IBinaryOperatorExpression_LinkedListMethods:
-    IBinaryOperatorExpression_LinkedList
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BinaryOperatorExpression_LinkedList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BinaryOperatorExpression_LinkedList_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-impl<__T: IBinaryOperatorExpression_LinkedList> IBinaryOperatorExpression_LinkedListMethods
-    for __T
-{
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-impl BinaryOperatorExpression_LinkedList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BinaryOperatorExpression_LinkedList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBinaryOperatorExpression_LinkedListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BinaryOperatorExpression_Node_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BinaryOperatorExpression_Node as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryOperatorExpression_Node as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BinaryOperatorExpression_Node,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BinaryOperatorExpression_Node, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-pub trait IBinaryOperatorExpression_NodeMethods: IBinaryOperatorExpression_Node {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BinaryOperatorExpression_Node as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BinaryOperatorExpression_Node_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-impl<__T: IBinaryOperatorExpression_Node> IBinaryOperatorExpression_NodeMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-impl BinaryOperatorExpression_Node {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BinaryOperatorExpression_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBinaryOperatorExpression_NodeMethods>::ctor(this);
         this
     }
 }

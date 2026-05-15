@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))]
+    #[::unity2::class(namespace = "App", name = "SaveDataHandle")]
+    #[parent(crate::system::object::Object)]
+    pub struct SaveDataHandle {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatahandle/SaveDataHandle_States.md"))]
     #[repr(C)]
     #[derive(
@@ -56,11 +61,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatahandle/SaveDataHandle.md"))]
-    #[::unity2::class(namespace = "App", name = "SaveDataHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct SaveDataHandle {}
 }
 
 #[cfg(feature = "app-savedatahandle-types")]

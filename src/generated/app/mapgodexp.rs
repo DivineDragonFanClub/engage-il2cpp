@@ -39,31 +39,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapGodExp")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
-    pub struct MapGodExp {
-        #[rename(name = "m_AddFlag")]
-        pub m_add_flag: crate::app::bitfield32::BitField32,
-        #[rename(name = "m_CommitUnit")]
-        pub m_commit_unit: crate::app::unit::Unit,
-        #[rename(name = "m_CommitGodUnit")]
-        pub m_commit_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[static_field]
-        #[rename(name = "KindDescs")]
-        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-        #[static_field]
-        #[rename(name = "EngageParamNameSuffix")]
-        pub engage_param_name_suffix: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "RingDirtyKindDescs")]
-        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -126,6 +101,31 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 6 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapgodexp/MapGodExp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapGodExp")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapgodexp :: MapGodExp >)]
+    pub struct MapGodExp {
+        #[rename(name = "m_AddFlag")]
+        pub m_add_flag: crate::app::bitfield32::BitField32,
+        #[rename(name = "m_CommitUnit")]
+        pub m_commit_unit: crate::app::unit::Unit,
+        #[rename(name = "m_CommitGodUnit")]
+        pub m_commit_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_Dirty")]
+        pub m_dirty: i32,
+        #[static_field]
+        #[rename(name = "KindDescs")]
+        pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
+        #[static_field]
+        #[rename(name = "EngageParamNameSuffix")]
+        pub engage_param_name_suffix: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "RingDirtyKindDescs")]
+        pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
     }
 }
 

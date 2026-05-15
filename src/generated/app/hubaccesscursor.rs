@@ -133,6 +133,103 @@ mod __HubAccessCursor_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessCursor as ::unity2::ClassIdentity>::class(),
+                "get_CharaFader",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessCursor as ::unity2::ClassIdentity>::NAME,
+                    "get_CharaFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_chara_fader(
+        this: HubAccessCursor,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        let inner: extern "C" fn(
+            HubAccessCursor,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::root::iron19characterfader::Iron19CharacterFader = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_chara_fader::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_chara_fader {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: iron19characterfader :: Iron19CharacterFader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessCursor as ::unity2::ClassIdentity>::class(),
+                "set_CharaFader",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessCursor as ::unity2::ClassIdentity>::NAME,
+                    "set_CharaFader",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_chara_fader(
+        this: HubAccessCursor,
+        value: crate::root::iron19characterfader::Iron19CharacterFader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessCursor,
+            crate::root::iron19characterfader::Iron19CharacterFader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_chara_fader::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
     pub mod __lookup_get_fade_distance {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -845,6 +942,31 @@ pub trait IHubAccessCursorMethods: IHubAccessCursor {
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
             __HubAccessCursor_unity2_raw::set_target_access(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CharaFader()` overload"]
+    fn get_chara_fader(self) -> crate::root::iron19characterfader::Iron19CharacterFader {
+        unsafe {
+            let __receiver = <HubAccessCursor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessCursor_unity2_raw::get_chara_fader(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"]
+    fn set_chara_fader(
+        self,
+        value: impl ::core::convert::Into<crate::root::iron19characterfader::Iron19CharacterFader>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubAccessCursor as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubAccessCursor_unity2_raw::set_chara_fader(
                 __receiver,
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,

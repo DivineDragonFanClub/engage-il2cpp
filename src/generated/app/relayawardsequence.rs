@@ -11,24 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardsequence/RelayAwardSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayawardsequence :: RelayAwardSequence >)]
-    pub struct RelayAwardSequence {
-        #[rename(name = "m_EnteredBattle")]
-        pub m_entered_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
-        #[rename(name = "m_Raids")]
-        pub m_raids: ::unity2::Array<::unity2::Il2CppString>,
-        #[rename(name = "m_GainItem")]
-        pub m_gain_item: crate::app::itemdata::ItemData,
-        #[rename(name = "m_IsAwarded")]
-        pub m_is_awarded: bool,
-        #[rename(name = "m_PrevMasterProofCount")]
-        pub m_prev_master_proof_count: i32,
-        #[rename(name = "m_PrevChangeProofCount")]
-        pub m_prev_change_proof_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawardsequence/RelayAwardSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -71,6 +53,24 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardsequence/RelayAwardSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayawardsequence :: RelayAwardSequence >)]
+    pub struct RelayAwardSequence {
+        #[rename(name = "m_EnteredBattle")]
+        pub m_entered_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
+        #[rename(name = "m_Raids")]
+        pub m_raids: ::unity2::Array<::unity2::Il2CppString>,
+        #[rename(name = "m_GainItem")]
+        pub m_gain_item: crate::app::itemdata::ItemData,
+        #[rename(name = "m_IsAwarded")]
+        pub m_is_awarded: bool,
+        #[rename(name = "m_PrevMasterProofCount")]
+        pub m_prev_master_proof_count: i32,
+        #[rename(name = "m_PrevChangeProofCount")]
+        pub m_prev_change_proof_count: i32,
     }
 }
 

@@ -14,10 +14,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.SolanelInfoItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_AchievementItem.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.AchievementItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct NoticeBoardTopMenu_SolanelInfoItem {
+    pub struct NoticeBoardTopMenu_AchievementItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
@@ -32,18 +32,13 @@ mod __types {
             crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NoticeBoardTopMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_AchievementItem.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.AchievementItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct NoticeBoardTopMenu_AchievementItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct NoticeBoardTopMenu {
+        #[static_field]
+        #[rename(name = "m_ShowRowNumValue")]
+        pub m_show_row_num_value: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_Result2.md"))]
@@ -98,13 +93,18 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct NoticeBoardTopMenu {
-        #[static_field]
-        #[rename(name = "m_ShowRowNumValue")]
-        pub m_show_row_num_value: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NoticeBoardTopMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardTopMenu.SolanelInfoItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct NoticeBoardTopMenu_SolanelInfoItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
     }
 }
 
@@ -114,7 +114,7 @@ pub use __types::*;
 #[cfg(feature = "app-noticeboardtopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
+mod __NoticeBoardTopMenu_AchievementItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -125,7 +125,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -137,7 +137,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -150,12 +150,12 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: NoticeBoardTopMenu_SolanelInfoItem,
+        this: NoticeBoardTopMenu_AchievementItem,
         event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NoticeBoardTopMenu_SolanelInfoItem,
+            NoticeBoardTopMenu_AchievementItem,
             crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -174,7 +174,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -186,7 +186,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -199,11 +199,11 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: NoticeBoardTopMenu_SolanelInfoItem,
+        this: NoticeBoardTopMenu_AchievementItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            NoticeBoardTopMenu_SolanelInfoItem,
+            NoticeBoardTopMenu_AchievementItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -221,7 +221,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -233,7 +233,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -246,11 +246,11 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: NoticeBoardTopMenu_SolanelInfoItem,
+        this: NoticeBoardTopMenu_AchievementItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            NoticeBoardTopMenu_SolanelInfoItem,
+            NoticeBoardTopMenu_AchievementItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -268,7 +268,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -280,7 +280,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -293,11 +293,11 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: NoticeBoardTopMenu_SolanelInfoItem,
+        this: NoticeBoardTopMenu_AchievementItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            NoticeBoardTopMenu_SolanelInfoItem,
+            NoticeBoardTopMenu_AchievementItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -309,7 +309,7 @@ mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
 }
 
 #[cfg(feature = "app-noticeboardtopmenu")]
-pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_SolanelInfoItem {
+pub trait INoticeBoardTopMenu_AchievementItemMethods: INoticeBoardTopMenu_AchievementItem {
     #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
@@ -319,10 +319,10 @@ pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_Solane
     ) -> () {
         unsafe {
             let __receiver =
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::ctor(
+            __NoticeBoardTopMenu_AchievementItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
@@ -333,10 +333,10 @@ pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_Solane
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::get_name(
+            __NoticeBoardTopMenu_AchievementItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -346,10 +346,10 @@ pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_Solane
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::build_attribute(
+            __NoticeBoardTopMenu_AchievementItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -359,10 +359,10 @@ pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_Solane
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::a_call(
+            __NoticeBoardTopMenu_AchievementItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -371,10 +371,10 @@ pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_Solane
 }
 
 #[cfg(feature = "app-noticeboardtopmenu")]
-impl<__T: INoticeBoardTopMenu_SolanelInfoItem> INoticeBoardTopMenu_SolanelInfoItemMethods for __T {}
+impl<__T: INoticeBoardTopMenu_AchievementItem> INoticeBoardTopMenu_AchievementItemMethods for __T {}
 
 #[cfg(feature = "app-noticeboardtopmenu")]
-impl NoticeBoardTopMenu_SolanelInfoItem {
+impl NoticeBoardTopMenu_AchievementItem {
     #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
@@ -382,11 +382,11 @@ impl NoticeBoardTopMenu_SolanelInfoItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem),
+                ::core::stringify!(NoticeBoardTopMenu_AchievementItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as INoticeBoardTopMenu_SolanelInfoItemMethods>::ctor(this, event_handler);
+        <Self as INoticeBoardTopMenu_AchievementItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -667,454 +667,6 @@ impl NoticeBoardTopMenu_InvestmentItem {
             )
         });
         <Self as INoticeBoardTopMenu_InvestmentItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NoticeBoardTopMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NoticeBoardTopMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: NoticeBoardTopMenu_DecideEventHandler,
-        result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_DecideEventHandler,
-            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, result, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-pub trait INoticeBoardTopMenu_DecideEventHandlerMethods:
-    INoticeBoardTopMenu_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NoticeBoardTopMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NoticeBoardTopMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl<__T: INoticeBoardTopMenu_DecideEventHandler> INoticeBoardTopMenu_DecideEventHandlerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl NoticeBoardTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INoticeBoardTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NoticeBoardTopMenu_AchievementItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NoticeBoardTopMenu_AchievementItem,
-        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_AchievementItem,
-            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: NoticeBoardTopMenu_AchievementItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_AchievementItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: NoticeBoardTopMenu_AchievementItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_AchievementItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoticeBoardTopMenu_AchievementItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: NoticeBoardTopMenu_AchievementItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            NoticeBoardTopMenu_AchievementItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-pub trait INoticeBoardTopMenu_AchievementItemMethods: INoticeBoardTopMenu_AchievementItem {
-    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NoticeBoardTopMenu_AchievementItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NoticeBoardTopMenu_AchievementItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NoticeBoardTopMenu_AchievementItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <NoticeBoardTopMenu_AchievementItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NoticeBoardTopMenu_AchievementItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl<__T: INoticeBoardTopMenu_AchievementItem> INoticeBoardTopMenu_AchievementItemMethods for __T {}
-
-#[cfg(feature = "app-noticeboardtopmenu")]
-impl NoticeBoardTopMenu_AchievementItem {
-    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NoticeBoardTopMenu_AchievementItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INoticeBoardTopMenu_AchievementItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -1611,6 +1163,454 @@ impl NoticeBoardTopMenu {
             initial_selected,
             event_handler,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NoticeBoardTopMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NoticeBoardTopMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: NoticeBoardTopMenu_DecideEventHandler,
+        result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_DecideEventHandler,
+            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, result, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+pub trait INoticeBoardTopMenu_DecideEventHandlerMethods:
+    INoticeBoardTopMenu_DecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NoticeBoardTopMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NoticeBoardTopMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl<__T: INoticeBoardTopMenu_DecideEventHandler> INoticeBoardTopMenu_DecideEventHandlerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl NoticeBoardTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoticeBoardTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoticeBoardTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: noticeboardtopmenu :: NoticeBoardTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NoticeBoardTopMenu_SolanelInfoItem,
+        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_SolanelInfoItem,
+            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: NoticeBoardTopMenu_SolanelInfoItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_SolanelInfoItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: NoticeBoardTopMenu_SolanelInfoItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_SolanelInfoItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: NoticeBoardTopMenu_SolanelInfoItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            NoticeBoardTopMenu_SolanelInfoItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+pub trait INoticeBoardTopMenu_SolanelInfoItemMethods: INoticeBoardTopMenu_SolanelInfoItem {
+    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        event_handler: impl ::core::convert::Into<
+            crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <NoticeBoardTopMenu_SolanelInfoItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl<__T: INoticeBoardTopMenu_SolanelInfoItem> INoticeBoardTopMenu_SolanelInfoItemMethods for __T {}
+
+#[cfg(feature = "app-noticeboardtopmenu")]
+impl NoticeBoardTopMenu_SolanelInfoItem {
+    #[doc = "`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoticeBoardTopMenu_SolanelInfoItemMethods>::ctor(this, event_handler);
         this
     }
 }

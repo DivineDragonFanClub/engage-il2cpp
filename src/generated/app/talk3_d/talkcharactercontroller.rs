@@ -13,6 +13,23 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TalkCharacterController {
+        #[rename(name = "m_FadeType")]
+        pub m_fade_type:
+            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController_FadeType,
+        #[rename(name = "m_FadeTimeTo")]
+        pub m_fade_time_to: f32,
+        #[rename(name = "m_FadeTimer")]
+        pub m_fade_timer: f32,
+        #[rename(name = "m_CurrentAnimeName")]
+        pub m_current_anime_name: ::unity2::Il2CppString,
+        #[rename(name = "m_ReservedFaceAnime")]
+        pub m_reserved_face_anime: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController_FadeType.md"))]
     #[repr(C)]
     #[derive(
@@ -59,23 +76,6 @@ mod __types {
         pub fn out() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TalkCharacterController {
-        #[rename(name = "m_FadeType")]
-        pub m_fade_type:
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController_FadeType,
-        #[rename(name = "m_FadeTimeTo")]
-        pub m_fade_time_to: f32,
-        #[rename(name = "m_FadeTimer")]
-        pub m_fade_timer: f32,
-        #[rename(name = "m_CurrentAnimeName")]
-        pub m_current_anime_name: ::unity2::Il2CppString,
-        #[rename(name = "m_ReservedFaceAnime")]
-        pub m_reserved_face_anime: ::unity2::Il2CppString,
     }
 }
 

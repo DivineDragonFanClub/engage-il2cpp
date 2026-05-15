@@ -2802,6 +2802,139 @@ mod __SoundManager_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
+    pub mod __lookup_post_event_direct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallback as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager as ::unity2::ClassIdentity>::class(),
+                "PostEventDirect",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoundManager as ::unity2::ClassIdentity>::NAME,
+                    "PostEventDirect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn post_event_direct(
+        this: SoundManager,
+        event_name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        flag: u32,
+        callback: crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+        cookie: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
+        let inner: extern "C" fn(
+            SoundManager,
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            u32,
+            crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_post_event_direct::get_offset() as isize),
+        );
+        inner(
+            this,
+            event_name,
+            game_object,
+            flag,
+            callback,
+            cookie,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_action_on_event_direct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: root :: akactiononeventtype :: AkActionOnEventType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcurveinterpolation :: AkCurveInterpolation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SoundManager as ::unity2::ClassIdentity>::class(),
+                "ExecuteActionOnEventDirect",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SoundManager as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteActionOnEventDirect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn execute_action_on_event_direct(
+        this: SoundManager,
+        event_name: ::unity2::Il2CppString,
+        event_type: crate::root::akactiononeventtype::AkActionOnEventType,
+        msec: i32,
+        interpolation: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        playing_id: u32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::akresult::AKRESULT {
+        let inner: extern "C" fn(
+            SoundManager,
+            ::unity2::Il2CppString,
+            crate::root::akactiononeventtype::AkActionOnEventType,
+            i32,
+            crate::root::akcurveinterpolation::AkCurveInterpolation,
+            crate::unity_engine::gameobject::GameObject,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_execute_action_on_event_direct::get_offset() as isize),
+        );
+        inner(
+            this,
+            event_name,
+            event_type,
+            msec,
+            interpolation,
+            game_object,
+            playing_id,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
     pub mod __lookup_stop_sound_on_event {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -7253,6 +7386,60 @@ pub trait ISoundManagerMethods: ISoundManager {
                 ::core::convert::Into::into(temporary_game_object),
                 ::core::convert::Into::into(character),
                 ::core::convert::Into::into(is_get_position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PostEventDirect(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, u32, crate::root::akcallbackmanager::AkCallbackManager_EventCallback, crate::system::object::Object)` overload"]
+    fn post_event_direct(
+        self,
+        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        flag: impl ::core::convert::Into<u32>,
+        callback: impl ::core::convert::Into<
+            crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
+        >,
+        cookie: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
+        unsafe {
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoundManager_unity2_raw::post_event_direct(
+                __receiver,
+                ::core::convert::Into::into(event_name),
+                ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(flag),
+                ::core::convert::Into::into(callback),
+                ::core::convert::Into::into(cookie),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExecuteActionOnEventDirect(::unity2::Il2CppString, crate::root::akactiononeventtype::AkActionOnEventType, i32, crate::root::akcurveinterpolation::AkCurveInterpolation, crate::unity_engine::gameobject::GameObject, u32)` overload"]
+    fn execute_action_on_event_direct(
+        self,
+        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        event_type: impl ::core::convert::Into<crate::root::akactiononeventtype::AkActionOnEventType>,
+        msec: impl ::core::convert::Into<i32>,
+        interpolation: impl ::core::convert::Into<
+            crate::root::akcurveinterpolation::AkCurveInterpolation,
+        >,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        playing_id: impl ::core::convert::Into<u32>,
+    ) -> crate::root::akresult::AKRESULT {
+        unsafe {
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SoundManager_unity2_raw::execute_action_on_event_direct(
+                __receiver,
+                ::core::convert::Into::into(event_name),
+                ::core::convert::Into::into(event_type),
+                ::core::convert::Into::into(msec),
+                ::core::convert::Into::into(interpolation),
+                ::core::convert::Into::into(game_object),
+                ::core::convert::Into::into(playing_id),
                 ::core::option::Option::None,
             )
         }

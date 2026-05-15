@@ -12,53 +12,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_AccessTypes.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HubDisposData_AccessTypes {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HubDisposData_AccessTypes {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubDisposData.AccessTypes";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubDisposData_AccessTypes {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HubDisposData_AccessTypes {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn door() -> Self {
-            Self { value: 2 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubdisposdata/HubDisposData.md"))]
+    #[::unity2::class(namespace = "App", name = "HubDisposData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubdisposdata :: HubDisposData >)]
+    pub struct HubDisposData {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_IdleTypes.md"))]
     #[repr(C)]
@@ -108,12 +65,7 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubdisposdata/HubDisposData.md"))]
-    #[::unity2::class(namespace = "App", name = "HubDisposData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubdisposdata :: HubDisposData >)]
-    pub struct HubDisposData {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_DisposTypes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_PhaseType.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -122,14 +74,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubDisposData_DisposTypes {
+    pub struct HubDisposData_PhaseType {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubDisposData_DisposTypes {
+    impl ::unity2::ClassIdentity for HubDisposData_PhaseType {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubDisposData.DisposTypes";
+        const NAME: &'static str = "HubDisposData.PhaseType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -138,7 +90,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubDisposData_DisposTypes {
+    impl ::unity2::IlType for HubDisposData_PhaseType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -147,17 +99,69 @@ mod __types {
         }
     }
 
-    impl HubDisposData_DisposTypes {
-        pub fn none_ik() -> Self {
+    impl HubDisposData_PhaseType {
+        pub fn any() -> Self {
             Self { value: 0 }
         }
 
-        pub fn use_ik() -> Self {
+        pub fn only() -> Self {
             Self { value: 1 }
         }
 
-        pub fn swiming() -> Self {
+        pub fn on_and_after() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_TimezoneFlags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HubDisposData_TimezoneFlags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HubDisposData_TimezoneFlags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubDisposData.TimezoneFlags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubDisposData_TimezoneFlags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HubDisposData_TimezoneFlags {
+        pub fn morning() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn day() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn evening() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn night() -> Self {
+            Self { value: 8 }
         }
     }
 
@@ -241,7 +245,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_TimezoneFlags.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_AccessTypes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -250,14 +254,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubDisposData_TimezoneFlags {
+    pub struct HubDisposData_AccessTypes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubDisposData_TimezoneFlags {
+    impl ::unity2::ClassIdentity for HubDisposData_AccessTypes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubDisposData.TimezoneFlags";
+        const NAME: &'static str = "HubDisposData.AccessTypes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -266,7 +270,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubDisposData_TimezoneFlags {
+    impl ::unity2::IlType for HubDisposData_AccessTypes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -275,68 +279,64 @@ mod __types {
         }
     }
 
-    impl HubDisposData_TimezoneFlags {
-        pub fn morning() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn day() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn evening() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn night() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_PhaseType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HubDisposData_PhaseType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HubDisposData_PhaseType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubDisposData.PhaseType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubDisposData_PhaseType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HubDisposData_PhaseType {
-        pub fn any() -> Self {
+    impl HubDisposData_AccessTypes {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn only() -> Self {
+        pub fn menu() -> Self {
             Self { value: 1 }
         }
 
-        pub fn on_and_after() -> Self {
+        pub fn door() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubdisposdata/HubDisposData_DisposTypes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HubDisposData_DisposTypes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HubDisposData_DisposTypes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubDisposData.DisposTypes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubDisposData_DisposTypes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HubDisposData_DisposTypes {
+        pub fn none_ik() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn use_ik() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn swiming() -> Self {
             Self { value: 2 }
         }
     }

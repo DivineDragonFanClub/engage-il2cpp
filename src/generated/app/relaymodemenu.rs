@@ -12,22 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayModeMenu.MenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RelayModeMenu_MenuItem {
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CommentText")]
-        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_NameLabel")]
-        pub m_name_label: ::unity2::Il2CppString,
-        #[rename(name = "m_CommentLabel")]
-        pub m_comment_label: ::unity2::Il2CppString,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::relay::Relay_Modes,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaymodemenu/RelayModeMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +62,22 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayModeMenu.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RelayModeMenu_MenuItem {
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CommentText")]
+        pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_NameLabel")]
+        pub m_name_label: ::unity2::Il2CppString,
+        #[rename(name = "m_CommentLabel")]
+        pub m_comment_label: ::unity2::Il2CppString,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::relay::Relay_Modes,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymodemenu/RelayModeMenu_ReplayMenuItem.md"))]

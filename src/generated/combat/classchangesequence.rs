@@ -11,31 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ClassChangeSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)]
-    pub struct ClassChangeSequence {
-        #[static_field]
-        #[rename(name = "SceneName")]
-        pub scene_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Before")]
-        pub m_before: crate::app::unit::Unit,
-        #[rename(name = "m_After")]
-        pub m_after: crate::app::unit::Unit,
-        #[rename(name = "m_Status")]
-        pub m_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
-        #[rename(name = "m_Characters")]
-        pub m_characters: ::unity2::Array<crate::combat::character::Character>,
-        #[rename(name = "m_ZoneHandle")]
-        pub m_zone_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_ChangeEffect")]
-        pub m_change_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GameObjects")]
-        pub m_game_objects: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +53,31 @@ mod __types {
         pub fn skip_fade_out() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))]
+    #[::unity2::class(namespace = "Combat", name = "ClassChangeSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)]
+    pub struct ClassChangeSequence {
+        #[static_field]
+        #[rename(name = "SceneName")]
+        pub scene_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Before")]
+        pub m_before: crate::app::unit::Unit,
+        #[rename(name = "m_After")]
+        pub m_after: crate::app::unit::Unit,
+        #[rename(name = "m_Status")]
+        pub m_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+        #[rename(name = "m_Characters")]
+        pub m_characters: ::unity2::Array<crate::combat::character::Character>,
+        #[rename(name = "m_ZoneHandle")]
+        pub m_zone_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[rename(name = "m_ChangeEffect")]
+        pub m_change_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_GameObjects")]
+        pub m_game_objects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
     }
 }
 

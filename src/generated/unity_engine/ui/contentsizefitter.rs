@@ -14,6 +14,20 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "ContentSizeFitter")]
+    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+    pub struct ContentSizeFitter {
+        #[rename(name = "m_HorizontalFit")]
+        pub m_horizontal_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+        #[rename(name = "m_VerticalFit")]
+        pub m_vertical_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+        #[rename(name = "m_Rect")]
+        pub m_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Tracker")]
+        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]
     #[repr(C)]
     #[derive(
@@ -60,20 +74,6 @@ mod __types {
         pub fn preferred_size() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "ContentSizeFitter")]
-    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
-    pub struct ContentSizeFitter {
-        #[rename(name = "m_HorizontalFit")]
-        pub m_horizontal_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
-        #[rename(name = "m_VerticalFit")]
-        pub m_vertical_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
-        #[rename(name = "m_Rect")]
-        pub m_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
     }
 }
 

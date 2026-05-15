@@ -28,21 +28,6 @@ mod __types {
         pub m_distance: crate::system::collections::generic::list_1::List_1<f32>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
-    #[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubPlayCamera_DemoTelop {
-        #[rename(name = "Root")]
-        pub root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "UIObject")]
-        pub ui_object: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "UIAssetPath")]
-        pub ui_asset_path: ::unity2::Il2CppString,
-        #[rename(name = "m_animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -93,6 +78,21 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
+    #[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubPlayCamera_DemoTelop {
+        #[rename(name = "Root")]
+        pub root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "UIObject")]
+        pub ui_object: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "UIAssetPath")]
+        pub ui_asset_path: ::unity2::Il2CppString,
+        #[rename(name = "m_animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
     }
 }
 

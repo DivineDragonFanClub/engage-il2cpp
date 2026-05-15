@@ -35,6 +35,11 @@ mod __types {
         >,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_GetBondsExchangeDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "AchievementMenu.GetBondsExchangeDialog")]
+    #[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
+    pub struct AchievementMenu_GetBondsExchangeDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md"))]
     #[::unity2::class(namespace = "App", name = "AchievementMenu.AchievementMenuNoneItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -47,11 +52,6 @@ mod __types {
         #[rename(name = "m_YesEventHandler")]
         pub m_yes_event_handler: crate::system::action::Action,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_GetBondsExchangeDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "AchievementMenu.GetBondsExchangeDialog")]
-    #[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
-    pub struct AchievementMenu_GetBondsExchangeDialog {}
 }
 
 #[cfg(feature = "app-achievementmenu-types")]
@@ -1438,6 +1438,279 @@ impl AchievementMenu {
 #[cfg(feature = "app-achievementmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AchievementMenu_GetBondsExchangeDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                9,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AchievementMenu_GetBondsExchangeDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AchievementMenu_GetBondsExchangeDialog,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        bonds_num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, message, bonds_num, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_GetBondsExchangeDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        bonds_num: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __AchievementMenu_GetBondsExchangeDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(bonds_num),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-achievementmenu")]
+pub trait IAchievementMenu_GetBondsExchangeDialogMethods:
+    IAchievementMenu_GetBondsExchangeDialog
+{
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            >,
+        >,
+        menu_content: impl ::core::convert::Into<
+            crate::app::exchangedialogcontent::ExchangeDialogContent,
+        >,
+        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        get_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        get_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        cost_item_param_list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+            >,
+        >,
+        cost_money_param: impl ::core::convert::Into<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < AchievementMenu_GetBondsExchangeDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AchievementMenu_GetBondsExchangeDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(top_message),
+                ::core::convert::Into::into(get_item_title),
+                ::core::convert::Into::into(get_item_param_list),
+                ::core::convert::Into::into(get_money_param),
+                ::core::convert::Into::into(cost_item_title),
+                ::core::convert::Into::into(cost_item_param_list),
+                ::core::convert::Into::into(cost_money_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl<__T: IAchievementMenu_GetBondsExchangeDialog> IAchievementMenu_GetBondsExchangeDialogMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_GetBondsExchangeDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu_GetBondsExchangeDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenu_GetBondsExchangeDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-achievementmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AchievementMenu_AchievementMenuNoneItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1737,279 +2010,6 @@ impl AchievementMenu_YesMenuItem {
             )
         });
         <Self as IAchievementMenu_YesMenuItemMethods>::ctor(this, yes_event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-achievementmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AchievementMenu_GetBondsExchangeDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangedialogcontent :: ExchangeDialogContent as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > as :: unity2 :: IlType > :: il_type () , < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                9,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AchievementMenu_GetBondsExchangeDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
-        top_message: ::unity2::Il2CppString,
-        get_item_title: ::unity2::Il2CppString,
-        get_item_param_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-        >,
-        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-        cost_item_title: ::unity2::Il2CppString,
-        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-        >,
-        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AchievementMenu_GetBondsExchangeDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::exchangedialogcontent::ExchangeDialogContent,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-            >,
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-            >,
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            top_message,
-            get_item_title,
-            get_item_param_list,
-            get_money_param,
-            cost_item_title,
-            cost_item_param_list,
-            cost_money_param,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AchievementMenu_GetBondsExchangeDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        bonds_num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, message, bonds_num, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_GetBondsExchangeDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, i32)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        bonds_num: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __AchievementMenu_GetBondsExchangeDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(message),
-                ::core::convert::Into::into(bonds_num),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenu_GetBondsExchangeDialogMethods:
-    IAchievementMenu_GetBondsExchangeDialog
-{
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::exchangedialogcontent::ExchangeDialogContent,
-        >,
-        top_message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        get_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
-        get_item_param_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-            >,
-        >,
-        get_money_param: impl ::core::convert::Into<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-        >,
-        cost_item_title: impl ::core::convert::Into<::unity2::Il2CppString>,
-        cost_item_param_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-            >,
-        >,
-        cost_money_param: impl ::core::convert::Into<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < AchievementMenu_GetBondsExchangeDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AchievementMenu_GetBondsExchangeDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(top_message),
-                ::core::convert::Into::into(get_item_title),
-                ::core::convert::Into::into(get_item_param_list),
-                ::core::convert::Into::into(get_money_param),
-                ::core::convert::Into::into(cost_item_title),
-                ::core::convert::Into::into(cost_item_param_list),
-                ::core::convert::Into::into(cost_money_param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-achievementmenu")]
-impl<__T: IAchievementMenu_GetBondsExchangeDialog> IAchievementMenu_GetBondsExchangeDialogMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_GetBondsExchangeDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
-        top_message: ::unity2::Il2CppString,
-        get_item_title: ::unity2::Il2CppString,
-        get_item_param_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-        >,
-        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-        cost_item_title: ::unity2::Il2CppString,
-        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
-        >,
-        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AchievementMenu_GetBondsExchangeDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAchievementMenu_GetBondsExchangeDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            top_message,
-            get_item_title,
-            get_item_param_list,
-            get_money_param,
-            cost_item_title,
-            cost_item_param_list,
-            cost_money_param,
-        );
         this
     }
 }

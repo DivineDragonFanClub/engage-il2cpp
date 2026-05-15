@@ -7,6 +7,22 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess_ActiveRegion.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+        name = "Tess.ActiveRegion"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct Tess_ActiveRegion {
+# [rename (name = "_eUp")] pub e_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
+# [rename (name = "_nodeUp")] pub node_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_Node < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: tess :: Tess_ActiveRegion > ,
+# [rename (name = "_windingNumber")] pub winding_number : i32 ,
+# [rename (name = "_inside")] pub inside : bool ,
+# [rename (name = "_sentinel")] pub sentinel : bool ,
+# [rename (name = "_dirty")] pub dirty : bool ,
+# [rename (name = "_fixUpperEdge")] pub fix_upper_edge : bool ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
@@ -37,26 +53,94 @@ mod __types {
 # [rename (name = "NoEmptyPolygons")] pub no_empty_polygons : bool ,
 # [rename (name = "UsePooling")] pub use_pooling : bool ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess_ActiveRegion.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "Tess.ActiveRegion"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct Tess_ActiveRegion {
-# [rename (name = "_eUp")] pub e_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_nodeUp")] pub node_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_Node < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: tess :: Tess_ActiveRegion > ,
-# [rename (name = "_windingNumber")] pub winding_number : i32 ,
-# [rename (name = "_inside")] pub inside : bool ,
-# [rename (name = "_sentinel")] pub sentinel : bool ,
-# [rename (name = "_dirty")] pub dirty : bool ,
-# [rename (name = "_fixUpperEdge")] pub fix_upper_edge : bool ,
-}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Tess_ActiveRegion_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Tess_ActiveRegion as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Tess_ActiveRegion as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Tess_ActiveRegion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Tess_ActiveRegion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+pub trait ITess_ActiveRegionMethods: ITess_ActiveRegion {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Tess_ActiveRegion as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Tess_ActiveRegion_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+impl<__T: ITess_ActiveRegion> ITess_ActiveRegionMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+impl Tess_ActiveRegion {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Tess_ActiveRegion),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITess_ActiveRegionMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
 #[doc(hidden)]
@@ -3101,90 +3185,6 @@ impl Tess {
             )
         });
         <Self as ITessMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Tess_ActiveRegion_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Tess_ActiveRegion as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Tess_ActiveRegion as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Tess_ActiveRegion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Tess_ActiveRegion, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-pub trait ITess_ActiveRegionMethods: ITess_ActiveRegion {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Tess_ActiveRegion as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Tess_ActiveRegion_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-impl<__T: ITess_ActiveRegion> ITess_ActiveRegionMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-impl Tess_ActiveRegion {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Tess_ActiveRegion),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITess_ActiveRegionMethods>::ctor(this);
         this
     }
 }

@@ -69,6 +69,63 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TextMeshAnimation {
+        #[rename(name = "Params")]
+        pub params:
+            ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
+        #[rename(name = "m_TextComponent")]
+        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[rename(name = "m_IsAnimation")]
+        pub m_is_animation: bool,
+        #[rename(name = "m_IsFirstFrame")]
+        pub m_is_first_frame: bool,
+        #[rename(name = "m_NowAnimationIndex")]
+        pub m_now_animation_index: i32,
+        #[rename(name = "m_NowTime")]
+        pub m_now_time: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
+    #[parent(crate::system::object::Object)]
+    pub struct TextMeshAnimation_AnimationParams {
+        #[rename(name = "OffsetCurveX")]
+        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "OffsetCurveY")]
+        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RotationCurve")]
+        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveX")]
+        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveY")]
+        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RedCurve")]
+        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "GreenCurve")]
+        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "BlueCurve")]
+        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "AlphaCurve")]
+        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_PivotType")]
+        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
+        #[rename(name = "m_DelayTime")]
+        pub m_delay_time: f32,
+        #[rename(name = "m_DelayTimeType")]
+        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
+        #[rename(name = "m_EndType")]
+        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
+        #[rename(name = "m_StartFromRight")]
+        pub m_start_from_right: bool,
+        #[rename(name = "m_MaxIntervalTime")]
+        pub m_max_interval_time: f32,
+        #[rename(name = "m_EndTime")]
+        pub m_end_time: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
     #[repr(C)]
     #[derive(
@@ -113,25 +170,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TextMeshAnimation {
-        #[rename(name = "Params")]
-        pub params:
-            ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
-        #[rename(name = "m_TextComponent")]
-        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "m_IsAnimation")]
-        pub m_is_animation: bool,
-        #[rename(name = "m_IsFirstFrame")]
-        pub m_is_first_frame: bool,
-        #[rename(name = "m_NowAnimationIndex")]
-        pub m_now_animation_index: i32,
-        #[rename(name = "m_NowTime")]
-        pub m_now_time: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
     #[repr(C)]
     #[derive(
@@ -174,44 +212,6 @@ mod __types {
         pub fn total() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextMeshAnimation_AnimationParams {
-        #[rename(name = "OffsetCurveX")]
-        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "OffsetCurveY")]
-        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RotationCurve")]
-        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveX")]
-        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveY")]
-        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RedCurve")]
-        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "GreenCurve")]
-        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "BlueCurve")]
-        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "AlphaCurve")]
-        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_PivotType")]
-        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
-        #[rename(name = "m_DelayTime")]
-        pub m_delay_time: f32,
-        #[rename(name = "m_DelayTimeType")]
-        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
-        #[rename(name = "m_EndType")]
-        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
-        #[rename(name = "m_StartFromRight")]
-        pub m_start_from_right: bool,
-        #[rename(name = "m_MaxIntervalTime")]
-        pub m_max_interval_time: f32,
-        #[rename(name = "m_EndTime")]
-        pub m_end_time: f32,
     }
 }
 

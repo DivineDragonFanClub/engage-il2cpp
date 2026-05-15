@@ -10,6 +10,36 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "AdditionalLightsShadowCasterPass.AdditionalShadowsConstantBuffer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer {
+        #[static_field]
+        #[rename(name = "_AdditionalLightsWorldToShadow")]
+        pub additional_lights_world_to_shadow: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowParams")]
+        pub additional_shadow_params: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowOffset0")]
+        pub additional_shadow_offset0: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowOffset1")]
+        pub additional_shadow_offset1: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowOffset2")]
+        pub additional_shadow_offset2: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowOffset3")]
+        pub additional_shadow_offset3: i32,
+        #[static_field]
+        #[rename(name = "_AdditionalShadowmapSize")]
+        pub additional_shadowmap_size: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -66,36 +96,6 @@ mod __types {
         #[rename(name = "m_ProfilingSetupSampler")]
         pub m_profiling_setup_sampler:
             crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "AdditionalLightsShadowCasterPass.AdditionalShadowsConstantBuffer"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer {
-        #[static_field]
-        #[rename(name = "_AdditionalLightsWorldToShadow")]
-        pub additional_lights_world_to_shadow: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowParams")]
-        pub additional_shadow_params: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowOffset0")]
-        pub additional_shadow_offset0: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowOffset1")]
-        pub additional_shadow_offset1: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowOffset2")]
-        pub additional_shadow_offset2: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowOffset3")]
-        pub additional_shadow_offset3: i32,
-        #[static_field]
-        #[rename(name = "_AdditionalShadowmapSize")]
-        pub additional_shadowmap_size: i32,
     }
 }
 

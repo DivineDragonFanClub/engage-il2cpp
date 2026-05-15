@@ -14,10 +14,15 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_NoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.NoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MyRoomDifficultySequence_NoMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MyRoomDifficultySequence {
+        #[rename(name = "m_CurrentDifficulty")]
+        pub m_current_difficulty: crate::app::difficulty::Difficulty,
+        #[rename(name = "m_NextDifficulty")]
+        pub m_next_difficulty: crate::app::difficulty::Difficulty,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_YesMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.YesMenuItem")]
@@ -34,15 +39,10 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MyRoomDifficultySequence_YesMenuItem_YesEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MyRoomDifficultySequence {
-        #[rename(name = "m_CurrentDifficulty")]
-        pub m_current_difficulty: crate::app::difficulty::Difficulty,
-        #[rename(name = "m_NextDifficulty")]
-        pub m_next_difficulty: crate::app::difficulty::Difficulty,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomdifficultysequence/MyRoomDifficultySequence_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomDifficultySequence.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MyRoomDifficultySequence_NoMenuItem {}
 }
 
 #[cfg(feature = "app-myroomdifficultysequence-types")]
@@ -51,22 +51,23 @@ pub use __types::*;
 #[cfg(feature = "app-myroomdifficultysequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
+mod __MyRoomDifficultySequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
+                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -74,8 +75,8 @@ mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
+                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
                     e
                 ),
             }
@@ -86,19 +87,17 @@ mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn build_attribute(
-        this: MyRoomDifficultySequence_NoMenuItem,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MyRoomDifficultySequence_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -109,7 +108,7 @@ mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -121,7 +120,7 @@ mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -134,46 +133,215 @@ mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MyRoomDifficultySequence_NoMenuItem,
+        this: MyRoomDifficultySequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateDesc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: MyRoomDifficultySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         let inner: extern "C" fn(
-            MyRoomDifficultySequence_NoMenuItem,
+            MyRoomDifficultySequence,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_create_desc::get_offset() as isize),
         );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_difficulty_dialog {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
+                "CreateDifficultyDialog",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateDifficultyDialog",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_difficulty_dialog(
+        this: MyRoomDifficultySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_difficulty_dialog::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_difficulty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
+                "ChangeDifficulty",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
+                    "ChangeDifficulty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn change_difficulty(
+        this: MyRoomDifficultySequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_change_difficulty::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-pub trait IMyRoomDifficultySequence_NoMenuItemMethods:
-    IMyRoomDifficultySequence_NoMenuItem
-{
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+impl MyRoomDifficultySequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomDifficultySequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomDifficultySequence_NoMenuItem_unity2_raw::build_attribute(
-                __receiver,
+            __MyRoomDifficultySequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
         }
     }
+}
+
+#[cfg(feature = "app-myroomdifficultysequence")]
+pub trait IMyRoomDifficultySequenceMethods: IMyRoomDifficultySequence {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomDifficultySequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __MyRoomDifficultySequence_NoMenuItem_unity2_raw::ctor(
+            __MyRoomDifficultySequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver =
+                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomDifficultySequence_unity2_raw::create_desc(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDifficultyDialog()` overload"]
+    fn create_difficulty_dialog(self) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomDifficultySequence_unity2_raw::create_difficulty_dialog(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ChangeDifficulty()` overload"]
+    fn change_difficulty(self) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomDifficultySequence_unity2_raw::change_difficulty(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -182,23 +350,20 @@ pub trait IMyRoomDifficultySequence_NoMenuItemMethods:
 }
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-impl<__T: IMyRoomDifficultySequence_NoMenuItem> IMyRoomDifficultySequence_NoMenuItemMethods
-    for __T
-{
-}
+impl<__T: IMyRoomDifficultySequence> IMyRoomDifficultySequenceMethods for __T {}
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-impl MyRoomDifficultySequence_NoMenuItem {
+impl MyRoomDifficultySequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomDifficultySequence_NoMenuItem),
+                ::core::stringify!(MyRoomDifficultySequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMyRoomDifficultySequence_NoMenuItemMethods>::ctor(this);
+        <Self as IMyRoomDifficultySequenceMethods>::ctor(this);
         this
     }
 }
@@ -556,23 +721,22 @@ impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler {
 #[cfg(feature = "app-myroomdifficultysequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomDifficultySequence_unity2_raw {
+mod __MyRoomDifficultySequence_NoMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_build_attribute {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
+                <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -580,8 +744,8 @@ mod __MyRoomDifficultySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
+                    <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
                     e
                 ),
             }
@@ -592,17 +756,19 @@ mod __MyRoomDifficultySequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
+    pub unsafe fn build_attribute(
+        this: MyRoomDifficultySequence_NoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            MyRoomDifficultySequence_NoMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -613,7 +779,7 @@ mod __MyRoomDifficultySequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
+                <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -625,7 +791,7 @@ mod __MyRoomDifficultySequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
+                    <MyRoomDifficultySequence_NoMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -638,215 +804,46 @@ mod __MyRoomDifficultySequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MyRoomDifficultySequence,
+        this: MyRoomDifficultySequence_NoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: MyRoomDifficultySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         let inner: extern "C" fn(
-            MyRoomDifficultySequence,
+            MyRoomDifficultySequence_NoMenuItem,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_difficulty_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
-                "CreateDifficultyDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDifficultyDialog",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_difficulty_dialog(
-        this: MyRoomDifficultySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_difficulty_dialog::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_difficulty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomDifficultySequence as ::unity2::ClassIdentity>::class(),
-                "ChangeDifficulty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomDifficultySequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeDifficulty",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_difficulty(
-        this: MyRoomDifficultySequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MyRoomDifficultySequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change_difficulty::get_offset() as isize),
-            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-impl MyRoomDifficultySequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+pub trait IMyRoomDifficultySequence_NoMenuItemMethods:
+    IMyRoomDifficultySequence_NoMenuItem
+{
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            __MyRoomDifficultySequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
+            let __receiver =
+                <MyRoomDifficultySequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomDifficultySequence_NoMenuItem_unity2_raw::build_attribute(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-myroomdifficultysequence")]
-pub trait IMyRoomDifficultySequenceMethods: IMyRoomDifficultySequence {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
+                <MyRoomDifficultySequence_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __MyRoomDifficultySequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver =
-                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomDifficultySequence_unity2_raw::create_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDifficultyDialog()` overload"]
-    fn create_difficulty_dialog(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomDifficultySequence_unity2_raw::create_difficulty_dialog(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeDifficulty()` overload"]
-    fn change_difficulty(self) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomDifficultySequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomDifficultySequence_unity2_raw::change_difficulty(
+            __MyRoomDifficultySequence_NoMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -855,20 +852,23 @@ pub trait IMyRoomDifficultySequenceMethods: IMyRoomDifficultySequence {
 }
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-impl<__T: IMyRoomDifficultySequence> IMyRoomDifficultySequenceMethods for __T {}
+impl<__T: IMyRoomDifficultySequence_NoMenuItem> IMyRoomDifficultySequence_NoMenuItemMethods
+    for __T
+{
+}
 
 #[cfg(feature = "app-myroomdifficultysequence")]
-impl MyRoomDifficultySequence {
+impl MyRoomDifficultySequence_NoMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomDifficultySequence),
+                ::core::stringify!(MyRoomDifficultySequence_NoMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMyRoomDifficultySequenceMethods>::ctor(this);
+        <Self as IMyRoomDifficultySequence_NoMenuItemMethods>::ctor(this);
         this
     }
 }

@@ -10,32 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitGrowSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct UnitGrowSequence {
-        #[rename(name = "m_CameraMode")]
-        pub m_camera_mode: crate::app::viewmode::ViewMode_Mode,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_OldLevel")]
-        pub m_old_level: i32,
-        #[rename(name = "m_IsTalk")]
-        pub m_is_talk: bool,
-        #[rename(name = "m_SkillPoint")]
-        pub m_skill_point: i32,
-        #[rename(name = "m_ClassChangeJob")]
-        pub m_class_change_job: crate::app::jobdata::JobData,
-        #[rename(name = "m_ClassChangeItem")]
-        pub m_class_change_item: crate::app::itemdata::ItemData,
-        #[rename(name = "m_ClassChangeWeaponMask")]
-        pub m_class_change_weapon_mask: crate::app::weaponmask::WeaponMask,
-        #[rename(name = "m_ClassChangeWeapon")]
-        pub m_class_change_weapon: crate::app::itemdata::ItemData,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitgrowsequence/UnitGrowSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -90,6 +64,32 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitgrowsequence/UnitGrowSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitGrowSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct UnitGrowSequence {
+        #[rename(name = "m_CameraMode")]
+        pub m_camera_mode: crate::app::viewmode::ViewMode_Mode,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_OldLevel")]
+        pub m_old_level: i32,
+        #[rename(name = "m_IsTalk")]
+        pub m_is_talk: bool,
+        #[rename(name = "m_SkillPoint")]
+        pub m_skill_point: i32,
+        #[rename(name = "m_ClassChangeJob")]
+        pub m_class_change_job: crate::app::jobdata::JobData,
+        #[rename(name = "m_ClassChangeItem")]
+        pub m_class_change_item: crate::app::itemdata::ItemData,
+        #[rename(name = "m_ClassChangeWeaponMask")]
+        pub m_class_change_weapon_mask: crate::app::weaponmask::WeaponMask,
+        #[rename(name = "m_ClassChangeWeapon")]
+        pub m_class_change_weapon: crate::app::itemdata::ItemData,
     }
 }
 

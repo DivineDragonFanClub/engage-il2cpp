@@ -9,6 +9,16 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldbgmmanager/FieldBgmManager_ProcChangeBgm.md"))]
+    #[::unity2::class(namespace = "App", name = "FieldBgmManager.ProcChangeBgm")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fieldbgmmanager :: FieldBgmManager_ProcChangeBgm >)]
+    pub struct FieldBgmManager_ProcChangeBgm {
+        #[rename(name = "m_bgmManager")]
+        pub m_bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
+        #[rename(name = "m_isReturnToNormalBgm")]
+        pub m_is_return_to_normal_bgm: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldbgmmanager/FieldBgmManager.md"))]
     #[::unity2::class(namespace = "App", name = "FieldBgmManager")]
     #[parent(crate::system::object::Object)]
@@ -101,20 +111,326 @@ mod __types {
         #[rename(name = "m_isPaused")]
         pub m_is_paused: bool,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fieldbgmmanager/FieldBgmManager_ProcChangeBgm.md"))]
-    #[::unity2::class(namespace = "App", name = "FieldBgmManager.ProcChangeBgm")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fieldbgmmanager :: FieldBgmManager_ProcChangeBgm >)]
-    pub struct FieldBgmManager_ProcChangeBgm {
-        #[rename(name = "m_bgmManager")]
-        pub m_bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
-        #[rename(name = "m_isReturnToNormalBgm")]
-        pub m_is_return_to_normal_bgm: bool,
-    }
 }
 
 #[cfg(feature = "app-fieldbgmmanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-fieldbgmmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FieldBgmManager_ProcChangeBgm_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fieldbgmmanager::FieldBgmManager as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FieldBgmManager_ProcChangeBgm,
+        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
+        is_return_to_normal_bgm: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FieldBgmManager_ProcChangeBgm,
+            crate::app::fieldbgmmanager::FieldBgmManager,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            bgm_manager,
+            is_return_to_normal_bgm,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_proc_call_resume_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
+                "ProcCall_ResumeBgm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
+                    "ProcCall_ResumeBgm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn proc_call_resume_bgm(
+        this: FieldBgmManager_ProcChangeBgm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FieldBgmManager_ProcChangeBgm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_proc_call_resume_bgm::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_proc_call_pause_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
+                "ProcCall_PauseBgm",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
+                    "ProcCall_PauseBgm",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn proc_call_pause_bgm(
+        this: FieldBgmManager_ProcChangeBgm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FieldBgmManager_ProcChangeBgm, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_proc_call_pause_bgm::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fieldbgmmanager::FieldBgmManager as ::unity2::IlType>::il_type(),
+                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
+                "Create",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
+                    "Create",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create(
+        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
+        force_type: crate::app::force::Force_Type,
+        is_return_to_normal_bgm: bool,
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::fieldbgmmanager::FieldBgmManager,
+            crate::app::force::Force_Type,
+            bool,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create::get_offset() as isize),
+        );
+        inner(
+            bgm_manager,
+            force_type,
+            is_return_to_normal_bgm,
+            super_,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "app-fieldbgmmanager")]
+impl FieldBgmManager_ProcChangeBgm {
+    #[doc = "`Create(crate::app::fieldbgmmanager::FieldBgmManager, crate::app::force::Force_Type, bool, crate::app::procinst::ProcInst)` overload"]
+    pub fn create(
+        bgm_manager: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>,
+        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+        is_return_to_normal_bgm: impl ::core::convert::Into<bool>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        unsafe {
+            __FieldBgmManager_ProcChangeBgm_unity2_raw::create(
+                ::core::convert::Into::into(bgm_manager),
+                ::core::convert::Into::into(force_type),
+                ::core::convert::Into::into(is_return_to_normal_bgm),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fieldbgmmanager")]
+pub trait IFieldBgmManager_ProcChangeBgmMethods: IFieldBgmManager_ProcChangeBgm {
+    #[doc = "`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` overload"]
+    fn ctor(
+        self,
+        bgm_manager: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>,
+        is_return_to_normal_bgm: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FieldBgmManager_ProcChangeBgm_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(bgm_manager),
+                ::core::convert::Into::into(is_return_to_normal_bgm),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcCall_ResumeBgm()` overload"]
+    fn proc_call_resume_bgm(self) -> () {
+        unsafe {
+            let __receiver =
+                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FieldBgmManager_ProcChangeBgm_unity2_raw::proc_call_resume_bgm(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ProcCall_PauseBgm()` overload"]
+    fn proc_call_pause_bgm(self) -> () {
+        unsafe {
+            let __receiver =
+                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FieldBgmManager_ProcChangeBgm_unity2_raw::proc_call_pause_bgm(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-fieldbgmmanager")]
+impl<__T: IFieldBgmManager_ProcChangeBgm> IFieldBgmManager_ProcChangeBgmMethods for __T {}
+
+#[cfg(feature = "app-fieldbgmmanager")]
+impl FieldBgmManager_ProcChangeBgm {
+    #[doc = "`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` — overload selector"]
+    pub fn new(
+        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
+        is_return_to_normal_bgm: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FieldBgmManager_ProcChangeBgm),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFieldBgmManager_ProcChangeBgmMethods>::ctor(
+            this,
+            bgm_manager,
+            is_return_to_normal_bgm,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-fieldbgmmanager")]
 #[doc(hidden)]
@@ -3229,322 +3545,6 @@ impl FieldBgmManager_BgmHandle {
             )
         });
         <Self as IFieldBgmManager_BgmHandleMethods>::ctor(this, sound_handle);
-        this
-    }
-}
-
-#[cfg(feature = "app-fieldbgmmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FieldBgmManager_ProcChangeBgm_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::fieldbgmmanager::FieldBgmManager as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FieldBgmManager_ProcChangeBgm,
-        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
-        is_return_to_normal_bgm: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FieldBgmManager_ProcChangeBgm,
-            crate::app::fieldbgmmanager::FieldBgmManager,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            bgm_manager,
-            is_return_to_normal_bgm,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_proc_call_resume_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
-                "ProcCall_ResumeBgm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
-                    "ProcCall_ResumeBgm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn proc_call_resume_bgm(
-        this: FieldBgmManager_ProcChangeBgm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FieldBgmManager_ProcChangeBgm, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_proc_call_resume_bgm::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_proc_call_pause_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
-                "ProcCall_PauseBgm",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
-                    "ProcCall_PauseBgm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn proc_call_pause_bgm(
-        this: FieldBgmManager_ProcChangeBgm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FieldBgmManager_ProcChangeBgm, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_proc_call_pause_bgm::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::fieldbgmmanager::FieldBgmManager as ::unity2::IlType>::il_type(),
-                <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::class(),
-                "Create",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FieldBgmManager_ProcChangeBgm as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
-        force_type: crate::app::force::Force_Type,
-        is_return_to_normal_bgm: bool,
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::fieldbgmmanager::FieldBgmManager,
-            crate::app::force::Force_Type,
-            bool,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(
-            bgm_manager,
-            force_type,
-            is_return_to_normal_bgm,
-            super_,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "app-fieldbgmmanager")]
-impl FieldBgmManager_ProcChangeBgm {
-    #[doc = "`Create(crate::app::fieldbgmmanager::FieldBgmManager, crate::app::force::Force_Type, bool, crate::app::procinst::ProcInst)` overload"]
-    pub fn create(
-        bgm_manager: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>,
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-        is_return_to_normal_bgm: impl ::core::convert::Into<bool>,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __FieldBgmManager_ProcChangeBgm_unity2_raw::create(
-                ::core::convert::Into::into(bgm_manager),
-                ::core::convert::Into::into(force_type),
-                ::core::convert::Into::into(is_return_to_normal_bgm),
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fieldbgmmanager")]
-pub trait IFieldBgmManager_ProcChangeBgmMethods: IFieldBgmManager_ProcChangeBgm {
-    #[doc = "`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` overload"]
-    fn ctor(
-        self,
-        bgm_manager: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>,
-        is_return_to_normal_bgm: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FieldBgmManager_ProcChangeBgm_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(bgm_manager),
-                ::core::convert::Into::into(is_return_to_normal_bgm),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ProcCall_ResumeBgm()` overload"]
-    fn proc_call_resume_bgm(self) -> () {
-        unsafe {
-            let __receiver =
-                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FieldBgmManager_ProcChangeBgm_unity2_raw::proc_call_resume_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ProcCall_PauseBgm()` overload"]
-    fn proc_call_pause_bgm(self) -> () {
-        unsafe {
-            let __receiver =
-                <FieldBgmManager_ProcChangeBgm as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FieldBgmManager_ProcChangeBgm_unity2_raw::proc_call_pause_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-fieldbgmmanager")]
-impl<__T: IFieldBgmManager_ProcChangeBgm> IFieldBgmManager_ProcChangeBgmMethods for __T {}
-
-#[cfg(feature = "app-fieldbgmmanager")]
-impl FieldBgmManager_ProcChangeBgm {
-    #[doc = "`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` — overload selector"]
-    pub fn new(
-        bgm_manager: crate::app::fieldbgmmanager::FieldBgmManager,
-        is_return_to_normal_bgm: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FieldBgmManager_ProcChangeBgm),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFieldBgmManager_ProcChangeBgmMethods>::ctor(
-            this,
-            bgm_manager,
-            is_return_to_normal_bgm,
-        );
         this
     }
 }

@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopEngraveDemo")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RefineShopEngraveDemo {
+        #[rename(name = "m_RefineShopEngraveDemoRoot")]
+        pub m_refine_shop_engrave_demo_root:
+            crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
+        #[rename(name = "m_ShopWeaponModelRenderer")]
+        pub m_shop_weapon_model_renderer:
+            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopengravedemo/RefineShopEngraveDemo_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -48,18 +60,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 0 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravedemo/RefineShopEngraveDemo.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopEngraveDemo")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RefineShopEngraveDemo {
-        #[rename(name = "m_RefineShopEngraveDemoRoot")]
-        pub m_refine_shop_engrave_demo_root:
-            crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot,
-        #[rename(name = "m_ShopWeaponModelRenderer")]
-        pub m_shop_weapon_model_renderer:
-            crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
     }
 }
 

@@ -10,6 +10,70 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DragonRideEffectManager_TypeIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DragonRideEffectManager_TypeIndex {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DragonRideEffectManager.TypeIndex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DragonRideEffectManager_TypeIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DragonRideEffectManager_TypeIndex {
+        pub fn type_big() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn type_link() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn type_special() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager.EffectReserver")]
+    #[parent(crate::system::object::Object)]
+    pub struct DragonRideEffectManager_EffectReserver {
+        #[rename(name = "m_Reserve")]
+        pub m_reserve: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_TypeName")]
+        pub m_type_name: ::unity2::Il2CppString,
+        #[rename(name = "m_CountMax")]
+        pub m_count_max: i32,
+        #[rename(name = "m_UseCount")]
+        pub m_use_count: i32,
+        #[rename(name = "m_ReturnCount")]
+        pub m_return_count: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideEffectManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)]
@@ -62,74 +126,366 @@ mod __types {
         pub m_maximum_reserve:
             crate::app::dragonrideeffectmanager::DragonRideEffectManager_EffectReserver,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager_EffectReserver.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideEffectManager.EffectReserver")]
-    #[parent(crate::system::object::Object)]
-    pub struct DragonRideEffectManager_EffectReserver {
-        #[rename(name = "m_Reserve")]
-        pub m_reserve: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_TypeName")]
-        pub m_type_name: ::unity2::Il2CppString,
-        #[rename(name = "m_CountMax")]
-        pub m_count_max: i32,
-        #[rename(name = "m_UseCount")]
-        pub m_use_count: i32,
-        #[rename(name = "m_ReturnCount")]
-        pub m_return_count: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DragonRideEffectManager_TypeIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DragonRideEffectManager_TypeIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DragonRideEffectManager.TypeIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DragonRideEffectManager_TypeIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DragonRideEffectManager_TypeIndex {
-        pub fn type_big() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn type_link() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn type_special() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-dragonrideeffectmanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DragonRideEffectManager_EffectReserver_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DragonRideEffectManager_EffectReserver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DragonRideEffectManager_EffectReserver,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_reserve {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
+                "CreateReserve",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
+                    "CreateReserve",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_reserve(
+        this: DragonRideEffectManager_EffectReserver,
+        type_name: ::unity2::Il2CppString,
+        path: ::unity2::Il2CppString,
+        root_obj: crate::unity_engine::gameobject::GameObject,
+        max: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DragonRideEffectManager_EffectReserver,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::unity_engine::gameobject::GameObject,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_reserve::get_offset() as isize),
+        );
+        inner(this, type_name, path, root_obj, max, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rental_obj {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
+                "RentalObj",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
+                    "RentalObj",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn rental_obj(
+        this: DragonRideEffectManager_EffectReserver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            DragonRideEffectManager_EffectReserver,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_rental_obj::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_return_obj {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
+                "ReturnObj",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
+                    "ReturnObj",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn return_obj(
+        this: DragonRideEffectManager_EffectReserver,
+        root_obj: crate::unity_engine::gameobject::GameObject,
+        obj: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DragonRideEffectManager_EffectReserver,
+            crate::unity_engine::gameobject::GameObject,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_return_obj::get_offset() as isize),
+        );
+        inner(this, root_obj, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destruct {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
+                "Destruct",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
+                    "Destruct",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destruct(
+        this: DragonRideEffectManager_EffectReserver,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DragonRideEffectManager_EffectReserver,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_destruct::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+pub trait IDragonRideEffectManager_EffectReserverMethods:
+    IDragonRideEffectManager_EffectReserver
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DragonRideEffectManager_EffectReserver_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateReserve(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    fn create_reserve(
+        self,
+        type_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        path: impl ::core::convert::Into<::unity2::Il2CppString>,
+        root_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        max: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DragonRideEffectManager_EffectReserver_unity2_raw::create_reserve(
+                __receiver,
+                ::core::convert::Into::into(type_name),
+                ::core::convert::Into::into(path),
+                ::core::convert::Into::into(root_obj),
+                ::core::convert::Into::into(max),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`RentalObj()` overload"]
+    fn rental_obj(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DragonRideEffectManager_EffectReserver_unity2_raw::rental_obj(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReturnObj(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn return_obj(
+        self,
+        root_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DragonRideEffectManager_EffectReserver_unity2_raw::return_obj(
+                __receiver,
+                ::core::convert::Into::into(root_obj),
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Destruct()` overload"]
+    fn destruct(self) -> () {
+        unsafe {
+            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DragonRideEffectManager_EffectReserver_unity2_raw::destruct(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+impl<__T: IDragonRideEffectManager_EffectReserver> IDragonRideEffectManager_EffectReserverMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-dragonrideeffectmanager")]
+impl DragonRideEffectManager_EffectReserver {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideEffectManager_EffectReserver),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideEffectManager_EffectReserverMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-dragonrideeffectmanager")]
 #[doc(hidden)]
@@ -1228,362 +1584,6 @@ impl DragonRideEffectManager {
             )
         });
         <Self as IDragonRideEffectManagerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DragonRideEffectManager_EffectReserver_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DragonRideEffectManager_EffectReserver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideEffectManager_EffectReserver,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_reserve {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
-                "CreateReserve",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
-                    "CreateReserve",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_reserve(
-        this: DragonRideEffectManager_EffectReserver,
-        type_name: ::unity2::Il2CppString,
-        path: ::unity2::Il2CppString,
-        root_obj: crate::unity_engine::gameobject::GameObject,
-        max: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideEffectManager_EffectReserver,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::unity_engine::gameobject::GameObject,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_reserve::get_offset() as isize),
-        );
-        inner(this, type_name, path, root_obj, max, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rental_obj {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
-                "RentalObj",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
-                    "RentalObj",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn rental_obj(
-        this: DragonRideEffectManager_EffectReserver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            DragonRideEffectManager_EffectReserver,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rental_obj::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_obj {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
-                "ReturnObj",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
-                    "ReturnObj",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn return_obj(
-        this: DragonRideEffectManager_EffectReserver,
-        root_obj: crate::unity_engine::gameobject::GameObject,
-        obj: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideEffectManager_EffectReserver,
-            crate::unity_engine::gameobject::GameObject,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_return_obj::get_offset() as isize),
-        );
-        inner(this, root_obj, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destruct {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::class(),
-                "Destruct",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideEffectManager_EffectReserver as ::unity2::ClassIdentity>::NAME,
-                    "Destruct",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn destruct(
-        this: DragonRideEffectManager_EffectReserver,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideEffectManager_EffectReserver,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destruct::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-pub trait IDragonRideEffectManager_EffectReserverMethods:
-    IDragonRideEffectManager_EffectReserver
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideEffectManager_EffectReserver_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateReserve(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    fn create_reserve(
-        self,
-        type_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        root_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        max: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideEffectManager_EffectReserver_unity2_raw::create_reserve(
-                __receiver,
-                ::core::convert::Into::into(type_name),
-                ::core::convert::Into::into(path),
-                ::core::convert::Into::into(root_obj),
-                ::core::convert::Into::into(max),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`RentalObj()` overload"]
-    fn rental_obj(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideEffectManager_EffectReserver_unity2_raw::rental_obj(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReturnObj(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    fn return_obj(
-        self,
-        root_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideEffectManager_EffectReserver_unity2_raw::return_obj(
-                __receiver,
-                ::core::convert::Into::into(root_obj),
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Destruct()` overload"]
-    fn destruct(self) -> () {
-        unsafe {
-            let __receiver = < DragonRideEffectManager_EffectReserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideEffectManager_EffectReserver_unity2_raw::destruct(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-impl<__T: IDragonRideEffectManager_EffectReserver> IDragonRideEffectManager_EffectReserverMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-dragonrideeffectmanager")]
-impl DragonRideEffectManager_EffectReserver {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideEffectManager_EffectReserver),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideEffectManager_EffectReserverMethods>::ctor(this);
         this
     }
 }

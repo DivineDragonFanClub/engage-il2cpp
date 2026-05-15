@@ -8,6 +8,28 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ScriptableRenderer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer {
+# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
+# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
+# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
+# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
+# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
+# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
+# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
+# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
+# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
+# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -48,32 +70,6 @@ mod __types {
             crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.Profiling.RenderBlock"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_Profiling_RenderBlock {
-        #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "beforeRendering")]
-        pub before_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "mainRenderingOpaque")]
-        pub main_rendering_opaque:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "mainRenderingTransparent")]
-        pub main_rendering_transparent:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-        #[static_field]
-        #[rename(name = "afterRendering")]
-        pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -100,27 +96,31 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer"
+        name = "ScriptableRenderer.Profiling.RenderBlock"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer {
-# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
-# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
-# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
-# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
-# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
-# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
-# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
-# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
-# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
-# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
-# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
-}
+    pub struct ScriptableRenderer_Profiling_RenderBlock {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "beforeRendering")]
+        pub before_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "mainRenderingOpaque")]
+        pub main_rendering_opaque:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "mainRenderingTransparent")]
+        pub main_rendering_transparent:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "afterRendering")]
+        pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
     #[::unity2::class(
@@ -129,27 +129,6 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct ScriptableRenderer_RenderingFeatures {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRenderer.RenderPassBlock"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ScriptableRenderer_RenderPassBlock {
-        #[static_field]
-        #[rename(name = "BeforeRendering")]
-        pub before_rendering: i32,
-        #[static_field]
-        #[rename(name = "MainRenderingOpaque")]
-        pub main_rendering_opaque: i32,
-        #[static_field]
-        #[rename(name = "MainRenderingTransparent")]
-        pub main_rendering_transparent: i32,
-        #[static_field]
-        #[rename(name = "AfterRendering")]
-        pub after_rendering: i32,
-    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
     #[repr(C)]
@@ -180,6 +159,27 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ScriptableRenderer.RenderPassBlock"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ScriptableRenderer_RenderPassBlock {
+        #[static_field]
+        #[rename(name = "BeforeRendering")]
+        pub before_rendering: i32,
+        #[static_field]
+        #[rename(name = "MainRenderingOpaque")]
+        pub main_rendering_opaque: i32,
+        #[static_field]
+        #[rename(name = "MainRenderingTransparent")]
+        pub main_rendering_transparent: i32,
+        #[static_field]
+        #[rename(name = "AfterRendering")]
+        pub after_rendering: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -198,405 +198,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_Profiling_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ScriptableRenderer_Profiling_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_Profiling_RenderBlock_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_Profiling_RenderBlock {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ScriptableRenderer_Profiling_RenderBlock_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_RenderBlocks_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ScriptableRenderer_RenderBlocks,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, active_render_pass_queue, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: ScriptableRenderer_RenderBlocks,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fill_block_ranges {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "FillBlockRanges",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "FillBlockRanges",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fill_block_ranges(
-        this: ScriptableRenderer_RenderBlocks,
-        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_fill_block_ranges :: get_offset () as isize) ,) ;
-        inner(this, active_render_pass_queue, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "GetLength",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "GetLength",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_length(
-        this: ScriptableRenderer_RenderBlocks,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ScriptableRenderer_RenderBlocks,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_length::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
-                "GetRange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
-                    "GetRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_range (this : ScriptableRenderer_RenderBlocks , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_range :: get_offset () as isize) ,) ;
-        inner(this, index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderBlocks {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    pub fn ctor(
-        self,
-        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
-    ) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(active_render_pass_queue),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
-    pub fn fill_block_ranges(
-        self,
-        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
-    ) -> () {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::fill_block_ranges(
-                self,
-                ::core::convert::Into::into(active_render_pass_queue),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetLength(i32)` overload"]
-    pub fn get_length(self, index: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::get_length(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRange(i32)` overload"]    pub fn get_range (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
-        unsafe {
-            __ScriptableRenderer_RenderBlocks_unity2_raw::get_range(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
@@ -3787,6 +3388,405 @@ impl ScriptableRenderer {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_Profiling_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_Profiling as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ScriptableRenderer_Profiling_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_RenderBlocks_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ScriptableRenderer_RenderBlocks,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, active_render_pass_queue, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: ScriptableRenderer_RenderBlocks,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ScriptableRenderer_RenderBlocks, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fill_block_ranges {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "FillBlockRanges",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                    "FillBlockRanges",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fill_block_ranges(
+        this: ScriptableRenderer_RenderBlocks,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_fill_block_ranges :: get_offset () as isize) ,) ;
+        inner(this, active_render_pass_queue, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "GetLength",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                    "GetLength",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_length(
+        this: ScriptableRenderer_RenderBlocks,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ScriptableRenderer_RenderBlocks,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_length::get_offset() as isize),
+        );
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::class(),
+                "GetRange",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderBlocks as ::unity2::ClassIdentity>::NAME,
+                    "GetRange",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }    pub unsafe fn get_range (this : ScriptableRenderer_RenderBlocks , index : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
+        let inner : extern "C" fn (ScriptableRenderer_RenderBlocks , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_range :: get_offset () as isize) ,) ;
+        inner(this, index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderBlocks {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    pub fn ctor(
+        self,
+        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
+    ) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(active_render_pass_queue),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::dispose(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]
+    pub fn fill_block_ranges(
+        self,
+        active_render_pass_queue : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > >,
+    ) -> () {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::fill_block_ranges(
+                self,
+                ::core::convert::Into::into(active_render_pass_queue),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetLength(i32)` overload"]
+    pub fn get_length(self, index: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::get_length(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetRange(i32)` overload"]    pub fn get_range (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange{
+        unsafe {
+            __ScriptableRenderer_RenderBlocks_unity2_raw::get_range(
+                self,
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_Profiling_RenderBlock_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_Profiling_RenderBlock as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_Profiling_RenderBlock {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __ScriptableRenderer_Profiling_RenderBlock_unity2_raw::cctor(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __ScriptableRenderer_RenderingFeatures_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4115,64 +4115,6 @@ impl ScriptableRenderer_RenderingFeatures {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ScriptableRenderer_RenderPassBlock_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderPassBlock {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __ScriptableRenderer_RenderPassBlock_unity2_raw::cctor(::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __ScriptableRenderer_RenderBlocks_BlockRange_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4458,6 +4400,64 @@ impl ScriptableRenderer_RenderBlocks_BlockRange {
                 self,
                 ::core::option::Option::None,
             )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptableRenderer_RenderPassBlock_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ScriptableRenderer_RenderPassBlock as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderPassBlock {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __ScriptableRenderer_RenderPassBlock_unity2_raw::cctor(::core::option::Option::None)
         }
     }
 }

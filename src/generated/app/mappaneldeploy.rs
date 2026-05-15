@@ -4,69 +4,67 @@
 mod __types {
     use super::*;
 
+    use crate::app::singletonmonobehaviour_1::{
+        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    };
+    use crate::root::mappanelbase_1::{IMapPanelBase_1, MapPanelBase_1};
     use crate::system::object::{IObject, Object};
     use crate::system::r#enum::{Enum, IEnum};
     use crate::system::valuetype::{IValueType, ValueType};
+    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
+    use crate::unity_engine::component::{Component, IComponent};
+    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
+    use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelDeploy_MeshIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelDeploy_MeshIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapPanelDeploy.MeshIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelDeploy_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelDeploy_MeshIndex {
-        pub fn r#move() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn attack() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn heal() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn support() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn interference() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldeploy/MapPanelDeploy.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelDeploy")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappaneldeploy :: MapPanelDeploy >)]
+    pub struct MapPanelDeploy {
+        #[rename(name = "m_MeshList")]
+        pub m_mesh_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
+        >,
+        #[rename(name = "m_MoveImage")]
+        pub m_move_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_AttackImage")]
+        pub m_attack_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_HealImage")]
+        pub m_heal_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_SupportImage")]
+        pub m_support_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_InterferenceImage")]
+        pub m_interference_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_TempImage")]
+        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_Scale")]
+        pub m_scale: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_Range")]
+        pub m_range: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_MoveColor")]
+        pub m_move_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AttackColor")]
+        pub m_attack_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_HealColor")]
+        pub m_heal_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_SupportColor")]
+        pub m_support_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_InterferenceColor")]
+        pub m_interference_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_AlphaCurve")]
+        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_IsIntegration")]
+        pub m_is_integration: bool,
+        #[rename(name = "m_IntegrationImage")]
+        pub m_integration_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_Mode.md"))]
@@ -201,53 +199,64 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldeploy/MapPanelDeploy.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelDeploy")]
-    pub struct MapPanelDeploy {
-        #[rename(name = "m_MeshList")]
-        pub m_mesh_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
-        >,
-        #[rename(name = "m_MoveImage")]
-        pub m_move_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_AttackImage")]
-        pub m_attack_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_HealImage")]
-        pub m_heal_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_SupportImage")]
-        pub m_support_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_InterferenceImage")]
-        pub m_interference_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_TempImage")]
-        pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_Scale")]
-        pub m_scale: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_Range")]
-        pub m_range: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_MoveColor")]
-        pub m_move_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AttackColor")]
-        pub m_attack_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_HealColor")]
-        pub m_heal_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_SupportColor")]
-        pub m_support_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_InterferenceColor")]
-        pub m_interference_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_AlphaCurve")]
-        pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_IsIntegration")]
-        pub m_is_integration: bool,
-        #[rename(name = "m_IntegrationImage")]
-        pub m_integration_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelDeploy_MeshIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelDeploy_MeshIndex {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapPanelDeploy.MeshIndex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelDeploy_MeshIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelDeploy_MeshIndex {
+        pub fn r#move() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn heal() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn support() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn interference() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 5 }
+        }
     }
 }
 
@@ -1471,6 +1480,12 @@ pub mod prelude {
     pub use super::MapPanelDeploy;
     pub use super::MapPanelDeploy_MeshIndex;
     pub use super::MapPanelDeploy_Mode;
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1;
+    #[cfg(feature = "root-mappanelbase_1")]
+    pub use crate::root::mappanelbase_1::IMapPanelBase_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
@@ -1480,4 +1495,16 @@ pub mod prelude {
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::unity_engine::behaviour::IBehaviour;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    pub use crate::unity_engine::component::IComponent;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    pub use crate::unity_engine::object_2::IObject_2;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
 }

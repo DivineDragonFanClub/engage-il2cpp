@@ -24,6 +24,14 @@ mod __types {
 # [rename (name = "m_registererId")] pub m_registerer_id : :: unity2 :: Il2CppString ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
+    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct AssetBundleBuildMap {
+# [rename (name = "m_assetBundles")] pub m_asset_bundles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry > ,
+# [static_field] # [rename (name = "s_map")] pub s_map : crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,14 +60,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]
-    #[::unity2::class(namespace = "UnityEngine.AssetGraph", name = "AssetBundleBuildMap")]
-    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-    pub struct AssetBundleBuildMap {
-# [rename (name = "m_assetBundles")] pub m_asset_bundles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry > ,
-# [static_field] # [rename (name = "s_map")] pub s_map : crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap ,
-}
 }
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap-types")]
@@ -553,63 +553,6 @@ impl AssetBundleBuildMap_AssetBundleEntry {
             variant_name,
         );
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleBuildMap_AssetBundleEntry_AssetPathString as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleBuildMap_AssetBundleEntry_AssetPathString as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, s, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    pub fn ctor(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 
@@ -1550,6 +1493,63 @@ impl AssetBundleBuildMap {
         });
         <Self as IAssetBundleBuildMapMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AssetBundleBuildMap_AssetBundleEntry_AssetPathString as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AssetBundleBuildMap_AssetBundleEntry_AssetPathString as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
+        s: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AssetBundleBuildMap_AssetBundleEntry_AssetPathString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, s, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    pub fn ctor(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __AssetBundleBuildMap_AssetBundleEntry_AssetPathString_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(s),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

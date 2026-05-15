@@ -17,6 +17,8 @@ mod __types {
     pub struct CharacterHUD {
         #[rename(name = "_cp")]
         pub cp: crate::combat::character::Character,
+        #[rename(name = "CombatGaugeController")]
+        pub combat_gauge_controller: crate::root::combatgaugecontroller::CombatGaugeController,
     }
 }
 

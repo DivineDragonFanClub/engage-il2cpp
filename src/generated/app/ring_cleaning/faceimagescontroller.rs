@@ -13,6 +13,61 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController.md"))]
+    #[::unity2::class(namespace = "App.RingCleaning", name = "FaceImagesController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct FaceImagesController {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_UnitModelRoot")]
+        pub m_unit_model_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_GodModelRoot")]
+        pub m_god_model_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitChara")]
+        pub m_unit_chara: crate::combat::character::Character,
+        #[rename(name = "m_GodChara")]
+        pub m_god_chara: crate::combat::character::Character,
+        #[rename(name = "m_GodEffectPos")]
+        pub m_god_effect_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_FinishSetupNum")]
+        pub m_finish_setup_num: i32,
+        #[rename(name = "m_IsSetupLookAt")]
+        pub m_is_setup_look_at: bool,
+        #[rename(name = "m_IsFirstCleaning")]
+        pub m_is_first_cleaning: bool,
+        #[rename(name = "m_カメラの高さをキャラクターの頭部に合わせる")]
+        pub m_カメラの高さをキャラクターの頭部に合わせる: bool,
+        #[rename(name = "m_カメラの高さ補正値")]
+        pub m_カメラの高さ補正値: f32,
+        #[static_field]
+        #[rename(name = "UnitDefaultAnim")]
+        pub unit_default_anim: ::unity2::Il2CppString,
+        #[rename(name = "m_GodStrongHitIndex")]
+        pub m_god_strong_hit_index: i32,
+        #[rename(name = "GodStrongHitAnim")]
+        pub god_strong_hit_anim: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))]
+    #[::unity2::class(
+        namespace = "App.RingCleaning",
+        name = "FaceImagesController.ReturnEntryComponent"
+    )]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct FaceImagesController_ReturnEntryComponent {
+        #[rename(name = "m_Character")]
+        pub m_character: crate::combat::character::Character,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_NowAnimName")]
+        pub m_now_anim_name: ::unity2::Il2CppString,
+        #[rename(name = "m_ChangeAnimName")]
+        pub m_change_anim_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md"))]
     #[repr(C)]
     #[derive(
@@ -77,61 +132,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))]
-    #[::unity2::class(
-        namespace = "App.RingCleaning",
-        name = "FaceImagesController.ReturnEntryComponent"
-    )]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FaceImagesController_ReturnEntryComponent {
-        #[rename(name = "m_Character")]
-        pub m_character: crate::combat::character::Character,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_NowAnimName")]
-        pub m_now_anim_name: ::unity2::Il2CppString,
-        #[rename(name = "m_ChangeAnimName")]
-        pub m_change_anim_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController.md"))]
-    #[::unity2::class(namespace = "App.RingCleaning", name = "FaceImagesController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct FaceImagesController {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_UnitModelRoot")]
-        pub m_unit_model_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GodModelRoot")]
-        pub m_god_model_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitChara")]
-        pub m_unit_chara: crate::combat::character::Character,
-        #[rename(name = "m_GodChara")]
-        pub m_god_chara: crate::combat::character::Character,
-        #[rename(name = "m_GodEffectPos")]
-        pub m_god_effect_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_FinishSetupNum")]
-        pub m_finish_setup_num: i32,
-        #[rename(name = "m_IsSetupLookAt")]
-        pub m_is_setup_look_at: bool,
-        #[rename(name = "m_IsFirstCleaning")]
-        pub m_is_first_cleaning: bool,
-        #[rename(name = "m_カメラの高さをキャラクターの頭部に合わせる")]
-        pub m_カメラの高さをキャラクターの頭部に合わせる: bool,
-        #[rename(name = "m_カメラの高さ補正値")]
-        pub m_カメラの高さ補正値: f32,
-        #[static_field]
-        #[rename(name = "UnitDefaultAnim")]
-        pub unit_default_anim: ::unity2::Il2CppString,
-        #[rename(name = "m_GodStrongHitIndex")]
-        pub m_god_strong_hit_index: i32,
-        #[rename(name = "GodStrongHitAnim")]
-        pub god_strong_hit_anim: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]
     #[repr(C)]
     #[derive(
@@ -187,236 +187,6 @@ mod __types {
 
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FaceImagesController_ReturnEntryComponent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
-                "SetCharacter",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
-                    "SetCharacter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_character(
-        this: FaceImagesController_ReturnEntryComponent,
-        chara: crate::combat::character::Character,
-        now_anim_name: ::unity2::Il2CppString,
-        change_anim_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FaceImagesController_ReturnEntryComponent,
-            crate::combat::character::Character,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_character::get_offset() as isize),
-        );
-        inner(
-            this,
-            chara,
-            now_anim_name,
-            change_anim_name,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: FaceImagesController_ReturnEntryComponent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FaceImagesController_ReturnEntryComponent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FaceImagesController_ReturnEntryComponent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FaceImagesController_ReturnEntryComponent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
-pub trait IFaceImagesController_ReturnEntryComponentMethods:
-    IFaceImagesController_ReturnEntryComponent
-{
-    #[doc = "`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_character(
-        self,
-        chara: impl ::core::convert::Into<crate::combat::character::Character>,
-        now_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        change_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FaceImagesController_ReturnEntryComponent_unity2_raw::set_character(
-                __receiver,
-                ::core::convert::Into::into(chara),
-                ::core::convert::Into::into(now_anim_name),
-                ::core::convert::Into::into(change_anim_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FaceImagesController_ReturnEntryComponent_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __FaceImagesController_ReturnEntryComponent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
-impl<__T: IFaceImagesController_ReturnEntryComponent>
-    IFaceImagesController_ReturnEntryComponentMethods for __T
-{
-}
-
-#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
-impl FaceImagesController_ReturnEntryComponent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FaceImagesController_ReturnEntryComponent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFaceImagesController_ReturnEntryComponentMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
 #[doc(hidden)]
@@ -1521,6 +1291,236 @@ impl FaceImagesController {
             )
         });
         <Self as IFaceImagesControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FaceImagesController_ReturnEntryComponent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
+                "SetCharacter",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
+                    "SetCharacter",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_character(
+        this: FaceImagesController_ReturnEntryComponent,
+        chara: crate::combat::character::Character,
+        now_anim_name: ::unity2::Il2CppString,
+        change_anim_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FaceImagesController_ReturnEntryComponent,
+            crate::combat::character::Character,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_character::get_offset() as isize),
+        );
+        inner(
+            this,
+            chara,
+            now_anim_name,
+            change_anim_name,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: FaceImagesController_ReturnEntryComponent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FaceImagesController_ReturnEntryComponent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FaceImagesController_ReturnEntryComponent as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FaceImagesController_ReturnEntryComponent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FaceImagesController_ReturnEntryComponent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+pub trait IFaceImagesController_ReturnEntryComponentMethods:
+    IFaceImagesController_ReturnEntryComponent
+{
+    #[doc = "`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_character(
+        self,
+        chara: impl ::core::convert::Into<crate::combat::character::Character>,
+        now_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        change_anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __FaceImagesController_ReturnEntryComponent_unity2_raw::set_character(
+                __receiver,
+                ::core::convert::Into::into(chara),
+                ::core::convert::Into::into(now_anim_name),
+                ::core::convert::Into::into(change_anim_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __FaceImagesController_ReturnEntryComponent_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < FaceImagesController_ReturnEntryComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __FaceImagesController_ReturnEntryComponent_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+impl<__T: IFaceImagesController_ReturnEntryComponent>
+    IFaceImagesController_ReturnEntryComponentMethods for __T
+{
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+impl FaceImagesController_ReturnEntryComponent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FaceImagesController_ReturnEntryComponent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFaceImagesController_ReturnEntryComponentMethods>::ctor(this);
         this
     }
 }

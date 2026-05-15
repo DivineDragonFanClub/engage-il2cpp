@@ -10,6 +10,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct CommonRewardSequence_ProcDiscardMessage {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -61,11 +66,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct CommonRewardSequence_ProcDiscardMessage {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence.md"))]
     #[::unity2::class(namespace = "App", name = "CommonRewardSequence")]

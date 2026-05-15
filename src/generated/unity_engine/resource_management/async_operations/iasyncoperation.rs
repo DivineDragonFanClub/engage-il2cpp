@@ -854,6 +854,49 @@ mod __IAsyncOperation_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle as :: unity2 :: IlType > :: il_type () , < crate :: root :: delegatelist_1 :: DelegateList_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <IAsyncOperation as ::unity2::ClassIdentity>::class(),
+                "Start",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <IAsyncOperation as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: IAsyncOperation,
+        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+        update_callbacks: crate::root::delegatelist_1::DelegateList_1<f32>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (IAsyncOperation , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: root :: delegatelist_1 :: DelegateList_1 < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_start :: get_offset () as isize) ,) ;
+        inner(this, rm, dependency, update_callbacks, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -1175,6 +1218,28 @@ pub trait IIAsyncOperationMethods: IIAsyncOperation {
             );
             __IAsyncOperation_unity2_raw::invoke_completion_event(
                 __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle, crate::root::delegatelist_1::DelegateList_1<f32>)` overload"]
+    fn start(
+        self,
+        rm: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        >,
+        dependency : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        update_callbacks: impl ::core::convert::Into<crate::root::delegatelist_1::DelegateList_1<f32>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <IAsyncOperation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IAsyncOperation_unity2_raw::start(
+                __receiver,
+                ::core::convert::Into::into(rm),
+                ::core::convert::Into::into(dependency),
+                ::core::convert::Into::into(update_callbacks),
                 ::core::option::Option::None,
             )
         }

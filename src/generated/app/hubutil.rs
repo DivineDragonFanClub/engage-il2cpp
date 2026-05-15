@@ -9,6 +9,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "HubUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubUtil {
+        #[static_field]
+        #[rename(name = "s_HubParams")]
+        pub s_hub_params: crate::app::hubparams::HubParams,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
     #[repr(C)]
     #[derive(
@@ -65,14 +74,10 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "HubUtil")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
+    #[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
     #[parent(crate::system::object::Object)]
-    pub struct HubUtil {
-        #[static_field]
-        #[rename(name = "s_HubParams")]
-        pub s_hub_params: crate::app::hubparams::HubParams,
-    }
+    pub struct HubUtil_BSpline {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
     #[repr(C)]
@@ -173,11 +178,6 @@ mod __types {
             Self { value: 15 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
-    #[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubUtil_BSpline {}
 }
 
 #[cfg(feature = "app-hubutil-types")]

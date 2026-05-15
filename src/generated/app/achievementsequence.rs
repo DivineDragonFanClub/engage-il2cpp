@@ -11,11 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementsequence/AchievementSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AchievementSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: achievementsequence :: AchievementSequence >)]
-    pub struct AchievementSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementsequence/AchievementSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -59,6 +54,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementsequence/AchievementSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AchievementSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: achievementsequence :: AchievementSequence >)]
+    pub struct AchievementSequence {}
 }
 
 #[cfg(feature = "app-achievementsequence-types")]

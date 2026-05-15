@@ -13,6 +13,66 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ItemMenuDetailSetter_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ItemMenuDetailSetter_Kind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ItemMenuDetailSetter.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ItemMenuDetailSetter_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ItemMenuDetailSetter_Kind {
+        pub fn power() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn weight() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn hit() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn critical() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn avoid() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn secure() -> Self {
+            Self { value: 5 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))]
     #[::unity2::class(namespace = "App", name = "ItemMenuDetailSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -117,66 +177,6 @@ mod __types {
         pub m_battle_info: crate::app::battleinfo::BattleInfo,
         #[rename(name = "m_TmpBattleInfo")]
         pub m_tmp_battle_info: crate::app::battleinfo::BattleInfo,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ItemMenuDetailSetter_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ItemMenuDetailSetter_Kind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ItemMenuDetailSetter.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ItemMenuDetailSetter_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ItemMenuDetailSetter_Kind {
-        pub fn power() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn weight() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn hit() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn critical() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn avoid() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn secure() -> Self {
-            Self { value: 5 }
-        }
     }
 }
 

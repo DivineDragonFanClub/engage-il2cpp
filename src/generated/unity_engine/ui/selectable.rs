@@ -14,60 +14,40 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Selectable_SelectionState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Selectable_SelectionState {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Selectable.SelectionState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Selectable_SelectionState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Selectable_SelectionState {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn highlighted() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn pressed() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn selected() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn disabled() -> Self {
-            Self { value: 4 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Selectable")]
+    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+    pub struct Selectable {
+        #[static_field]
+        #[rename(name = "s_Selectables")]
+        pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>,
+        #[static_field]
+        #[rename(name = "s_SelectableCount")]
+        pub s_selectable_count: i32,
+        #[rename(name = "m_EnableCalled")]
+        pub m_enable_called: bool,
+        #[rename(name = "m_Navigation")]
+        pub m_navigation: crate::unity_engine::ui::navigation::Navigation,
+        #[rename(name = "m_Transition")]
+        pub m_transition: crate::unity_engine::ui::selectable::Selectable_Transition,
+        #[rename(name = "m_Colors")]
+        pub m_colors: crate::unity_engine::ui::colorblock::ColorBlock,
+        #[rename(name = "m_SpriteState")]
+        pub m_sprite_state: crate::unity_engine::ui::spritestate::SpriteState,
+        #[rename(name = "m_AnimationTriggers")]
+        pub m_animation_triggers: crate::unity_engine::ui::animationtriggers::AnimationTriggers,
+        #[rename(name = "m_Interactable")]
+        pub m_interactable: bool,
+        #[rename(name = "m_TargetGraphic")]
+        pub m_target_graphic: crate::unity_engine::ui::graphic::Graphic,
+        #[rename(name = "m_GroupsAllowInteraction")]
+        pub m_groups_allow_interaction: bool,
+        #[rename(name = "m_CurrentIndex")]
+        pub m_current_index: i32,
+        #[rename(name = "m_CanvasGroupCache")]
+        pub m_canvas_group_cache: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::canvasgroup::CanvasGroup,
+        >,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_Transition.md"))]
@@ -122,40 +102,60 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Selectable")]
-    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
-    pub struct Selectable {
-        #[static_field]
-        #[rename(name = "s_Selectables")]
-        pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>,
-        #[static_field]
-        #[rename(name = "s_SelectableCount")]
-        pub s_selectable_count: i32,
-        #[rename(name = "m_EnableCalled")]
-        pub m_enable_called: bool,
-        #[rename(name = "m_Navigation")]
-        pub m_navigation: crate::unity_engine::ui::navigation::Navigation,
-        #[rename(name = "m_Transition")]
-        pub m_transition: crate::unity_engine::ui::selectable::Selectable_Transition,
-        #[rename(name = "m_Colors")]
-        pub m_colors: crate::unity_engine::ui::colorblock::ColorBlock,
-        #[rename(name = "m_SpriteState")]
-        pub m_sprite_state: crate::unity_engine::ui::spritestate::SpriteState,
-        #[rename(name = "m_AnimationTriggers")]
-        pub m_animation_triggers: crate::unity_engine::ui::animationtriggers::AnimationTriggers,
-        #[rename(name = "m_Interactable")]
-        pub m_interactable: bool,
-        #[rename(name = "m_TargetGraphic")]
-        pub m_target_graphic: crate::unity_engine::ui::graphic::Graphic,
-        #[rename(name = "m_GroupsAllowInteraction")]
-        pub m_groups_allow_interaction: bool,
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[rename(name = "m_CanvasGroupCache")]
-        pub m_canvas_group_cache: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::canvasgroup::CanvasGroup,
-        >,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Selectable_SelectionState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Selectable_SelectionState {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Selectable.SelectionState";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Selectable_SelectionState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Selectable_SelectionState {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn highlighted() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn pressed() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn selected() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn disabled() -> Self {
+            Self { value: 4 }
+        }
     }
 }
 
