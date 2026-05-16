@@ -16,15 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameui/GameUI.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUI")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)]
-    pub struct GameUI {
-        #[static_field]
-        #[rename(name = "UnknownName")]
-        pub unknown_name: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameui/GameUI_Priority.md"))]
     #[repr(C)]
     #[derive(
@@ -127,6 +118,15 @@ mod __types {
         pub fn debug() -> Self {
             Self { value: 2000 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameui/GameUI.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUI")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)]
+    pub struct GameUI {
+        #[static_field]
+        #[rename(name = "UnknownName")]
+        pub unknown_name: ::unity2::Il2CppString,
     }
 }
 
@@ -538,7 +538,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

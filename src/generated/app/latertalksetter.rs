@@ -11,11 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitData")]
-    #[parent(crate::system::object::Object)]
-    pub struct LaterTalkSetter_UnitData {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]
     #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitInfo")]
     #[parent(crate::system::object::Object)]
@@ -39,6 +34,11 @@ mod __types {
         #[rename(name = "MostEmblem")]
         pub most_emblem: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]
+    #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitData")]
+    #[parent(crate::system::object::Object)]
+    pub struct LaterTalkSetter_UnitData {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter.md"))]
     #[::unity2::class(namespace = "App", name = "LaterTalkSetter")]
@@ -79,6 +79,91 @@ mod __types {
 
 #[cfg(feature = "app-latertalksetter-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-latertalksetter")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __LaterTalkSetter_UnitInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: LaterTalkSetter_UnitInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(LaterTalkSetter_UnitInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-latertalksetter")]
+pub trait ILaterTalkSetter_UnitInfoMethods: ILaterTalkSetter_UnitInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <LaterTalkSetter_UnitInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __LaterTalkSetter_UnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-latertalksetter")]
+impl<__T: ILaterTalkSetter_UnitInfo> ILaterTalkSetter_UnitInfoMethods for __T {}
+
+#[cfg(feature = "app-latertalksetter")]
+impl LaterTalkSetter_UnitInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LaterTalkSetter_UnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILaterTalkSetter_UnitInfoMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-latertalksetter")]
 #[doc(hidden)]
@@ -1009,91 +1094,6 @@ impl LaterTalkSetter_UnitData {
             )
         });
         <Self as ILaterTalkSetter_UnitDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-latertalksetter")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __LaterTalkSetter_UnitInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LaterTalkSetter_UnitInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: LaterTalkSetter_UnitInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(LaterTalkSetter_UnitInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetter_UnitInfoMethods: ILaterTalkSetter_UnitInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <LaterTalkSetter_UnitInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __LaterTalkSetter_UnitInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-latertalksetter")]
-impl<__T: ILaterTalkSetter_UnitInfo> ILaterTalkSetter_UnitInfoMethods for __T {}
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LaterTalkSetter_UnitInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILaterTalkSetter_UnitInfoMethods>::ctor(this);
         this
     }
 }

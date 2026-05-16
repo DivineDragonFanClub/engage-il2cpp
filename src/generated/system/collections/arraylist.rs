@@ -24,14 +24,6 @@ mod __types {
         pub empty_array: ::unity2::Array<crate::system::object::Object>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ReadOnlyArrayList.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ReadOnlyArrayList")]
-    #[parent(crate::system::collections::arraylist::ArrayList)]
-    pub struct ArrayList_ReadOnlyArrayList {
-        #[rename(name = "_list")]
-        pub list: crate::system::collections::arraylist::ArrayList,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListDebugView.md"))]
     #[::unity2::class(
         namespace = "System.Collections",
@@ -39,6 +31,14 @@ mod __types {
     )]
     #[parent(crate::system::object::Object)]
     pub struct ArrayList_ArrayListDebugView {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ReadOnlyArrayList.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "ArrayList.ReadOnlyArrayList")]
+    #[parent(crate::system::collections::arraylist::ArrayList)]
+    pub struct ArrayList_ReadOnlyArrayList {
+        #[rename(name = "_list")]
+        pub list: crate::system::collections::arraylist::ArrayList,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]
     #[::unity2::class(

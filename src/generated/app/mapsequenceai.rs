@@ -11,21 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceai/MapSequenceAI.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceAI")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)]
-    pub struct MapSequenceAI {
-        #[static_field]
-        #[rename(name = "s_AiThread")]
-        pub s_ai_thread: crate::app::mapaithread::MapAiThread,
-        #[rename(name = "m_LastMindX")]
-        pub m_last_mind_x: i32,
-        #[rename(name = "m_LastMindZ")]
-        pub m_last_mind_z: i32,
-        #[rename(name = "m_IsOrderUnitEngageOrGodChange")]
-        pub m_is_order_unit_engage_or_god_change: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -92,6 +77,21 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 7 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceai/MapSequenceAI.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceAI")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)]
+    pub struct MapSequenceAI {
+        #[static_field]
+        #[rename(name = "s_AiThread")]
+        pub s_ai_thread: crate::app::mapaithread::MapAiThread,
+        #[rename(name = "m_LastMindX")]
+        pub m_last_mind_x: i32,
+        #[rename(name = "m_LastMindZ")]
+        pub m_last_mind_z: i32,
+        #[rename(name = "m_IsOrderUnitEngageOrGodChange")]
+        pub m_is_order_unit_engage_or_god_change: bool,
     }
 }
 
@@ -1673,7 +1673,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

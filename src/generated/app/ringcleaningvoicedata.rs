@@ -68,15 +68,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
-    pub struct RingCleaningVoiceData {
-        #[static_field]
-        #[rename(name = "EventNames")]
-        pub event_names: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]
     #[repr(C)]
     #[derive(
@@ -175,6 +166,15 @@ mod __types {
         pub fn thank03() -> Self {
             Self { value: 15 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
+    #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
+    pub struct RingCleaningVoiceData {
+        #[static_field]
+        #[rename(name = "EventNames")]
+        pub event_names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 
@@ -1164,7 +1164,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -12,21 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reliancedata/RelianceData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelianceData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: reliancedata :: RelianceData >)]
-    pub struct RelianceData {
-        #[static_field]
-        #[rename(name = "NoSupport")]
-        pub no_support: u8,
-        #[static_field]
-        #[rename(name = "MaxExp")]
-        pub max_exp: i32,
-        #[static_field]
-        #[rename(name = "MaxData")]
-        pub max_data: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/reliancedata/RelianceData_Level.md"))]
     #[repr(C)]
     #[derive(
@@ -85,6 +70,21 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 5 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reliancedata/RelianceData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelianceData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: reliancedata :: RelianceData >)]
+    pub struct RelianceData {
+        #[static_field]
+        #[rename(name = "NoSupport")]
+        pub no_support: u8,
+        #[static_field]
+        #[rename(name = "MaxExp")]
+        pub max_exp: i32,
+        #[static_field]
+        #[rename(name = "MaxData")]
+        pub max_data: i32,
     }
 }
 
@@ -5441,7 +5441,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

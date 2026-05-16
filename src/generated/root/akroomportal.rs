@@ -14,6 +14,31 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomportal/AkRoomPortal.md"))]
+    #[::unity2::class(namespace = "", name = "AkRoomPortal")]
+    #[parent(crate::root::aktriggerhandler::AkTriggerHandler)]
+    pub struct AkRoomPortal {
+        #[static_field]
+        #[rename(name = "MAX_ROOMS_PER_PORTAL")]
+        pub max_rooms_per_portal: i32,
+        #[rename(name = "initialState")]
+        pub initial_state: crate::root::akroomportal::AkRoomPortal_State,
+        #[rename(name = "active")]
+        pub active: bool,
+        #[rename(name = "closePortalTriggerList")]
+        pub close_portal_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "rooms")]
+        pub rooms: ::unity2::Array<crate::root::akroom::AkRoom>,
+        #[rename(name = "roomList")]
+        pub room_list: ::unity2::Array<crate::root::akroom::AkRoom_PriorityList>,
+        #[rename(name = "portalTransform")]
+        pub portal_transform: crate::root::aktransform::AkTransform,
+        #[rename(name = "portalCollider")]
+        pub portal_collider: crate::unity_engine::boxcollider::BoxCollider,
+        #[rename(name = "portalSet")]
+        pub portal_set: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akroomportal/AkRoomPortal_State.md"))]
     #[repr(C)]
     #[derive(
@@ -56,31 +81,6 @@ mod __types {
         pub fn open() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomportal/AkRoomPortal.md"))]
-    #[::unity2::class(namespace = "", name = "AkRoomPortal")]
-    #[parent(crate::root::aktriggerhandler::AkTriggerHandler)]
-    pub struct AkRoomPortal {
-        #[static_field]
-        #[rename(name = "MAX_ROOMS_PER_PORTAL")]
-        pub max_rooms_per_portal: i32,
-        #[rename(name = "initialState")]
-        pub initial_state: crate::root::akroomportal::AkRoomPortal_State,
-        #[rename(name = "active")]
-        pub active: bool,
-        #[rename(name = "closePortalTriggerList")]
-        pub close_portal_trigger_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "rooms")]
-        pub rooms: ::unity2::Array<crate::root::akroom::AkRoom>,
-        #[rename(name = "roomList")]
-        pub room_list: ::unity2::Array<crate::root::akroom::AkRoom_PriorityList>,
-        #[rename(name = "portalTransform")]
-        pub portal_transform: crate::root::aktransform::AkTransform,
-        #[rename(name = "portalCollider")]
-        pub portal_collider: crate::unity_engine::boxcollider::BoxCollider,
-        #[rename(name = "portalSet")]
-        pub portal_set: bool,
     }
 }
 
@@ -1927,7 +1927,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

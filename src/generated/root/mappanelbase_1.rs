@@ -25,6 +25,33 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct MapPanelBase_1_ImageGetFunction<T0: ::unity2::ClassIdentity> {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))]
+    #[::unity2::class(namespace = "", name = "MapPanelBase`1")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    #[parent(crate::unity_engine::behaviour::Behaviour)]
+    #[parent(crate::unity_engine::component::Component)]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapPanelBase_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Materials")]
+        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::app::map::Map_CellMesh,
+        #[rename(name = "m_HalfTexelX")]
+        pub m_half_texel_x: f32,
+        #[rename(name = "m_HalfTexelY")]
+        pub m_half_texel_y: f32,
+        #[rename(name = "m_RendererMaterials")]
+        pub m_renderer_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[static_field]
+        #[rename(name = "CheckImageOffsetXTable")]
+        pub check_image_offset_x_table: ::unity2::Array<i32>,
+        #[static_field]
+        #[rename(name = "CheckIMageOffsetZTable")]
+        pub check_i_mage_offset_z_table: ::unity2::Array<i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelbase_1/MapPanelBase_1_PanelType.md"))]
     #[repr(C)]
     #[derive(
@@ -102,33 +129,6 @@ mod __types {
                 _phantom: ::core::marker::PhantomData,
             }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))]
-    #[::unity2::class(namespace = "", name = "MapPanelBase`1")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    #[parent(crate::unity_engine::behaviour::Behaviour)]
-    #[parent(crate::unity_engine::component::Component)]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapPanelBase_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Materials")]
-        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::app::map::Map_CellMesh,
-        #[rename(name = "m_HalfTexelX")]
-        pub m_half_texel_x: f32,
-        #[rename(name = "m_HalfTexelY")]
-        pub m_half_texel_y: f32,
-        #[rename(name = "m_RendererMaterials")]
-        pub m_renderer_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[static_field]
-        #[rename(name = "CheckImageOffsetXTable")]
-        pub check_image_offset_x_table: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "CheckIMageOffsetZTable")]
-        pub check_i_mage_offset_z_table: ::unity2::Array<i32>,
     }
 }
 
@@ -419,7 +419,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

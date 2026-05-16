@@ -57,6 +57,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
+    #[parent(crate::system::object::Object)]
+    pub struct Performance {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]
     #[repr(C)]
     #[derive(
@@ -109,16 +114,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance.Debug")]
-    #[parent(crate::system::object::Object)]
-    pub struct Performance_Debug {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance")]
-    #[parent(crate::system::object::Object)]
-    pub struct Performance {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]
     #[repr(C)]
     #[derive(
@@ -162,81 +157,15 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/performance/Performance_Debug.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "Performance.Debug")]
+    #[parent(crate::system::object::Object)]
+    pub struct Performance_Debug {}
 }
 
 #[cfg(feature = "unity_engine-switch-performance-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-switch-performance")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Performance_Debug_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_hud_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_Debug_HudMode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Performance_Debug as ::unity2::ClassIdentity>::class(),
-                "SetHUDMode",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Performance_Debug as ::unity2::ClassIdentity>::NAME,
-                    "SetHUDMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_hud_mode(
-        mode: crate::unity_engine::switch::performance::Performance_Debug_HudMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hud_mode::get_offset() as isize),
-        );
-        inner(mode, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-performance")]
-impl Performance_Debug {
-    #[doc = "`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]
-    pub fn set_hud_mode(
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
-        >,
-    ) -> () {
-        unsafe {
-            __Performance_Debug_unity2_raw::set_hud_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-switch-performance")]
 #[doc(hidden)]
@@ -457,6 +386,77 @@ impl Performance {
 }
 
 #[cfg(feature = "unity_engine-switch-performance")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Performance_Debug_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_hud_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: performance :: Performance_Debug_HudMode as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Performance_Debug as ::unity2::ClassIdentity>::class(),
+                "SetHUDMode",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Performance_Debug as ::unity2::ClassIdentity>::NAME,
+                    "SetHUDMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_hud_mode(
+        mode: crate::unity_engine::switch::performance::Performance_Debug_HudMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_hud_mode::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-performance")]
+impl Performance_Debug {
+    #[doc = "`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]
+    pub fn set_hud_mode(
+        mode: impl ::core::convert::Into<
+            crate::unity_engine::switch::performance::Performance_Debug_HudMode,
+        >,
+    ) -> () {
+        unsafe {
+            __Performance_Debug_unity2_raw::set_hud_mode(
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-performance")]
 pub mod prelude {
     pub use super::IPerformance;
     pub use super::IPerformance_Debug;
@@ -469,7 +469,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

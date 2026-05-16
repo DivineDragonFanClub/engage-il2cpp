@@ -9,6 +9,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_TextureChangedCallback.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.TerrainAPI",
+        name = "TerrainCallbacks.TextureChangedCallback"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TerrainCallbacks_TextureChangedCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.TerrainAPI",
@@ -27,18 +35,202 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct TerrainCallbacks_HeightmapChangedCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_TextureChangedCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.TerrainAPI",
-        name = "TerrainCallbacks.TextureChangedCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TerrainCallbacks_TextureChangedCallback {}
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TerrainCallbacks_TextureChangedCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TerrainCallbacks_TextureChangedCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: TerrainCallbacks_TextureChangedCallback,
+        terrain: crate::unity_engine::terrain::Terrain,
+        texture_name: ::unity2::Il2CppString,
+        texel_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TerrainCallbacks_TextureChangedCallback,
+            crate::unity_engine::terrain::Terrain,
+            ::unity2::Il2CppString,
+            crate::unity_engine::rectint::RectInt,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(
+            this,
+            terrain,
+            texture_name,
+            texel_region,
+            synched,
+            __unity2_method_info,
+        )
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+pub trait ITerrainCallbacks_TextureChangedCallbackMethods:
+    ITerrainCallbacks_TextureChangedCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __TerrainCallbacks_TextureChangedCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]
+    fn invoke(
+        self,
+        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
+        texture_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        texel_region: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
+        synched: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __TerrainCallbacks_TextureChangedCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(terrain),
+                ::core::convert::Into::into(texture_name),
+                ::core::convert::Into::into(texel_region),
+                ::core::convert::Into::into(synched),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl<__T: ITerrainCallbacks_TextureChangedCallback> ITerrainCallbacks_TextureChangedCallbackMethods
+    for __T
+{
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl TerrainCallbacks_TextureChangedCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainCallbacks_TextureChangedCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainCallbacks_TextureChangedCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
 #[doc(hidden)]
@@ -378,198 +570,6 @@ impl TerrainCallbacks_HeightmapChangedCallback {
             )
         });
         <Self as ITerrainCallbacks_HeightmapChangedCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TerrainCallbacks_TextureChangedCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TerrainCallbacks_TextureChangedCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TerrainCallbacks_TextureChangedCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::terrain::Terrain as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rectint::RectInt as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainCallbacks_TextureChangedCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: TerrainCallbacks_TextureChangedCallback,
-        terrain: crate::unity_engine::terrain::Terrain,
-        texture_name: ::unity2::Il2CppString,
-        texel_region: crate::unity_engine::rectint::RectInt,
-        synched: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TerrainCallbacks_TextureChangedCallback,
-            crate::unity_engine::terrain::Terrain,
-            ::unity2::Il2CppString,
-            crate::unity_engine::rectint::RectInt,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            terrain,
-            texture_name,
-            texel_region,
-            synched,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-pub trait ITerrainCallbacks_TextureChangedCallbackMethods:
-    ITerrainCallbacks_TextureChangedCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TerrainCallbacks_TextureChangedCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::terrain::Terrain, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]
-    fn invoke(
-        self,
-        terrain: impl ::core::convert::Into<crate::unity_engine::terrain::Terrain>,
-        texture_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        texel_region: impl ::core::convert::Into<crate::unity_engine::rectint::RectInt>,
-        synched: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < TerrainCallbacks_TextureChangedCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TerrainCallbacks_TextureChangedCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(terrain),
-                ::core::convert::Into::into(texture_name),
-                ::core::convert::Into::into(texel_region),
-                ::core::convert::Into::into(synched),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-impl<__T: ITerrainCallbacks_TextureChangedCallback> ITerrainCallbacks_TextureChangedCallbackMethods
-    for __T
-{
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-impl TerrainCallbacks_TextureChangedCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainCallbacks_TextureChangedCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainCallbacks_TextureChangedCallbackMethods>::ctor(this, object, method);
         this
     }
 }

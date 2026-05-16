@@ -13,18 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelpcontroller/KeyHelpController.md"))]
-    #[::unity2::class(namespace = "App", name = "KeyHelpController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct KeyHelpController {
-        #[rename(name = "m_HelpObject")]
-        pub m_help_object: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_Interval")]
-        pub m_interval: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelpcontroller/KeyHelpController_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -143,6 +131,18 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 20 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelpcontroller/KeyHelpController.md"))]
+    #[::unity2::class(namespace = "App", name = "KeyHelpController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct KeyHelpController {
+        #[rename(name = "m_HelpObject")]
+        pub m_help_object: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_Interval")]
+        pub m_interval: f32,
     }
 }
 
@@ -435,7 +435,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

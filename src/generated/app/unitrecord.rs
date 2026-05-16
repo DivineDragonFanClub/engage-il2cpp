@@ -9,6 +9,32 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitrecord/UnitRecord.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitRecord")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitRecord {
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[static_field]
+        #[rename(name = "s_Names")]
+        pub s_names: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "s_Keys")]
+        pub s_keys: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::unitrecord::UnitRecord_Kinds,
+            i32,
+        >,
+        #[static_field]
+        #[rename(name = "s_Kinds")]
+        pub s_kinds: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            i32,
+            crate::app::unitrecord::UnitRecord_Kinds,
+        >,
+        #[rename(name = "m_Values")]
+        pub m_values: ::unity2::Array<i32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -271,32 +297,6 @@ mod __types {
         pub fn map_end() -> Self {
             Self { value: 42 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitrecord/UnitRecord.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitRecord")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitRecord {
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[static_field]
-        #[rename(name = "s_Names")]
-        pub s_names: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "s_Keys")]
-        pub s_keys: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unitrecord::UnitRecord_Kinds,
-            i32,
-        >,
-        #[static_field]
-        #[rename(name = "s_Kinds")]
-        pub s_kinds: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::app::unitrecord::UnitRecord_Kinds,
-        >,
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i32>,
     }
 }
 
@@ -1589,7 +1589,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

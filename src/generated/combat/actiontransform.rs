@@ -11,18 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))]
-    #[::unity2::class(namespace = "Combat", name = "ActionTransform")]
-    #[parent(crate::combat::actionbase::ActionBase)]
-    pub struct ActionTransform {
-        #[rename(name = "m_DoPlayer")]
-        pub m_do_player: bool,
-        #[rename(name = "m_DoEnemy")]
-        pub m_do_enemy: bool,
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::actiontransform::ActionTransform_State,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiontransform/ActionTransform_State.md"))]
     #[repr(C)]
     #[derive(
@@ -69,6 +57,18 @@ mod __types {
         pub fn finish() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))]
+    #[::unity2::class(namespace = "Combat", name = "ActionTransform")]
+    #[parent(crate::combat::actionbase::ActionBase)]
+    pub struct ActionTransform {
+        #[rename(name = "m_DoPlayer")]
+        pub m_do_player: bool,
+        #[rename(name = "m_DoEnemy")]
+        pub m_do_enemy: bool,
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::actiontransform::ActionTransform_State,
     }
 }
 
@@ -409,7 +409,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

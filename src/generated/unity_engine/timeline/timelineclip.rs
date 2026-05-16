@@ -9,14 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "TimelineClip.TimelineClipUpgrade"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct TimelineClip_TimelineClipUpgrade {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
     #[repr(C)]
     #[derive(
@@ -61,61 +53,13 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Timeline",
+        name = "TimelineClip.TimelineClipUpgrade"
     )]
-    pub struct TimelineClip_ClipExtrapolation {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TimelineClip.ClipExtrapolation";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TimelineClip_ClipExtrapolation {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn hold() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn r#loop() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ping_pong() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn r#continue() -> Self {
-            Self { value: 4 }
-        }
-    }
+    #[parent(crate::system::object::Object)]
+    pub struct TimelineClip_TimelineClipUpgrade {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip")]
@@ -196,6 +140,62 @@ mod __types {
         pub m_pre_extrapolation_time: f64,
         #[rename(name = "m_DisplayName")]
         pub m_display_name: ::unity2::Il2CppString,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TimelineClip_ClipExtrapolation {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        const NAME: &'static str = "TimelineClip.ClipExtrapolation";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TimelineClip_ClipExtrapolation {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn hold() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn r#loop() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ping_pong() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn r#continue() -> Self {
+            Self { value: 4 }
+        }
     }
 }
 
@@ -3725,7 +3725,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

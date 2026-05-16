@@ -13,16 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatskip/CombatSkip.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CombatSkip")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CombatSkip {
-        #[rename(name = "state")]
-        pub state: crate::combat::combatskip::CombatSkip_State,
-        #[rename(name = "isSoundSkipEnable")]
-        pub is_sound_skip_enable: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatskip/CombatSkip_State.md"))]
     #[repr(C)]
     #[derive(
@@ -89,6 +79,16 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 7 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatskip/CombatSkip.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CombatSkip")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CombatSkip {
+        #[rename(name = "state")]
+        pub state: crate::combat::combatskip::CombatSkip_State,
+        #[rename(name = "isSoundSkipEnable")]
+        pub is_sound_skip_enable: bool,
     }
 }
 
@@ -1160,7 +1160,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

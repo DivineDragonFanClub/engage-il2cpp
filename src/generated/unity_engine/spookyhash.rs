@@ -8,6 +8,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "SpookyHash")]
+    #[parent(crate::system::object::Object)]
+    pub struct SpookyHash {
+        #[static_field]
+        #[rename(name = "AllowUnalignedRead")]
+        pub allow_unaligned_read: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash_U.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -32,15 +41,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SpookyHash")]
-    #[parent(crate::system::object::Object)]
-    pub struct SpookyHash {
-        #[static_field]
-        #[rename(name = "AllowUnalignedRead")]
-        pub allow_unaligned_read: bool,
     }
 }
 

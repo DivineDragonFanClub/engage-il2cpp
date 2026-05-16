@@ -10,6 +10,26 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Jobs",
+        name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction<
+        T0: ::unity2::ClassIdentity,
+    > {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Jobs",
+        name = "IJobParallelForTransformExtensions"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct IJobParallelForTransformExtensions {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -46,14 +66,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Jobs",
-        name = "IJobParallelForTransformExtensions"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct IJobParallelForTransformExtensions {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_TransformJobData.md"))]
     #[repr(C)]
@@ -93,32 +105,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/jobs/ijobparallelfortransformextensions/IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Jobs",
-        name = "IJobParallelForTransformExtensions.TransformParallelForLoopStruct`1.ExecuteJobFunction"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunction<
-        T0: ::unity2::ClassIdentity,
-    > {}
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity>
-    IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1<T0>
-{
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ::unity2::IntPtr;
-}
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
 #[::unity2::methods]
@@ -140,6 +130,16 @@ impl<T0: ::unity2::ClassIdentity>
         < Self as IIJobParallelForTransformExtensions_TransformParallelForLoopStruct_1_ExecuteJobFunctionMethods < T0 > > :: ctor (this , object , method) ;
         this
     }
+}
+
+#[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity>
+    IJobParallelForTransformExtensions_TransformParallelForLoopStruct_1<T0>
+{
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ::unity2::IntPtr;
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransformextensions")]

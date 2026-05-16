@@ -35,41 +35,6 @@ mod __types {
 # [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData.ShaderResources"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardRendererData_ShaderResources {
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "zprepass")]
-        pub zprepass: crate::unity_engine::shader::Shader,
-        #[rename(name = "downsampleDepth")]
-        pub downsample_depth: crate::unity_engine::shader::Shader,
-        #[rename(name = "halfResoComposite")]
-        pub half_reso_composite: crate::unity_engine::shader::Shader,
-        #[rename(name = "lightOcclusion")]
-        pub light_occlusion: crate::unity_engine::shader::Shader,
-        #[rename(name = "copyDepthPS")]
-        pub copy_depth_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "screenSpaceShadowPS")]
-        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "samplingPS")]
-        pub sampling_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDepthInfoPS")]
-        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDeferredPS")]
-        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "stencilDeferredPS")]
-        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "fallbackErrorPS")]
-        pub fallback_error_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "materialErrorPS")]
-        pub material_error_ps: crate::unity_engine::shader::Shader,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]
     #[repr(C)]
     #[derive(
@@ -132,6 +97,41 @@ mod __types {
         pub fn count() -> Self {
             Self { value: 6 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ForwardRendererData.ShaderResources"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ForwardRendererData_ShaderResources {
+        #[rename(name = "blitPS")]
+        pub blit_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "zprepass")]
+        pub zprepass: crate::unity_engine::shader::Shader,
+        #[rename(name = "downsampleDepth")]
+        pub downsample_depth: crate::unity_engine::shader::Shader,
+        #[rename(name = "halfResoComposite")]
+        pub half_reso_composite: crate::unity_engine::shader::Shader,
+        #[rename(name = "lightOcclusion")]
+        pub light_occlusion: crate::unity_engine::shader::Shader,
+        #[rename(name = "copyDepthPS")]
+        pub copy_depth_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "screenSpaceShadowPS")]
+        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "samplingPS")]
+        pub sampling_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDepthInfoPS")]
+        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDeferredPS")]
+        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "stencilDeferredPS")]
+        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "fallbackErrorPS")]
+        pub fallback_error_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "materialErrorPS")]
+        pub material_error_ps: crate::unity_engine::shader::Shader,
     }
 }
 
@@ -1265,7 +1265,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

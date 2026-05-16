@@ -16,40 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcamera/GmapCamera.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapCamera")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gmapcamera :: GmapCamera >)]
-    pub struct GmapCamera {
-        #[rename(name = "m_SphereCenter")]
-        pub m_sphere_center: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DefaultAngleX")]
-        pub m_default_angle_x: f32,
-        #[rename(name = "m_DefaultDistance")]
-        pub m_default_distance: f32,
-        #[rename(name = "m_AngleCurve")]
-        pub m_angle_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_DistanceCurve")]
-        pub m_distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_ZoomSpeed")]
-        pub m_zoom_speed: f32,
-        #[rename(name = "m_Camera")]
-        pub m_camera: crate::unity_engine::camera::Camera,
-        #[rename(name = "m_ZoomParam")]
-        pub m_zoom_param: ::unity2::Array<f32>,
-        #[rename(name = "m_ZoomDir")]
-        pub m_zoom_dir: f32,
-        #[rename(name = "m_Position")]
-        pub m_position: crate::app::interpolatorvector3::InterpolatorVector3,
-        #[rename(name = "m_AngleX")]
-        pub m_angle_x: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_Distance")]
-        pub m_distance: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_IsRStickZoom")]
-        pub m_is_r_stick_zoom: bool,
-        #[rename(name = "m_PrevZoom")]
-        pub m_prev_zoom: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapcamera/GmapCamera_DistanceMode.md"))]
     #[repr(C)]
     #[derive(
@@ -96,6 +62,40 @@ mod __types {
         pub fn far() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcamera/GmapCamera.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapCamera")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gmapcamera :: GmapCamera >)]
+    pub struct GmapCamera {
+        #[rename(name = "m_SphereCenter")]
+        pub m_sphere_center: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DefaultAngleX")]
+        pub m_default_angle_x: f32,
+        #[rename(name = "m_DefaultDistance")]
+        pub m_default_distance: f32,
+        #[rename(name = "m_AngleCurve")]
+        pub m_angle_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_DistanceCurve")]
+        pub m_distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_ZoomSpeed")]
+        pub m_zoom_speed: f32,
+        #[rename(name = "m_Camera")]
+        pub m_camera: crate::unity_engine::camera::Camera,
+        #[rename(name = "m_ZoomParam")]
+        pub m_zoom_param: ::unity2::Array<f32>,
+        #[rename(name = "m_ZoomDir")]
+        pub m_zoom_dir: f32,
+        #[rename(name = "m_Position")]
+        pub m_position: crate::app::interpolatorvector3::InterpolatorVector3,
+        #[rename(name = "m_AngleX")]
+        pub m_angle_x: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_Distance")]
+        pub m_distance: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_IsRStickZoom")]
+        pub m_is_r_stick_zoom: bool,
+        #[rename(name = "m_PrevZoom")]
+        pub m_prev_zoom: f32,
     }
 }
 
@@ -1838,7 +1838,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
-    #[parent(crate::system::object::Object)]
-    pub struct UISystemProfilerApi {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
     #[repr(C)]
     #[derive(
@@ -57,6 +52,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
+    #[parent(crate::system::object::Object)]
+    pub struct UISystemProfilerApi {}
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
@@ -267,7 +267,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -57,21 +57,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/language/Language.md"))]
-    #[::unity2::class(namespace = "App", name = "Language")]
-    #[parent(crate::system::object::Object)]
-    pub struct Language {
-        #[static_field]
-        #[rename(name = "s_Lang")]
-        pub s_lang: crate::app::language::Language_Langs,
-        #[static_field]
-        #[rename(name = "s_Voice")]
-        pub s_voice: crate::app::language::Language_Voices,
-        #[static_field]
-        #[rename(name = "s_LangChanged")]
-        pub s_lang_changed: crate::system::action::Action,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Langs.md"))]
     #[repr(C)]
     #[derive(
@@ -158,6 +143,21 @@ mod __types {
         pub fn max() -> Self {
             Self { value: 12 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/language/Language.md"))]
+    #[::unity2::class(namespace = "App", name = "Language")]
+    #[parent(crate::system::object::Object)]
+    pub struct Language {
+        #[static_field]
+        #[rename(name = "s_Lang")]
+        pub s_lang: crate::app::language::Language_Langs,
+        #[static_field]
+        #[rename(name = "s_Voice")]
+        pub s_voice: crate::app::language::Language_Voices,
+        #[static_field]
+        #[rename(name = "s_LangChanged")]
+        pub s_lang_changed: crate::system::action::Action,
     }
 }
 
@@ -1245,7 +1245,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

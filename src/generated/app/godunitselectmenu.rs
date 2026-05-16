@@ -11,20 +11,20 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.SelectEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GodUnitSelectMenu_SelectEventHandler {}
+    pub struct GodUnitSelectMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct GodUnitSelectMenu {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.DecideEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.SelectEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GodUnitSelectMenu_DecideEventHandler {}
+    pub struct GodUnitSelectMenu_SelectEventHandler {}
 }
 
 #[cfg(feature = "app-godunitselectmenu-types")]
@@ -33,7 +33,7 @@ pub use __types::*;
 #[cfg(feature = "app-godunitselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
+mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -47,7 +47,7 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -59,7 +59,7 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -72,13 +72,13 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GodUnitSelectMenu_SelectEventHandler,
+        this: GodUnitSelectMenu_DecideEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodUnitSelectMenu_SelectEventHandler,
+            GodUnitSelectMenu_DecideEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -96,11 +96,11 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                2,
+                3,
                 param_types,
                 false,
             )
@@ -110,7 +110,7 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -123,13 +123,15 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: GodUnitSelectMenu_SelectEventHandler,
+        this: GodUnitSelectMenu_DecideEventHandler,
+        result: crate::app::basicmenu::BasicMenu_Result,
         god: crate::app::godunit::GodUnit,
-        optional_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodUnitSelectMenu_SelectEventHandler,
+            GodUnitSelectMenu_DecideEventHandler,
+            crate::app::basicmenu::BasicMenu_Result,
             crate::app::godunit::GodUnit,
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             ::unity2::OptionalMethod,
@@ -138,13 +140,13 @@ mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, god, optional_type, __unity2_method_info)
+        inner(this, result, god, r#type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
-    IGodUnitSelectMenu_SelectEventHandler
+pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
+    IGodUnitSelectMenu_DecideEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -153,8 +155,8 @@ pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodUnitSelectMenu_SelectEventHandler_unity2_raw::ctor(
+            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodUnitSelectMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -162,20 +164,22 @@ pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
     fn invoke(
         self,
+        result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        optional_type: impl ::core::convert::Into<
+        r#type: impl ::core::convert::Into<
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
         >,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodUnitSelectMenu_SelectEventHandler_unity2_raw::invoke(
+            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodUnitSelectMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
+                ::core::convert::Into::into(result),
                 ::core::convert::Into::into(god),
-                ::core::convert::Into::into(optional_type),
+                ::core::convert::Into::into(r#type),
                 ::core::option::Option::None,
             )
         }
@@ -183,23 +187,23 @@ pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl<__T: IGodUnitSelectMenu_SelectEventHandler> IGodUnitSelectMenu_SelectEventHandlerMethods
+impl<__T: IGodUnitSelectMenu_DecideEventHandler> IGodUnitSelectMenu_DecideEventHandlerMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu_SelectEventHandler {
+impl GodUnitSelectMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodUnitSelectMenu_SelectEventHandler),
+                ::core::stringify!(GodUnitSelectMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodUnitSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        <Self as IGodUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -421,7 +425,7 @@ impl GodUnitSelectMenu {
 #[cfg(feature = "app-godunitselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
+mod __GodUnitSelectMenu_SelectEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -435,7 +439,7 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -447,7 +451,7 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -460,13 +464,13 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GodUnitSelectMenu_DecideEventHandler,
+        this: GodUnitSelectMenu_SelectEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodUnitSelectMenu_DecideEventHandler,
+            GodUnitSelectMenu_SelectEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -484,11 +488,11 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: basicmenu :: BasicMenu_Result as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                3,
+                2,
                 param_types,
                 false,
             )
@@ -498,7 +502,7 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GodUnitSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <GodUnitSelectMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -511,15 +515,13 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: GodUnitSelectMenu_DecideEventHandler,
-        result: crate::app::basicmenu::BasicMenu_Result,
+        this: GodUnitSelectMenu_SelectEventHandler,
         god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        optional_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GodUnitSelectMenu_DecideEventHandler,
-            crate::app::basicmenu::BasicMenu_Result,
+            GodUnitSelectMenu_SelectEventHandler,
             crate::app::godunit::GodUnit,
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             ::unity2::OptionalMethod,
@@ -528,13 +530,13 @@ mod __GodUnitSelectMenu_DecideEventHandler_unity2_raw {
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, result, god, r#type, __unity2_method_info)
+        inner(this, god, optional_type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
-    IGodUnitSelectMenu_DecideEventHandler
+pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:
+    IGodUnitSelectMenu_SelectEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -543,8 +545,8 @@ pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodUnitSelectMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodUnitSelectMenu_SelectEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -552,22 +554,20 @@ pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
     fn invoke(
         self,
-        result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        r#type: impl ::core::convert::Into<
+        optional_type: impl ::core::convert::Into<
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
         >,
     ) -> () {
         unsafe {
-            let __receiver = < GodUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GodUnitSelectMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < GodUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GodUnitSelectMenu_SelectEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(result),
                 ::core::convert::Into::into(god),
-                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(optional_type),
                 ::core::option::Option::None,
             )
         }
@@ -575,23 +575,23 @@ pub trait IGodUnitSelectMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl<__T: IGodUnitSelectMenu_DecideEventHandler> IGodUnitSelectMenu_DecideEventHandlerMethods
+impl<__T: IGodUnitSelectMenu_SelectEventHandler> IGodUnitSelectMenu_SelectEventHandlerMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu_DecideEventHandler {
+impl GodUnitSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(GodUnitSelectMenu_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IGodUnitSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

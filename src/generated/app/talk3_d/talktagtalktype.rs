@@ -10,6 +10,20 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagTalkType")]
+    #[parent(crate::app::talk3_d::talktag::TalkTag)]
+    pub struct TalkTagTalkType {
+        #[rename(name = "m_TalkType")]
+        pub m_talk_type: crate::app::talk3_d::talk_2::Talk_TalkType,
+        #[rename(name = "m_LocationSetName")]
+        pub m_location_set_name: ::unity2::Il2CppString,
+        #[rename(name = "m_IsAlreadyFrameVisible")]
+        pub m_is_already_frame_visible: bool,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md"))]
     #[repr(C)]
     #[derive(
@@ -64,20 +78,6 @@ mod __types {
         pub fn direct() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagTalkType")]
-    #[parent(crate::app::talk3_d::talktag::TalkTag)]
-    pub struct TalkTagTalkType {
-        #[rename(name = "m_TalkType")]
-        pub m_talk_type: crate::app::talk3_d::talk_2::Talk_TalkType,
-        #[rename(name = "m_LocationSetName")]
-        pub m_location_set_name: ::unity2::Il2CppString,
-        #[rename(name = "m_IsAlreadyFrameVisible")]
-        pub m_is_already_frame_visible: bool,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
     }
 }
 
@@ -416,7 +416,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -9,6 +9,17 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool_SharedObjectPool_1.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
+        name = "RenderGraphObjectPool.SharedObjectPool`1"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderGraphObjectPool_SharedObjectPool_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Pool")]
+        pub m_pool: crate::system::collections::generic::stack_1::Stack_1<T0>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
@@ -22,23 +33,52 @@ mod __types {
                 crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
             >,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphobjectpool/RenderGraphObjectPool_SharedObjectPool_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "RenderGraphObjectPool.SharedObjectPool`1"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderGraphObjectPool_SharedObjectPool_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Pool")]
-        pub m_pool: crate::system::collections::generic::stack_1::Stack_1<T0>,
-    }
 }
 
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types"
 )]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> T0;
+
+    #[doc = "`Release(T0)` overload"]
+    #[method(name = "Release", args = 1)]
+    pub fn release(self, value: T0) -> ();
+
+    #[doc = "`get_sharedPool()` overload"]
+    #[method(name = "get_sharedPool", args = 0)]
+    pub fn get_shared_pool () -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool_SharedObjectPool_1 < T0 > ;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
+impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderGraphObjectPool_SharedObjectPool_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderGraphObjectPool_SharedObjectPool_1Methods<T0>>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
 #[doc(hidden)]
@@ -392,46 +432,6 @@ impl RenderGraphObjectPool {
             )
         });
         <Self as IRenderGraphObjectPoolMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> T0;
-
-    #[doc = "`Release(T0)` overload"]
-    #[method(name = "Release", args = 1)]
-    pub fn release(self, value: T0) -> ();
-
-    #[doc = "`get_sharedPool()` overload"]
-    #[method(name = "get_sharedPool", args = 0)]
-    pub fn get_shared_pool () -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool_SharedObjectPool_1 < T0 > ;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
-impl<T0: ::unity2::ClassIdentity> RenderGraphObjectPool_SharedObjectPool_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderGraphObjectPool_SharedObjectPool_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderGraphObjectPool_SharedObjectPool_1Methods<T0>>::ctor(this);
         this
     }
 }

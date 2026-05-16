@@ -17,14 +17,6 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ReflectionMethodsCache_GetRaycastNonAllocCallback {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast3DCallback.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.UI",
-        name = "ReflectionMethodsCache.Raycast3DCallback"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ReflectionMethodsCache_Raycast3DCallback {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_RaycastAllCallback.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.UI",
@@ -32,6 +24,14 @@ mod __types {
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ReflectionMethodsCache_RaycastAllCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast2DCallback.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.UI",
+        name = "ReflectionMethodsCache.Raycast2DCallback"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ReflectionMethodsCache_Raycast2DCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ReflectionMethodsCache")]
@@ -46,13 +46,13 @@ mod __types {
 # [static_field] # [rename (name = "s_ReflectionMethodsCache")] pub s_reflection_methods_cache : crate :: unity_engine :: ui :: reflectionmethodscache :: ReflectionMethodsCache ,
 }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast2DCallback.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllCallback.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.UI",
-        name = "ReflectionMethodsCache.Raycast2DCallback"
+        name = "ReflectionMethodsCache.GetRayIntersectionAllCallback"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ReflectionMethodsCache_Raycast2DCallback {}
+    pub struct ReflectionMethodsCache_GetRayIntersectionAllCallback {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback.md"))]
     #[::unity2::class(
@@ -62,13 +62,13 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllCallback.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast3DCallback.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.UI",
-        name = "ReflectionMethodsCache.GetRayIntersectionAllCallback"
+        name = "ReflectionMethodsCache.Raycast3DCallback"
     )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ReflectionMethodsCache_GetRayIntersectionAllCallback {}
+    pub struct ReflectionMethodsCache_Raycast3DCallback {}
 }
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache-types")]
@@ -226,195 +226,6 @@ impl ReflectionMethodsCache_GetRaycastNonAllocCallback {
         <Self as IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods>::ctor(
             this, object, method,
         );
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionMethodsCache_Raycast3DCallback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ReflectionMethodsCache_Raycast3DCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ReflectionMethodsCache_Raycast3DCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ReflectionMethodsCache_Raycast3DCallback,
-        r: crate::unity_engine::ray::Ray,
-        hit: *mut crate::unity_engine::raycasthit::RaycastHit,
-        f: f32,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ReflectionMethodsCache_Raycast3DCallback,
-            crate::unity_engine::ray::Ray,
-            *mut crate::unity_engine::raycasthit::RaycastHit,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, r, hit, f, i, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-pub trait IReflectionMethodsCache_Raycast3DCallbackMethods:
-    IReflectionMethodsCache_Raycast3DCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ReflectionMethodsCache_Raycast3DCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ReflectionMethodsCache_Raycast3DCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::ray::Ray, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32)` overload"]
-    fn invoke(
-        self,
-        r: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
-        f: impl ::core::convert::Into<f32>,
-        i: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
-        unsafe {
-            let __receiver = < ReflectionMethodsCache_Raycast3DCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
-            let __ret = {
-                __ReflectionMethodsCache_Raycast3DCallback_unity2_raw::invoke(
-                    __receiver,
-                    ::core::convert::Into::into(r),
-                    __out_0.as_mut_ptr(),
-                    ::core::convert::Into::into(f),
-                    ::core::convert::Into::into(i),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl<__T: IReflectionMethodsCache_Raycast3DCallback>
-    IReflectionMethodsCache_Raycast3DCallbackMethods for __T
-{
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache_Raycast3DCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache_Raycast3DCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionMethodsCache_Raycast3DCallbackMethods>::ctor(this, object, method);
         this
     }
 }
@@ -597,183 +408,6 @@ impl ReflectionMethodsCache_RaycastAllCallback {
             )
         });
         <Self as IReflectionMethodsCache_RaycastAllCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionMethodsCache_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ReflectionMethodsCache,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ReflectionMethodsCache, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_singleton {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
-                "get_Singleton",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
-                    "get_Singleton",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_singleton(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::reflectionmethodscache::ReflectionMethodsCache {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: reflectionmethodscache :: ReflectionMethodsCache = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_singleton :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache {
-    #[doc = "`get_Singleton()` overload"]
-    pub fn get_singleton() -> crate::unity_engine::ui::reflectionmethodscache::ReflectionMethodsCache
-    {
-        unsafe { __ReflectionMethodsCache_unity2_raw::get_singleton(::core::option::Option::None) }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ReflectionMethodsCache_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-pub trait IReflectionMethodsCacheMethods: IReflectionMethodsCache {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ReflectionMethodsCache as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ReflectionMethodsCache_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl<__T: IReflectionMethodsCache> IReflectionMethodsCacheMethods for __T {}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionMethodsCacheMethods>::ctor(this);
         this
     }
 }
@@ -966,7 +600,7 @@ impl ReflectionMethodsCache_Raycast2DCallback {
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw {
+mod __ReflectionMethodsCache_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -975,14 +609,25 @@ mod __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -991,35 +636,43 @@ mod __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: ReflectionMethodsCache,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
+        let inner: extern "C" fn(ReflectionMethodsCache, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_get_singleton {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 4 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
+                "get_Singleton",
+                0,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
+                    "get_Singleton",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1027,94 +680,96 @@ mod __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-        r: crate::unity_engine::ray::Ray,
-        results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-        f: f32,
-        i: i32,
+    pub unsafe fn get_singleton(
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-            crate::unity_engine::ray::Ray,
-            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
+    ) -> crate::unity_engine::ui::reflectionmethodscache::ReflectionMethodsCache {
+        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: reflectionmethodscache :: ReflectionMethodsCache = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_singleton :: get_offset () as isize) ,) ;
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ReflectionMethodsCache as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ReflectionMethodsCache as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_cctor::get_offset() as isize),
         );
-        inner(this, r, results, f, i, __unity2_method_info)
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-pub trait IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods:
-    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
+impl ReflectionMethodsCache {
+    #[doc = "`get_Singleton()` overload"]
+    pub fn get_singleton() -> crate::unity_engine::ui::reflectionmethodscache::ReflectionMethodsCache
+    {
+        unsafe { __ReflectionMethodsCache_unity2_raw::get_singleton(::core::option::Option::None) }
     }
-    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]
-    fn invoke(
-        self,
-        r: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
-        results: impl ::core::convert::Into<
-            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
-        >,
-        f: impl ::core::convert::Into<f32>,
-        i: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ReflectionMethodsCache_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+pub trait IReflectionMethodsCacheMethods: IReflectionMethodsCache {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver = < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(r),
-                ::core::convert::Into::into(results),
-                ::core::convert::Into::into(f),
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ReflectionMethodsCache as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ReflectionMethodsCache_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl<__T: IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback>
-    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods for __T
-{
-}
+impl<__T: IReflectionMethodsCache> IReflectionMethodsCacheMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl ReflectionMethodsCache {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback),
+                ::core::stringify!(ReflectionMethodsCache),
                 ::core::stringify!(new),
             )
         });
-        <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IReflectionMethodsCacheMethods>::ctor(this);
         this
     }
 }
@@ -1271,6 +926,351 @@ impl ReflectionMethodsCache_GetRayIntersectionAllCallback {
         <Self as IReflectionMethodsCache_GetRayIntersectionAllCallbackMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ray :: Ray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 4 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
+        r: crate::unity_engine::ray::Ray,
+        results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        f: f32,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
+            crate::unity_engine::ray::Ray,
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, r, results, f, i, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+pub trait IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods:
+    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]
+    fn invoke(
+        self,
+        r: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
+        results: impl ::core::convert::Into<
+            ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        >,
+        f: impl ::core::convert::Into<f32>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = < ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(r),
+                ::core::convert::Into::into(results),
+                ::core::convert::Into::into(f),
+                ::core::convert::Into::into(i),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl<__T: IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback>
+    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods for __T
+{
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ReflectionMethodsCache_Raycast3DCallback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ReflectionMethodsCache_Raycast3DCallback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ReflectionMethodsCache_Raycast3DCallback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ReflectionMethodsCache_Raycast3DCallback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ReflectionMethodsCache_Raycast3DCallback,
+        r: crate::unity_engine::ray::Ray,
+        hit: *mut crate::unity_engine::raycasthit::RaycastHit,
+        f: f32,
+        i: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ReflectionMethodsCache_Raycast3DCallback,
+            crate::unity_engine::ray::Ray,
+            *mut crate::unity_engine::raycasthit::RaycastHit,
+            f32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, r, hit, f, i, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+pub trait IReflectionMethodsCache_Raycast3DCallbackMethods:
+    IReflectionMethodsCache_Raycast3DCallback
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ReflectionMethodsCache_Raycast3DCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ReflectionMethodsCache_Raycast3DCallback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::ray::Ray, *mutcrate::unity_engine::raycasthit::RaycastHit, f32, i32)` overload"]
+    fn invoke(
+        self,
+        r: impl ::core::convert::Into<crate::unity_engine::ray::Ray>,
+        f: impl ::core::convert::Into<f32>,
+        i: impl ::core::convert::Into<i32>,
+    ) -> (bool, crate::unity_engine::raycasthit::RaycastHit) {
+        unsafe {
+            let __receiver = < ReflectionMethodsCache_Raycast3DCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::raycasthit::RaycastHit>::uninit();
+            let __ret = {
+                __ReflectionMethodsCache_Raycast3DCallback_unity2_raw::invoke(
+                    __receiver,
+                    ::core::convert::Into::into(r),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(f),
+                    ::core::convert::Into::into(i),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl<__T: IReflectionMethodsCache_Raycast3DCallback>
+    IReflectionMethodsCache_Raycast3DCallbackMethods for __T
+{
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl ReflectionMethodsCache_Raycast3DCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionMethodsCache_Raycast3DCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionMethodsCache_Raycast3DCallbackMethods>::ctor(this, object, method);
         this
     }
 }

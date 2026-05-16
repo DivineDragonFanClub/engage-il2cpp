@@ -40,6 +40,26 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/hashset_1/HashSet_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "HashSet`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct HashSet_1 < T0 : :: unity2 :: ClassIdentity > {
+# [static_field] # [rename (name = "Lower31BitMask")] pub lower31_bit_mask : i32 ,
+# [static_field] # [rename (name = "StackAllocThreshold")] pub stack_alloc_threshold : i32 ,
+# [static_field] # [rename (name = "ShrinkThreshold")] pub shrink_threshold : i32 ,
+# [static_field] # [rename (name = "CapacityName")] pub capacity_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ElementsName")] pub elements_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "ComparerName")] pub comparer_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "VersionName")] pub version_name : :: unity2 :: Il2CppString ,
+# [rename (name = "_buckets")] pub buckets : :: unity2 :: Array < i32 > ,
+# [rename (name = "_slots")] pub slots : :: unity2 :: Array < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1_Slot < T0 > > ,
+# [rename (name = "_count")] pub count : i32 ,
+# [rename (name = "_lastIndex")] pub last_index : i32 ,
+# [rename (name = "_freeList")] pub free_list : i32 ,
+# [rename (name = "_comparer")] pub comparer : crate :: system :: collections :: generic :: iequalitycomparer_1_interface :: IEqualityComparer_1_Interface < T0 > ,
+# [rename (name = "_version")] pub version : i32 ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -71,26 +91,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/hashset_1/HashSet_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "HashSet`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct HashSet_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "Lower31BitMask")] pub lower31_bit_mask : i32 ,
-# [static_field] # [rename (name = "StackAllocThreshold")] pub stack_alloc_threshold : i32 ,
-# [static_field] # [rename (name = "ShrinkThreshold")] pub shrink_threshold : i32 ,
-# [static_field] # [rename (name = "CapacityName")] pub capacity_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ElementsName")] pub elements_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ComparerName")] pub comparer_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "VersionName")] pub version_name : :: unity2 :: Il2CppString ,
-# [rename (name = "_buckets")] pub buckets : :: unity2 :: Array < i32 > ,
-# [rename (name = "_slots")] pub slots : :: unity2 :: Array < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1_Slot < T0 > > ,
-# [rename (name = "_count")] pub count : i32 ,
-# [rename (name = "_lastIndex")] pub last_index : i32 ,
-# [rename (name = "_freeList")] pub free_list : i32 ,
-# [rename (name = "_comparer")] pub comparer : crate :: system :: collections :: generic :: iequalitycomparer_1_interface :: IEqualityComparer_1_Interface < T0 > ,
-# [rename (name = "_version")] pub version : i32 ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Enumerator.md"))]
     #[repr(C)]

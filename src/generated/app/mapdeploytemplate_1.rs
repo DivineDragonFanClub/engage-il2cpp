@@ -145,6 +145,133 @@ mod __types {
         pub m_max_array: ::unity2::Array<i32>,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
+    #[parent(crate::app::bitfield64::BitField64)]
+    #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_DisplayType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapDeployTemplate_1_DisplayType<T0: ::unity2::ClassIdentity> {
+        pub value: i32,
+        pub _phantom: ::core::marker::PhantomData<(T0)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_DisplayType<T0> {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapDeployTemplate`1.DisplayType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_DisplayType<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_DisplayType<T0> {
+        pub fn none() -> Self {
+            Self {
+                value: 0,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn always() -> Self {
+            Self {
+                value: 1,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn order() -> Self {
+            Self {
+                value: 2,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+
+        pub fn num() -> Self {
+            Self {
+                value: 3,
+                _phantom: ::core::marker::PhantomData,
+            }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "QueueSize")]
+        pub queue_size: i32,
+        #[rename(name = "m_Datas")]
+        pub m_datas:
+            ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_SwapBufferScope.md"))]
+    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.SwapBufferScope")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapDeployTemplate_1_SwapBufferScope<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Deploy")]
+        pub m_deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue_Data.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapDeployTemplate_1_Queue_Data<T0> {
+        pub _phantom: ::core::marker::PhantomData<(T0,)>,
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Queue_Data<T0> {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapDeployTemplate`1.Queue.Data";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| {
+                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                    .expect("generic instantiation")
+            })
+        }
+    }
+
+    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Queue_Data<T0> {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_ImageType.md"))]
     #[repr(C)]
     #[derive(
@@ -235,117 +362,6 @@ mod __types {
                 value: 7,
                 _phantom: ::core::marker::PhantomData,
             }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "QueueSize")]
-        pub queue_size: i32,
-        #[rename(name = "m_Datas")]
-        pub m_datas:
-            ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_DisplayType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapDeployTemplate_1_DisplayType<T0: ::unity2::ClassIdentity> {
-        pub value: i32,
-        pub _phantom: ::core::marker::PhantomData<(T0)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_DisplayType<T0> {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapDeployTemplate`1.DisplayType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_DisplayType<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_DisplayType<T0> {
-        pub fn none() -> Self {
-            Self {
-                value: 0,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn always() -> Self {
-            Self {
-                value: 1,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn order() -> Self {
-            Self {
-                value: 2,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-
-        pub fn num() -> Self {
-            Self {
-                value: 3,
-                _phantom: ::core::marker::PhantomData,
-            }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue_Data.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapDeployTemplate_1_Queue_Data<T0> {
-        pub _phantom: ::core::marker::PhantomData<(T0,)>,
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Queue_Data<T0> {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapDeployTemplate`1.Queue.Data";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| {
-                ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                    .expect("generic instantiation")
-            })
-        }
-    }
-
-    impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Queue_Data<T0> {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
         }
     }
 
@@ -664,22 +680,6 @@ mod __types {
                 _phantom: ::core::marker::PhantomData,
             }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
-    #[parent(crate::app::bitfield64::BitField64)]
-    #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_SwapBufferScope.md"))]
-    #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.SwapBufferScope")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapDeployTemplate_1_SwapBufferScope<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Deploy")]
-        pub m_deploy: crate::app::imapdeploy_interface::IMapDeploy_Interface,
     }
 }
 
@@ -1369,6 +1369,37 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
 #[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
+    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
+    ) -> i64;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDeployTemplate_1_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployTemplate_1_FlagFieldMethods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+#[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
     #[doc = "`Set(i32, i32, crate::app::dir_2::Dir_Type, i32)` overload"]
     #[method(name = "Set", args = 4)]
@@ -1449,37 +1480,6 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
 
 #[cfg(feature = "app-mapdeploytemplate_1")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
-    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
-    #[method(name = "ToLong", args = 1)]
-    pub fn to_long(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> i64;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeployTemplate_1_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDeployTemplate_1_FlagFieldMethods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-#[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_SwapBufferScope<T0> {
     #[doc = "`.ctor(crate::app::imapdeploy_interface::IMapDeploy_Interface)` overload"]
     #[method(name = ".ctor", args = 1)]
@@ -1540,7 +1540,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

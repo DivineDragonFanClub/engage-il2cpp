@@ -31,11 +31,6 @@ mod __types {
         pub max_send_count: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct VersusSendReportSequence_UploadInfo {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -79,6 +74,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct VersusSendReportSequence_UploadInfo {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
     #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
@@ -1520,7 +1520,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -12,24 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingPictureBookSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
-    pub struct FishingPictureBookSequence {
-        #[static_field]
-        #[rename(name = "cTextureAtlasPath")]
-        pub c_texture_atlas_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureGold")]
-        pub c_result_texture_gold: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureSilver")]
-        pub c_result_texture_silver: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cResultTextureBronze")]
-        pub c_result_texture_bronze: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -80,6 +62,24 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingPictureBookSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
+    pub struct FishingPictureBookSequence {
+        #[static_field]
+        #[rename(name = "cTextureAtlasPath")]
+        pub c_texture_atlas_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureGold")]
+        pub c_result_texture_gold: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureSilver")]
+        pub c_result_texture_silver: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cResultTextureBronze")]
+        pub c_result_texture_bronze: ::unity2::Il2CppString,
     }
 }
 
@@ -649,7 +649,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

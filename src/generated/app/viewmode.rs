@@ -9,29 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))]
-    #[::unity2::class(namespace = "App", name = "ViewMode")]
-    #[parent(crate::system::object::Object)]
-    pub struct ViewMode {
-        #[static_field]
-        #[rename(name = "s_Transition")]
-        pub s_transition: f32,
-        #[static_field]
-        #[rename(name = "s_Mode")]
-        pub s_mode: crate::app::viewmode::ViewMode_Mode,
-        #[static_field]
-        #[rename(name = "s_Stack")]
-        pub s_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::viewmode::ViewMode_Mode,
-        >,
-        #[static_field]
-        #[rename(name = "s_BmapSkinQuality")]
-        pub s_bmap_skin_quality: crate::unity_engine::skinquality::SkinQuality,
-        #[static_field]
-        #[rename(name = "m_ModeThreshold")]
-        pub m_mode_threshold: crate::app::gameparam::GameParam_Holder,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/viewmode/ViewMode_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -98,6 +75,29 @@ mod __types {
         pub fn demo() -> Self {
             Self { value: 7 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/viewmode/ViewMode.md"))]
+    #[::unity2::class(namespace = "App", name = "ViewMode")]
+    #[parent(crate::system::object::Object)]
+    pub struct ViewMode {
+        #[static_field]
+        #[rename(name = "s_Transition")]
+        pub s_transition: f32,
+        #[static_field]
+        #[rename(name = "s_Mode")]
+        pub s_mode: crate::app::viewmode::ViewMode_Mode,
+        #[static_field]
+        #[rename(name = "s_Stack")]
+        pub s_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::viewmode::ViewMode_Mode,
+        >,
+        #[static_field]
+        #[rename(name = "s_BmapSkinQuality")]
+        pub s_bmap_skin_quality: crate::unity_engine::skinquality::SkinQuality,
+        #[static_field]
+        #[rename(name = "m_ModeThreshold")]
+        pub m_mode_threshold: crate::app::gameparam::GameParam_Holder,
     }
 }
 
@@ -987,7 +987,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

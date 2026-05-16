@@ -12,6 +12,24 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleStyle")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)]
+    pub struct BattleStyle {
+        #[static_field]
+        #[rename(name = "Begin")]
+        pub begin: crate::app::battlestyle::BattleStyle_Types,
+        #[static_field]
+        #[rename(name = "End")]
+        pub end: crate::app::battlestyle::BattleStyle_Types,
+        #[static_field]
+        #[rename(name = "Count")]
+        pub count: i32,
+        #[static_field]
+        #[rename(name = "Names")]
+        pub names: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlestyle/BattleStyle_Types.md"))]
     #[repr(C)]
     #[derive(
@@ -82,24 +100,6 @@ mod __types {
         pub fn dragon() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlestyle/BattleStyle.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleStyle")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: battlestyle :: BattleStyle >)]
-    pub struct BattleStyle {
-        #[static_field]
-        #[rename(name = "Begin")]
-        pub begin: crate::app::battlestyle::BattleStyle_Types,
-        #[static_field]
-        #[rename(name = "End")]
-        pub end: crate::app::battlestyle::BattleStyle_Types,
-        #[static_field]
-        #[rename(name = "Count")]
-        pub count: i32,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 
@@ -1176,7 +1176,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

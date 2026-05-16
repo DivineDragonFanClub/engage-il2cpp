@@ -39,11 +39,6 @@ mod __types {
         pub m_funcs: ::unity2::Array<crate::root::windactor::WindActor_Func>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))]
-    #[::unity2::class(namespace = "", name = "WindActor.Func")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct WindActor_Func {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/windactor/WindActor_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -91,6 +86,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))]
+    #[::unity2::class(namespace = "", name = "WindActor.Func")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct WindActor_Func {}
 }
 
 #[cfg(feature = "root-windactor-types")]
@@ -1014,7 +1014,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

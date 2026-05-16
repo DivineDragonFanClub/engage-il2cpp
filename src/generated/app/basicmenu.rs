@@ -13,6 +13,87 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenu.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: basicmenu :: BasicMenu_Status >)]
+    pub struct BasicMenu_StatusField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_AnchorType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct BasicMenu_AnchorType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for BasicMenu_AnchorType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "BasicMenu.AnchorType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BasicMenu_AnchorType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl BasicMenu_AnchorType {
+        pub fn unity_editor() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn left_top() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn center_top() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right_top() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn center() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn left_bottom() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn center_bottom() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn right_bottom() -> Self {
+            Self { value: 9 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Label0.md"))]
     #[repr(C)]
     #[derive(
@@ -69,10 +150,49 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenu.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: basicmenu :: BasicMenu_Status >)]
-    pub struct BasicMenu_StatusField {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct BasicMenu {
+        #[rename(name = "m_menuContent")]
+        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        #[rename(name = "m_menuItemList")]
+        pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        #[rename(name = "m_fullMenuItemList")]
+        pub m_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        #[rename(name = "m_status")]
+        pub m_status: crate::app::basicmenu::BasicMenu_StatusField,
+        #[rename(name = "m_result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_scrollPrecedeInputA")]
+        pub m_scroll_precede_input_a: bool,
+        #[rename(name = "m_rowNum")]
+        pub m_row_num: i32,
+        #[rename(name = "m_showRowNum")]
+        pub m_show_row_num: i32,
+        #[rename(name = "m_selectIndex")]
+        pub m_select_index: i32,
+        #[rename(name = "m_selectIndexOld")]
+        pub m_select_index_old: i32,
+        #[rename(name = "m_scrollIndex")]
+        pub m_scroll_index: i32,
+        #[rename(name = "m_scrollIndexOld")]
+        pub m_scroll_index_old: i32,
+        #[rename(name = "m_reservedSelectIndex")]
+        pub m_reserved_select_index: i32,
+        #[rename(name = "m_reservedScrollIndex")]
+        pub m_reserved_scroll_index: i32,
+        #[rename(name = "m_reservedShowRowNum")]
+        pub m_reserved_show_row_num: i32,
+        #[rename(name = "m_memoryDisplayIndex")]
+        pub m_memory_display_index: i32,
+        #[rename(name = "m_suspend")]
+        pub m_suspend: i32,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_BindTypes.md"))]
     #[repr(C)]
@@ -120,50 +240,6 @@ mod __types {
         pub fn hide() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct BasicMenu {
-        #[rename(name = "m_menuContent")]
-        pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        #[rename(name = "m_menuItemList")]
-        pub m_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        #[rename(name = "m_fullMenuItemList")]
-        pub m_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        #[rename(name = "m_status")]
-        pub m_status: crate::app::basicmenu::BasicMenu_StatusField,
-        #[rename(name = "m_result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_scrollPrecedeInputA")]
-        pub m_scroll_precede_input_a: bool,
-        #[rename(name = "m_rowNum")]
-        pub m_row_num: i32,
-        #[rename(name = "m_showRowNum")]
-        pub m_show_row_num: i32,
-        #[rename(name = "m_selectIndex")]
-        pub m_select_index: i32,
-        #[rename(name = "m_selectIndexOld")]
-        pub m_select_index_old: i32,
-        #[rename(name = "m_scrollIndex")]
-        pub m_scroll_index: i32,
-        #[rename(name = "m_scrollIndexOld")]
-        pub m_scroll_index_old: i32,
-        #[rename(name = "m_reservedSelectIndex")]
-        pub m_reserved_select_index: i32,
-        #[rename(name = "m_reservedScrollIndex")]
-        pub m_reserved_scroll_index: i32,
-        #[rename(name = "m_reservedShowRowNum")]
-        pub m_reserved_show_row_num: i32,
-        #[rename(name = "m_memoryDisplayIndex")]
-        pub m_memory_display_index: i32,
-        #[rename(name = "m_suspend")]
-        pub m_suspend: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Result.md"))]
@@ -403,82 +479,6 @@ mod __types {
 
         pub fn rebuild_keep_index() -> Self {
             Self { value: 1024 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_AnchorType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct BasicMenu_AnchorType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for BasicMenu_AnchorType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BasicMenu.AnchorType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BasicMenu_AnchorType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl BasicMenu_AnchorType {
-        pub fn unity_editor() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn left_top() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn center_top() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right_top() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn center() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn left_bottom() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn center_bottom() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn right_bottom() -> Self {
-            Self { value: 9 }
         }
     }
 }
@@ -8215,7 +8215,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

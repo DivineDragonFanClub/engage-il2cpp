@@ -13,6 +13,14 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App.CookingMenu",
+        name = "DishSelectMenu.DecideEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct DishSelectMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuManager.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
@@ -24,13 +32,30 @@ mod __types {
         pub m_select: crate::app::basicmenuselect::BasicMenuSelect,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
-        name = "DishSelectMenu.DecideEventHandler"
+        name = "DishSelectMenu.DishSelectMenuItem"
     )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct DishSelectMenu_DecideEventHandler {}
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct DishSelectMenu_DishSelectMenuItem {
+        #[rename(name = "m_Food")]
+        pub m_food: crate::app::fooddata::FoodData,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
+        #[rename(name = "m_SelectEventHandler")]
+        pub m_select_event_handler:
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
+    #[parent(crate::system::object::Object)]
+    pub struct DishSelectMenu_DishMenuCompare {
+        #[rename(name = "m_IsRecommended")]
+        pub m_is_recommended: bool,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))]
     #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu")]
@@ -63,22 +88,6 @@ mod __types {
         pub s_is_first_select: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
-    #[parent(crate::system::object::Object)]
-    pub struct DishSelectMenu_DishMenuCompare {
-        #[rename(name = "m_IsRecommended")]
-        pub m_is_recommended: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishSelectMenu.CancelEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct DishSelectMenu_CancelEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_SelectEventHandler.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
@@ -87,26 +96,184 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DishSelectMenu_SelectEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md"))]
     #[::unity2::class(
         namespace = "App.CookingMenu",
-        name = "DishSelectMenu.DishSelectMenuItem"
+        name = "DishSelectMenu.CancelEventHandler"
     )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct DishSelectMenu_DishSelectMenuItem {
-        #[rename(name = "m_Food")]
-        pub m_food: crate::app::fooddata::FoodData,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
-        #[rename(name = "m_SelectEventHandler")]
-        pub m_select_event_handler:
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
-    }
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct DishSelectMenu_CancelEventHandler {}
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DishSelectMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DishSelectMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishSelectMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: DishSelectMenu_DecideEventHandler,
+        food: crate::app::fooddata::FoodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishSelectMenu_DecideEventHandler,
+            crate::app::fooddata::FoodData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, food, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+pub trait IDishSelectMenu_DecideEventHandlerMethods: IDishSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
+    fn invoke(self, food: impl ::core::convert::Into<crate::app::fooddata::FoodData>) -> () {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(food),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl<__T: IDishSelectMenu_DecideEventHandler> IDishSelectMenu_DecideEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[doc(hidden)]
@@ -386,7 +553,7 @@ impl DishSelectMenu_DishSelectMenuManager {
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishSelectMenu_DecideEventHandler_unity2_raw {
+mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -395,14 +562,11 @@ mod __DishSelectMenu_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fooddata :: FoodData as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                3,
                 param_types,
                 false,
             )
@@ -412,7 +576,7 @@ mod __DishSelectMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -425,36 +589,43 @@ mod __DishSelectMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DishSelectMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: DishSelectMenu_DishSelectMenuItem,
+        food_data: crate::app::fooddata::FoodData,
+        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
+        select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DishSelectMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            DishSelectMenu_DishSelectMenuItem,
+            crate::app::fooddata::FoodData,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
+        inner(
+            this,
+            food_data,
+            decide_event_handler,
+            select_event_handler,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_a_call {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fooddata::FoodData as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
                 param_types,
                 false,
             )
@@ -464,8 +635,8 @@ mod __DishSelectMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
+                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
                     e
                 ),
             }
@@ -476,55 +647,238 @@ mod __DishSelectMenu_DecideEventHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: DishSelectMenu_DecideEventHandler,
-        food: crate::app::fooddata::FoodData,
+    pub unsafe fn a_call(
+        this: DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "OnSelect",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: DishSelectMenu_DishSelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DishSelectMenu_DecideEventHandler,
-            crate::app::fooddata::FoodData,
+            DishSelectMenu_DishSelectMenuItem,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_on_select::get_offset() as isize),
         );
-        inner(this, food, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_food {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetFood",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetFood",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_food(
+        this: DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::fooddata::FoodData {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::fooddata::FoodData = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_food::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DecideEventHandlerMethods: IDishSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+pub trait IDishSelectMenu_DishSelectMenuItemMethods: IDishSelectMenu_DishSelectMenuItem {
+    #[doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` overload"]
     fn ctor(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
+        >,
+        select_event_handler: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
+        >,
     ) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __DishSelectMenu_DecideEventHandler_unity2_raw::ctor(
+            __DishSelectMenu_DishSelectMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(food_data),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::convert::Into::into(select_event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
-    fn invoke(self, food: impl ::core::convert::Into<crate::app::fooddata::FoodData>) -> () {
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <DishSelectMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __DishSelectMenu_DecideEventHandler_unity2_raw::invoke(
+            __DishSelectMenu_DishSelectMenuItem_unity2_raw::a_call(
                 __receiver,
-                ::core::convert::Into::into(food),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishSelectMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishSelectMenuItem_unity2_raw::on_select(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetFood()` overload"]
+    fn get_food(self) -> crate::app::fooddata::FoodData {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishSelectMenuItem_unity2_raw::get_food(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -532,20 +886,419 @@ pub trait IDishSelectMenu_DecideEventHandlerMethods: IDishSelectMenu_DecideEvent
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl<__T: IDishSelectMenu_DecideEventHandler> IDishSelectMenu_DecideEventHandlerMethods for __T {}
+impl<__T: IDishSelectMenu_DishSelectMenuItem> IDishSelectMenu_DishSelectMenuItemMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl DishSelectMenu_DishSelectMenuItem {
+    #[doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` — overload selector"]
+    pub fn new(
+        food_data: crate::app::fooddata::FoodData,
+        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
+        select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DecideEventHandler),
+                ::core::stringify!(DishSelectMenu_DishSelectMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IDishSelectMenu_DishSelectMenuItemMethods>::ctor(
+            this,
+            food_data,
+            decide_event_handler,
+            select_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DishSelectMenu_DishMenuCompare_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DishSelectMenu_DishMenuCompare,
+        is_recommended: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishMenuCompare,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, is_recommended, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_both_like {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
+                "CompareBothLike",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
+                    "CompareBothLike",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_both_like(
+        this: DishSelectMenu_DishMenuCompare,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishMenuCompare,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_both_like::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_difficulty {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
+                "CompareDifficulty",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
+                    "CompareDifficulty",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_difficulty(
+        this: DishSelectMenu_DishMenuCompare,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishMenuCompare,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_difficulty::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_dislike {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
+                "CompareDislike",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
+                    "CompareDislike",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_dislike(
+        this: DishSelectMenu_DishMenuCompare,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishMenuCompare,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_dislike::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
+                "CompareIndex",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
+                    "CompareIndex",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare_index(
+        this: DishSelectMenu_DishMenuCompare,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DishSelectMenu_DishMenuCompare,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare_index::get_offset() as isize),
+        );
+        inner(this, x, y, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+pub trait IDishSelectMenu_DishMenuCompareMethods: IDishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` overload"]
+    fn ctor(self, is_recommended: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishMenuCompare_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(is_recommended),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    fn compare_both_like(
+        self,
+        x: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+        y: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_both_like(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    fn compare_difficulty(
+        self,
+        x: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+        y: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_difficulty(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    fn compare_dislike(
+        self,
+        x: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+        y: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_dislike(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    fn compare_index(
+        self,
+        x: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+        y: impl ::core::convert::Into<
+            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        >,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_index(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(y),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl<__T: IDishSelectMenu_DishMenuCompare> IDishSelectMenu_DishMenuCompareMethods for __T {}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_recommended: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_DishMenuCompare),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
         this
     }
 }
@@ -1319,559 +2072,6 @@ impl DishSelectMenu {
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishSelectMenu_DishMenuCompare_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DishSelectMenu_DishMenuCompare,
-        is_recommended: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishMenuCompare,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, is_recommended, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_both_like {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
-                "CompareBothLike",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
-                    "CompareBothLike",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_both_like(
-        this: DishSelectMenu_DishMenuCompare,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishMenuCompare,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_both_like::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_difficulty {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
-                "CompareDifficulty",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
-                    "CompareDifficulty",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_difficulty(
-        this: DishSelectMenu_DishMenuCompare,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishMenuCompare,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_difficulty::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_dislike {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
-                "CompareDislike",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
-                    "CompareDislike",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_dislike(
-        this: DishSelectMenu_DishMenuCompare,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishMenuCompare,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_dislike::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::class(),
-                "CompareIndex",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishMenuCompare as ::unity2::ClassIdentity>::NAME,
-                    "CompareIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_index(
-        this: DishSelectMenu_DishMenuCompare,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishMenuCompare,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_index::get_offset() as isize),
-        );
-        inner(this, x, y, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DishMenuCompareMethods: IDishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` overload"]
-    fn ctor(self, is_recommended: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishMenuCompare_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(is_recommended),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    fn compare_both_like(
-        self,
-        x: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-        y: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_both_like(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    fn compare_difficulty(
-        self,
-        x: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-        y: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_difficulty(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    fn compare_dislike(
-        self,
-        x: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-        y: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_dislike(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    fn compare_index(
-        self,
-        x: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-        y: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        >,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishMenuCompare as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishMenuCompare_unity2_raw::compare_index(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(y),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl<__T: IDishSelectMenu_DishMenuCompare> IDishSelectMenu_DishMenuCompareMethods for __T {}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_recommended: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DishMenuCompare),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishSelectMenu_CancelEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DishSelectMenu_CancelEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishSelectMenu_CancelEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: DishSelectMenu_CancelEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishSelectMenu_CancelEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_CancelEventHandlerMethods: IDishSelectMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_CancelEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_CancelEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl<__T: IDishSelectMenu_CancelEventHandler> IDishSelectMenu_CancelEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __DishSelectMenu_SelectEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2039,7 +2239,7 @@ impl DishSelectMenu_SelectEventHandler {
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
+mod __DishSelectMenu_CancelEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2048,11 +2248,14 @@ mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fooddata :: FoodData as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
+                <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                3,
+                2,
                 param_types,
                 false,
             )
@@ -2062,7 +2265,7 @@ mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2075,42 +2278,34 @@ mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DishSelectMenu_DishSelectMenuItem,
-        food_data: crate::app::fooddata::FoodData,
-        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
-        select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler,
+        this: DishSelectMenu_CancelEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DishSelectMenu_DishSelectMenuItem,
-            crate::app::fooddata::FoodData,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
+            DishSelectMenu_CancelEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(
-            this,
-            food_data,
-            decide_event_handler,
-            select_event_handler,
-            __unity2_method_info,
-        )
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
+                <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
                 0,
                 param_types,
                 false,
@@ -2121,8 +2316,8 @@ mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
+                    <DishSelectMenu_CancelEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
                     e
                 ),
             }
@@ -2133,237 +2328,51 @@ mod __DishSelectMenu_DishSelectMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn a_call(
-        this: DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: DishSelectMenu_DishSelectMenuItem,
+    pub unsafe fn invoke(
+        this: DishSelectMenu_CancelEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DishSelectMenu_DishSelectMenuItem,
+            DishSelectMenu_CancelEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_food {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetFood",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenu_DishSelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetFood",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_food(
-        this: DishSelectMenu_DishSelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::fooddata::FoodData {
-        let inner: extern "C" fn(
-            DishSelectMenu_DishSelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::fooddata::FoodData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_food::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DishSelectMenuItemMethods: IDishSelectMenu_DishSelectMenuItem {
-    #[doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` overload"]
+pub trait IDishSelectMenu_CancelEventHandlerMethods: IDishSelectMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
-        food_data: impl ::core::convert::Into<crate::app::fooddata::FoodData>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,
-        >,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,
-        >,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <DishSelectMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __DishSelectMenu_DishSelectMenuItem_unity2_raw::ctor(
+            __DishSelectMenu_CancelEventHandler_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(food_data),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::convert::Into::into(select_event_handler),
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <DishSelectMenu_CancelEventHandler as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __DishSelectMenu_DishSelectMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishSelectMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishSelectMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetFood()` overload"]
-    fn get_food(self) -> crate::app::fooddata::FoodData {
-        unsafe {
-            let __receiver =
-                <DishSelectMenu_DishSelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenu_DishSelectMenuItem_unity2_raw::get_food(
+            __DishSelectMenu_CancelEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2372,29 +2381,20 @@ pub trait IDishSelectMenu_DishSelectMenuItemMethods: IDishSelectMenu_DishSelectM
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl<__T: IDishSelectMenu_DishSelectMenuItem> IDishSelectMenu_DishSelectMenuItemMethods for __T {}
+impl<__T: IDishSelectMenu_CancelEventHandler> IDishSelectMenu_CancelEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishSelectMenuItem {
-    #[doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` — overload selector"]
-    pub fn new(
-        food_data: crate::app::fooddata::FoodData,
-        decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler,
-        select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler,
-    ) -> Self {
+impl DishSelectMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DishSelectMenuItem),
+                ::core::stringify!(DishSelectMenu_CancelEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectMenu_DishSelectMenuItemMethods>::ctor(
-            this,
-            food_data,
-            decide_event_handler,
-            select_event_handler,
-        );
+        <Self as IDishSelectMenu_CancelEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

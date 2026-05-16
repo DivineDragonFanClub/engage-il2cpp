@@ -13,6 +13,34 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CharacterMove {
+        #[rename(name = "_cp")]
+        pub cp: crate::combat::character::Character,
+        #[rename(name = "MaxRunSpeedKMPS")]
+        pub max_run_speed_kmps: f32,
+        #[rename(name = "TimeToMaxSpeed")]
+        pub time_to_max_speed: f32,
+        #[rename(name = "TimeToZero")]
+        pub time_to_zero: f32,
+        #[rename(name = "HeightSmoothRatio")]
+        pub height_smooth_ratio: f32,
+        #[rename(name = "StairInterpolationLimit")]
+        pub stair_interpolation_limit: f32,
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::charactermove::CharacterMove_State,
+        #[rename(name = "m_Goal")]
+        pub m_goal: crate::combat::fxz::FXZ,
+        #[rename(name = "m_Velocity")]
+        pub m_velocity: f32,
+        #[rename(name = "m_PrevY")]
+        pub m_prev_y: f32,
+        #[rename(name = "m_Jump")]
+        pub m_jump: crate::combat::characterjump::CharacterJump,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_State.md"))]
     #[repr(C)]
     #[derive(
@@ -63,34 +91,6 @@ mod __types {
         pub fn jumping() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactermove/CharacterMove.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterMove")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterMove {
-        #[rename(name = "_cp")]
-        pub cp: crate::combat::character::Character,
-        #[rename(name = "MaxRunSpeedKMPS")]
-        pub max_run_speed_kmps: f32,
-        #[rename(name = "TimeToMaxSpeed")]
-        pub time_to_max_speed: f32,
-        #[rename(name = "TimeToZero")]
-        pub time_to_zero: f32,
-        #[rename(name = "HeightSmoothRatio")]
-        pub height_smooth_ratio: f32,
-        #[rename(name = "StairInterpolationLimit")]
-        pub stair_interpolation_limit: f32,
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::charactermove::CharacterMove_State,
-        #[rename(name = "m_Goal")]
-        pub m_goal: crate::combat::fxz::FXZ,
-        #[rename(name = "m_Velocity")]
-        pub m_velocity: f32,
-        #[rename(name = "m_PrevY")]
-        pub m_prev_y: f32,
-        #[rename(name = "m_Jump")]
-        pub m_jump: crate::combat::characterjump::CharacterJump,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md"))]
@@ -1471,7 +1471,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

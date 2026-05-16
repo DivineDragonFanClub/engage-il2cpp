@@ -16,30 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager.md"))]
-    #[::unity2::class(namespace = "App", name = "HelpManager")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: helpmanager :: HelpManager >)]
-    pub struct HelpManager {
-        #[rename(name = "m_HelpParamSetter")]
-        pub m_help_param_setter: crate::app::helpparamsetter::HelpParamSetter,
-        #[rename(name = "m_HelpList")]
-        pub m_help_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::helpitemlist::HelpItemList,
-        >,
-        #[rename(name = "m_ItemList")]
-        pub m_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::helpmanager::HelpManager_Item,
-        >,
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[rename(name = "m_SituationType")]
-        pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
-        #[rename(name = "m_PreviousDir")]
-        pub m_previous_dir: crate::app::helpmanager::HelpManager_Item_Dir,
-        #[rename(name = "m_AxisPos")]
-        pub m_axis_pos: crate::unity_engine::vector2::Vector2,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md"))]
     #[repr(C)]
     #[derive(
@@ -94,6 +70,88 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HelpManager_SituationType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HelpManager_SituationType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HelpManager.SituationType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HelpManager_SituationType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HelpManager_SituationType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unit_status() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn ring_select() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn unit_info() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn battle_info() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn battle_engage_info() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn battle_alternate_info() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn only_map_terrain_info() -> Self {
+            Self { value: 7 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))]
+    #[::unity2::class(namespace = "App", name = "HelpManager.Item")]
+    #[parent(crate::system::object::Object)]
+    pub struct HelpManager_Item {
+        #[rename(name = "self")]
+        pub self_: crate::app::helpitembase::HelpItemBase,
+        #[rename(name = "pos")]
+        pub pos: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "dirLine")]
+        pub dir_line: ::unity2::Array<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+        #[rename(name = "isMoveToNoTouchItem")]
+        pub is_move_to_no_touch_item: ::unity2::Array<bool>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md"))]
@@ -208,91 +266,342 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HelpManager_SituationType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HelpManager_SituationType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HelpManager.SituationType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HelpManager_SituationType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HelpManager_SituationType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn unit_status() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn ring_select() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn unit_info() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn battle_info() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn battle_engage_info() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn battle_alternate_info() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn only_map_terrain_info() -> Self {
-            Self { value: 7 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))]
-    #[::unity2::class(namespace = "App", name = "HelpManager.Item")]
-    #[parent(crate::system::object::Object)]
-    pub struct HelpManager_Item {
-        #[rename(name = "self")]
-        pub self_: crate::app::helpitembase::HelpItemBase,
-        #[rename(name = "pos")]
-        pub pos: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "dirLine")]
-        pub dir_line: ::unity2::Array<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
-        #[rename(name = "isMoveToNoTouchItem")]
-        pub is_move_to_no_touch_item: ::unity2::Array<bool>,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager.md"))]
+    #[::unity2::class(namespace = "App", name = "HelpManager")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: helpmanager :: HelpManager >)]
+    pub struct HelpManager {
+        #[rename(name = "m_HelpParamSetter")]
+        pub m_help_param_setter: crate::app::helpparamsetter::HelpParamSetter,
+        #[rename(name = "m_HelpList")]
+        pub m_help_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::helpitemlist::HelpItemList,
+        >,
+        #[rename(name = "m_ItemList")]
+        pub m_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::helpmanager::HelpManager_Item,
+        >,
+        #[rename(name = "m_CurrentIndex")]
+        pub m_current_index: i32,
+        #[rename(name = "m_SituationType")]
+        pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
+        #[rename(name = "m_PreviousDir")]
+        pub m_previous_dir: crate::app::helpmanager::HelpManager_Item_Dir,
+        #[rename(name = "m_AxisPos")]
+        pub m_axis_pos: crate::unity_engine::vector2::Vector2,
     }
 }
 
 #[cfg(feature = "app-helpmanager-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-helpmanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HelpManager_Item_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HelpManager_Item,
+        item: crate::app::helpitembase::HelpItemBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HelpManager_Item,
+            crate::app::helpitembase::HelpItemBase,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
+                "get_Up",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Up",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_up(
+        this: HelpManager_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_up::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
+                "get_Down",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Down",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_down(
+        this: HelpManager_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_down::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
+                "get_Left",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Left",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_left(
+        this: HelpManager_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_left::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
+                "get_Right",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
+                    "get_Right",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_right(
+        this: HelpManager_Item,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_right::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-helpmanager")]
+pub trait IHelpManager_ItemMethods: IHelpManager_Item {
+    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` overload"]
+    fn ctor(self, item: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> () {
+        unsafe {
+            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpManager_Item_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Up()` overload"]
+    fn get_up(self) -> f32 {
+        unsafe {
+            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpManager_Item_unity2_raw::get_up(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Down()` overload"]
+    fn get_down(self) -> f32 {
+        unsafe {
+            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpManager_Item_unity2_raw::get_down(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Left()` overload"]
+    fn get_left(self) -> f32 {
+        unsafe {
+            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpManager_Item_unity2_raw::get_left(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Right()` overload"]
+    fn get_right(self) -> f32 {
+        unsafe {
+            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HelpManager_Item_unity2_raw::get_right(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-helpmanager")]
+impl<__T: IHelpManager_Item> IHelpManager_ItemMethods for __T {}
+
+#[cfg(feature = "app-helpmanager")]
+impl HelpManager_Item {
+    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` — overload selector"]
+    pub fn new(item: crate::app::helpitembase::HelpItemBase) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpManager_Item),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpManager_ItemMethods>::ctor(this, item);
+        this
+    }
+}
 
 #[cfg(feature = "app-helpmanager")]
 #[doc(hidden)]
@@ -1356,315 +1665,6 @@ impl HelpManager {
 }
 
 #[cfg(feature = "app-helpmanager")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HelpManager_Item_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::helpitembase::HelpItemBase as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HelpManager_Item,
-        item: crate::app::helpitembase::HelpItemBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HelpManager_Item,
-            crate::app::helpitembase::HelpItemBase,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Up",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Up",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_up(
-        this: HelpManager_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_up::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Down",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Down",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_down(
-        this: HelpManager_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_down::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Left",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Left",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_left(
-        this: HelpManager_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_left::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HelpManager_Item as ::unity2::ClassIdentity>::class(),
-                "get_Right",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HelpManager_Item as ::unity2::ClassIdentity>::NAME,
-                    "get_Right",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_right(
-        this: HelpManager_Item,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(HelpManager_Item, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_right::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-helpmanager")]
-pub trait IHelpManager_ItemMethods: IHelpManager_Item {
-    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` overload"]
-    fn ctor(self, item: impl ::core::convert::Into<crate::app::helpitembase::HelpItemBase>) -> () {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HelpManager_Item_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Up()` overload"]
-    fn get_up(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HelpManager_Item_unity2_raw::get_up(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Down()` overload"]
-    fn get_down(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HelpManager_Item_unity2_raw::get_down(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Left()` overload"]
-    fn get_left(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HelpManager_Item_unity2_raw::get_left(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Right()` overload"]
-    fn get_right(self) -> f32 {
-        unsafe {
-            let __receiver = <HelpManager_Item as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HelpManager_Item_unity2_raw::get_right(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-helpmanager")]
-impl<__T: IHelpManager_Item> IHelpManager_ItemMethods for __T {}
-
-#[cfg(feature = "app-helpmanager")]
-impl HelpManager_Item {
-    #[doc = "`.ctor(crate::app::helpitembase::HelpItemBase)` — overload selector"]
-    pub fn new(item: crate::app::helpitembase::HelpItemBase) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HelpManager_Item),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHelpManager_ItemMethods>::ctor(this, item);
-        this
-    }
-}
-
-#[cfg(feature = "app-helpmanager")]
 pub mod prelude {
     pub use super::HelpManager;
     pub use super::HelpManager_HelpItemType;
@@ -1682,7 +1682,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

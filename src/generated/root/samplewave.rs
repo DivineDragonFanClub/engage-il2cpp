@@ -12,29 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/samplewave/SampleWave.md"))]
-    #[::unity2::class(namespace = "", name = "SampleWave")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct SampleWave {
-        #[rename(name = "m_WaveTex")]
-        pub m_wave_tex: crate::unity_engine::texture2d::Texture2D,
-        #[rename(name = "m_Colors")]
-        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
-        #[rename(name = "m_Datas")]
-        pub m_datas: ::unity2::Array<crate::root::samplewave::SampleWave_Data>,
-        #[rename(name = "m_Temps")]
-        pub m_temps: ::unity2::Array<crate::root::samplewave::SampleWave_Temp>,
-        #[static_field]
-        #[rename(name = "SIZE")]
-        pub size: i32,
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_Ratio")]
-        pub m_ratio: f32,
-        #[rename(name = "m_Scale")]
-        pub m_scale: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Temp.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -93,6 +70,29 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/samplewave/SampleWave.md"))]
+    #[::unity2::class(namespace = "", name = "SampleWave")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct SampleWave {
+        #[rename(name = "m_WaveTex")]
+        pub m_wave_tex: crate::unity_engine::texture2d::Texture2D,
+        #[rename(name = "m_Colors")]
+        pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        #[rename(name = "m_Datas")]
+        pub m_datas: ::unity2::Array<crate::root::samplewave::SampleWave_Data>,
+        #[rename(name = "m_Temps")]
+        pub m_temps: ::unity2::Array<crate::root::samplewave::SampleWave_Temp>,
+        #[static_field]
+        #[rename(name = "SIZE")]
+        pub size: i32,
+        #[rename(name = "m_Material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_Ratio")]
+        pub m_ratio: f32,
+        #[rename(name = "m_Scale")]
+        pub m_scale: f32,
     }
 }
 

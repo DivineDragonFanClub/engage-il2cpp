@@ -8,45 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_ReadWriteTask.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Stream.ReadWriteTask")]
-    pub struct Stream_ReadWriteTask {
-        #[rename(name = "_isRead")]
-        pub is_read: bool,
-        #[rename(name = "_stream")]
-        pub stream: crate::system::io::stream::Stream,
-        #[rename(name = "_buffer")]
-        pub buffer: ::unity2::Array<u8>,
-        #[rename(name = "_offset")]
-        pub offset: i32,
-        #[rename(name = "_count")]
-        pub count: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Stream")]
-    pub struct Stream {
-        #[static_field]
-        #[rename(name = "Null")]
-        pub null: crate::system::io::stream::Stream,
-        #[rename(name = "_activeReadWriteTask")]
-        pub active_read_write_task: crate::system::io::stream::Stream_ReadWriteTask,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_SynchronousAsyncResult.md"))]
-    #[::unity2::class(namespace = "System.IO", name = "Stream.SynchronousAsyncResult")]
-    #[parent(crate::system::object::Object)]
-    pub struct Stream_SynchronousAsyncResult {
-        #[rename(name = "_stateObject")]
-        pub state_object: ::unity2::IlInstance,
-        #[rename(name = "_isWrite")]
-        pub is_write: bool,
-        #[rename(name = "_endXxxCalled")]
-        pub end_xxx_called: bool,
-        #[rename(name = "_bytesRead")]
-        pub bytes_read: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/io/stream/Stream_ReadWriteParameters.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -77,10 +38,49 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_ReadWriteTask.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Stream.ReadWriteTask")]
+    pub struct Stream_ReadWriteTask {
+        #[rename(name = "_isRead")]
+        pub is_read: bool,
+        #[rename(name = "_stream")]
+        pub stream: crate::system::io::stream::Stream,
+        #[rename(name = "_buffer")]
+        pub buffer: ::unity2::Array<u8>,
+        #[rename(name = "_offset")]
+        pub offset: i32,
+        #[rename(name = "_count")]
+        pub count: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Stream")]
+    pub struct Stream {
+        #[static_field]
+        #[rename(name = "Null")]
+        pub null: crate::system::io::stream::Stream,
+        #[rename(name = "_activeReadWriteTask")]
+        pub active_read_write_task: crate::system::io::stream::Stream_ReadWriteTask,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_NullStream.md"))]
     #[::unity2::class(namespace = "System.IO", name = "Stream.NullStream")]
     #[parent(crate::system::io::stream::Stream)]
     pub struct Stream_NullStream {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_SynchronousAsyncResult.md"))]
+    #[::unity2::class(namespace = "System.IO", name = "Stream.SynchronousAsyncResult")]
+    #[parent(crate::system::object::Object)]
+    pub struct Stream_SynchronousAsyncResult {
+        #[rename(name = "_stateObject")]
+        pub state_object: ::unity2::IlInstance,
+        #[rename(name = "_isWrite")]
+        pub is_write: bool,
+        #[rename(name = "_endXxxCalled")]
+        pub end_xxx_called: bool,
+        #[rename(name = "_bytesRead")]
+        pub bytes_read: i32,
+    }
 }
 
 #[cfg(feature = "system-io-stream-types")]
@@ -1624,423 +1624,6 @@ impl Stream {
 #[cfg(feature = "system-io-stream")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Stream_SynchronousAsyncResult_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Stream_SynchronousAsyncResult,
-        bytes_read: i32,
-        async_state_object: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Stream_SynchronousAsyncResult,
-            i32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, bytes_read, async_state_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: Stream_SynchronousAsyncResult,
-        async_state_object: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Stream_SynchronousAsyncResult,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, async_state_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_IsCompleted",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    "get_IsCompleted",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_completed(
-        this: Stream_SynchronousAsyncResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_completed::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_async_state {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_AsyncState",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    "get_AsyncState",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_async_state(
-        this: Stream_SynchronousAsyncResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Stream_SynchronousAsyncResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_async_state::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_completed_synchronously {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                "get_CompletedSynchronously",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    "get_CompletedSynchronously",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_completed_synchronously(
-        this: Stream_SynchronousAsyncResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_completed_synchronously::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_throw_if_error {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
-                "ThrowIfError",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
-                    "ThrowIfError",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn throw_if_error(
-        this: Stream_SynchronousAsyncResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_throw_if_error::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-pub trait IStream_SynchronousAsyncResultMethods: IStream_SynchronousAsyncResult {
-    #[doc = "`.ctor(i32, crate::system::object::Object)` overload"]
-    fn ctor(
-        self,
-        bytes_read: impl ::core::convert::Into<i32>,
-        async_state_object: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(bytes_read),
-                ::core::convert::Into::into(async_state_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::system::object::Object)` overload"]
-    fn ctor_2(
-        self,
-        async_state_object: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(async_state_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsCompleted()` overload"]
-    fn get_is_completed(self) -> bool {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::get_is_completed(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_AsyncState()` overload"]
-    fn get_async_state(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::get_async_state(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CompletedSynchronously()` overload"]
-    fn get_completed_synchronously(self) -> bool {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::get_completed_synchronously(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ThrowIfError()` overload"]
-    fn throw_if_error(self) -> () {
-        unsafe {
-            let __receiver =
-                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Stream_SynchronousAsyncResult_unity2_raw::throw_if_error(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-impl<__T: IStream_SynchronousAsyncResult> IStream_SynchronousAsyncResultMethods for __T {}
-
-#[cfg(feature = "system-io-stream")]
-impl Stream_SynchronousAsyncResult {
-    #[doc = "`.ctor(i32, crate::system::object::Object)` — overload selector"]
-    pub fn new(bytes_read: i32, async_state_object: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Stream_SynchronousAsyncResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStream_SynchronousAsyncResultMethods>::ctor(this, bytes_read, async_state_object);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::object::Object)` — overload selector"]
-    pub fn new_2(async_state_object: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Stream_SynchronousAsyncResult),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IStream_SynchronousAsyncResultMethods>::ctor_2(this, async_state_object);
-        this
-    }
-}
-
-#[cfg(feature = "system-io-stream")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __Stream_NullStream_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -2962,6 +2545,423 @@ impl Stream_NullStream {
             )
         });
         <Self as IStream_NullStreamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Stream_SynchronousAsyncResult_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Stream_SynchronousAsyncResult,
+        bytes_read: i32,
+        async_state_object: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Stream_SynchronousAsyncResult,
+            i32,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, bytes_read, async_state_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Stream_SynchronousAsyncResult,
+        async_state_object: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Stream_SynchronousAsyncResult,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, async_state_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                "get_IsCompleted",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    "get_IsCompleted",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_completed(
+        this: Stream_SynchronousAsyncResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_is_completed::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_async_state {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                "get_AsyncState",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    "get_AsyncState",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_async_state(
+        this: Stream_SynchronousAsyncResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            Stream_SynchronousAsyncResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_async_state::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_completed_synchronously {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                "get_CompletedSynchronously",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    "get_CompletedSynchronously",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_completed_synchronously(
+        this: Stream_SynchronousAsyncResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_completed_synchronously::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_throw_if_error {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::class(),
+                "ThrowIfError",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Stream_SynchronousAsyncResult as ::unity2::ClassIdentity>::NAME,
+                    "ThrowIfError",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn throw_if_error(
+        this: Stream_SynchronousAsyncResult,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_throw_if_error::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+pub trait IStream_SynchronousAsyncResultMethods: IStream_SynchronousAsyncResult {
+    #[doc = "`.ctor(i32, crate::system::object::Object)` overload"]
+    fn ctor(
+        self,
+        bytes_read: impl ::core::convert::Into<i32>,
+        async_state_object: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(bytes_read),
+                ::core::convert::Into::into(async_state_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::object::Object)` overload"]
+    fn ctor_2(
+        self,
+        async_state_object: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(async_state_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsCompleted()` overload"]
+    fn get_is_completed(self) -> bool {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::get_is_completed(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_AsyncState()` overload"]
+    fn get_async_state(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::get_async_state(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_CompletedSynchronously()` overload"]
+    fn get_completed_synchronously(self) -> bool {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::get_completed_synchronously(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ThrowIfError()` overload"]
+    fn throw_if_error(self) -> () {
+        unsafe {
+            let __receiver =
+                <Stream_SynchronousAsyncResult as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Stream_SynchronousAsyncResult_unity2_raw::throw_if_error(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-io-stream")]
+impl<__T: IStream_SynchronousAsyncResult> IStream_SynchronousAsyncResultMethods for __T {}
+
+#[cfg(feature = "system-io-stream")]
+impl Stream_SynchronousAsyncResult {
+    #[doc = "`.ctor(i32, crate::system::object::Object)` — overload selector"]
+    pub fn new(bytes_read: i32, async_state_object: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stream_SynchronousAsyncResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStream_SynchronousAsyncResultMethods>::ctor(this, bytes_read, async_state_object);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::object::Object)` — overload selector"]
+    pub fn new_2(async_state_object: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stream_SynchronousAsyncResult),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IStream_SynchronousAsyncResultMethods>::ctor_2(this, async_state_object);
         this
     }
 }

@@ -13,6 +13,46 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
+    #[::unity2::class(namespace = "App", name = "Flipbook")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct Flipbook {
+        #[rename(name = "m_patterns")]
+        pub m_patterns: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_span")]
+        pub m_span: f32,
+        #[rename(name = "m_animateStrength")]
+        pub m_animate_strength: bool,
+        #[rename(name = "m_strength")]
+        pub m_strength: f32,
+        #[rename(name = "m_strengthCycle")]
+        pub m_strength_cycle: f32,
+        #[rename(name = "m_mode")]
+        pub m_mode: crate::app::flipbook::Flipbook_Mode,
+        #[rename(name = "m_autoPlay")]
+        pub m_auto_play: bool,
+        #[rename(name = "m_playing")]
+        pub m_playing: bool,
+        #[rename(name = "m_spanIndex")]
+        pub m_span_index: i32,
+        #[rename(name = "m_strengthCycleIndex")]
+        pub m_strength_cycle_index: i32,
+        #[rename(name = "m_patternIndex")]
+        pub m_pattern_index: i32,
+        #[rename(name = "m_patternCount")]
+        pub m_pattern_count: i32,
+        #[rename(name = "m_material")]
+        pub m_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_targetTexture")]
+        pub m_target_texture: ::unity2::Il2CppString,
+        #[rename(name = "m_targetTextureId")]
+        pub m_target_texture_id: i32,
+        #[rename(name = "m_targetStrength")]
+        pub m_target_strength: ::unity2::Il2CppString,
+        #[rename(name = "m_targetStrengthId")]
+        pub m_target_strength_id: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -63,46 +103,6 @@ mod __types {
         pub fn delete_object() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
-    #[::unity2::class(namespace = "App", name = "Flipbook")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Flipbook {
-        #[rename(name = "m_patterns")]
-        pub m_patterns: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_span")]
-        pub m_span: f32,
-        #[rename(name = "m_animateStrength")]
-        pub m_animate_strength: bool,
-        #[rename(name = "m_strength")]
-        pub m_strength: f32,
-        #[rename(name = "m_strengthCycle")]
-        pub m_strength_cycle: f32,
-        #[rename(name = "m_mode")]
-        pub m_mode: crate::app::flipbook::Flipbook_Mode,
-        #[rename(name = "m_autoPlay")]
-        pub m_auto_play: bool,
-        #[rename(name = "m_playing")]
-        pub m_playing: bool,
-        #[rename(name = "m_spanIndex")]
-        pub m_span_index: i32,
-        #[rename(name = "m_strengthCycleIndex")]
-        pub m_strength_cycle_index: i32,
-        #[rename(name = "m_patternIndex")]
-        pub m_pattern_index: i32,
-        #[rename(name = "m_patternCount")]
-        pub m_pattern_count: i32,
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_targetTexture")]
-        pub m_target_texture: ::unity2::Il2CppString,
-        #[rename(name = "m_targetTextureId")]
-        pub m_target_texture_id: i32,
-        #[rename(name = "m_targetStrength")]
-        pub m_target_strength: ::unity2::Il2CppString,
-        #[rename(name = "m_targetStrengthId")]
-        pub m_target_strength_id: i32,
     }
 }
 
@@ -996,7 +996,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -13,137 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignParent")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapTerrainInfoAlignment_AlignParent {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_Type.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapTerrainInfoAlignment_Type {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_Type {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapTerrainInfoAlignment.Type";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapTerrainInfoAlignment_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapTerrainInfoAlignment_Type {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_InversionMember.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.InversionMember")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapTerrainInfoAlignment_InversionMember {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignMember")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapTerrainInfoAlignment_AlignMember {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RootRect")]
-        pub m_root_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_RootText")]
-        pub m_root_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_AlingMenber")]
-        pub m_aling_menber:
-            crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
-        #[rename(name = "m_TitleObj")]
-        pub m_title_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TitleRect")]
-        pub m_title_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ValueObj")]
-        pub m_value_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ValueRect")]
-        pub m_value_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_ValueText")]
-        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember_Type.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapTerrainInfoAlignment_AlignMember_Type {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_AlignMember_Type {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapTerrainInfoAlignment.AlignMember.Type";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapTerrainInfoAlignment_AlignMember_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapTerrainInfoAlignment_AlignMember_Type {
-        pub fn text() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn value() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn icon() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment.md"))]
     #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -266,10 +135,540 @@ mod __types {
             crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_InversionMember,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignParent")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapTerrainInfoAlignment_AlignParent {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_Type.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapTerrainInfoAlignment_Type {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_Type {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapTerrainInfoAlignment.Type";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapTerrainInfoAlignment_Type {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapTerrainInfoAlignment_Type {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignMember")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapTerrainInfoAlignment_AlignMember {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RootRect")]
+        pub m_root_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_RootText")]
+        pub m_root_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_AlingMenber")]
+        pub m_aling_menber:
+            crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
+        #[rename(name = "m_TitleObj")]
+        pub m_title_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TitleRect")]
+        pub m_title_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ValueObj")]
+        pub m_value_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ValueRect")]
+        pub m_value_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_ValueText")]
+        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_InversionMember.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.InversionMember")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapTerrainInfoAlignment_InversionMember {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember_Type.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapTerrainInfoAlignment_AlignMember_Type {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_AlignMember_Type {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapTerrainInfoAlignment.AlignMember.Type";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapTerrainInfoAlignment_AlignMember_Type {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapTerrainInfoAlignment_AlignMember_Type {
+        pub fn text() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn value() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn icon() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-mapterraininfoalignment-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapTerrainInfoAlignment_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start(
+        this: MapTerrainInfoAlignment,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_start::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alignment {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                "Alignment",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    "Alignment",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alignment(
+        this: MapTerrainInfoAlignment,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_alignment::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alignment_first {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                "AlignmentFirst",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    "AlignmentFirst",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alignment_first(
+        this: MapTerrainInfoAlignment,
+        rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alignment_first::get_offset() as isize),
+        );
+        inner(this, rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alignment_second {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                "AlignmentSecond",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    "AlignmentSecond",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alignment_second(
+        this: MapTerrainInfoAlignment,
+        rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alignment_second::get_offset() as isize),
+        );
+        inner(this, rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_alignment_third {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                "AlignmentThird",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    "AlignmentThird",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn alignment_third(
+        this: MapTerrainInfoAlignment,
+        rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_alignment_third::get_offset() as isize),
+        );
+        inner(this, rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapTerrainInfoAlignment,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+pub trait IMapTerrainInfoAlignmentMethods: IMapTerrainInfoAlignment {
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Alignment()` overload"]
+    fn alignment(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::alignment(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AlignmentFirst(f32)` overload"]
+    fn alignment_first(
+        self,
+        rate: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::alignment_first(
+                __receiver,
+                ::core::convert::Into::into(rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AlignmentSecond(f32)` overload"]
+    fn alignment_second(
+        self,
+        rate: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::alignment_second(
+                __receiver,
+                ::core::convert::Into::into(rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AlignmentThird(f32)` overload"]
+    fn alignment_third(
+        self,
+        rate: impl ::core::convert::Into<f32>,
+    ) -> crate::unity_engine::vector2::Vector2 {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::alignment_third(
+                __receiver,
+                ::core::convert::Into::into(rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapTerrainInfoAlignment_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+impl<__T: IMapTerrainInfoAlignment> IMapTerrainInfoAlignmentMethods for __T {}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+impl MapTerrainInfoAlignment {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrainInfoAlignment),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrainInfoAlignmentMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapterraininfoalignment")]
 #[doc(hidden)]
@@ -1118,284 +1517,6 @@ impl MapTerrainInfoAlignment_AlignParent {
 #[cfg(feature = "app-mapterraininfoalignment")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapTerrainInfoAlignment_InversionMember_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
-                "get_rectTransform",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
-                    "get_rectTransform",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rect_transform(
-        this: MapTerrainInfoAlignment_InversionMember,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment_InversionMember,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_transform::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rect_transform {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
-                "set_rectTransform",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
-                    "set_rectTransform",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rect_transform(
-        this: MapTerrainInfoAlignment_InversionMember,
-        value: crate::unity_engine::recttransform::RectTransform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment_InversionMember,
-            crate::unity_engine::recttransform::RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rect_transform::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapTerrainInfoAlignment_InversionMember,
-        root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment_InversionMember,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_inversion {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
-                "Inversion",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
-                    "Inversion",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn inversion(
-        this: MapTerrainInfoAlignment_InversionMember,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment_InversionMember,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_inversion::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-pub trait IMapTerrainInfoAlignment_InversionMemberMethods:
-    IMapTerrainInfoAlignment_InversionMember
-{
-    #[doc = "`get_rectTransform()` overload"]
-    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
-        unsafe {
-            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapTerrainInfoAlignment_InversionMember_unity2_raw::get_rect_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn set_rect_transform(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapTerrainInfoAlignment_InversionMember_unity2_raw::set_rect_transform(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapTerrainInfoAlignment_InversionMember_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Inversion()` overload"]
-    fn inversion(self) -> () {
-        unsafe {
-            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapTerrainInfoAlignment_InversionMember_unity2_raw::inversion(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-impl<__T: IMapTerrainInfoAlignment_InversionMember> IMapTerrainInfoAlignment_InversionMemberMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-impl MapTerrainInfoAlignment_InversionMember {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfoAlignment_InversionMember),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrainInfoAlignment_InversionMemberMethods>::ctor(this, root);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapTerrainInfoAlignment_AlignMember_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1703,19 +1824,19 @@ impl MapTerrainInfoAlignment_AlignMember {
 #[cfg(feature = "app-mapterraininfoalignment")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapTerrainInfoAlignment_unity2_raw {
+mod __MapTerrainInfoAlignment_InversionMember_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_start {
+    pub mod __lookup_get_rect_transform {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
-                "Start",
+                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
+                "get_rectTransform",
                 0,
                 param_types,
                 false,
@@ -1726,8 +1847,8 @@ mod __MapTerrainInfoAlignment_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
-                    "Start",
+                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
+                    "get_rectTransform",
                     e
                 ),
             }
@@ -1738,30 +1859,34 @@ mod __MapTerrainInfoAlignment_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn start(
-        this: MapTerrainInfoAlignment,
+    pub unsafe fn get_rect_transform(
+        this: MapTerrainInfoAlignment_InversionMember,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+    ) -> crate::unity_engine::recttransform::RectTransform {
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment_InversionMember,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_rect_transform::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_alignment {
+    pub mod __lookup_set_rect_transform {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
-                "Alignment",
-                0,
+                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
+                "set_rectTransform",
+                1,
                 param_types,
                 false,
             )
@@ -1771,8 +1896,8 @@ mod __MapTerrainInfoAlignment_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
-                    "Alignment",
+                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
+                    "set_rectTransform",
                     e
                 ),
             }
@@ -1783,167 +1908,21 @@ mod __MapTerrainInfoAlignment_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn alignment(
-        this: MapTerrainInfoAlignment,
+    pub unsafe fn set_rect_transform(
+        this: MapTerrainInfoAlignment_InversionMember,
+        value: crate::unity_engine::recttransform::RectTransform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_alignment::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_alignment_first {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
-                "AlignmentFirst",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
-                    "AlignmentFirst",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn alignment_first(
-        this: MapTerrainInfoAlignment,
-        rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
         let inner: extern "C" fn(
-            MapTerrainInfoAlignment,
-            f32,
+            MapTerrainInfoAlignment_InversionMember,
+            crate::unity_engine::recttransform::RectTransform,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_alignment_first::get_offset() as isize),
+                .offset(__lookup_set_rect_transform::get_offset() as isize),
         );
-        inner(this, rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_alignment_second {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
-                "AlignmentSecond",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
-                    "AlignmentSecond",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn alignment_second(
-        this: MapTerrainInfoAlignment,
-        rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_alignment_second::get_offset() as isize),
-        );
-        inner(this, rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_alignment_third {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
-                "AlignmentThird",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
-                    "AlignmentThird",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn alignment_third(
-        this: MapTerrainInfoAlignment,
-        rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            MapTerrainInfoAlignment,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_alignment_third::get_offset() as isize),
-        );
-        inner(this, rate, __unity2_method_info)
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1952,11 +1931,12 @@ mod __MapTerrainInfoAlignment_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::class(),
+                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -1966,7 +1946,7 @@ mod __MapTerrainInfoAlignment_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfoAlignment as ::unity2::ClassIdentity>::NAME,
+                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1979,122 +1959,142 @@ mod __MapTerrainInfoAlignment_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: MapTerrainInfoAlignment,
+        this: MapTerrainInfoAlignment_InversionMember,
+        root: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(MapTerrainInfoAlignment, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment_InversionMember,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_inversion {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::class(),
+                "Inversion",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrainInfoAlignment_InversionMember as ::unity2::ClassIdentity>::NAME,
+                    "Inversion",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn inversion(
+        this: MapTerrainInfoAlignment_InversionMember,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapTerrainInfoAlignment_InversionMember,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_inversion::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapterraininfoalignment")]
-pub trait IMapTerrainInfoAlignmentMethods: IMapTerrainInfoAlignment {
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
+pub trait IMapTerrainInfoAlignment_InversionMemberMethods:
+    IMapTerrainInfoAlignment_InversionMember
+{
+    #[doc = "`get_rectTransform()` overload"]
+    fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
         unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Alignment()` overload"]
-    fn alignment(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::alignment(
+            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapTerrainInfoAlignment_InversionMember_unity2_raw::get_rect_transform(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`AlignmentFirst(f32)` overload"]
-    fn alignment_first(
+    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
+    fn set_rect_transform(
         self,
-        rate: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
+        value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::alignment_first(
+            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapTerrainInfoAlignment_InversionMember_unity2_raw::set_rect_transform(
                 __receiver,
-                ::core::convert::Into::into(rate),
+                ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`AlignmentSecond(f32)` overload"]
-    fn alignment_second(
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(
         self,
-        rate: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::alignment_second(
+            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapTerrainInfoAlignment_InversionMember_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(rate),
+                ::core::convert::Into::into(root),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`AlignmentThird(f32)` overload"]
-    fn alignment_third(
-        self,
-        rate: impl ::core::convert::Into<f32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
+    #[doc = "`Inversion()` overload"]
+    fn inversion(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::alignment_third(
+            let __receiver = < MapTerrainInfoAlignment_InversionMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MapTerrainInfoAlignment_InversionMember_unity2_raw::inversion(
                 __receiver,
-                ::core::convert::Into::into(rate),
                 ::core::option::Option::None,
             )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapTerrainInfoAlignment as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfoAlignment_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapterraininfoalignment")]
-impl<__T: IMapTerrainInfoAlignment> IMapTerrainInfoAlignmentMethods for __T {}
+impl<__T: IMapTerrainInfoAlignment_InversionMember> IMapTerrainInfoAlignment_InversionMemberMethods
+    for __T
+{
+}
 
 #[cfg(feature = "app-mapterraininfoalignment")]
-impl MapTerrainInfoAlignment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl MapTerrainInfoAlignment_InversionMember {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfoAlignment),
+                ::core::stringify!(MapTerrainInfoAlignment_InversionMember),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapTerrainInfoAlignmentMethods>::ctor(this);
+        <Self as IMapTerrainInfoAlignment_InversionMemberMethods>::ctor(this, root);
         this
     }
 }
@@ -2119,7 +2119,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -14,38 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "WellTopMenu.EvilMapChangeDifficultyMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct WellTopMenu_EvilMapChangeDifficultyMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "WellTopMenu.ItemExchangeMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct WellTopMenu_ItemExchangeMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "WellTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct WellTopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "WellTopMenu.EvilMapStartMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct WellTopMenu_EvilMapStartMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "WellTopMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -110,6 +78,38 @@ mod __types {
             Self { value: 5 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "WellTopMenu.EvilMapStartMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct WellTopMenu_EvilMapStartMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "WellTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct WellTopMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "WellTopMenu.ItemExchangeMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct WellTopMenu_ItemExchangeMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "WellTopMenu.EvilMapChangeDifficultyMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct WellTopMenu_EvilMapChangeDifficultyMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-welltopmenu-types")]
@@ -118,7 +118,7 @@ pub use __types::*;
 #[cfg(feature = "app-welltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
+mod __WellTopMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -127,11 +127,14 @@ mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -141,7 +144,7 @@ mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -154,33 +157,37 @@ mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
-        event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+        this: WellTopMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapChangeDifficultyMenuItem,
-            crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+            WellTopMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, event_handler, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::welltopmenu::WellTopMenu_MenuResult as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
+                <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
                 param_types,
                 false,
             )
@@ -190,8 +197,8 @@ mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
+                    <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
                     e
                 ),
             }
@@ -202,219 +209,58 @@ mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_name(
-        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
+    pub unsafe fn invoke(
+        this: WellTopMenu_DecideEventHandler,
+        result: crate::app::welltopmenu::WellTopMenu_MenuResult,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    ) -> () {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapChangeDifficultyMenuItem,
+            WellTopMenu_DecideEventHandler,
+            crate::app::welltopmenu::WellTopMenu_MenuResult,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            WellTopMenu_EvilMapChangeDifficultyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            WellTopMenu_EvilMapChangeDifficultyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            WellTopMenu_EvilMapChangeDifficultyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods:
-    IWellTopMenu_EvilMapChangeDifficultyMenuItem
-{
-    #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
+pub trait IWellTopMenu_DecideEventHandlerMethods: IWellTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
-        >,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::ctor(
+            let __receiver =
+                <WellTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __WellTopMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(event_handler),
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+    #[doc = "`Invoke(crate::app::welltopmenu::WellTopMenu_MenuResult)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::welltopmenu::WellTopMenu_MenuResult>,
+    ) -> () {
         unsafe {
-            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::get_name(
+            let __receiver =
+                <WellTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __WellTopMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::b_call(
-                __receiver,
+                ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
         }
@@ -422,23 +268,20 @@ pub trait IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods:
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl<__T: IWellTopMenu_EvilMapChangeDifficultyMenuItem>
-    IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods for __T
-{
-}
+impl<__T: IWellTopMenu_DecideEventHandler> IWellTopMenu_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapChangeDifficultyMenuItem {
-    #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
+impl WellTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_EvilMapChangeDifficultyMenuItem),
+                ::core::stringify!(WellTopMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods>::ctor(this, event_handler);
+        <Self as IWellTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -446,7 +289,7 @@ impl WellTopMenu_EvilMapChangeDifficultyMenuItem {
 #[cfg(feature = "app-welltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
+mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -457,7 +300,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -469,7 +312,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -482,12 +325,12 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: WellTopMenu_ItemExchangeMenuItem,
+        this: WellTopMenu_EvilMapStartMenuItem,
         event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            WellTopMenu_ItemExchangeMenuItem,
+            WellTopMenu_EvilMapStartMenuItem,
             crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -506,7 +349,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -518,7 +361,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -531,11 +374,11 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: WellTopMenu_ItemExchangeMenuItem,
+        this: WellTopMenu_EvilMapStartMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            WellTopMenu_ItemExchangeMenuItem,
+            WellTopMenu_EvilMapStartMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -553,7 +396,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -565,7 +408,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -578,11 +421,11 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: WellTopMenu_ItemExchangeMenuItem,
+        this: WellTopMenu_EvilMapStartMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            WellTopMenu_ItemExchangeMenuItem,
+            WellTopMenu_EvilMapStartMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -600,7 +443,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -612,7 +455,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -625,11 +468,11 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: WellTopMenu_ItemExchangeMenuItem,
+        this: WellTopMenu_EvilMapStartMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            WellTopMenu_ItemExchangeMenuItem,
+            WellTopMenu_EvilMapStartMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -647,7 +490,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
                 "BCall",
                 0,
                 param_types,
@@ -659,7 +502,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BCall",
                     e
                 ),
@@ -672,11 +515,11 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn b_call(
-        this: WellTopMenu_ItemExchangeMenuItem,
+        this: WellTopMenu_EvilMapStartMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            WellTopMenu_ItemExchangeMenuItem,
+            WellTopMenu_EvilMapStartMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -688,7 +531,7 @@ mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMenuItem {
+pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
@@ -698,10 +541,10 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
     ) -> () {
         unsafe {
             let __receiver =
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::ctor(
+            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
@@ -712,10 +555,10 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::get_name(
+            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -725,10 +568,10 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::build_attribute(
+            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -738,10 +581,10 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::a_call(
+            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -751,10 +594,10 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::b_call(
+            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::b_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -763,20 +606,20 @@ pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMen
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl<__T: IWellTopMenu_ItemExchangeMenuItem> IWellTopMenu_ItemExchangeMenuItemMethods for __T {}
+impl<__T: IWellTopMenu_EvilMapStartMenuItem> IWellTopMenu_EvilMapStartMenuItemMethods for __T {}
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_ItemExchangeMenuItem {
+impl WellTopMenu_EvilMapStartMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_ItemExchangeMenuItem),
+                ::core::stringify!(WellTopMenu_EvilMapStartMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_ItemExchangeMenuItemMethods>::ctor(this, event_handler);
+        <Self as IWellTopMenu_EvilMapStartMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -1287,7 +1130,7 @@ impl WellTopMenu {
 #[cfg(feature = "app-welltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
+mod __WellTopMenu_ItemExchangeMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1298,7 +1141,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -1310,7 +1153,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1323,12 +1166,12 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: WellTopMenu_EvilMapStartMenuItem,
+        this: WellTopMenu_ItemExchangeMenuItem,
         event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapStartMenuItem,
+            WellTopMenu_ItemExchangeMenuItem,
             crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -1347,7 +1190,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -1359,7 +1202,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -1372,11 +1215,11 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: WellTopMenu_EvilMapStartMenuItem,
+        this: WellTopMenu_ItemExchangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapStartMenuItem,
+            WellTopMenu_ItemExchangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1394,7 +1237,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -1406,7 +1249,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -1419,11 +1262,11 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: WellTopMenu_EvilMapStartMenuItem,
+        this: WellTopMenu_ItemExchangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapStartMenuItem,
+            WellTopMenu_ItemExchangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1441,7 +1284,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -1453,7 +1296,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -1466,11 +1309,11 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: WellTopMenu_EvilMapStartMenuItem,
+        this: WellTopMenu_ItemExchangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapStartMenuItem,
+            WellTopMenu_ItemExchangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1488,7 +1331,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::class(),
                 "BCall",
                 0,
                 param_types,
@@ -1500,7 +1343,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_EvilMapStartMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_ItemExchangeMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BCall",
                     e
                 ),
@@ -1513,11 +1356,11 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
         }
     }
     pub unsafe fn b_call(
-        this: WellTopMenu_EvilMapStartMenuItem,
+        this: WellTopMenu_ItemExchangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            WellTopMenu_EvilMapStartMenuItem,
+            WellTopMenu_ItemExchangeMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1529,7 +1372,7 @@ mod __WellTopMenu_EvilMapStartMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMenuItem {
+pub trait IWellTopMenu_ItemExchangeMenuItemMethods: IWellTopMenu_ItemExchangeMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
@@ -1539,10 +1382,10 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
     ) -> () {
         unsafe {
             let __receiver =
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::ctor(
+            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
@@ -1553,10 +1396,10 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::get_name(
+            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1566,10 +1409,10 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::build_attribute(
+            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1579,10 +1422,10 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::a_call(
+            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1592,10 +1435,10 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <WellTopMenu_EvilMapStartMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <WellTopMenu_ItemExchangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __WellTopMenu_EvilMapStartMenuItem_unity2_raw::b_call(
+            __WellTopMenu_ItemExchangeMenuItem_unity2_raw::b_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1604,20 +1447,20 @@ pub trait IWellTopMenu_EvilMapStartMenuItemMethods: IWellTopMenu_EvilMapStartMen
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl<__T: IWellTopMenu_EvilMapStartMenuItem> IWellTopMenu_EvilMapStartMenuItemMethods for __T {}
+impl<__T: IWellTopMenu_ItemExchangeMenuItem> IWellTopMenu_ItemExchangeMenuItemMethods for __T {}
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapStartMenuItem {
+impl WellTopMenu_ItemExchangeMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_EvilMapStartMenuItem),
+                ::core::stringify!(WellTopMenu_ItemExchangeMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_EvilMapStartMenuItemMethods>::ctor(this, event_handler);
+        <Self as IWellTopMenu_ItemExchangeMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -1625,7 +1468,7 @@ impl WellTopMenu_EvilMapStartMenuItem {
 #[cfg(feature = "app-welltopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __WellTopMenu_DecideEventHandler_unity2_raw {
+mod __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1634,14 +1477,11 @@ mod __WellTopMenu_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: welltopmenu :: WellTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -1651,7 +1491,7 @@ mod __WellTopMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1664,37 +1504,33 @@ mod __WellTopMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: WellTopMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
+        event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            WellTopMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            WellTopMenu_EvilMapChangeDifficultyMenuItem,
+            crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
+        inner(this, event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_get_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::welltopmenu::WellTopMenu_MenuResult as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
+                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
                 param_types,
                 false,
             )
@@ -1704,8 +1540,8 @@ mod __WellTopMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <WellTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
+                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
                     e
                 ),
             }
@@ -1716,58 +1552,219 @@ mod __WellTopMenu_DecideEventHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: WellTopMenu_DecideEventHandler,
-        result: crate::app::welltopmenu::WellTopMenu_MenuResult,
+    pub unsafe fn get_name(
+        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            WellTopMenu_DecideEventHandler,
-            crate::app::welltopmenu::WellTopMenu_MenuResult,
+            WellTopMenu_EvilMapChangeDifficultyMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_get_name::get_offset() as isize),
         );
-        inner(this, result, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            WellTopMenu_EvilMapChangeDifficultyMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_build_attribute::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            WellTopMenu_EvilMapChangeDifficultyMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <WellTopMenu_EvilMapChangeDifficultyMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: WellTopMenu_EvilMapChangeDifficultyMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            WellTopMenu_EvilMapChangeDifficultyMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-welltopmenu")]
-pub trait IWellTopMenu_DecideEventHandlerMethods: IWellTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+pub trait IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods:
+    IWellTopMenu_EvilMapChangeDifficultyMenuItem
+{
+    #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        event_handler: impl ::core::convert::Into<
+            crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
+        >,
     ) -> () {
         unsafe {
-            let __receiver =
-                <WellTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WellTopMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::welltopmenu::WellTopMenu_MenuResult)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::welltopmenu::WellTopMenu_MenuResult>,
-    ) -> () {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <WellTopMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WellTopMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::get_name(
                 __receiver,
-                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < WellTopMenu_EvilMapChangeDifficultyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __WellTopMenu_EvilMapChangeDifficultyMenuItem_unity2_raw::b_call(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -1775,20 +1772,23 @@ pub trait IWellTopMenu_DecideEventHandlerMethods: IWellTopMenu_DecideEventHandle
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl<__T: IWellTopMenu_DecideEventHandler> IWellTopMenu_DecideEventHandlerMethods for __T {}
+impl<__T: IWellTopMenu_EvilMapChangeDifficultyMenuItem>
+    IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods for __T
+{
+}
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl WellTopMenu_EvilMapChangeDifficultyMenuItem {
+    #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_DecideEventHandler),
+                ::core::stringify!(WellTopMenu_EvilMapChangeDifficultyMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IWellTopMenu_EvilMapChangeDifficultyMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
@@ -1830,7 +1830,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

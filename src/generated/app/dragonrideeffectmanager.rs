@@ -10,54 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DragonRideEffectManager_TypeIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DragonRideEffectManager_TypeIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DragonRideEffectManager.TypeIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DragonRideEffectManager_TypeIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DragonRideEffectManager_TypeIndex {
-        pub fn type_big() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn type_link() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn type_special() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeffectmanager/DragonRideEffectManager.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideEffectManager")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideeffectmanager :: DragonRideEffectManager >)]
@@ -125,6 +77,54 @@ mod __types {
         pub m_use_count: i32,
         #[rename(name = "m_ReturnCount")]
         pub m_return_count: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideeffectmanager/DragonRideEffectManager_TypeIndex.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DragonRideEffectManager_TypeIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DragonRideEffectManager_TypeIndex {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DragonRideEffectManager.TypeIndex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DragonRideEffectManager_TypeIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DragonRideEffectManager_TypeIndex {
+        pub fn type_big() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn type_link() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn type_special() -> Self {
+            Self { value: 2 }
+        }
     }
 }
 
@@ -1604,7 +1604,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

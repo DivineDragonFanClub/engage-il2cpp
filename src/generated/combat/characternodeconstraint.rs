@@ -13,6 +13,25 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CharacterNodeConstraint")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CharacterNodeConstraint {
+        #[rename(name = "state")]
+        pub state: crate::combat::characternodeconstraint::CharacterNodeConstraint_State,
+        #[rename(name = "SpecialPurposeCameraNodes")]
+        pub special_purpose_camera_nodes:
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[rename(name = "SpecialPurposeParticleNodes")]
+        pub special_purpose_particle_nodes:
+            ::unity2::Array<crate::unity_engine::transform::Transform>,
+        #[rename(name = "specialPurposeParticleNodesOffset")]
+        pub special_purpose_particle_nodes_offset:
+            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "_ctr")]
+        pub ctr: crate::unity_engine::transform::Transform,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
     #[repr(C)]
     #[derive(
@@ -59,25 +78,6 @@ mod __types {
         pub fn running() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterNodeConstraint")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterNodeConstraint {
-        #[rename(name = "state")]
-        pub state: crate::combat::characternodeconstraint::CharacterNodeConstraint_State,
-        #[rename(name = "SpecialPurposeCameraNodes")]
-        pub special_purpose_camera_nodes:
-            ::unity2::Array<crate::unity_engine::transform::Transform>,
-        #[rename(name = "SpecialPurposeParticleNodes")]
-        pub special_purpose_particle_nodes:
-            ::unity2::Array<crate::unity_engine::transform::Transform>,
-        #[rename(name = "specialPurposeParticleNodesOffset")]
-        pub special_purpose_particle_nodes_offset:
-            ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "_ctr")]
-        pub ctr: crate::unity_engine::transform::Transform,
     }
 }
 
@@ -425,7 +425,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

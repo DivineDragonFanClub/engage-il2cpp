@@ -10,6 +10,30 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistsequence/TutorialListSequence.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TutorialListSequence {
+        #[rename(name = "m_CategorySelectObject")]
+        pub m_category_select_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TutorialListObject")]
+        pub m_tutorial_list_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PathTable")]
+        pub m_path_table: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+        >,
+        #[rename(name = "m_SelectCategory")]
+        pub m_select_category:
+            crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType,
+        #[rename(name = "m_CategoryList")]
+        pub m_category_list: crate::system::collections::generic::list_1::List_1<
+            crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType,
+        >,
+        #[rename(name = "m_IsGetAllTutorial")]
+        pub m_is_get_all_tutorial: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistsequence/TutorialListSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -60,30 +84,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistsequence/TutorialListSequence.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TutorialListSequence {
-        #[rename(name = "m_CategorySelectObject")]
-        pub m_category_select_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TutorialListObject")]
-        pub m_tutorial_list_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PathTable")]
-        pub m_path_table: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-        >,
-        #[rename(name = "m_SelectCategory")]
-        pub m_select_category:
-            crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType,
-        #[rename(name = "m_CategoryList")]
-        pub m_category_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType,
-        >,
-        #[rename(name = "m_IsGetAllTutorial")]
-        pub m_is_get_all_tutorial: bool,
     }
 }
 
@@ -993,7 +993,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

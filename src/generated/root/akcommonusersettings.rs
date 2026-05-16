@@ -38,21 +38,6 @@ mod __types {
             crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonUserSettings_SpatialAudioSettings {
-# [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
-# [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
-# [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
-# [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
-# [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
-# [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
-# [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
-# [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
-# [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -100,6 +85,21 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonUserSettings_SpatialAudioSettings {
+# [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
+# [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
+# [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
+# [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
+# [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
+# [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
+# [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
+# [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
+# [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
+}
 }
 
 #[cfg(feature = "root-akcommonusersettings-types")]
@@ -932,7 +932,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

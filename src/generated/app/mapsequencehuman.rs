@@ -111,6 +111,69 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceHuman")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)]
+    pub struct MapSequenceHuman {
+        #[rename(name = "m_JobIntroUnit")]
+        pub m_job_intro_unit: crate::app::unit::Unit,
+        #[rename(name = "m_JobIntroKeyHelpType")]
+        pub m_job_intro_key_help_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[rename(name = "m_ReturnLabel")]
+        pub m_return_label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+        #[rename(name = "m_OldUnitX")]
+        pub m_old_unit_x: i32,
+        #[rename(name = "m_OldUnitZ")]
+        pub m_old_unit_z: i32,
+        #[rename(name = "m_OldCursorX")]
+        pub m_old_cursor_x: i32,
+        #[rename(name = "m_OldCursorZ")]
+        pub m_old_cursor_z: i32,
+        #[rename(name = "m_OldPickupX")]
+        pub m_old_pickup_x: i32,
+        #[rename(name = "m_OldPickupZ")]
+        pub m_old_pickup_z: i32,
+        #[rename(name = "m_EngageX")]
+        pub m_engage_x: i32,
+        #[rename(name = "m_EngageZ")]
+        pub m_engage_z: i32,
+        #[rename(name = "m_EnterX")]
+        pub m_enter_x: i32,
+        #[rename(name = "m_EnterZ")]
+        pub m_enter_z: i32,
+        #[rename(name = "m_IsEnemyAttackRange")]
+        pub m_is_enemy_attack_range: bool,
+        #[rename(name = "m_IsUpdateSupportSkill")]
+        pub m_is_update_support_skill: bool,
+        #[rename(name = "m_UpdateSupportSkillUnit")]
+        pub m_update_support_skill_unit: crate::app::unit::Unit,
+        #[rename(name = "m_OperateMode")]
+        pub m_operate_mode: crate::app::mapsequencehuman::MapSequenceHuman_OperateMode,
+        #[static_field]
+        #[rename(name = "PlayerMoveMask")]
+        pub player_move_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        #[static_field]
+        #[rename(name = "EnemyMoveMask")]
+        pub enemy_move_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        #[static_field]
+        #[rename(name = "FreeWeaponMask")]
+        pub free_weapon_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        #[static_field]
+        #[rename(name = "PickWeaponMask")]
+        pub pick_weapon_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        #[static_field]
+        #[rename(name = "WaitPickFreeCursor")]
+        pub wait_pick_free_cursor: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -357,69 +420,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 52 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceHuman")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)]
-    pub struct MapSequenceHuman {
-        #[rename(name = "m_JobIntroUnit")]
-        pub m_job_intro_unit: crate::app::unit::Unit,
-        #[rename(name = "m_JobIntroKeyHelpType")]
-        pub m_job_intro_key_help_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_ReturnLabel")]
-        pub m_return_label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
-        #[rename(name = "m_OldUnitX")]
-        pub m_old_unit_x: i32,
-        #[rename(name = "m_OldUnitZ")]
-        pub m_old_unit_z: i32,
-        #[rename(name = "m_OldCursorX")]
-        pub m_old_cursor_x: i32,
-        #[rename(name = "m_OldCursorZ")]
-        pub m_old_cursor_z: i32,
-        #[rename(name = "m_OldPickupX")]
-        pub m_old_pickup_x: i32,
-        #[rename(name = "m_OldPickupZ")]
-        pub m_old_pickup_z: i32,
-        #[rename(name = "m_EngageX")]
-        pub m_engage_x: i32,
-        #[rename(name = "m_EngageZ")]
-        pub m_engage_z: i32,
-        #[rename(name = "m_EnterX")]
-        pub m_enter_x: i32,
-        #[rename(name = "m_EnterZ")]
-        pub m_enter_z: i32,
-        #[rename(name = "m_IsEnemyAttackRange")]
-        pub m_is_enemy_attack_range: bool,
-        #[rename(name = "m_IsUpdateSupportSkill")]
-        pub m_is_update_support_skill: bool,
-        #[rename(name = "m_UpdateSupportSkillUnit")]
-        pub m_update_support_skill_unit: crate::app::unit::Unit,
-        #[rename(name = "m_OperateMode")]
-        pub m_operate_mode: crate::app::mapsequencehuman::MapSequenceHuman_OperateMode,
-        #[static_field]
-        #[rename(name = "PlayerMoveMask")]
-        pub player_move_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        #[static_field]
-        #[rename(name = "EnemyMoveMask")]
-        pub enemy_move_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        #[static_field]
-        #[rename(name = "FreeWeaponMask")]
-        pub free_weapon_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        #[static_field]
-        #[rename(name = "PickWeaponMask")]
-        pub pick_weapon_mask: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-        #[static_field]
-        #[rename(name = "WaitPickFreeCursor")]
-        pub wait_pick_free_cursor: f32,
     }
 }
 
@@ -10690,7 +10690,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

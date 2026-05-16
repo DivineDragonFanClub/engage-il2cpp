@@ -9,6 +9,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/force/Force.md"))]
+    #[::unity2::class(namespace = "App", name = "Force")]
+    #[parent(crate::system::object::Object)]
+    pub struct Force {
+        #[rename(name = "m_Head")]
+        pub m_head: crate::app::unit::Unit,
+        #[rename(name = "m_Tail")]
+        pub m_tail: crate::app::unit::Unit,
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::force::Force_Type,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/force/Force_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -99,18 +111,6 @@ mod __types {
         pub fn used_num() -> Self {
             Self { value: 7 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/force/Force.md"))]
-    #[::unity2::class(namespace = "App", name = "Force")]
-    #[parent(crate::system::object::Object)]
-    pub struct Force {
-        #[rename(name = "m_Head")]
-        pub m_head: crate::app::unit::Unit,
-        #[rename(name = "m_Tail")]
-        pub m_tail: crate::app::unit::Unit,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::force::Force_Type,
     }
 }
 
@@ -2328,7 +2328,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

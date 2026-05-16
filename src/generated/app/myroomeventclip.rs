@@ -12,20 +12,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomEventClip")]
-    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
-    pub struct MyRoomEventClip {
-        #[rename(name = "eventType")]
-        pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
-        #[rename(name = "eventLayer")]
-        pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
-        #[rename(name = "eventName")]
-        pub event_name: ::unity2::Il2CppString,
-        #[rename(name = "isOut")]
-        pub is_out: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]
     #[repr(C)]
     #[derive(
@@ -112,6 +98,20 @@ mod __types {
         pub fn sound() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventclip/MyRoomEventClip.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomEventClip")]
+    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+    pub struct MyRoomEventClip {
+        #[rename(name = "eventType")]
+        pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
+        #[rename(name = "eventLayer")]
+        pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
+        #[rename(name = "eventName")]
+        pub event_name: ::unity2::Il2CppString,
+        #[rename(name = "isOut")]
+        pub is_out: bool,
     }
 }
 
@@ -338,7 +338,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

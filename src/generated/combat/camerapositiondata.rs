@@ -13,33 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CameraPositionData {
-        #[rename(name = "ShakeSetting")]
-        pub shake_setting:
-            crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        #[rename(name = "m_DrawCount")]
-        pub m_draw_count: crate::app::gameparam::GameParam_Holder,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct CameraPositionData_CameraShakeSettings {
-        #[rename(name = "ShakeDuration")]
-        pub shake_duration: i32,
-        #[rename(name = "ShakeRadius")]
-        pub shake_radius: f32,
-        #[rename(name = "ArmorStepDuraton")]
-        pub armor_step_duraton: i32,
-        #[rename(name = "ArmorStepMagnitude")]
-        pub armor_step_magnitude: f32,
-        #[rename(name = "ScaleCurveDistance")]
-        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]
     #[repr(C)]
     #[derive(
@@ -95,10 +68,129 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct CameraPositionData_CameraShakeSettings {
+        #[rename(name = "ShakeDuration")]
+        pub shake_duration: i32,
+        #[rename(name = "ShakeRadius")]
+        pub shake_radius: f32,
+        #[rename(name = "ArmorStepDuraton")]
+        pub armor_step_duraton: i32,
+        #[rename(name = "ArmorStepMagnitude")]
+        pub armor_step_magnitude: f32,
+        #[rename(name = "ScaleCurveDistance")]
+        pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CameraPositionData {
+        #[rename(name = "ShakeSetting")]
+        pub shake_setting:
+            crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
+        #[rename(name = "m_DrawCount")]
+        pub m_draw_count: crate::app::gameparam::GameParam_Holder,
+    }
 }
 
 #[cfg(feature = "combat-camerapositiondata-types")]
 pub use __types::*;
+
+#[cfg(feature = "combat-camerapositiondata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraPositionData_CameraShakeSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CameraPositionData_CameraShakeSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CameraPositionData_CameraShakeSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-camerapositiondata")]
+pub trait ICameraPositionData_CameraShakeSettingsMethods:
+    ICameraPositionData_CameraShakeSettings
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < CameraPositionData_CameraShakeSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __CameraPositionData_CameraShakeSettings_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "combat-camerapositiondata")]
+impl<__T: ICameraPositionData_CameraShakeSettings> ICameraPositionData_CameraShakeSettingsMethods
+    for __T
+{
+}
+
+#[cfg(feature = "combat-camerapositiondata")]
+impl CameraPositionData_CameraShakeSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraPositionData_CameraShakeSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "combat-camerapositiondata")]
 #[doc(hidden)]
@@ -2555,98 +2647,6 @@ impl CameraPositionData {
 }
 
 #[cfg(feature = "combat-camerapositiondata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraPositionData_CameraShakeSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraPositionData_CameraShakeSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CameraPositionData_CameraShakeSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CameraPositionData_CameraShakeSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-pub trait ICameraPositionData_CameraShakeSettingsMethods:
-    ICameraPositionData_CameraShakeSettings
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < CameraPositionData_CameraShakeSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CameraPositionData_CameraShakeSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl<__T: ICameraPositionData_CameraShakeSettings> ICameraPositionData_CameraShakeSettingsMethods
-    for __T
-{
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData_CameraShakeSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraPositionData_CameraShakeSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
 pub mod prelude {
     pub use super::CameraPositionData;
     pub use super::CameraPositionData_CameraShakeSettings;
@@ -2659,7 +2659,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

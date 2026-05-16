@@ -10,32 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))]
-    #[::unity2::class(namespace = "App", name = "AI")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
-    pub struct AI {
-        #[rename(name = "m_Order")]
-        pub m_order: crate::app::aiorder::AIOrder,
-        #[rename(name = "m_Think")]
-        pub m_think: crate::app::aithink::AIThink,
-        #[rename(name = "m_Cannon")]
-        pub m_cannon: crate::app::aicannon::AICannon,
-        #[rename(name = "m_InterruptAttack")]
-        pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::ai::AI_Seq,
-        #[rename(name = "m_Crossfire")]
-        pub m_crossfire: bool,
-        #[rename(name = "m_IsTargetUpdate")]
-        pub m_is_target_update: bool,
-        #[rename(name = "m_IsVersus")]
-        pub m_is_versus: bool,
-        #[rename(name = "m_IsVersusCasual")]
-        pub m_is_versus_casual: bool,
-        #[rename(name = "m_IsVersusRankedOrMock")]
-        pub m_is_versus_ranked_or_mock: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md"))]
     #[repr(C)]
     #[derive(
@@ -94,6 +68,32 @@ mod __types {
         pub fn finalize() -> Self {
             Self { value: 5 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ai/AI.md"))]
+    #[::unity2::class(namespace = "App", name = "AI")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
+    pub struct AI {
+        #[rename(name = "m_Order")]
+        pub m_order: crate::app::aiorder::AIOrder,
+        #[rename(name = "m_Think")]
+        pub m_think: crate::app::aithink::AIThink,
+        #[rename(name = "m_Cannon")]
+        pub m_cannon: crate::app::aicannon::AICannon,
+        #[rename(name = "m_InterruptAttack")]
+        pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::ai::AI_Seq,
+        #[rename(name = "m_Crossfire")]
+        pub m_crossfire: bool,
+        #[rename(name = "m_IsTargetUpdate")]
+        pub m_is_target_update: bool,
+        #[rename(name = "m_IsVersus")]
+        pub m_is_versus: bool,
+        #[rename(name = "m_IsVersusCasual")]
+        pub m_is_versus_casual: bool,
+        #[rename(name = "m_IsVersusRankedOrMock")]
+        pub m_is_versus_ranked_or_mock: bool,
     }
 }
 
@@ -2014,7 +2014,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -11,11 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceReplay")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)]
-    pub struct MapSequenceReplay {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -87,6 +82,11 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceReplay")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)]
+    pub struct MapSequenceReplay {}
 }
 
 #[cfg(feature = "app-mapsequencereplay-types")]
@@ -1019,7 +1019,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

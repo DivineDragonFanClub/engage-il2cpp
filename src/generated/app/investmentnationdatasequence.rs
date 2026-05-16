@@ -21,6 +21,20 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct InvestmentNationDataSequence_DecideEventHandler {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "InvestmentNationDataSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)]
+    pub struct InvestmentNationDataSequence {
+        #[static_field]
+        #[rename(name = "ResNameC")]
+        pub res_name_c: ::unity2::Il2CppString,
+        #[rename(name = "m_window")]
+        pub m_window: crate::app::investmentnationdatamenu::InvestmentNationDataMenu,
+        #[static_field]
+        #[rename(name = "m_nationIndex")]
+        pub m_nation_index: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -63,20 +77,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "InvestmentNationDataSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)]
-    pub struct InvestmentNationDataSequence {
-        #[static_field]
-        #[rename(name = "ResNameC")]
-        pub res_name_c: ::unity2::Il2CppString,
-        #[rename(name = "m_window")]
-        pub m_window: crate::app::investmentnationdatamenu::InvestmentNationDataMenu,
-        #[static_field]
-        #[rename(name = "m_nationIndex")]
-        pub m_nation_index: i32,
     }
 }
 
@@ -923,7 +923,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -7,21 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptwProperty.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptwProperty")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_Property)]
-    pub struct DebugCommandline_OptwProperty {
-        #[rename(name = "m_Attribute")]
-        pub m_attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
-        #[rename(name = "m_IsValid")]
-        pub m_is_valid: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionWildcardAttribute.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptionWildcardAttribute")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
-    pub struct DebugCommandline_OptionWildcardAttribute {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty")]
     #[parent(crate::app::debugcommandline::DebugCommandline_Property)]
@@ -31,26 +16,6 @@ mod __types {
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::debugcommandline::DebugCommandline_OptProperty_Setter,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_IntSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.IntSetter")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
-    pub struct DebugCommandline_OptProperty_IntSetter {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_Setter.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.Setter")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugCommandline_OptProperty_Setter {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.BoolSetter")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
-    pub struct DebugCommandline_OptProperty_BoolSetter {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.FloatSetter")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
-    pub struct DebugCommandline_OptProperty_FloatSetter {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_Property.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandline.Property")]
@@ -66,365 +31,63 @@ mod __types {
         pub m_info: crate::system::reflection::propertyinfo::PropertyInfo,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptionAttribute")]
-    #[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
-    pub struct DebugCommandline_OptionAttribute {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptBaseAttribute.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandline.OptBaseAttribute")]
     pub struct DebugCommandline_OptBaseAttribute {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.BoolSetter")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
+    pub struct DebugCommandline_OptProperty_BoolSetter {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_StringSetter.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.StringSetter")]
     #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
     pub struct DebugCommandline_OptProperty_StringSetter {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptwProperty.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptwProperty")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_Property)]
+    pub struct DebugCommandline_OptwProperty {
+        #[rename(name = "m_Attribute")]
+        pub m_attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
+        #[rename(name = "m_IsValid")]
+        pub m_is_valid: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_Setter.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.Setter")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugCommandline_OptProperty_Setter {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_IntSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.IntSetter")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
+    pub struct DebugCommandline_OptProperty_IntSetter {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandline")]
     #[parent(crate::system::object::Object)]
     pub struct DebugCommandline {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptionAttribute")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
+    pub struct DebugCommandline_OptionAttribute {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionWildcardAttribute.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptionWildcardAttribute")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
+    pub struct DebugCommandline_OptionWildcardAttribute {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.FloatSetter")]
+    #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
+    pub struct DebugCommandline_OptProperty_FloatSetter {}
 }
 
 #[cfg(feature = "app-debugcommandline-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-debugcommandline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptwProperty_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: debugcommandline :: DebugCommandline_OptionWildcardAttribute as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugCommandline_OptwProperty,
-        info: crate::system::reflection::propertyinfo::PropertyInfo,
-        attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandline_OptwProperty,
-            crate::system::reflection::propertyinfo::PropertyInfo,
-            crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, attribute, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_process {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
-                "Process",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
-                    "Process",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn process(
-        this: DebugCommandline_OptwProperty,
-        obj: crate::system::object::Object,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        arg_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DebugCommandline_OptwProperty,
-            crate::system::object::Object,
-            ::unity2::Array<::unity2::Il2CppString>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process::get_offset() as isize),
-        );
-        inner(this, obj, args, arg_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sort_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
-                "get_SortValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
-                    "get_SortValue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sort_value(
-        this: DebugCommandline_OptwProperty,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(DebugCommandline_OptwProperty, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sort_value::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptwPropertyMethods: IDebugCommandline_OptwProperty {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` overload"]
-    fn ctor(
-        self,
-        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
-        attribute: impl ::core::convert::Into<
-            crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_OptwProperty_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::convert::Into::into(attribute),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
-    fn process(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        arg_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_OptwProperty_unity2_raw::process(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(args),
-                ::core::convert::Into::into(arg_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_SortValue()` overload"]
-    fn get_sort_value(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_OptwProperty_unity2_raw::get_sort_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptwProperty> IDebugCommandline_OptwPropertyMethods for __T {}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptwProperty {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` — overload selector"]
-    pub fn new(
-        info: crate::system::reflection::propertyinfo::PropertyInfo,
-        attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptwProperty),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_OptwPropertyMethods>::ctor(this, info, attribute);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptionWildcardAttribute_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptionWildcardAttribute as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptionWildcardAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugCommandline_OptionWildcardAttribute,
-        pattern: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandline_OptionWildcardAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, pattern, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptionWildcardAttributeMethods:
-    IDebugCommandline_OptionWildcardAttribute
-{
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, pattern: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = < DebugCommandline_OptionWildcardAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptionWildcardAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(pattern),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptionWildcardAttribute>
-    IDebugCommandline_OptionWildcardAttributeMethods for __T
-{
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptionWildcardAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(pattern: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptionWildcardAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_OptionWildcardAttributeMethods>::ctor(this, pattern);
-        this
-    }
-}
 
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
@@ -670,7 +333,329 @@ impl DebugCommandline_OptProperty {
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
+mod __DebugCommandline_Property_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugCommandline_Property,
+        info: crate::system::reflection::propertyinfo::PropertyInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugCommandline_Property,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, info, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
+                "Process",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
+                    "Process",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process(
+        this: DebugCommandline_Property,
+        obj: crate::system::object::Object,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        arg_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DebugCommandline_Property,
+            crate::system::object::Object,
+            ::unity2::Array<::unity2::Il2CppString>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process::get_offset() as isize),
+        );
+        inner(this, obj, args, arg_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sort_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
+                "get_SortValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
+                    "get_SortValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sort_value(
+        this: DebugCommandline_Property,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DebugCommandline_Property, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sort_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+pub trait IDebugCommandline_PropertyMethods: IDebugCommandline_Property {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    fn ctor(
+        self,
+        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_Property_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(info),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
+    fn process(
+        self,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        arg_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_Property_unity2_raw::process(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(arg_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SortValue()` overload"]
+    fn get_sort_value(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_Property_unity2_raw::get_sort_value(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl<__T: IDebugCommandline_Property> IDebugCommandline_PropertyMethods for __T {}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_Property {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]
+    pub fn new(info: crate::system::reflection::propertyinfo::PropertyInfo) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_Property),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_PropertyMethods>::ctor(this, info);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugCommandline_OptBaseAttribute_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptBaseAttribute as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptBaseAttribute as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugCommandline_OptBaseAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugCommandline_OptBaseAttribute,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+pub trait IDebugCommandline_OptBaseAttributeMethods: IDebugCommandline_OptBaseAttribute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_OptBaseAttribute as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_OptBaseAttribute_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl<__T: IDebugCommandline_OptBaseAttribute> IDebugCommandline_OptBaseAttributeMethods for __T {}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptBaseAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptBaseAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptBaseAttributeMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -681,7 +666,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
                 "Set",
                 3,
                 param_types,
@@ -693,7 +678,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
                     "Set",
                     e
                 ),
@@ -706,14 +691,14 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         }
     }
     pub unsafe fn set(
-        this: DebugCommandline_OptProperty_IntSetter,
+        this: DebugCommandline_OptProperty_BoolSetter,
         obj: crate::system::object::Object,
         property_info: crate::system::reflection::propertyinfo::PropertyInfo,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_IntSetter,
+            DebugCommandline_OptProperty_BoolSetter,
             crate::system::object::Object,
             crate::system::reflection::propertyinfo::PropertyInfo,
             ::unity2::Il2CppString,
@@ -734,7 +719,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
                 "get_IsNeedValue",
                 0,
                 param_types,
@@ -746,7 +731,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
                     "get_IsNeedValue",
                     e
                 ),
@@ -759,11 +744,11 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         }
     }
     pub unsafe fn get_is_need_value(
-        this: DebugCommandline_OptProperty_IntSetter,
+        this: DebugCommandline_OptProperty_BoolSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_IntSetter,
+            DebugCommandline_OptProperty_BoolSetter,
             ::unity2::OptionalMethod,
         ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -781,7 +766,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -793,7 +778,7 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -806,11 +791,11 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DebugCommandline_OptProperty_IntSetter,
+        this: DebugCommandline_OptProperty_BoolSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_IntSetter,
+            DebugCommandline_OptProperty_BoolSetter,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -822,8 +807,8 @@ mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptProperty_IntSetterMethods:
-    IDebugCommandline_OptProperty_IntSetter
+pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
+    IDebugCommandline_OptProperty_BoolSetter
 {
     #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
     fn set(
@@ -833,8 +818,8 @@ pub trait IDebugCommandline_OptProperty_IntSetterMethods:
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_IntSetter_unity2_raw::set(
+            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(obj),
                 ::core::convert::Into::into(property_info),
@@ -846,8 +831,8 @@ pub trait IDebugCommandline_OptProperty_IntSetterMethods:
     #[doc = "`get_IsNeedValue()` overload"]
     fn get_is_need_value(self) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_IntSetter_unity2_raw::get_is_need_value(
+            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::get_is_need_value(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -856,8 +841,8 @@ pub trait IDebugCommandline_OptProperty_IntSetterMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_IntSetter_unity2_raw::ctor(
+            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -866,23 +851,484 @@ pub trait IDebugCommandline_OptProperty_IntSetterMethods:
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptProperty_IntSetter> IDebugCommandline_OptProperty_IntSetterMethods
+impl<__T: IDebugCommandline_OptProperty_BoolSetter> IDebugCommandline_OptProperty_BoolSetterMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_IntSetter {
+impl DebugCommandline_OptProperty_BoolSetter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_IntSetter),
+                ::core::stringify!(DebugCommandline_OptProperty_BoolSetter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptProperty_IntSetterMethods>::ctor(this);
+        <Self as IDebugCommandline_OptProperty_BoolSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                "Set",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    "Set",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set(
+        this: DebugCommandline_OptProperty_StringSetter,
+        obj: crate::system::object::Object,
+        property_info: crate::system::reflection::propertyinfo::PropertyInfo,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            DebugCommandline_OptProperty_StringSetter,
+            crate::system::object::Object,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set::get_offset() as isize),
+        );
+        inner(this, obj, property_info, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_need_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                "get_IsNeedValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    "get_IsNeedValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_need_value(
+        this: DebugCommandline_OptProperty_StringSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            DebugCommandline_OptProperty_StringSetter,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_need_value::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugCommandline_OptProperty_StringSetter,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugCommandline_OptProperty_StringSetter,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+pub trait IDebugCommandline_OptProperty_StringSetterMethods:
+    IDebugCommandline_OptProperty_StringSetter
+{
+    #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
+    fn set(
+        self,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        property_info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        value: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_StringSetter_unity2_raw::set(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(property_info),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsNeedValue()` overload"]
+    fn get_is_need_value(self) -> bool {
+        unsafe {
+            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_StringSetter_unity2_raw::get_is_need_value(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_StringSetter_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl<__T: IDebugCommandline_OptProperty_StringSetter>
+    IDebugCommandline_OptProperty_StringSetterMethods for __T
+{
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptProperty_StringSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptProperty_StringSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptProperty_StringSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugCommandline_OptwProperty_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < crate :: app :: debugcommandline :: DebugCommandline_OptionWildcardAttribute as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: DebugCommandline_OptwProperty,
+        info: crate::system::reflection::propertyinfo::PropertyInfo,
+        attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            DebugCommandline_OptwProperty,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+            crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, info, attribute, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_process {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
+                "Process",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
+                    "Process",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn process(
+        this: DebugCommandline_OptwProperty,
+        obj: crate::system::object::Object,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        arg_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            DebugCommandline_OptwProperty,
+            crate::system::object::Object,
+            ::unity2::Array<::unity2::Il2CppString>,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_process::get_offset() as isize),
+        );
+        inner(this, obj, args, arg_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sort_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::class(),
+                "get_SortValue",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DebugCommandline_OptwProperty as ::unity2::ClassIdentity>::NAME,
+                    "get_SortValue",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sort_value(
+        this: DebugCommandline_OptwProperty,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(DebugCommandline_OptwProperty, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_sort_value::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+pub trait IDebugCommandline_OptwPropertyMethods: IDebugCommandline_OptwProperty {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` overload"]
+    fn ctor(
+        self,
+        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+        attribute: impl ::core::convert::Into<
+            crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_OptwProperty_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(info),
+                ::core::convert::Into::into(attribute),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
+    fn process(
+        self,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+        arg_index: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_OptwProperty_unity2_raw::process(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(args),
+                ::core::convert::Into::into(arg_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_SortValue()` overload"]
+    fn get_sort_value(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <DebugCommandline_OptwProperty as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DebugCommandline_OptwProperty_unity2_raw::get_sort_value(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl<__T: IDebugCommandline_OptwProperty> IDebugCommandline_OptwPropertyMethods for __T {}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptwProperty {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` — overload selector"]
+    pub fn new(
+        info: crate::system::reflection::propertyinfo::PropertyInfo,
+        attribute: crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptwProperty),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptwPropertyMethods>::ctor(this, info, attribute);
         this
     }
 }
@@ -1119,7 +1565,7 @@ impl DebugCommandline_OptProperty_Setter {
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
+mod __DebugCommandline_OptProperty_IntSetter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1130,7 +1576,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
                 "Set",
                 3,
                 param_types,
@@ -1142,7 +1588,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
                     "Set",
                     e
                 ),
@@ -1155,14 +1601,14 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         }
     }
     pub unsafe fn set(
-        this: DebugCommandline_OptProperty_BoolSetter,
+        this: DebugCommandline_OptProperty_IntSetter,
         obj: crate::system::object::Object,
         property_info: crate::system::reflection::propertyinfo::PropertyInfo,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_BoolSetter,
+            DebugCommandline_OptProperty_IntSetter,
             crate::system::object::Object,
             crate::system::reflection::propertyinfo::PropertyInfo,
             ::unity2::Il2CppString,
@@ -1183,7 +1629,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
                 "get_IsNeedValue",
                 0,
                 param_types,
@@ -1195,7 +1641,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
                     "get_IsNeedValue",
                     e
                 ),
@@ -1208,11 +1654,11 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         }
     }
     pub unsafe fn get_is_need_value(
-        this: DebugCommandline_OptProperty_BoolSetter,
+        this: DebugCommandline_OptProperty_IntSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_BoolSetter,
+            DebugCommandline_OptProperty_IntSetter,
             ::unity2::OptionalMethod,
         ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1230,7 +1676,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1242,7 +1688,7 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_BoolSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_IntSetter as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1255,11 +1701,11 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DebugCommandline_OptProperty_BoolSetter,
+        this: DebugCommandline_OptProperty_IntSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_BoolSetter,
+            DebugCommandline_OptProperty_IntSetter,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1271,8 +1717,8 @@ mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
-    IDebugCommandline_OptProperty_BoolSetter
+pub trait IDebugCommandline_OptProperty_IntSetterMethods:
+    IDebugCommandline_OptProperty_IntSetter
 {
     #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
     fn set(
@@ -1282,8 +1728,8 @@ pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::set(
+            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_IntSetter_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(obj),
                 ::core::convert::Into::into(property_info),
@@ -1295,8 +1741,8 @@ pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
     #[doc = "`get_IsNeedValue()` overload"]
     fn get_is_need_value(self) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::get_is_need_value(
+            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_IntSetter_unity2_raw::get_is_need_value(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1305,8 +1751,8 @@ pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_BoolSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_BoolSetter_unity2_raw::ctor(
+            let __receiver = < DebugCommandline_OptProperty_IntSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_IntSetter_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1315,23 +1761,23 @@ pub trait IDebugCommandline_OptProperty_BoolSetterMethods:
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptProperty_BoolSetter> IDebugCommandline_OptProperty_BoolSetterMethods
+impl<__T: IDebugCommandline_OptProperty_IntSetter> IDebugCommandline_OptProperty_IntSetterMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_BoolSetter {
+impl DebugCommandline_OptProperty_IntSetter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_BoolSetter),
+                ::core::stringify!(DebugCommandline_OptProperty_IntSetter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptProperty_BoolSetterMethods>::ctor(this);
+        <Self as IDebugCommandline_OptProperty_IntSetterMethods>::ctor(this);
         this
     }
 }
@@ -1339,452 +1785,213 @@ impl DebugCommandline_OptProperty_BoolSetter {
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptProperty_FloatSetter_unity2_raw {
+mod __DebugCommandline_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline {
+    pub fn parse<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> M0 {
+        static OPEN: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
-                "Set",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set(
-        this: DebugCommandline_OptProperty_FloatSetter,
-        obj: crate::system::object::Object,
-        property_info: crate::system::reflection::propertyinfo::PropertyInfo,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DebugCommandline_OptProperty_FloatSetter,
-            crate::system::object::Object,
-            crate::system::reflection::propertyinfo::PropertyInfo,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
-        inner(this, obj, property_info, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_need_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
-                "get_IsNeedValue",
+            ::unity2::lookup::method_info_on_class(
+                <DebugCommandline as ::unity2::ClassIdentity>::class(),
+                "Parse",
                 0,
-                param_types,
-                false,
             )
         });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
-                    "get_IsNeedValue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_need_value(
-        this: DebugCommandline_OptProperty_FloatSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DebugCommandline_OptProperty_FloatSetter,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_need_value::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugCommandline_OptProperty_FloatSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandline_OptProperty_FloatSetter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptProperty_FloatSetterMethods:
-    IDebugCommandline_OptProperty_FloatSetter
-{
-    #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
-    fn set(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-        property_info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
+                "Parse",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(property_info),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __f: extern "C" fn(::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::option::Option::Some(__mi_opaque))
         }
     }
-    #[doc = "`get_IsNeedValue()` overload"]
-    fn get_is_need_value(self) -> bool {
-        unsafe {
-            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::get_is_need_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptProperty_FloatSetter>
-    IDebugCommandline_OptProperty_FloatSetterMethods for __T
-{
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_FloatSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_FloatSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_OptProperty_FloatSetterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_Property_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugCommandline_Property,
-        info: crate::system::reflection::propertyinfo::PropertyInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandline_Property,
-            crate::system::reflection::propertyinfo::PropertyInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, info, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_process {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
-                "Process",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
-                    "Process",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn process(
-        this: DebugCommandline_Property,
-        obj: crate::system::object::Object,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        arg_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            DebugCommandline_Property,
-            crate::system::object::Object,
-            ::unity2::Array<::unity2::Il2CppString>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process::get_offset() as isize),
-        );
-        inner(this, obj, args, arg_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sort_value {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_Property as ::unity2::ClassIdentity>::class(),
-                "get_SortValue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_Property as ::unity2::ClassIdentity>::NAME,
-                    "get_SortValue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sort_value(
-        this: DebugCommandline_Property,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(DebugCommandline_Property, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sort_value::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_PropertyMethods: IDebugCommandline_Property {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    fn ctor(
-        self,
-        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_Property_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
-    fn process(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
+    pub fn parse_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        arg_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <DebugCommandline as ::unity2::ClassIdentity>::class(),
+                "Parse",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
+                "Parse",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
         unsafe {
-            let __receiver =
-                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_Property_unity2_raw::process(
-                __receiver,
+            let __f: extern "C" fn(
+                ::unity2::Array<::unity2::Il2CppString>,
+                ::unity2::OptionalMethod,
+            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(args),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn parse_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        obj: impl ::core::convert::Into<M0>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <DebugCommandline as ::unity2::ClassIdentity>::class(),
+                "Parse",
+                1,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
+                "Parse",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(M0, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(obj),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+    pub fn parse_4<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        obj: impl ::core::convert::Into<M0>,
+        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(
+                <DebugCommandline as ::unity2::ClassIdentity>::class(),
+                "Parse",
+                2,
+            )
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<
+            ::std::sync::Mutex<
+                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
+            >,
+        > = ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => panic!(
+                "method lookup failed: {}::{}: {}",
+                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
+                "Parse",
+                e
+            ),
+        };
+        let __cache =
+            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard.entry(__key).or_insert_with(|| {
+                ::unity2::il2cpp::generic::create_generic_method_info(
+                    __open,
+                    &[<M0 as ::unity2::IlType>::il_type()],
+                )
+            })
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                M0,
+                ::unity2::Array<::unity2::Il2CppString>,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
                 ::core::convert::Into::into(obj),
                 ::core::convert::Into::into(args),
-                ::core::convert::Into::into(arg_index),
-                ::core::option::Option::None,
+                ::core::option::Option::Some(__mi_opaque),
             )
         }
-    }
-    #[doc = "`get_SortValue()` overload"]
-    fn get_sort_value(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <DebugCommandline_Property as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_Property_unity2_raw::get_sort_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_Property> IDebugCommandline_PropertyMethods for __T {}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_Property {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]
-    pub fn new(info: crate::system::reflection::propertyinfo::PropertyInfo) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_Property),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_PropertyMethods>::ctor(this, info);
-        this
     }
 }
 
@@ -2009,7 +2216,7 @@ impl DebugCommandline_OptionAttribute {
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptBaseAttribute_unity2_raw {
+mod __DebugCommandline_OptionWildcardAttribute_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2018,11 +2225,12 @@ mod __DebugCommandline_OptBaseAttribute_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptBaseAttribute as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptionWildcardAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -2032,7 +2240,7 @@ mod __DebugCommandline_OptBaseAttribute_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptBaseAttribute as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptionWildcardAttribute as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2045,32 +2253,34 @@ mod __DebugCommandline_OptBaseAttribute_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DebugCommandline_OptBaseAttribute,
+        this: DebugCommandline_OptionWildcardAttribute,
+        pattern: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DebugCommandline_OptBaseAttribute,
+            DebugCommandline_OptionWildcardAttribute,
+            ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(this, pattern, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptBaseAttributeMethods: IDebugCommandline_OptBaseAttribute {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IDebugCommandline_OptionWildcardAttributeMethods:
+    IDebugCommandline_OptionWildcardAttribute
+{
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, pattern: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver =
-                <DebugCommandline_OptBaseAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandline_OptBaseAttribute_unity2_raw::ctor(
+            let __receiver = < DebugCommandline_OptionWildcardAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptionWildcardAttribute_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(pattern),
                 ::core::option::Option::None,
             )
         }
@@ -2078,20 +2288,23 @@ pub trait IDebugCommandline_OptBaseAttributeMethods: IDebugCommandline_OptBaseAt
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptBaseAttribute> IDebugCommandline_OptBaseAttributeMethods for __T {}
+impl<__T: IDebugCommandline_OptionWildcardAttribute>
+    IDebugCommandline_OptionWildcardAttributeMethods for __T
+{
+}
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptBaseAttribute {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl DebugCommandline_OptionWildcardAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(pattern: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptBaseAttribute),
+                ::core::stringify!(DebugCommandline_OptionWildcardAttribute),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptBaseAttributeMethods>::ctor(this);
+        <Self as IDebugCommandline_OptionWildcardAttributeMethods>::ctor(this, pattern);
         this
     }
 }
@@ -2099,7 +2312,7 @@ impl DebugCommandline_OptBaseAttribute {
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
+mod __DebugCommandline_OptProperty_FloatSetter_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2110,7 +2323,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: propertyinfo :: PropertyInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
                 "Set",
                 3,
                 param_types,
@@ -2122,7 +2335,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
                     "Set",
                     e
                 ),
@@ -2135,14 +2348,14 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         }
     }
     pub unsafe fn set(
-        this: DebugCommandline_OptProperty_StringSetter,
+        this: DebugCommandline_OptProperty_FloatSetter,
         obj: crate::system::object::Object,
         property_info: crate::system::reflection::propertyinfo::PropertyInfo,
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_StringSetter,
+            DebugCommandline_OptProperty_FloatSetter,
             crate::system::object::Object,
             crate::system::reflection::propertyinfo::PropertyInfo,
             ::unity2::Il2CppString,
@@ -2163,7 +2376,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
                 "get_IsNeedValue",
                 0,
                 param_types,
@@ -2175,7 +2388,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
                     "get_IsNeedValue",
                     e
                 ),
@@ -2188,11 +2401,11 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         }
     }
     pub unsafe fn get_is_need_value(
-        this: DebugCommandline_OptProperty_StringSetter,
+        this: DebugCommandline_OptProperty_FloatSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_StringSetter,
+            DebugCommandline_OptProperty_FloatSetter,
             ::unity2::OptionalMethod,
         ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -2210,7 +2423,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::class(),
+                <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -2222,7 +2435,7 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DebugCommandline_OptProperty_StringSetter as ::unity2::ClassIdentity>::NAME,
+                    <DebugCommandline_OptProperty_FloatSetter as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2235,11 +2448,11 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: DebugCommandline_OptProperty_StringSetter,
+        this: DebugCommandline_OptProperty_FloatSetter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            DebugCommandline_OptProperty_StringSetter,
+            DebugCommandline_OptProperty_FloatSetter,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -2251,8 +2464,8 @@ mod __DebugCommandline_OptProperty_StringSetter_unity2_raw {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-pub trait IDebugCommandline_OptProperty_StringSetterMethods:
-    IDebugCommandline_OptProperty_StringSetter
+pub trait IDebugCommandline_OptProperty_FloatSetterMethods:
+    IDebugCommandline_OptProperty_FloatSetter
 {
     #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
     fn set(
@@ -2262,8 +2475,8 @@ pub trait IDebugCommandline_OptProperty_StringSetterMethods:
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_StringSetter_unity2_raw::set(
+            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(obj),
                 ::core::convert::Into::into(property_info),
@@ -2275,8 +2488,8 @@ pub trait IDebugCommandline_OptProperty_StringSetterMethods:
     #[doc = "`get_IsNeedValue()` overload"]
     fn get_is_need_value(self) -> bool {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_StringSetter_unity2_raw::get_is_need_value(
+            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::get_is_need_value(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2285,8 +2498,8 @@ pub trait IDebugCommandline_OptProperty_StringSetterMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < DebugCommandline_OptProperty_StringSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DebugCommandline_OptProperty_StringSetter_unity2_raw::ctor(
+            let __receiver = < DebugCommandline_OptProperty_FloatSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __DebugCommandline_OptProperty_FloatSetter_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2295,237 +2508,24 @@ pub trait IDebugCommandline_OptProperty_StringSetterMethods:
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl<__T: IDebugCommandline_OptProperty_StringSetter>
-    IDebugCommandline_OptProperty_StringSetterMethods for __T
+impl<__T: IDebugCommandline_OptProperty_FloatSetter>
+    IDebugCommandline_OptProperty_FloatSetterMethods for __T
 {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_StringSetter {
+impl DebugCommandline_OptProperty_FloatSetter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_StringSetter),
+                ::core::stringify!(DebugCommandline_OptProperty_FloatSetter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptProperty_StringSetterMethods>::ctor(this);
+        <Self as IDebugCommandline_OptProperty_FloatSetterMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-debugcommandline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandline_unity2_raw {
-    use super::*;
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline {
-    pub fn parse<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>() -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DebugCommandline as ::unity2::ClassIdentity>::class(),
-                "Parse",
-                0,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
-                "Parse",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(::unity2::OptionalMethod) -> M0 =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(::core::option::Option::Some(__mi_opaque))
-        }
-    }
-    pub fn parse_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DebugCommandline as ::unity2::ClassIdentity>::class(),
-                "Parse",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
-                "Parse",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                ::unity2::Array<::unity2::Il2CppString>,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn parse_3<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        obj: impl ::core::convert::Into<M0>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DebugCommandline as ::unity2::ClassIdentity>::class(),
-                "Parse",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
-                "Parse",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(M0, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn parse_4<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        obj: impl ::core::convert::Into<M0>,
-        args: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DebugCommandline as ::unity2::ClassIdentity>::class(),
-                "Parse",
-                2,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DebugCommandline as ::unity2::ClassIdentity>::NAME,
-                "Parse",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                M0,
-                ::unity2::Array<::unity2::Il2CppString>,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(obj),
-                ::core::convert::Into::into(args),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
     }
 }
 

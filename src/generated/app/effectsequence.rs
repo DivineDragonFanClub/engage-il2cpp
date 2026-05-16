@@ -12,6 +12,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "EffectSequence")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
+    pub struct EffectSequence {
+        #[rename(name = "m_Effects")]
+        pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -62,14 +70,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "EffectSequence")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
-    pub struct EffectSequence {
-        #[rename(name = "m_Effects")]
-        pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
     }
 }
 
@@ -1204,7 +1204,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

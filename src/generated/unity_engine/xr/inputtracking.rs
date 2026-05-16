@@ -9,28 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "InputTracking")]
-    #[parent(crate::system::object::Object)]
-    pub struct InputTracking {
-        #[static_field]
-        #[rename(name = "trackingAcquired")]
-        pub tracking_acquired:
-            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "trackingLost")]
-        pub tracking_lost:
-            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "nodeAdded")]
-        pub node_added:
-            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-        #[static_field]
-        #[rename(name = "nodeRemoved")]
-        pub node_removed:
-            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputtracking/InputTracking_TrackingStateEventType.md"))]
     #[repr(C)]
     #[derive(
@@ -81,6 +59,28 @@ mod __types {
         pub fn tracking_lost() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/inputtracking/InputTracking.md"))]
+    #[::unity2::class(namespace = "UnityEngine.XR", name = "InputTracking")]
+    #[parent(crate::system::object::Object)]
+    pub struct InputTracking {
+        #[static_field]
+        #[rename(name = "trackingAcquired")]
+        pub tracking_acquired:
+            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
+        #[static_field]
+        #[rename(name = "trackingLost")]
+        pub tracking_lost:
+            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
+        #[static_field]
+        #[rename(name = "nodeAdded")]
+        pub node_added:
+            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
+        #[static_field]
+        #[rename(name = "nodeRemoved")]
+        pub node_removed:
+            crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState>,
     }
 }
 
@@ -230,7 +230,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -10,16 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NoticeBoardSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NoticeBoardSequence {
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
-        #[rename(name = "m_InfoMenuResult")]
-        pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticeboardsequence/NoticeBoardSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +68,16 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 5 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticeboardsequence/NoticeBoardSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NoticeBoardSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NoticeBoardSequence {
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,
+        #[rename(name = "m_InfoMenuResult")]
+        pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
     }
 }
 
@@ -803,7 +803,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

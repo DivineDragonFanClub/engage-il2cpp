@@ -13,6 +13,19 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapBattleInfoSequence {
+        #[rename(name = "m_AttackList")]
+        pub m_attack_list:
+            ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
+        #[rename(name = "m_HealRoot")]
+        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Heal")]
+        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo_SceneResult.md"))]
     #[repr(C)]
     #[derive(
@@ -67,19 +80,6 @@ mod __types {
         pub fn none() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapBattleInfoSequence {
-        #[rename(name = "m_AttackList")]
-        pub m_attack_list:
-            ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
-        #[rename(name = "m_HealRoot")]
-        pub m_heal_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Heal")]
-        pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md"))]
@@ -2258,7 +2258,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

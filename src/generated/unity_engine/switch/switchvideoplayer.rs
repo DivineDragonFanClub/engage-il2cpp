@@ -11,6 +11,21 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
+    #[parent(crate::system::object::Object)]
+    pub struct SwitchVideoPlayer {
+        #[rename(name = "m_Ptr")]
+        pub m_ptr: ::unity2::IntPtr,
+        #[rename(name = "m_MovieEvent")]
+        pub m_movie_event:
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
+        #[static_field]
+        #[rename(name = "OnMovieEvent")]
+        pub on_movie_event:
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Switch",
@@ -74,25 +89,126 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
-    #[parent(crate::system::object::Object)]
-    pub struct SwitchVideoPlayer {
-        #[rename(name = "m_Ptr")]
-        pub m_ptr: ::unity2::IntPtr,
-        #[rename(name = "m_MovieEvent")]
-        pub m_movie_event:
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
-        #[static_field]
-        #[rename(name = "OnMovieEvent")]
-        pub on_movie_event:
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
-    }
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SwitchVideoPlayer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fire_movie_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
+                "FireMovieEvent",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
+                    "FireMovieEvent",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fire_movie_event(
+        event_value: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_fire_movie_event::get_offset() as isize),
+        );
+        inner(event_value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+impl SwitchVideoPlayer {
+    #[doc = "`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
+    pub fn fire_movie_event(
+        event_value: impl ::core::convert::Into<
+            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
+        >,
+    ) -> () {
+        unsafe {
+            __SwitchVideoPlayer_unity2_raw::fire_movie_event(
+                ::core::convert::Into::into(event_value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SwitchVideoPlayer_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 #[doc(hidden)]
@@ -265,122 +381,6 @@ impl SwitchVideoPlayer_MovieEventDelegate {
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SwitchVideoPlayer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fire_movie_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: switch :: switchvideoplayer :: SwitchVideoPlayer_Event as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
-                "FireMovieEvent",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "FireMovieEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fire_movie_event(
-        event_value: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fire_movie_event::get_offset() as isize),
-        );
-        inner(event_value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SwitchVideoPlayer as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SwitchVideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer {
-    #[doc = "`FireMovieEvent(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
-    pub fn fire_movie_event(
-        event_value: impl ::core::convert::Into<
-            crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-        >,
-    ) -> () {
-        unsafe {
-            __SwitchVideoPlayer_unity2_raw::fire_movie_event(
-                ::core::convert::Into::into(event_value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SwitchVideoPlayer_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 pub mod prelude {
     pub use super::ISwitchVideoPlayer;
     pub use super::ISwitchVideoPlayer_MovieEventDelegate;
@@ -398,7 +398,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

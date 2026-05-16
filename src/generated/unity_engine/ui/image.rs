@@ -72,6 +72,102 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_Origin90 {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_Origin90 {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.Origin90";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_Origin90 {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_Origin90 {
+        pub fn bottom_left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn top_left() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn top_right() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn bottom_right() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Image_OriginVertical {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Image_OriginVertical {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Image.OriginVertical";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Image_OriginVertical {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Image_OriginVertical {
+        pub fn bottom() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn top() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin180.md"))]
     #[repr(C)]
     #[derive(
@@ -120,58 +216,6 @@ mod __types {
         }
 
         pub fn right() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_Type {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_Type {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.Type";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_Type {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_Type {
-        pub fn simple() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn sliced() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn tiled() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn filled() -> Self {
             Self { value: 3 }
         }
     }
@@ -228,58 +272,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Origin90.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Image_Origin90 {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Image_Origin90 {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Image.Origin90";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Image_Origin90 {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Image_Origin90 {
-        pub fn bottom_left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn top_left() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn top_right() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn bottom_right() -> Self {
-            Self { value: 3 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]
     #[repr(C)]
     #[derive(
@@ -324,7 +316,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_OriginVertical.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/image/Image_Type.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -333,14 +325,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Image_OriginVertical {
+    pub struct Image_Type {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Image_OriginVertical {
+    impl ::unity2::ClassIdentity for Image_Type {
         const NAMESPACE: &'static str = "UnityEngine.UI";
 
-        const NAME: &'static str = "Image.OriginVertical";
+        const NAME: &'static str = "Image.Type";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -349,7 +341,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Image_OriginVertical {
+    impl ::unity2::IlType for Image_Type {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -358,13 +350,21 @@ mod __types {
         }
     }
 
-    impl Image_OriginVertical {
-        pub fn bottom() -> Self {
+    impl Image_Type {
+        pub fn simple() -> Self {
             Self { value: 0 }
         }
 
-        pub fn top() -> Self {
+        pub fn sliced() -> Self {
             Self { value: 1 }
+        }
+
+        pub fn tiled() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn filled() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -4820,7 +4820,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -9,6 +9,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommunicationsettings/AkCommunicationSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommunicationSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommunicationSettings {
+        #[rename(name = "swigCPtr")]
+        pub swig_c_ptr: ::unity2::IntPtr,
+        #[rename(name = "swigCMemOwn")]
+        pub swig_c_mem_own: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommunicationsettings/AkCommunicationSettings_AkCommSystem.md"))]
     #[repr(C)]
     #[derive(
@@ -51,16 +61,6 @@ mod __types {
         pub fn ak_comm_system_htcs() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommunicationsettings/AkCommunicationSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommunicationSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommunicationSettings {
-        #[rename(name = "swigCPtr")]
-        pub swig_c_ptr: ::unity2::IntPtr,
-        #[rename(name = "swigCMemOwn")]
-        pub swig_c_mem_own: bool,
     }
 }
 
@@ -1458,7 +1458,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

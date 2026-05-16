@@ -12,6 +12,28 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))]
+    #[::unity2::class(namespace = "App", name = "HubLensFlare")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubLensFlare {
+        #[rename(name = "FlareScale")]
+        pub flare_scale: f32,
+        #[rename(name = "FlareMaxSize")]
+        pub flare_max_size: f32,
+        #[rename(name = "FlareZ")]
+        pub flare_z: f32,
+        #[rename(name = "RotateV")]
+        pub rotate_v: f32,
+        #[rename(name = "m_flare")]
+        pub m_flare: crate::system::collections::generic::list_1::List_1<
+            crate::app::hublensflare::HubLensFlare_Flare,
+        >,
+        #[rename(name = "m_sunPosition")]
+        pub m_sun_position: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_light")]
+        pub m_light: crate::unity_engine::gameobject::GameObject,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -45,28 +67,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))]
-    #[::unity2::class(namespace = "App", name = "HubLensFlare")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct HubLensFlare {
-        #[rename(name = "FlareScale")]
-        pub flare_scale: f32,
-        #[rename(name = "FlareMaxSize")]
-        pub flare_max_size: f32,
-        #[rename(name = "FlareZ")]
-        pub flare_z: f32,
-        #[rename(name = "RotateV")]
-        pub rotate_v: f32,
-        #[rename(name = "m_flare")]
-        pub m_flare: crate::system::collections::generic::list_1::List_1<
-            crate::app::hublensflare::HubLensFlare_Flare,
-        >,
-        #[rename(name = "m_sunPosition")]
-        pub m_sun_position: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_light")]
-        pub m_light: crate::unity_engine::gameobject::GameObject,
     }
 }
 

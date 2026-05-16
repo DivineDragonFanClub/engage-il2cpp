@@ -9,6 +9,24 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/backgroundmanager/BackgroundManager.md"))]
+    #[::unity2::class(namespace = "App", name = "BackgroundManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct BackgroundManager {
+        #[static_field]
+        #[rename(name = "s_Binder")]
+        pub s_binder: crate::app::bindholder::BindHolder,
+        #[static_field]
+        #[rename(name = "s_Camera")]
+        pub s_camera: crate::unity_engine::camera::Camera,
+        #[static_field]
+        #[rename(name = "s_IsCaptured")]
+        pub s_is_captured: bool,
+        #[static_field]
+        #[rename(name = "s_CaptureCount")]
+        pub s_capture_count: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/backgroundmanager/BackgroundManager_BindType.md"))]
     #[repr(C)]
     #[derive(
@@ -51,24 +69,6 @@ mod __types {
         pub fn use_prev_capture() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/backgroundmanager/BackgroundManager.md"))]
-    #[::unity2::class(namespace = "App", name = "BackgroundManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct BackgroundManager {
-        #[static_field]
-        #[rename(name = "s_Binder")]
-        pub s_binder: crate::app::bindholder::BindHolder,
-        #[static_field]
-        #[rename(name = "s_Camera")]
-        pub s_camera: crate::unity_engine::camera::Camera,
-        #[static_field]
-        #[rename(name = "s_IsCaptured")]
-        pub s_is_captured: bool,
-        #[static_field]
-        #[rename(name = "s_CaptureCount")]
-        pub s_capture_count: i32,
     }
 }
 
@@ -835,7 +835,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

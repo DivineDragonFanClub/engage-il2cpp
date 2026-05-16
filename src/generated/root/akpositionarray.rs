@@ -8,21 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akpositionarray/AkPositionArray.md"))]
-    #[::unity2::class(namespace = "", name = "AkPositionArray")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkPositionArray {
-        #[rename(name = "m_Buffer")]
-        pub m_buffer: ::unity2::IntPtr,
-        #[rename(name = "m_Current")]
-        pub m_current: ::unity2::IntPtr,
-        #[rename(name = "m_MaxCount")]
-        pub m_max_count: u32,
-        #[static_field]
-        #[rename(name = "FloatToInt")]
-        pub float_to_int: crate::root::akpositionarray::AkPositionArray_FloatInt32Union,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akpositionarray/AkPositionArray_FloatInt32Union.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -50,6 +35,21 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akpositionarray/AkPositionArray.md"))]
+    #[::unity2::class(namespace = "", name = "AkPositionArray")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkPositionArray {
+        #[rename(name = "m_Buffer")]
+        pub m_buffer: ::unity2::IntPtr,
+        #[rename(name = "m_Current")]
+        pub m_current: ::unity2::IntPtr,
+        #[rename(name = "m_MaxCount")]
+        pub m_max_count: u32,
+        #[static_field]
+        #[rename(name = "FloatToInt")]
+        pub float_to_int: crate::root::akpositionarray::AkPositionArray_FloatInt32Union,
     }
 }
 

@@ -16,30 +16,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/skycastle/SkyCastle.md"))]
-    #[::unity2::class(namespace = "", name = "SkyCastle")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: skycastle :: SkyCastle >)]
-    pub struct SkyCastle {
-        #[rename(name = "m_LeftSkyCastleObject")]
-        pub m_left_sky_castle_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RightSkyCastleObject")]
-        pub m_right_sky_castle_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_LeftSkyCastleAnimator")]
-        pub m_left_sky_castle_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_RightSkyCastleAnimator")]
-        pub m_right_sky_castle_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_SkyCastleEffect")]
-        pub m_sky_castle_effect: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Now")]
-        pub m_now: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_Old")]
-        pub m_old: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_Vec")]
-        pub m_vec: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: ::unity2::Array<bool>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/skycastle/SkyCastle_MovingSkyCastle.md"))]
     #[repr(C)]
     #[derive(
@@ -86,6 +62,30 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/skycastle/SkyCastle.md"))]
+    #[::unity2::class(namespace = "", name = "SkyCastle")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: skycastle :: SkyCastle >)]
+    pub struct SkyCastle {
+        #[rename(name = "m_LeftSkyCastleObject")]
+        pub m_left_sky_castle_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RightSkyCastleObject")]
+        pub m_right_sky_castle_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_LeftSkyCastleAnimator")]
+        pub m_left_sky_castle_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_RightSkyCastleAnimator")]
+        pub m_right_sky_castle_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_SkyCastleEffect")]
+        pub m_sky_castle_effect: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_Now")]
+        pub m_now: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_Old")]
+        pub m_old: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_Vec")]
+        pub m_vec: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: ::unity2::Array<bool>,
     }
 }
 
@@ -604,7 +604,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -17,6 +17,11 @@ mod __types {
     use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider.SliderEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
+    pub struct Slider_SliderEvent {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Direction.md"))]
     #[repr(C)]
     #[derive(
@@ -69,49 +74,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider.SliderEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-    pub struct Slider_SliderEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Slider {
-        #[rename(name = "m_FillRect")]
-        pub m_fill_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_HandleRect")]
-        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::unity_engine::ui::slider::Slider_Direction,
-        #[rename(name = "m_MinValue")]
-        pub m_min_value: f32,
-        #[rename(name = "m_MaxValue")]
-        pub m_max_value: f32,
-        #[rename(name = "m_WholeNumbers")]
-        pub m_whole_numbers: bool,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::unity_engine::ui::slider::Slider_SliderEvent,
-        #[rename(name = "m_FillImage")]
-        pub m_fill_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_FillTransform")]
-        pub m_fill_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_FillContainerRect")]
-        pub m_fill_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_HandleTransform")]
-        pub m_handle_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HandleContainerRect")]
-        pub m_handle_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
-        #[rename(name = "m_DelayedUpdateVisuals")]
-        pub m_delayed_update_visuals: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
     #[repr(C)]
     #[derive(
@@ -154,6 +116,44 @@ mod __types {
         pub fn vertical() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Slider")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Slider {
+        #[rename(name = "m_FillRect")]
+        pub m_fill_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_HandleRect")]
+        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Direction")]
+        pub m_direction: crate::unity_engine::ui::slider::Slider_Direction,
+        #[rename(name = "m_MinValue")]
+        pub m_min_value: f32,
+        #[rename(name = "m_MaxValue")]
+        pub m_max_value: f32,
+        #[rename(name = "m_WholeNumbers")]
+        pub m_whole_numbers: bool,
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[rename(name = "m_OnValueChanged")]
+        pub m_on_value_changed: crate::unity_engine::ui::slider::Slider_SliderEvent,
+        #[rename(name = "m_FillImage")]
+        pub m_fill_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_FillTransform")]
+        pub m_fill_transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_FillContainerRect")]
+        pub m_fill_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_HandleTransform")]
+        pub m_handle_transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HandleContainerRect")]
+        pub m_handle_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Tracker")]
+        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[rename(name = "m_DelayedUpdateVisuals")]
+        pub m_delayed_update_visuals: bool,
     }
 }
 
@@ -3050,7 +3050,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -12,207 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AchieveData_Categories {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AchieveData_Categories {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AchieveData.Categories";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AchieveData_Categories {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AchieveData_Categories {
-        pub fn unit() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn battle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn solanel() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn shop() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn system() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn play_report() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AchieveData_Status {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AchieveData_Status {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AchieveData.Status";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AchieveData_Status {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AchieveData_Status {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn cleared() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn showed() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn completed() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AchieveData_ArgType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AchieveData_ArgType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AchieveData.ArgType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AchieveData_ArgType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AchieveData_ArgType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn message() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn chapter() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn chapter_side() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn person() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
-    #[::unity2::class(namespace = "App", name = "AchieveData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
-    pub struct AchieveData {
-        #[rename(name = "m_FlagName")]
-        pub m_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_KindDictionary")]
-        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::achievedata::AchieveData,
-            >,
-        >,
-        #[static_field]
-        #[rename(name = "s_ShowQueue")]
-        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
-            crate::app::achievedata::AchieveData,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -798,6 +597,207 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 137 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
+    #[::unity2::class(namespace = "App", name = "AchieveData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
+    pub struct AchieveData {
+        #[rename(name = "m_FlagName")]
+        pub m_flag_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_KindDictionary")]
+        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::achievedata::AchieveData,
+            >,
+        >,
+        #[static_field]
+        #[rename(name = "s_ShowQueue")]
+        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
+            crate::app::achievedata::AchieveData,
+        >,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AchieveData_ArgType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AchieveData_ArgType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AchieveData.ArgType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AchieveData_ArgType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AchieveData_ArgType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn message() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn chapter() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn chapter_side() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn person() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AchieveData_Categories {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AchieveData_Categories {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AchieveData.Categories";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AchieveData_Categories {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AchieveData_Categories {
+        pub fn unit() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn battle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn solanel() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn shop() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn system() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn play_report() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AchieveData_Status {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AchieveData_Status {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "AchieveData.Status";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AchieveData_Status {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AchieveData_Status {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn cleared() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn showed() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn completed() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
         }
     }
 }
@@ -9295,7 +9295,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

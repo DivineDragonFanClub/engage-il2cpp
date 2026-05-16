@@ -61,6 +61,54 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapPanelTarget_DangerType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapPanelTarget_DangerType {
+        const NAMESPACE: &'static str = "";
+
+        const NAME: &'static str = "MapPanelTarget.DangerType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapPanelTarget_DangerType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapPanelTarget_DangerType {
+        pub fn none() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn disadvantage() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn criticaled() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappaneltarget/MapPanelTarget.md"))]
     #[::unity2::class(namespace = "", name = "MapPanelTarget")]
     # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappaneltarget :: MapPanelTarget >)]
@@ -147,54 +195,6 @@ mod __types {
         pub m_arrow: crate::root::maparrow::MapArrow,
         #[rename(name = "m_DirtyFlag")]
         pub m_dirty_flag: crate::root::mappaneltarget::MapPanelTarget_DirtyType,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapPanelTarget_DangerType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapPanelTarget_DangerType {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "MapPanelTarget.DangerType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapPanelTarget_DangerType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapPanelTarget_DangerType {
-        pub fn none() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn disadvantage() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn criticaled() -> Self {
-            Self { value: 4 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]
@@ -1997,7 +1997,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

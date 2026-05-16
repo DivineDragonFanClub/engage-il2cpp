@@ -16,6 +16,25 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayPlayerName")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)]
+    pub struct RelayReplayPlayerName {
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_CanvasManager")]
+        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::relayreplayplayername::RelayReplayPlayerName_Seq,
+        #[rename(name = "m_IsReqClose")]
+        pub m_is_req_close: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]
     #[repr(C)]
     #[derive(
@@ -66,25 +85,6 @@ mod __types {
         pub fn closing() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayPlayerName")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)]
-    pub struct RelayReplayPlayerName {
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_CanvasManager")]
-        pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::relayreplayplayername::RelayReplayPlayerName_Seq,
-        #[rename(name = "m_IsReqClose")]
-        pub m_is_req_close: bool,
     }
 }
 
@@ -1009,7 +1009,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

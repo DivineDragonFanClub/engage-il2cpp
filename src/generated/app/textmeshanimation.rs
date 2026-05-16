@@ -13,6 +13,132 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TextMeshAnimation_DelayTimeType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TextMeshAnimation_DelayTimeType {
+        pub fn interval() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn total() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
+    #[parent(crate::system::object::Object)]
+    pub struct TextMeshAnimation_AnimationParams {
+        #[rename(name = "OffsetCurveX")]
+        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "OffsetCurveY")]
+        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RotationCurve")]
+        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveX")]
+        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveY")]
+        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RedCurve")]
+        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "GreenCurve")]
+        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "BlueCurve")]
+        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "AlphaCurve")]
+        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_PivotType")]
+        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
+        #[rename(name = "m_DelayTime")]
+        pub m_delay_time: f32,
+        #[rename(name = "m_DelayTimeType")]
+        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
+        #[rename(name = "m_EndType")]
+        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
+        #[rename(name = "m_StartFromRight")]
+        pub m_start_from_right: bool,
+        #[rename(name = "m_MaxIntervalTime")]
+        pub m_max_interval_time: f32,
+        #[rename(name = "m_EndTime")]
+        pub m_end_time: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TextMeshAnimation_PivotType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TextMeshAnimation_PivotType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TextMeshAnimation.PivotType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TextMeshAnimation_PivotType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TextMeshAnimation_PivotType {
+        pub fn center() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn base_line() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_EndType.md"))]
     #[repr(C)]
     #[derive(
@@ -67,132 +193,6 @@ mod __types {
         pub fn delete() -> Self {
             Self { value: 4 }
         }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TextMeshAnimation_DelayTimeType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TextMeshAnimation_DelayTimeType {
-        pub fn interval() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn total() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TextMeshAnimation_PivotType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TextMeshAnimation_PivotType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TextMeshAnimation.PivotType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TextMeshAnimation_PivotType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TextMeshAnimation_PivotType {
-        pub fn center() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn base_line() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextMeshAnimation_AnimationParams {
-        #[rename(name = "OffsetCurveX")]
-        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "OffsetCurveY")]
-        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RotationCurve")]
-        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveX")]
-        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveY")]
-        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RedCurve")]
-        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "GreenCurve")]
-        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "BlueCurve")]
-        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "AlphaCurve")]
-        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_PivotType")]
-        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
-        #[rename(name = "m_DelayTime")]
-        pub m_delay_time: f32,
-        #[rename(name = "m_DelayTimeType")]
-        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
-        #[rename(name = "m_EndType")]
-        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
-        #[rename(name = "m_StartFromRight")]
-        pub m_start_from_right: bool,
-        #[rename(name = "m_MaxIntervalTime")]
-        pub m_max_interval_time: f32,
-        #[rename(name = "m_EndTime")]
-        pub m_end_time: f32,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
@@ -1543,7 +1543,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

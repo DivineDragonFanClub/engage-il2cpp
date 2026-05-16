@@ -15,11 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MinigameAssistDialog_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
     #[repr(C)]
     #[derive(
@@ -68,29 +63,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MinigameAssistDialog_AssistItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct MinigameAssistDialog {
-        #[static_field]
-        #[rename(name = "ConfirmLabels")]
-        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "YesLabels")]
-        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "NoLabels")]
-        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "CancelLabels")]
-        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]
     #[repr(C)]
     #[derive(
@@ -137,6 +109,34 @@ mod __types {
         pub fn cancel() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MinigameAssistDialog_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MinigameAssistDialog_AssistItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct MinigameAssistDialog {
+        #[static_field]
+        #[rename(name = "ConfirmLabels")]
+        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "YesLabels")]
+        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "NoLabels")]
+        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "CancelLabels")]
+        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 
@@ -1089,7 +1089,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -9,6 +9,19 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))]
+    #[::unity2::class(namespace = "Combat", name = "VCamShaker")]
+    pub struct VCamShaker {
+        #[rename(name = "m_Setting")]
+        pub m_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
+        #[rename(name = "m_ShakeType")]
+        pub m_shake_type: crate::combat::vcamshaker::VCamShaker_ShakeType,
+        #[rename(name = "m_Life")]
+        pub m_life: i32,
+        #[rename(name = "m_Magnitude")]
+        pub m_magnitude: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/vcamshaker/VCamShaker_ShakeType.md"))]
     #[repr(C)]
     #[derive(
@@ -55,19 +68,6 @@ mod __types {
         pub fn armor_step() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/vcamshaker/VCamShaker.md"))]
-    #[::unity2::class(namespace = "Combat", name = "VCamShaker")]
-    pub struct VCamShaker {
-        #[rename(name = "m_Setting")]
-        pub m_setting: crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings,
-        #[rename(name = "m_ShakeType")]
-        pub m_shake_type: crate::combat::vcamshaker::VCamShaker_ShakeType,
-        #[rename(name = "m_Life")]
-        pub m_life: i32,
-        #[rename(name = "m_Magnitude")]
-        pub m_magnitude: f32,
     }
 }
 
@@ -543,7 +543,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

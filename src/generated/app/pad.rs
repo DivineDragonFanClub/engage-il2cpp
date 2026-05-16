@@ -10,6 +10,70 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pad/Pad_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Pad_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Pad_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Pad.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Pad_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Pad_Mode {
+        pub fn switch() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn xbox() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn xbox_ab_swap() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ps3() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn elecom() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn cyber_gadget() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn keyboard() -> Self {
+            Self { value: 6 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pad/Pad.md"))]
     #[::unity2::class(namespace = "App", name = "Pad")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: pad :: Pad >)]
@@ -148,70 +212,6 @@ mod __types {
             crate::app::controllersupportapplet::ControllerSupportApplet,
         #[rename(name = "m_GyroMnager")]
         pub m_gyro_mnager: crate::app::gyromnager::GyroMnager,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pad/Pad_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Pad_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Pad_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Pad.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Pad_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Pad_Mode {
-        pub fn switch() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn xbox() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn xbox_ab_swap() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ps3() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn elecom() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn cyber_gadget() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn keyboard() -> Self {
-            Self { value: 6 }
-        }
     }
 }
 
@@ -2258,7 +2258,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

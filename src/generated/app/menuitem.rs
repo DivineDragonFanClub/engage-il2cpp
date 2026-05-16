@@ -57,7 +57,19 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MenuItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct MenuItem {
+        #[rename(name = "m_Menu")]
+        pub m_menu: crate::app::debugmenu::DebugMenu,
+        #[rename(name = "m_State")]
+        pub m_state: crate::app::menuitem::MenuItem_State,
+        #[rename(name = "m_Bind")]
+        pub m_bind: i32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -66,14 +78,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MenuItem_State {
+    pub struct MenuItem_Kind {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MenuItem_State {
+    impl ::unity2::ClassIdentity for MenuItem_Kind {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MenuItem.State";
+        const NAME: &'static str = "MenuItem.Kind";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -82,7 +94,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MenuItem_State {
+    impl ::unity2::IlType for MenuItem_Kind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -91,16 +103,16 @@ mod __types {
         }
     }
 
-    impl MenuItem_State {
+    impl MenuItem_Kind {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn open() -> Self {
+        pub fn group_begin() -> Self {
             Self { value: 1 }
         }
 
-        pub fn close() -> Self {
+        pub fn group_end() -> Self {
             Self { value: 2 }
         }
     }
@@ -173,19 +185,7 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MenuItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct MenuItem {
-        #[rename(name = "m_Menu")]
-        pub m_menu: crate::app::debugmenu::DebugMenu,
-        #[rename(name = "m_State")]
-        pub m_state: crate::app::menuitem::MenuItem_State,
-        #[rename(name = "m_Bind")]
-        pub m_bind: i32,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -194,14 +194,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MenuItem_Kind {
+    pub struct MenuItem_State {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MenuItem_Kind {
+    impl ::unity2::ClassIdentity for MenuItem_State {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MenuItem.Kind";
+        const NAME: &'static str = "MenuItem.State";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -210,7 +210,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MenuItem_Kind {
+    impl ::unity2::IlType for MenuItem_State {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -219,16 +219,16 @@ mod __types {
         }
     }
 
-    impl MenuItem_Kind {
+    impl MenuItem_State {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn group_begin() -> Self {
+        pub fn open() -> Self {
             Self { value: 1 }
         }
 
-        pub fn group_end() -> Self {
+        pub fn close() -> Self {
             Self { value: 2 }
         }
     }
@@ -4801,7 +4801,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -13,24 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photoappearcontent/PhotoAppearContent.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotoAppearContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct PhotoAppearContent {
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_Progress")]
-        pub m_progress: f32,
-        #[rename(name = "m_MaterialInst")]
-        pub m_material_inst: crate::unity_engine::material::Material,
-        #[rename(name = "m_State")]
-        pub m_state: crate::app::photoappearcontent::PhotoAppearContent_State,
-        #[rename(name = "m_NextState")]
-        pub m_next_state: crate::app::photoappearcontent::PhotoAppearContent_State,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photoappearcontent/PhotoAppearContent_State.md"))]
     #[repr(C)]
     #[derive(
@@ -85,6 +67,24 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photoappearcontent/PhotoAppearContent.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotoAppearContent")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct PhotoAppearContent {
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_Progress")]
+        pub m_progress: f32,
+        #[rename(name = "m_MaterialInst")]
+        pub m_material_inst: crate::unity_engine::material::Material,
+        #[rename(name = "m_State")]
+        pub m_state: crate::app::photoappearcontent::PhotoAppearContent_State,
+        #[rename(name = "m_NextState")]
+        pub m_next_state: crate::app::photoappearcontent::PhotoAppearContent_State,
     }
 }
 
@@ -998,7 +998,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

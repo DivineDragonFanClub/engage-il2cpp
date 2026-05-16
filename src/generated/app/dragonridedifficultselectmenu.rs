@@ -22,6 +22,21 @@ mod __types {
         pub m_enable_checker: ::unity2::Array<bool>,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "DragonRideDifficultSelectMenu.DifficultyItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
+        #[rename(name = "m_DifficultID")]
+        pub m_difficult_id: ::unity2::Il2CppString,
+        #[rename(name = "m_IsEnable")]
+        pub m_is_enable: bool,
+        #[rename(name = "m_IsExpert")]
+        pub m_is_expert: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -72,21 +87,6 @@ mod __types {
         pub fn expert() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "DragonRideDifficultSelectMenu.DifficultyItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct DragonRideDifficultSelectMenu_DifficultyItem {
-        #[rename(name = "m_DifficultID")]
-        pub m_difficult_id: ::unity2::Il2CppString,
-        #[rename(name = "m_IsEnable")]
-        pub m_is_enable: bool,
-        #[rename(name = "m_IsExpert")]
-        pub m_is_expert: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]
@@ -1177,7 +1177,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -12,6 +12,17 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))]
+    #[::unity2::class(namespace = "App", name = "NameTypeData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)]
+    pub struct NameTypeData {
+        #[static_field]
+        #[rename(name = "MaxData")]
+        pub max_data: i32,
+        #[rename(name = "SuffixArray")]
+        pub suffix_array: ::unity2::Array<::unity2::Il2CppString>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nametypedata/NameTypeData_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -130,17 +141,6 @@ mod __types {
         pub fn 敬語_女王() -> Self {
             Self { value: 20 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))]
-    #[::unity2::class(namespace = "App", name = "NameTypeData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)]
-    pub struct NameTypeData {
-        #[static_field]
-        #[rename(name = "MaxData")]
-        pub max_data: i32,
-        #[rename(name = "SuffixArray")]
-        pub suffix_array: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 
@@ -5598,7 +5598,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -63,6 +63,11 @@ mod __types {
         pub m_time_scale: f32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugMenu_AnchorLocation {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
     #[repr(C)]
     #[derive(
@@ -110,11 +115,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugMenu_AnchorLocation {}
 }
 
 #[cfg(feature = "app-debugmenu-types")]
@@ -6160,7 +6160,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

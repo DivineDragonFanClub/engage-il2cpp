@@ -9,6 +9,58 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Cooking_ConversationType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Cooking_ConversationType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Cooking.ConversationType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Cooking_ConversationType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Cooking_ConversationType {
+        pub fn about_delicious() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn monologue() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn dialogue() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
     #[::unity2::class(namespace = "App", name = "Cooking")]
     #[parent(crate::system::object::Object)]
@@ -27,50 +79,6 @@ mod __types {
         #[static_field]
         #[rename(name = "ProbabilityFromFoodstuff")]
         pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Cooking_Order {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Cooking_Order {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Cooking.Order";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Cooking_Order {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Cooking_Order {
-        pub fn before() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn after() -> Self {
-            Self { value: 1 }
-        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
@@ -137,7 +145,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -146,14 +154,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Cooking_ConversationType {
+    pub struct Cooking_Order {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Cooking_ConversationType {
+    impl ::unity2::ClassIdentity for Cooking_Order {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "Cooking.ConversationType";
+        const NAME: &'static str = "Cooking.Order";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -162,7 +170,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Cooking_ConversationType {
+    impl ::unity2::IlType for Cooking_Order {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -171,21 +179,13 @@ mod __types {
         }
     }
 
-    impl Cooking_ConversationType {
-        pub fn about_delicious() -> Self {
+    impl Cooking_Order {
+        pub fn before() -> Self {
             Self { value: 0 }
         }
 
-        pub fn monologue() -> Self {
+        pub fn after() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn dialogue() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
         }
     }
 }
@@ -962,7 +962,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

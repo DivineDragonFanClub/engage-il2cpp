@@ -10,6 +10,30 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessoryShopSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct HubAccessoryShopSequence {
+        #[rename(name = "m_ShopMenuResult")]
+        pub m_shop_menu_result: crate::app::accessoryshoptopmenu::AccessoryShopTopMenu_Result2,
+        #[rename(name = "m_ShopUnitSelectMenuResult")]
+        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_AccessoryShopUnitSelectRoot")]
+        pub m_accessory_shop_unit_select_root:
+            crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot,
+        #[rename(name = "m_AccessoryShopBuyRoot")]
+        pub m_accessory_shop_buy_root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
+        #[rename(name = "m_AccessoryShopChangeRoot")]
+        pub m_accessory_shop_change_root:
+            crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_UnitSelectMenuScrollIndex")]
+        pub m_unit_select_menu_scroll_index: i32,
+        #[rename(name = "m_Changed")]
+        pub m_changed: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -72,30 +96,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 6 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessoryShopSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct HubAccessoryShopSequence {
-        #[rename(name = "m_ShopMenuResult")]
-        pub m_shop_menu_result: crate::app::accessoryshoptopmenu::AccessoryShopTopMenu_Result2,
-        #[rename(name = "m_ShopUnitSelectMenuResult")]
-        pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_AccessoryShopUnitSelectRoot")]
-        pub m_accessory_shop_unit_select_root:
-            crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot,
-        #[rename(name = "m_AccessoryShopBuyRoot")]
-        pub m_accessory_shop_buy_root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
-        #[rename(name = "m_AccessoryShopChangeRoot")]
-        pub m_accessory_shop_change_root:
-            crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_UnitSelectMenuScrollIndex")]
-        pub m_unit_select_menu_scroll_index: i32,
-        #[rename(name = "m_Changed")]
-        pub m_changed: bool,
     }
 }
 
@@ -957,7 +957,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

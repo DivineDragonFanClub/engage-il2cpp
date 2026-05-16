@@ -1413,8 +1413,6 @@ pub mod jsonutility;
 pub use jsonutility::{IJsonUtility, JsonUtility};
 #[cfg(any(feature = "unity_engine-jvalue-types"))]
 pub mod jvalue;
-#[cfg(feature = "unity_engine-jvalue-types")]
-pub use jvalue::jvalue;
 #[cfg(any(feature = "unity_engine-keycode-types"))]
 pub mod keycode;
 #[cfg(feature = "unity_engine-keycode-types")]

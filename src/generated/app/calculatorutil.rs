@@ -23,15 +23,6 @@ mod __types {
         pub m_code: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil {
-        #[static_field]
-        #[rename(name = "NullArgs")]
-        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -222,6 +213,15 @@ mod __types {
         pub fn string() -> Self {
             Self { value: 38 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct CalculatorUtil {
+        #[static_field]
+        #[rename(name = "NullArgs")]
+        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
     }
 }
 
@@ -1602,7 +1602,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

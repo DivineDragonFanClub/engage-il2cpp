@@ -10,22 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengesequence/ChallengeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ChallengeSequence {
-        #[rename(name = "m_ChallengeMapSelectRoot")]
-        pub m_challenge_map_select_root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
-        #[rename(name = "m_Bg")]
-        pub m_bg: crate::app::menubg::MenuBg,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_ChallengeData")]
-        pub m_challenge_data: crate::app::challengedata::ChallengeData,
-        #[rename(name = "m_Difficulty")]
-        pub m_difficulty: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengesequence/ChallengeSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -80,6 +64,22 @@ mod __types {
         pub fn end_and_return() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengesequence/ChallengeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ChallengeSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ChallengeSequence {
+        #[rename(name = "m_ChallengeMapSelectRoot")]
+        pub m_challenge_map_select_root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        #[rename(name = "m_Bg")]
+        pub m_bg: crate::app::menubg::MenuBg,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_ChallengeData")]
+        pub m_challenge_data: crate::app::challengedata::ChallengeData,
+        #[rename(name = "m_Difficulty")]
+        pub m_difficulty: i32,
     }
 }
 
@@ -964,7 +964,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]

@@ -9,18 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))]
-    #[::unity2::class(namespace = "App", name = "NetError")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetError {
-        #[static_field]
-        #[rename(name = "s_Kind")]
-        pub s_kind: crate::app::neterror::NetError_Kind,
-        #[static_field]
-        #[rename(name = "s_App")]
-        pub s_app: crate::app::neterror::NetError_App,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -103,6 +91,18 @@ mod __types {
         pub fn general() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))]
+    #[::unity2::class(namespace = "App", name = "NetError")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetError {
+        #[static_field]
+        #[rename(name = "s_Kind")]
+        pub s_kind: crate::app::neterror::NetError_Kind,
+        #[static_field]
+        #[rename(name = "s_App")]
+        pub s_app: crate::app::neterror::NetError_App,
     }
 }
 
@@ -397,7 +397,7 @@ pub mod prelude {
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
     pub use crate::system::r#enum::IEnum;
-    #[cfg(feature = "system-r#enum")]
+    #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
