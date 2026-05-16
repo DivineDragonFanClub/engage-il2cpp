@@ -41,15 +41,15 @@ export class EngageCompletionProvider implements vscode.CompletionItemProvider {
         position: vscode.Position,
         _token: vscode.CancellationToken,
         context: vscode.CompletionContext,
-    ): Promise<vscode.CompletionItem[]> {
+    ): Promise<vscode.CompletionList<vscode.CompletionItem>> {
         if (suppressedAtPosition(document, position)) {
-            return [];
+            return new vscode.CompletionList([], false);
         }
 
         await this.ensureLoaded();
 
         if (this.entries.length === 0) {
-            return [];
+            return new vscode.CompletionList([], false);
         }
 
         const typed = wordAtPosition(document, position);
@@ -58,7 +58,7 @@ export class EngageCompletionProvider implements vscode.CompletionItemProvider {
             typed.length < EngageCompletionProvider.MIN_PREFIX_LEN &&
             context.triggerKind !== vscode.CompletionTriggerKind.Invoke
         ) {
-            return [];
+            return new vscode.CompletionList([], false);
         }
 
         const typedLower = typed.toLowerCase();
