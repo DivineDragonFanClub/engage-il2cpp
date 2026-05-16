@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 
 import { registerCodeActions } from "./codeActions";
 import { registerCommands } from "./commands";
+import { registerCompletions } from "./completions";
 import { activateDiagnostics } from "./diagnostics";
 import { activateLsp, deactivateLsp } from "./lsp";
 import { activateUpdater } from "./updater";
@@ -14,6 +15,7 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 
     registerCommands(context, outputChannel);
     registerCodeActions(context);
+    registerCompletions(context, outputChannel);
     activateDiagnostics(context, outputChannel);
     activateUpdater(context, outputChannel);
 

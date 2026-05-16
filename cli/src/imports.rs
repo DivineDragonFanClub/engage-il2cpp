@@ -1,4 +1,4 @@
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
 
 use anyhow::{Context, Result};
@@ -12,14 +12,24 @@ use crate::manifest::Manifest;
 pub struct DeadImport {
     pub file: PathBuf,
     pub start_line: u32,
-    pub end_line: u32,
     pub ident: String,
     pub path: String,
     pub feature: String,
 }
 
-pub fn find_dead_imports(roots: &[PathBuf], manifest: &Manifest) -> Result<Vec<DeadImport>> {
-    let mut out = Vec::new();
+pub enum UseEdit {
+    DropItem { start_line: u32, end_line: u32 },
+    Replace { start_line: u32, end_line: u32, new_text: String },
+}
+
+pub struct PruneFindings {
+    pub reports: Vec<DeadImport>,
+    pub edits_by_file: BTreeMap<PathBuf, Vec<UseEdit>>,
+}
+
+pub fn find_dead_imports(roots: &[PathBuf], manifest: &Manifest) -> Result<PruneFindings> {
+    let mut reports = Vec::new();
+    let mut edits_by_file: BTreeMap<PathBuf, Vec<UseEdit>> = BTreeMap::new();
 
     for root in roots {
         for entry in WalkDir::new(root).into_iter().filter_map(|e| e.ok()) {
@@ -32,106 +42,250 @@ pub fn find_dead_imports(roots: &[PathBuf], manifest: &Manifest) -> Result<Vec<D
                 Err(_) => continue,
             };
 
-            let dead = find_dead_imports_in_text(&raw, manifest);
+            let (file_reports, file_edits) = process_file(&raw, manifest);
 
-            for d in dead {
-                out.push(DeadImport {
+            for r in file_reports {
+                reports.push(DeadImport {
                     file: entry.path().to_path_buf(),
-                    start_line: d.start_line,
-                    end_line: d.end_line,
-                    ident: d.ident,
-                    path: d.path,
-                    feature: d.feature,
+                    start_line: r.start_line,
+                    ident: r.ident,
+                    path: r.path,
+                    feature: r.feature,
                 });
+            }
+
+            if !file_edits.is_empty() {
+                edits_by_file.insert(entry.path().to_path_buf(), file_edits);
             }
         }
     }
 
-    Ok(out)
+    Ok(PruneFindings { reports, edits_by_file })
 }
 
-struct DeadImportInFile {
+struct LocalReport {
     start_line: u32,
-    end_line: u32,
     ident: String,
     path: String,
     feature: String,
 }
 
-fn find_dead_imports_in_text(text: &str, manifest: &Manifest) -> Vec<DeadImportInFile> {
+fn process_file(text: &str, manifest: &Manifest) -> (Vec<LocalReport>, Vec<UseEdit>) {
     let file = match syn::parse_file(text) {
         Ok(f) => f,
-        Err(_) => return Vec::new(),
+        Err(_) => return (Vec::new(), Vec::new()),
     };
 
     let referenced_in_body = collect_body_refs(&file);
-    let mut out = Vec::new();
+    let mut reports = Vec::new();
+    let mut edits = Vec::new();
 
     for item in &file.items {
         let Item::Use(use_item) = item else { continue };
 
-        let Some(single) = single_engage_use(&use_item.tree, manifest) else { continue };
-
-        if referenced_in_body.contains(&single.local_name) {
-            continue;
-        }
-
         let span = use_item.span();
         let start_line = span.start().line.saturating_sub(1) as u32;
         let end_line = span.end().line.saturating_sub(1) as u32;
+        let indent = leading_indent(text, start_line as usize);
 
-        out.push(DeadImportInFile {
-            start_line,
-            end_line,
-            ident: single.local_name,
-            path: single.full_path,
-            feature: single.feature,
-        });
+        match classify_use(&use_item.tree, manifest) {
+            UseShape::Single { leaf } => {
+                if !referenced_in_body.contains(&leaf.local_name) {
+                    reports.push(LocalReport {
+                        start_line,
+                        ident: leaf.local_name.clone(),
+                        path: leaf.full_path.clone(),
+                        feature: leaf.feature.clone(),
+                    });
+                    edits.push(UseEdit::DropItem { start_line, end_line });
+                }
+            }
+            UseShape::Group { prefix, members } => {
+                let mut live_text_parts: Vec<String> = Vec::new();
+                let mut any_dead = false;
+                let mut any_live_engage = false;
+                let mut any_non_engage = false;
+
+                for m in &members {
+                    match &m.kind {
+                        MemberKind::Engage { leaf } => {
+                            if referenced_in_body.contains(&leaf.local_name) {
+                                live_text_parts.push(m.original_text.clone());
+                                any_live_engage = true;
+                            } else {
+                                any_dead = true;
+                                reports.push(LocalReport {
+                                    start_line,
+                                    ident: leaf.local_name.clone(),
+                                    path: leaf.full_path.clone(),
+                                    feature: leaf.feature.clone(),
+                                });
+                            }
+                        }
+                        MemberKind::NonEngage => {
+                            live_text_parts.push(m.original_text.clone());
+                            any_non_engage = true;
+                        }
+                    }
+                }
+
+                if !any_dead {
+                    continue;
+                }
+
+                if !any_live_engage && !any_non_engage {
+                    edits.push(UseEdit::DropItem { start_line, end_line });
+                } else {
+                    let prefix_str = prefix.join("::");
+                    let body = if live_text_parts.len() == 1 && !prefix_str.is_empty() {
+                        format!("{}::{}", prefix_str, live_text_parts[0])
+                    } else if prefix_str.is_empty() {
+                        format!("{{{}}}", live_text_parts.join(", "))
+                    } else {
+                        format!("{}::{{{}}}", prefix_str, live_text_parts.join(", "))
+                    };
+                    edits.push(UseEdit::Replace {
+                        start_line,
+                        end_line,
+                        new_text: format!("{}use {};", indent, body),
+                    });
+                }
+            }
+            UseShape::Other => {}
+        }
     }
 
-    out
+    (reports, edits)
 }
 
-struct SingleEngageUse {
-    local_name: String,
+struct EngageLeaf {
     full_path: String,
+    local_name: String,
     feature: String,
 }
 
-fn single_engage_use(tree: &UseTree, manifest: &Manifest) -> Option<SingleEngageUse> {
-    let mut segments: Vec<String> = Vec::new();
-    let mut local_name: Option<String> = None;
-
-    walk_single(tree, &mut segments, &mut local_name)?;
-
-    let path = segments.join("::");
-    let feature = manifest.paths.get(&path)?.clone();
-
-    Some(SingleEngageUse {
-        local_name: local_name?,
-        full_path: path,
-        feature,
-    })
+enum MemberKind {
+    Engage { leaf: EngageLeaf },
+    NonEngage,
 }
 
-fn walk_single(tree: &UseTree, segments: &mut Vec<String>, local_name: &mut Option<String>) -> Option<()> {
-    match tree {
-        UseTree::Path(p) => {
-            segments.push(strip_raw(&p.ident.to_string()));
-            walk_single(&p.tree, segments, local_name)
-        },
-        UseTree::Name(n) => {
-            segments.push(strip_raw(&n.ident.to_string()));
-            *local_name = Some(strip_raw(&n.ident.to_string()));
-            Some(())
-        },
-        UseTree::Rename(r) => {
-            segments.push(strip_raw(&r.ident.to_string()));
-            *local_name = Some(strip_raw(&r.rename.to_string()));
-            Some(())
-        },
-        UseTree::Group(_) | UseTree::Glob(_) => None,
+struct GroupMember {
+    original_text: String,
+    kind: MemberKind,
+}
+
+enum UseShape {
+    Single { leaf: EngageLeaf },
+    Group {
+        prefix: Vec<String>,
+        members: Vec<GroupMember>,
+    },
+    Other,
+}
+
+fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
+    let mut prefix: Vec<String> = Vec::new();
+    let mut cur = tree;
+
+    loop {
+        match cur {
+            UseTree::Path(p) => {
+                prefix.push(strip_raw(&p.ident.to_string()));
+                cur = &p.tree;
+            }
+            UseTree::Name(n) => {
+                let name = strip_raw(&n.ident.to_string());
+                let mut full = prefix.clone();
+                full.push(name.clone());
+                let path = full.join("::");
+                let Some(feature) = manifest.paths.get(&path) else {
+                    return UseShape::Other;
+                };
+                return UseShape::Single {
+                    leaf: EngageLeaf {
+                        full_path: path,
+                        local_name: name,
+                        feature: feature.clone(),
+                    },
+                };
+            }
+            UseTree::Rename(r) => {
+                let name = strip_raw(&r.ident.to_string());
+                let local = strip_raw(&r.rename.to_string());
+                let mut full = prefix.clone();
+                full.push(name.clone());
+                let path = full.join("::");
+                let Some(feature) = manifest.paths.get(&path) else {
+                    return UseShape::Other;
+                };
+                return UseShape::Single {
+                    leaf: EngageLeaf {
+                        full_path: path,
+                        local_name: local,
+                        feature: feature.clone(),
+                    },
+                };
+            }
+            UseTree::Group(g) => {
+                let mut members = Vec::new();
+                for item in &g.items {
+                    match item {
+                        UseTree::Name(n) => {
+                            let name = strip_raw(&n.ident.to_string());
+                            let mut full = prefix.clone();
+                            full.push(name.clone());
+                            let path = full.join("::");
+                            let kind = if let Some(feature) = manifest.paths.get(&path) {
+                                MemberKind::Engage {
+                                    leaf: EngageLeaf {
+                                        full_path: path,
+                                        local_name: name.clone(),
+                                        feature: feature.clone(),
+                                    },
+                                }
+                            } else {
+                                MemberKind::NonEngage
+                            };
+                            members.push(GroupMember {
+                                original_text: name,
+                                kind,
+                            });
+                        }
+                        UseTree::Rename(r) => {
+                            let name = strip_raw(&r.ident.to_string());
+                            let local = strip_raw(&r.rename.to_string());
+                            let mut full = prefix.clone();
+                            full.push(name.clone());
+                            let path = full.join("::");
+                            let kind = if let Some(feature) = manifest.paths.get(&path) {
+                                MemberKind::Engage {
+                                    leaf: EngageLeaf {
+                                        full_path: path,
+                                        local_name: local.clone(),
+                                        feature: feature.clone(),
+                                    },
+                                }
+                            } else {
+                                MemberKind::NonEngage
+                            };
+                            members.push(GroupMember {
+                                original_text: format!("{} as {}", name, local),
+                                kind,
+                            });
+                        }
+                        _ => return UseShape::Other,
+                    }
+                }
+                return UseShape::Group { prefix, members };
+            }
+            UseTree::Glob(_) => return UseShape::Other,
+        }
     }
+}
+
+fn leading_indent(text: &str, start_line: usize) -> String {
+    let line = text.lines().nth(start_line).unwrap_or("");
+    line.chars().take_while(|c| c.is_whitespace() && *c != '\n').collect()
 }
 
 fn strip_raw(s: &str) -> String {
@@ -170,28 +324,41 @@ impl<'ast> Visit<'ast> for BodyRefVisitor {
     }
 }
 
-pub fn remove_lines(file: &Path, line_ranges: &[(u32, u32)]) -> Result<()> {
-    let raw = std::fs::read_to_string(file).with_context(|| format!("reading {}", file.display()))?;
-    let mut lines: Vec<&str> = raw.split('\n').collect();
+pub fn apply_use_edits(file: &Path, edits: &[UseEdit]) -> Result<()> {
+    let raw = std::fs::read_to_string(file)
+        .with_context(|| format!("reading {}", file.display()))?;
     let trailing_newline = raw.ends_with('\n');
+    let mut lines: Vec<String> = raw.split('\n').map(String::from).collect();
 
-    let mut to_remove: BTreeSet<usize> = BTreeSet::new();
+    let mut sorted: Vec<&UseEdit> = edits.iter().collect();
+    sorted.sort_by_key(|e| std::cmp::Reverse(match e {
+        UseEdit::DropItem { start_line, .. } => *start_line,
+        UseEdit::Replace { start_line, .. } => *start_line,
+    }));
 
-    for &(start, end) in line_ranges {
-        for i in start..=end {
-            to_remove.insert(i as usize);
+    for e in sorted {
+        match e {
+            UseEdit::DropItem { start_line, end_line } => {
+                let s = *start_line as usize;
+                let e = *end_line as usize;
+                if e < lines.len() && s <= e {
+                    lines.drain(s..=e);
+                }
+            }
+            UseEdit::Replace { start_line, end_line, new_text } => {
+                let s = *start_line as usize;
+                let e = *end_line as usize;
+                if e < lines.len() && s <= e {
+                    lines.drain(s..=e);
+                    for (i, nl) in new_text.split('\n').enumerate() {
+                        lines.insert(s + i, nl.to_string());
+                    }
+                }
+            }
         }
     }
 
-    let kept: Vec<&str> = lines
-        .iter()
-        .enumerate()
-        .filter_map(|(i, line)| if to_remove.contains(&i) { None } else { Some(*line) })
-        .collect();
-    lines.clear();
-
-    let mut joined = kept.join("\n");
-
+    let mut joined = lines.join("\n");
     if trailing_newline && !joined.ends_with('\n') {
         joined.push('\n');
     }
