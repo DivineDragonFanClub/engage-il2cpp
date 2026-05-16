@@ -146,7 +146,7 @@ mod __CameraRaycastHelper_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
@@ -204,7 +204,7 @@ mod __CameraRaycastHelper_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];

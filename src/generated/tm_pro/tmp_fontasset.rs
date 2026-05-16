@@ -3161,7 +3161,7 @@ mod __TMP_FontAsset_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < u16 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
                 "HasCharacters",
@@ -3214,7 +3214,7 @@ mod __TMP_FontAsset_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
@@ -3718,7 +3718,7 @@ mod __TMP_FontAsset_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Array<u32> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3840,7 +3840,7 @@ mod __TMP_FontAsset_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3903,7 +3903,7 @@ mod __TMP_FontAsset_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAsset as ::unity2::ClassIdentity>::class(),
@@ -3957,7 +3957,7 @@ mod __TMP_FontAsset_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAsset as ::unity2::ClassIdentity>::class(),

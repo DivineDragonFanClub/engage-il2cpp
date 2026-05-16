@@ -12,50 +12,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct CustomMixedResolutionPass_DownsampleType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
-
-        const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CustomMixedResolutionPass_DownsampleType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl CustomMixedResolutionPass_DownsampleType {
-        pub fn average() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn min_max() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_CompositeType.md"))]
     #[repr(C)]
     #[derive(
@@ -101,6 +57,50 @@ mod __types {
 
         pub fn bilateral2x() -> Self {
             Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct CustomMixedResolutionPass_DownsampleType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
+
+        const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CustomMixedResolutionPass_DownsampleType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl CustomMixedResolutionPass_DownsampleType {
+        pub fn average() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn min_max() -> Self {
+            Self { value: 1 }
         }
     }
 
@@ -559,7 +559,7 @@ mod __CustomMixedResolutionPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomMixedResolutionPass as ::unity2::ClassIdentity>::class(),
                 "Execute",

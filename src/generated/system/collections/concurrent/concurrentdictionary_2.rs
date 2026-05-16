@@ -35,6 +35,19 @@ mod __types {
 # [rename (name = "_countPerLock")] pub count_per_lock : :: unity2 :: Array < i32 > ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Node.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections.Concurrent",
+        name = "ConcurrentDictionary`2.Node"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ConcurrentDictionary_2_Node < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
+# [rename (name = "_key")] pub key : T0 ,
+# [rename (name = "_value")] pub value : T1 ,
+# [rename (name = "_next")] pub next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 > ,
+# [rename (name = "_hashcode")] pub hashcode : i32 ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2.md"))]
     #[::unity2::class(
         namespace = "System.Collections.Concurrent",
@@ -47,19 +60,6 @@ mod __types {
 # [rename (name = "_growLockArray")] pub grow_lock_array : bool ,
 # [rename (name = "_budget")] pub budget : i32 ,
 # [static_field] # [rename (name = "s_isValueWriteAtomic")] pub s_is_value_write_atomic : bool ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/concurrentdictionary_2/ConcurrentDictionary_2_Node.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Concurrent",
-        name = "ConcurrentDictionary`2.Node"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ConcurrentDictionary_2_Node < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
-# [rename (name = "_key")] pub key : T0 ,
-# [rename (name = "_value")] pub value : T1 ,
-# [rename (name = "_next")] pub next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 > ,
-# [rename (name = "_hashcode")] pub hashcode : i32 ,
 }
 }
 
@@ -162,6 +162,43 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
             buckets,
             locks,
             count_per_lock,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
+    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        key: T0,
+        value: T1,
+        hashcode: i32,
+        next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 >,
+    ) -> ();
+}
+
+#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
+    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` — overload selector"]
+    pub fn new(
+        key: T0,
+        value: T1,
+        hashcode: i32,
+        next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConcurrentDictionary_2_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConcurrentDictionary_2_NodeMethods<T0, T1>>::ctor(
+            this, key, value, hashcode, next,
         );
         this
     }
@@ -462,43 +499,6 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDiction
             capacity,
             grow_lock_array,
             comparer,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
-    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        key: T0,
-        value: T1,
-        hashcode: i32,
-        next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 >,
-    ) -> ();
-}
-
-#[cfg(feature = "system-collections-concurrent-concurrentdictionary_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ConcurrentDictionary_2_Node<T0, T1> {
-    #[doc = "`.ctor(T0, T1, i32, crate::system::collections::concurrent::concurrentdictionary_2::ConcurrentDictionary_2_Node<T0,T1>)` — overload selector"]
-    pub fn new(
-        key: T0,
-        value: T1,
-        hashcode: i32,
-        next : crate :: system :: collections :: concurrent :: concurrentdictionary_2 :: ConcurrentDictionary_2_Node < T0 , T1 >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConcurrentDictionary_2_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConcurrentDictionary_2_NodeMethods<T0, T1>>::ctor(
-            this, key, value, hashcode, next,
         );
         this
     }

@@ -13,15 +13,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_ChangeUnitToPrevEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.ChangeUnitToPrevEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_DecideItemEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.DecideItemEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_ChangeUnitToPrevEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_DecideEventHandler {}
+    pub struct ShopSellMenu_DecideItemEventHandler {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopsellmenu/ShopSellMenu_KindIndicator.md"))]
     #[repr(C)]
@@ -71,6 +66,11 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenu_DecideEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu.md"))]
     #[::unity2::class(namespace = "App", name = "ShopSellMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
@@ -112,6 +112,26 @@ mod __types {
             crate::app::shopsellmenu::ShopSellMenu_SwitchDetailDisplaywayEventHandler,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_ChangeUnitToPrevEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.ChangeUnitToPrevEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenu_ChangeUnitToPrevEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_RequestCloseEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.RequestCloseEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenu_RequestCloseEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.SelectEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenu_SelectEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_CancelItemEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSellMenu.CancelItemEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ShopSellMenu_CancelItemEventHandler {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_SwitchDetailDisplaywayEventHandler.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -124,26 +144,6 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ShopSellMenu.ChangeUnitToNextEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ShopSellMenu_ChangeUnitToNextEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_SelectEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_CancelItemEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.CancelItemEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_CancelItemEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_RequestCloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.RequestCloseEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_RequestCloseEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenu/ShopSellMenu_DecideItemEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSellMenu.DecideItemEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ShopSellMenu_DecideItemEventHandler {}
 }
 
 #[cfg(feature = "app-shopsellmenu-types")]
@@ -152,7 +152,7 @@ pub use __types::*;
 #[cfg(feature = "app-shopsellmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
+mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -166,7 +166,7 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -178,7 +178,7 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -191,13 +191,13 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSellMenu_ChangeUnitToPrevEventHandler,
+        this: ShopSellMenu_DecideItemEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_ChangeUnitToPrevEventHandler,
+            ShopSellMenu_DecideItemEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -215,11 +215,14 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                0,
+                2,
                 param_types,
                 false,
             )
@@ -229,7 +232,7 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -242,24 +245,28 @@ mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ShopSellMenu_ChangeUnitToPrevEventHandler,
+        this: ShopSellMenu_DecideItemEventHandler,
+        item_count: i32,
+        total_value: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_ChangeUnitToPrevEventHandler,
+            ShopSellMenu_DecideItemEventHandler,
+            i32,
+            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(this, item_count, total_value, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-pub trait IShopSellMenu_ChangeUnitToPrevEventHandlerMethods:
-    IShopSellMenu_ChangeUnitToPrevEventHandler
+pub trait IShopSellMenu_DecideItemEventHandlerMethods:
+    IShopSellMenu_DecideItemEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -268,8 +275,11 @@ pub trait IShopSellMenu_ChangeUnitToPrevEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw::ctor(
+            let __receiver =
+                <ShopSellMenu_DecideItemEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ShopSellMenu_DecideItemEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -277,12 +287,21 @@ pub trait IShopSellMenu_ChangeUnitToPrevEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
+    #[doc = "`Invoke(i32, i32)` overload"]
+    fn invoke(
+        self,
+        item_count: impl ::core::convert::Into<i32>,
+        total_value: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw::invoke(
+            let __receiver =
+                <ShopSellMenu_DecideItemEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ShopSellMenu_DecideItemEventHandler_unity2_raw::invoke(
                 __receiver,
+                ::core::convert::Into::into(item_count),
+                ::core::convert::Into::into(total_value),
                 ::core::option::Option::None,
             )
         }
@@ -290,23 +309,23 @@ pub trait IShopSellMenu_ChangeUnitToPrevEventHandlerMethods:
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl<__T: IShopSellMenu_ChangeUnitToPrevEventHandler>
-    IShopSellMenu_ChangeUnitToPrevEventHandlerMethods for __T
+impl<__T: IShopSellMenu_DecideItemEventHandler> IShopSellMenu_DecideItemEventHandlerMethods
+    for __T
 {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl ShopSellMenu_ChangeUnitToPrevEventHandler {
+impl ShopSellMenu_DecideItemEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenu_ChangeUnitToPrevEventHandler),
+                ::core::stringify!(ShopSellMenu_DecideItemEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSellMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(this, object, method);
+        <Self as IShopSellMenu_DecideItemEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -2100,7 +2119,7 @@ impl ShopSellMenu {
 #[cfg(feature = "app-shopsellmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw {
+mod __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2114,157 +2133,7 @@ mod __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_SwitchDetailDisplaywayEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ShopSellMenu_SwitchDetailDisplaywayEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ShopSellMenu_SwitchDetailDisplaywayEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_SwitchDetailDisplaywayEventHandler as ::unity2::ClassIdentity>::class(
-                ),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ShopSellMenu_SwitchDetailDisplaywayEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ShopSellMenu_SwitchDetailDisplaywayEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-shopsellmenu")]
-pub trait IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods:
-    IShopSellMenu_SwitchDetailDisplaywayEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver = < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-shopsellmenu")]
-impl<__T: IShopSellMenu_SwitchDetailDisplaywayEventHandler>
-    IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-shopsellmenu")]
-impl ShopSellMenu_SwitchDetailDisplaywayEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenu_SwitchDetailDisplaywayEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-shopsellmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2276,7 +2145,7 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2289,13 +2158,13 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSellMenu_ChangeUnitToNextEventHandler,
+        this: ShopSellMenu_ChangeUnitToPrevEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_ChangeUnitToNextEventHandler,
+            ShopSellMenu_ChangeUnitToPrevEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -2315,7 +2184,7 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
                 0,
                 param_types,
@@ -2327,7 +2196,7 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_ChangeUnitToPrevEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -2340,11 +2209,11 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ShopSellMenu_ChangeUnitToNextEventHandler,
+        this: ShopSellMenu_ChangeUnitToPrevEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_ChangeUnitToNextEventHandler,
+            ShopSellMenu_ChangeUnitToPrevEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -2356,8 +2225,8 @@ mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-pub trait IShopSellMenu_ChangeUnitToNextEventHandlerMethods:
-    IShopSellMenu_ChangeUnitToNextEventHandler
+pub trait IShopSellMenu_ChangeUnitToPrevEventHandlerMethods:
+    IShopSellMenu_ChangeUnitToPrevEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -2366,8 +2235,8 @@ pub trait IShopSellMenu_ChangeUnitToNextEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw::ctor(
+            let __receiver = < ShopSellMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -2378,8 +2247,8 @@ pub trait IShopSellMenu_ChangeUnitToNextEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw::invoke(
+            let __receiver = < ShopSellMenu_ChangeUnitToPrevEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_ChangeUnitToPrevEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2388,23 +2257,185 @@ pub trait IShopSellMenu_ChangeUnitToNextEventHandlerMethods:
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl<__T: IShopSellMenu_ChangeUnitToNextEventHandler>
-    IShopSellMenu_ChangeUnitToNextEventHandlerMethods for __T
+impl<__T: IShopSellMenu_ChangeUnitToPrevEventHandler>
+    IShopSellMenu_ChangeUnitToPrevEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl ShopSellMenu_ChangeUnitToNextEventHandler {
+impl ShopSellMenu_ChangeUnitToPrevEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenu_ChangeUnitToNextEventHandler),
+                ::core::stringify!(ShopSellMenu_ChangeUnitToPrevEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSellMenu_ChangeUnitToNextEventHandlerMethods>::ctor(this, object, method);
+        <Self as IShopSellMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-shopsellmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ShopSellMenu_RequestCloseEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ShopSellMenu_RequestCloseEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ShopSellMenu_RequestCloseEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ShopSellMenu_RequestCloseEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-shopsellmenu")]
+pub trait IShopSellMenu_RequestCloseEventHandlerMethods:
+    IShopSellMenu_RequestCloseEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < ShopSellMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_RequestCloseEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = < ShopSellMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_RequestCloseEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-shopsellmenu")]
+impl<__T: IShopSellMenu_RequestCloseEventHandler> IShopSellMenu_RequestCloseEventHandlerMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-shopsellmenu")]
+impl ShopSellMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -2760,7 +2791,7 @@ impl ShopSellMenu_CancelItemEventHandler {
 #[cfg(feature = "app-shopsellmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
+mod __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2774,7 +2805,8 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_SwitchDetailDisplaywayEventHandler as ::unity2::ClassIdentity>::class(
+                ),
                 ".ctor",
                 2,
                 param_types,
@@ -2782,15 +2814,7 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2799,13 +2823,13 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSellMenu_RequestCloseEventHandler,
+        this: ShopSellMenu_SwitchDetailDisplaywayEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_RequestCloseEventHandler,
+            ShopSellMenu_SwitchDetailDisplaywayEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -2825,7 +2849,8 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_SwitchDetailDisplaywayEventHandler as ::unity2::ClassIdentity>::class(
+                ),
                 "Invoke",
                 0,
                 param_types,
@@ -2833,15 +2858,7 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2850,11 +2867,11 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ShopSellMenu_RequestCloseEventHandler,
+        this: ShopSellMenu_SwitchDetailDisplaywayEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_RequestCloseEventHandler,
+            ShopSellMenu_SwitchDetailDisplaywayEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -2866,8 +2883,8 @@ mod __ShopSellMenu_RequestCloseEventHandler_unity2_raw {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-pub trait IShopSellMenu_RequestCloseEventHandlerMethods:
-    IShopSellMenu_RequestCloseEventHandler
+pub trait IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods:
+    IShopSellMenu_SwitchDetailDisplaywayEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -2876,8 +2893,8 @@ pub trait IShopSellMenu_RequestCloseEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_RequestCloseEventHandler_unity2_raw::ctor(
+            let __receiver = < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -2888,8 +2905,8 @@ pub trait IShopSellMenu_RequestCloseEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ShopSellMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ShopSellMenu_RequestCloseEventHandler_unity2_raw::invoke(
+            let __receiver = < ShopSellMenu_SwitchDetailDisplaywayEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_SwitchDetailDisplaywayEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2898,23 +2915,25 @@ pub trait IShopSellMenu_RequestCloseEventHandlerMethods:
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl<__T: IShopSellMenu_RequestCloseEventHandler> IShopSellMenu_RequestCloseEventHandlerMethods
-    for __T
+impl<__T: IShopSellMenu_SwitchDetailDisplaywayEventHandler>
+    IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl ShopSellMenu_RequestCloseEventHandler {
+impl ShopSellMenu_SwitchDetailDisplaywayEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenu_RequestCloseEventHandler),
+                ::core::stringify!(ShopSellMenu_SwitchDetailDisplaywayEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSellMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
+        <Self as IShopSellMenu_SwitchDetailDisplaywayEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }
@@ -2922,7 +2941,7 @@ impl ShopSellMenu_RequestCloseEventHandler {
 #[cfg(feature = "app-shopsellmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
+mod __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2936,7 +2955,7 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2948,7 +2967,7 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2961,13 +2980,13 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSellMenu_DecideItemEventHandler,
+        this: ShopSellMenu_ChangeUnitToNextEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_DecideItemEventHandler,
+            ShopSellMenu_ChangeUnitToNextEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -2985,14 +3004,11 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::class(),
+                <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                2,
+                0,
                 param_types,
                 false,
             )
@@ -3002,7 +3018,7 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSellMenu_DecideItemEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ShopSellMenu_ChangeUnitToNextEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -3015,28 +3031,24 @@ mod __ShopSellMenu_DecideItemEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ShopSellMenu_DecideItemEventHandler,
-        item_count: i32,
-        total_value: i32,
+        this: ShopSellMenu_ChangeUnitToNextEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSellMenu_DecideItemEventHandler,
-            i32,
-            i32,
+            ShopSellMenu_ChangeUnitToNextEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, item_count, total_value, __unity2_method_info)
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-pub trait IShopSellMenu_DecideItemEventHandlerMethods:
-    IShopSellMenu_DecideItemEventHandler
+pub trait IShopSellMenu_ChangeUnitToNextEventHandlerMethods:
+    IShopSellMenu_ChangeUnitToNextEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -3045,11 +3057,8 @@ pub trait IShopSellMenu_DecideItemEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <ShopSellMenu_DecideItemEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShopSellMenu_DecideItemEventHandler_unity2_raw::ctor(
+            let __receiver = < ShopSellMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -3057,21 +3066,12 @@ pub trait IShopSellMenu_DecideItemEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(i32, i32)` overload"]
-    fn invoke(
-        self,
-        item_count: impl ::core::convert::Into<i32>,
-        total_value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
         unsafe {
-            let __receiver =
-                <ShopSellMenu_DecideItemEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ShopSellMenu_DecideItemEventHandler_unity2_raw::invoke(
+            let __receiver = < ShopSellMenu_ChangeUnitToNextEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ShopSellMenu_ChangeUnitToNextEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(item_count),
-                ::core::convert::Into::into(total_value),
                 ::core::option::Option::None,
             )
         }
@@ -3079,23 +3079,23 @@ pub trait IShopSellMenu_DecideItemEventHandlerMethods:
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl<__T: IShopSellMenu_DecideItemEventHandler> IShopSellMenu_DecideItemEventHandlerMethods
-    for __T
+impl<__T: IShopSellMenu_ChangeUnitToNextEventHandler>
+    IShopSellMenu_ChangeUnitToNextEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-shopsellmenu")]
-impl ShopSellMenu_DecideItemEventHandler {
+impl ShopSellMenu_ChangeUnitToNextEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellMenu_DecideItemEventHandler),
+                ::core::stringify!(ShopSellMenu_ChangeUnitToNextEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSellMenu_DecideItemEventHandlerMethods>::ctor(this, object, method);
+        <Self as IShopSellMenu_ChangeUnitToNextEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

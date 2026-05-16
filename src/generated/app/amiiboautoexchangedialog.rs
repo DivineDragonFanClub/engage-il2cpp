@@ -21,11 +21,6 @@ mod __types {
     #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
     pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboAutoExchangeDialog")]
-    #[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
-    pub struct AmiiboAutoExchangeDialog {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -69,6 +64,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboAutoExchangeDialog")]
+    #[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
+    pub struct AmiiboAutoExchangeDialog {}
 }
 
 #[cfg(feature = "app-amiiboautoexchangedialog-types")]

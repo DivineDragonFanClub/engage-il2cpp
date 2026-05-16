@@ -9,15 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "HubUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubUtil {
-        #[static_field]
-        #[rename(name = "s_HubParams")]
-        pub s_hub_params: crate::app::hubparams::HubParams,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
     #[repr(C)]
     #[derive(
@@ -72,6 +63,15 @@ mod __types {
         pub fn max() -> Self {
             Self { value: 4 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "HubUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubUtil {
+        #[static_field]
+        #[rename(name = "s_HubParams")]
+        pub s_hub_params: crate::app::hubparams::HubParams,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]

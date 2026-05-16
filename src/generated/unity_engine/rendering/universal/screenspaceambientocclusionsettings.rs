@@ -9,54 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-        const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.NormalQuality";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ScreenSpaceAmbientOcclusionSettings_NormalQuality {
-        pub fn low() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn medium() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn high() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -114,6 +66,54 @@ mod __types {
 
         pub fn depth_normals() -> Self {
             Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ScreenSpaceAmbientOcclusionSettings_NormalQuality {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+        const NAME: &'static str = "ScreenSpaceAmbientOcclusionSettings.NormalQuality";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ScreenSpaceAmbientOcclusionSettings_NormalQuality {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ScreenSpaceAmbientOcclusionSettings_NormalQuality {
+        pub fn low() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn medium() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn high() -> Self {
+            Self { value: 2 }
         }
     }
 }

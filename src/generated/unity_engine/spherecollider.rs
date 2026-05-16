@@ -263,7 +263,7 @@ mod __SphereCollider_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SphereCollider as ::unity2::ClassIdentity>::class(),
                 "get_center_Injected",
@@ -313,7 +313,7 @@ mod __SphereCollider_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SphereCollider as ::unity2::ClassIdentity>::class(),
                 "set_center_Injected",

@@ -192,6 +192,27 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
+    #[::unity2::class(namespace = "App", name = "AchieveData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
+    pub struct AchieveData {
+        #[rename(name = "m_FlagName")]
+        pub m_flag_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_KindDictionary")]
+        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            i32,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::achievedata::AchieveData,
+            >,
+        >,
+        #[static_field]
+        #[rename(name = "s_ShowQueue")]
+        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
+            crate::app::achievedata::AchieveData,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -778,27 +799,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 137 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))]
-    #[::unity2::class(namespace = "App", name = "AchieveData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)]
-    pub struct AchieveData {
-        #[rename(name = "m_FlagName")]
-        pub m_flag_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_KindDictionary")]
-        pub s_kind_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::achievedata::AchieveData,
-            >,
-        >,
-        #[static_field]
-        #[rename(name = "s_ShowQueue")]
-        pub s_show_queue: crate::system::collections::generic::queue_1::Queue_1<
-            crate::app::achievedata::AchieveData,
-        >,
     }
 }
 

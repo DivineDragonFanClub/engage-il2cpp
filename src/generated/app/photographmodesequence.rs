@@ -10,22 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographModeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct PhotographModeSequence {
-        #[rename(name = "m_AllMenuContent")]
-        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
-        #[rename(name = "m_CameraController")]
-        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
-        #[rename(name = "m_DisposManager")]
-        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
-        #[rename(name = "m_IsHelpVisible")]
-        pub m_is_help_visible: bool,
-        #[rename(name = "m_ReservedLabel")]
-        pub m_reserved_label: crate::app::photographmodesequence::PhotographModeSequence_Label,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +60,22 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographmodesequence/PhotographModeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographModeSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct PhotographModeSequence {
+        #[rename(name = "m_AllMenuContent")]
+        pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        #[rename(name = "m_CameraController")]
+        pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        #[rename(name = "m_DisposManager")]
+        pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        #[rename(name = "m_IsHelpVisible")]
+        pub m_is_help_visible: bool,
+        #[rename(name = "m_ReservedLabel")]
+        pub m_reserved_label: crate::app::photographmodesequence::PhotographModeSequence_Label,
     }
 }
 

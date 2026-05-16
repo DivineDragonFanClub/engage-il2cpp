@@ -22,21 +22,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkWindowsSettings")]
-    #[parent(
-        crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings
-    )]
-    pub struct AkWindowsSettings {
-        #[rename(name = "UserSettings")]
-        pub user_settings: crate::root::akcommonusersettings::AkCommonUserSettings,
-        #[rename(name = "AdvancedSettings")]
-        pub advanced_settings:
-            crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings,
-        #[rename(name = "CommsSettings")]
-        pub comms_settings: crate::root::akcommoncommsettings::AkCommonCommSettings,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings_AudioAPI.md"))]
     #[repr(C)]
     #[derive(
@@ -91,6 +76,21 @@ mod __types {
         pub fn default() -> Self {
             Self { value: -1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkWindowsSettings")]
+    #[parent(
+        crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings
+    )]
+    pub struct AkWindowsSettings {
+        #[rename(name = "UserSettings")]
+        pub user_settings: crate::root::akcommonusersettings::AkCommonUserSettings,
+        #[rename(name = "AdvancedSettings")]
+        pub advanced_settings:
+            crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings,
+        #[rename(name = "CommsSettings")]
+        pub comms_settings: crate::root::akcommoncommsettings::AkCommonCommSettings,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))]

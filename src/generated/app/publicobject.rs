@@ -23,16 +23,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Group.md"))]
-    #[::unity2::class(namespace = "App", name = "PublicObject.Group")]
-    #[parent(crate::system::object::Object)]
-    pub struct PublicObject_Group {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Objects")]
-        pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject.md"))]
     #[::unity2::class(namespace = "App", name = "PublicObject")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: publicobject :: PublicObject >)]
@@ -51,6 +41,16 @@ mod __types {
             ::unity2::Il2CppString,
             crate::unity_engine::object_2::Object_2,
         >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Group.md"))]
+    #[::unity2::class(namespace = "App", name = "PublicObject.Group")]
+    #[parent(crate::system::object::Object)]
+    pub struct PublicObject_Group {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Objects")]
+        pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
     }
 }
 
@@ -81,90 +81,6 @@ impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
             )
         });
         <Self as IPublicObject_Func_1Methods<T0>>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PublicObject_Group_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PublicObject_Group as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PublicObject_Group as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: PublicObject_Group,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(PublicObject_Group, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-pub trait IPublicObject_GroupMethods: IPublicObject_Group {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <PublicObject_Group as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PublicObject_Group_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-publicobject")]
-impl<__T: IPublicObject_Group> IPublicObject_GroupMethods for __T {}
-
-#[cfg(feature = "app-publicobject")]
-impl PublicObject_Group {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PublicObject_Group),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPublicObject_GroupMethods>::ctor(this);
         this
     }
 }
@@ -923,6 +839,90 @@ impl PublicObject {
             )
         });
         <Self as IPublicObjectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PublicObject_Group_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PublicObject_Group as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PublicObject_Group as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: PublicObject_Group,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(PublicObject_Group, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+pub trait IPublicObject_GroupMethods: IPublicObject_Group {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PublicObject_Group as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PublicObject_Group_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-publicobject")]
+impl<__T: IPublicObject_Group> IPublicObject_GroupMethods for __T {}
+
+#[cfg(feature = "app-publicobject")]
+impl PublicObject_Group {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PublicObject_Group),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPublicObject_GroupMethods>::ctor(this);
         this
     }
 }

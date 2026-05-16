@@ -132,7 +132,7 @@ mod __TMP_FontAssetUtilities_unity2_raw {
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
@@ -204,7 +204,7 @@ mod __TMP_FontAssetUtilities_unity2_raw {
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),
@@ -279,7 +279,7 @@ mod __TMP_FontAssetUtilities_unity2_raw {
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontAssetUtilities as ::unity2::ClassIdentity>::class(),

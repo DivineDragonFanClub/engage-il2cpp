@@ -14,6 +14,11 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))]
+    #[::unity2::class(namespace = "App", name = "HubGoToMap")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct HubGoToMap {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubGoToMap.GoToDialogItem")]
     #[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]
@@ -21,184 +26,10 @@ mod __types {
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::gmapmode::GmapMode_Mode,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))]
-    #[::unity2::class(namespace = "App", name = "HubGoToMap")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct HubGoToMap {}
 }
 
 #[cfg(feature = "app-hubgotomap-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubgotomap")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubGoToMap_GoToDialogItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::action::Action as ::unity2::IlType>::il_type(),
-                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubGoToMap_GoToDialogItem,
-        label: ::unity2::Il2CppString,
-        func: crate::system::action::Action,
-        mode: crate::app::gmapmode::GmapMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubGoToMap_GoToDialogItem,
-            ::unity2::Il2CppString,
-            crate::system::action::Action,
-            crate::app::gmapmode::GmapMode_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, label, func, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubGoToMap_GoToDialogItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubGoToMap_GoToDialogItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubgotomap")]
-pub trait IHubGoToMap_GoToDialogItemMethods: IHubGoToMap_GoToDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    fn ctor(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        func: impl ::core::convert::Into<crate::system::action::Action>,
-        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <HubGoToMap_GoToDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubGoToMap_GoToDialogItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(func),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <HubGoToMap_GoToDialogItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubGoToMap_GoToDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubgotomap")]
-impl<__T: IHubGoToMap_GoToDialogItem> IHubGoToMap_GoToDialogItemMethods for __T {}
-
-#[cfg(feature = "app-hubgotomap")]
-impl HubGoToMap_GoToDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
-    pub fn new(
-        label: ::unity2::Il2CppString,
-        func: crate::system::action::Action,
-        mode: crate::app::gmapmode::GmapMode_Mode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubGoToMap_GoToDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubGoToMap_GoToDialogItemMethods>::ctor(this, label, func, mode);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubgotomap")]
 #[doc(hidden)]
@@ -382,6 +213,175 @@ impl HubGoToMap {
             )
         });
         <Self as IHubGoToMapMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubgotomap")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubGoToMap_GoToDialogItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubGoToMap_GoToDialogItem,
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubGoToMap_GoToDialogItem,
+            ::unity2::Il2CppString,
+            crate::system::action::Action,
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, label, func, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubGoToMap_GoToDialogItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubGoToMap_GoToDialogItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            HubGoToMap_GoToDialogItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubgotomap")]
+pub trait IHubGoToMap_GoToDialogItemMethods: IHubGoToMap_GoToDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    fn ctor(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        func: impl ::core::convert::Into<crate::system::action::Action>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <HubGoToMap_GoToDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubGoToMap_GoToDialogItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(func),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <HubGoToMap_GoToDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __HubGoToMap_GoToDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubgotomap")]
+impl<__T: IHubGoToMap_GoToDialogItem> IHubGoToMap_GoToDialogItemMethods for __T {}
+
+#[cfg(feature = "app-hubgotomap")]
+impl HubGoToMap_GoToDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
+    pub fn new(
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubGoToMap_GoToDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubGoToMap_GoToDialogItemMethods>::ctor(this, label, func, mode);
         this
     }
 }

@@ -9,6 +9,50 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonUserSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonUserSettings {
+        #[rename(name = "m_BasePath")]
+        pub m_base_path: ::unity2::Il2CppString,
+        #[rename(name = "m_StartupLanguage")]
+        pub m_startup_language: ::unity2::Il2CppString,
+        #[rename(name = "m_EngineLogging")]
+        pub m_engine_logging: bool,
+        #[rename(name = "m_MaximumNumberOfPositioningPaths")]
+        pub m_maximum_number_of_positioning_paths: u32,
+        #[rename(name = "m_CommandQueueSize")]
+        pub m_command_queue_size: u32,
+        #[rename(name = "m_SamplesPerFrame")]
+        pub m_samples_per_frame: u32,
+        #[rename(name = "m_MainOutputSettings")]
+        pub m_main_output_settings: crate::root::akcommonoutputsettings::AkCommonOutputSettings,
+        #[rename(name = "m_StreamingLookAheadRatio")]
+        pub m_streaming_look_ahead_ratio: f32,
+        #[rename(name = "m_SampleRate")]
+        pub m_sample_rate: u32,
+        #[rename(name = "m_NumberOfRefillsInVoice")]
+        pub m_number_of_refills_in_voice: u16,
+        #[rename(name = "m_SpatialAudioSettings")]
+        pub m_spatial_audio_settings:
+            crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonUserSettings_SpatialAudioSettings {
+# [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
+# [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
+# [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
+# [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
+# [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
+# [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
+# [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
+# [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
+# [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -56,146 +100,10 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings_SpatialAudioSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonUserSettings.SpatialAudioSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonUserSettings_SpatialAudioSettings {
-# [rename (name = "m_MaxSoundPropagationDepth")] pub m_max_sound_propagation_depth : u32 ,
-# [rename (name = "m_DiffractionFlags")] pub m_diffraction_flags : crate :: root :: akcommonusersettings :: AkCommonUserSettings_SpatialAudioSettings_DiffractionFlags ,
-# [rename (name = "m_MovementThreshold")] pub m_movement_threshold : f32 ,
-# [rename (name = "m_NumberOfPrimaryRays")] pub m_number_of_primary_rays : u32 ,
-# [rename (name = "m_MaxReflectionOrder")] pub m_max_reflection_order : u32 ,
-# [rename (name = "m_MaxPathLength")] pub m_max_path_length : f32 ,
-# [rename (name = "m_EnableDiffractionOnReflections")] pub m_enable_diffraction_on_reflections : bool ,
-# [rename (name = "m_EnableDirectPathDiffraction")] pub m_enable_direct_path_diffraction : bool ,
-# [rename (name = "m_EnableTransmission")] pub m_enable_transmission : bool ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonusersettings/AkCommonUserSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonUserSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonUserSettings {
-        #[rename(name = "m_BasePath")]
-        pub m_base_path: ::unity2::Il2CppString,
-        #[rename(name = "m_StartupLanguage")]
-        pub m_startup_language: ::unity2::Il2CppString,
-        #[rename(name = "m_EngineLogging")]
-        pub m_engine_logging: bool,
-        #[rename(name = "m_MaximumNumberOfPositioningPaths")]
-        pub m_maximum_number_of_positioning_paths: u32,
-        #[rename(name = "m_CommandQueueSize")]
-        pub m_command_queue_size: u32,
-        #[rename(name = "m_SamplesPerFrame")]
-        pub m_samples_per_frame: u32,
-        #[rename(name = "m_MainOutputSettings")]
-        pub m_main_output_settings: crate::root::akcommonoutputsettings::AkCommonOutputSettings,
-        #[rename(name = "m_StreamingLookAheadRatio")]
-        pub m_streaming_look_ahead_ratio: f32,
-        #[rename(name = "m_SampleRate")]
-        pub m_sample_rate: u32,
-        #[rename(name = "m_NumberOfRefillsInVoice")]
-        pub m_number_of_refills_in_voice: u16,
-        #[rename(name = "m_SpatialAudioSettings")]
-        pub m_spatial_audio_settings:
-            crate::root::akcommonusersettings::AkCommonUserSettings_SpatialAudioSettings,
-    }
 }
 
 #[cfg(feature = "root-akcommonusersettings-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akcommonusersettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkCommonUserSettings_SpatialAudioSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkCommonUserSettings_SpatialAudioSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkCommonUserSettings_SpatialAudioSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods:
-    IAkCommonUserSettings_SpatialAudioSettings
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < AkCommonUserSettings_SpatialAudioSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkCommonUserSettings_SpatialAudioSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl<__T: IAkCommonUserSettings_SpatialAudioSettings>
-    IAkCommonUserSettings_SpatialAudioSettingsMethods for __T
-{
-}
-
-#[cfg(feature = "root-akcommonusersettings")]
-impl AkCommonUserSettings_SpatialAudioSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkCommonUserSettings_SpatialAudioSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkCommonUserSettings_SpatialAudioSettingsMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-akcommonusersettings")]
 #[doc(hidden)]
@@ -915,6 +823,98 @@ impl AkCommonUserSettings {
             )
         });
         <Self as IAkCommonUserSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkCommonUserSettings_SpatialAudioSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkCommonUserSettings_SpatialAudioSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkCommonUserSettings_SpatialAudioSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkCommonUserSettings_SpatialAudioSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+pub trait IAkCommonUserSettings_SpatialAudioSettingsMethods:
+    IAkCommonUserSettings_SpatialAudioSettings
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < AkCommonUserSettings_SpatialAudioSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkCommonUserSettings_SpatialAudioSettings_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+impl<__T: IAkCommonUserSettings_SpatialAudioSettings>
+    IAkCommonUserSettings_SpatialAudioSettingsMethods for __T
+{
+}
+
+#[cfg(feature = "root-akcommonusersettings")]
+impl AkCommonUserSettings_SpatialAudioSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkCommonUserSettings_SpatialAudioSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkCommonUserSettings_SpatialAudioSettingsMethods>::ctor(this);
         this
     }
 }

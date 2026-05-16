@@ -28,7 +28,11 @@ mod __NpadHandheld_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: npadhandheldstate :: NpadHandheldState as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::npadhandheldstate::NpadHandheldState as ::unity2::IlType>::il_type(
+                ),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NpadHandheld as ::unity2::ClassIdentity>::class(),
                 "GetState",
@@ -78,7 +82,7 @@ mod __NpadHandheld_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(

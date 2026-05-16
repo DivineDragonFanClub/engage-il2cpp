@@ -7,6 +7,34 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor_DebugContext.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Execution.VM",
+        name = "Processor.DebugContext"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct Processor_DebugContext {
+        #[rename(name = "DebuggerEnabled")]
+        pub debugger_enabled: bool,
+        #[rename(name = "DebuggerAttached")]
+        pub debugger_attached: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
+        #[rename(name = "DebuggerCurrentAction")]
+        pub debugger_current_action:
+            crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType,
+        #[rename(name = "DebuggerCurrentActionTarget")]
+        pub debugger_current_action_target: i32,
+        #[rename(name = "LastHlRef")]
+        pub last_hl_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        #[rename(name = "ExStackDepthAtStep")]
+        pub ex_stack_depth_at_step: i32,
+        #[rename(name = "BreakPoints")]
+        pub break_points: crate::system::collections::generic::list_1::List_1<
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        >,
+        #[rename(name = "LineBasedBreakPoints")]
+        pub line_based_break_points: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Processor")]
     #[parent(crate::system::object::Object)]
@@ -57,38 +85,94 @@ mod __types {
         #[rename(name = "AutoYieldCounter")]
         pub auto_yield_counter: i64,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor_DebugContext.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Execution.VM",
-        name = "Processor.DebugContext"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct Processor_DebugContext {
-        #[rename(name = "DebuggerEnabled")]
-        pub debugger_enabled: bool,
-        #[rename(name = "DebuggerAttached")]
-        pub debugger_attached: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
-        #[rename(name = "DebuggerCurrentAction")]
-        pub debugger_current_action:
-            crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType,
-        #[rename(name = "DebuggerCurrentActionTarget")]
-        pub debugger_current_action_target: i32,
-        #[rename(name = "LastHlRef")]
-        pub last_hl_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        #[rename(name = "ExStackDepthAtStep")]
-        pub ex_stack_depth_at_step: i32,
-        #[rename(name = "BreakPoints")]
-        pub break_points: crate::system::collections::generic::list_1::List_1<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
-        #[rename(name = "LineBasedBreakPoints")]
-        pub line_based_break_points: bool,
-    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-processor-types")]
 pub use __types::*;
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Processor_DebugContext_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Processor_DebugContext as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Processor_DebugContext as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Processor_DebugContext,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Processor_DebugContext, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+pub trait IProcessor_DebugContextMethods: IProcessor_DebugContext {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Processor_DebugContext as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Processor_DebugContext_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+impl<__T: IProcessor_DebugContext> IProcessor_DebugContextMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+impl Processor_DebugContext {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Processor_DebugContext),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcessor_DebugContextMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
 #[doc(hidden)]
@@ -668,7 +752,7 @@ mod __Processor_unity2_raw {
                 <crate::system::io::stream::Stream as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Processor as ::unity2::ClassIdentity>::class(),
@@ -981,7 +1065,7 @@ mod __Processor_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut i32 as ::unity2::IlType>::il_type()];
+                &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Processor as ::unity2::ClassIdentity>::class(),
                 "FindMeta",
@@ -6791,90 +6875,6 @@ impl Processor {
             )
         });
         <Self as IProcessorMethods>::ctor_2(this, parent_processor);
-        this
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Processor_DebugContext_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Processor_DebugContext as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Processor_DebugContext as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Processor_DebugContext,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Processor_DebugContext, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-pub trait IProcessor_DebugContextMethods: IProcessor_DebugContext {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Processor_DebugContext as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Processor_DebugContext_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-impl<__T: IProcessor_DebugContext> IProcessor_DebugContextMethods for __T {}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-impl Processor_DebugContext {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Processor_DebugContext),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcessor_DebugContextMethods>::ctor(this);
         this
     }
 }

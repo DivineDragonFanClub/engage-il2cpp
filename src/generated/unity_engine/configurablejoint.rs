@@ -3003,7 +3003,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_secondaryAxis_Injected",
@@ -3053,7 +3053,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_secondaryAxis_Injected",
@@ -3102,7 +3102,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_linearLimitSpring_Injected",
@@ -3151,7 +3151,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimitSpring_Injected",
@@ -3200,7 +3200,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularXLimitSpring_Injected",
@@ -3249,7 +3249,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularXLimitSpring_Injected",
@@ -3298,7 +3298,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularYZLimitSpring_Injected",
@@ -3347,7 +3347,7 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYZLimitSpring_Injected",
@@ -3396,7 +3396,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_linearLimit_Injected",
@@ -3445,7 +3448,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimit_Injected",
@@ -3494,7 +3500,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_lowAngularXLimit_Injected",
@@ -3543,7 +3552,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_lowAngularXLimit_Injected",
@@ -3592,7 +3604,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_highAngularXLimit_Injected",
@@ -3641,7 +3656,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_highAngularXLimit_Injected",
@@ -3690,7 +3708,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularYLimit_Injected",
@@ -3739,7 +3760,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYLimit_Injected",
@@ -3788,7 +3812,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularZLimit_Injected",
@@ -3837,7 +3864,10 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: softjointlimit :: SoftJointLimit as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularZLimit_Injected",
@@ -3887,7 +3917,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetPosition_Injected",
@@ -3937,7 +3967,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetPosition_Injected",
@@ -3987,7 +4017,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetVelocity_Injected",
@@ -4037,7 +4067,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetVelocity_Injected",
@@ -4086,9 +4116,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_xDrive_Injected",
@@ -4137,9 +4166,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_xDrive_Injected",
@@ -4188,9 +4216,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_yDrive_Injected",
@@ -4239,9 +4266,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_yDrive_Injected",
@@ -4290,9 +4316,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_zDrive_Injected",
@@ -4341,9 +4366,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_zDrive_Injected",
@@ -4392,9 +4416,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetRotation_Injected",
@@ -4443,9 +4466,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetRotation_Injected",
@@ -4495,7 +4517,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetAngularVelocity_Injected",
@@ -4545,7 +4567,7 @@ mod __ConfigurableJoint_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetAngularVelocity_Injected",
@@ -4594,9 +4616,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularXDrive_Injected",
@@ -4645,9 +4666,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularXDrive_Injected",
@@ -4696,9 +4716,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularYZDrive_Injected",
@@ -4747,9 +4766,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYZDrive_Injected",
@@ -4798,9 +4816,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_slerpDrive_Injected",
@@ -4849,9 +4866,8 @@ mod __ConfigurableJoint_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_slerpDrive_Injected",

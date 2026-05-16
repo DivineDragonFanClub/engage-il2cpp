@@ -13,162 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DragonRideTarget_TargetType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DragonRideTarget_TargetType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DragonRideTarget.TargetType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DragonRideTarget_TargetType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DragonRideTarget_TargetType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn normal() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn bomb() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn chain() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn special() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn roulette() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DragonRideTarget_ExecuteReason {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DragonRideTarget.ExecuteReason";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DragonRideTarget_ExecuteReason {
-        pub fn normal() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn bomb() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn chain() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn reason_count() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetarget/DragonRideTarget.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideTarget")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DragonRideTarget {
-        #[static_field]
-        #[rename(name = "cUIRootPath")]
-        pub c_ui_root_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "cUITargetScorePath")]
-        pub c_ui_target_score_path: ::unity2::Il2CppString,
-        #[rename(name = "cBaseScoreList")]
-        pub c_base_score_list: ::unity2::Array<f64>,
-        #[rename(name = "m_RouletteChangeSecond")]
-        pub m_roulette_change_second: f32,
-        #[rename(name = "m_RouletteChangeTimer")]
-        pub m_roulette_change_timer: f32,
-        #[rename(name = "m_RouletteColor")]
-        pub m_roulette_color: i32,
-        #[rename(name = "m_IsRoulette")]
-        pub m_is_roulette: bool,
-        #[rename(name = "m_AppearTimer")]
-        pub m_appear_timer: f32,
-        #[rename(name = "m_targetState")]
-        pub m_target_state: crate::app::dragonridetarget::DragonRideTarget_TargetState,
-        #[rename(name = "m_IsHitAssistShot")]
-        pub m_is_hit_assist_shot: bool,
-        #[rename(name = "m_TypeObjectArray")]
-        pub m_type_object_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_UseMaterialList")]
-        pub m_use_material_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::material::Material,
-        >,
-        #[rename(name = "m_CameraScript")]
-        pub m_camera_script: crate::app::dragonridecamera::DragonRideCamera,
-        #[rename(name = "m_Config")]
-        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
-        #[rename(name = "m_ShaderColorID")]
-        pub m_shader_color_id: i32,
-        #[rename(name = "m_DestroyText")]
-        pub m_destroy_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_DestroySubText")]
-        pub m_destroy_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetState.md"))]
     #[repr(C)]
     #[derive(
@@ -225,6 +69,162 @@ mod __types {
         }
 
         pub fn destroyed() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetarget/DragonRideTarget.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideTarget")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct DragonRideTarget {
+        #[static_field]
+        #[rename(name = "cUIRootPath")]
+        pub c_ui_root_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "cUITargetScorePath")]
+        pub c_ui_target_score_path: ::unity2::Il2CppString,
+        #[rename(name = "cBaseScoreList")]
+        pub c_base_score_list: ::unity2::Array<f64>,
+        #[rename(name = "m_RouletteChangeSecond")]
+        pub m_roulette_change_second: f32,
+        #[rename(name = "m_RouletteChangeTimer")]
+        pub m_roulette_change_timer: f32,
+        #[rename(name = "m_RouletteColor")]
+        pub m_roulette_color: i32,
+        #[rename(name = "m_IsRoulette")]
+        pub m_is_roulette: bool,
+        #[rename(name = "m_AppearTimer")]
+        pub m_appear_timer: f32,
+        #[rename(name = "m_targetState")]
+        pub m_target_state: crate::app::dragonridetarget::DragonRideTarget_TargetState,
+        #[rename(name = "m_IsHitAssistShot")]
+        pub m_is_hit_assist_shot: bool,
+        #[rename(name = "m_TypeObjectArray")]
+        pub m_type_object_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_UseMaterialList")]
+        pub m_use_material_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::material::Material,
+        >,
+        #[rename(name = "m_CameraScript")]
+        pub m_camera_script: crate::app::dragonridecamera::DragonRideCamera,
+        #[rename(name = "m_Config")]
+        pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+        #[rename(name = "m_ShaderColorID")]
+        pub m_shader_color_id: i32,
+        #[rename(name = "m_DestroyText")]
+        pub m_destroy_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_DestroySubText")]
+        pub m_destroy_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DragonRideTarget_ExecuteReason {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DragonRideTarget.ExecuteReason";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DragonRideTarget_ExecuteReason {
+        pub fn normal() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn bomb() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn chain() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn reason_count() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DragonRideTarget_TargetType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DragonRideTarget_TargetType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DragonRideTarget.TargetType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DragonRideTarget_TargetType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DragonRideTarget_TargetType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn normal() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn bomb() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn chain() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn special() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn roulette() -> Self {
             Self { value: 5 }
         }
     }
@@ -943,10 +943,8 @@ mod __DragonRideTarget_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::app::dragonridecamera::DragonRideCamera as ::unity2::IlType>::il_type(
-                ),
-                <*mut crate::app::dragonrideconfig::DragonRideConfig as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::dragonridecamera::DragonRideCamera as ::unity2::IlType>::il_type(),
+                <crate::app::dragonrideconfig::DragonRideConfig as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(

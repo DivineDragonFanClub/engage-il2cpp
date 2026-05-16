@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))]
+    #[::unity2::class(namespace = "App", name = "Dir")]
+    #[parent(crate::system::object::Object)]
+    pub struct Dir_2 {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dir_2/Dir_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -88,11 +93,6 @@ mod __types {
             Self { value: 262 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dir_2/Dir_2.md"))]
-    #[::unity2::class(namespace = "App", name = "Dir")]
-    #[parent(crate::system::object::Object)]
-    pub struct Dir_2 {}
 }
 
 #[cfg(feature = "app-dir_2-types")]

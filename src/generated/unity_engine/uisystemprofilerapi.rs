@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
+    #[parent(crate::system::object::Object)]
+    pub struct UISystemProfilerApi {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
     #[repr(C)]
     #[derive(
@@ -52,11 +57,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
-    #[parent(crate::system::object::Object)]
-    pub struct UISystemProfilerApi {}
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]

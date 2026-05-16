@@ -69,61 +69,48 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct TextMeshAnimation {
-        #[rename(name = "Params")]
-        pub params:
-            ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
-        #[rename(name = "m_TextComponent")]
-        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
-        #[rename(name = "m_IsAnimation")]
-        pub m_is_animation: bool,
-        #[rename(name = "m_IsFirstFrame")]
-        pub m_is_first_frame: bool,
-        #[rename(name = "m_NowAnimationIndex")]
-        pub m_now_animation_index: i32,
-        #[rename(name = "m_NowTime")]
-        pub m_now_time: f32,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TextMeshAnimation_DelayTimeType {
+        pub value: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
-    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
-    #[parent(crate::system::object::Object)]
-    pub struct TextMeshAnimation_AnimationParams {
-        #[rename(name = "OffsetCurveX")]
-        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "OffsetCurveY")]
-        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RotationCurve")]
-        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveX")]
-        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "ScaleCurveY")]
-        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "RedCurve")]
-        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "GreenCurve")]
-        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "BlueCurve")]
-        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "AlphaCurve")]
-        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "m_PivotType")]
-        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
-        #[rename(name = "m_DelayTime")]
-        pub m_delay_time: f32,
-        #[rename(name = "m_DelayTimeType")]
-        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
-        #[rename(name = "m_EndType")]
-        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
-        #[rename(name = "m_StartFromRight")]
-        pub m_start_from_right: bool,
-        #[rename(name = "m_MaxIntervalTime")]
-        pub m_max_interval_time: f32,
-        #[rename(name = "m_EndTime")]
-        pub m_end_time: f32,
+    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TextMeshAnimation_DelayTimeType {
+        pub fn interval() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn total() -> Self {
+            Self { value: 1 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
@@ -170,53 +157,599 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TextMeshAnimation_DelayTimeType {
-        pub value: i32,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
+    #[parent(crate::system::object::Object)]
+    pub struct TextMeshAnimation_AnimationParams {
+        #[rename(name = "OffsetCurveX")]
+        pub offset_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "OffsetCurveY")]
+        pub offset_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RotationCurve")]
+        pub rotation_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveX")]
+        pub scale_curve_x: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "ScaleCurveY")]
+        pub scale_curve_y: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "RedCurve")]
+        pub red_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "GreenCurve")]
+        pub green_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "BlueCurve")]
+        pub blue_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "AlphaCurve")]
+        pub alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "m_PivotType")]
+        pub m_pivot_type: crate::app::textmeshanimation::TextMeshAnimation_PivotType,
+        #[rename(name = "m_DelayTime")]
+        pub m_delay_time: f32,
+        #[rename(name = "m_DelayTimeType")]
+        pub m_delay_time_type: crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType,
+        #[rename(name = "m_EndType")]
+        pub m_end_type: crate::app::textmeshanimation::TextMeshAnimation_EndType,
+        #[rename(name = "m_StartFromRight")]
+        pub m_start_from_right: bool,
+        #[rename(name = "m_MaxIntervalTime")]
+        pub m_max_interval_time: f32,
+        #[rename(name = "m_EndTime")]
+        pub m_end_time: f32,
     }
 
-    impl ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TextMeshAnimation_DelayTimeType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TextMeshAnimation_DelayTimeType {
-        pub fn interval() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn total() -> Self {
-            Self { value: 1 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
+    #[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct TextMeshAnimation {
+        #[rename(name = "Params")]
+        pub params:
+            ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
+        #[rename(name = "m_TextComponent")]
+        pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+        #[rename(name = "m_IsAnimation")]
+        pub m_is_animation: bool,
+        #[rename(name = "m_IsFirstFrame")]
+        pub m_is_first_frame: bool,
+        #[rename(name = "m_NowAnimationIndex")]
+        pub m_now_animation_index: i32,
+        #[rename(name = "m_NowTime")]
+        pub m_now_time: f32,
     }
 }
 
 #[cfg(feature = "app-textmeshanimation-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-textmeshanimation")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TextMeshAnimation_AnimationParams_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_delay_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "GetDelayTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "GetDelayTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_delay_time(
+        this: TextMeshAnimation_AnimationParams,
+        character_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_delay_time::get_offset() as isize),
+        );
+        inner(this, character_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_end_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "CalcEndTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "CalcEndTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calc_end_time(
+        this: TextMeshAnimation_AnimationParams,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calc_end_time::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "IsEnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_end(
+        this: TextMeshAnimation_AnimationParams,
+        time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_end::get_offset() as isize),
+        );
+        inner(this, time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_wrap_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::wrapmode::WrapMode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "SetWrapMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "SetWrapMode",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_wrap_mode(
+        this: TextMeshAnimation_AnimationParams,
+        mode: crate::unity_engine::wrapmode::WrapMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            crate::unity_engine::wrapmode::WrapMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_wrap_mode::get_offset() as isize),
+        );
+        inner(this, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_expand_animation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "ExpandAnimation",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "ExpandAnimation",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn expand_animation(
+        this: TextMeshAnimation_AnimationParams,
+        ratio: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_expand_animation::get_offset() as isize),
+        );
+        inner(this, ratio, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_end_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "get_EndTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "get_EndTime",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_end_time(
+        this: TextMeshAnimation_AnimationParams,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_end_time::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_animation_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                "GetAnimationList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    "GetAnimationList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_animation_list(
+        this: TextMeshAnimation_AnimationParams,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<
+            crate::unity_engine::animationcurve::AnimationCurve,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_animation_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TextMeshAnimation_AnimationParams,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TextMeshAnimation_AnimationParams,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-textmeshanimation")]
+pub trait ITextMeshAnimation_AnimationParamsMethods: ITextMeshAnimation_AnimationParams {
+    #[doc = "`GetDelayTime(i32)` overload"]
+    fn get_delay_time(self, character_count: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::get_delay_time(
+                __receiver,
+                ::core::convert::Into::into(character_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CalcEndTime()` overload"]
+    fn calc_end_time(self) -> () {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::calc_end_time(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnd(f32)` overload"]
+    fn is_end(self, time: impl ::core::convert::Into<f32>) -> bool {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::is_end(
+                __receiver,
+                ::core::convert::Into::into(time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetWrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]
+    fn set_wrap_mode(
+        self,
+        mode: impl ::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::set_wrap_mode(
+                __receiver,
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ExpandAnimation(f32)` overload"]
+    fn expand_animation(self, ratio: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::expand_animation(
+                __receiver,
+                ::core::convert::Into::into(ratio),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_EndTime()` overload"]
+    fn get_end_time(self) -> f32 {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::get_end_time(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetAnimationList()` overload"]
+    fn get_animation_list(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::get_animation_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TextMeshAnimation_AnimationParams_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-textmeshanimation")]
+impl<__T: ITextMeshAnimation_AnimationParams> ITextMeshAnimation_AnimationParamsMethods for __T {}
+
+#[cfg(feature = "app-textmeshanimation")]
+impl TextMeshAnimation_AnimationParams {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextMeshAnimation_AnimationParams),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextMeshAnimation_AnimationParamsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-textmeshanimation")]
 #[doc(hidden)]
@@ -991,539 +1524,6 @@ impl TextMeshAnimation {
             )
         });
         <Self as ITextMeshAnimationMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-textmeshanimation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TextMeshAnimation_AnimationParams_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_delay_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "GetDelayTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "GetDelayTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_delay_time(
-        this: TextMeshAnimation_AnimationParams,
-        character_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_delay_time::get_offset() as isize),
-        );
-        inner(this, character_count, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_end_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "CalcEndTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "CalcEndTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_end_time(
-        this: TextMeshAnimation_AnimationParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_end_time::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "IsEnd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "IsEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_end(
-        this: TextMeshAnimation_AnimationParams,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_end::get_offset() as isize),
-        );
-        inner(this, time, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_wrap_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::wrapmode::WrapMode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "SetWrapMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "SetWrapMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_wrap_mode(
-        this: TextMeshAnimation_AnimationParams,
-        mode: crate::unity_engine::wrapmode::WrapMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            crate::unity_engine::wrapmode::WrapMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_wrap_mode::get_offset() as isize),
-        );
-        inner(this, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_expand_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "ExpandAnimation",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "ExpandAnimation",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn expand_animation(
-        this: TextMeshAnimation_AnimationParams,
-        ratio: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_expand_animation::get_offset() as isize),
-        );
-        inner(this, ratio, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_end_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "get_EndTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "get_EndTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_end_time(
-        this: TextMeshAnimation_AnimationParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_end_time::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_animation_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                "GetAnimationList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    "GetAnimationList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_animation_list(
-        this: TextMeshAnimation_AnimationParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::unity_engine::animationcurve::AnimationCurve,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_animation_list::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshAnimation_AnimationParams as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TextMeshAnimation_AnimationParams,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TextMeshAnimation_AnimationParams,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-textmeshanimation")]
-pub trait ITextMeshAnimation_AnimationParamsMethods: ITextMeshAnimation_AnimationParams {
-    #[doc = "`GetDelayTime(i32)` overload"]
-    fn get_delay_time(self, character_count: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::get_delay_time(
-                __receiver,
-                ::core::convert::Into::into(character_count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CalcEndTime()` overload"]
-    fn calc_end_time(self) -> () {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::calc_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnd(f32)` overload"]
-    fn is_end(self, time: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::is_end(
-                __receiver,
-                ::core::convert::Into::into(time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetWrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]
-    fn set_wrap_mode(
-        self,
-        mode: impl ::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::set_wrap_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ExpandAnimation(f32)` overload"]
-    fn expand_animation(self, ratio: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::expand_animation(
-                __receiver,
-                ::core::convert::Into::into(ratio),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_EndTime()` overload"]
-    fn get_end_time(self) -> f32 {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::get_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAnimationList()` overload"]
-    fn get_animation_list(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::get_animation_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TextMeshAnimation_AnimationParams as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TextMeshAnimation_AnimationParams_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-textmeshanimation")]
-impl<__T: ITextMeshAnimation_AnimationParams> ITextMeshAnimation_AnimationParamsMethods for __T {}
-
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation_AnimationParams {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextMeshAnimation_AnimationParams),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITextMeshAnimation_AnimationParamsMethods>::ctor(this);
         this
     }
 }

@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
+    #[parent(crate::system::object::Object)]
+    pub struct InfoUtil_StatusSkill {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
     #[repr(C)]
     #[derive(
@@ -56,11 +61,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
-    #[parent(crate::system::object::Object)]
-    pub struct InfoUtil_StatusSkill {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))]
     #[::unity2::class(namespace = "App", name = "InfoUtil")]
@@ -1821,7 +1821,7 @@ mod __InfoUtil_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: skillarray :: SkillArray as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: app :: infoutil :: InfoUtil_StatusSkill > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: skillarray :: SkillArray as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: infoutil :: InfoUtil_StatusSkill > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InfoUtil as ::unity2::ClassIdentity>::class(),
                 "AddSkillArray",
@@ -2567,15 +2567,7 @@ mod __InfoUtil_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
-                    <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
-                    <*mut i32 as ::unity2::IlType>::il_type(),
-                    <*mut crate::system::collections::generic::list_1::List_1<
-                        ::unity2::Il2CppString,
-                    > as ::unity2::IlType>::il_type(),
-                ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: battleside :: BattleSide_Type as :: unity2 :: IlType > :: il_type () , < crate :: app :: battlescenelist :: BattleSceneList as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InfoUtil as ::unity2::ClassIdentity>::class(),
                 "GetBattleAtkParam",
@@ -2856,9 +2848,9 @@ mod __InfoUtil_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InfoUtil as ::unity2::ClassIdentity>::class(),

@@ -629,7 +629,7 @@ mod __MuscleSitUpFallData_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut crate::system::collections::generic::list_1::List_1<
+                <crate::system::collections::generic::list_1::List_1<
                     crate::app::musclesitupfalldata::MuscleSitUpFallData,
                 > as ::unity2::IlType>::il_type(),
             ];

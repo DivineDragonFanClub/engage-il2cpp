@@ -16,37 +16,6 @@ mod __types {
     use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_SpecialCharacter {
-        pub character: crate::tm_pro::tmp_character::TMP_Character,
-        pub font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        pub material: crate::unity_engine::material::Material,
-        pub material_index: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_SpecialCharacter {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.SpecialCharacter";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_SpecialCharacter {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -73,88 +42,6 @@ mod __types {
                 .raw()
                 ._1
                 .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct TMP_Text_UnicodeChar {
-        pub unicode: i32,
-        pub string_index: i32,
-        pub length: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.UnicodeChar";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_UnicodeChar {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_Text_TextInputSources {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_Text.TextInputSources";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_Text_TextInputSources {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_Text_TextInputSources {
-        pub fn text_input_box() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn set_text() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn set_text_array() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn text_string() -> Self {
-            Self { value: 3 }
         }
     }
 
@@ -682,6 +569,58 @@ mod __types {
         pub k_large_negative_int: i32,
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TMP_Text_TextInputSources {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.TextInputSources";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_TextInputSources {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TMP_Text_TextInputSources {
+        pub fn text_input_box() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn set_text() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn set_text_array() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn text_string() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -710,90 +649,71 @@ mod __types {
                 .byval_arg
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_SpecialCharacter {
+        pub character: crate::tm_pro::tmp_character::TMP_Character,
+        pub font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        pub material: crate::unity_engine::material::Material,
+        pub material_index: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_SpecialCharacter {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.SpecialCharacter";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_SpecialCharacter {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_Text_UnicodeChar {
+        pub unicode: i32,
+        pub string_index: i32,
+        pub length: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
+        const NAMESPACE: &'static str = "TMPro";
+
+        const NAME: &'static str = "TMP_Text.UnicodeChar";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_Text_UnicodeChar {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_text-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Text_SpecialCharacter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_Text_SpecialCharacter,
-        character: crate::tm_pro::tmp_character::TMP_Character,
-        material_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_Text_SpecialCharacter,
-            crate::tm_pro::tmp_character::TMP_Character,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, character, material_index, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-impl TMP_Text_SpecialCharacter {
-    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
-    pub fn ctor(
-        self,
-        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
-        material_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __TMP_Text_SpecialCharacter_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(character),
-                ::core::convert::Into::into(material_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "tm_pro-tmp_text")]
 #[doc(hidden)]
@@ -11464,7 +11384,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "ReplaceOpeningStyleTag",
@@ -11529,7 +11449,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "ReplaceOpeningStyleTag",
@@ -11594,7 +11514,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "ReplaceClosingStyleTag",
@@ -11656,7 +11576,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < i32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "ReplaceClosingStyleTag",
@@ -11718,7 +11638,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_style :: TMP_Style as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_style :: TMP_Style as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "InsertOpeningStyleTag",
@@ -11780,7 +11700,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "InsertClosingStyleTag",
@@ -11937,9 +11857,9 @@ mod __TMP_Text_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut ::unity2::Array<i32> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -11993,7 +11913,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_text :: TMP_Text_TextBackingContainer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "GetStyleHashCode",
@@ -12050,7 +11970,7 @@ mod __TMP_Text_unity2_raw {
                 <f32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -12116,7 +12036,7 @@ mod __TMP_Text_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f64 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -12764,7 +12684,7 @@ mod __TMP_Text_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -13177,8 +13097,8 @@ mod __TMP_Text_unity2_raw {
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -13263,7 +13183,7 @@ mod __TMP_Text_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
@@ -13319,9 +13239,8 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::wordwrapstate::WordWrapState as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "RestoreWordWrappingState",
@@ -13638,7 +13557,7 @@ mod __TMP_Text_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -13721,7 +13640,7 @@ mod __TMP_Text_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -14101,7 +14020,7 @@ mod __TMP_Text_unity2_raw {
                 <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontstyles::FontStyles as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::fontweight::FontWeight as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -15230,7 +15149,7 @@ mod __TMP_Text_unity2_raw {
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Array<f32> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -15354,7 +15273,7 @@ mod __TMP_Text_unity2_raw {
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
@@ -15417,7 +15336,7 @@ mod __TMP_Text_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: tm_pro :: tmp_text :: TMP_Text_UnicodeChar > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Text as ::unity2::ClassIdentity>::class(),
                 "ValidateHtmlTag",
@@ -19933,6 +19852,86 @@ impl TMP_Text_CharacterSubstitution {
                 self,
                 ::core::convert::Into::into(index),
                 ::core::convert::Into::into(unicode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Text_SpecialCharacter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Text_SpecialCharacter as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_Text_SpecialCharacter,
+        character: crate::tm_pro::tmp_character::TMP_Character,
+        material_index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Text_SpecialCharacter,
+            crate::tm_pro::tmp_character::TMP_Character,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, character, material_index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text_SpecialCharacter {
+    #[doc = "`.ctor(crate::tm_pro::tmp_character::TMP_Character, i32)` overload"]
+    pub fn ctor(
+        self,
+        character: impl ::core::convert::Into<crate::tm_pro::tmp_character::TMP_Character>,
+        material_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __TMP_Text_SpecialCharacter_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(character),
+                ::core::convert::Into::into(material_index),
                 ::core::option::Option::None,
             )
         }

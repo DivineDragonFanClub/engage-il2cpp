@@ -10,6 +10,39 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    pub struct TerrainData {
+        #[static_field]
+        #[rename(name = "k_MaximumResolution")]
+        pub k_maximum_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumDetailResolutionPerPatch")]
+        pub k_minimum_detail_resolution_per_patch: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailResolutionPerPatch")]
+        pub k_maximum_detail_resolution_per_patch: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailPatchCount")]
+        pub k_maximum_detail_patch_count: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailsPerRes")]
+        pub k_maximum_details_per_res: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumAlphamapResolution")]
+        pub k_minimum_alphamap_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumAlphamapResolution")]
+        pub k_maximum_alphamap_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumBaseMapResolution")]
+        pub k_minimum_base_map_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumBaseMapResolution")]
+        pub k_maximum_base_map_resolution: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]
     #[repr(C)]
     #[derive(
@@ -80,39 +113,6 @@ mod __types {
         pub fn max_base_map_res() -> Self {
             Self { value: 8 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct TerrainData {
-        #[static_field]
-        #[rename(name = "k_MaximumResolution")]
-        pub k_maximum_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumDetailResolutionPerPatch")]
-        pub k_minimum_detail_resolution_per_patch: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailResolutionPerPatch")]
-        pub k_maximum_detail_resolution_per_patch: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailPatchCount")]
-        pub k_maximum_detail_patch_count: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailsPerRes")]
-        pub k_maximum_details_per_res: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumAlphamapResolution")]
-        pub k_minimum_alphamap_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumAlphamapResolution")]
-        pub k_maximum_alphamap_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumBaseMapResolution")]
-        pub k_minimum_base_map_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumBaseMapResolution")]
-        pub k_maximum_base_map_resolution: i32,
     }
 }
 
@@ -866,7 +866,7 @@ mod __TerrainData_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "get_heightmapScale_Injected",
@@ -916,7 +916,7 @@ mod __TerrainData_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "get_size_Injected",
@@ -968,7 +968,7 @@ mod __TerrainData_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),

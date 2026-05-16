@@ -10,17 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "DragonRideInstructionSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct DragonRideInstructionSequence {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_InstractionObject")]
-        pub m_instraction_object: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -67,6 +56,17 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "DragonRideInstructionSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DragonRideInstructionSequence {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_InstractionObject")]
+        pub m_instraction_object: crate::unity_engine::gameobject::GameObject,
     }
 }
 

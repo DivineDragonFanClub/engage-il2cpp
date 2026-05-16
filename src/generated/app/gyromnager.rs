@@ -9,21 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))]
-    #[::unity2::class(namespace = "App", name = "GyroMnager")]
-    #[parent(crate::system::object::Object)]
-    pub struct GyroMnager {
-        #[rename(name = "m_IsSampling")]
-        pub m_is_sampling: bool,
-        #[rename(name = "m_HandleList")]
-        pub m_handle_list:
-            ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-        #[rename(name = "m_HandleCoount")]
-        pub m_handle_coount: i32,
-        #[rename(name = "m_StateList")]
-        pub m_state_list: ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
     #[repr(C)]
     #[derive(
@@ -78,6 +63,21 @@ mod __types {
         pub fn full_key() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))]
+    #[::unity2::class(namespace = "App", name = "GyroMnager")]
+    #[parent(crate::system::object::Object)]
+    pub struct GyroMnager {
+        #[rename(name = "m_IsSampling")]
+        pub m_is_sampling: bool,
+        #[rename(name = "m_HandleList")]
+        pub m_handle_list:
+            ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
+        #[rename(name = "m_HandleCoount")]
+        pub m_handle_coount: i32,
+        #[rename(name = "m_StateList")]
+        pub m_state_list: ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>,
     }
 }
 

@@ -11,16 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_StateImpl.md"))]
-    #[::unity2::class(namespace = "", name = "SimpleAnimation.StateImpl")]
-    #[parent(crate::system::object::Object)]
-    pub struct SimpleAnimation_StateImpl {
-        #[rename(name = "m_StateHandle")]
-        pub m_state_handle: crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
-        #[rename(name = "m_Component")]
-        pub m_component: crate::root::simpleanimation::SimpleAnimation,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_EditorState.md"))]
     #[::unity2::class(namespace = "", name = "SimpleAnimation.EditorState")]
     #[parent(crate::system::object::Object)]
@@ -31,6 +21,31 @@ mod __types {
         pub name: ::unity2::Il2CppString,
         #[rename(name = "defaultState")]
         pub default_state: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_StateEnumerable_StateEnumerator.md"))]
+    #[::unity2::class(
+        namespace = "",
+        name = "SimpleAnimation.StateEnumerable.StateEnumerator"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct SimpleAnimation_StateEnumerable_StateEnumerator {
+        #[rename(name = "m_Owner")]
+        pub m_owner: crate::root::simpleanimation::SimpleAnimation,
+        #[rename(name = "m_Impl")]
+        pub m_impl: crate::system::collections::generic::ienumerator_1::IEnumerator_1<
+            crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
+        >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_StateImpl.md"))]
+    #[::unity2::class(namespace = "", name = "SimpleAnimation.StateImpl")]
+    #[parent(crate::system::object::Object)]
+    pub struct SimpleAnimation_StateImpl {
+        #[rename(name = "m_StateHandle")]
+        pub m_state_handle: crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
+        #[rename(name = "m_Component")]
+        pub m_component: crate::root::simpleanimation::SimpleAnimation,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_StateEnumerable.md"))]
@@ -79,25 +94,436 @@ mod __types {
         #[rename(name = "m_States")]
         pub m_states: ::unity2::Array<crate::root::simpleanimation::SimpleAnimation_EditorState>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/simpleanimation/SimpleAnimation_StateEnumerable_StateEnumerator.md"))]
-    #[::unity2::class(
-        namespace = "",
-        name = "SimpleAnimation.StateEnumerable.StateEnumerator"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct SimpleAnimation_StateEnumerable_StateEnumerator {
-        #[rename(name = "m_Owner")]
-        pub m_owner: crate::root::simpleanimation::SimpleAnimation,
-        #[rename(name = "m_Impl")]
-        pub m_impl: crate::system::collections::generic::ienumerator_1::IEnumerator_1<
-            crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,
-        >,
-    }
 }
 
 #[cfg(feature = "root-simpleanimation-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-simpleanimation")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SimpleAnimation_EditorState_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_EditorState as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SimpleAnimation_EditorState as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SimpleAnimation_EditorState,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SimpleAnimation_EditorState, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-simpleanimation")]
+pub trait ISimpleAnimation_EditorStateMethods: ISimpleAnimation_EditorState {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SimpleAnimation_EditorState as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __SimpleAnimation_EditorState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "root-simpleanimation")]
+impl<__T: ISimpleAnimation_EditorState> ISimpleAnimation_EditorStateMethods for __T {}
+
+#[cfg(feature = "root-simpleanimation")]
+impl SimpleAnimation_EditorState {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SimpleAnimation_EditorState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISimpleAnimation_EditorStateMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-simpleanimation")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::simpleanimation::SimpleAnimation as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        owner: crate::root::simpleanimation::SimpleAnimation,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            crate::root::simpleanimation::SimpleAnimation,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, owner, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                "GetCurrent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetCurrent" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::simpleanimation::SimpleAnimation_State {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::simpleanimation::SimpleAnimation_State = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_system_collections_i_enumerator_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                "System.Collections.IEnumerator.get_Current",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn system_collections_i_enumerator_get_current(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(
+                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
+                ),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_dispose::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                "MoveNext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_next(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
+                ),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: SimpleAnimation_StateEnumerable_StateEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SimpleAnimation_StateEnumerable_StateEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-simpleanimation")]
+pub trait ISimpleAnimation_StateEnumerable_StateEnumeratorMethods:
+    ISimpleAnimation_StateEnumerable_StateEnumerator
+{
+    #[doc = "`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]
+    fn ctor(
+        self,
+        owner: impl ::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>,
+    ) -> () {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(owner),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetCurrent()` overload"]
+    fn get_current(self) -> crate::root::simpleanimation::SimpleAnimation_State {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::get_current(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::dispose(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::move_next(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-simpleanimation")]
+impl<__T: ISimpleAnimation_StateEnumerable_StateEnumerator>
+    ISimpleAnimation_StateEnumerable_StateEnumeratorMethods for __T
+{
+}
+
+#[cfg(feature = "root-simpleanimation")]
+impl SimpleAnimation_StateEnumerable_StateEnumerator {
+    #[doc = "`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]
+    pub fn new(owner: crate::root::simpleanimation::SimpleAnimation) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SimpleAnimation_StateEnumerable_StateEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISimpleAnimation_StateEnumerable_StateEnumeratorMethods>::ctor(this, owner);
+        this
+    }
+}
 
 #[cfg(feature = "root-simpleanimation")]
 #[doc(hidden)]
@@ -1232,91 +1658,6 @@ impl SimpleAnimation_StateImpl {
             )
         });
         <Self as ISimpleAnimation_StateImplMethods>::ctor(this, handle, component);
-        this
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimation_EditorState_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_EditorState as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SimpleAnimation_EditorState as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SimpleAnimation_EditorState,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SimpleAnimation_EditorState, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-pub trait ISimpleAnimation_EditorStateMethods: ISimpleAnimation_EditorState {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SimpleAnimation_EditorState as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SimpleAnimation_EditorState_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-impl<__T: ISimpleAnimation_EditorState> ISimpleAnimation_EditorStateMethods for __T {}
-
-#[cfg(feature = "root-simpleanimation")]
-impl SimpleAnimation_EditorState {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SimpleAnimation_EditorState),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISimpleAnimation_EditorStateMethods>::ctor(this);
         this
     }
 }
@@ -5615,347 +5956,6 @@ impl SimpleAnimation {
             )
         });
         <Self as ISimpleAnimationMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::simpleanimation::SimpleAnimation as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        owner: crate::root::simpleanimation::SimpleAnimation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            crate::root::simpleanimation::SimpleAnimation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, owner, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                "GetCurrent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "GetCurrent" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::simpleanimation::SimpleAnimation_State {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::simpleanimation::SimpleAnimation_State = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_system_collections_i_enumerator_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                "System.Collections.IEnumerator.get_Current",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "System.Collections.IEnumerator.get_Current" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn system_collections_i_enumerator_get_current(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
-                ),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                "MoveNext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_next(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_next::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SimpleAnimation_StateEnumerable_StateEnumerator as ::unity2::ClassIdentity>::class(
-                ),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(
-        this: SimpleAnimation_StateEnumerable_StateEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SimpleAnimation_StateEnumerable_StateEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-pub trait ISimpleAnimation_StateEnumerable_StateEnumeratorMethods:
-    ISimpleAnimation_StateEnumerable_StateEnumerator
-{
-    #[doc = "`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]
-    fn ctor(
-        self,
-        owner: impl ::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>,
-    ) -> () {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(owner),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCurrent()` overload"]
-    fn get_current(self) -> crate::root::simpleanimation::SimpleAnimation_State {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw :: system_collections_i_enumerator_get_current (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::move_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = < SimpleAnimation_StateEnumerable_StateEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::reset(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-simpleanimation")]
-impl<__T: ISimpleAnimation_StateEnumerable_StateEnumerator>
-    ISimpleAnimation_StateEnumerable_StateEnumeratorMethods for __T
-{
-}
-
-#[cfg(feature = "root-simpleanimation")]
-impl SimpleAnimation_StateEnumerable_StateEnumerator {
-    #[doc = "`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]
-    pub fn new(owner: crate::root::simpleanimation::SimpleAnimation) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SimpleAnimation_StateEnumerable_StateEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISimpleAnimation_StateEnumerable_StateEnumeratorMethods>::ctor(this, owner);
         this
     }
 }

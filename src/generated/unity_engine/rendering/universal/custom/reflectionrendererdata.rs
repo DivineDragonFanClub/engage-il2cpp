@@ -14,6 +14,17 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Custom",
+        name = "ReflectionRendererData.ShaderResources"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ReflectionRendererData_ShaderResources {
+        #[rename(name = "blitPS")]
+        pub blit_ps: crate::unity_engine::shader::Shader,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
     #[repr(C)]
     #[derive(
@@ -60,17 +71,6 @@ mod __types {
         pub fn chara_special_reflection() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "ReflectionRendererData.ShaderResources"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ReflectionRendererData_ShaderResources {
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))]

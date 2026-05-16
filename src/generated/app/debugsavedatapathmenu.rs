@@ -10,6 +10,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugSaveDataPathMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DebugSaveDataPathMenu {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,11 +66,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugSaveDataPathMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct DebugSaveDataPathMenu {}
 }
 
 #[cfg(feature = "app-debugsavedatapathmenu-types")]

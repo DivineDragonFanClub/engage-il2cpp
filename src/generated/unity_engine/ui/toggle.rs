@@ -22,6 +22,22 @@ mod __types {
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)]
     pub struct Toggle_ToggleEvent {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Toggle {
+        #[rename(name = "toggleTransition")]
+        pub toggle_transition: crate::unity_engine::ui::toggle::Toggle_ToggleTransition,
+        #[rename(name = "graphic")]
+        pub graphic: crate::unity_engine::ui::graphic::Graphic,
+        #[rename(name = "m_Group")]
+        pub m_group: crate::unity_engine::ui::togglegroup::ToggleGroup,
+        #[rename(name = "onValueChanged")]
+        pub on_value_changed: crate::unity_engine::ui::toggle::Toggle_ToggleEvent,
+        #[rename(name = "m_IsOn")]
+        pub m_is_on: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
     #[repr(C)]
     #[derive(
@@ -64,22 +80,6 @@ mod __types {
         pub fn fade() -> Self {
             Self { value: 1 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Toggle {
-        #[rename(name = "toggleTransition")]
-        pub toggle_transition: crate::unity_engine::ui::toggle::Toggle_ToggleTransition,
-        #[rename(name = "graphic")]
-        pub graphic: crate::unity_engine::ui::graphic::Graphic,
-        #[rename(name = "m_Group")]
-        pub m_group: crate::unity_engine::ui::togglegroup::ToggleGroup,
-        #[rename(name = "onValueChanged")]
-        pub on_value_changed: crate::unity_engine::ui::toggle::Toggle_ToggleEvent,
-        #[rename(name = "m_IsOn")]
-        pub m_is_on: bool,
     }
 }
 

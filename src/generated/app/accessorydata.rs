@@ -12,6 +12,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md"))]
+    #[::unity2::class(namespace = "App", name = "AccessoryData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: accessorydata :: AccessoryData >)]
+    pub struct AccessoryData {
+        #[rename(name = "FlagName")]
+        pub flag_name: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
     #[repr(C)]
     #[derive(
@@ -118,14 +126,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md"))]
-    #[::unity2::class(namespace = "App", name = "AccessoryData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: accessorydata :: AccessoryData >)]
-    pub struct AccessoryData {
-        #[rename(name = "FlagName")]
-        pub flag_name: ::unity2::Il2CppString,
     }
 }
 

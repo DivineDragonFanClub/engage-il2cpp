@@ -188,7 +188,7 @@ mod __ProfileList_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileList as ::unity2::ClassIdentity>::class(),

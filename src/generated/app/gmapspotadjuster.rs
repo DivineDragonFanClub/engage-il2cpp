@@ -12,28 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSpotAdjuster")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapSpotAdjuster {
-        #[rename(name = "移動時に地面に吸着させる")]
-        pub 移動時に地面に吸着させる: bool,
-        #[rename(name = "吸着対象")]
-        pub 吸着対象: crate::system::collections::generic::list_1::List_1<
-            crate::app::gmapspotadjuster::GmapSpotAdjuster_TargetModel,
-        >,
-        #[rename(name = "m_TargetColliders")]
-        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::collider::Collider,
-        >,
-        #[rename(name = "m_OldCheck")]
-        pub m_old_check: bool,
-        #[rename(name = "m_Transform")]
-        pub m_transform: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_LastPosition")]
-        pub m_last_position: crate::unity_engine::vector3::Vector3,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -62,6 +40,28 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSpotAdjuster")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapSpotAdjuster {
+        #[rename(name = "移動時に地面に吸着させる")]
+        pub 移動時に地面に吸着させる: bool,
+        #[rename(name = "吸着対象")]
+        pub 吸着対象: crate::system::collections::generic::list_1::List_1<
+            crate::app::gmapspotadjuster::GmapSpotAdjuster_TargetModel,
+        >,
+        #[rename(name = "m_TargetColliders")]
+        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::collider::Collider,
+        >,
+        #[rename(name = "m_OldCheck")]
+        pub m_old_check: bool,
+        #[rename(name = "m_Transform")]
+        pub m_transform: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_LastPosition")]
+        pub m_last_position: crate::unity_engine::vector3::Vector3,
     }
 }
 
@@ -310,7 +310,7 @@ mod __GmapSpotAdjuster_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: raycasthit :: RaycastHit as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: collider :: Collider > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapSpotAdjuster as ::unity2::ClassIdentity>::class(),
                 "RaycastToTargets",

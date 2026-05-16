@@ -197,7 +197,7 @@ mod __Plane_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Plane as ::unity2::ClassIdentity>::class(),

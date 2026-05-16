@@ -285,6 +285,74 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonOutputSettings.ChannelConfiguration")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonOutputSettings_ChannelConfiguration {
+# [rename (name = "m_ChannelConfigType")] pub m_channel_config_type : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType ,
+# [rename (name = "m_ChannelMask")] pub m_channel_mask : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration_ChannelMask ,
+# [rename (name = "m_NumberOfChannels")] pub m_number_of_channels : u32 ,
+}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_PanningRule.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct AkCommonOutputSettings_PanningRule {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for AkCommonOutputSettings_PanningRule {
+        const NAMESPACE: &'static str = "";
+
+        const NAME: &'static str = "AkCommonOutputSettings.PanningRule";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AkCommonOutputSettings_PanningRule {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl AkCommonOutputSettings_PanningRule {
+        pub fn speakers() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn headphones() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkCommonOutputSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkCommonOutputSettings {
+        #[rename(name = "m_AudioDeviceShareset")]
+        pub m_audio_device_shareset: ::unity2::Il2CppString,
+        #[rename(name = "m_DeviceID")]
+        pub m_device_id: u32,
+        #[rename(name = "m_PanningRule")]
+        pub m_panning_rule: crate::root::akcommonoutputsettings::AkCommonOutputSettings_PanningRule,
+        #[rename(name = "m_ChannelConfig")]
+        pub m_channel_config:
+            crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType.md"))]
     #[repr(C)]
     #[derive(
@@ -330,74 +398,6 @@ mod __types {
 
         pub fn ambisonic() -> Self {
             Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonOutputSettings.ChannelConfiguration")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonOutputSettings_ChannelConfiguration {
-# [rename (name = "m_ChannelConfigType")] pub m_channel_config_type : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType ,
-# [rename (name = "m_ChannelMask")] pub m_channel_mask : crate :: root :: akcommonoutputsettings :: AkCommonOutputSettings_ChannelConfiguration_ChannelMask ,
-# [rename (name = "m_NumberOfChannels")] pub m_number_of_channels : u32 ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonoutputsettings/AkCommonOutputSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkCommonOutputSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkCommonOutputSettings {
-        #[rename(name = "m_AudioDeviceShareset")]
-        pub m_audio_device_shareset: ::unity2::Il2CppString,
-        #[rename(name = "m_DeviceID")]
-        pub m_device_id: u32,
-        #[rename(name = "m_PanningRule")]
-        pub m_panning_rule: crate::root::akcommonoutputsettings::AkCommonOutputSettings_PanningRule,
-        #[rename(name = "m_ChannelConfig")]
-        pub m_channel_config:
-            crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommonoutputsettings/AkCommonOutputSettings_PanningRule.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct AkCommonOutputSettings_PanningRule {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for AkCommonOutputSettings_PanningRule {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "AkCommonOutputSettings.PanningRule";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AkCommonOutputSettings_PanningRule {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl AkCommonOutputSettings_PanningRule {
-        pub fn speakers() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn headphones() -> Self {
-            Self { value: 1 }
         }
     }
 }

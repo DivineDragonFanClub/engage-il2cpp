@@ -8,6 +8,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))]
+    #[::unity2::class(namespace = "Combat", name = "FXZEx")]
+    #[parent(crate::system::object::Object)]
+    pub struct FXZEx {
+        #[static_field]
+        #[rename(name = "layerMask")]
+        pub layer_mask: i32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,15 +45,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))]
-    #[::unity2::class(namespace = "Combat", name = "FXZEx")]
-    #[parent(crate::system::object::Object)]
-    pub struct FXZEx {
-        #[static_field]
-        #[rename(name = "layerMask")]
-        pub layer_mask: i32,
     }
 }
 
@@ -392,7 +392,7 @@ mod __FXZEx_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FXZEx as ::unity2::ClassIdentity>::class(),

@@ -11,50 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexProfile_ServerSequence_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexProfile_ServerSequence_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexProfile.ServerSequence.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexProfile_ServerSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexProfile_ServerSequence_Mode {
-        pub fn upload() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn download() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md"))]
     #[::unity2::class(namespace = "App", name = "NexProfile")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)]
@@ -63,23 +19,6 @@ mod __types {
         pub m_last_result: crate::app::nexprofile::NexProfile_Results,
         #[rename(name = "m_LastResultData")]
         pub m_last_result_data: crate::app::profilecard::ProfileCard,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexProfile.ServerSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexProfile_ServerSequence {
-        #[static_field]
-        #[rename(name = "BufferSizeMax")]
-        pub buffer_size_max: i32,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::nexprofile::NexProfile_ServerSequence_Mode,
-        #[rename(name = "m_PrincipalID")]
-        pub m_principal_id: u64,
-        #[rename(name = "m_Profile")]
-        pub m_profile: crate::app::profilecard::ProfileCard,
-        #[rename(name = "m_DataID")]
-        pub m_data_id: u64,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md"))]
@@ -203,6 +142,67 @@ mod __types {
 
         pub fn end() -> Self {
             Self { value: 7 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexProfile.ServerSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexProfile_ServerSequence {
+        #[static_field]
+        #[rename(name = "BufferSizeMax")]
+        pub buffer_size_max: i32,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::nexprofile::NexProfile_ServerSequence_Mode,
+        #[rename(name = "m_PrincipalID")]
+        pub m_principal_id: u64,
+        #[rename(name = "m_Profile")]
+        pub m_profile: crate::app::profilecard::ProfileCard,
+        #[rename(name = "m_DataID")]
+        pub m_data_id: u64,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexProfile_ServerSequence_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexProfile_ServerSequence_Mode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexProfile.ServerSequence.Mode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexProfile_ServerSequence_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexProfile_ServerSequence_Mode {
+        pub fn upload() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn download() -> Self {
+            Self { value: 1 }
         }
     }
 }
@@ -1090,8 +1090,8 @@ mod __NexProfile_ServerSequence_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut ::unity2::Array<u8> as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NexProfile_ServerSequence as ::unity2::ClassIdentity>::class(),

@@ -12,6 +12,17 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogGmapItem.md"))]
+    #[::unity2::class(
+        namespace = "App.Gmap",
+        name = "GoToSolanelOrDlcGmapDialog.DialogGmapItem"
+    )]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct GoToSolanelOrDlcGmapDialog_DialogGmapItem {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::gmapmode::GmapMode_Mode,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogItem.md"))]
     #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelOrDlcGmapDialog.DialogItem")]
     #[parent(crate::app::basicdialogitem::BasicDialogItem)]
@@ -24,21 +35,295 @@ mod __types {
     #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelOrDlcGmapDialog")]
     #[parent(crate::app::basicdialog::BasicDialog)]
     pub struct GoToSolanelOrDlcGmapDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelordlcgmapdialog/GoToSolanelOrDlcGmapDialog_DialogGmapItem.md"))]
-    #[::unity2::class(
-        namespace = "App.Gmap",
-        name = "GoToSolanelOrDlcGmapDialog.DialogGmapItem"
-    )]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct GoToSolanelOrDlcGmapDialog_DialogGmapItem {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::gmapmode::GmapMode_Mode,
-    }
 }
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_s_move_gmap_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
+                "get_s_MoveGmapCallback",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
+                    "get_s_MoveGmapCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_s_move_gmap_callback(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::action_1::Action_1<
+            crate::app::gmapmode::GmapMode_Mode,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_s_move_gmap_callback::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_s_move_gmap_callback {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::action_1::Action_1<
+                    crate::app::gmapmode::GmapMode_Mode,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
+                "set_s_MoveGmapCallback",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
+                    "set_s_MoveGmapCallback",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_s_move_gmap_callback(
+        value: crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_s_move_gmap_callback::get_offset() as isize),
+        );
+        inner(value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GoToSolanelOrDlcGmapDialog_DialogGmapItem,
+        label: ::unity2::Il2CppString,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GoToSolanelOrDlcGmapDialog_DialogGmapItem,
+            ::unity2::Il2CppString,
+            crate::app::gmapmode::GmapMode_Mode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, label, mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: GoToSolanelOrDlcGmapDialog_DialogGmapItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            GoToSolanelOrDlcGmapDialog_DialogGmapItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+impl GoToSolanelOrDlcGmapDialog_DialogGmapItem {
+    #[doc = "`get_s_MoveGmapCallback()` overload"]
+    pub fn get_s_move_gmap_callback(
+    ) -> crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> {
+        unsafe {
+            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::get_s_move_gmap_callback(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_s_MoveGmapCallback(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"]
+    pub fn set_s_move_gmap_callback(
+        value: impl ::core::convert::Into<
+            crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
+        >,
+    ) -> () {
+        unsafe {
+            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::set_s_move_gmap_callback(
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+pub trait IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods:
+    IGoToSolanelOrDlcGmapDialog_DialogGmapItem
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]
+    fn ctor(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
+    ) -> () {
+        unsafe {
+            let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(mode),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+impl<__T: IGoToSolanelOrDlcGmapDialog_DialogGmapItem>
+    IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
+impl GoToSolanelOrDlcGmapDialog_DialogGmapItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
+    pub fn new(label: ::unity2::Il2CppString, mode: crate::app::gmapmode::GmapMode_Mode) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogGmapItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods>::ctor(this, label, mode);
+        this
+    }
+}
 
 #[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
 #[doc(hidden)]
@@ -388,291 +673,6 @@ impl GoToSolanelOrDlcGmapDialog {
             )
         });
         <Self as IGoToSolanelOrDlcGmapDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_s_move_gmap_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
-                "get_s_MoveGmapCallback",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
-                    "get_s_MoveGmapCallback",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_s_move_gmap_callback(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::action_1::Action_1<
-            crate::app::gmapmode::GmapMode_Mode,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_s_move_gmap_callback::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_s_move_gmap_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::app::gmapmode::GmapMode_Mode,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
-                "set_s_MoveGmapCallback",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
-                    "set_s_MoveGmapCallback",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_s_move_gmap_callback(
-        value: crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_s_move_gmap_callback::get_offset() as isize),
-        );
-        inner(value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::gmapmode::GmapMode_Mode as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GoToSolanelOrDlcGmapDialog_DialogGmapItem,
-        label: ::unity2::Il2CppString,
-        mode: crate::app::gmapmode::GmapMode_Mode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GoToSolanelOrDlcGmapDialog_DialogGmapItem,
-            ::unity2::Il2CppString,
-            crate::app::gmapmode::GmapMode_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, label, mode, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GoToSolanelOrDlcGmapDialog_DialogGmapItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: GoToSolanelOrDlcGmapDialog_DialogGmapItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            GoToSolanelOrDlcGmapDialog_DialogGmapItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogGmapItem {
-    #[doc = "`get_s_MoveGmapCallback()` overload"]
-    pub fn get_s_move_gmap_callback(
-    ) -> crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode> {
-        unsafe {
-            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::get_s_move_gmap_callback(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_s_MoveGmapCallback(crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>)` overload"]
-    pub fn set_s_move_gmap_callback(
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::app::gmapmode::GmapMode_Mode>,
-        >,
-    ) -> () {
-        unsafe {
-            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::set_s_move_gmap_callback(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-pub trait IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods:
-    IGoToSolanelOrDlcGmapDialog_DialogGmapItem
-{
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` overload"]
-    fn ctor(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        mode: impl ::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>,
-    ) -> () {
-        unsafe {
-            let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < GoToSolanelOrDlcGmapDialog_DialogGmapItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GoToSolanelOrDlcGmapDialog_DialogGmapItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl<__T: IGoToSolanelOrDlcGmapDialog_DialogGmapItem>
-    IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-gmap-gotosolanelordlcgmapdialog")]
-impl GoToSolanelOrDlcGmapDialog_DialogGmapItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::gmapmode::GmapMode_Mode)` — overload selector"]
-    pub fn new(label: ::unity2::Il2CppString, mode: crate::app::gmapmode::GmapMode_Mode) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GoToSolanelOrDlcGmapDialog_DialogGmapItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGoToSolanelOrDlcGmapDialog_DialogGmapItemMethods>::ctor(this, label, mode);
         this
     }
 }

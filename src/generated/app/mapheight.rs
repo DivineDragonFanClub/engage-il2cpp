@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "MapHeight.CellInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapHeight_CellInfo {
+        #[rename(name = "heights")]
+        pub heights: ::unity2::Array<f32>,
+        #[rename(name = "normals")]
+        pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "layers")]
+        pub layers: ::unity2::Array<i32>,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_EdgeIndex.md"))]
     #[::unity2::class(namespace = "App", name = "MapHeight.EdgeIndex")]
     #[parent(crate::system::object::Object)]
@@ -18,6 +30,50 @@ mod __types {
         pub index1: i32,
         #[rename(name = "Index2")]
         pub index2: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight.md"))]
+    #[::unity2::class(namespace = "App", name = "MapHeight")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapheight :: MapHeight >)]
+    pub struct MapHeight {
+        #[static_field]
+        #[rename(name = "R")]
+        pub r: i32,
+        #[static_field]
+        #[rename(name = "N")]
+        pub n: i32,
+        #[static_field]
+        #[rename(name = "W")]
+        pub w: i32,
+        #[static_field]
+        #[rename(name = "H")]
+        pub h: i32,
+        #[rename(name = "m_CellMaps")]
+        pub m_cell_maps: ::unity2::Array<crate::app::mapheight::MapHeight_CellMap>,
+        #[rename(name = "m_LayerMasksA")]
+        pub m_layer_masks_a: ::unity2::Array<i32>,
+        #[rename(name = "m_LayerMasksB")]
+        pub m_layer_masks_b: ::unity2::Array<i32>,
+        #[rename(name = "m_LayerMaskOver")]
+        pub m_layer_mask_over: i32,
+        #[static_field]
+        #[rename(name = "ZERO")]
+        pub zero: crate::unity_engine::vector3::Vector3,
+        #[static_field]
+        #[rename(name = "s_EdgeIndexes")]
+        pub s_edge_indexes: ::unity2::Array<crate::app::mapheight::MapHeight_EdgeIndex>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md"))]
+    #[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapHeight_CellMap {
+        #[rename(name = "m_Cells")]
+        pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
+        #[rename(name = "m_LayerMaskA")]
+        pub m_layer_mask_a: i32,
+        #[rename(name = "m_LayerMaskB")]
+        pub m_layer_mask_b: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Plane.md"))]
@@ -72,62 +128,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "MapHeight.CellInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapHeight_CellInfo {
-        #[rename(name = "heights")]
-        pub heights: ::unity2::Array<f32>,
-        #[rename(name = "normals")]
-        pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "layers")]
-        pub layers: ::unity2::Array<i32>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight.md"))]
-    #[::unity2::class(namespace = "App", name = "MapHeight")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapheight :: MapHeight >)]
-    pub struct MapHeight {
-        #[static_field]
-        #[rename(name = "R")]
-        pub r: i32,
-        #[static_field]
-        #[rename(name = "N")]
-        pub n: i32,
-        #[static_field]
-        #[rename(name = "W")]
-        pub w: i32,
-        #[static_field]
-        #[rename(name = "H")]
-        pub h: i32,
-        #[rename(name = "m_CellMaps")]
-        pub m_cell_maps: ::unity2::Array<crate::app::mapheight::MapHeight_CellMap>,
-        #[rename(name = "m_LayerMasksA")]
-        pub m_layer_masks_a: ::unity2::Array<i32>,
-        #[rename(name = "m_LayerMasksB")]
-        pub m_layer_masks_b: ::unity2::Array<i32>,
-        #[rename(name = "m_LayerMaskOver")]
-        pub m_layer_mask_over: i32,
-        #[static_field]
-        #[rename(name = "ZERO")]
-        pub zero: crate::unity_engine::vector3::Vector3,
-        #[static_field]
-        #[rename(name = "s_EdgeIndexes")]
-        pub s_edge_indexes: ::unity2::Array<crate::app::mapheight::MapHeight_EdgeIndex>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md"))]
-    #[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapHeight_CellMap {
-        #[rename(name = "m_Cells")]
-        pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
-        #[rename(name = "m_LayerMaskA")]
-        pub m_layer_mask_a: i32,
-        #[rename(name = "m_LayerMaskB")]
-        pub m_layer_mask_b: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Layers.md"))]
     #[repr(C)]
     #[derive(
@@ -179,90 +179,6 @@ mod __types {
 
 #[cfg(feature = "app-mapheight-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapheight")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapHeight_EdgeIndex_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapHeight_EdgeIndex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapHeight_EdgeIndex, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapheight")]
-pub trait IMapHeight_EdgeIndexMethods: IMapHeight_EdgeIndex {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapHeight_EdgeIndex as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapHeight_EdgeIndex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapheight")]
-impl<__T: IMapHeight_EdgeIndex> IMapHeight_EdgeIndexMethods for __T {}
-
-#[cfg(feature = "app-mapheight")]
-impl MapHeight_EdgeIndex {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHeight_EdgeIndex),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapheight")]
 #[doc(hidden)]
@@ -896,6 +812,90 @@ impl MapHeight_CellInfo {
 #[cfg(feature = "app-mapheight")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapHeight_EdgeIndex_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapHeight_EdgeIndex as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapHeight_EdgeIndex,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapHeight_EdgeIndex, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+pub trait IMapHeight_EdgeIndexMethods: IMapHeight_EdgeIndex {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapHeight_EdgeIndex as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapHeight_EdgeIndex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+impl<__T: IMapHeight_EdgeIndex> IMapHeight_EdgeIndexMethods for __T {}
+
+#[cfg(feature = "app-mapheight")]
+impl MapHeight_EdgeIndex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHeight_EdgeIndex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapheight")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapHeight_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -906,7 +906,7 @@ mod __MapHeight_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::raycasthit::RaycastHit as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -2211,7 +2211,7 @@ mod __MapHeight_unity2_raw {
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapHeight as ::unity2::ClassIdentity>::class(),
@@ -2275,7 +2275,7 @@ mod __MapHeight_unity2_raw {
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapHeight as ::unity2::ClassIdentity>::class(),

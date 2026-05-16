@@ -10,6 +10,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RingCleaningSelectSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingCleaningSelectSequence {
+        #[rename(name = "m_MenuItemResult")]
+        pub m_menu_item_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_GodSelectRoot")]
+        pub m_god_select_root: crate::app::godselectroot::GodSelectRoot,
+        #[rename(name = "m_SelectUnit")]
+        pub m_select_unit: crate::app::unit::Unit,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -64,18 +76,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RingCleaningSelectSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingCleaningSelectSequence {
-        #[rename(name = "m_MenuItemResult")]
-        pub m_menu_item_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_GodSelectRoot")]
-        pub m_god_select_root: crate::app::godselectroot::GodSelectRoot,
-        #[rename(name = "m_SelectUnit")]
-        pub m_select_unit: crate::app::unit::Unit,
     }
 }
 

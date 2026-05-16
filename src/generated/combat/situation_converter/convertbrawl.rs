@@ -11,6 +11,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))]
+    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertBrawl")]
+    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
+    pub struct ConvertBrawl {
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::situation_converter::convertbrawl::ConvertBrawl_State,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]
     #[repr(C)]
     #[derive(
@@ -57,14 +65,6 @@ mod __types {
         pub fn behindから初撃() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))]
-    #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertBrawl")]
-    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
-    pub struct ConvertBrawl {
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::situation_converter::convertbrawl::ConvertBrawl_State,
     }
 }
 

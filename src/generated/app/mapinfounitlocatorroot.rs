@@ -90,148 +90,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot.md"))]
-    #[::unity2::class(namespace = "App", name = "MapInfoUnitLocatorRoot")]
-    #[parent(crate::app::mapinfobase::MapInfoBase)]
-    pub struct MapInfoUnitLocatorRoot {
-        #[rename(name = "m_BattleType")]
-        pub m_battle_type: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysAtkTitle")]
-        pub m_phys_atk_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysAtkValue1")]
-        pub m_phys_atk_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysAtkValue2")]
-        pub m_phys_atk_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysAtkValue3")]
-        pub m_phys_atk_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysAtkValueEmpty")]
-        pub m_phys_atk_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefTitle")]
-        pub m_def_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefValue1")]
-        pub m_def_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefValue2")]
-        pub m_def_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefValue3")]
-        pub m_def_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_DefValueEmpty")]
-        pub m_def_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MagAtkTitle")]
-        pub m_mag_atk_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MagAtkValue1")]
-        pub m_mag_atk_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MagAtkValue2")]
-        pub m_mag_atk_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MagAtkValue3")]
-        pub m_mag_atk_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MagAtkValueEmpty")]
-        pub m_mag_atk_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ResTitle")]
-        pub m_res_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ResValue1")]
-        pub m_res_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ResValue2")]
-        pub m_res_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ResValue3")]
-        pub m_res_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ResValueEmpty")]
-        pub m_res_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HitTitle")]
-        pub m_hit_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HitValue1")]
-        pub m_hit_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HitValue2")]
-        pub m_hit_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HitValue3")]
-        pub m_hit_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_HitValueEmpty")]
-        pub m_hit_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AvoTitle")]
-        pub m_avo_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AvoValue1")]
-        pub m_avo_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AvoValue2")]
-        pub m_avo_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AvoValue3")]
-        pub m_avo_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_AvoValueEmpty")]
-        pub m_avo_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritTitle")]
-        pub m_crit_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritValue1")]
-        pub m_crit_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritValue2")]
-        pub m_crit_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritValue3")]
-        pub m_crit_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritValueEmpty")]
-        pub m_crit_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritAvoTitle")]
-        pub m_crit_avo_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritAvoValue1")]
-        pub m_crit_avo_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritAvoValue2")]
-        pub m_crit_avo_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritAvoValue3")]
-        pub m_crit_avo_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_CritAvoValueEmpty")]
-        pub m_crit_avo_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillTitle")]
-        pub m_skill_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillValue1")]
-        pub m_skill_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillValue2")]
-        pub m_skill_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillValue3")]
-        pub m_skill_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillValueEmpty")]
-        pub m_skill_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SpdTitle")]
-        pub m_spd_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SpdValue1")]
-        pub m_spd_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SpdValue2")]
-        pub m_spd_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SpdValue3")]
-        pub m_spd_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SpdValueEmpty")]
-        pub m_spd_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MoveTitle")]
-        pub m_move_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MoveValue1")]
-        pub m_move_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MoveValue2")]
-        pub m_move_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MoveValue3")]
-        pub m_move_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_MoveValueEmpty")]
-        pub m_move_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysTitle")]
-        pub m_phys_title: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysValue1")]
-        pub m_phys_value1: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysValue2")]
-        pub m_phys_value2: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysValue3")]
-        pub m_phys_value3: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_PhysValueEmpty")]
-        pub m_phys_value_empty: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_LocatorRoot")]
-        pub m_locator_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TotalInfo")]
-        pub m_total_info: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[rename(name = "m_PartInfo")]
-        pub m_part_info: ::unity2::Array<crate::unity_engine::canvasgroup::CanvasGroup>,
-        #[rename(name = "m_Images")]
-        pub m_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[rename(name = "m_PageAlpha")]
-        pub m_page_alpha: ::unity2::Array<f32>,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_IsDirtyAlpha")]
-        pub m_is_dirty_alpha: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_ImageKind.md"))]
     #[repr(C)]
     #[derive(
@@ -566,6 +424,148 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 62 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot.md"))]
+    #[::unity2::class(namespace = "App", name = "MapInfoUnitLocatorRoot")]
+    #[parent(crate::app::mapinfobase::MapInfoBase)]
+    pub struct MapInfoUnitLocatorRoot {
+        #[rename(name = "m_BattleType")]
+        pub m_battle_type: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysAtkTitle")]
+        pub m_phys_atk_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysAtkValue1")]
+        pub m_phys_atk_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysAtkValue2")]
+        pub m_phys_atk_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysAtkValue3")]
+        pub m_phys_atk_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysAtkValueEmpty")]
+        pub m_phys_atk_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_DefTitle")]
+        pub m_def_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_DefValue1")]
+        pub m_def_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_DefValue2")]
+        pub m_def_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_DefValue3")]
+        pub m_def_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_DefValueEmpty")]
+        pub m_def_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MagAtkTitle")]
+        pub m_mag_atk_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MagAtkValue1")]
+        pub m_mag_atk_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MagAtkValue2")]
+        pub m_mag_atk_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MagAtkValue3")]
+        pub m_mag_atk_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MagAtkValueEmpty")]
+        pub m_mag_atk_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ResTitle")]
+        pub m_res_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ResValue1")]
+        pub m_res_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ResValue2")]
+        pub m_res_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ResValue3")]
+        pub m_res_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ResValueEmpty")]
+        pub m_res_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_HitTitle")]
+        pub m_hit_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_HitValue1")]
+        pub m_hit_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_HitValue2")]
+        pub m_hit_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_HitValue3")]
+        pub m_hit_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_HitValueEmpty")]
+        pub m_hit_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AvoTitle")]
+        pub m_avo_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AvoValue1")]
+        pub m_avo_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AvoValue2")]
+        pub m_avo_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AvoValue3")]
+        pub m_avo_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_AvoValueEmpty")]
+        pub m_avo_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritTitle")]
+        pub m_crit_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritValue1")]
+        pub m_crit_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritValue2")]
+        pub m_crit_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritValue3")]
+        pub m_crit_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritValueEmpty")]
+        pub m_crit_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritAvoTitle")]
+        pub m_crit_avo_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritAvoValue1")]
+        pub m_crit_avo_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritAvoValue2")]
+        pub m_crit_avo_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritAvoValue3")]
+        pub m_crit_avo_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_CritAvoValueEmpty")]
+        pub m_crit_avo_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillTitle")]
+        pub m_skill_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillValue1")]
+        pub m_skill_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillValue2")]
+        pub m_skill_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillValue3")]
+        pub m_skill_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillValueEmpty")]
+        pub m_skill_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SpdTitle")]
+        pub m_spd_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SpdValue1")]
+        pub m_spd_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SpdValue2")]
+        pub m_spd_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SpdValue3")]
+        pub m_spd_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SpdValueEmpty")]
+        pub m_spd_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MoveTitle")]
+        pub m_move_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MoveValue1")]
+        pub m_move_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MoveValue2")]
+        pub m_move_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MoveValue3")]
+        pub m_move_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_MoveValueEmpty")]
+        pub m_move_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysTitle")]
+        pub m_phys_title: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysValue1")]
+        pub m_phys_value1: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysValue2")]
+        pub m_phys_value2: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysValue3")]
+        pub m_phys_value3: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_PhysValueEmpty")]
+        pub m_phys_value_empty: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_LocatorRoot")]
+        pub m_locator_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TotalInfo")]
+        pub m_total_info: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[rename(name = "m_PartInfo")]
+        pub m_part_info: ::unity2::Array<crate::unity_engine::canvasgroup::CanvasGroup>,
+        #[rename(name = "m_Images")]
+        pub m_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[rename(name = "m_PageAlpha")]
+        pub m_page_alpha: ::unity2::Array<f32>,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_IsDirtyAlpha")]
+        pub m_is_dirty_alpha: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
@@ -1290,7 +1290,7 @@ mod __MapInfoUnitLocatorRoot_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(

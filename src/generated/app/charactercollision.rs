@@ -13,20 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/charactercollision/CharacterCollision.md"))]
-    #[::unity2::class(namespace = "App", name = "CharacterCollision")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterCollision {
-        #[rename(name = "m_Kinds")]
-        pub m_kinds: crate::app::charactercollision::CharacterCollision_Kinds,
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_Radius")]
-        pub m_radius: f32,
-        #[rename(name = "m_Result")]
-        pub m_result: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/charactercollision/CharacterCollision_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -73,6 +59,20 @@ mod __types {
         pub fn 破壊() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/charactercollision/CharacterCollision.md"))]
+    #[::unity2::class(namespace = "App", name = "CharacterCollision")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CharacterCollision {
+        #[rename(name = "m_Kinds")]
+        pub m_kinds: crate::app::charactercollision::CharacterCollision_Kinds,
+        #[rename(name = "m_Color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_Radius")]
+        pub m_radius: f32,
+        #[rename(name = "m_Result")]
+        pub m_result: f32,
     }
 }
 

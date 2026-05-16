@@ -180,7 +180,7 @@ mod __MaterialReference_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialReference as ::unity2::ClassIdentity>::class(),
                 "AddMaterialReference",
@@ -241,7 +241,7 @@ mod __MaterialReference_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: tm_pro :: materialreference :: MaterialReference > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i32 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialReference as ::unity2::ClassIdentity>::class(),
                 "AddMaterialReference",

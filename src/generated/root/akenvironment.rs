@@ -11,14 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm.md"))]
-    #[::unity2::class(
-        namespace = "",
-        name = "AkEnvironment.AkEnvironment_CompareBySelectionAlgorithm"
-    )]
-    #[parent(crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority)]
-    pub struct AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment.md"))]
     #[::unity2::class(namespace = "", name = "AkEnvironment")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -46,6 +38,14 @@ mod __types {
         pub value_guid_internal: ::unity2::Array<u8>,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm.md"))]
+    #[::unity2::class(
+        namespace = "",
+        name = "AkEnvironment.AkEnvironment_CompareBySelectionAlgorithm"
+    )]
+    #[parent(crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority)]
+    pub struct AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareByPriority.md"))]
     #[::unity2::class(namespace = "", name = "AkEnvironment.AkEnvironment_CompareByPriority")]
     #[parent(crate::system::object::Object)]
@@ -54,140 +54,6 @@ mod __types {
 
 #[cfg(feature = "root-akenvironment-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akenvironment")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-        a: crate::root::akenvironment::AkEnvironment,
-        b: crate::root::akenvironment::AkEnvironment,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-            crate::root::akenvironment::AkEnvironment,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, a, b, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods:
-    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm
-{
-    #[doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]
-    fn compare(
-        self,
-        a: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-        b: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akenvironment")]
-impl<__T: IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm>
-    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T
-{
-}
-
-#[cfg(feature = "root-akenvironment")]
-impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-akenvironment")]
 #[doc(hidden)]
@@ -650,6 +516,140 @@ impl AkEnvironment {
             )
         });
         <Self as IAkEnvironmentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akenvironment")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
+                <crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , "Compare" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , "Compare" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
+        a: crate::root::akenvironment::AkEnvironment,
+        b: crate::root::akenvironment::AkEnvironment,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
+            crate::root::akenvironment::AkEnvironment,
+            crate::root::akenvironment::AkEnvironment,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akenvironment")]
+pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods:
+    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm
+{
+    #[doc = "`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]
+    fn compare(
+        self,
+        a: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
+        b: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akenvironment")]
+impl<__T: IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm>
+    IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T
+{
+}
+
+#[cfg(feature = "root-akenvironment")]
+impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods>::ctor(this);
         this
     }
 }

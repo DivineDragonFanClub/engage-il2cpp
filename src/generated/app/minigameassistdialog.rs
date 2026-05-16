@@ -20,10 +20,76 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MinigameAssistDialog_DecideEventHandler {}
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MinigameAssistDialog_MinigameType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MinigameAssistDialog_MinigameType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MinigameAssistDialog.MinigameType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MinigameAssistDialog_MinigameType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MinigameAssistDialog_MinigameType {
+        pub fn dragon_ride() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fishing() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn muscle_exercise() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]
     #[::unity2::class(namespace = "App", name = "MinigameAssistDialog.AssistItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MinigameAssistDialog_AssistItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct MinigameAssistDialog {
+        #[static_field]
+        #[rename(name = "ConfirmLabels")]
+        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "YesLabels")]
+        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "NoLabels")]
+        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "CancelLabels")]
+        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]
     #[repr(C)]
@@ -69,72 +135,6 @@ mod __types {
         }
 
         pub fn cancel() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minigameassistdialog/MinigameAssistDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MinigameAssistDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct MinigameAssistDialog {
-        #[static_field]
-        #[rename(name = "ConfirmLabels")]
-        pub confirm_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "YesLabels")]
-        pub yes_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "NoLabels")]
-        pub no_labels: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "CancelLabels")]
-        pub cancel_labels: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MinigameAssistDialog_MinigameType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MinigameAssistDialog_MinigameType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MinigameAssistDialog.MinigameType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MinigameAssistDialog_MinigameType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MinigameAssistDialog_MinigameType {
-        pub fn dragon_ride() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fishing() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn muscle_exercise() -> Self {
             Self { value: 2 }
         }
     }

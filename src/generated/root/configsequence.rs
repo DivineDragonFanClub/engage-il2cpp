@@ -10,14 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configsequence/ConfigSequence.md"))]
-    #[::unity2::class(namespace = "", name = "ConfigSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ConfigSequence {
-        #[rename(name = "m_ConfigObject")]
-        pub m_config_object: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configsequence/ConfigSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +56,14 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configsequence/ConfigSequence.md"))]
+    #[::unity2::class(namespace = "", name = "ConfigSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ConfigSequence {
+        #[rename(name = "m_ConfigObject")]
+        pub m_config_object: crate::unity_engine::gameobject::GameObject,
     }
 }
 

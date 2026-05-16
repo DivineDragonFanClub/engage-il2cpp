@@ -185,7 +185,7 @@ mod __ExMethods_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase_HitType as ::unity2::IlType>::il_type(),
             ];
@@ -396,7 +396,7 @@ mod __ExMethods_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
+                <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase_Detail as ::unity2::IlType>::il_type(),
             ];

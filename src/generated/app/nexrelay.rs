@@ -14,60 +14,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_Results.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexRelay_Results {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexRelay_Results {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexRelay.Results";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexRelay_Results {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexRelay_Results {
-        pub fn failed() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn failed_compare() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn failed_not_found() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn cancelled() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn succeeded() -> Self {
-            Self { value: 4 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.SetPlayingSequence")]
+    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+    pub struct NexRelay_SetPlayingSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_OldMetaData")]
+        pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_NewMetaData")]
+        pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_IsComplementedNewMetaData")]
+        pub m_is_complemented_new_meta_data: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SetPlayingSequence_Label.md"))]
@@ -136,20 +94,6 @@ mod __types {
         >,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.SetPlayingSequence")]
-    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-    pub struct NexRelay_SetPlayingSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_OldMetaData")]
-        pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_NewMetaData")]
-        pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_IsComplementedNewMetaData")]
-        pub m_is_complemented_new_meta_data: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_UploadNewSequence.md"))]
     #[::unity2::class(namespace = "App", name = "NexRelay.UploadNewSequence")]
     #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
@@ -164,7 +108,31 @@ mod __types {
         pub m_is_complemented: bool,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadMetaSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.DownloadMetaSequence")]
+    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+    pub struct NexRelay_DownloadMetaSequence {
+        #[rename(name = "m_DataIds")]
+        pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        #[rename(name = "m_Results")]
+        pub m_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        #[rename(name = "m_DataCode")]
+        pub m_data_code: ::unity2::Il2CppString,
+        #[rename(name = "m_DataCodeResult")]
+        pub m_data_code_result: crate::app::relayservermetadata::RelayServerMetaData,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_UploadNewSequence_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -173,14 +141,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexRelay_DownloadSequence_Label {
+    pub struct NexRelay_UploadNewSequence_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexRelay_DownloadSequence_Label {
+    impl ::unity2::ClassIdentity for NexRelay_UploadNewSequence_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexRelay.DownloadSequence.Label";
+        const NAME: &'static str = "NexRelay.UploadNewSequence.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -189,7 +157,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexRelay_DownloadSequence_Label {
+    impl ::unity2::IlType for NexRelay_UploadNewSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -198,37 +166,66 @@ mod __types {
         }
     }
 
-    impl NexRelay_DownloadSequence_Label {
+    impl NexRelay_UploadNewSequence_Label {
         pub fn login() -> Self {
             Self { value: 0 }
         }
 
-        pub fn get_data() -> Self {
+        pub fn error() -> Self {
             Self { value: 1 }
         }
 
-        pub fn error() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn error_app() -> Self {
-            Self { value: 3 }
-        }
-
         pub fn end() -> Self {
-            Self { value: 4 }
+            Self { value: 2 }
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem"
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
     )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
-        #[rename(name = "m_Label")]
-        pub m_label: i32,
+    pub struct NexRelay_DownloadMetaSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexRelay.DownloadMetaSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexRelay_DownloadMetaSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexRelay_DownloadMetaSequence_Label {
+        pub fn error() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn error_app() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SearchSequence_Label.md"))]
@@ -279,36 +276,7 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadMetaSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.DownloadMetaSequence")]
-    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-    pub struct NexRelay_DownloadMetaSequence {
-        #[rename(name = "m_DataIds")]
-        pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        #[rename(name = "m_Results")]
-        pub m_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        #[rename(name = "m_DataCode")]
-        pub m_data_code: ::unity2::Il2CppString,
-        #[rename(name = "m_DataCodeResult")]
-        pub m_data_code_result: crate::app::relayservermetadata::RelayServerMetaData,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.ServerSequenceBase")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct NexRelay_ServerSequenceBase {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_Results.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -317,14 +285,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct NexRelay_DownloadMetaSequence_Label {
+    pub struct NexRelay_Results {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label {
+    impl ::unity2::ClassIdentity for NexRelay_Results {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "NexRelay.DownloadMetaSequence.Label";
+        const NAME: &'static str = "NexRelay.Results";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -333,7 +301,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for NexRelay_DownloadMetaSequence_Label {
+    impl ::unity2::IlType for NexRelay_Results {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -342,102 +310,25 @@ mod __types {
         }
     }
 
-    impl NexRelay_DownloadMetaSequence_Label {
-        pub fn error() -> Self {
+    impl NexRelay_Results {
+        pub fn failed() -> Self {
             Self { value: 0 }
         }
 
-        pub fn error_app() -> Self {
+        pub fn failed_compare() -> Self {
             Self { value: 1 }
         }
 
-        pub fn end() -> Self {
+        pub fn failed_not_found() -> Self {
             Self { value: 2 }
         }
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_UploadTakeOverSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.UploadTakeOverSequence")]
-    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-    pub struct NexRelay_UploadTakeOverSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_OldMetaData")]
-        pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_PlayerName")]
-        pub m_player_name: ::unity2::Il2CppString,
-        #[rename(name = "m_NewMetaData")]
-        pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::relayserverdata::RelayServerData,
-        #[rename(name = "m_IsComplementedNewMetaData")]
-        pub m_is_complemented_new_meta_data: bool,
-        #[rename(name = "m_IsChangeToPublic")]
-        pub m_is_change_to_public: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence_DataTypeInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence.DataTypeInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct NexRelay_SearchSequence_DataTypeInfo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "NexRelay.DownloadSequence")]
-    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-    pub struct NexRelay_DownloadSequence {
-        #[rename(name = "m_DataId")]
-        pub m_data_id: u64,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::relayserverdata::RelayServerData,
-        #[rename(name = "m_ResultMeta")]
-        pub m_result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_UploadNewSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct NexRelay_UploadNewSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for NexRelay_UploadNewSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "NexRelay.UploadNewSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for NexRelay_UploadNewSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl NexRelay_UploadNewSequence_Label {
-        pub fn login() -> Self {
-            Self { value: 0 }
+        pub fn cancelled() -> Self {
+            Self { value: 3 }
         }
 
-        pub fn error() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
+        pub fn succeeded() -> Self {
+            Self { value: 4 }
         }
     }
 
@@ -512,371 +403,119 @@ mod __types {
         #[rename(name = "m_LastUploadedDataId")]
         pub m_last_uploaded_data_id: u64,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
+        #[rename(name = "m_Label")]
+        pub m_label: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.ServerSequenceBase")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct NexRelay_ServerSequenceBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.DownloadSequence")]
+    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+    pub struct NexRelay_DownloadSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::relayserverdata::RelayServerData,
+        #[rename(name = "m_ResultMeta")]
+        pub m_result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence_DataTypeInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence.DataTypeInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct NexRelay_SearchSequence_DataTypeInfo {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct NexRelay_DownloadSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for NexRelay_DownloadSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "NexRelay.DownloadSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for NexRelay_DownloadSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl NexRelay_DownloadSequence_Label {
+        pub fn login() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn get_data() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn error() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn error_app() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_UploadTakeOverSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "NexRelay.UploadTakeOverSequence")]
+    #[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+    pub struct NexRelay_UploadTakeOverSequence {
+        #[rename(name = "m_DataId")]
+        pub m_data_id: u64,
+        #[rename(name = "m_OldMetaData")]
+        pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_PlayerName")]
+        pub m_player_name: ::unity2::Il2CppString,
+        #[rename(name = "m_NewMetaData")]
+        pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::relayserverdata::RelayServerData,
+        #[rename(name = "m_IsComplementedNewMetaData")]
+        pub m_is_complemented_new_meta_data: bool,
+        #[rename(name = "m_IsChangeToPublic")]
+        pub m_is_change_to_public: bool,
+    }
 }
 
 #[cfg(feature = "app-nexrelay-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-nexrelay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_SearchSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexRelay_SearchSequence,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, results, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexRelay_SearchSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_search {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
-                "Search",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
-                    "Search",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn search(
-        this: NexRelay_SearchSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_search::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fix_data_type_to_relay_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
-                "FixDataTypeToRelayEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
-                    "FixDataTypeToRelayEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fix_data_type_to_relay_end(
-        this: NexRelay_SearchSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fix_data_type_to_relay_end::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, results, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_SearchSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            __NexRelay_SearchSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-pub trait INexRelay_SearchSequenceMethods: INexRelay_SearchSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    fn ctor(
-        self,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_SearchSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_SearchSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Search()` overload"]
-    fn search(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_SearchSequence_unity2_raw::search(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FixDataTypeToRelayEnd()` overload"]
-    fn fix_data_type_to_relay_end(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_SearchSequence_unity2_raw::fix_data_type_to_relay_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl<__T: INexRelay_SearchSequence> INexRelay_SearchSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_SearchSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
-    pub fn new(
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_SearchSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_SearchSequenceMethods>::ctor(this, results);
-        this
-    }
-}
 
 #[cfg(feature = "app-nexrelay")]
 #[doc(hidden)]
@@ -1318,6 +957,367 @@ impl NexRelay_SetPlayingSequence {
             old_meta_data,
             new_meta_data,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRelay_SearchSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::app::relayservermetadata::RelayServerMetaData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexRelay_SearchSequence,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexRelay_SearchSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
+                "Search",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
+                    "Search",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search(
+        this: NexRelay_SearchSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_search::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fix_data_type_to_relay_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
+                "FixDataTypeToRelayEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
+                    "FixDataTypeToRelayEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fix_data_type_to_relay_end(
+        this: NexRelay_SearchSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_SearchSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fix_data_type_to_relay_end::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::relayservermetadata::RelayServerMetaData,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, results, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SearchSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            __NexRelay_SearchSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+pub trait INexRelay_SearchSequenceMethods: INexRelay_SearchSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    fn ctor(
+        self,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_SearchSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_SearchSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Search()` overload"]
+    fn search(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_SearchSequence_unity2_raw::search(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FixDataTypeToRelayEnd()` overload"]
+    fn fix_data_type_to_relay_end(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_SearchSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_SearchSequence_unity2_raw::fix_data_type_to_relay_end(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl<__T: INexRelay_SearchSequence> INexRelay_SearchSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SearchSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
+    pub fn new(
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_SearchSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_SearchSequenceMethods>::ctor(this, results);
         this
     }
 }
@@ -1778,21 +1778,30 @@ impl NexRelay_UploadNewSequence {
 #[cfg(feature = "app-nexrelay")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw {
+mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_ServerSequenceBase_ConfirmRetryDialog as ::unity2::ClassIdentity>::class(
+                ),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1800,148 +1809,38 @@ mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
-        label: i32,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        yes_label: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+            crate::app::procinst::ProcInst,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(this, label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetSequence" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetSequence" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sequence(
-        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sequence::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(super_, yes_label, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexrelay")]
-pub trait INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods:
-    INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem
-{
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, label: impl ::core::convert::Into<i32>) -> () {
+impl NexRelay_ServerSequenceBase_ConfirmRetryDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        yes_label: impl ::core::convert::Into<i32>,
+    ) -> () {
         unsafe {
-            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(label),
+            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(yes_label),
                 ::core::option::Option::None,
             )
         }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSequence()` overload"]
-    fn get_sequence(self) -> crate::app::procinst::ProcInst {
-        unsafe {
-            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::get_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl<__T: INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem>
-    INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(label: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods>::ctor(
-            this, label,
-        );
-        this
     }
 }
 
@@ -2482,30 +2381,34 @@ impl NexRelay_DownloadMetaSequence {
 #[cfg(feature = "app-nexrelay")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_unity2_raw {
+mod __NexRelay_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_on_create {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_ServerSequenceBase_ConfirmRetryDialog as ::unity2::ClassIdentity>::class(
-                ),
-                "CreateBind",
-                2,
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "OnCreate",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2513,38 +2416,1138 @@ mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_bind(
+    pub unsafe fn on_create(this: NexRelay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_create::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_new {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "UploadNew",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "UploadNew",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_new(
+        this: NexRelay,
         super_: crate::app::procinst::ProcInst,
-        yes_label: i32,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_secret: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            crate::app::relayserverdata::RelayServerData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload_new::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            player_name,
+            meta_data,
+            data,
+            is_secret,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_take_over {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "UploadTakeOver",
+                7,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "UploadTakeOver",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn upload_take_over(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        player_name: ::unity2::Il2CppString,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_change_to_public: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::Il2CppString,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            crate::app::relayserverdata::RelayServerData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_upload_take_over::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            data_id,
+            old_meta_data,
+            player_name,
+            new_meta_data,
+            data,
+            is_change_to_public,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_search {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::app::relayservermetadata::RelayServerMetaData,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "Search",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "Search",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn search(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_search::get_offset() as isize),
+        );
+        inner(this, super_, results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "SetPlaying",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "SetPlaying",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_playing(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_playing::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            data_id,
+            old_meta_data,
+            new_meta_data,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "Download",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "Download",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        result: crate::app::relayserverdata::RelayServerData,
+        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::relayserverdata::RelayServerData,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_download::get_offset() as isize),
+        );
+        inner(
+            this,
+            super_,
+            data_id,
+            result,
+            result_meta,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download_meta {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < u64 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "DownloadMeta",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "DownloadMeta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download_meta(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            crate::system::collections::generic::list_1::List_1<u64>,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_download_meta::get_offset() as isize),
+        );
+        inner(this, super_, data_ids, results, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download_meta_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "DownloadMeta",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "DownloadMeta",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn download_meta_2(
+        this: NexRelay,
+        super_: crate::app::procinst::ProcInst,
+        data_code: ::unity2::Il2CppString,
+        result: crate::app::relayservermetadata::RelayServerMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_download_meta_2::get_offset() as isize),
+        );
+        inner(this, super_, data_code, result, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_principal_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "TryGetPrincipalId",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "TryGetPrincipalId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn try_get_principal_id(
+        this: NexRelay,
+        principal_id: *mut u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(NexRelay, *mut u64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_try_get_principal_id::get_offset() as isize),
+            );
+        inner(this, principal_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_last_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "get_LastResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "get_LastResult",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_last_result(
+        this: NexRelay,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::nexrelay::NexRelay_Results {
+        let inner: extern "C" fn(
+            NexRelay,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::nexrelay::NexRelay_Results = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_last_result::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_last_uploaded_data_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "get_LastUploadedDataId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "get_LastUploadedDataId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_last_uploaded_data_id(
+        this: NexRelay,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u64 {
+        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> u64 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_last_uploaded_data_id::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_wait_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                "CloseWaitMessage",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    "CloseWaitMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_wait_message(
+        super_: crate::app::procinst::ProcInst,
+        is_success: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_close_wait_message::get_offset() as isize),
+        );
+        inner(super_, is_success, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(this: NexRelay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay {
+    #[doc = "`CloseWaitMessage(crate::app::procinst::ProcInst, bool)` overload"]
+    pub fn close_wait_message(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_success: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __NexRelay_unity2_raw::close_wait_message(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(is_success),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+pub trait INexRelayMethods: INexRelay {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UploadNew(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    fn upload_new(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        data: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
+        is_secret: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::upload_new(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(player_name),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(is_secret),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UploadTakeOver(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    fn upload_take_over(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        old_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        data: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
+        is_change_to_public: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::upload_take_over(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(old_meta_data),
+                ::core::convert::Into::into(player_name),
+                ::core::convert::Into::into(new_meta_data),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(is_change_to_public),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Search(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    fn search(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::search(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetPlaying(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    fn set_playing(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        old_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::set_playing(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(old_meta_data),
+                ::core::convert::Into::into(new_meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Download(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    fn download(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
+        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::download(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(result_meta),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    fn download_meta(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_ids: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64>>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::relayservermetadata::RelayServerMetaData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::download_meta(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_ids),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    fn download_meta_2(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_code: impl ::core::convert::Into<::unity2::Il2CppString>,
+        result: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::download_meta_2(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_code),
+                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGetPrincipalId(*mutu64)` overload"]
+    fn try_get_principal_id(self) -> (bool, u64) {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
+            let __ret = {
+                __NexRelay_unity2_raw::try_get_principal_id(
+                    __receiver,
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+    #[doc = "`get_LastResult()` overload"]
+    fn get_last_result(self) -> crate::app::nexrelay::NexRelay_Results {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::get_last_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_LastUploadedDataId()` overload"]
+    fn get_last_uploaded_data_id(self) -> u64 {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::get_last_uploaded_data_id(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __NexRelay_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl<__T: INexRelay> INexRelayMethods for __T {}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+        label: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(super_, yes_label, __unity2_method_info)
+        inner(this, label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetSequence" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetSequence" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_sequence(
+        this: NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::procinst::ProcInst {
+        let inner: extern "C" fn(
+            NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_sequence::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-nexrelay")]
-impl NexRelay_ServerSequenceBase_ConfirmRetryDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        yes_label: impl ::core::convert::Into<i32>,
-    ) -> () {
+pub trait INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods:
+    INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem
+{
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, label: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(yes_label),
+            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(label),
                 ::core::option::Option::None,
             )
         }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetSequence()` overload"]
+    fn get_sequence(self) -> crate::app::procinst::ProcInst {
+        unsafe {
+            let __receiver = < NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem_unity2_raw::get_sequence(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl<__T: INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem>
+    INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(label: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods>::ctor(
+            this, label,
+        );
+        this
     }
 }
 
@@ -3231,6 +4234,830 @@ impl NexRelay_ServerSequenceBase {
 #[cfg(feature = "app-nexrelay")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRelay_DownloadSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexRelay_DownloadSequence,
+        data_id: u64,
+        result: crate::app::relayserverdata::RelayServerData,
+        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_DownloadSequence,
+            u64,
+            crate::app::relayserverdata::RelayServerData,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, result, result_meta, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postlogin {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "Postlogin",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "Postlogin",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn postlogin(
+        this: NexRelay_DownloadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_postlogin::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_need_to_get_meta_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "IsNeedToGetMetaInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsNeedToGetMetaInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_need_to_get_meta_info(
+        this: NexRelay_DownloadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_need_to_get_meta_info::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_meta_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "GetMetaInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetMetaInfo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_meta_info(
+        this: NexRelay_DownloadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_meta_info::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "GetData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "GetData",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data(
+        this: NexRelay_DownloadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_data::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_confirm_retry {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "ConfirmRetry",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "ConfirmRetry",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn confirm_retry(
+        this: NexRelay_DownloadSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_confirm_retry::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        result: crate::app::relayserverdata::RelayServerData,
+        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            u64,
+            crate::app::relayserverdata::RelayServerData,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(super_, data_id, result, result_meta, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_DownloadSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        data_id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
+        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            __NexRelay_DownloadSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(result_meta),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+pub trait INexRelay_DownloadSequenceMethods: INexRelay_DownloadSequence {
+    #[doc = "`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    fn ctor(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
+        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(result_meta),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Postlogin()` overload"]
+    fn postlogin(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::postlogin(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsNeedToGetMetaInfo()` overload"]
+    fn is_need_to_get_meta_info(self) -> bool {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::is_need_to_get_meta_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetMetaInfo()` overload"]
+    fn get_meta_info(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::get_meta_info(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetData()` overload"]
+    fn get_data(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::get_data(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ConfirmRetry()` overload"]
+    fn confirm_retry(self) -> () {
+        unsafe {
+            let __receiver =
+                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __NexRelay_DownloadSequence_unity2_raw::confirm_retry(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl<__T: INexRelay_DownloadSequence> INexRelay_DownloadSequenceMethods for __T {}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_DownloadSequence {
+    #[doc = "`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
+    pub fn new(
+        data_id: u64,
+        result: crate::app::relayserverdata::RelayServerData,
+        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_DownloadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_DownloadSequenceMethods>::ctor(this, data_id, result, result_meta);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NexRelay_SearchSequence_DataTypeInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u64 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NexRelay_SearchSequence_DataTypeInfo,
+        data_id: u64,
+        is_end: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence_DataTypeInfo,
+            u64,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, data_id, is_end, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
+                "get_DataId",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_DataId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_data_id(
+        this: NexRelay_SearchSequence_DataTypeInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> u64 {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence_DataTypeInfo,
+            ::unity2::OptionalMethod,
+        ) -> u64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_data_id::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_id {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
+                "set_DataId",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_DataId",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_data_id(
+        this: NexRelay_SearchSequence_DataTypeInfo,
+        value: u64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence_DataTypeInfo,
+            u64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_data_id::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
+                "get_IsEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "get_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_is_end(
+        this: NexRelay_SearchSequence_DataTypeInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence_DataTypeInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_is_end::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
+                "set_IsEnd",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
+                    "set_IsEnd",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_is_end(
+        this: NexRelay_SearchSequence_DataTypeInfo,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NexRelay_SearchSequence_DataTypeInfo,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_is_end::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+pub trait INexRelay_SearchSequence_DataTypeInfoMethods:
+    INexRelay_SearchSequence_DataTypeInfo
+{
+    #[doc = "`.ctor(u64, bool)` overload"]
+    fn ctor(
+        self,
+        data_id: impl ::core::convert::Into<u64>,
+        is_end: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(data_id),
+                ::core::convert::Into::into(is_end),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_DataId()` overload"]
+    fn get_data_id(self) -> u64 {
+        unsafe {
+            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::get_data_id(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_DataId(u64)` overload"]
+    fn set_data_id(self, value: impl ::core::convert::Into<u64>) -> () {
+        unsafe {
+            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::set_data_id(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_IsEnd()` overload"]
+    fn get_is_end(self) -> bool {
+        unsafe {
+            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::get_is_end(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_IsEnd(bool)` overload"]
+    fn set_is_end(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::set_is_end(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl<__T: INexRelay_SearchSequence_DataTypeInfo> INexRelay_SearchSequence_DataTypeInfoMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SearchSequence_DataTypeInfo {
+    #[doc = "`.ctor(u64, bool)` — overload selector"]
+    pub fn new(data_id: u64, is_end: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_SearchSequence_DataTypeInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_SearchSequence_DataTypeInfoMethods>::ctor(this, data_id, is_end);
+        this
+    }
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __NexRelay_UploadTakeOverSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -3768,1833 +5595,6 @@ impl NexRelay_UploadTakeOverSequence {
             data,
             is_change_to_public,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_SearchSequence_DataTypeInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexRelay_SearchSequence_DataTypeInfo,
-        data_id: u64,
-        is_end: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence_DataTypeInfo,
-            u64,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data_id, is_end, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
-                "get_DataId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_DataId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_id(
-        this: NexRelay_SearchSequence_DataTypeInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence_DataTypeInfo,
-            ::unity2::OptionalMethod,
-        ) -> u64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_id::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
-                "set_DataId",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_DataId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data_id(
-        this: NexRelay_SearchSequence_DataTypeInfo,
-        value: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence_DataTypeInfo,
-            u64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_id::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
-                "get_IsEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_end(
-        this: NexRelay_SearchSequence_DataTypeInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence_DataTypeInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_end::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::class(),
-                "set_IsEnd",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_SearchSequence_DataTypeInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_is_end(
-        this: NexRelay_SearchSequence_DataTypeInfo,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay_SearchSequence_DataTypeInfo,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_end::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-pub trait INexRelay_SearchSequence_DataTypeInfoMethods:
-    INexRelay_SearchSequence_DataTypeInfo
-{
-    #[doc = "`.ctor(u64, bool)` overload"]
-    fn ctor(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-        is_end: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(is_end),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataId()` overload"]
-    fn get_data_id(self) -> u64 {
-        unsafe {
-            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::get_data_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_DataId(u64)` overload"]
-    fn set_data_id(self, value: impl ::core::convert::Into<u64>) -> () {
-        unsafe {
-            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::set_data_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsEnd()` overload"]
-    fn get_is_end(self) -> bool {
-        unsafe {
-            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::get_is_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_IsEnd(bool)` overload"]
-    fn set_is_end(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = < NexRelay_SearchSequence_DataTypeInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NexRelay_SearchSequence_DataTypeInfo_unity2_raw::set_is_end(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl<__T: INexRelay_SearchSequence_DataTypeInfo> INexRelay_SearchSequence_DataTypeInfoMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_SearchSequence_DataTypeInfo {
-    #[doc = "`.ctor(u64, bool)` — overload selector"]
-    pub fn new(data_id: u64, is_end: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_SearchSequence_DataTypeInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_SearchSequence_DataTypeInfoMethods>::ctor(this, data_id, is_end);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_DownloadSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NexRelay_DownloadSequence,
-        data_id: u64,
-        result: crate::app::relayserverdata::RelayServerData,
-        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay_DownloadSequence,
-            u64,
-            crate::app::relayserverdata::RelayServerData,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, data_id, result, result_meta, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postlogin {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "Postlogin",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "Postlogin",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postlogin(
-        this: NexRelay_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postlogin::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_need_to_get_meta_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "IsNeedToGetMetaInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsNeedToGetMetaInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_need_to_get_meta_info(
-        this: NexRelay_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_need_to_get_meta_info::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_meta_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "GetMetaInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetMetaInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_meta_info(
-        this: NexRelay_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_meta_info::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "GetData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: NexRelay_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_confirm_retry {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "ConfirmRetry",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmRetry",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn confirm_retry(
-        this: NexRelay_DownloadSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(NexRelay_DownloadSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_retry::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay_DownloadSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        result: crate::app::relayserverdata::RelayServerData,
-        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::relayserverdata::RelayServerData,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, data_id, result, result_meta, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_DownloadSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
-        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            __NexRelay_DownloadSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(result_meta),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-pub trait INexRelay_DownloadSequenceMethods: INexRelay_DownloadSequence {
-    #[doc = "`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn ctor(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
-        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(result_meta),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Postlogin()` overload"]
-    fn postlogin(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::postlogin(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsNeedToGetMetaInfo()` overload"]
-    fn is_need_to_get_meta_info(self) -> bool {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::is_need_to_get_meta_info(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMetaInfo()` overload"]
-    fn get_meta_info(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::get_meta_info(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetData()` overload"]
-    fn get_data(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ConfirmRetry()` overload"]
-    fn confirm_retry(self) -> () {
-        unsafe {
-            let __receiver =
-                <NexRelay_DownloadSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NexRelay_DownloadSequence_unity2_raw::confirm_retry(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl<__T: INexRelay_DownloadSequence> INexRelay_DownloadSequenceMethods for __T {}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_DownloadSequence {
-    #[doc = "`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        result: crate::app::relayserverdata::RelayServerData,
-        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_DownloadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_DownloadSequenceMethods>::ctor(this, data_id, result, result_meta);
-        this
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NexRelay_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(this: NexRelay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_create::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_new {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "UploadNew",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "UploadNew",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_new(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_secret: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            crate::app::relayserverdata::RelayServerData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload_new::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            player_name,
-            meta_data,
-            data,
-            is_secret,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_take_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "UploadTakeOver",
-                7,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "UploadTakeOver",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_take_over(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        player_name: ::unity2::Il2CppString,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_change_to_public: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::Il2CppString,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            crate::app::relayserverdata::RelayServerData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_upload_take_over::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            data_id,
-            old_meta_data,
-            player_name,
-            new_meta_data,
-            data,
-            is_change_to_public,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_search {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::relayservermetadata::RelayServerMetaData,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "Search",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "Search",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn search(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_search::get_offset() as isize),
-        );
-        inner(this, super_, results, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "SetPlaying",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "SetPlaying",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_playing(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_playing::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            data_id,
-            old_meta_data,
-            new_meta_data,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-                <crate::app::relayserverdata::RelayServerData as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "Download",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "Download",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn download(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        result: crate::app::relayserverdata::RelayServerData,
-        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            u64,
-            crate::app::relayserverdata::RelayServerData,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            data_id,
-            result,
-            result_meta,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download_meta {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < u64 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "DownloadMeta",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "DownloadMeta",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn download_meta(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            crate::system::collections::generic::list_1::List_1<u64>,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download_meta::get_offset() as isize),
-        );
-        inner(this, super_, data_ids, results, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download_meta_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "DownloadMeta",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "DownloadMeta",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn download_meta_2(
-        this: NexRelay,
-        super_: crate::app::procinst::ProcInst,
-        data_code: ::unity2::Il2CppString,
-        result: crate::app::relayservermetadata::RelayServerMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NexRelay,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download_meta_2::get_offset() as isize),
-        );
-        inner(this, super_, data_code, result, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_principal_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut u64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "TryGetPrincipalId",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "TryGetPrincipalId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_get_principal_id(
-        this: NexRelay,
-        principal_id: *mut u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(NexRelay, *mut u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_get_principal_id::get_offset() as isize),
-            );
-        inner(this, principal_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "get_LastResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "get_LastResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_last_result(
-        this: NexRelay,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nexrelay::NexRelay_Results {
-        let inner: extern "C" fn(
-            NexRelay,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nexrelay::NexRelay_Results = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_last_result::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_last_uploaded_data_id {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "get_LastUploadedDataId",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "get_LastUploadedDataId",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_last_uploaded_data_id(
-        this: NexRelay,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
-        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_last_uploaded_data_id::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_wait_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                "CloseWaitMessage",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    "CloseWaitMessage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_wait_message(
-        super_: crate::app::procinst::ProcInst,
-        is_success: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_close_wait_message::get_offset() as isize),
-        );
-        inner(super_, is_success, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NexRelay as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NexRelay as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: NexRelay, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NexRelay, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay {
-    #[doc = "`CloseWaitMessage(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn close_wait_message(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_success: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __NexRelay_unity2_raw::close_wait_message(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_success),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-pub trait INexRelayMethods: INexRelay {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UploadNew(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    fn upload_new(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        data: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
-        is_secret: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::upload_new(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(player_name),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(is_secret),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadTakeOver(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    fn upload_take_over(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        old_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        data: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
-        is_change_to_public: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::upload_take_over(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(old_meta_data),
-                ::core::convert::Into::into(player_name),
-                ::core::convert::Into::into(new_meta_data),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(is_change_to_public),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Search(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    fn search(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::search(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetPlaying(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn set_playing(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        old_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        new_meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::set_playing(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(old_meta_data),
-                ::core::convert::Into::into(new_meta_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Download(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn download(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_id: impl ::core::convert::Into<u64>,
-        result: impl ::core::convert::Into<crate::app::relayserverdata::RelayServerData>,
-        result_meta: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::download(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_id),
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(result_meta),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    fn download_meta(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_ids: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64>>,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::download_meta(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_ids),
-                ::core::convert::Into::into(results),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn download_meta_2(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        data_code: impl ::core::convert::Into<::unity2::Il2CppString>,
-        result: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::download_meta_2(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(data_code),
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryGetPrincipalId(*mutu64)` overload"]
-    fn try_get_principal_id(self) -> (bool, u64) {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
-            let __ret = {
-                __NexRelay_unity2_raw::try_get_principal_id(
-                    __receiver,
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`get_LastResult()` overload"]
-    fn get_last_result(self) -> crate::app::nexrelay::NexRelay_Results {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::get_last_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_LastUploadedDataId()` overload"]
-    fn get_last_uploaded_data_id(self) -> u64 {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::get_last_uploaded_data_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <NexRelay as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NexRelay_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl<__T: INexRelay> INexRelayMethods for __T {}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelayMethods>::ctor(this);
         this
     }
 }

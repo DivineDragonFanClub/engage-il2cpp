@@ -262,7 +262,9 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: text_core :: faceinfo :: FaceInfo as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::text_core::faceinfo::FaceInfo as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "GetFaceInfo_Internal",
@@ -354,7 +356,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryGetGlyphWithUnicodeValue",
@@ -405,7 +407,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryGetGlyphWithUnicodeValue_Internal",
@@ -447,7 +449,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryGetGlyphWithIndexValue",
@@ -498,7 +500,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphloadflags :: GlyphLoadFlags as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryGetGlyphWithIndexValue_Internal",
@@ -540,7 +542,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: glyph :: Glyph as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryAddGlyphToTexture",
@@ -619,7 +621,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryAddGlyphToTexture_Internal",
@@ -680,7 +682,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < * mut :: unity2 :: Array < crate :: unity_engine :: text_core :: glyph :: Glyph > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyph :: Glyph > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryAddGlyphsToTexture",
@@ -759,7 +761,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphpackingmode :: GlyphPackingMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: text_core :: low_level :: glyphrendermode :: GlyphRenderMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: texture2d :: Texture2D as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "TryAddGlyphsToTexture_Internal",
@@ -859,7 +861,7 @@ mod __FontEngine_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),
                 "GetGlyphPairAdjustmentRecords",
@@ -897,7 +899,7 @@ mod __FontEngine_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FontEngine as ::unity2::ClassIdentity>::class(),

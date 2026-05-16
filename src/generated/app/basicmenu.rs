@@ -13,11 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenu.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: basicmenu :: BasicMenu_Status >)]
-    pub struct BasicMenu_StatusField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Label0.md"))]
     #[repr(C)]
     #[derive(
@@ -74,81 +69,10 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Status.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct BasicMenu_Status {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for BasicMenu_Status {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BasicMenu.Status";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BasicMenu_Status {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl BasicMenu_Status {
-        pub fn cursor_hide() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn input_disable() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn input_disable_now_frame() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn bind_parent() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn rebuild() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn cursor_moved() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn close_called() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn first_blank_enable() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn side_page_move() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn rebuild_keep_index() -> Self {
-            Self { value: 1024 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenu.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: basicmenu :: BasicMenu_Status >)]
+    pub struct BasicMenu_StatusField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_BindTypes.md"))]
     #[repr(C)]
@@ -403,6 +327,82 @@ mod __types {
 
         pub fn failure() -> Self {
             Self { value: 2048 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Status.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct BasicMenu_Status {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for BasicMenu_Status {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "BasicMenu.Status";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BasicMenu_Status {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl BasicMenu_Status {
+        pub fn cursor_hide() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn input_disable() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn input_disable_now_frame() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn bind_parent() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn rebuild() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn cursor_moved() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn close_called() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn first_blank_enable() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn side_page_move() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn rebuild_keep_index() -> Self {
+            Self { value: 1024 }
         }
     }
 

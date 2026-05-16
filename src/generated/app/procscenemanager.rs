@@ -10,34 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
-    #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct ProcSceneManager {
-        #[static_field]
-        #[rename(name = "Empty")]
-        pub empty: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "s_Handles")]
-        pub s_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
-        #[static_field]
-        #[rename(name = "s_Releases")]
-        pub s_releases: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        #[rename(name = "m_Empty")]
-        pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +48,34 @@ mod __types {
         pub fn skip() -> Self {
             Self { value: 0 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
+    #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct ProcSceneManager {
+        #[static_field]
+        #[rename(name = "Empty")]
+        pub empty: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_Handles")]
+        pub s_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::resourcehandle_2::ResourceHandle_2,
+        >,
+        #[static_field]
+        #[rename(name = "s_Releases")]
+        pub s_releases: crate::system::collections::generic::list_1::List_1<
+            crate::app::resourcehandle_2::ResourceHandle_2,
+        >,
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        #[rename(name = "m_Empty")]
+        pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
     }
 }
 

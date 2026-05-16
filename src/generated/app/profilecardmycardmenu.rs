@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardMyCardMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardMyCardMenu_DecideEventHandler {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_Result2.md"))]
     #[repr(C)]
     #[derive(
@@ -59,11 +64,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardMyCardMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardMyCardMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardMyCardMenu")]

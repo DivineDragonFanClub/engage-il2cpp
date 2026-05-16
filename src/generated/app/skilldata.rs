@@ -13,7 +13,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_TimingMasks.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Phase.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -22,14 +22,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_TimingMasks {
+    pub struct SkillData_Phase {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_TimingMasks {
+    impl ::unity2::ClassIdentity for SkillData_Phase {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.TimingMasks";
+        const NAME: &'static str = "SkillData.Phase";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -38,7 +38,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_TimingMasks {
+    impl ::unity2::IlType for SkillData_Phase {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -47,17 +47,17 @@ mod __types {
         }
     }
 
-    impl SkillData_TimingMasks {
-        pub fn none() -> Self {
+    impl SkillData_Phase {
+        pub fn current() -> Self {
             Self { value: 0 }
         }
 
-        pub fn full() -> Self {
-            Self { value: 1048575 }
+        pub fn other() -> Self {
+            Self { value: 1 }
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Stands.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundCenters.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -66,14 +66,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_Stands {
+    pub struct SkillData_AroundCenters {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_Stands {
+    impl ::unity2::ClassIdentity for SkillData_AroundCenters {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.Stands";
+        const NAME: &'static str = "SkillData.AroundCenters";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -82,7 +82,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_Stands {
+    impl ::unity2::IlType for SkillData_AroundCenters {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -91,69 +91,77 @@ mod __types {
         }
     }
 
-    impl SkillData_Stands {
+    impl SkillData_AroundCenters {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn offence() -> Self {
+        pub fn self_() -> Self {
             Self { value: 1 }
         }
 
-        pub fn defence() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Zocs.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Zocs {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Zocs {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Zocs";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Zocs {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Zocs {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn cost_min() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn cost_max() -> Self {
+        pub fn target() -> Self {
             Self { value: 2 }
         }
 
-        pub fn not_move() -> Self {
+        pub fn link() -> Self {
             Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_GiveTargets.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_GiveTargets {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_GiveTargets {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.GiveTargets";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_GiveTargets {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_GiveTargets {
+        pub fn target() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn self_() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn chain() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn around() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn dance() -> Self {
+            Self { value: 4 }
         }
     }
 
@@ -206,302 +214,6 @@ mod __types {
 
         pub fn total_grow_change() -> Self {
             Self { value: 3 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Categorys.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Categorys {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Categorys {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Categorys";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Categorys {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Categorys {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn person() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn job() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn item() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn equip() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn god() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn ring() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn hub() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn support() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn battle() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn private() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn inheritance() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn command() -> Self {
-            Self { value: 12 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_CycleMasks.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_CycleMasks {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_CycleMasks {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.CycleMasks";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_CycleMasks {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_CycleMasks {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn full() -> Self {
-            Self { value: 1048575 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Attrs.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Attrs {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Attrs {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Attrs";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Attrs {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Attrs {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn walk() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn horse() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn heavy() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn fly() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn dragon() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn evil() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn morph() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn mediuth() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn duma() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn loptous() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn veld() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn idenn() -> Self {
-            Self { value: 2048 }
-        }
-
-        pub fn nergal() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn fodeth() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn ashnard() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn astarte() -> Self {
-            Self { value: 32768 }
-        }
-
-        pub fn gimle() -> Self {
-            Self { value: 65536 }
-        }
-
-        pub fn hydra() -> Self {
-            Self { value: 131072 }
-        }
-
-        pub fn nemesis() -> Self {
-            Self { value: 262144 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Actions.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Actions {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Actions {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Actions";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Actions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Actions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn offence() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn defence() -> Self {
-            Self { value: 2 }
         }
     }
 
@@ -577,7 +289,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Layers.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_States.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -586,14 +298,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_Layers {
+    pub struct SkillData_States {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_Layers {
+    impl ::unity2::ClassIdentity for SkillData_States {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.Layers";
+        const NAME: &'static str = "SkillData.States";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -602,7 +314,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_Layers {
+    impl ::unity2::IlType for SkillData_States {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -611,21 +323,253 @@ mod __types {
         }
     }
 
-    impl SkillData_Layers {
-        pub fn a() -> Self {
+    impl SkillData_States {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn poison() -> Self {
             Self { value: 1 }
         }
 
-        pub fn b() -> Self {
+        pub fn deadly_poison() -> Self {
             Self { value: 2 }
         }
 
-        pub fn c() -> Self {
+        pub fn severe_poison() -> Self {
             Self { value: 4 }
         }
 
-        pub fn d() -> Self {
+        pub fn heal() -> Self {
             Self { value: 8 }
+        }
+
+        pub fn sleep() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn silence() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn charm() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn confusion() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn freeze() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn weakness() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn stun() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn interact() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn decoy() -> Self {
+            Self { value: 4096 }
+        }
+
+        pub fn not_enhance() -> Self {
+            Self { value: 8192 }
+        }
+
+        pub fn enhance() -> Self {
+            Self { value: 65536 }
+        }
+
+        pub fn immovable() -> Self {
+            Self { value: 131072 }
+        }
+
+        pub fn not_move() -> Self {
+            Self { value: 262144 }
+        }
+
+        pub fn not_weapon_weight() -> Self {
+            Self { value: 524288 }
+        }
+
+        pub fn not_chain_attacked() -> Self {
+            Self { value: 1048576 }
+        }
+
+        pub fn ignore_debug() -> Self {
+            Self { value: -2147483648 }
+        }
+
+        pub fn poison_mask() -> Self {
+            Self { value: 7 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Operations.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Operations {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Operations {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Operations";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Operations {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Operations {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn equal() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn add() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn sub() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn mul() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn div() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_PrivateFlags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_PrivateFlags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_PrivateFlags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.PrivateFlags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_PrivateFlags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_PrivateFlags {
+        pub fn style_skill() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn can_override() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn has_effect() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Frequencies.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Frequencies {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Frequencies {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Frequencies";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Frequencies {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Frequencies {
+        pub fn every() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn first() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn last() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn mask() -> Self {
+            Self { value: 7 }
         }
     }
 
@@ -744,294 +688,6 @@ mod __types {
         pub s_multi_change_skill: crate::app::skilldata::SkillData,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_PrivateFlags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_PrivateFlags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_PrivateFlags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.PrivateFlags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_PrivateFlags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_PrivateFlags {
-        pub fn style_skill() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn can_override() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn has_effect() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Timings.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Timings {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Timings {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Timings";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Timings {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Timings {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn always() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn battle_before() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn battle_detail() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn battle_invoke() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn battle_start() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn order_start() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn action_start() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn attack_start() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn attack_branch() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn hit_before() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn hit_after() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn hit_affect() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn attack_end() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn action_end() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn order_end() -> Self {
-            Self { value: 15 }
-        }
-
-        pub fn battle_end() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn battle_result() -> Self {
-            Self { value: 17 }
-        }
-
-        pub fn battle_after() -> Self {
-            Self { value: 18 }
-        }
-
-        pub fn around() -> Self {
-            Self { value: 19 }
-        }
-
-        pub fn support() -> Self {
-            Self { value: 20 }
-        }
-
-        pub fn battle_command() -> Self {
-            Self { value: 21 }
-        }
-
-        pub fn action_command() -> Self {
-            Self { value: 22 }
-        }
-
-        pub fn overlap_command() -> Self {
-            Self { value: 23 }
-        }
-
-        pub fn support_command() -> Self {
-            Self { value: 24 }
-        }
-
-        pub fn fixed_none() -> Self {
-            Self { value: 25 }
-        }
-
-        pub fn fixed_done() -> Self {
-            Self { value: 26 }
-        }
-
-        pub fn phase_start() -> Self {
-            Self { value: 27 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_IconKinds.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_IconKinds {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_IconKinds {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.IconKinds";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_IconKinds {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_IconKinds {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn efficacy() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn category() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Phase.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Phase {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Phase {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Phase";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Phase {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Phase {
-        pub fn current() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn other() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundTargets.md"))]
     #[repr(C)]
     #[derive(
@@ -1084,7 +740,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Operations.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_IconKinds.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1093,14 +749,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_Operations {
+    pub struct SkillData_IconKinds {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_Operations {
+    impl ::unity2::ClassIdentity for SkillData_IconKinds {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.Operations";
+        const NAME: &'static str = "SkillData.IconKinds";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1109,7 +765,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_Operations {
+    impl ::unity2::IlType for SkillData_IconKinds {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1118,95 +774,17 @@ mod __types {
         }
     }
 
-    impl SkillData_Operations {
+    impl SkillData_IconKinds {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn equal() -> Self {
+        pub fn efficacy() -> Self {
             Self { value: 1 }
         }
 
-        pub fn add() -> Self {
+        pub fn category() -> Self {
             Self { value: 2 }
-        }
-
-        pub fn sub() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn mul() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn div() -> Self {
-            Self { value: 5 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData_Func.md"))]
-    #[::unity2::class(namespace = "App", name = "SkillData.Func")]
-    #[parent(crate::system::object::Object)]
-    pub struct SkillData_Func {
-        #[rename(name = "Name")]
-        pub name: ::unity2::Il2CppString,
-        #[rename(name = "Operation")]
-        pub operation: crate::app::skilldata::SkillData_Operations,
-        #[rename(name = "SetCommand")]
-        pub set_command: crate::app::calculatorcommand::CalculatorCommand,
-        #[rename(name = "GetCommand")]
-        pub get_command: crate::app::calculatorcommand::CalculatorCommand,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Frequencies.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_Frequencies {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_Frequencies {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.Frequencies";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_Frequencies {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_Frequencies {
-        pub fn every() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn first() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn last() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn mask() -> Self {
-            Self { value: 7 }
         }
     }
 
@@ -1498,7 +1076,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_GiveTargets.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Timings.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1507,14 +1085,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_GiveTargets {
+    pub struct SkillData_Timings {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_GiveTargets {
+    impl ::unity2::ClassIdentity for SkillData_Timings {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.GiveTargets";
+        const NAME: &'static str = "SkillData.Timings";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1523,7 +1101,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_GiveTargets {
+    impl ::unity2::IlType for SkillData_Timings {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1532,77 +1110,425 @@ mod __types {
         }
     }
 
-    impl SkillData_GiveTargets {
-        pub fn target() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn self_() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn chain() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn around() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn dance() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_AroundCenters.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SkillData_AroundCenters {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SkillData_AroundCenters {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SkillData.AroundCenters";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SkillData_AroundCenters {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SkillData_AroundCenters {
+    impl SkillData_Timings {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn self_() -> Self {
+        pub fn always() -> Self {
             Self { value: 1 }
         }
 
-        pub fn target() -> Self {
+        pub fn battle_before() -> Self {
             Self { value: 2 }
         }
 
-        pub fn link() -> Self {
+        pub fn battle_detail() -> Self {
             Self { value: 3 }
+        }
+
+        pub fn battle_invoke() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn battle_start() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn order_start() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn action_start() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn attack_start() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn attack_branch() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn hit_before() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn hit_after() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn hit_affect() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn attack_end() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn action_end() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn order_end() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn battle_end() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn battle_result() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn battle_after() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn around() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn support() -> Self {
+            Self { value: 20 }
+        }
+
+        pub fn battle_command() -> Self {
+            Self { value: 21 }
+        }
+
+        pub fn action_command() -> Self {
+            Self { value: 22 }
+        }
+
+        pub fn overlap_command() -> Self {
+            Self { value: 23 }
+        }
+
+        pub fn support_command() -> Self {
+            Self { value: 24 }
+        }
+
+        pub fn fixed_none() -> Self {
+            Self { value: 25 }
+        }
+
+        pub fn fixed_done() -> Self {
+            Self { value: 26 }
+        }
+
+        pub fn phase_start() -> Self {
+            Self { value: 27 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Attrs.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Attrs {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Attrs {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Attrs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Attrs {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Attrs {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn walk() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn horse() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn heavy() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn fly() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn dragon() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn evil() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn morph() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn mediuth() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn duma() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn loptous() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn veld() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn idenn() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn nergal() -> Self {
+            Self { value: 4096 }
+        }
+
+        pub fn fodeth() -> Self {
+            Self { value: 8192 }
+        }
+
+        pub fn ashnard() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn astarte() -> Self {
+            Self { value: 32768 }
+        }
+
+        pub fn gimle() -> Self {
+            Self { value: 65536 }
+        }
+
+        pub fn hydra() -> Self {
+            Self { value: 131072 }
+        }
+
+        pub fn nemesis() -> Self {
+            Self { value: 262144 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Stands.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Stands {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Stands {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Stands";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Stands {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Stands {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn offence() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn defence() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_CycleMasks.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_CycleMasks {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_CycleMasks {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.CycleMasks";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_CycleMasks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_CycleMasks {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn full() -> Self {
+            Self { value: 1048575 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Zocs.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Zocs {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Zocs {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Zocs";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Zocs {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Zocs {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn cost_min() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn cost_max() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn not_move() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Actions.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Actions {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Actions {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Actions";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Actions {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Actions {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn offence() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn defence() -> Self {
+            Self { value: 2 }
         }
     }
 
@@ -1674,7 +1600,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_States.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Layers.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -1683,14 +1609,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SkillData_States {
+    pub struct SkillData_Layers {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SkillData_States {
+    impl ::unity2::ClassIdentity for SkillData_Layers {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SkillData.States";
+        const NAME: &'static str = "SkillData.Layers";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1699,7 +1625,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SkillData_States {
+    impl ::unity2::IlType for SkillData_Layers {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -1708,93 +1634,167 @@ mod __types {
         }
     }
 
-    impl SkillData_States {
+    impl SkillData_Layers {
+        pub fn a() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn b() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn c() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn d() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_TimingMasks.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_TimingMasks {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_TimingMasks {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.TimingMasks";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_TimingMasks {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_TimingMasks {
         pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn poison() -> Self {
+        pub fn full() -> Self {
+            Self { value: 1048575 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilldata/SkillData_Func.md"))]
+    #[::unity2::class(namespace = "App", name = "SkillData.Func")]
+    #[parent(crate::system::object::Object)]
+    pub struct SkillData_Func {
+        #[rename(name = "Name")]
+        pub name: ::unity2::Il2CppString,
+        #[rename(name = "Operation")]
+        pub operation: crate::app::skilldata::SkillData_Operations,
+        #[rename(name = "SetCommand")]
+        pub set_command: crate::app::calculatorcommand::CalculatorCommand,
+        #[rename(name = "GetCommand")]
+        pub get_command: crate::app::calculatorcommand::CalculatorCommand,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilldata/SkillData_Categorys.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct SkillData_Categorys {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SkillData_Categorys {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "SkillData.Categorys";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SkillData_Categorys {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl SkillData_Categorys {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn person() -> Self {
             Self { value: 1 }
         }
 
-        pub fn deadly_poison() -> Self {
+        pub fn job() -> Self {
             Self { value: 2 }
         }
 
-        pub fn severe_poison() -> Self {
+        pub fn item() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn equip() -> Self {
             Self { value: 4 }
         }
 
-        pub fn heal() -> Self {
+        pub fn god() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn ring() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn hub() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn support() -> Self {
             Self { value: 8 }
         }
 
-        pub fn sleep() -> Self {
-            Self { value: 16 }
+        pub fn battle() -> Self {
+            Self { value: 9 }
         }
 
-        pub fn silence() -> Self {
-            Self { value: 32 }
+        pub fn private() -> Self {
+            Self { value: 10 }
         }
 
-        pub fn charm() -> Self {
-            Self { value: 64 }
+        pub fn inheritance() -> Self {
+            Self { value: 11 }
         }
 
-        pub fn confusion() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn freeze() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn weakness() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn stun() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn interact() -> Self {
-            Self { value: 2048 }
-        }
-
-        pub fn decoy() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn not_enhance() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn enhance() -> Self {
-            Self { value: 65536 }
-        }
-
-        pub fn immovable() -> Self {
-            Self { value: 131072 }
-        }
-
-        pub fn not_move() -> Self {
-            Self { value: 262144 }
-        }
-
-        pub fn not_weapon_weight() -> Self {
-            Self { value: 524288 }
-        }
-
-        pub fn not_chain_attacked() -> Self {
-            Self { value: 1048576 }
-        }
-
-        pub fn ignore_debug() -> Self {
-            Self { value: -2147483648 }
-        }
-
-        pub fn poison_mask() -> Self {
-            Self { value: 7 }
+        pub fn command() -> Self {
+            Self { value: 12 }
         }
     }
 }

@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md"))]
-    #[::unity2::class(namespace = "App", name = "FoodData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)]
-    pub struct FoodData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData_FoodCountry.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +71,11 @@ mod __types {
             Self { value: 5 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md"))]
+    #[::unity2::class(namespace = "App", name = "FoodData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)]
+    pub struct FoodData {}
 }
 
 #[cfg(feature = "app-fooddata-types")]

@@ -11,6 +11,11 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]
+    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
+    #[parent(crate::system::object::Object)]
+    pub struct ChallengeMapSelectRoot_ItemDropNum {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md"))]
     #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.RewardInfoItem")]
     #[parent(crate::system::object::Object)]
@@ -30,11 +35,6 @@ mod __types {
         #[rename(name = "m_FrmImage")]
         pub m_frm_image: crate::unity_engine::ui::image::Image,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
-    #[parent(crate::system::object::Object)]
-    pub struct ChallengeMapSelectRoot_ItemDropNum {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot")]
@@ -85,98 +85,6 @@ mod __types {
 
 #[cfg(feature = "app-challengemapselectroot-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-challengemapselectroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ChallengeMapSelectRoot_RewardInfoItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ChallengeMapSelectRoot_RewardInfoItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-pub trait IChallengeMapSelectRoot_RewardInfoItemMethods:
-    IChallengeMapSelectRoot_RewardInfoItem
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < ChallengeMapSelectRoot_RewardInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-impl<__T: IChallengeMapSelectRoot_RewardInfoItem> IChallengeMapSelectRoot_RewardInfoItemMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-impl ChallengeMapSelectRoot_RewardInfoItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectRoot_RewardInfoItemMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-challengemapselectroot")]
 #[doc(hidden)]
@@ -512,6 +420,98 @@ impl ChallengeMapSelectRoot_ItemDropNum {
             )
         });
         <Self as IChallengeMapSelectRoot_ItemDropNumMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeMapSelectRoot_RewardInfoItem as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ChallengeMapSelectRoot_RewardInfoItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ChallengeMapSelectRoot_RewardInfoItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+pub trait IChallengeMapSelectRoot_RewardInfoItemMethods:
+    IChallengeMapSelectRoot_RewardInfoItem
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < ChallengeMapSelectRoot_RewardInfoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeMapSelectRoot_RewardInfoItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl<__T: IChallengeMapSelectRoot_RewardInfoItem> IChallengeMapSelectRoot_RewardInfoItemMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot_RewardInfoItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectRoot_RewardInfoItemMethods>::ctor(this);
         this
     }
 }

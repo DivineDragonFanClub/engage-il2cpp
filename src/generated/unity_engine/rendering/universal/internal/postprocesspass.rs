@@ -12,6 +12,118 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Internal",
+        name = "PostProcessPass"
+    )]
+    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+    pub struct PostProcessPass {
+# [rename (name = "m_Descriptor")] pub m_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor ,
+# [rename (name = "m_Source")] pub m_source : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_Destination")] pub m_destination : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_Depth")] pub m_depth : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_InternalLut")] pub m_internal_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [static_field] # [rename (name = "k_RenderPostProcessingTag")] pub k_render_post_processing_tag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_RenderFinalPostProcessingTag")] pub k_render_final_post_processing_tag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "m_ProfilingRenderPostProcessing")] pub m_profiling_render_post_processing : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [static_field] # [rename (name = "m_ProfilingRenderFinalPostProcessing")] pub m_profiling_render_final_post_processing : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_Materials")] pub m_materials : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass_MaterialLibrary ,
+# [rename (name = "m_Data")] pub m_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "m_DepthOfField")] pub m_depth_of_field : crate :: unity_engine :: rendering :: universal :: depthoffield :: DepthOfField ,
+# [rename (name = "m_MotionBlur")] pub m_motion_blur : crate :: unity_engine :: rendering :: universal :: motionblur :: MotionBlur ,
+# [rename (name = "m_PaniniProjection")] pub m_panini_projection : crate :: unity_engine :: rendering :: universal :: paniniprojection :: PaniniProjection ,
+# [rename (name = "m_Bloom")] pub m_bloom : crate :: unity_engine :: rendering :: universal :: bloom :: Bloom ,
+# [rename (name = "m_LensDistortion")] pub m_lens_distortion : crate :: unity_engine :: rendering :: universal :: lensdistortion :: LensDistortion ,
+# [rename (name = "m_ChromaticAberration")] pub m_chromatic_aberration : crate :: unity_engine :: rendering :: universal :: chromaticaberration :: ChromaticAberration ,
+# [rename (name = "m_Vignette")] pub m_vignette : crate :: unity_engine :: rendering :: universal :: vignette :: Vignette ,
+# [rename (name = "m_ColorLookup")] pub m_color_lookup : crate :: unity_engine :: rendering :: universal :: colorlookup :: ColorLookup ,
+# [rename (name = "m_ColorAdjustments")] pub m_color_adjustments : crate :: unity_engine :: rendering :: universal :: coloradjustments :: ColorAdjustments ,
+# [rename (name = "m_Tonemapping")] pub m_tonemapping : crate :: unity_engine :: rendering :: universal :: tonemapping :: Tonemapping ,
+# [rename (name = "m_FilmGrain")] pub m_film_grain : crate :: unity_engine :: rendering :: universal :: filmgrain :: FilmGrain ,
+# [rename (name = "m_CustomColorGrading")] pub m_custom_color_grading : crate :: unity_engine :: rendering :: universal :: custom :: customcolorgrading :: CustomColorGrading ,
+# [rename (name = "m_CustomRadialBlur")] pub m_custom_radial_blur : crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur ,
+# [rename (name = "m_CustomHeatHaze")] pub m_custom_heat_haze : crate :: unity_engine :: rendering :: universal :: custom :: customheathaze :: CustomHeatHaze ,
+# [rename (name = "m_CustomGradationFilter")] pub m_custom_gradation_filter : crate :: unity_engine :: rendering :: universal :: custom :: customgradationfilter :: CustomGradationFilter ,
+# [rename (name = "m_Sharpen")] pub m_sharpen : bool ,
+# [rename (name = "m_CustomBlur")] pub m_custom_blur : bool ,
+# [rename (name = "m_CustomBlurTimes")] pub m_custom_blur_times : i32 ,
+# [rename (name = "m_CustomFinalMonoColor")] pub m_custom_final_mono_color : crate :: unity_engine :: vector4 :: Vector4 ,
+# [rename (name = "m_CustomFilterEnabled")] pub m_custom_filter_enabled : bool ,
+# [rename (name = "m_CustomFilterParam0")] pub m_custom_filter_param0 : crate :: unity_engine :: vector4 :: Vector4 ,
+# [rename (name = "m_CustomFilterParam1")] pub m_custom_filter_param1 : crate :: unity_engine :: vector4 :: Vector4 ,
+# [rename (name = "m_CaptureTexture")] pub m_capture_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
+# [rename (name = "m_CaptureTextureRect")] pub m_capture_texture_rect : crate :: unity_engine :: rect :: Rect ,
+# [rename (name = "m_CaptureMode")] pub m_capture_mode : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass_CaptureMode ,
+# [rename (name = "m_CaptureTextureHasBeenRendered")] pub m_capture_texture_has_been_rendered : bool ,
+# [static_field] # [rename (name = "k_MaxPyramidSize")] pub k_max_pyramid_size : i32 ,
+# [rename (name = "m_DefaultHDRFormat")] pub m_default_hdr_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
+# [rename (name = "m_UseRGBM")] pub m_use_rgbm : bool ,
+# [rename (name = "m_SMAAEdgeFormat")] pub m_smaa_edge_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
+# [rename (name = "m_GaussianCoCFormat")] pub m_gaussian_co_c_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
+# [rename (name = "m_PrevViewProjM")] pub m_prev_view_proj_m : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
+# [rename (name = "m_ResetHistory")] pub m_reset_history : bool ,
+# [rename (name = "m_DitheringTextureIndex")] pub m_dithering_texture_index : i32 ,
+# [rename (name = "m_MRT2")] pub m_mrt2 : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
+# [rename (name = "m_BokehKernel")] pub m_bokeh_kernel : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
+# [rename (name = "m_BokehHash")] pub m_bokeh_hash : i32 ,
+# [rename (name = "m_IsFinalPass")] pub m_is_final_pass : bool ,
+# [rename (name = "m_HasFinalPass")] pub m_has_final_pass : bool ,
+# [rename (name = "m_EnableSRGBConversionIfNeeded")] pub m_enable_srgb_conversion_if_needed : bool ,
+# [rename (name = "m_UseDrawProcedural")] pub m_use_draw_procedural : bool ,
+# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_HableCurve")] pub m_hable_curve : crate :: unity_engine :: rendering :: hablecurve :: HableCurve ,
+# [static_field] # [rename (name = "viewProjMatrixStereo")] pub view_proj_matrix_stereo : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
+}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct PostProcessPass_CaptureMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+        const NAME: &'static str = "PostProcessPass.CaptureMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for PostProcessPass_CaptureMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl PostProcessPass_CaptureMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn capture() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn copy() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_ShaderConstants.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -165,118 +277,6 @@ mod __types {
         pub custom_gradation_filter_params2: i32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "PostProcessPass"
-    )]
-    #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-    pub struct PostProcessPass {
-# [rename (name = "m_Descriptor")] pub m_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor ,
-# [rename (name = "m_Source")] pub m_source : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_Destination")] pub m_destination : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_Depth")] pub m_depth : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [rename (name = "m_InternalLut")] pub m_internal_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [static_field] # [rename (name = "k_RenderPostProcessingTag")] pub k_render_post_processing_tag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_RenderFinalPostProcessingTag")] pub k_render_final_post_processing_tag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_ProfilingRenderPostProcessing")] pub m_profiling_render_post_processing : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [static_field] # [rename (name = "m_ProfilingRenderFinalPostProcessing")] pub m_profiling_render_final_post_processing : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [rename (name = "m_Materials")] pub m_materials : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass_MaterialLibrary ,
-# [rename (name = "m_Data")] pub m_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [rename (name = "m_DepthOfField")] pub m_depth_of_field : crate :: unity_engine :: rendering :: universal :: depthoffield :: DepthOfField ,
-# [rename (name = "m_MotionBlur")] pub m_motion_blur : crate :: unity_engine :: rendering :: universal :: motionblur :: MotionBlur ,
-# [rename (name = "m_PaniniProjection")] pub m_panini_projection : crate :: unity_engine :: rendering :: universal :: paniniprojection :: PaniniProjection ,
-# [rename (name = "m_Bloom")] pub m_bloom : crate :: unity_engine :: rendering :: universal :: bloom :: Bloom ,
-# [rename (name = "m_LensDistortion")] pub m_lens_distortion : crate :: unity_engine :: rendering :: universal :: lensdistortion :: LensDistortion ,
-# [rename (name = "m_ChromaticAberration")] pub m_chromatic_aberration : crate :: unity_engine :: rendering :: universal :: chromaticaberration :: ChromaticAberration ,
-# [rename (name = "m_Vignette")] pub m_vignette : crate :: unity_engine :: rendering :: universal :: vignette :: Vignette ,
-# [rename (name = "m_ColorLookup")] pub m_color_lookup : crate :: unity_engine :: rendering :: universal :: colorlookup :: ColorLookup ,
-# [rename (name = "m_ColorAdjustments")] pub m_color_adjustments : crate :: unity_engine :: rendering :: universal :: coloradjustments :: ColorAdjustments ,
-# [rename (name = "m_Tonemapping")] pub m_tonemapping : crate :: unity_engine :: rendering :: universal :: tonemapping :: Tonemapping ,
-# [rename (name = "m_FilmGrain")] pub m_film_grain : crate :: unity_engine :: rendering :: universal :: filmgrain :: FilmGrain ,
-# [rename (name = "m_CustomColorGrading")] pub m_custom_color_grading : crate :: unity_engine :: rendering :: universal :: custom :: customcolorgrading :: CustomColorGrading ,
-# [rename (name = "m_CustomRadialBlur")] pub m_custom_radial_blur : crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur ,
-# [rename (name = "m_CustomHeatHaze")] pub m_custom_heat_haze : crate :: unity_engine :: rendering :: universal :: custom :: customheathaze :: CustomHeatHaze ,
-# [rename (name = "m_CustomGradationFilter")] pub m_custom_gradation_filter : crate :: unity_engine :: rendering :: universal :: custom :: customgradationfilter :: CustomGradationFilter ,
-# [rename (name = "m_Sharpen")] pub m_sharpen : bool ,
-# [rename (name = "m_CustomBlur")] pub m_custom_blur : bool ,
-# [rename (name = "m_CustomBlurTimes")] pub m_custom_blur_times : i32 ,
-# [rename (name = "m_CustomFinalMonoColor")] pub m_custom_final_mono_color : crate :: unity_engine :: vector4 :: Vector4 ,
-# [rename (name = "m_CustomFilterEnabled")] pub m_custom_filter_enabled : bool ,
-# [rename (name = "m_CustomFilterParam0")] pub m_custom_filter_param0 : crate :: unity_engine :: vector4 :: Vector4 ,
-# [rename (name = "m_CustomFilterParam1")] pub m_custom_filter_param1 : crate :: unity_engine :: vector4 :: Vector4 ,
-# [rename (name = "m_CaptureTexture")] pub m_capture_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [rename (name = "m_CaptureTextureRect")] pub m_capture_texture_rect : crate :: unity_engine :: rect :: Rect ,
-# [rename (name = "m_CaptureMode")] pub m_capture_mode : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass_CaptureMode ,
-# [rename (name = "m_CaptureTextureHasBeenRendered")] pub m_capture_texture_has_been_rendered : bool ,
-# [static_field] # [rename (name = "k_MaxPyramidSize")] pub k_max_pyramid_size : i32 ,
-# [rename (name = "m_DefaultHDRFormat")] pub m_default_hdr_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
-# [rename (name = "m_UseRGBM")] pub m_use_rgbm : bool ,
-# [rename (name = "m_SMAAEdgeFormat")] pub m_smaa_edge_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
-# [rename (name = "m_GaussianCoCFormat")] pub m_gaussian_co_c_format : crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat ,
-# [rename (name = "m_PrevViewProjM")] pub m_prev_view_proj_m : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-# [rename (name = "m_ResetHistory")] pub m_reset_history : bool ,
-# [rename (name = "m_DitheringTextureIndex")] pub m_dithering_texture_index : i32 ,
-# [rename (name = "m_MRT2")] pub m_mrt2 : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
-# [rename (name = "m_BokehKernel")] pub m_bokeh_kernel : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [rename (name = "m_BokehHash")] pub m_bokeh_hash : i32 ,
-# [rename (name = "m_IsFinalPass")] pub m_is_final_pass : bool ,
-# [rename (name = "m_HasFinalPass")] pub m_has_final_pass : bool ,
-# [rename (name = "m_EnableSRGBConversionIfNeeded")] pub m_enable_srgb_conversion_if_needed : bool ,
-# [rename (name = "m_UseDrawProcedural")] pub m_use_draw_procedural : bool ,
-# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "m_HableCurve")] pub m_hable_curve : crate :: unity_engine :: rendering :: hablecurve :: HableCurve ,
-# [static_field] # [rename (name = "viewProjMatrixStereo")] pub view_proj_matrix_stereo : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct PostProcessPass_CaptureMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for PostProcessPass_CaptureMode {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-        const NAME: &'static str = "PostProcessPass.CaptureMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for PostProcessPass_CaptureMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl PostProcessPass_CaptureMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn capture() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn copy() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -315,62 +315,6 @@ mod __types {
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PostProcessPass_ShaderConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-impl PostProcessPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __PostProcessPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
 #[doc(hidden)]
@@ -574,7 +518,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -645,7 +589,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "SetupWithExtra",
@@ -897,7 +841,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "SetupFinalPass",
@@ -993,7 +937,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "OnCameraSetup",
@@ -1183,7 +1127,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -1494,7 +1438,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "Render",
@@ -1545,7 +1489,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "RenderSimplePass",
@@ -1638,7 +1582,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "DoSubpixelMorphologicalAntialiasing",
@@ -2410,7 +2354,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "SetupColorGrading",
@@ -2463,7 +2407,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "SetupGrain",
@@ -2514,7 +2458,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "SetupDithering",
@@ -2783,7 +2727,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "RenderFinalPass",
@@ -2834,7 +2778,7 @@ mod __PostProcessPass_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PostProcessPass as ::unity2::ClassIdentity>::class(),
                 "RenderFinalPassAsCopyCapture",
@@ -3905,6 +3849,62 @@ impl PostProcessPass {
         });
         <Self as IPostProcessPassMethods>::ctor(this, evt, data, blit_material);
         this
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __PostProcessPass_ShaderConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PostProcessPass_ShaderConstants as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+impl PostProcessPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __PostProcessPass_ShaderConstants_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 

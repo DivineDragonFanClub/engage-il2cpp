@@ -21,16 +21,6 @@ mod __types {
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >)]
     pub struct EventTrigger_TriggerEvent {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger.Entry")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventTrigger_Entry {
-        #[rename(name = "eventID")]
-        pub event_id: crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
-        #[rename(name = "callback")]
-        pub callback: crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -39,6 +29,16 @@ mod __types {
         pub m_delegates: crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
         >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger.Entry")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventTrigger_Entry {
+        #[rename(name = "eventID")]
+        pub event_id: crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
+        #[rename(name = "callback")]
+        pub callback: crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,
     }
 }
 
@@ -126,90 +126,6 @@ impl EventTrigger_TriggerEvent {
             )
         });
         <Self as IEventTrigger_TriggerEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __EventTrigger_Entry_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventTrigger_Entry as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger_Entry as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: EventTrigger_Entry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(EventTrigger_Entry, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-pub trait IEventTrigger_EntryMethods: IEventTrigger_Entry {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <EventTrigger_Entry as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_Entry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl<__T: IEventTrigger_Entry> IEventTrigger_EntryMethods for __T {}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_Entry {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventTrigger_Entry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventTrigger_EntryMethods>::ctor(this);
         this
     }
 }
@@ -1783,6 +1699,90 @@ impl EventTrigger {
             )
         });
         <Self as IEventTriggerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __EventTrigger_Entry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <EventTrigger_Entry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <EventTrigger_Entry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: EventTrigger_Entry,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(EventTrigger_Entry, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+pub trait IEventTrigger_EntryMethods: IEventTrigger_Entry {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EventTrigger_Entry as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EventTrigger_Entry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+impl<__T: IEventTrigger_Entry> IEventTrigger_EntryMethods for __T {}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+impl EventTrigger_Entry {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventTrigger_Entry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventTrigger_EntryMethods>::ctor(this);
         this
     }
 }

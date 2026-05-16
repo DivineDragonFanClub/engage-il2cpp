@@ -12,20 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterdata/ChapterData.md"))]
-    #[::unity2::class(namespace = "App", name = "ChapterData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chapterdata :: ChapterData >)]
-    pub struct ChapterData {
-        #[rename(name = "m_PrefixlessCid")]
-        pub m_prefixless_cid: ::unity2::Il2CppString,
-        #[rename(name = "m_ClearedFlagName")]
-        pub m_cleared_flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_GmapSpotFlagName")]
-        pub m_gmap_spot_flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_PlaceName")]
-        pub m_place_name: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/chapterdata/ChapterData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -132,6 +118,20 @@ mod __types {
         pub fn scenario() -> Self {
             Self { value: -2147483648 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterdata/ChapterData.md"))]
+    #[::unity2::class(namespace = "App", name = "ChapterData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chapterdata :: ChapterData >)]
+    pub struct ChapterData {
+        #[rename(name = "m_PrefixlessCid")]
+        pub m_prefixless_cid: ::unity2::Il2CppString,
+        #[rename(name = "m_ClearedFlagName")]
+        pub m_cleared_flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_GmapSpotFlagName")]
+        pub m_gmap_spot_flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_PlaceName")]
+        pub m_place_name: ::unity2::Il2CppString,
     }
 }
 
@@ -4374,7 +4374,7 @@ mod __ChapterData_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::app::gmapspot::GmapSpot_State as ::unity2::IlType>::il_type()];
+                &[<crate::app::gmapspot::GmapSpot_State as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChapterData as ::unity2::ClassIdentity>::class(),
                 "TryGetSpotState",

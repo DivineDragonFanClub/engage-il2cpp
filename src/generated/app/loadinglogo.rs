@@ -16,6 +16,58 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
+    #[::unity2::class(namespace = "App", name = "LoadingLogo")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
+    pub struct LoadingLogo {
+        #[static_field]
+        #[rename(name = "GroundImageMax")]
+        pub ground_image_max: i32,
+        #[static_field]
+        #[rename(name = "UnitDotMax")]
+        pub unit_dot_max: i32,
+        #[rename(name = "m_Tips")]
+        pub m_tips: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IconCanvasGroup")]
+        pub m_icon_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[rename(name = "m_TipsCanvasGroup")]
+        pub m_tips_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+        #[rename(name = "m_TipsUnitIcon")]
+        pub m_tips_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_ItemIconRootObject")]
+        pub m_item_icon_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_ItemIconFrameImage")]
+        pub m_item_icon_frame_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_ItemIconImage")]
+        pub m_item_icon_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_SkillIconImage")]
+        pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_TitleFrameImage")]
+        pub m_title_frame_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TipsText")]
+        pub m_tips_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_UnitIconAndGroundRootObject")]
+        pub m_unit_icon_and_ground_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_GroundImageObjects")]
+        pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_UnitDotObjects")]
+        pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject>,
+        #[rename(name = "m_TipsData")]
+        pub m_tips_data: crate::app::tipsdata::TipsData,
+        #[rename(name = "m_TipsAlpha")]
+        pub m_tips_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_IconAlpha")]
+        pub m_icon_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_LoadingMode")]
+        pub m_loading_mode: crate::app::loadingmanager::LoadingManager_Modes,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::loadinglogo::LoadingLogo_Sequences,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
     #[repr(C)]
     #[derive(
@@ -70,58 +122,6 @@ mod __types {
         pub fn hide() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingLogo")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
-    pub struct LoadingLogo {
-        #[static_field]
-        #[rename(name = "GroundImageMax")]
-        pub ground_image_max: i32,
-        #[static_field]
-        #[rename(name = "UnitDotMax")]
-        pub unit_dot_max: i32,
-        #[rename(name = "m_Tips")]
-        pub m_tips: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IconCanvasGroup")]
-        pub m_icon_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[rename(name = "m_TipsCanvasGroup")]
-        pub m_tips_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-        #[rename(name = "m_TipsUnitIcon")]
-        pub m_tips_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_ItemIconRootObject")]
-        pub m_item_icon_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_ItemIconFrameImage")]
-        pub m_item_icon_frame_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_ItemIconImage")]
-        pub m_item_icon_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_SkillIconImage")]
-        pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_TitleFrameImage")]
-        pub m_title_frame_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_TipsText")]
-        pub m_tips_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_UnitIconAndGroundRootObject")]
-        pub m_unit_icon_and_ground_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_GroundImageObjects")]
-        pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_UnitDotObjects")]
-        pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject>,
-        #[rename(name = "m_TipsData")]
-        pub m_tips_data: crate::app::tipsdata::TipsData,
-        #[rename(name = "m_TipsAlpha")]
-        pub m_tips_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_IconAlpha")]
-        pub m_icon_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_LoadingMode")]
-        pub m_loading_mode: crate::app::loadingmanager::LoadingManager_Modes,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::loadinglogo::LoadingLogo_Sequences,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]

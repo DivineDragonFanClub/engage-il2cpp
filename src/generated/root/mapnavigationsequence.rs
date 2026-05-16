@@ -10,16 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationsequence/MapNavigationSequence.md"))]
-    #[::unity2::class(namespace = "", name = "MapNavigationSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapNavigationSequence {
-        #[rename(name = "m_IsHide")]
-        pub m_is_hide: bool,
-        #[rename(name = "m_MapNavigationObject")]
-        pub m_map_navigation_object: crate::unity_engine::gameobject::GameObject,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapnavigationsequence/MapNavigationSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -66,6 +56,16 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationsequence/MapNavigationSequence.md"))]
+    #[::unity2::class(namespace = "", name = "MapNavigationSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapNavigationSequence {
+        #[rename(name = "m_IsHide")]
+        pub m_is_hide: bool,
+        #[rename(name = "m_MapNavigationObject")]
+        pub m_map_navigation_object: crate::unity_engine::gameobject::GameObject,
     }
 }
 

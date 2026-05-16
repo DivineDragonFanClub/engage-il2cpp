@@ -124,8 +124,8 @@ mod __StackTraceUtility_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StackTraceUtility as ::unity2::ClassIdentity>::class(),

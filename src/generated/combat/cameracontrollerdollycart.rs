@@ -14,6 +14,18 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraControllerDollyCart")]
+    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
+    pub struct CameraControllerDollyCart {
+        #[rename(name = "FrameCount")]
+        pub frame_count: i32,
+        #[rename(name = "m_LastHeight")]
+        pub m_last_height: f32,
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::cameracontrollerdollycart::CameraControllerDollyCart_State,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart_State.md"))]
     #[repr(C)]
     #[derive(
@@ -64,18 +76,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerDollyCart")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerDollyCart {
-        #[rename(name = "FrameCount")]
-        pub frame_count: i32,
-        #[rename(name = "m_LastHeight")]
-        pub m_last_height: f32,
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::cameracontrollerdollycart::CameraControllerDollyCart_State,
     }
 }
 

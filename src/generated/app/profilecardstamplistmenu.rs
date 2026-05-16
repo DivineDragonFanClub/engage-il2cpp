@@ -37,10 +37,13 @@ mod __types {
             crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DisposeEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenu.CloseEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DecideEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ProfileCardStampListMenu.DecideEventHandler"
+    )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampListMenu_CloseEventHandler {}
+    pub struct ProfileCardStampListMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DisposeEventHandler.md"))]
     #[::unity2::class(
@@ -50,13 +53,10 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardStampListMenu_DisposeEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_DecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardStampListMenu.DecideEventHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenu/ProfileCardStampListMenu_CloseEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardStampListMenu.CloseEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardStampListMenu_DecideEventHandler {}
+    pub struct ProfileCardStampListMenu_CloseEventHandler {}
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu-types")]
@@ -141,7 +141,7 @@ mod __ProfileCardStampListMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardStampListMenu as ::unity2::ClassIdentity>::class(),
                 "CreateMenuItem",
@@ -1077,7 +1077,7 @@ impl ProfileCardStampListMenu {
 #[cfg(feature = "app-profilecardstamplistmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
+mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1091,7 +1091,7 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1103,7 +1103,7 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1116,13 +1116,13 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardStampListMenu_CloseEventHandler,
+        this: ProfileCardStampListMenu_DecideEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampListMenu_CloseEventHandler,
+            ProfileCardStampListMenu_DecideEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1140,11 +1140,11 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -1154,7 +1154,7 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -1167,24 +1167,26 @@ mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ProfileCardStampListMenu_CloseEventHandler,
+        this: ProfileCardStampListMenu_DecideEventHandler,
+        stamp_data: crate::app::profilecardstampdata::ProfileCardStampData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampListMenu_CloseEventHandler,
+            ProfileCardStampListMenu_DecideEventHandler,
+            crate::app::profilecardstampdata::ProfileCardStampData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(this, stamp_data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:
-    IProfileCardStampListMenu_CloseEventHandler
+pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:
+    IProfileCardStampListMenu_DecideEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -1193,8 +1195,8 @@ pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampListMenu_CloseEventHandler_unity2_raw::ctor(
+            let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampListMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1202,12 +1204,16 @@ pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
+    #[doc = "`Invoke(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]
+    fn invoke(
+        self,
+        stamp_data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
+    ) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampListMenu_CloseEventHandler_unity2_raw::invoke(
+            let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampListMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
+                ::core::convert::Into::into(stamp_data),
                 ::core::option::Option::None,
             )
         }
@@ -1215,23 +1221,23 @@ pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-impl<__T: IProfileCardStampListMenu_CloseEventHandler>
-    IProfileCardStampListMenu_CloseEventHandlerMethods for __T
+impl<__T: IProfileCardStampListMenu_DecideEventHandler>
+    IProfileCardStampListMenu_DecideEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_CloseEventHandler {
+impl ProfileCardStampListMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampListMenu_CloseEventHandler),
+                ::core::stringify!(ProfileCardStampListMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardStampListMenu_CloseEventHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardStampListMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1401,7 +1407,7 @@ impl ProfileCardStampListMenu_DisposeEventHandler {
 #[cfg(feature = "app-profilecardstamplistmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
+mod __ProfileCardStampListMenu_CloseEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1415,7 +1421,7 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1427,7 +1433,7 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1440,13 +1446,13 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardStampListMenu_DecideEventHandler,
+        this: ProfileCardStampListMenu_CloseEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampListMenu_DecideEventHandler,
+            ProfileCardStampListMenu_CloseEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1464,11 +1470,11 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                1,
+                0,
                 param_types,
                 false,
             )
@@ -1478,7 +1484,7 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardStampListMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardStampListMenu_CloseEventHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -1491,26 +1497,24 @@ mod __ProfileCardStampListMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ProfileCardStampListMenu_DecideEventHandler,
-        stamp_data: crate::app::profilecardstampdata::ProfileCardStampData,
+        this: ProfileCardStampListMenu_CloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ProfileCardStampListMenu_DecideEventHandler,
-            crate::app::profilecardstampdata::ProfileCardStampData,
+            ProfileCardStampListMenu_CloseEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, stamp_data, __unity2_method_info)
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:
-    IProfileCardStampListMenu_DecideEventHandler
+pub trait IProfileCardStampListMenu_CloseEventHandlerMethods:
+    IProfileCardStampListMenu_CloseEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -1519,8 +1523,8 @@ pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampListMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampListMenu_CloseEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1528,16 +1532,12 @@ pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]
-    fn invoke(
-        self,
-        stamp_data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
-    ) -> () {
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardStampListMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardStampListMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < ProfileCardStampListMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardStampListMenu_CloseEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(stamp_data),
                 ::core::option::Option::None,
             )
         }
@@ -1545,23 +1545,23 @@ pub trait IProfileCardStampListMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-impl<__T: IProfileCardStampListMenu_DecideEventHandler>
-    IProfileCardStampListMenu_DecideEventHandlerMethods for __T
+impl<__T: IProfileCardStampListMenu_CloseEventHandler>
+    IProfileCardStampListMenu_CloseEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-profilecardstamplistmenu")]
-impl ProfileCardStampListMenu_DecideEventHandler {
+impl ProfileCardStampListMenu_CloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampListMenu_DecideEventHandler),
+                ::core::stringify!(ProfileCardStampListMenu_CloseEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardStampListMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardStampListMenu_CloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

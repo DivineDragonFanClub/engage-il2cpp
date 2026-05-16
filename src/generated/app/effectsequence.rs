@@ -12,14 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "EffectSequence")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
-    pub struct EffectSequence {
-        #[rename(name = "m_Effects")]
-        pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -70,6 +62,14 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "EffectSequence")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
+    pub struct EffectSequence {
+        #[rename(name = "m_Effects")]
+        pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData>,
     }
 }
 
@@ -743,7 +743,7 @@ mod __EffectSequence_unity2_raw {
                 <crate::app::effectsequence::EffectSequence_Kind as ::unity2::IlType>::il_type(),
                 <crate::app::effectdata::EffectData_Modes as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EffectSequence as ::unity2::ClassIdentity>::class(),

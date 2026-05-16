@@ -12,26 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GameSaveDataUtil_ProcDeleteAll {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::system::collections::generic::list_1::List_1<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcDeleteAll_Data,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResultWithHeader")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GameSaveDataUtil_ProcessResultWithHeader {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResult")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct GameSaveDataUtil_ProcessResult {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess_Modes.md"))]
     #[repr(C)]
     #[derive(
@@ -84,11 +64,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameSaveDataUtil {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcProcess")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -104,6 +79,31 @@ mod __types {
             crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResult")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GameSaveDataUtil_ProcessResult {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameSaveDataUtil {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcessResultWithHeader")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct GameSaveDataUtil_ProcessResultWithHeader {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll.md"))]
+    #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GameSaveDataUtil_ProcDeleteAll {
+        #[rename(name = "m_Data")]
+        pub m_data: crate::system::collections::generic::list_1::List_1<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcDeleteAll_Data,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll_Data.md"))]
     #[::unity2::class(namespace = "App", name = "GameSaveDataUtil.ProcDeleteAll.Data")]
     #[parent(crate::system::object::Object)]
@@ -116,7 +116,7 @@ pub use __types::*;
 #[cfg(feature = "app-gamesavedatautil")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
+mod __GameSaveDataUtil_ProcProcess_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -125,12 +125,11 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                1,
+                5,
                 param_types,
                 true,
             )
@@ -140,7 +139,7 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -154,15 +153,199 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            r#type,
+            index,
+            mode,
+            result_callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_write {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                "CreateBindWrite",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindWrite",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_write(
+        super_: crate::app::procinst::ProcInst,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_write::get_offset() as isize),
+        );
+        inner(super_, r#type, index, result_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_copy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                "CreateBindCopy",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindCopy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_copy(
+        super_: crate::app::procinst::ProcInst,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        from_type: crate::app::gamesavedata::GameSaveData_Types,
+        from_index: i32,
+        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_copy::get_offset() as isize),
+        );
+        inner(
+            super_,
+            r#type,
+            index,
+            from_type,
+            from_index,
+            result_header_callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                "CreateBindCommon",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    "CreateBindCommon",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind_common(
+        super_: crate::app::procinst::ProcInst,
+        p: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind_common::get_offset() as isize),
+        );
+        inner(super_, p, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -171,11 +354,11 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                4,
                 param_types,
                 false,
             )
@@ -185,7 +368,7 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -198,29 +381,46 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GameSaveDataUtil_ProcDeleteAll,
+        this: GameSaveDataUtil_ProcProcess,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            GameSaveDataUtil_ProcProcess,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            index,
+            mode,
+            result_callback,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_pause_exit_app {
+    pub mod __lookup_ctor_2 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
-                "PauseExitApp",
-                0,
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
                 param_types,
                 false,
             )
@@ -230,8 +430,8 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
-                    "PauseExitApp",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -242,30 +442,44 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn pause_exit_app(
-        this: GameSaveDataUtil_ProcDeleteAll,
+    pub unsafe fn ctor_2(
+        this: GameSaveDataUtil_ProcProcess,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pause_exit_app::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            GameSaveDataUtil_ProcProcess,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            index,
+            result_header_callback,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_resume_exit_app {
+    pub mod __lookup_ctor_3 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
-                "ResumeExitApp",
-                0,
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                5,
                 param_types,
                 false,
             )
@@ -275,8 +489,8 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
-                    "ResumeExitApp",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -287,29 +501,49 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn resume_exit_app(
-        this: GameSaveDataUtil_ProcDeleteAll,
+    pub unsafe fn ctor_3(
+        this: GameSaveDataUtil_ProcProcess,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        from_type: crate::app::gamesavedata::GameSaveData_Types,
+        from_index: i32,
+        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resume_exit_app::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            GameSaveDataUtil_ProcProcess,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedata::GameSaveData_Types,
+            i32,
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_3::get_offset() as isize),
+        );
+        inner(
+            this,
+            r#type,
+            index,
+            from_type,
+            from_index,
+            result_header_callback,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_delete_all {
+    pub mod __lookup_exec {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
-                "DeleteAll",
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                "Exec",
                 0,
                 param_types,
                 false,
@@ -320,8 +554,8 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
-                    "DeleteAll",
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    "Exec",
                     e
                 ),
             }
@@ -332,105 +566,15 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn delete_all(
-        this: GameSaveDataUtil_ProcDeleteAll,
+    pub unsafe fn exec(
+        this: GameSaveDataUtil_ProcProcess,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(GameSaveDataUtil_ProcProcess, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_delete_all::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_running {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
-                "IsRunning",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
-                    "IsRunning",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_running(
-        this: GameSaveDataUtil_ProcDeleteAll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_running::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_write_global {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
-                "WriteGlobal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
-                    "WriteGlobal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn write_global(
-        this: GameSaveDataUtil_ProcDeleteAll,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_write_global::get_offset() as isize),
+                    .offset(__lookup_exec::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -443,7 +587,7 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
                 "Result",
                 0,
                 param_types,
@@ -455,7 +599,7 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
                     "Result",
                     e
                 ),
@@ -468,10 +612,10 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
         }
     }
     pub unsafe fn result(
-        this: GameSaveDataUtil_ProcDeleteAll,
+        this: GameSaveDataUtil_ProcProcess,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(GameSaveDataUtil_ProcProcess, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -482,12 +626,81 @@ mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+impl GameSaveDataUtil_ProcProcess {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        mode: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+        >,
+        result_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+        >,
+    ) -> () {
         unsafe {
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::create_bind(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(result_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindWrite(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
+    pub fn create_bind_write(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        result_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+        >,
+    ) -> () {
+        unsafe {
+            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_write(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(result_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindCopy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
+    pub fn create_bind_copy(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        from_type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        from_index: impl ::core::convert::Into<i32>,
+        result_header_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+        >,
+    ) -> () {
+        unsafe {
+            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_copy(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(from_type),
+                ::core::convert::Into::into(from_index),
+                ::core::convert::Into::into(result_header_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateBindCommon(crate::app::procinst::ProcInst, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess)` overload"]
+    pub fn create_bind_common(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        p: impl ::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess>,
+    ) -> () {
+        unsafe {
+            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_common(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(p),
                 ::core::option::Option::None,
             )
         }
@@ -495,80 +708,92 @@ impl GameSaveDataUtil_ProcDeleteAll {
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcDeleteAllMethods: IGameSaveDataUtil_ProcDeleteAll {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IGameSaveDataUtil_ProcProcessMethods: IGameSaveDataUtil_ProcProcess {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]
+    fn ctor(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        mode: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+        >,
+        result_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+        >,
+    ) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::ctor(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(result_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`PauseExitApp()` overload"]
-    fn pause_exit_app(self) -> () {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
+    fn ctor_2(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        result_header_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+        >,
+    ) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::pause_exit_app(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor_2(
                 __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(result_header_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ResumeExitApp()` overload"]
-    fn resume_exit_app(self) -> () {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
+    fn ctor_3(
+        self,
+        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        index: impl ::core::convert::Into<i32>,
+        from_type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
+        from_index: impl ::core::convert::Into<i32>,
+        result_header_callback: impl ::core::convert::Into<
+            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
+        >,
+    ) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::resume_exit_app(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor_3(
                 __receiver,
+                ::core::convert::Into::into(r#type),
+                ::core::convert::Into::into(index),
+                ::core::convert::Into::into(from_type),
+                ::core::convert::Into::into(from_index),
+                ::core::convert::Into::into(result_header_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`DeleteAll()` overload"]
-    fn delete_all(self) -> () {
+    #[doc = "`Exec()` overload"]
+    fn exec(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::delete_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRunning()` overload"]
-    fn is_running(self) -> bool {
-        unsafe {
-            let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::is_running(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WriteGlobal()` overload"]
-    fn write_global(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::write_global(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::exec(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -578,10 +803,10 @@ pub trait IGameSaveDataUtil_ProcDeleteAllMethods: IGameSaveDataUtil_ProcDeleteAl
     fn result(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::result(
+            __GameSaveDataUtil_ProcProcess_unity2_raw::result(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -590,195 +815,79 @@ pub trait IGameSaveDataUtil_ProcDeleteAllMethods: IGameSaveDataUtil_ProcDeleteAl
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl<__T: IGameSaveDataUtil_ProcDeleteAll> IGameSaveDataUtil_ProcDeleteAllMethods for __T {}
+impl<__T: IGameSaveDataUtil_ProcProcess> IGameSaveDataUtil_ProcProcessMethods for __T {}
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl GameSaveDataUtil_ProcProcess {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` — overload selector"]
+    pub fn new(
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
+        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcDeleteAll),
+                ::core::stringify!(GameSaveDataUtil_ProcProcess),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGameSaveDataUtil_ProcDeleteAllMethods>::ctor(this);
+        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor(
+            this,
+            r#type,
+            index,
+            mode,
+            result_callback,
+        );
         this
     }
-}
 
-#[cfg(feature = "app-gamesavedatautil")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GameSaveDataUtil_ProcessResultWithHeader,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameSaveDataUtil_ProcessResultWithHeader,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: GameSaveDataUtil_ProcessResultWithHeader,
-        is_success: bool,
-        header: crate::app::gamesavedataheader::GameSaveDataHeader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameSaveDataUtil_ProcessResultWithHeader,
-            bool,
-            crate::app::gamesavedataheader::GameSaveDataHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, is_success, header, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcessResultWithHeaderMethods:
-    IGameSaveDataUtil_ProcessResultWithHeader
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
-    fn invoke(
-        self,
-        is_success: impl ::core::convert::Into<bool>,
-        header: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
-    ) -> () {
-        unsafe {
-            let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(is_success),
-                ::core::convert::Into::into(header),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl<__T: IGameSaveDataUtil_ProcessResultWithHeader>
-    IGameSaveDataUtil_ProcessResultWithHeaderMethods for __T
-{
-}
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResultWithHeader {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]
+    pub fn new_2(
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcessResultWithHeader),
-                ::core::stringify!(new),
+                ::core::stringify!(GameSaveDataUtil_ProcProcess),
+                ::core::stringify!(new_2),
             )
         });
-        <Self as IGameSaveDataUtil_ProcessResultWithHeaderMethods>::ctor(this, object, method);
+        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor_2(
+            this,
+            r#type,
+            index,
+            result_header_callback,
+        );
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]
+    pub fn new_3(
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+        from_type: crate::app::gamesavedata::GameSaveData_Types,
+        from_index: i32,
+        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataUtil_ProcProcess),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor_3(
+            this,
+            r#type,
+            index,
+            from_type,
+            from_index,
+            result_header_callback,
+        );
         this
     }
 }
@@ -1747,7 +1856,182 @@ impl GameSaveDataUtil {
 #[cfg(feature = "app-gamesavedatautil")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameSaveDataUtil_ProcProcess_unity2_raw {
+mod __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameSaveDataUtil_ProcessResultWithHeader,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataUtil_ProcessResultWithHeader,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcessResultWithHeader as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: GameSaveDataUtil_ProcessResultWithHeader,
+        is_success: bool,
+        header: crate::app::gamesavedataheader::GameSaveDataHeader,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GameSaveDataUtil_ProcessResultWithHeader,
+            bool,
+            crate::app::gamesavedataheader::GameSaveDataHeader,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, is_success, header, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+pub trait IGameSaveDataUtil_ProcessResultWithHeaderMethods:
+    IGameSaveDataUtil_ProcessResultWithHeader
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
+    fn invoke(
+        self,
+        is_success: impl ::core::convert::Into<bool>,
+        header: impl ::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>,
+    ) -> () {
+        unsafe {
+            let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GameSaveDataUtil_ProcessResultWithHeader_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(is_success),
+                ::core::convert::Into::into(header),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+impl<__T: IGameSaveDataUtil_ProcessResultWithHeader>
+    IGameSaveDataUtil_ProcessResultWithHeaderMethods for __T
+{
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+impl GameSaveDataUtil_ProcessResultWithHeader {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataUtil_ProcessResultWithHeader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataUtil_ProcessResultWithHeaderMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-gamesavedatautil")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameSaveDataUtil_ProcDeleteAll_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1756,11 +2040,12 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
-                5,
+                1,
                 param_types,
                 true,
             )
@@ -1770,7 +2055,7 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -1784,199 +2069,15 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            r#type,
-            index,
-            mode,
-            result_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_write {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                "CreateBindWrite",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindWrite",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind_write(
-        super_: crate::app::procinst::ProcInst,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_write::get_offset() as isize),
-        );
-        inner(super_, r#type, index, result_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_copy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                "CreateBindCopy",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindCopy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind_copy(
-        super_: crate::app::procinst::ProcInst,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        from_type: crate::app::gamesavedata::GameSaveData_Types,
-        from_index: i32,
-        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_copy::get_offset() as isize),
-        );
-        inner(
-            super_,
-            r#type,
-            index,
-            from_type,
-            from_index,
-            result_header_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind_common {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                "CreateBindCommon",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindCommon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind_common(
-        super_: crate::app::procinst::ProcInst,
-        p: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_common::get_offset() as isize),
-        );
-        inner(super_, p, __unity2_method_info)
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1985,11 +2086,11 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                4,
+                0,
                 param_types,
                 false,
             )
@@ -1999,7 +2100,7 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2012,169 +2113,28 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GameSaveDataUtil_ProcProcess,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
+        this: GameSaveDataUtil_ProcDeleteAll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GameSaveDataUtil_ProcProcess,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            index,
-            mode,
-            result_callback,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: GameSaveDataUtil_ProcProcess,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameSaveDataUtil_ProcProcess,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            index,
-            result_header_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedata :: GameSaveData_Types as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: GameSaveDataUtil_ProcProcess,
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        from_type: crate::app::gamesavedata::GameSaveData_Types,
-        from_index: i32,
-        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GameSaveDataUtil_ProcProcess,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedata::GameSaveData_Types,
-            i32,
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            index,
-            from_type,
-            from_index,
-            result_header_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exec {
+    pub mod __lookup_pause_exit_app {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
-                "Exec",
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                "PauseExitApp",
                 0,
                 param_types,
                 false,
@@ -2185,8 +2145,8 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
-                    "Exec",
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    "PauseExitApp",
                     e
                 ),
             }
@@ -2197,15 +2157,195 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn exec(
-        this: GameSaveDataUtil_ProcProcess,
+    pub unsafe fn pause_exit_app(
+        this: GameSaveDataUtil_ProcDeleteAll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcProcess, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_exec::get_offset() as isize),
+                    .offset(__lookup_pause_exit_app::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resume_exit_app {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                "ResumeExitApp",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    "ResumeExitApp",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn resume_exit_app(
+        this: GameSaveDataUtil_ProcDeleteAll,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_resume_exit_app::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                "DeleteAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    "DeleteAll",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn delete_all(
+        this: GameSaveDataUtil_ProcDeleteAll,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_delete_all::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_running {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                "IsRunning",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    "IsRunning",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_running(
+        this: GameSaveDataUtil_ProcDeleteAll,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_is_running::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_write_global {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
+                "WriteGlobal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
+                    "WriteGlobal",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn write_global(
+        this: GameSaveDataUtil_ProcDeleteAll,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_write_global::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -2218,7 +2358,7 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::class(),
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::class(),
                 "Result",
                 0,
                 param_types,
@@ -2230,7 +2370,7 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GameSaveDataUtil_ProcProcess as ::unity2::ClassIdentity>::NAME,
+                    <GameSaveDataUtil_ProcDeleteAll as ::unity2::ClassIdentity>::NAME,
                     "Result",
                     e
                 ),
@@ -2243,10 +2383,10 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
         }
     }
     pub unsafe fn result(
-        this: GameSaveDataUtil_ProcProcess,
+        this: GameSaveDataUtil_ProcDeleteAll,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(GameSaveDataUtil_ProcProcess, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(GameSaveDataUtil_ProcDeleteAll, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2257,81 +2397,12 @@ mod __GameSaveDataUtil_ProcProcess_unity2_raw {
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcProcess {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        mode: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-        >,
-        result_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
-        >,
-    ) -> () {
+impl GameSaveDataUtil_ProcDeleteAll {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(result_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBindWrite(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
-    pub fn create_bind_write(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        result_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-        >,
-    ) -> () {
-        unsafe {
-            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_write(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(result_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBindCopy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
-    pub fn create_bind_copy(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        from_type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        from_index: impl ::core::convert::Into<i32>,
-        result_header_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-        >,
-    ) -> () {
-        unsafe {
-            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_copy(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(from_type),
-                ::core::convert::Into::into(from_index),
-                ::core::convert::Into::into(result_header_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBindCommon(crate::app::procinst::ProcInst, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess)` overload"]
-    pub fn create_bind_common(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        p: impl ::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess>,
-    ) -> () {
-        unsafe {
-            __GameSaveDataUtil_ProcProcess_unity2_raw::create_bind_common(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(p),
                 ::core::option::Option::None,
             )
         }
@@ -2339,92 +2410,80 @@ impl GameSaveDataUtil_ProcProcess {
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcProcessMethods: IGameSaveDataUtil_ProcProcess {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]
-    fn ctor(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        mode: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-        >,
-        result_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
-        >,
-    ) -> () {
+pub trait IGameSaveDataUtil_ProcDeleteAllMethods: IGameSaveDataUtil_ProcDeleteAll {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(result_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
-    fn ctor_2(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        result_header_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-        >,
-    ) -> () {
+    #[doc = "`PauseExitApp()` overload"]
+    fn pause_exit_app(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor_2(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::pause_exit_app(
                 __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(result_header_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]
-    fn ctor_3(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        index: impl ::core::convert::Into<i32>,
-        from_type: impl ::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>,
-        from_index: impl ::core::convert::Into<i32>,
-        result_header_callback: impl ::core::convert::Into<
-            crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,
-        >,
-    ) -> () {
+    #[doc = "`ResumeExitApp()` overload"]
+    fn resume_exit_app(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcProcess_unity2_raw::ctor_3(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::resume_exit_app(
                 __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::convert::Into::into(index),
-                ::core::convert::Into::into(from_type),
-                ::core::convert::Into::into(from_index),
-                ::core::convert::Into::into(result_header_callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Exec()` overload"]
-    fn exec(self) -> () {
+    #[doc = "`DeleteAll()` overload"]
+    fn delete_all(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcProcess_unity2_raw::exec(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::delete_all(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsRunning()` overload"]
+    fn is_running(self) -> bool {
+        unsafe {
+            let __receiver =
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::is_running(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WriteGlobal()` overload"]
+    fn write_global(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::write_global(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2434,10 +2493,10 @@ pub trait IGameSaveDataUtil_ProcProcessMethods: IGameSaveDataUtil_ProcProcess {
     fn result(self) -> () {
         unsafe {
             let __receiver =
-                <GameSaveDataUtil_ProcProcess as ::unity2::FromIlInstance>::from_il_instance(
+                <GameSaveDataUtil_ProcDeleteAll as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GameSaveDataUtil_ProcProcess_unity2_raw::result(
+            __GameSaveDataUtil_ProcDeleteAll_unity2_raw::result(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -2446,79 +2505,20 @@ pub trait IGameSaveDataUtil_ProcProcessMethods: IGameSaveDataUtil_ProcProcess {
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl<__T: IGameSaveDataUtil_ProcProcess> IGameSaveDataUtil_ProcProcessMethods for __T {}
+impl<__T: IGameSaveDataUtil_ProcDeleteAll> IGameSaveDataUtil_ProcDeleteAllMethods for __T {}
 
 #[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcProcess {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` — overload selector"]
-    pub fn new(
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        mode: crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,
-        result_callback: crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult,
-    ) -> Self {
+impl GameSaveDataUtil_ProcDeleteAll {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcProcess),
+                ::core::stringify!(GameSaveDataUtil_ProcDeleteAll),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor(
-            this,
-            r#type,
-            index,
-            mode,
-            result_callback,
-        );
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]
-    pub fn new_2(
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcProcess),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor_2(
-            this,
-            r#type,
-            index,
-            result_header_callback,
-        );
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]
-    pub fn new_3(
-        r#type: crate::app::gamesavedata::GameSaveData_Types,
-        index: i32,
-        from_type: crate::app::gamesavedata::GameSaveData_Types,
-        from_index: i32,
-        result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataUtil_ProcProcess),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IGameSaveDataUtil_ProcProcessMethods>::ctor_3(
-            this,
-            r#type,
-            index,
-            from_type,
-            from_index,
-            result_header_callback,
-        );
+        <Self as IGameSaveDataUtil_ProcDeleteAllMethods>::ctor(this);
         this
     }
 }

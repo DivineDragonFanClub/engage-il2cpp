@@ -11,15 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
-    #[::unity2::class(namespace = "App", name = "Proc")]
-    #[parent(crate::system::object::Object)]
-    pub struct Proc {
-        #[static_field]
-        #[rename(name = "s_Roots")]
-        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
     #[repr(C)]
     #[derive(
@@ -70,6 +61,15 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
+    #[::unity2::class(namespace = "App", name = "Proc")]
+    #[parent(crate::system::object::Object)]
+    pub struct Proc {
+        #[static_field]
+        #[rename(name = "s_Roots")]
+        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md"))]

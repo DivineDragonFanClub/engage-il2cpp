@@ -14,6 +14,62 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ForwardRendererData"
+    )]
+    #[parent(
+        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
+    )]
+    pub struct ForwardRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
+# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
+# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
+# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ForwardRendererData.ShaderResources"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ForwardRendererData_ShaderResources {
+        #[rename(name = "blitPS")]
+        pub blit_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "zprepass")]
+        pub zprepass: crate::unity_engine::shader::Shader,
+        #[rename(name = "downsampleDepth")]
+        pub downsample_depth: crate::unity_engine::shader::Shader,
+        #[rename(name = "halfResoComposite")]
+        pub half_reso_composite: crate::unity_engine::shader::Shader,
+        #[rename(name = "lightOcclusion")]
+        pub light_occlusion: crate::unity_engine::shader::Shader,
+        #[rename(name = "copyDepthPS")]
+        pub copy_depth_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "screenSpaceShadowPS")]
+        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "samplingPS")]
+        pub sampling_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDepthInfoPS")]
+        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "tileDeferredPS")]
+        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "stencilDeferredPS")]
+        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "fallbackErrorPS")]
+        pub fallback_error_ps: crate::unity_engine::shader::Shader,
+        #[rename(name = "materialErrorPS")]
+        pub material_error_ps: crate::unity_engine::shader::Shader,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]
     #[repr(C)]
     #[derive(
@@ -76,62 +132,6 @@ mod __types {
         pub fn count() -> Self {
             Self { value: 6 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData"
-    )]
-    #[parent(
-        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
-    )]
-    pub struct ForwardRendererData {
-# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
-# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
-# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
-# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
-# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData.ShaderResources"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ForwardRendererData_ShaderResources {
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "zprepass")]
-        pub zprepass: crate::unity_engine::shader::Shader,
-        #[rename(name = "downsampleDepth")]
-        pub downsample_depth: crate::unity_engine::shader::Shader,
-        #[rename(name = "halfResoComposite")]
-        pub half_reso_composite: crate::unity_engine::shader::Shader,
-        #[rename(name = "lightOcclusion")]
-        pub light_occlusion: crate::unity_engine::shader::Shader,
-        #[rename(name = "copyDepthPS")]
-        pub copy_depth_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "screenSpaceShadowPS")]
-        pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "samplingPS")]
-        pub sampling_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDepthInfoPS")]
-        pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "tileDeferredPS")]
-        pub tile_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "stencilDeferredPS")]
-        pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "fallbackErrorPS")]
-        pub fallback_error_ps: crate::unity_engine::shader::Shader,
-        #[rename(name = "materialErrorPS")]
-        pub material_error_ps: crate::unity_engine::shader::Shader,
     }
 }
 

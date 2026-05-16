@@ -11,6 +11,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceCommandSkill")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill >)]
+    pub struct MapSequenceCommandSkill {
+        #[rename(name = "m_Action")]
+        pub m_action: crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
+        #[rename(name = "m_Results")]
+        pub m_results: crate::app::mapskill::MapSkill_Results,
+        #[rename(name = "m_Signal")]
+        pub m_signal: crate::app::unitsignal::UnitSignal,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -98,18 +110,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceCommandSkill")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill >)]
-    pub struct MapSequenceCommandSkill {
-        #[rename(name = "m_Action")]
-        pub m_action: crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action,
-        #[rename(name = "m_Results")]
-        pub m_results: crate::app::mapskill::MapSkill_Results,
-        #[rename(name = "m_Signal")]
-        pub m_signal: crate::app::unitsignal::UnitSignal,
-    }
 }
 
 #[cfg(feature = "app-mapsequencecommandskill-types")]
@@ -127,7 +127,7 @@ mod __MapSequenceCommandSkill_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: app :: mapskill :: MapSkill_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapskill :: MapSkill_Results as :: unity2 :: IlType > :: il_type () , < crate :: app :: mapsequencecommandskill :: MapSequenceCommandSkill_Action as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceCommandSkill as ::unity2::ClassIdentity>::class(),
                 ".ctor",

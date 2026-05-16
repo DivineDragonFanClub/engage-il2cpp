@@ -33,6 +33,11 @@ mod __types {
         pub m_npad_id: crate::nn::hid::npadid::NpadId,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct AmiiboManager_AmiiboInfo {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
     #[repr(C)]
     #[derive(
@@ -92,11 +97,6 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct AmiiboManager_AmiiboInfo {}
 }
 
 #[cfg(feature = "app-amiibomanager-types")]

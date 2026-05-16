@@ -9,31 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserGmapData")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameUserGmapData {
-        #[rename(name = "m_GmapCameraDistance")]
-        pub m_gmap_camera_distance: f32,
-        #[rename(name = "m_Mobs")]
-        pub m_mobs: crate::system::collections::specialized::ordereddictionary::OrderedDictionary,
-        #[rename(name = "m_LastUpdateDateTime")]
-        pub m_last_update_date_time: i64,
-        #[rename(name = "m_EncountCounters")]
-        pub m_encount_counters: ::unity2::Array<u8>,
-        #[rename(name = "EncountTimeHoursSpan")]
-        pub encount_time_hours_span: f32,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::gmapmode::GmapMode_Mode,
-        #[rename(name = "m_NowSpotGod")]
-        pub m_now_spot_god: ::unity2::Il2CppString,
-        #[rename(name = "m_NowSpotEvil")]
-        pub m_now_spot_evil: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]
     #[repr(C)]
     #[derive(
@@ -84,6 +59,31 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserGmapData")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameUserGmapData {
+        #[rename(name = "m_GmapCameraDistance")]
+        pub m_gmap_camera_distance: f32,
+        #[rename(name = "m_Mobs")]
+        pub m_mobs: crate::system::collections::specialized::ordereddictionary::OrderedDictionary,
+        #[rename(name = "m_LastUpdateDateTime")]
+        pub m_last_update_date_time: i64,
+        #[rename(name = "m_EncountCounters")]
+        pub m_encount_counters: ::unity2::Array<u8>,
+        #[rename(name = "EncountTimeHoursSpan")]
+        pub encount_time_hours_span: f32,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::gmapmode::GmapMode_Mode,
+        #[rename(name = "m_NowSpotGod")]
+        pub m_now_spot_god: ::unity2::Il2CppString,
+        #[rename(name = "m_NowSpotEvil")]
+        pub m_now_spot_evil: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
     }
 }
 

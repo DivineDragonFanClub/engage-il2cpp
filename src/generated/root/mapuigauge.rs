@@ -724,46 +724,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuigauge/MapUIGauge_SuppressType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapUIGauge_SuppressType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapUIGauge_SuppressType {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "MapUIGauge.SuppressType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapUIGauge_SuppressType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapUIGauge_SuppressType {
-        pub fn break_icon_flashing() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapuigauge/MapUIGauge.md"))]
     #[::unity2::class(namespace = "", name = "MapUIGauge")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapuigauge :: MapUIGauge >)]
@@ -852,6 +812,46 @@ mod __types {
         pub m_range_image: crate::app::mapimagecorebit::MapImageCoreBit,
         #[rename(name = "m_CannonImage")]
         pub m_cannon_image: crate::app::mapimagecorebit::MapImageCoreBit,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuigauge/MapUIGauge_SuppressType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapUIGauge_SuppressType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapUIGauge_SuppressType {
+        const NAMESPACE: &'static str = "";
+
+        const NAME: &'static str = "MapUIGauge.SuppressType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapUIGauge_SuppressType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapUIGauge_SuppressType {
+        pub fn break_icon_flashing() -> Self {
+            Self { value: 1 }
+        }
     }
 }
 
@@ -2268,8 +2268,8 @@ mod __MapUIGauge_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),

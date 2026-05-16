@@ -28,7 +28,7 @@ mod __VibrationFile_2_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: nn :: hid :: vibrationvalue :: VibrationValue as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: vibrationvalue :: VibrationValue as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
                 "RetrieveValue",
@@ -79,7 +79,7 @@ mod __VibrationFile_2_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i64 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i64 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
                 "Generate",
@@ -141,7 +141,7 @@ mod __VibrationFile_2_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VibrationFile_2 as ::unity2::ClassIdentity>::class(),
                 "Generate",

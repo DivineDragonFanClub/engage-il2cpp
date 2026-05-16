@@ -13,6 +13,47 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_2.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Experimental.Rendering.Universal",
+        name = "Light2D"
+    )]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct Light2D_2 {
+# [rename (name = "m_LightType")] pub m_light_type : crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_LightType ,
+# [rename (name = "m_BlendStyleIndex")] pub m_blend_style_index : i32 ,
+# [rename (name = "m_FalloffIntensity")] pub m_falloff_intensity : f32 ,
+# [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
+# [rename (name = "m_Intensity")] pub m_intensity : f32 ,
+# [rename (name = "m_LightVolumeOpacity")] pub m_light_volume_opacity : f32 ,
+# [rename (name = "m_ApplyToSortingLayers")] pub m_apply_to_sorting_layers : :: unity2 :: Array < i32 > ,
+# [rename (name = "m_LightCookieSprite")] pub m_light_cookie_sprite : crate :: unity_engine :: sprite :: Sprite ,
+# [rename (name = "m_UseNormalMap")] pub m_use_normal_map : bool ,
+# [rename (name = "m_LightOrder")] pub m_light_order : i32 ,
+# [rename (name = "m_AlphaBlendOnOverlap")] pub m_alpha_blend_on_overlap : bool ,
+# [rename (name = "m_ShadowIntensity")] pub m_shadow_intensity : f32 ,
+# [rename (name = "m_ShadowVolumeIntensity")] pub m_shadow_volume_intensity : f32 ,
+# [rename (name = "m_PreviousLightCookieSprite")] pub m_previous_light_cookie_sprite : i32 ,
+# [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_LocalBounds")] pub m_local_bounds : crate :: unity_engine :: bounds :: Bounds ,
+# [rename (name = "m_PointLightInnerAngle")] pub m_point_light_inner_angle : f32 ,
+# [rename (name = "m_PointLightOuterAngle")] pub m_point_light_outer_angle : f32 ,
+# [rename (name = "m_PointLightInnerRadius")] pub m_point_light_inner_radius : f32 ,
+# [rename (name = "m_PointLightOuterRadius")] pub m_point_light_outer_radius : f32 ,
+# [rename (name = "m_PointLightDistance")] pub m_point_light_distance : f32 ,
+# [rename (name = "m_PointLightQuality")] pub m_point_light_quality : crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_PointLightQuality ,
+# [rename (name = "m_ShapeLightParametricSides")] pub m_shape_light_parametric_sides : i32 ,
+# [rename (name = "m_ShapeLightParametricAngleOffset")] pub m_shape_light_parametric_angle_offset : f32 ,
+# [rename (name = "m_ShapeLightParametricRadius")] pub m_shape_light_parametric_radius : f32 ,
+# [rename (name = "m_ShapeLightFalloffSize")] pub m_shape_light_falloff_size : f32 ,
+# [rename (name = "m_ShapeLightFalloffOffset")] pub m_shape_light_falloff_offset : crate :: unity_engine :: vector2 :: Vector2 ,
+# [rename (name = "m_ShapePath")] pub m_shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [rename (name = "m_PreviousShapeLightFalloffSize")] pub m_previous_shape_light_falloff_size : f32 ,
+# [rename (name = "m_PreviousShapeLightParametricSides")] pub m_previous_shape_light_parametric_sides : i32 ,
+# [rename (name = "m_PreviousShapeLightParametricAngleOffset")] pub m_previous_shape_light_parametric_angle_offset : f32 ,
+# [rename (name = "m_PreviousShapeLightParametricRadius")] pub m_previous_shape_light_parametric_radius : f32 ,
+}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_LightType.md"))]
     #[repr(C)]
     #[derive(
@@ -68,47 +109,6 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_2.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "Light2D"
-    )]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct Light2D_2 {
-# [rename (name = "m_LightType")] pub m_light_type : crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_LightType ,
-# [rename (name = "m_BlendStyleIndex")] pub m_blend_style_index : i32 ,
-# [rename (name = "m_FalloffIntensity")] pub m_falloff_intensity : f32 ,
-# [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [rename (name = "m_Intensity")] pub m_intensity : f32 ,
-# [rename (name = "m_LightVolumeOpacity")] pub m_light_volume_opacity : f32 ,
-# [rename (name = "m_ApplyToSortingLayers")] pub m_apply_to_sorting_layers : :: unity2 :: Array < i32 > ,
-# [rename (name = "m_LightCookieSprite")] pub m_light_cookie_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [rename (name = "m_UseNormalMap")] pub m_use_normal_map : bool ,
-# [rename (name = "m_LightOrder")] pub m_light_order : i32 ,
-# [rename (name = "m_AlphaBlendOnOverlap")] pub m_alpha_blend_on_overlap : bool ,
-# [rename (name = "m_ShadowIntensity")] pub m_shadow_intensity : f32 ,
-# [rename (name = "m_ShadowVolumeIntensity")] pub m_shadow_volume_intensity : f32 ,
-# [rename (name = "m_PreviousLightCookieSprite")] pub m_previous_light_cookie_sprite : i32 ,
-# [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [rename (name = "m_LocalBounds")] pub m_local_bounds : crate :: unity_engine :: bounds :: Bounds ,
-# [rename (name = "m_PointLightInnerAngle")] pub m_point_light_inner_angle : f32 ,
-# [rename (name = "m_PointLightOuterAngle")] pub m_point_light_outer_angle : f32 ,
-# [rename (name = "m_PointLightInnerRadius")] pub m_point_light_inner_radius : f32 ,
-# [rename (name = "m_PointLightOuterRadius")] pub m_point_light_outer_radius : f32 ,
-# [rename (name = "m_PointLightDistance")] pub m_point_light_distance : f32 ,
-# [rename (name = "m_PointLightQuality")] pub m_point_light_quality : crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_PointLightQuality ,
-# [rename (name = "m_ShapeLightParametricSides")] pub m_shape_light_parametric_sides : i32 ,
-# [rename (name = "m_ShapeLightParametricAngleOffset")] pub m_shape_light_parametric_angle_offset : f32 ,
-# [rename (name = "m_ShapeLightParametricRadius")] pub m_shape_light_parametric_radius : f32 ,
-# [rename (name = "m_ShapeLightFalloffSize")] pub m_shape_light_falloff_size : f32 ,
-# [rename (name = "m_ShapeLightFalloffOffset")] pub m_shape_light_falloff_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [rename (name = "m_ShapePath")] pub m_shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [rename (name = "m_PreviousShapeLightFalloffSize")] pub m_previous_shape_light_falloff_size : f32 ,
-# [rename (name = "m_PreviousShapeLightParametricSides")] pub m_previous_shape_light_parametric_sides : i32 ,
-# [rename (name = "m_PreviousShapeLightParametricAngleOffset")] pub m_previous_shape_light_parametric_angle_offset : f32 ,
-# [rename (name = "m_PreviousShapeLightParametricRadius")] pub m_previous_shape_light_parametric_radius : f32 ,
-}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2d_2/Light2D_PointLightQuality.md"))]
     #[repr(C)]

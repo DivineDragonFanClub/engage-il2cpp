@@ -19,6 +19,11 @@ mod __types {
         pub num: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct ItemListYesNoDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))]
     #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.ItemParam")]
     #[parent(crate::system::object::Object)]
@@ -30,11 +35,6 @@ mod __types {
         #[rename(name = "num")]
         pub num: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct ItemListYesNoDialog {}
 }
 
 #[cfg(feature = "app-itemlistyesnodialog-types")]
@@ -124,94 +124,6 @@ impl ItemListYesNoDialog_MoneyParam {
             )
         });
         <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemListYesNoDialog_ItemParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ItemListYesNoDialog_ItemParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ItemListYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ItemListYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ItemListYesNoDialog_ItemParam_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl<__T: IItemListYesNoDialog_ItemParam> IItemListYesNoDialog_ItemParamMethods for __T {}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_ItemParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
         this
     }
 }
@@ -720,6 +632,94 @@ impl ItemListYesNoDialog {
             item_param_list,
             money_param,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ItemListYesNoDialog_ItemParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ItemListYesNoDialog_ItemParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ItemListYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ItemListYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ItemListYesNoDialog_ItemParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl<__T: IItemListYesNoDialog_ItemParam> IItemListYesNoDialog_ItemParamMethods for __T {}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl ItemListYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemListYesNoDialog_ItemParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
         this
     }
 }

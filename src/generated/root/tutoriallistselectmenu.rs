@@ -13,11 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TutorialListSelectMenu_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_Page.md"))]
     #[repr(C)]
     #[derive(
@@ -61,6 +56,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TutorialListSelectMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu.md"))]
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenu")]
@@ -586,7 +586,7 @@ mod __TutorialListSelectMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallistselectmenu :: TutorialListSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallistselectmenu :: TutorialListSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",

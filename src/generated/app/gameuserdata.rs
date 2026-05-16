@@ -15,114 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameUserData_Statuses {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameUserData_Statuses {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameUserData.Statuses";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameUserData_Statuses {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameUserData_Statuses {
-        pub fn contents_mounted() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn finished_setup_map() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn casual() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn phoenix() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn encount_map() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn continued_map() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn fixed_grow() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn completed() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn temporary_saved() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn temporary_loaded() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn net_login_once() -> Self {
-            Self { value: 2048 }
-        }
-
-        pub fn restart_map() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn recollection_map() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn ignore_kizuna() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn evil_completed() -> Self {
-            Self { value: 32768 }
-        }
-
-        pub fn init_begin_of_map() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn init_end_of_map() -> Self {
-            Self { value: 13826 }
-        }
-
-        pub fn init_end_of_contents() -> Self {
-            Self { value: 1537 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData.md"))]
     #[::unity2::class(namespace = "App", name = "GameUserData")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserdata :: GameUserData >)]
@@ -402,6 +294,114 @@ mod __types {
     pub struct GameUserData_ProcDescSetSequence {
         #[rename(name = "m_Sequence")]
         pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameUserData_Statuses {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameUserData_Statuses {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameUserData.Statuses";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameUserData_Statuses {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameUserData_Statuses {
+        pub fn contents_mounted() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn finished_setup_map() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn casual() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn phoenix() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn encount_map() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn continued_map() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn fixed_grow() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn completed() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn temporary_saved() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn temporary_loaded() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn net_login_once() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn restart_map() -> Self {
+            Self { value: 4096 }
+        }
+
+        pub fn recollection_map() -> Self {
+            Self { value: 8192 }
+        }
+
+        pub fn ignore_kizuna() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn evil_completed() -> Self {
+            Self { value: 32768 }
+        }
+
+        pub fn init_begin_of_map() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn init_end_of_map() -> Self {
+            Self { value: 13826 }
+        }
+
+        pub fn init_end_of_contents() -> Self {
+            Self { value: 1537 }
+        }
     }
 }
 

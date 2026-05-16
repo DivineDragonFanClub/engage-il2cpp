@@ -11,18 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
-    #[parent(crate::system::object::Object)]
-    pub struct MyRoomWakeupSequence_RelianceWakeup {
-        #[rename(name = "m_pid")]
-        pub m_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_level")]
-        pub m_level: crate::app::reliancedata::RelianceData_Level,
-        #[rename(name = "m_pattern")]
-        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupsequence :: MyRoomWakeupSequence >)]
@@ -106,6 +94,18 @@ mod __types {
         pub message: crate::app::gamemessage::GameMessage,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
+    #[parent(crate::system::object::Object)]
+    pub struct MyRoomWakeupSequence_RelianceWakeup {
+        #[rename(name = "m_pid")]
+        pub m_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_level")]
+        pub m_level: crate::app::reliancedata::RelianceData_Level,
+        #[rename(name = "m_pattern")]
+        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -157,184 +157,6 @@ mod __types {
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomWakeupSequence_RelianceWakeup,
-        pid: ::unity2::Il2CppString,
-        level: crate::app::reliancedata::RelianceData_Level,
-        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence_RelianceWakeup,
-            ::unity2::Il2CppString,
-            crate::app::reliancedata::RelianceData_Level,
-            crate::app::gamesound::GameSound_WakeupVoicePattern,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, pid, level, pattern, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: MyRoomWakeupSequence_RelianceWakeup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence_RelianceWakeup,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:
-    IMyRoomWakeupSequence_RelianceWakeup
-{
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
-    fn ctor(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        level: impl ::core::convert::Into<crate::app::reliancedata::RelianceData_Level>,
-        pattern: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::convert::Into::into(level),
-                ::core::convert::Into::into(pattern),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-impl<__T: IMyRoomWakeupSequence_RelianceWakeup> IMyRoomWakeupSequence_RelianceWakeupMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-myroomwakeupsequence")]
-impl MyRoomWakeupSequence_RelianceWakeup {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]
-    pub fn new(
-        pid: ::unity2::Il2CppString,
-        level: crate::app::reliancedata::RelianceData_Level,
-        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomWakeupSequence_RelianceWakeupMethods>::ctor(this, pid, level, pattern);
-        this
-    }
-}
 
 #[cfg(feature = "app-myroomwakeupsequence")]
 #[doc(hidden)]
@@ -4818,6 +4640,184 @@ impl MyRoomWakeupSequence {
             )
         });
         <Self as IMyRoomWakeupSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomWakeupSequence_RelianceWakeup,
+        pid: ::unity2::Il2CppString,
+        level: crate::app::reliancedata::RelianceData_Level,
+        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomWakeupSequence_RelianceWakeup,
+            ::unity2::Il2CppString,
+            crate::app::reliancedata::RelianceData_Level,
+            crate::app::gamesound::GameSound_WakeupVoicePattern,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, pid, level, pattern, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
+                    "ToString",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_string(
+        this: MyRoomWakeupSequence_RelianceWakeup,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            MyRoomWakeupSequence_RelianceWakeup,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_string::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:
+    IMyRoomWakeupSequence_RelianceWakeup
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
+    fn ctor(
+        self,
+        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        level: impl ::core::convert::Into<crate::app::reliancedata::RelianceData_Level>,
+        pattern: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(pid),
+                ::core::convert::Into::into(level),
+                ::core::convert::Into::into(pattern),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::to_string(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+impl<__T: IMyRoomWakeupSequence_RelianceWakeup> IMyRoomWakeupSequence_RelianceWakeupMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-myroomwakeupsequence")]
+impl MyRoomWakeupSequence_RelianceWakeup {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]
+    pub fn new(
+        pid: ::unity2::Il2CppString,
+        level: crate::app::reliancedata::RelianceData_Level,
+        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomWakeupSequence_RelianceWakeupMethods>::ctor(this, pid, level, pattern);
         this
     }
 }

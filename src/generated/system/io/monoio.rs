@@ -37,7 +37,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -89,7 +89,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -139,9 +139,8 @@ mod __MonoIO_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
                 "GetCurrentDirectory",
@@ -191,7 +190,7 @@ mod __MonoIO_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -245,7 +244,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -297,7 +296,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -349,7 +348,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -401,9 +400,9 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -465,9 +464,9 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -569,7 +568,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -621,7 +620,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -673,7 +672,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -725,7 +724,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -777,8 +776,8 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -836,7 +835,7 @@ mod __MonoIO_unity2_raw {
                 <crate::system::io::fileaccess::FileAccess as ::unity2::IlType>::il_type(),
                 <crate::system::io::fileshare::FileShare as ::unity2::IlType>::il_type(),
                 <crate::system::io::fileoptions::FileOptions as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -904,7 +903,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -959,7 +958,7 @@ mod __MonoIO_unity2_raw {
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1027,7 +1026,7 @@ mod __MonoIO_unity2_raw {
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1087,7 +1086,7 @@ mod __MonoIO_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
                 <crate::system::io::seekorigin::SeekOrigin as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1143,7 +1142,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1196,7 +1195,7 @@ mod __MonoIO_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1381,9 +1380,9 @@ mod __MonoIO_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut ::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1439,11 +1438,11 @@ mod __MonoIO_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoioerror::MonoIOError as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),
@@ -1726,7 +1725,7 @@ mod __MonoIO_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoIO as ::unity2::ClassIdentity>::class(),

@@ -12,7 +12,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Flags.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -21,14 +21,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TutorialData_SSTypes {
+    pub struct TutorialData_Flags {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
+    impl ::unity2::ClassIdentity for TutorialData_Flags {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TutorialData.SSTypes";
+        const NAME: &'static str = "TutorialData.Flags";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TutorialData_SSTypes {
+    impl ::unity2::IlType for TutorialData_Flags {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -46,13 +46,17 @@ mod __types {
         }
     }
 
-    impl TutorialData_SSTypes {
-        pub fn common() -> Self {
+    impl TutorialData_Flags {
+        pub fn lock() -> Self {
             Self { value: 0 }
         }
 
-        pub fn by_language() -> Self {
+        pub fn unlock() -> Self {
             Self { value: 1 }
+        }
+
+        pub fn read() -> Self {
+            Self { value: 2 }
         }
     }
 
@@ -181,7 +185,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_Flags.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialdata/TutorialData_SSTypes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -190,14 +194,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct TutorialData_Flags {
+    pub struct TutorialData_SSTypes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for TutorialData_Flags {
+    impl ::unity2::ClassIdentity for TutorialData_SSTypes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "TutorialData.Flags";
+        const NAME: &'static str = "TutorialData.SSTypes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -206,7 +210,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for TutorialData_Flags {
+    impl ::unity2::IlType for TutorialData_SSTypes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -215,17 +219,13 @@ mod __types {
         }
     }
 
-    impl TutorialData_Flags {
-        pub fn lock() -> Self {
+    impl TutorialData_SSTypes {
+        pub fn common() -> Self {
             Self { value: 0 }
         }
 
-        pub fn unlock() -> Self {
+        pub fn by_language() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn read() -> Self {
-            Self { value: 2 }
         }
     }
 }

@@ -8305,8 +8305,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -11541,7 +11541,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -11590,7 +11590,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut i32 as ::unity2::IlType>::il_type()];
+                &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
                 "CSharp_GetPanningRule__SWIG_1",
@@ -11731,8 +11731,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -11789,8 +11789,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -13764,8 +13764,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -13818,8 +13818,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -14678,7 +14678,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -14731,7 +14731,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -14782,8 +14782,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -15819,7 +15819,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -15917,7 +15917,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -15968,7 +15968,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -16020,7 +16020,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -16134,7 +16134,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -16195,7 +16195,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -20666,7 +20666,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -20965,7 +20965,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -21022,7 +21022,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -32518,7 +32518,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -32564,7 +32564,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35063,8 +35063,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35124,8 +35124,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35184,7 +35184,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35235,7 +35235,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35289,7 +35289,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35338,7 +35338,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35391,7 +35391,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35444,7 +35444,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35497,8 +35497,8 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35552,7 +35552,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -35603,7 +35603,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -35887,7 +35887,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -35943,7 +35943,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -35996,7 +35996,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -36047,7 +36047,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut u32 as ::unity2::IlType>::il_type()];
+                &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
                 "CSharp_AK_SPEAKER_SETUP_FIX_LEFT_TO_CENTER",
@@ -36094,7 +36094,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut u32 as ::unity2::IlType>::il_type()];
+                &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
                 "CSharp_AK_SPEAKER_SETUP_FIX_REAR_TO_SIDE",
@@ -36139,7 +36139,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut u32 as ::unity2::IlType>::il_type()];
+                &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
                 "CSharp_AK_SPEAKER_SETUP_CONVERT_TO_SUPPORTED",
@@ -44081,10 +44081,10 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -44527,7 +44527,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -44576,10 +44576,10 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -50408,7 +50408,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -50599,7 +50599,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -50657,7 +50657,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <bool as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -51184,7 +51184,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -51259,7 +51259,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u32> as ::unity2::IlType>::il_type(),
                 <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
-                <*mut u32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),
@@ -51420,7 +51420,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u64> as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
             ];
@@ -51478,7 +51478,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u64> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -51533,7 +51533,7 @@ mod __AkSoundEnginePINVOKE_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEnginePINVOKE as ::unity2::ClassIdentity>::class(),

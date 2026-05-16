@@ -8,15 +8,15 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_AsyncUploadTimeSlicedUpdate.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeState.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_AsyncUploadTimeSlicedUpdate {}
+    pub struct Initialization_SynchronizeState {}
 
-    impl ::unity2::ClassIdentity for Initialization_AsyncUploadTimeSlicedUpdate {
+    impl ::unity2::ClassIdentity for Initialization_SynchronizeState {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "Initialization.AsyncUploadTimeSlicedUpdate";
+        const NAME: &'static str = "Initialization.SynchronizeState";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -25,59 +25,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization_AsyncUploadTimeSlicedUpdate {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_UpdateCameraMotionVectors.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_UpdateCameraMotionVectors {}
-
-    impl ::unity2::ClassIdentity for Initialization_UpdateCameraMotionVectors {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "Initialization.UpdateCameraMotionVectors";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Initialization_UpdateCameraMotionVectors {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_XREarlyUpdate.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_XREarlyUpdate {}
-
-    impl ::unity2::ClassIdentity for Initialization_XREarlyUpdate {
-        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
-
-        const NAME: &'static str = "Initialization.XREarlyUpdate";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Initialization_XREarlyUpdate {
+    impl ::unity2::IlType for Initialization_SynchronizeState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -112,15 +60,15 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_SynchronizeState.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_UpdateCameraMotionVectors.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Initialization_SynchronizeState {}
+    pub struct Initialization_UpdateCameraMotionVectors {}
 
-    impl ::unity2::ClassIdentity for Initialization_SynchronizeState {
+    impl ::unity2::ClassIdentity for Initialization_UpdateCameraMotionVectors {
         const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
 
-        const NAME: &'static str = "Initialization.SynchronizeState";
+        const NAME: &'static str = "Initialization.UpdateCameraMotionVectors";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -129,7 +77,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Initialization_SynchronizeState {
+    impl ::unity2::IlType for Initialization_UpdateCameraMotionVectors {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -156,6 +104,58 @@ mod __types {
     }
 
     impl ::unity2::IlType for Initialization_DirectorSampleTime {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_AsyncUploadTimeSlicedUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Initialization_AsyncUploadTimeSlicedUpdate {}
+
+    impl ::unity2::ClassIdentity for Initialization_AsyncUploadTimeSlicedUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "Initialization.AsyncUploadTimeSlicedUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Initialization_AsyncUploadTimeSlicedUpdate {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/player_loop/initialization/Initialization_XREarlyUpdate.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Initialization_XREarlyUpdate {}
+
+    impl ::unity2::ClassIdentity for Initialization_XREarlyUpdate {
+        const NAMESPACE: &'static str = "UnityEngine.PlayerLoop";
+
+        const NAME: &'static str = "Initialization.XREarlyUpdate";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Initialization_XREarlyUpdate {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()

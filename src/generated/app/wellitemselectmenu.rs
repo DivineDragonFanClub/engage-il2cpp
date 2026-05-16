@@ -14,14 +14,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
-    #[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
-    #[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
-    pub struct WellItemSelectMenu_SelectedItem {
-        #[rename(name = "m_MenuItem")]
-        pub m_menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellitemselectmenu/WellItemSelectMenu_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -68,6 +60,14 @@ mod __types {
         pub fn last() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
+    #[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
+    #[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
+    pub struct WellItemSelectMenu_SelectedItem {
+        #[rename(name = "m_MenuItem")]
+        pub m_menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))]

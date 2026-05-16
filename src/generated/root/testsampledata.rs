@@ -10,26 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))]
-    #[::unity2::class(namespace = "", name = "TestSampleData")]
-    # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)]
-    pub struct TestSampleData {
-        #[rename(name = "Pid")]
-        pub pid: ::unity2::Il2CppString,
-        #[rename(name = "Name")]
-        pub name: ::unity2::Il2CppString,
-        #[rename(name = "Level")]
-        pub level: i32,
-        #[rename(name = "Hp")]
-        pub hp: i32,
-        #[rename(name = "Flag")]
-        pub flag: crate::root::testsampledata::TestSampleData_Flags,
-        #[rename(name = "Items")]
-        pub items: crate::system::collections::generic::list_1::List_1<
-            crate::root::testsampledata::TestSampleData_Item,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsampledata/TestSampleData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -84,6 +64,26 @@ mod __types {
         pub fn flag_ac() -> Self {
             Self { value: 5 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData.md"))]
+    #[::unity2::class(namespace = "", name = "TestSampleData")]
+    # [parent (crate :: root :: structscriptabledata_1 :: StructScriptableData_1 < crate :: root :: testsampledata :: TestSampleData >)]
+    pub struct TestSampleData {
+        #[rename(name = "Pid")]
+        pub pid: ::unity2::Il2CppString,
+        #[rename(name = "Name")]
+        pub name: ::unity2::Il2CppString,
+        #[rename(name = "Level")]
+        pub level: i32,
+        #[rename(name = "Hp")]
+        pub hp: i32,
+        #[rename(name = "Flag")]
+        pub flag: crate::root::testsampledata::TestSampleData_Flags,
+        #[rename(name = "Items")]
+        pub items: crate::system::collections::generic::list_1::List_1<
+            crate::root::testsampledata::TestSampleData_Item,
+        >,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampledata/TestSampleData_Item.md"))]

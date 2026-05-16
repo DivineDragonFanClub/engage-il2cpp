@@ -14,6 +14,25 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkUI_FaceObjects_Face {
+        #[static_field]
+        #[rename(name = "FaceSlideLength")]
+        pub face_slide_length: f32,
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_ImageBaseX")]
+        pub m_image_base_x: f32,
+        #[rename(name = "m_IsDirRight")]
+        pub m_is_dir_right: bool,
+        #[rename(name = "m_material")]
+        pub m_material: crate::unity_engine::material::Material,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_TalkObjects.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.TalkObjects")]
     #[parent(crate::system::object::Object)]
@@ -42,48 +61,20 @@ mod __types {
         pub m_is_show_key_wait_icon: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects")]
-    #[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]
-    pub struct TalkUI_FaceObjects {
-        #[rename(name = "m_Panel")]
-        pub m_panel: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PanelAnimator")]
-        pub m_panel_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_FaceL")]
-        pub m_face_l: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
-        #[rename(name = "m_FaceR")]
-        pub m_face_r: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.StandObjects")]
+    #[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]
+    pub struct TalkUI_StandObjects {
+        #[rename(name = "m_NameRoot")]
+        pub m_name_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CurrentLocationName")]
+        pub m_current_location_name: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkUI_FaceObjects_Face {
-        #[static_field]
-        #[rename(name = "FaceSlideLength")]
-        pub face_slide_length: f32,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_ImageBaseX")]
-        pub m_image_base_x: f32,
-        #[rename(name = "m_IsDirRight")]
-        pub m_is_dir_right: bool,
-        #[rename(name = "m_material")]
-        pub m_material: crate::unity_engine::material::Material,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
-    #[parent(crate::system::object::Object)]
-    pub struct TalkUI_KeyHelpObjects {
-        #[rename(name = "m_rootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_talkObjects")]
-        pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.SystemObjects")]
+    #[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]
+    pub struct TalkUI_SystemObjects {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI")]
@@ -113,24 +104,611 @@ mod __types {
             ::unity2::Array<crate::app::eventpicturecontroller::EventPictureController>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.SystemObjects")]
-    #[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]
-    pub struct TalkUI_SystemObjects {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects")]
+    #[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]
+    pub struct TalkUI_FaceObjects {
+        #[rename(name = "m_Panel")]
+        pub m_panel: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PanelAnimator")]
+        pub m_panel_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_FaceL")]
+        pub m_face_l: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+        #[rename(name = "m_FaceR")]
+        pub m_face_r: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.StandObjects")]
-    #[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]
-    pub struct TalkUI_StandObjects {
-        #[rename(name = "m_NameRoot")]
-        pub m_name_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CurrentLocationName")]
-        pub m_current_location_name: ::unity2::Il2CppString,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
+    #[parent(crate::system::object::Object)]
+    pub struct TalkUI_KeyHelpObjects {
+        #[rename(name = "m_rootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_talkObjects")]
+        pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_FaceObjects_Face_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_FaceObjects_Face,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        image_name: ::unity2::Il2CppString,
+        is_dir_right: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkUI_FaceObjects_Face,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::Il2CppString,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(
+            this,
+            root_object,
+            image_name,
+            is_dir_right,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_destroy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "Destroy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn destroy(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_destroy::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_in {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "FadeIn",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "FadeIn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_in(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_in::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "FadeOut",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "FadeOut",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_out(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_out::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_slide_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "SetSlideRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "SetSlideRate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_slide_rate(
+        this: TalkUI_FaceObjects_Face,
+        face_slide_rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_slide_rate::get_offset() as isize),
+            );
+        inner(this, face_slide_rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_silhouette {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "EnableSilhouette",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "EnableSilhouette",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn enable_silhouette(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_enable_silhouette::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_silhouette {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "DisableSilhouette",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "DisableSilhouette",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_silhouette(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_silhouette::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "Close",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
+                "ResetAnim",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
+                    "ResetAnim",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset_anim(
+        this: TalkUI_FaceObjects_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset_anim::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_FaceObjects_FaceMethods: ITalkUI_FaceObjects_Face {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` overload"]
+    fn ctor(
+        self,
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        image_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        is_dir_right: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(image_name),
+                ::core::convert::Into::into(is_dir_right),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeIn()` overload"]
+    fn fade_in(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::fade_in(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FadeOut()` overload"]
+    fn fade_out(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetSlideRate(f32)` overload"]
+    fn set_slide_rate(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::set_slide_rate(
+                __receiver,
+                ::core::convert::Into::into(face_slide_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableSilhouette()` overload"]
+    fn enable_silhouette(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::enable_silhouette(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableSilhouette()` overload"]
+    fn disable_silhouette(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::disable_silhouette(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ResetAnim()` overload"]
+    fn reset_anim(self) -> () {
+        unsafe {
+            let __receiver =
+                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TalkUI_FaceObjects_Face_unity2_raw::reset_anim(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_FaceObjects_Face> ITalkUI_FaceObjects_FaceMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_FaceObjects_Face {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` — overload selector"]
+    pub fn new(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        image_name: ::unity2::Il2CppString,
+        is_dir_right: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_FaceObjects_Face),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_FaceObjects_FaceMethods>::ctor(
+            this,
+            root_object,
+            image_name,
+            is_dir_right,
+        );
+        this
+    }
+}
 
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
@@ -2058,8 +2636,55 @@ impl TalkUI_TalkObjects {
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_FaceObjects_unity2_raw {
+mod __TalkUI_StandObjects_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_location_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "GetCurrentLocationName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "GetCurrentLocationName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current_location_name(
+        this: TalkUI_StandObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current_location_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -2070,7 +2695,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -2082,7 +2707,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2095,12 +2720,12 @@ mod __TalkUI_FaceObjects_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TalkUI_FaceObjects,
+        this: TalkUI_StandObjects,
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkUI_FaceObjects,
+            TalkUI_StandObjects,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -2119,7 +2744,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -2131,7 +2756,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
                     "Reset",
                     e
                 ),
@@ -2144,10 +2769,10 @@ mod __TalkUI_FaceObjects_unity2_raw {
         }
     }
     pub unsafe fn reset(
-        this: TalkUI_FaceObjects,
+        this: TalkUI_StandObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2157,16 +2782,19 @@ mod __TalkUI_FaceObjects_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_fade_in_face_l {
+    pub mod __lookup_set_talker_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeInFaceL",
-                0,
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "SetTalkerName",
+                2,
                 param_types,
                 false,
             )
@@ -2176,8 +2804,8 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "FadeInFaceL",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "SetTalkerName",
                     e
                 ),
             }
@@ -2188,75 +2816,36 @@ mod __TalkUI_FaceObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn fade_in_face_l(
-        this: TalkUI_FaceObjects,
+    pub unsafe fn set_talker_name(
+        this: TalkUI_StandObjects,
+        name: ::unity2::Il2CppString,
+        location_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_in_face_l::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_talker_name::get_offset() as isize),
+        );
+        inner(this, name, location_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_fade_out_face_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeOutFaceL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "FadeOutFaceL",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_out_face_l(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_out_face_l::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_face_slide_rate_l {
+    pub mod __lookup_set_focus {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "SetFaceSlideRateL",
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "SetFocus",
                 1,
                 param_types,
                 false,
@@ -2267,8 +2856,8 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "SetFaceSlideRateL",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "SetFocus",
                     e
                 ),
             }
@@ -2279,30 +2868,33 @@ mod __TalkUI_FaceObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_face_slide_rate_l(
-        this: TalkUI_FaceObjects,
-        face_slide_rate: f32,
+    pub unsafe fn set_focus(
+        this: TalkUI_StandObjects,
+        location_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_face_slide_rate_l::get_offset() as isize),
-            );
-        inner(this, face_slide_rate, __unity2_method_info)
+    ) -> bool {
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_focus::get_offset() as isize),
+        );
+        inner(this, location_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_enable_silhouette_l {
+    pub mod __lookup_close_talker_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "EnableSilhouetteL",
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "CloseTalkerName",
                 0,
                 param_types,
                 false,
@@ -2313,8 +2905,8 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "EnableSilhouetteL",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "CloseTalkerName",
                     e
                 ),
             }
@@ -2325,377 +2917,15 @@ mod __TalkUI_FaceObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn enable_silhouette_l(
-        this: TalkUI_FaceObjects,
+    pub unsafe fn close_talker_name(
+        this: TalkUI_StandObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_enable_silhouette_l::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_silhouette_l {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "DisableSilhouetteL",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "DisableSilhouetteL",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_silhouette_l(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_silhouette_l::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in_face_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeInFaceR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "FadeInFaceR",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_in_face_r(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_in_face_r::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out_face_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "FadeOutFaceR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "FadeOutFaceR",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_out_face_r(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_out_face_r::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_face_slide_rate_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "SetFaceSlideRateR",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "SetFaceSlideRateR",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_face_slide_rate_r(
-        this: TalkUI_FaceObjects,
-        face_slide_rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_face_slide_rate_r::get_offset() as isize),
-            );
-        inner(this, face_slide_rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_silhouette_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "EnableSilhouetteR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "EnableSilhouetteR",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_silhouette_r(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_silhouette_r::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_silhouette_r {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "DisableSilhouetteR",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "DisableSilhouetteR",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_silhouette_r(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_silhouette_r::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "OpenPanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "OpenPanel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_panel(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_panel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_panel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "ClosePanel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "ClosePanel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_panel(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_panel::get_offset() as isize),
+                    .offset(__lookup_close_talker_name::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -2708,7 +2938,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
                 "CloseAll",
                 0,
                 param_types,
@@ -2720,7 +2950,7 @@ mod __TalkUI_FaceObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
                     "CloseAll",
                     e
                 ),
@@ -2733,10 +2963,10 @@ mod __TalkUI_FaceObjects_unity2_raw {
         }
     }
     pub unsafe fn close_all(
-        this: TalkUI_FaceObjects,
+        this: TalkUI_StandObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2746,472 +2976,16 @@ mod __TalkUI_FaceObjects_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn destroy(
-        this: TalkUI_FaceObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_FaceObjectsMethods: ITalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeInFaceL()` overload"]
-    fn fade_in_face_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::fade_in_face_l(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FadeOutFaceL()` overload"]
-    fn fade_out_face_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::fade_out_face_l(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFaceSlideRateL(f32)` overload"]
-    fn set_face_slide_rate_l(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_l(
-                __receiver,
-                ::core::convert::Into::into(face_slide_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableSilhouetteL()` overload"]
-    fn enable_silhouette_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_l(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableSilhouetteL()` overload"]
-    fn disable_silhouette_l(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_l(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FadeInFaceR()` overload"]
-    fn fade_in_face_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::fade_in_face_r(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FadeOutFaceR()` overload"]
-    fn fade_out_face_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::fade_out_face_r(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetFaceSlideRateR(f32)` overload"]
-    fn set_face_slide_rate_r(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_r(
-                __receiver,
-                ::core::convert::Into::into(face_slide_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableSilhouetteR()` overload"]
-    fn enable_silhouette_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_r(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableSilhouetteR()` overload"]
-    fn disable_silhouette_r(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_r(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenPanel()` overload"]
-    fn open_panel(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::open_panel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ClosePanel()` overload"]
-    fn close_panel(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::close_panel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseAll()` overload"]
-    fn close_all(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_FaceObjects_unity2_raw::destroy(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_FaceObjects> ITalkUI_FaceObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_FaceObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_FaceObjects_Face_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkUI_FaceObjects_Face,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        image_name: ::unity2::Il2CppString,
-        is_dir_right: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_FaceObjects_Face,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            root_object,
-            image_name,
-            is_dir_right,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_destroy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn destroy(
-        this: TalkUI_FaceObjects_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_in {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "FadeIn",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "FadeIn",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_in(
-        this: TalkUI_FaceObjects_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_in::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fade_out {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "FadeOut",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "FadeOut",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fade_out(
-        this: TalkUI_FaceObjects_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_out::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_slide_rate {
+    pub mod __lookup_get_name_locator {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "SetSlideRate",
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "GetNameLocator",
                 1,
                 param_types,
                 false,
@@ -3222,8 +2996,8 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "SetSlideRate",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "GetNameLocator",
                     e
                 ),
             }
@@ -3234,30 +3008,33 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_slide_rate(
-        this: TalkUI_FaceObjects_Face,
-        face_slide_rate: f32,
+    pub unsafe fn get_name_locator(
+        this: TalkUI_StandObjects,
+        location_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_slide_rate::get_offset() as isize),
-            );
-        inner(this, face_slide_rate, __unity2_method_info)
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name_locator::get_offset() as isize),
+        );
+        inner(this, location_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_enable_silhouette {
+    pub mod __lookup_is_playing_window_animation {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "EnableSilhouette",
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "IsPlayingWindowAnimation",
                 0,
                 param_types,
                 false,
@@ -3268,8 +3045,8 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "EnableSilhouette",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "IsPlayingWindowAnimation",
                     e
                 ),
             }
@@ -3280,30 +3057,33 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn enable_silhouette(
-        this: TalkUI_FaceObjects_Face,
+    pub unsafe fn is_playing_window_animation(
+        this: TalkUI_StandObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
+    ) -> bool {
+        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> bool =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_enable_silhouette::get_offset() as isize),
+                    .offset(__lookup_is_playing_window_animation::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_disable_silhouette {
+    pub mod __lookup_add_to_log {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "DisableSilhouette",
-                0,
+                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                "AddToLog",
+                2,
                 param_types,
                 false,
             )
@@ -3313,8 +3093,8 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "DisableSilhouette",
+                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    "AddToLog",
                     e
                 ),
             }
@@ -3325,222 +3105,159 @@ mod __TalkUI_FaceObjects_Face_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn disable_silhouette(
-        this: TalkUI_FaceObjects_Face,
+    pub unsafe fn add_to_log(
+        this: TalkUI_StandObjects,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_silhouette::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close(
-        this: TalkUI_FaceObjects_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::class(),
-                "ResetAnim",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_FaceObjects_Face as ::unity2::ClassIdentity>::NAME,
-                    "ResetAnim",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset_anim(
-        this: TalkUI_FaceObjects_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_FaceObjects_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_anim::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            TalkUI_StandObjects,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_to_log::get_offset() as isize),
+        );
+        inner(this, label, talker_name, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_FaceObjects_FaceMethods: ITalkUI_FaceObjects_Face {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` overload"]
+pub trait ITalkUI_StandObjectsMethods: ITalkUI_StandObjects {
+    #[doc = "`GetCurrentLocationName()` overload"]
+    fn get_current_location_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::get_current_location_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        image_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_dir_right: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::ctor(
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(image_name),
-                ::core::convert::Into::into(is_dir_right),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Destroy()` overload"]
-    fn destroy(self) -> () {
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::destroy(__receiver, ::core::option::Option::None)
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`FadeIn()` overload"]
-    fn fade_in(self) -> () {
+    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn set_talker_name(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::fade_in(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FadeOut()` overload"]
-    fn fade_out(self) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetSlideRate(f32)` overload"]
-    fn set_slide_rate(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::set_slide_rate(
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::set_talker_name(
                 __receiver,
-                ::core::convert::Into::into(face_slide_rate),
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(location_name),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`EnableSilhouette()` overload"]
-    fn enable_silhouette(self) -> () {
+    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
+    fn set_focus(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::enable_silhouette(
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::set_focus(
+                __receiver,
+                ::core::convert::Into::into(location_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CloseTalkerName()` overload"]
+    fn close_talker_name(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::close_talker_name(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`DisableSilhouette()` overload"]
-    fn disable_silhouette(self) -> () {
+    #[doc = "`CloseAll()` overload"]
+    fn close_all(self) -> () {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::disable_silhouette(
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
+    fn get_name_locator(
+        self,
+        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::get_name_locator(
+                __receiver,
+                ::core::convert::Into::into(location_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsPlayingWindowAnimation()` overload"]
+    fn is_playing_window_animation(self) -> bool {
+        unsafe {
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::is_playing_window_animation(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn add_to_log(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ResetAnim()` overload"]
-    fn reset_anim(self) -> () {
-        unsafe {
-            let __receiver =
-                <TalkUI_FaceObjects_Face as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TalkUI_FaceObjects_Face_unity2_raw::reset_anim(
+            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_StandObjects_unity2_raw::add_to_log(
                 __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(talker_name),
                 ::core::option::Option::None,
             )
         }
@@ -3548,29 +3265,20 @@ pub trait ITalkUI_FaceObjects_FaceMethods: ITalkUI_FaceObjects_Face {
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_FaceObjects_Face> ITalkUI_FaceObjects_FaceMethods for __T {}
+impl<__T: ITalkUI_StandObjects> ITalkUI_StandObjectsMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_FaceObjects_Face {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` — overload selector"]
-    pub fn new(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        image_name: ::unity2::Il2CppString,
-        is_dir_right: bool,
-    ) -> Self {
+impl TalkUI_StandObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_FaceObjects_Face),
+                ::core::stringify!(TalkUI_StandObjects),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkUI_FaceObjects_FaceMethods>::ctor(
-            this,
-            root_object,
-            image_name,
-            is_dir_right,
-        );
+        <Self as ITalkUI_StandObjectsMethods>::ctor(this, root_object);
         this
     }
 }
@@ -3578,7 +3286,7 @@ impl TalkUI_FaceObjects_Face {
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_KeyHelpObjects_unity2_raw {
+mod __TalkUI_SystemObjects_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -3590,7 +3298,7 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -3602,7 +3310,7 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -3615,12 +3323,12 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TalkUI_KeyHelpObjects,
-        game_object: crate::unity_engine::gameobject::GameObject,
+        this: TalkUI_SystemObjects,
+        root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkUI_KeyHelpObjects,
+            TalkUI_SystemObjects,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -3628,58 +3336,7 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, game_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_talk_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::talk3_d::talkui::TalkUI_TalkObjects as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
-                "SetTalkObjects",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
-                    "SetTalkObjects",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_talk_objects(
-        this: TalkUI_KeyHelpObjects,
-        talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_KeyHelpObjects,
-            crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_talk_objects::get_offset() as isize),
-        );
-        inner(this, talk_objects, __unity2_method_info)
+        inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -3690,7 +3347,7 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -3702,7 +3359,7 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
                     "Reset",
                     e
                 ),
@@ -3715,10 +3372,10 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
         }
     }
     pub unsafe fn reset(
-        this: TalkUI_KeyHelpObjects,
+        this: TalkUI_SystemObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -3728,16 +3385,19 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_setup {
+    pub mod __lookup_add_to_log {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                0,
+                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                "AddToLog",
+                2,
                 param_types,
                 false,
             )
@@ -3747,8 +3407,8 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
+                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                    "AddToLog",
                     e
                 ),
             }
@@ -3759,185 +3419,40 @@ mod __TalkUI_KeyHelpObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn setup(
-        this: TalkUI_KeyHelpObjects,
+    pub unsafe fn add_to_log(
+        this: TalkUI_SystemObjects,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: TalkUI_KeyHelpObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide(
-        this: TalkUI_KeyHelpObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: TalkUI_KeyHelpObjects,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            TalkUI_SystemObjects,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add_to_log::get_offset() as isize),
+        );
+        inner(this, label, talker_name, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_KeyHelpObjectsMethods: ITalkUI_KeyHelpObjects {
+pub trait ITalkUI_SystemObjectsMethods: ITalkUI_SystemObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
-        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_KeyHelpObjects_unity2_raw::ctor(
+            __TalkUI_SystemObjects_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(game_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]
-    fn set_talk_objects(
-        self,
-        talk_objects: impl ::core::convert::Into<crate::app::talk3_d::talkui::TalkUI_TalkObjects>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_KeyHelpObjects_unity2_raw::set_talk_objects(
-                __receiver,
-                ::core::convert::Into::into(talk_objects),
+                ::core::convert::Into::into(root_object),
                 ::core::option::Option::None,
             )
         }
@@ -3945,65 +3460,47 @@ pub trait ITalkUI_KeyHelpObjectsMethods: ITalkUI_KeyHelpObjects {
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_KeyHelpObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+            __TalkUI_SystemObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Setup()` overload"]
-    fn setup(self) -> () {
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn add_to_log(
+        self,
+        label: impl ::core::convert::Into<::unity2::Il2CppString>,
+        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
         unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_KeyHelpObjects_unity2_raw::setup(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_KeyHelpObjects_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_KeyHelpObjects_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_KeyHelpObjects_unity2_raw::update(__receiver, ::core::option::Option::None)
+            __TalkUI_SystemObjects_unity2_raw::add_to_log(
+                __receiver,
+                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(talker_name),
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_KeyHelpObjects> ITalkUI_KeyHelpObjectsMethods for __T {}
+impl<__T: ITalkUI_SystemObjects> ITalkUI_SystemObjectsMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_KeyHelpObjects {
+impl TalkUI_SystemObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_KeyHelpObjects),
+                ::core::stringify!(TalkUI_SystemObjects),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkUI_KeyHelpObjectsMethods>::ctor(this, game_object);
+        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
         this
     }
 }
@@ -6366,7 +5863,7 @@ impl TalkUI {
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_SystemObjects_unity2_raw {
+mod __TalkUI_FaceObjects_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -6378,7 +5875,7 @@ mod __TalkUI_SystemObjects_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -6390,7 +5887,7 @@ mod __TalkUI_SystemObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -6403,12 +5900,12 @@ mod __TalkUI_SystemObjects_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: TalkUI_SystemObjects,
+        this: TalkUI_FaceObjects,
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            TalkUI_SystemObjects,
+            TalkUI_FaceObjects,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -6427,7 +5924,7 @@ mod __TalkUI_SystemObjects_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -6439,7 +5936,7 @@ mod __TalkUI_SystemObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
                     "Reset",
                     e
                 ),
@@ -6452,10 +5949,10 @@ mod __TalkUI_SystemObjects_unity2_raw {
         }
     }
     pub unsafe fn reset(
-        this: TalkUI_SystemObjects,
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_SystemObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -6465,142 +5962,15 @@ mod __TalkUI_SystemObjects_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_add_to_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_SystemObjects as ::unity2::ClassIdentity>::class(),
-                "AddToLog",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_SystemObjects as ::unity2::ClassIdentity>::NAME,
-                    "AddToLog",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_to_log(
-        this: TalkUI_SystemObjects,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_SystemObjects,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_to_log::get_offset() as isize),
-        );
-        inner(this, label, talker_name, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_SystemObjectsMethods: ITalkUI_SystemObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_SystemObjects_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_SystemObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add_to_log(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_SystemObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_SystemObjects_unity2_raw::add_to_log(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_SystemObjects> ITalkUI_SystemObjectsMethods for __T {}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_SystemObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_SystemObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkUI_StandObjects_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_location_name {
+    pub mod __lookup_fade_in_face_l {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "GetCurrentLocationName",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeInFaceL",
                 0,
                 param_types,
                 false,
@@ -6611,8 +5981,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentLocationName",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "FadeInFaceL",
                     e
                 ),
             }
@@ -6623,32 +5993,75 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_current_location_name(
-        this: TalkUI_StandObjects,
+    pub unsafe fn fade_in_face_l(
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_location_name::get_offset() as isize),
-        );
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_in_face_l::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_fade_out_face_l {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeOutFaceL",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "FadeOutFaceL",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_out_face_l(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_out_face_l::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_slide_rate_l {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+                &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "SetFaceSlideRateL",
                 1,
                 param_types,
                 false,
@@ -6659,8 +6072,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "SetFaceSlideRateL",
                     e
                 ),
             }
@@ -6671,33 +6084,30 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: TalkUI_StandObjects,
-        root_object: crate::unity_engine::gameobject::GameObject,
+    pub unsafe fn set_face_slide_rate_l(
+        this: TalkUI_FaceObjects,
+        face_slide_rate: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
+        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_face_slide_rate_l::get_offset() as isize),
+            );
+        inner(this, face_slide_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_reset {
+    pub mod __lookup_enable_silhouette_l {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "Reset",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "EnableSilhouetteL",
                 0,
                 param_types,
                 false,
@@ -6708,8 +6118,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "EnableSilhouetteL",
                     e
                 ),
             }
@@ -6720,33 +6130,30 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn reset(
-        this: TalkUI_StandObjects,
+    pub unsafe fn enable_silhouette_l(
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
+                    .offset(__lookup_enable_silhouette_l::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_talker_name {
+    pub mod __lookup_disable_silhouette_l {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "SetTalkerName",
-                2,
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "DisableSilhouetteL",
+                0,
                 param_types,
                 false,
             )
@@ -6756,8 +6163,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "SetTalkerName",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "DisableSilhouetteL",
                     e
                 ),
             }
@@ -6768,36 +6175,120 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_talker_name(
-        this: TalkUI_StandObjects,
-        name: ::unity2::Il2CppString,
-        location_name: ::unity2::Il2CppString,
+    pub unsafe fn disable_silhouette_l(
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_talker_name::get_offset() as isize),
-        );
-        inner(this, name, location_name, __unity2_method_info)
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_silhouette_l::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_focus {
+    pub mod __lookup_fade_in_face_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeInFaceR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "FadeInFaceR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_in_face_r(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_in_face_r::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fade_out_face_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "FadeOutFaceR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "FadeOutFaceR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn fade_out_face_r(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_fade_out_face_r::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_face_slide_rate_r {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+                &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "SetFocus",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "SetFaceSlideRateR",
                 1,
                 param_types,
                 false,
@@ -6808,8 +6299,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "SetFocus",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "SetFaceSlideRateR",
                     e
                 ),
             }
@@ -6820,33 +6311,30 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_focus(
-        this: TalkUI_StandObjects,
-        location_name: ::unity2::Il2CppString,
+    pub unsafe fn set_face_slide_rate_r(
+        this: TalkUI_FaceObjects,
+        face_slide_rate: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_focus::get_offset() as isize),
-        );
-        inner(this, location_name, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_face_slide_rate_r::get_offset() as isize),
+            );
+        inner(this, face_slide_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_close_talker_name {
+    pub mod __lookup_enable_silhouette_r {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "CloseTalkerName",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "EnableSilhouetteR",
                 0,
                 param_types,
                 false,
@@ -6857,8 +6345,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "CloseTalkerName",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "EnableSilhouetteR",
                     e
                 ),
             }
@@ -6869,15 +6357,150 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn close_talker_name(
-        this: TalkUI_StandObjects,
+    pub unsafe fn enable_silhouette_r(
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_close_talker_name::get_offset() as isize),
+                    .offset(__lookup_enable_silhouette_r::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_silhouette_r {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "DisableSilhouetteR",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "DisableSilhouetteR",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn disable_silhouette_r(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_disable_silhouette_r::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_panel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "OpenPanel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "OpenPanel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_panel(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_open_panel::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_panel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "ClosePanel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "ClosePanel",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn close_panel(
+        this: TalkUI_FaceObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_close_panel::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
@@ -6890,7 +6513,7 @@ mod __TalkUI_StandObjects_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
                 "CloseAll",
                 0,
                 param_types,
@@ -6902,7 +6525,7 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
                     "CloseAll",
                     e
                 ),
@@ -6915,10 +6538,10 @@ mod __TalkUI_StandObjects_unity2_raw {
         }
     }
     pub unsafe fn close_all(
-        this: TalkUI_StandObjects,
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -6928,65 +6551,15 @@ mod __TalkUI_StandObjects_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name_locator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "GetNameLocator",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "GetNameLocator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name_locator(
-        this: TalkUI_StandObjects,
-        location_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_locator::get_offset() as isize),
-        );
-        inner(this, location_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_playing_window_animation {
+    pub mod __lookup_destroy {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "IsPlayingWindowAnimation",
+                <TalkUI_FaceObjects as ::unity2::ClassIdentity>::class(),
+                "Destroy",
                 0,
                 param_types,
                 false,
@@ -6997,8 +6570,8 @@ mod __TalkUI_StandObjects_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayingWindowAnimation",
+                    <TalkUI_FaceObjects as ::unity2::ClassIdentity>::NAME,
+                    "Destroy",
                     e
                 ),
             }
@@ -7009,98 +6582,32 @@ mod __TalkUI_StandObjects_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn is_playing_window_animation(
-        this: TalkUI_StandObjects,
+    pub unsafe fn destroy(
+        this: TalkUI_FaceObjects,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(TalkUI_StandObjects, ::unity2::OptionalMethod) -> bool =
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_FaceObjects, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_is_playing_window_animation::get_offset() as isize),
+                    .offset(__lookup_destroy::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_log {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkUI_StandObjects as ::unity2::ClassIdentity>::class(),
-                "AddToLog",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkUI_StandObjects as ::unity2::ClassIdentity>::NAME,
-                    "AddToLog",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_to_log(
-        this: TalkUI_StandObjects,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkUI_StandObjects,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_to_log::get_offset() as isize),
-        );
-        inner(this, label, talker_name, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-pub trait ITalkUI_StandObjectsMethods: ITalkUI_StandObjects {
-    #[doc = "`GetCurrentLocationName()` overload"]
-    fn get_current_location_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_StandObjects_unity2_raw::get_current_location_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
+pub trait ITalkUI_FaceObjectsMethods: ITalkUI_FaceObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::ctor(
+            __TalkUI_FaceObjects_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
                 ::core::option::Option::None,
@@ -7110,127 +6617,620 @@ pub trait ITalkUI_StandObjectsMethods: ITalkUI_StandObjects {
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+            __TalkUI_FaceObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn set_talker_name(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    #[doc = "`FadeInFaceL()` overload"]
+    fn fade_in_face_l(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::set_talker_name(
+            __TalkUI_FaceObjects_unity2_raw::fade_in_face_l(
                 __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(location_name),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetFocus(::unity2::Il2CppString)` overload"]
-    fn set_focus(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+    #[doc = "`FadeOutFaceL()` overload"]
+    fn fade_out_face_l(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::set_focus(
+            __TalkUI_FaceObjects_unity2_raw::fade_out_face_l(
                 __receiver,
-                ::core::convert::Into::into(location_name),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`CloseTalkerName()` overload"]
-    fn close_talker_name(self) -> () {
+    #[doc = "`SetFaceSlideRateL(f32)` overload"]
+    fn set_face_slide_rate_l(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::close_talker_name(
+            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_l(
+                __receiver,
+                ::core::convert::Into::into(face_slide_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableSilhouetteL()` overload"]
+    fn enable_silhouette_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_l(
                 __receiver,
                 ::core::option::Option::None,
             )
+        }
+    }
+    #[doc = "`DisableSilhouetteL()` overload"]
+    fn disable_silhouette_l(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_l(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FadeInFaceR()` overload"]
+    fn fade_in_face_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::fade_in_face_r(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`FadeOutFaceR()` overload"]
+    fn fade_out_face_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::fade_out_face_r(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetFaceSlideRateR(f32)` overload"]
+    fn set_face_slide_rate_r(self, face_slide_rate: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::set_face_slide_rate_r(
+                __receiver,
+                ::core::convert::Into::into(face_slide_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EnableSilhouetteR()` overload"]
+    fn enable_silhouette_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::enable_silhouette_r(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DisableSilhouetteR()` overload"]
+    fn disable_silhouette_r(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::disable_silhouette_r(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OpenPanel()` overload"]
+    fn open_panel(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::open_panel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ClosePanel()` overload"]
+    fn close_panel(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_FaceObjects_unity2_raw::close_panel(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CloseAll()` overload"]
     fn close_all(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
+            __TalkUI_FaceObjects_unity2_raw::close_all(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`GetNameLocator(::unity2::Il2CppString)` overload"]
-    fn get_name_locator(
-        self,
-        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
         unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <TalkUI_FaceObjects as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __TalkUI_StandObjects_unity2_raw::get_name_locator(
-                __receiver,
-                ::core::convert::Into::into(location_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsPlayingWindowAnimation()` overload"]
-    fn is_playing_window_animation(self) -> bool {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_StandObjects_unity2_raw::is_playing_window_animation(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn add_to_log(
-        self,
-        label: impl ::core::convert::Into<::unity2::Il2CppString>,
-        talker_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <TalkUI_StandObjects as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkUI_StandObjects_unity2_raw::add_to_log(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::convert::Into::into(talker_name),
-                ::core::option::Option::None,
-            )
+            __TalkUI_FaceObjects_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl<__T: ITalkUI_StandObjects> ITalkUI_StandObjectsMethods for __T {}
+impl<__T: ITalkUI_FaceObjects> ITalkUI_FaceObjectsMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_StandObjects {
+impl TalkUI_FaceObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_StandObjects),
+                ::core::stringify!(TalkUI_FaceObjects),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkUI_StandObjectsMethods>::ctor(this, root_object);
+        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkUI_KeyHelpObjects_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkUI_KeyHelpObjects,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkUI_KeyHelpObjects,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, game_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_talk_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::talk3_d::talkui::TalkUI_TalkObjects as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "SetTalkObjects",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "SetTalkObjects",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_talk_objects(
+        this: TalkUI_KeyHelpObjects,
+        talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkUI_KeyHelpObjects,
+            crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_talk_objects::get_offset() as isize),
+        );
+        inner(this, talk_objects, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: TalkUI_KeyHelpObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_reset::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "Setup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "Setup",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn setup(
+        this: TalkUI_KeyHelpObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_setup::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "Show",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn show(
+        this: TalkUI_KeyHelpObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "Hide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hide(
+        this: TalkUI_KeyHelpObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hide::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::class(),
+                "Update",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TalkUI_KeyHelpObjects as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: TalkUI_KeyHelpObjects,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TalkUI_KeyHelpObjects, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_update::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+pub trait ITalkUI_KeyHelpObjectsMethods: ITalkUI_KeyHelpObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(
+        self,
+        game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(game_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]
+    fn set_talk_objects(
+        self,
+        talk_objects: impl ::core::convert::Into<crate::app::talk3_d::talkui::TalkUI_TalkObjects>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::set_talk_objects(
+                __receiver,
+                ::core::convert::Into::into(talk_objects),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Setup()` overload"]
+    fn setup(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::setup(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <TalkUI_KeyHelpObjects as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkUI_KeyHelpObjects_unity2_raw::update(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl<__T: ITalkUI_KeyHelpObjects> ITalkUI_KeyHelpObjectsMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_KeyHelpObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_KeyHelpObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_KeyHelpObjectsMethods>::ctor(this, game_object);
         this
     }
 }

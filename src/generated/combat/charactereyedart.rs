@@ -13,32 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactereyedart/CharacterEyeDart.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterEyeDart")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct CharacterEyeDart {
-        #[rename(name = "m_AmplitudeMin")]
-        pub m_amplitude_min: f32,
-        #[rename(name = "m_AmplitudeMax")]
-        pub m_amplitude_max: f32,
-        #[rename(name = "m_IntervalMin")]
-        pub m_interval_min: f32,
-        #[rename(name = "m_IntervalMax")]
-        pub m_interval_max: f32,
-        #[rename(name = "m_TransitionTime")]
-        pub m_transition_time: f32,
-        #[rename(name = "m_State")]
-        pub m_state: crate::combat::charactereyedart::CharacterEyeDart_State,
-        #[rename(name = "m_StayTime")]
-        pub m_stay_time: f32,
-        #[rename(name = "m_NowTime")]
-        pub m_now_time: f32,
-        #[rename(name = "m_PrevWeight")]
-        pub m_prev_weight: f32,
-        #[rename(name = "m_NextWeight")]
-        pub m_next_weight: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactereyedart/CharacterEyeDart_State.md"))]
     #[repr(C)]
     #[derive(
@@ -81,6 +55,32 @@ mod __types {
         pub fn transition() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactereyedart/CharacterEyeDart.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CharacterEyeDart")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct CharacterEyeDart {
+        #[rename(name = "m_AmplitudeMin")]
+        pub m_amplitude_min: f32,
+        #[rename(name = "m_AmplitudeMax")]
+        pub m_amplitude_max: f32,
+        #[rename(name = "m_IntervalMin")]
+        pub m_interval_min: f32,
+        #[rename(name = "m_IntervalMax")]
+        pub m_interval_max: f32,
+        #[rename(name = "m_TransitionTime")]
+        pub m_transition_time: f32,
+        #[rename(name = "m_State")]
+        pub m_state: crate::combat::charactereyedart::CharacterEyeDart_State,
+        #[rename(name = "m_StayTime")]
+        pub m_stay_time: f32,
+        #[rename(name = "m_NowTime")]
+        pub m_now_time: f32,
+        #[rename(name = "m_PrevWeight")]
+        pub m_prev_weight: f32,
+        #[rename(name = "m_NextWeight")]
+        pub m_next_weight: f32,
     }
 }
 

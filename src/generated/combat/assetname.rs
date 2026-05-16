@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
+    #[::unity2::class(namespace = "Combat", name = "AssetName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetName {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assetname/AssetName_SplitMode.md"))]
     #[repr(C)]
     #[derive(
@@ -56,11 +61,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AssetName")]
-    #[parent(crate::system::object::Object)]
-    pub struct AssetName {}
 }
 
 #[cfg(feature = "combat-assetname-types")]

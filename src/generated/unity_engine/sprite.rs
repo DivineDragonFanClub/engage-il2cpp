@@ -2130,7 +2130,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "GetTextureRect_Injected",
@@ -2180,7 +2180,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "GetTextureRectOffset_Injected",
@@ -2230,7 +2230,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "GetInnerUVs_Injected",
@@ -2280,7 +2280,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "GetOuterUVs_Injected",
@@ -2330,7 +2330,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "GetPadding_Injected",
@@ -2380,8 +2380,8 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
             ];
@@ -2442,13 +2442,13 @@ mod __Sprite_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::texture2d::Texture2D as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::spritemeshtype::SpriteMeshType as ::unity2::IlType>::il_type(
                 ),
-                <*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2522,7 +2522,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "get_bounds_Injected",
@@ -2572,7 +2572,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "get_rect_Injected",
@@ -2622,7 +2622,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "get_border_Injected",
@@ -2672,7 +2672,7 @@ mod __Sprite_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Sprite as ::unity2::ClassIdentity>::class(),
                 "get_pivot_Injected",

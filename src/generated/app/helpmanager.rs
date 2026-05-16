@@ -40,7 +40,7 @@ mod __types {
         pub m_axis_pos: crate::unity_engine::vector2::Vector2,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -49,14 +49,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HelpManager_SituationType {
+    pub struct HelpManager_Item_Dir {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HelpManager_SituationType {
+    impl ::unity2::ClassIdentity for HelpManager_Item_Dir {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HelpManager.SituationType";
+        const NAME: &'static str = "HelpManager.Item.Dir";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -65,7 +65,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HelpManager_SituationType {
+    impl ::unity2::IlType for HelpManager_Item_Dir {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -74,37 +74,25 @@ mod __types {
         }
     }
 
-    impl HelpManager_SituationType {
-        pub fn none() -> Self {
+    impl HelpManager_Item_Dir {
+        pub fn up() -> Self {
             Self { value: 0 }
         }
 
-        pub fn unit_status() -> Self {
+        pub fn down() -> Self {
             Self { value: 1 }
         }
 
-        pub fn ring_select() -> Self {
+        pub fn right() -> Self {
             Self { value: 2 }
         }
 
-        pub fn unit_info() -> Self {
+        pub fn left() -> Self {
             Self { value: 3 }
         }
 
-        pub fn battle_info() -> Self {
+        pub fn num() -> Self {
             Self { value: 4 }
-        }
-
-        pub fn battle_engage_info() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn battle_alternate_info() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn only_map_terrain_info() -> Self {
-            Self { value: 7 }
         }
     }
 
@@ -220,6 +208,74 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct HelpManager_SituationType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for HelpManager_SituationType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HelpManager.SituationType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HelpManager_SituationType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl HelpManager_SituationType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unit_status() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn ring_select() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn unit_info() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn battle_info() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn battle_engage_info() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn battle_alternate_info() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn only_map_terrain_info() -> Self {
+            Self { value: 7 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpmanager/HelpManager_Item.md"))]
     #[::unity2::class(namespace = "App", name = "HelpManager.Item")]
     #[parent(crate::system::object::Object)]
@@ -232,62 +288,6 @@ mod __types {
         pub dir_line: ::unity2::Array<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
         #[rename(name = "isMoveToNoTouchItem")]
         pub is_move_to_no_touch_item: ::unity2::Array<bool>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct HelpManager_Item_Dir {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for HelpManager_Item_Dir {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HelpManager.Item.Dir";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HelpManager_Item_Dir {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl HelpManager_Item_Dir {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
     }
 }
 

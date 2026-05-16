@@ -35,7 +35,7 @@ mod __TMP_FontUtilities_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
@@ -92,7 +92,7 @@ mod __TMP_FontUtilities_unity2_raw {
                     crate::tm_pro::tmp_fontasset::TMP_FontAsset,
                 > as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
@@ -151,7 +151,7 @@ mod __TMP_FontUtilities_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),
@@ -208,7 +208,7 @@ mod __TMP_FontUtilities_unity2_raw {
                     crate::tm_pro::tmp_fontasset::TMP_FontAsset,
                 > as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
-                <*mut crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::tmp_character::TMP_Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_FontUtilities as ::unity2::ClassIdentity>::class(),

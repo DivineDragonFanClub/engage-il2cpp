@@ -9,6 +9,30 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenuitem/BasicMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicMenuItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct BasicMenuItem {
+        #[rename(name = "m_menu")]
+        pub m_menu: crate::app::basicmenu::BasicMenu,
+        #[rename(name = "m_menuItemContent")]
+        pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+        #[rename(name = "m_name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_index")]
+        pub m_index: i32,
+        #[rename(name = "m_fullIndex")]
+        pub m_full_index: i32,
+        #[rename(name = "m_attribute")]
+        pub m_attribute: crate::app::basicmenuitem::BasicMenuItem_Attribute,
+        #[rename(name = "m_cursorColor")]
+        pub m_cursor_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_activeTextColor")]
+        pub m_active_text_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_inactiveTextColor")]
+        pub m_inactive_text_color: crate::unity_engine::color::Color,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenuitem/BasicMenuItem_Attribute.md"))]
     #[repr(C)]
     #[derive(
@@ -63,30 +87,6 @@ mod __types {
         pub fn select() -> Self {
             Self { value: 16 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenuitem/BasicMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicMenuItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct BasicMenuItem {
-        #[rename(name = "m_menu")]
-        pub m_menu: crate::app::basicmenu::BasicMenu,
-        #[rename(name = "m_menuItemContent")]
-        pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
-        #[rename(name = "m_name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_index")]
-        pub m_index: i32,
-        #[rename(name = "m_fullIndex")]
-        pub m_full_index: i32,
-        #[rename(name = "m_attribute")]
-        pub m_attribute: crate::app::basicmenuitem::BasicMenuItem_Attribute,
-        #[rename(name = "m_cursorColor")]
-        pub m_cursor_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_activeTextColor")]
-        pub m_active_text_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_inactiveTextColor")]
-        pub m_inactive_text_color: crate::unity_engine::color::Color,
     }
 }
 

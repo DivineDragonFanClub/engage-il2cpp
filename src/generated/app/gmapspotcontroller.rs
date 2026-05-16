@@ -13,6 +13,35 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotcontroller/GmapSpotController.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSpotController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapSpotController {
+        #[rename(name = "m_StandMeshRenderer")]
+        pub m_stand_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[rename(name = "m_StoneMeshRenderer")]
+        pub m_stone_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[rename(name = "m_Materials")]
+        pub m_materials: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::material::Material,
+        >,
+        #[rename(name = "m_MeshRenderer")]
+        pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[rename(name = "m_Spot")]
+        pub m_spot: crate::app::gmapspot::GmapSpot,
+        #[static_field]
+        #[rename(name = "NextSpotEffectPath")]
+        pub next_spot_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Effect")]
+        pub m_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
+        #[rename(name = "m_StandEmissionColor")]
+        pub m_stand_emission_color: crate::app::interpolatorcolor::InterpolatorColor,
+        #[rename(name = "m_StoneEmissionColor")]
+        pub m_stone_emission_color: crate::app::interpolatorcolor::InterpolatorColor,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotcontroller/GmapSpotController_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -63,35 +92,6 @@ mod __types {
         pub fn encount() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotcontroller/GmapSpotController.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSpotController")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapSpotController {
-        #[rename(name = "m_StandMeshRenderer")]
-        pub m_stand_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-        #[rename(name = "m_StoneMeshRenderer")]
-        pub m_stone_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-        #[rename(name = "m_Materials")]
-        pub m_materials: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::material::Material,
-        >,
-        #[rename(name = "m_MeshRenderer")]
-        pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
-        #[rename(name = "m_Spot")]
-        pub m_spot: crate::app::gmapspot::GmapSpot,
-        #[static_field]
-        #[rename(name = "NextSpotEffectPath")]
-        pub next_spot_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Effect")]
-        pub m_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
-        #[rename(name = "m_StandEmissionColor")]
-        pub m_stand_emission_color: crate::app::interpolatorcolor::InterpolatorColor,
-        #[rename(name = "m_StoneEmissionColor")]
-        pub m_stone_emission_color: crate::app::interpolatorcolor::InterpolatorColor,
     }
 }
 

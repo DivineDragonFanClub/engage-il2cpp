@@ -17,40 +17,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelimpact/MapPanelImpact.md"))]
-    #[::unity2::class(namespace = "", name = "MapPanelImpact")]
-    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappanelimpact :: MapPanelImpact >)]
-    pub struct MapPanelImpact {
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_LandImage")]
-        pub m_land_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_FriendlyLandColor")]
-        pub m_friendly_land_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_HostileLandColor")]
-        pub m_hostile_land_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_FriendlyLandImage")]
-        pub m_friendly_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_HostileLandImage")]
-        pub m_hostile_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
-        #[rename(name = "m_CurrentUnit")]
-        pub m_current_unit: crate::app::unit::Unit,
-        #[rename(name = "m_LandImageFunc")]
-        pub m_land_image_func: crate::app::mapskill::MapSkill_UnitFunc,
-        #[rename(name = "m_LandCellFunc")]
-        pub m_land_cell_func: crate::app::mapfor::MapFor_PosFunction,
-        #[rename(name = "m_FriendlyLandImageGetter")]
-        pub m_friendly_land_image_getter:
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
-                crate::root::mappanelimpact::MapPanelImpact,
-            >,
-        #[rename(name = "m_HostileLandImageGetter")]
-        pub m_hostile_land_image_getter:
-            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
-                crate::root::mappanelimpact::MapPanelImpact,
-            >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelimpact/MapPanelImpact_MeshIndex.md"))]
     #[repr(C)]
     #[derive(
@@ -93,6 +59,40 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelimpact/MapPanelImpact.md"))]
+    #[::unity2::class(namespace = "", name = "MapPanelImpact")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappanelimpact :: MapPanelImpact >)]
+    pub struct MapPanelImpact {
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_LandImage")]
+        pub m_land_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_FriendlyLandColor")]
+        pub m_friendly_land_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_HostileLandColor")]
+        pub m_hostile_land_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_FriendlyLandImage")]
+        pub m_friendly_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_HostileLandImage")]
+        pub m_hostile_land_image: crate::app::mapimagecorebit::MapImageCoreBit,
+        #[rename(name = "m_CurrentUnit")]
+        pub m_current_unit: crate::app::unit::Unit,
+        #[rename(name = "m_LandImageFunc")]
+        pub m_land_image_func: crate::app::mapskill::MapSkill_UnitFunc,
+        #[rename(name = "m_LandCellFunc")]
+        pub m_land_cell_func: crate::app::mapfor::MapFor_PosFunction,
+        #[rename(name = "m_FriendlyLandImageGetter")]
+        pub m_friendly_land_image_getter:
+            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+                crate::root::mappanelimpact::MapPanelImpact,
+            >,
+        #[rename(name = "m_HostileLandImageGetter")]
+        pub m_hostile_land_image_getter:
+            crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<
+                crate::root::mappanelimpact::MapPanelImpact,
+            >,
     }
 }
 

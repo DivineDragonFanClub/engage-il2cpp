@@ -14,38 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CharacterLyingHorse")]
-    #[parent(crate::combat::characterlying::CharacterLying)]
-    pub struct CharacterLyingHorse {
-        #[rename(name = "m_StartBaseTR")]
-        pub m_start_base_tr: crate::combat::tr::TR,
-        #[rename(name = "m_EndBaseTR")]
-        pub m_end_base_tr: crate::combat::tr::TR,
-        #[rename(name = "m_StartHumanQ")]
-        pub m_start_human_q: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "m_EndHumanQ")]
-        pub m_end_human_q: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "m_HumanRoot")]
-        pub m_human_root: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HorseRoot")]
-        pub m_horse_root: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HorseRootRotation")]
-        pub m_horse_root_rotation: crate::unity_engine::quaternion::Quaternion,
-        #[rename(name = "m_HorseNrm")]
-        pub m_horse_nrm: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-        #[rename(name = "m_EndTime")]
-        pub m_end_time: f32,
-        #[rename(name = "m_IsCollide")]
-        pub m_is_collide: bool,
-        #[rename(name = "m_LastSafetyHipXZ")]
-        pub m_last_safety_hip_xz: crate::combat::fxz::FXZ,
-        #[rename(name = "m_LastLookAtRide")]
-        pub m_last_look_at_ride: crate::combat::fxz::FXZ,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md"))]
     #[repr(C)]
     #[derive(
@@ -92,6 +60,38 @@ mod __types {
         pub fn both_landed() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CharacterLyingHorse")]
+    #[parent(crate::combat::characterlying::CharacterLying)]
+    pub struct CharacterLyingHorse {
+        #[rename(name = "m_StartBaseTR")]
+        pub m_start_base_tr: crate::combat::tr::TR,
+        #[rename(name = "m_EndBaseTR")]
+        pub m_end_base_tr: crate::combat::tr::TR,
+        #[rename(name = "m_StartHumanQ")]
+        pub m_start_human_q: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "m_EndHumanQ")]
+        pub m_end_human_q: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "m_HumanRoot")]
+        pub m_human_root: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HorseRoot")]
+        pub m_horse_root: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HorseRootRotation")]
+        pub m_horse_root_rotation: crate::unity_engine::quaternion::Quaternion,
+        #[rename(name = "m_HorseNrm")]
+        pub m_horse_nrm: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+        #[rename(name = "m_EndTime")]
+        pub m_end_time: f32,
+        #[rename(name = "m_IsCollide")]
+        pub m_is_collide: bool,
+        #[rename(name = "m_LastSafetyHipXZ")]
+        pub m_last_safety_hip_xz: crate::combat::fxz::FXZ,
+        #[rename(name = "m_LastLookAtRide")]
+        pub m_last_look_at_ride: crate::combat::fxz::FXZ,
     }
 }
 

@@ -14,48 +14,12 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
-    #[parent(crate::system::object::Object)]
-    pub struct Unit_ItemsForSelectedWeapon {
-        #[rename(name = "m_Items")]
-        pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
     #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-    pub struct Unit_ChartItemsForSelectedWeapon {
-        #[rename(name = "m_ChartItems")]
-        pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct Unit_CalcInfo {
-        #[rename(name = "Count")]
-        pub count: i32,
-        #[rename(name = "Attack")]
-        pub attack: i32,
-        #[rename(name = "Hit")]
-        pub hit: i32,
-        #[rename(name = "Avoid")]
-        pub avoid: i32,
-        #[rename(name = "Critical")]
-        pub critical: i32,
-        #[rename(name = "Secure")]
-        pub secure: i32,
-        #[rename(name = "Continuous")]
-        pub continuous: i32,
-        #[rename(name = "PhysicalAttack")]
-        pub physical_attack: i32,
-        #[rename(name = "MagicAttack")]
-        pub magic_attack: i32,
-        #[rename(name = "PhysicalDefense")]
-        pub physical_defense: i32,
-        #[rename(name = "MagicDefense")]
-        pub magic_defense: i32,
+    pub struct Unit_DisposItemsForSelectedWeapon {
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::disposdata::DisposData,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_FuncUnitItem.md"))]
@@ -63,61 +27,12 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct Unit_FuncUnitItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: unit :: Unit_Status >)]
-    pub struct Unit_StatusField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_GuardType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Unit_GuardType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Unit_GuardType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Unit.GuardType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Unit_GuardType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Unit_GuardType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn chain_guard() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn dual_guard() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn not_enough_hp() -> Self {
-            Self { value: 3 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
+    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
+    pub struct Unit_ChartItemsForSelectedWeapon {
+        #[rename(name = "m_ChartItems")]
+        pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_Status.md"))]
@@ -441,6 +356,58 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_GuardType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Unit_GuardType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Unit_GuardType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Unit.GuardType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Unit_GuardType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Unit_GuardType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn chain_guard() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn dual_guard() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn not_enough_hp() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit.md"))]
     #[::unity2::class(namespace = "App", name = "Unit")]
     #[parent(crate::system::object::Object)]
@@ -693,13 +660,46 @@ mod __types {
         pub m_calc_info: crate::app::unit::Unit_CalcInfo,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]
-    #[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
-    #[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-    pub struct Unit_DisposItemsForSelectedWeapon {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::disposdata::DisposData,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct Unit_CalcInfo {
+        #[rename(name = "Count")]
+        pub count: i32,
+        #[rename(name = "Attack")]
+        pub attack: i32,
+        #[rename(name = "Hit")]
+        pub hit: i32,
+        #[rename(name = "Avoid")]
+        pub avoid: i32,
+        #[rename(name = "Critical")]
+        pub critical: i32,
+        #[rename(name = "Secure")]
+        pub secure: i32,
+        #[rename(name = "Continuous")]
+        pub continuous: i32,
+        #[rename(name = "PhysicalAttack")]
+        pub physical_attack: i32,
+        #[rename(name = "MagicAttack")]
+        pub magic_attack: i32,
+        #[rename(name = "PhysicalDefense")]
+        pub physical_defense: i32,
+        #[rename(name = "MagicDefense")]
+        pub magic_defense: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
+    #[parent(crate::system::object::Object)]
+    pub struct Unit_ItemsForSelectedWeapon {
+        #[rename(name = "m_Items")]
+        pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "Unit.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: unit :: Unit_Status >)]
+    pub struct Unit_StatusField {}
 }
 
 #[cfg(feature = "app-unit-types")]
@@ -708,110 +708,20 @@ pub use __types::*;
 #[cfg(feature = "app-unit")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Unit_ItemsForSelectedWeapon_unity2_raw {
+mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_sort {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                "Sort",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
-                    "Sort",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn sort(
-        this: Unit_ItemsForSelectedWeapon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sort::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                "GetCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
-                    "GetCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(
-        this: Unit_ItemsForSelectedWeapon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+                &[<crate::app::disposdata::DisposData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                "Get",
+                <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 1,
                 param_types,
                 false,
@@ -822,101 +732,7 @@ mod __Unit_ItemsForSelectedWeapon_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get(
-        this: Unit_ItemsForSelectedWeapon,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            Unit_ItemsForSelectedWeapon,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                "Prepare",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
-                    "Prepare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn prepare(
-        this: Unit_ItemsForSelectedWeapon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -929,158 +745,20 @@ mod __Unit_ItemsForSelectedWeapon_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: Unit_ItemsForSelectedWeapon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unit")]
-pub trait IUnit_ItemsForSelectedWeaponMethods: IUnit_ItemsForSelectedWeapon {
-    #[doc = "`Sort()` overload"]
-    fn sort(self) -> () {
-        unsafe {
-            let __receiver =
-                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Unit_ItemsForSelectedWeapon_unity2_raw::sort(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCount()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Unit_ItemsForSelectedWeapon_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Get(i32)` overload"]
-    fn get(self, index: impl ::core::convert::Into<i32>) -> crate::app::itemdata::ItemData {
-        unsafe {
-            let __receiver =
-                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Unit_ItemsForSelectedWeapon_unity2_raw::get(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Prepare()` overload"]
-    fn prepare(self) -> () {
-        unsafe {
-            let __receiver =
-                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Unit_ItemsForSelectedWeapon_unity2_raw::prepare(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Unit_ItemsForSelectedWeapon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unit")]
-impl<__T: IUnit_ItemsForSelectedWeapon> IUnit_ItemsForSelectedWeaponMethods for __T {}
-
-#[cfg(feature = "app-unit")]
-impl Unit_ItemsForSelectedWeapon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Unit_ChartItemsForSelectedWeapon_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::app::chartdata::ChartData_Item,
-            > as ::unity2::IlType>::il_type(
-            )];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Unit_ChartItemsForSelectedWeapon,
-        chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
+        this: Unit_DisposItemsForSelectedWeapon,
+        data: crate::app::disposdata::DisposData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            Unit_ChartItemsForSelectedWeapon,
-            ::unity2::Array<crate::app::chartdata::ChartData_Item>,
+            Unit_DisposItemsForSelectedWeapon,
+            crate::app::disposdata::DisposData,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, chart_items, __unity2_method_info)
+        inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1091,7 +769,7 @@ mod __Unit_ChartItemsForSelectedWeapon_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
                 "Prepare",
                 0,
                 param_types,
@@ -1103,7 +781,7 @@ mod __Unit_ChartItemsForSelectedWeapon_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
                     "Prepare",
                     e
                 ),
@@ -1116,34 +794,33 @@ mod __Unit_ChartItemsForSelectedWeapon_unity2_raw {
         }
     }
     pub unsafe fn prepare(
-        this: Unit_ChartItemsForSelectedWeapon,
+        this: Unit_DisposItemsForSelectedWeapon,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(Unit_ChartItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare::get_offset() as isize),
-            );
+        let inner: extern "C" fn(
+            Unit_DisposItemsForSelectedWeapon,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_prepare::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unit")]
-pub trait IUnit_ChartItemsForSelectedWeaponMethods: IUnit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
-    fn ctor(
-        self,
-        chart_items: impl ::core::convert::Into<::unity2::Array<crate::app::chartdata::ChartData_Item>>,
-    ) -> () {
+pub trait IUnit_DisposItemsForSelectedWeaponMethods: IUnit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::app::disposdata::DisposData>) -> () {
         unsafe {
             let __receiver =
-                <Unit_ChartItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                <Unit_DisposItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __Unit_ChartItemsForSelectedWeapon_unity2_raw::ctor(
+            __Unit_DisposItemsForSelectedWeapon_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(chart_items),
+                ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
@@ -1152,10 +829,10 @@ pub trait IUnit_ChartItemsForSelectedWeaponMethods: IUnit_ChartItemsForSelectedW
     fn prepare(self) -> () {
         unsafe {
             let __receiver =
-                <Unit_ChartItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                <Unit_DisposItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __Unit_ChartItemsForSelectedWeapon_unity2_raw::prepare(
+            __Unit_DisposItemsForSelectedWeapon_unity2_raw::prepare(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1164,218 +841,20 @@ pub trait IUnit_ChartItemsForSelectedWeaponMethods: IUnit_ChartItemsForSelectedW
 }
 
 #[cfg(feature = "app-unit")]
-impl<__T: IUnit_ChartItemsForSelectedWeapon> IUnit_ChartItemsForSelectedWeaponMethods for __T {}
+impl<__T: IUnit_DisposItemsForSelectedWeapon> IUnit_DisposItemsForSelectedWeaponMethods for __T {}
 
 #[cfg(feature = "app-unit")]
-impl Unit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
-    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
+impl Unit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
+    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
+                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
-        this
-    }
-}
-
-#[cfg(feature = "app-unit")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Unit_CalcInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(this: Unit_CalcInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Unit_CalcInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
-                "Update",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: Unit_CalcInfo,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit_CalcInfo {
-        let inner: extern "C" fn(
-            Unit_CalcInfo,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit_CalcInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: Unit_CalcInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Unit_CalcInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unit")]
-pub trait IUnit_CalcInfoMethods: IUnit_CalcInfo {
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Unit_CalcInfo_unity2_raw::clear(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Update(crate::app::unit::Unit)` overload"]
-    fn update(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::unit::Unit_CalcInfo {
-        unsafe {
-            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Unit_CalcInfo_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Unit_CalcInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-unit")]
-impl<__T: IUnit_CalcInfo> IUnit_CalcInfoMethods for __T {}
-
-#[cfg(feature = "app-unit")]
-impl Unit_CalcInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_CalcInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_CalcInfoMethods>::ctor(this);
+        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
         this
     }
 }
@@ -1548,20 +1027,22 @@ impl Unit_FuncUnitItem {
 #[cfg(feature = "app-unit")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Unit_StatusField_unity2_raw {
+mod __Unit_ChartItemsForSelectedWeapon_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_to_long {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit_Status as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
+                crate::app::chartdata::ChartData_Item,
+            > as ::unity2::IlType>::il_type(
+            )];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_StatusField as ::unity2::ClassIdentity>::class(),
-                "ToLong",
+                <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 1,
                 param_types,
                 false,
@@ -1572,56 +1053,7 @@ mod __Unit_StatusField_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Unit_StatusField as ::unity2::ClassIdentity>::NAME,
-                    "ToLong",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_long(
-        this: Unit_StatusField,
-        value: crate::app::unit::Unit_Status,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
-        let inner: extern "C" fn(
-            Unit_StatusField,
-            crate::app::unit::Unit_Status,
-            ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_long::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_StatusField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Unit_StatusField as ::unity2::ClassIdentity>::NAME,
+                    <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1634,60 +1066,117 @@ mod __Unit_StatusField_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: Unit_StatusField,
+        this: Unit_ChartItemsForSelectedWeapon,
+        chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(Unit_StatusField, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(
+            Unit_ChartItemsForSelectedWeapon,
+            ::unity2::Array<crate::app::chartdata::ChartData_Item>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, chart_items, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                "Prepare",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_ChartItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    "Prepare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn prepare(
+        this: Unit_ChartItemsForSelectedWeapon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Unit_ChartItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_prepare::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unit")]
-pub trait IUnit_StatusFieldMethods: IUnit_StatusField {
-    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
-    fn to_long(self, value: impl ::core::convert::Into<crate::app::unit::Unit_Status>) -> i64 {
+pub trait IUnit_ChartItemsForSelectedWeaponMethods: IUnit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
+    fn ctor(
+        self,
+        chart_items: impl ::core::convert::Into<::unity2::Array<crate::app::chartdata::ChartData_Item>>,
+    ) -> () {
         unsafe {
-            let __receiver = <Unit_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Unit_StatusField_unity2_raw::to_long(
+            let __receiver =
+                <Unit_ChartItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Unit_ChartItemsForSelectedWeapon_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(chart_items),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`Prepare()` overload"]
+    fn prepare(self) -> () {
         unsafe {
-            let __receiver = <Unit_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Unit_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <Unit_ChartItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Unit_ChartItemsForSelectedWeapon_unity2_raw::prepare(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-unit")]
-impl<__T: IUnit_StatusField> IUnit_StatusFieldMethods for __T {}
+impl<__T: IUnit_ChartItemsForSelectedWeapon> IUnit_ChartItemsForSelectedWeaponMethods for __T {}
 
 #[cfg(feature = "app-unit")]
-impl Unit_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl Unit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
+    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_StatusField),
+                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnit_StatusFieldMethods>::ctor(this);
+        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
         this
     }
 }
@@ -3451,7 +2940,7 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Unit as ::unity2::ClassIdentity>::class(),
                 "ClearForRewindPreview",
@@ -15492,8 +14981,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Unit as ::unity2::ClassIdentity>::class(),
@@ -20540,8 +20029,8 @@ mod __Unit_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -20600,8 +20089,8 @@ mod __Unit_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -20660,8 +20149,8 @@ mod __Unit_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -20826,8 +20315,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
@@ -20893,8 +20382,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -20950,8 +20439,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
@@ -21017,8 +20506,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
@@ -21084,8 +20573,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Unit as ::unity2::ClassIdentity>::class(),
@@ -21134,8 +20623,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -21191,8 +20680,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -21248,8 +20737,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
@@ -21315,8 +20804,8 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
@@ -30798,8 +30287,8 @@ mod __Unit_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -31786,7 +31275,7 @@ mod __Unit_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type()];
+                &[<crate::app::mapmind::MapMind_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Unit as ::unity2::ClassIdentity>::class(),
                 "TryGetEngageMind",
@@ -42343,20 +41832,62 @@ impl Unit {
 #[cfg(feature = "app-unit")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
+mod __Unit_CalcInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn clear(this: Unit_CalcInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Unit_CalcInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_clear::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::disposdata::DisposData as ::unity2::IlType>::il_type()];
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
+                "Update",
                 1,
                 param_types,
                 false,
@@ -42367,7 +41898,56 @@ mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
+                    "Update",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: Unit_CalcInfo,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::unit::Unit_CalcInfo {
+        let inner: extern "C" fn(
+            Unit_CalcInfo,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::unit::Unit_CalcInfo = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_CalcInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_CalcInfo as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -42379,21 +41959,218 @@ mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: Unit_DisposItemsForSelectedWeapon,
-        data: crate::app::disposdata::DisposData,
+    pub unsafe fn ctor(this: Unit_CalcInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Unit_CalcInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unit")]
+pub trait IUnit_CalcInfoMethods: IUnit_CalcInfo {
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Unit_CalcInfo_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Update(crate::app::unit::Unit)` overload"]
+    fn update(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::app::unit::Unit_CalcInfo {
+        unsafe {
+            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Unit_CalcInfo_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Unit_CalcInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Unit_CalcInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unit")]
+impl<__T: IUnit_CalcInfo> IUnit_CalcInfoMethods for __T {}
+
+#[cfg(feature = "app-unit")]
+impl Unit_CalcInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_CalcInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_CalcInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Unit_ItemsForSelectedWeapon_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                "Sort",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    "Sort",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn sort(
+        this: Unit_ItemsForSelectedWeapon,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_sort::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                "GetCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    "GetCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_count(
+        this: Unit_ItemsForSelectedWeapon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_count::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                "Get",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: Unit_ItemsForSelectedWeapon,
+        index: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::itemdata::ItemData {
         let inner: extern "C" fn(
-            Unit_DisposItemsForSelectedWeapon,
-            crate::app::disposdata::DisposData,
+            Unit_ItemsForSelectedWeapon,
+            i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_get::get_offset() as isize),
         );
-        inner(this, data, __unity2_method_info)
+        inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -42404,7 +42181,7 @@ mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
                 "Prepare",
                 0,
                 param_types,
@@ -42416,7 +42193,7 @@ mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <Unit_DisposItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
                     "Prepare",
                     e
                 ),
@@ -42429,33 +42206,99 @@ mod __Unit_DisposItemsForSelectedWeapon_unity2_raw {
         }
     }
     pub unsafe fn prepare(
-        this: Unit_DisposItemsForSelectedWeapon,
+        this: Unit_ItemsForSelectedWeapon,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Unit_DisposItemsForSelectedWeapon,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_prepare::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_ItemsForSelectedWeapon as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Unit_ItemsForSelectedWeapon,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unit")]
-pub trait IUnit_DisposItemsForSelectedWeaponMethods: IUnit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
-    fn ctor(self, data: impl ::core::convert::Into<crate::app::disposdata::DisposData>) -> () {
+pub trait IUnit_ItemsForSelectedWeaponMethods: IUnit_ItemsForSelectedWeapon {
+    #[doc = "`Sort()` overload"]
+    fn sort(self) -> () {
         unsafe {
             let __receiver =
-                <Unit_DisposItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __Unit_DisposItemsForSelectedWeapon_unity2_raw::ctor(
+            __Unit_ItemsForSelectedWeapon_unity2_raw::sort(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCount()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Unit_ItemsForSelectedWeapon_unity2_raw::get_count(
                 __receiver,
-                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(i32)` overload"]
+    fn get(self, index: impl ::core::convert::Into<i32>) -> crate::app::itemdata::ItemData {
+        unsafe {
+            let __receiver =
+                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Unit_ItemsForSelectedWeapon_unity2_raw::get(
+                __receiver,
+                ::core::convert::Into::into(index),
                 ::core::option::Option::None,
             )
         }
@@ -42464,32 +42307,189 @@ pub trait IUnit_DisposItemsForSelectedWeaponMethods: IUnit_DisposItemsForSelecte
     fn prepare(self) -> () {
         unsafe {
             let __receiver =
-                <Unit_DisposItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __Unit_DisposItemsForSelectedWeapon_unity2_raw::prepare(
+            __Unit_ItemsForSelectedWeapon_unity2_raw::prepare(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <Unit_ItemsForSelectedWeapon as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __Unit_ItemsForSelectedWeapon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
 }
 
 #[cfg(feature = "app-unit")]
-impl<__T: IUnit_DisposItemsForSelectedWeapon> IUnit_DisposItemsForSelectedWeaponMethods for __T {}
+impl<__T: IUnit_ItemsForSelectedWeapon> IUnit_ItemsForSelectedWeaponMethods for __T {}
 
 #[cfg(feature = "app-unit")]
-impl Unit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
-    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
+impl Unit_ItemsForSelectedWeapon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
+                ::core::stringify!(Unit_ItemsForSelectedWeapon),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
+        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-unit")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Unit_StatusField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_long {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit_Status as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_StatusField as ::unity2::ClassIdentity>::class(),
+                "ToLong",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_StatusField as ::unity2::ClassIdentity>::NAME,
+                    "ToLong",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_long(
+        this: Unit_StatusField,
+        value: crate::app::unit::Unit_Status,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i64 {
+        let inner: extern "C" fn(
+            Unit_StatusField,
+            crate::app::unit::Unit_Status,
+            ::unity2::OptionalMethod,
+        ) -> i64 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_long::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Unit_StatusField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Unit_StatusField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Unit_StatusField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Unit_StatusField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unit")]
+pub trait IUnit_StatusFieldMethods: IUnit_StatusField {
+    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
+    fn to_long(self, value: impl ::core::convert::Into<crate::app::unit::Unit_Status>) -> i64 {
+        unsafe {
+            let __receiver = <Unit_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Unit_StatusField_unity2_raw::to_long(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Unit_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Unit_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-unit")]
+impl<__T: IUnit_StatusField> IUnit_StatusFieldMethods for __T {}
+
+#[cfg(feature = "app-unit")]
+impl Unit_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_StatusFieldMethods>::ctor(this);
         this
     }
 }

@@ -9,57 +9,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Cooking_ConversationType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Cooking_ConversationType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Cooking.ConversationType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Cooking_ConversationType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Cooking_ConversationType {
-        pub fn about_delicious() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn monologue() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn dialogue() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
+    #[::unity2::class(namespace = "App", name = "Cooking")]
+    #[parent(crate::system::object::Object)]
+    pub struct Cooking {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
     #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
@@ -76,10 +29,49 @@ mod __types {
         pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Cooking_Order {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Cooking_Order {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Cooking.Order";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Cooking_Order {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Cooking_Order {
+        pub fn before() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn after() -> Self {
+            Self { value: 1 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
     #[repr(C)]
@@ -145,7 +137,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -154,14 +146,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct Cooking_Order {
+    pub struct Cooking_ConversationType {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for Cooking_Order {
+    impl ::unity2::ClassIdentity for Cooking_ConversationType {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "Cooking.Order";
+        const NAME: &'static str = "Cooking.ConversationType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -170,7 +162,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for Cooking_Order {
+    impl ::unity2::IlType for Cooking_ConversationType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -179,217 +171,27 @@ mod __types {
         }
     }
 
-    impl Cooking_Order {
-        pub fn before() -> Self {
+    impl Cooking_ConversationType {
+        pub fn about_delicious() -> Self {
             Self { value: 0 }
         }
 
-        pub fn after() -> Self {
+        pub fn monologue() -> Self {
             Self { value: 1 }
+        }
+
+        pub fn dialogue() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
         }
     }
 }
 
 #[cfg(feature = "app-cooking-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-cooking")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Cooking_Probability_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_probabilities {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cookdata :: CookData_Difficulty as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                "GetProbabilities",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                    "GetProbabilities",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_probabilities(
-        difficulty: crate::app::cookdata::CookData_Difficulty,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<f32> {
-        let inner: extern "C" fn(
-            crate::app::cookdata::CookData_Difficulty,
-            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::list_1::List_1<f32> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_probabilities::get_offset() as isize),
-        );
-        inner(difficulty, foodstuffs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Cooking_Probability,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Cooking_Probability, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-cooking")]
-impl Cooking_Probability {
-    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    pub fn get_probabilities(
-        difficulty: impl ::core::convert::Into<crate::app::cookdata::CookData_Difficulty>,
-        foodstuffs: impl ::core::convert::Into<
-            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<f32> {
-        unsafe {
-            __Cooking_Probability_unity2_raw::get_probabilities(
-                ::core::convert::Into::into(difficulty),
-                ::core::convert::Into::into(foodstuffs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Cooking_Probability_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-cooking")]
-pub trait ICooking_ProbabilityMethods: ICooking_Probability {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Cooking_Probability as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Cooking_Probability_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-cooking")]
-impl<__T: ICooking_Probability> ICooking_ProbabilityMethods for __T {}
-
-#[cfg(feature = "app-cooking")]
-impl Cooking_Probability {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Cooking_Probability),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICooking_ProbabilityMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-cooking")]
 #[doc(hidden)]
@@ -665,8 +467,8 @@ mod __Cooking_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <*mut crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type(),
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Cooking as ::unity2::ClassIdentity>::class(),
@@ -943,6 +745,204 @@ impl Cooking {
             )
         });
         <Self as ICookingMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-cooking")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Cooking_Probability_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_probabilities {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cookdata :: CookData_Difficulty as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
+                "GetProbabilities",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
+                    "GetProbabilities",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_probabilities(
+        difficulty: crate::app::cookdata::CookData_Difficulty,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<f32> {
+        let inner: extern "C" fn(
+            crate::app::cookdata::CookData_Difficulty,
+            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::system::collections::generic::list_1::List_1<f32> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_probabilities::get_offset() as isize),
+        );
+        inner(difficulty, foodstuffs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Cooking_Probability,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Cooking_Probability, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Cooking_Probability as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Cooking_Probability as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking_Probability {
+    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    pub fn get_probabilities(
+        difficulty: impl ::core::convert::Into<crate::app::cookdata::CookData_Difficulty>,
+        foodstuffs: impl ::core::convert::Into<
+            ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<f32> {
+        unsafe {
+            __Cooking_Probability_unity2_raw::get_probabilities(
+                ::core::convert::Into::into(difficulty),
+                ::core::convert::Into::into(foodstuffs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __Cooking_Probability_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-cooking")]
+pub trait ICooking_ProbabilityMethods: ICooking_Probability {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Cooking_Probability as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __Cooking_Probability_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-cooking")]
+impl<__T: ICooking_Probability> ICooking_ProbabilityMethods for __T {}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking_Probability {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Cooking_Probability),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICooking_ProbabilityMethods>::ctor(this);
         this
     }
 }

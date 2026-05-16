@@ -10,7 +10,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -19,14 +19,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SortieSelectionUnitManager_InventoryModes {
+    pub struct SortieSelectionUnitManager_Modes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes {
+    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_Modes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SortieSelectionUnitManager.InventoryModes";
+        const NAME: &'static str = "SortieSelectionUnitManager.Modes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,7 +35,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SortieSelectionUnitManager_InventoryModes {
+    impl ::unity2::IlType for SortieSelectionUnitManager_Modes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -44,8 +44,8 @@ mod __types {
         }
     }
 
-    impl SortieSelectionUnitManager_InventoryModes {
-        pub fn none() -> Self {
+    impl SortieSelectionUnitManager_Modes {
+        pub fn sortie() -> Self {
             Self { value: 0 }
         }
 
@@ -53,9 +53,35 @@ mod __types {
             Self { value: 1 }
         }
 
-        pub fn trade() -> Self {
+        pub fn ring_select() -> Self {
             Self { value: 2 }
         }
+
+        pub fn skill_inherite() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSelectionUnitManager")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)]
+    pub struct SortieSelectionUnitManager {
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
+        #[rename(name = "m_InventoryMode")]
+        pub m_inventory_mode:
+            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_MenuSelect")]
+        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+        #[rename(name = "m_statusUpdate")]
+        pub m_status_update: bool,
+        #[rename(name = "m_openItemSubMenu")]
+        pub m_open_item_sub_menu:
+            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
+        #[rename(name = "m_menuBg")]
+        pub m_menu_bg: crate::unity_engine::gameobject::GameObject,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]
@@ -122,29 +148,7 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSelectionUnitManager")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)]
-    pub struct SortieSelectionUnitManager {
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes,
-        #[rename(name = "m_InventoryMode")]
-        pub m_inventory_mode:
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_MenuSelect")]
-        pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-        #[rename(name = "m_statusUpdate")]
-        pub m_status_update: bool,
-        #[rename(name = "m_openItemSubMenu")]
-        pub m_open_item_sub_menu:
-            crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu,
-        #[rename(name = "m_menuBg")]
-        pub m_menu_bg: crate::unity_engine::gameobject::GameObject,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -153,14 +157,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct SortieSelectionUnitManager_Modes {
+    pub struct SortieSelectionUnitManager_InventoryModes {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_Modes {
+    impl ::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "SortieSelectionUnitManager.Modes";
+        const NAME: &'static str = "SortieSelectionUnitManager.InventoryModes";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -169,7 +173,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for SortieSelectionUnitManager_Modes {
+    impl ::unity2::IlType for SortieSelectionUnitManager_InventoryModes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -178,8 +182,8 @@ mod __types {
         }
     }
 
-    impl SortieSelectionUnitManager_Modes {
-        pub fn sortie() -> Self {
+    impl SortieSelectionUnitManager_InventoryModes {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
@@ -187,12 +191,8 @@ mod __types {
             Self { value: 1 }
         }
 
-        pub fn ring_select() -> Self {
+        pub fn trade() -> Self {
             Self { value: 2 }
-        }
-
-        pub fn skill_inherite() -> Self {
-            Self { value: 3 }
         }
     }
 }

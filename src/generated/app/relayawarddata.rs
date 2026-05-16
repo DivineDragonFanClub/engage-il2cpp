@@ -15,7 +15,16 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
+    pub struct RelayAwardData {
+        #[static_field]
+        #[rename(name = "s_Infos")]
+        pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -24,14 +33,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct RelayAwardData_Flags {
+    pub struct RelayAwardData_CompareOp {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for RelayAwardData_Flags {
+    impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "RelayAwardData.Flags";
+        const NAME: &'static str = "RelayAwardData.CompareOp";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,7 +49,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for RelayAwardData_Flags {
+    impl ::unity2::IlType for RelayAwardData_CompareOp {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -49,27 +58,32 @@ mod __types {
         }
     }
 
-    impl RelayAwardData_Flags {
-        pub fn mixed() -> Self {
+    impl RelayAwardData_CompareOp {
+        pub fn greater() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn less() -> Self {
             Self { value: 1 }
         }
 
-        pub fn show_count() -> Self {
+        pub fn zero() -> Self {
             Self { value: 2 }
         }
 
-        pub fn negative() -> Self {
+        pub fn mixed_less() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn attack_greater_kill_less() -> Self {
             Self { value: 4 }
         }
-
-        pub fn attack_plus() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn attack_minus() -> Self {
-            Self { value: 16 }
-        }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
+    pub struct RelayAwardData_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
     #[repr(C)]
@@ -211,7 +225,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -220,14 +234,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct RelayAwardData_CompareOp {
+    pub struct RelayAwardData_Flags {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
+    impl ::unity2::ClassIdentity for RelayAwardData_Flags {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "RelayAwardData.CompareOp";
+        const NAME: &'static str = "RelayAwardData.Flags";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -236,7 +250,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for RelayAwardData_CompareOp {
+    impl ::unity2::IlType for RelayAwardData_Flags {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -245,41 +259,27 @@ mod __types {
         }
     }
 
-    impl RelayAwardData_CompareOp {
-        pub fn greater() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn less() -> Self {
+    impl RelayAwardData_Flags {
+        pub fn mixed() -> Self {
             Self { value: 1 }
         }
 
-        pub fn zero() -> Self {
+        pub fn show_count() -> Self {
             Self { value: 2 }
         }
 
-        pub fn mixed_less() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn attack_greater_kill_less() -> Self {
+        pub fn negative() -> Self {
             Self { value: 4 }
         }
-    }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
-    pub struct RelayAwardData {
-        #[static_field]
-        #[rename(name = "s_Infos")]
-        pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
-    }
+        pub fn attack_plus() -> Self {
+            Self { value: 8 }
+        }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
-    pub struct RelayAwardData_FlagField {}
+        pub fn attack_minus() -> Self {
+            Self { value: 16 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
     #[repr(C)]

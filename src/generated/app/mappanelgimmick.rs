@@ -17,22 +17,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelgimmick/MapPanelGimmick.md"))]
-    #[::unity2::class(namespace = "App", name = "MapPanelGimmick")]
-    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelgimmick :: MapPanelGimmick >)]
-    pub struct MapPanelGimmick {
-        #[rename(name = "m_Alpha")]
-        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
-        #[rename(name = "m_GimmickImage")]
-        pub m_gimmick_image: crate::unity_engine::material::Material,
-        #[rename(name = "m_GimmickColor")]
-        pub m_gimmick_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "previousCount")]
-        pub previous_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelgimmick/MapPanelGimmick_MeshIndex.md"))]
     #[repr(C)]
     #[derive(
@@ -75,6 +59,22 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelgimmick/MapPanelGimmick.md"))]
+    #[::unity2::class(namespace = "App", name = "MapPanelGimmick")]
+    # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelgimmick :: MapPanelGimmick >)]
+    pub struct MapPanelGimmick {
+        #[rename(name = "m_Alpha")]
+        pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+        #[rename(name = "m_GimmickImage")]
+        pub m_gimmick_image: crate::unity_engine::material::Material,
+        #[rename(name = "m_GimmickColor")]
+        pub m_gimmick_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "previousCount")]
+        pub previous_count: i32,
     }
 }
 

@@ -941,8 +941,8 @@ mod __CommonRewardSequence_unity2_raw {
                     <crate::system::collections::generic::list_1::List_1<
                         crate::app::itemdata::ItemData,
                     > as ::unity2::IlType>::il_type(),
-                    <*mut i32 as ::unity2::IlType>::il_type(),
-                    <*mut bool as ::unity2::IlType>::il_type(),
+                    <i32 as ::unity2::IlType>::il_type(),
+                    <bool as ::unity2::IlType>::il_type(),
                 ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),

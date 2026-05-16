@@ -156,8 +156,7 @@ mod __Binder_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut ::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(
-                ),
+                <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(

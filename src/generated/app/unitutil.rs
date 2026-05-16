@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitutil/UnitUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitUtil {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitutil/UnitUtil_DieType.md"))]
     #[repr(C)]
     #[derive(
@@ -65,6 +60,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitutil/UnitUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitUtil {}
 }
 
 #[cfg(feature = "app-unitutil-types")]
@@ -2078,8 +2078,8 @@ mod __UnitUtil_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitUtil as ::unity2::ClassIdentity>::class(),
@@ -2345,7 +2345,7 @@ mod __UnitUtil_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut ::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
@@ -2842,8 +2842,8 @@ mod __UnitUtil_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
-                <*mut crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type(),
+                <crate::app::persondata::PersonData as ::unity2::IlType>::il_type(),
+                <crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::persondata::PersonData_Colors as ::unity2::IlType>::il_type(),
                 <crate::app::persondata::PersonData_Ranks as ::unity2::IlType>::il_type(),

@@ -363,7 +363,7 @@ mod __SynthesisRingInfoWindow_unity2_raw {
                 <::unity2::Array<
                     crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
                 > as ::unity2::IlType>::il_type(),
-                <*mut i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(

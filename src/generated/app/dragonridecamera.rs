@@ -13,54 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridecamera/DragonRideCamera_TargetControleFlag.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DragonRideCamera_TargetControleFlag {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DragonRideCamera_TargetControleFlag {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DragonRideCamera.TargetControleFlag";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DragonRideCamera_TargetControleFlag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DragonRideCamera_TargetControleFlag {
-        pub fn none() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn show() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn hide() -> Self {
-            Self { value: 4 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridecamera/DragonRideCamera.md"))]
     #[::unity2::class(namespace = "App", name = "DragonRideCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -224,6 +176,54 @@ mod __types {
         pub m_base_angle_z: f32,
         #[rename(name = "m_DeviceType")]
         pub m_device_type: crate::app::gyromnager::GyroMnager_DeviceType,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridecamera/DragonRideCamera_TargetControleFlag.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DragonRideCamera_TargetControleFlag {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DragonRideCamera_TargetControleFlag {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DragonRideCamera.TargetControleFlag";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DragonRideCamera_TargetControleFlag {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DragonRideCamera_TargetControleFlag {
+        pub fn none() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn show() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn hide() -> Self {
+            Self { value: 4 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridecamera/DragonRideCamera_CutinState.md"))]
@@ -3617,9 +3617,8 @@ mod __DragonRideCamera_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideCamera as ::unity2::ClassIdentity>::class(),
                 "_RefreshObj",
@@ -3974,7 +3973,7 @@ mod __DragonRideCamera_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut ::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideCamera as ::unity2::ClassIdentity>::class(),
                 "GetControleGroupList",

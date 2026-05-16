@@ -9,6 +9,29 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
+    #[parent(crate::system::object::Object)]
+    pub struct CalculatorUtil_Entity {
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::calculatorutil::CalculatorUtil_Type,
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[rename(name = "m_Code")]
+        pub m_code: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
+    #[parent(crate::system::object::Object)]
+    pub struct CalculatorUtil {
+        #[static_field]
+        #[rename(name = "NullArgs")]
+        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -199,29 +222,6 @@ mod __types {
         pub fn string() -> Self {
             Self { value: 38 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil_Entity {
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::calculatorutil::CalculatorUtil_Type,
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_Code")]
-        pub m_code: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorUtil")]
-    #[parent(crate::system::object::Object)]
-    pub struct CalculatorUtil {
-        #[static_field]
-        #[rename(name = "NullArgs")]
-        pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
     }
 }
 

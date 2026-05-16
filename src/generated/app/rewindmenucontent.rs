@@ -12,20 +12,16 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenuContent.RestRewindTimes")]
     #[parent(crate::system::object::Object)]
-    pub struct RewindMenuContent_Phase {
+    pub struct RewindMenuContent_RestRewindTimes {
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TurnName")]
-        pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Turn")]
-        pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_RestName")]
-        pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Rest")]
-        pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Name")]
+        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Times")]
+        pub m_times: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent.md"))]
@@ -98,16 +94,20 @@ mod __types {
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]
-    #[::unity2::class(namespace = "App", name = "RewindMenuContent.RestRewindTimes")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]
+    #[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
     #[parent(crate::system::object::Object)]
-    pub struct RewindMenuContent_RestRewindTimes {
+    pub struct RewindMenuContent_Phase {
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Times")]
-        pub m_times: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TurnName")]
+        pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Turn")]
+        pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_RestName")]
+        pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Rest")]
+        pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 }
 
@@ -117,7 +117,7 @@ pub use __types::*;
 #[cfg(feature = "app-rewindmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenuContent_Phase_unity2_raw {
+mod __RewindMenuContent_RestRewindTimes_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -129,7 +129,7 @@ mod __RewindMenuContent_Phase_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -141,7 +141,7 @@ mod __RewindMenuContent_Phase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                    <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -154,12 +154,12 @@ mod __RewindMenuContent_Phase_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RewindMenuContent_Phase,
+        this: RewindMenuContent_RestRewindTimes,
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RewindMenuContent_Phase,
+            RewindMenuContent_RestRewindTimes,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -171,97 +171,7 @@ mod __RewindMenuContent_Phase_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: RewindMenuContent_Phase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide(
-        this: RewindMenuContent_Phase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_turn {
+    pub mod __lookup_set_times {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
@@ -269,8 +179,8 @@ mod __RewindMenuContent_Phase_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "SetTurn",
+                <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::class(),
+                "SetTimes",
                 1,
                 param_types,
                 false,
@@ -281,8 +191,8 @@ mod __RewindMenuContent_Phase_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                    "SetTurn",
+                    <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::NAME,
+                    "SetTimes",
                     e
                 ),
             }
@@ -293,70 +203,26 @@ mod __RewindMenuContent_Phase_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_turn(
-        this: RewindMenuContent_Phase,
-        turn: i32,
+    pub unsafe fn set_times(
+        this: RewindMenuContent_RestRewindTimes,
+        times: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_turn::get_offset() as isize),
-            );
-        inner(this, turn, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rest_unit_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
-                "SetRestUnitNum",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
-                    "SetRestUnitNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rest_unit_num(
-        this: RewindMenuContent_Phase,
-        rest_unit_num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rest_unit_num::get_offset() as isize),
-            );
-        inner(this, rest_unit_num, __unity2_method_info)
+        let inner: extern "C" fn(
+            RewindMenuContent_RestRewindTimes,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_times::get_offset() as isize),
+        );
+        inner(this, times, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-rewindmenucontent")]
-pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
+pub trait IRewindMenuContent_RestRewindTimesMethods: IRewindMenuContent_RestRewindTimes {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
@@ -364,60 +230,26 @@ pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
     ) -> () {
         unsafe {
             let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
+                <RewindMenuContent_RestRewindTimes as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RewindMenuContent_Phase_unity2_raw::ctor(
+            __RewindMenuContent_RestRewindTimes_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
+    #[doc = "`SetTimes(i32)` overload"]
+    fn set_times(self, times: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
+                <RewindMenuContent_RestRewindTimes as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RewindMenuContent_Phase_unity2_raw::show(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RewindMenuContent_Phase_unity2_raw::hide(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetTurn(i32)` overload"]
-    fn set_turn(self, turn: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RewindMenuContent_Phase_unity2_raw::set_turn(
+            __RewindMenuContent_RestRewindTimes_unity2_raw::set_times(
                 __receiver,
-                ::core::convert::Into::into(turn),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetRestUnitNum(i32)` overload"]
-    fn set_rest_unit_num(self, rest_unit_num: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RewindMenuContent_Phase_unity2_raw::set_rest_unit_num(
-                __receiver,
-                ::core::convert::Into::into(rest_unit_num),
+                ::core::convert::Into::into(times),
                 ::core::option::Option::None,
             )
         }
@@ -425,20 +257,20 @@ pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
 }
 
 #[cfg(feature = "app-rewindmenucontent")]
-impl<__T: IRewindMenuContent_Phase> IRewindMenuContent_PhaseMethods for __T {}
+impl<__T: IRewindMenuContent_RestRewindTimes> IRewindMenuContent_RestRewindTimesMethods for __T {}
 
 #[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_Phase {
+impl RewindMenuContent_RestRewindTimes {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_Phase),
+                ::core::stringify!(RewindMenuContent_RestRewindTimes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
+        <Self as IRewindMenuContent_RestRewindTimesMethods>::ctor(this, root_object);
         this
     }
 }
@@ -2409,7 +2241,7 @@ impl RewindMenuContent_KeyHelp {
 #[cfg(feature = "app-rewindmenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RewindMenuContent_RestRewindTimes_unity2_raw {
+mod __RewindMenuContent_Phase_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2421,7 +2253,7 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::class(),
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -2433,7 +2265,7 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::NAME,
+                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2446,12 +2278,12 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RewindMenuContent_RestRewindTimes,
+        this: RewindMenuContent_Phase,
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RewindMenuContent_RestRewindTimes,
+            RewindMenuContent_Phase,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -2463,17 +2295,16 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_times {
+    pub mod __lookup_show {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::class(),
-                "SetTimes",
-                1,
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
                 param_types,
                 false,
             )
@@ -2483,8 +2314,8 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RewindMenuContent_RestRewindTimes as ::unity2::ClassIdentity>::NAME,
-                    "SetTimes",
+                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                    "Show",
                     e
                 ),
             }
@@ -2495,26 +2326,161 @@ mod __RewindMenuContent_RestRewindTimes_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn set_times(
-        this: RewindMenuContent_RestRewindTimes,
-        times: i32,
+    pub unsafe fn show(
+        this: RewindMenuContent_Phase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RewindMenuContent_RestRewindTimes,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_times::get_offset() as isize),
-        );
-        inner(this, times, __unity2_method_info)
+        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_show::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                    "Hide",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn hide(
+        this: RewindMenuContent_Phase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_hide::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_turn {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "SetTurn",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                    "SetTurn",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_turn(
+        this: RewindMenuContent_Phase,
+        turn: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_turn::get_offset() as isize),
+            );
+        inner(this, turn, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rest_unit_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RewindMenuContent_Phase as ::unity2::ClassIdentity>::class(),
+                "SetRestUnitNum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RewindMenuContent_Phase as ::unity2::ClassIdentity>::NAME,
+                    "SetRestUnitNum",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_rest_unit_num(
+        this: RewindMenuContent_Phase,
+        rest_unit_num: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RewindMenuContent_Phase, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_set_rest_unit_num::get_offset() as isize),
+            );
+        inner(this, rest_unit_num, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-rewindmenucontent")]
-pub trait IRewindMenuContent_RestRewindTimesMethods: IRewindMenuContent_RestRewindTimes {
+pub trait IRewindMenuContent_PhaseMethods: IRewindMenuContent_Phase {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     fn ctor(
         self,
@@ -2522,26 +2488,60 @@ pub trait IRewindMenuContent_RestRewindTimesMethods: IRewindMenuContent_RestRewi
     ) -> () {
         unsafe {
             let __receiver =
-                <RewindMenuContent_RestRewindTimes as ::unity2::FromIlInstance>::from_il_instance(
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RewindMenuContent_RestRewindTimes_unity2_raw::ctor(
+            __RewindMenuContent_Phase_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetTimes(i32)` overload"]
-    fn set_times(self, times: impl ::core::convert::Into<i32>) -> () {
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
         unsafe {
             let __receiver =
-                <RewindMenuContent_RestRewindTimes as ::unity2::FromIlInstance>::from_il_instance(
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __RewindMenuContent_RestRewindTimes_unity2_raw::set_times(
+            __RewindMenuContent_Phase_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RewindMenuContent_Phase_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTurn(i32)` overload"]
+    fn set_turn(self, turn: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RewindMenuContent_Phase_unity2_raw::set_turn(
                 __receiver,
-                ::core::convert::Into::into(times),
+                ::core::convert::Into::into(turn),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetRestUnitNum(i32)` overload"]
+    fn set_rest_unit_num(self, rest_unit_num: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RewindMenuContent_Phase as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RewindMenuContent_Phase_unity2_raw::set_rest_unit_num(
+                __receiver,
+                ::core::convert::Into::into(rest_unit_num),
                 ::core::option::Option::None,
             )
         }
@@ -2549,20 +2549,20 @@ pub trait IRewindMenuContent_RestRewindTimesMethods: IRewindMenuContent_RestRewi
 }
 
 #[cfg(feature = "app-rewindmenucontent")]
-impl<__T: IRewindMenuContent_RestRewindTimes> IRewindMenuContent_RestRewindTimesMethods for __T {}
+impl<__T: IRewindMenuContent_Phase> IRewindMenuContent_PhaseMethods for __T {}
 
 #[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_RestRewindTimes {
+impl RewindMenuContent_Phase {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_RestRewindTimes),
+                ::core::stringify!(RewindMenuContent_Phase),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRewindMenuContent_RestRewindTimesMethods>::ctor(this, root_object);
+        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
         this
     }
 }

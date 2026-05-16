@@ -8,6 +8,23 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1.md"))]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortedSet_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "root")]
+        pub root: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        #[rename(name = "comparer")]
+        pub comparer:
+            crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
+        #[rename(name = "count")]
+        pub count: i32,
+        #[rename(name = "version")]
+        pub version: i32,
+        #[rename(name = "_syncRoot")]
+        pub sync_root: ::unity2::IlInstance,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1_Node.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1.Node")]
     #[parent(crate::system::object::Object)]
@@ -44,27 +61,197 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sortedset_1/SortedSet_1.md"))]
-    #[::unity2::class(namespace = "System.Collections.Generic", name = "SortedSet`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct SortedSet_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "root")]
-        pub root: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        #[rename(name = "comparer")]
-        pub comparer:
-            crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
-        #[rename(name = "count")]
-        pub count: i32,
-        #[rename(name = "version")]
-        pub version: i32,
-        #[rename(name = "_syncRoot")]
-        pub sync_root: ::unity2::IlInstance,
-    }
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-collections-generic-sortedset_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SortedSet_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
+            T0,
+        >,
+    ) -> ();
+
+    #[doc = "`InOrderTreeWalk(crate::system::collections::generic::treewalkpredicate_1::TreeWalkPredicate_1<T0>)` overload"]
+    #[method(name = "InOrderTreeWalk", args = 1)]
+    pub fn in_order_tree_walk(
+        self,
+        action: crate::system::collections::generic::treewalkpredicate_1::TreeWalkPredicate_1<T0>,
+    ) -> bool;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`VersionCheck()` overload"]
+    #[method(name = "VersionCheck", args = 0)]
+    pub fn version_check(self) -> ();
+
+    #[doc = "`IsWithinRange(T0)` overload"]
+    #[method(name = "IsWithinRange", args = 1)]
+    pub fn is_within_range(self, item: T0) -> bool;
+
+    #[doc = "`Add(T0)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, item: T0) -> bool;
+
+    #[doc = "`AddIfNotPresent(T0)` overload"]
+    #[method(name = "AddIfNotPresent", args = 1)]
+    pub fn add_if_not_present(self, item: T0) -> bool;
+
+    #[doc = "`Remove(T0)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, item: T0) -> bool;
+
+    #[doc = "`DoRemove(T0)` overload"]
+    #[method(name = "DoRemove", args = 1)]
+    pub fn do_remove(self, item: T0) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Contains(T0)` overload"]
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, item: T0) -> bool;
+
+    #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::Array<T0>, index: i32) -> ();
+
+    #[doc = "`CopyTo(::unity2::Array<T0>, i32, i32)` overload"]
+    #[method(name = "CopyTo", args = 3)]
+    pub fn copy_to_2(self, array: ::unity2::Array<T0>, index: i32, count: i32) -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(
+        self,
+        array: ::unity2::IlInstance,
+        index: i32,
+    ) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Enumerator<T0>;
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`InsertionBalance(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, *mutcrate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "InsertionBalance", args = 4)]
+    pub fn insertion_balance(
+        self,
+        current: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        parent: *mut crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        grand_parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        great_grand_parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> ();
+
+    #[doc = "`ReplaceChildOrRoot(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "ReplaceChildOrRoot", args = 3)]
+    pub fn replace_child_or_root(
+        self,
+        parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        new_child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> ();
+
+    #[doc = "`ReplaceNode(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
+    #[method(name = "ReplaceNode", args = 4)]
+    pub fn replace_node(
+        self,
+        r#match: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        parent_of_match: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        successor: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+        parent_of_successor: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
+    ) -> ();
+
+    #[doc = "`FindNode(T0)` overload"]
+    #[method(name = "FindNode", args = 1)]
+    pub fn find_node(
+        self,
+        item: T0,
+    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
+
+    #[doc = "`UpdateVersion()` overload"]
+    #[method(name = "UpdateVersion", args = 0)]
+    pub fn update_version(self) -> ();
+
+    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
+    #[method(
+        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+        args = 1
+    )]
+    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        self,
+        sender: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`OnDeserialization(crate::system::object::Object)` overload"]
+    #[method(name = "OnDeserialization", args = 1)]
+    pub fn on_deserialization(self, sender: crate::system::object::Object) -> ();
+
+    #[doc = "`Log2(i32)` overload"]
+    #[method(name = "Log2", args = 1)]
+    pub fn log2(value: i32) -> i32;
+}
+
+#[cfg(feature = "system-collections-generic-sortedset_1")]
+impl<T0: ::unity2::ClassIdentity> SortedSet_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedSet_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortedSet_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` — overload selector"]
+    pub fn new_2(
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
+            T0,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedSet_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ISortedSet_1Methods<T0>>::ctor_2(this, comparer);
+        this
+    }
+}
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]
 #[::unity2::methods]
@@ -294,193 +481,6 @@ impl<T0: ::unity2::ClassIdentity> SortedSet_1_Enumerator<T0> {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-#[cfg(feature = "system-collections-generic-sortedset_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> SortedSet_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> ();
-
-    #[doc = "`InOrderTreeWalk(crate::system::collections::generic::treewalkpredicate_1::TreeWalkPredicate_1<T0>)` overload"]
-    #[method(name = "InOrderTreeWalk", args = 1)]
-    pub fn in_order_tree_walk(
-        self,
-        action: crate::system::collections::generic::treewalkpredicate_1::TreeWalkPredicate_1<T0>,
-    ) -> bool;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`VersionCheck()` overload"]
-    #[method(name = "VersionCheck", args = 0)]
-    pub fn version_check(self) -> ();
-
-    #[doc = "`IsWithinRange(T0)` overload"]
-    #[method(name = "IsWithinRange", args = 1)]
-    pub fn is_within_range(self, item: T0) -> bool;
-
-    #[doc = "`Add(T0)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, item: T0) -> bool;
-
-    #[doc = "`AddIfNotPresent(T0)` overload"]
-    #[method(name = "AddIfNotPresent", args = 1)]
-    pub fn add_if_not_present(self, item: T0) -> bool;
-
-    #[doc = "`Remove(T0)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, item: T0) -> bool;
-
-    #[doc = "`DoRemove(T0)` overload"]
-    #[method(name = "DoRemove", args = 1)]
-    pub fn do_remove(self, item: T0) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Contains(T0)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, item: T0) -> bool;
-
-    #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::Array<T0>, index: i32) -> ();
-
-    #[doc = "`CopyTo(::unity2::Array<T0>, i32, i32)` overload"]
-    #[method(name = "CopyTo", args = 3)]
-    pub fn copy_to_2(self, array: ::unity2::Array<T0>, index: i32, count: i32) -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Enumerator<T0>;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`InsertionBalance(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, *mutcrate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "InsertionBalance", args = 4)]
-    pub fn insertion_balance(
-        self,
-        current: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        parent: *mut crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        grand_parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        great_grand_parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> ();
-
-    #[doc = "`ReplaceChildOrRoot(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "ReplaceChildOrRoot", args = 3)]
-    pub fn replace_child_or_root(
-        self,
-        parent: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        new_child: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> ();
-
-    #[doc = "`ReplaceNode(crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>, crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>)` overload"]
-    #[method(name = "ReplaceNode", args = 4)]
-    pub fn replace_node(
-        self,
-        r#match: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        parent_of_match: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        successor: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-        parent_of_successor: crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>,
-    ) -> ();
-
-    #[doc = "`FindNode(T0)` overload"]
-    #[method(name = "FindNode", args = 1)]
-    pub fn find_node(
-        self,
-        item: T0,
-    ) -> crate::system::collections::generic::sortedset_1::SortedSet_1_Node<T0>;
-
-    #[doc = "`UpdateVersion()` overload"]
-    #[method(name = "UpdateVersion", args = 0)]
-    pub fn update_version(self) -> ();
-
-    #[doc = "`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(
-        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
-        args = 1
-    )]
-    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
-        self,
-        sender: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`OnDeserialization(crate::system::object::Object)` overload"]
-    #[method(name = "OnDeserialization", args = 1)]
-    pub fn on_deserialization(self, sender: crate::system::object::Object) -> ();
-
-    #[doc = "`Log2(i32)` overload"]
-    #[method(name = "Log2", args = 1)]
-    pub fn log2(value: i32) -> i32;
-}
-
-#[cfg(feature = "system-collections-generic-sortedset_1")]
-impl<T0: ::unity2::ClassIdentity> SortedSet_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedSet_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortedSet_1Methods<T0>>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` — overload selector"]
-    pub fn new_2(
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedSet_1),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as ISortedSet_1Methods<T0>>::ctor_2(this, comparer);
-        this
-    }
 }
 
 #[cfg(feature = "system-collections-generic-sortedset_1")]

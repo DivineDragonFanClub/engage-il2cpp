@@ -296,16 +296,6 @@ mod __types {
         pub m_judge_lb: f32,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
-    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
-    #[parent(crate::system::object::Object)]
-    pub struct MuscleSquatSequence_RandomPack {
-        #[rename(name = "type")]
-        pub r#type: ::unity2::Il2CppString,
-        #[rename(name = "param")]
-        pub param: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -376,6 +366,16 @@ mod __types {
         pub fn r#final() -> Self {
             Self { value: 8 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
+    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
+    #[parent(crate::system::object::Object)]
+    pub struct MuscleSquatSequence_RandomPack {
+        #[rename(name = "type")]
+        pub r#type: ::unity2::Il2CppString,
+        #[rename(name = "param")]
+        pub param: f32,
     }
 }
 
@@ -987,7 +987,7 @@ mod __MuscleSquatSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MuscleSquatSequence as ::unity2::ClassIdentity>::class(),
                 "SelectScorePattern",

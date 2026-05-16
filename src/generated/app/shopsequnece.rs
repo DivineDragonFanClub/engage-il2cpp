@@ -9,6 +9,19 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_StockItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSequnece.StockItem")]
+    #[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]
+    pub struct ShopSequnece_StockItem {
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_ParamItem.md"))]
+    #[::unity2::class(namespace = "App", name = "ShopSequnece.ParamItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct ShopSequnece_ParamItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece.md"))]
     #[::unity2::class(namespace = "App", name = "ShopSequnece")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -17,19 +30,6 @@ mod __types {
         pub m_unit: crate::app::unit::Unit,
         #[rename(name = "m_Name")]
         pub m_name: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_ParamItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSequnece.ParamItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct ShopSequnece_ParamItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_StockItem.md"))]
-    #[::unity2::class(namespace = "App", name = "ShopSequnece.StockItem")]
-    #[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]
-    pub struct ShopSequnece_StockItem {
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsequnece/ShopSequnece_ShopItem.md"))]
@@ -58,7 +58,7 @@ pub use __types::*;
 #[cfg(feature = "app-shopsequnece")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSequnece_unity2_raw {
+mod __ShopSequnece_StockItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -67,14 +67,12 @@ mod __ShopSequnece_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece as ::unity2::ClassIdentity>::class(),
+                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
@@ -84,7 +82,7 @@ mod __ShopSequnece_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
+                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -97,14 +95,12 @@ mod __ShopSequnece_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSequnece,
-        name: ::unity2::Il2CppString,
+        this: ShopSequnece_StockItem,
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSequnece,
-            ::unity2::Il2CppString,
+            ShopSequnece_StockItem,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -112,19 +108,19 @@ mod __ShopSequnece_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, name, unit, __unity2_method_info)
+        inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_menu {
+    pub mod __lookup_get_column_name0 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece as ::unity2::ClassIdentity>::class(),
-                "CreateMenu",
+                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
+                "GetColumnName0",
                 0,
                 param_types,
                 false,
@@ -135,8 +131,8 @@ mod __ShopSequnece_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenu",
+                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
+                    "GetColumnName0",
                     e
                 ),
             }
@@ -147,36 +143,34 @@ mod __ShopSequnece_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_menu(
-        this: ShopSequnece,
+    pub unsafe fn get_column_name0(
+        this: ShopSequnece_StockItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ShopSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_menu::get_offset() as isize),
-            );
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            ShopSequnece_StockItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_column_name0::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
+    pub mod __lookup_get_column_name2 {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
+                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
+                "GetColumnName2",
+                0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -184,8 +178,8 @@ mod __ShopSequnece_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
+                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
+                    "GetColumnName2",
                     e
                 ),
             }
@@ -196,91 +190,78 @@ mod __ShopSequnece_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        name: ::unity2::Il2CppString,
-        unit: crate::app::unit::Unit,
+    pub unsafe fn get_column_name2(
+        this: ShopSequnece_StockItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
+            ShopSequnece_StockItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
+                .offset(__lookup_get_column_name2::get_offset() as isize),
         );
-        inner(super_, name, unit, __unity2_method_info)
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-shopsequnece")]
-impl ShopSequnece {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+pub trait IShopSequnece_StockItemMethods: IShopSequnece_StockItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            __ShopSequnece_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-shopsequnece")]
-pub trait IShopSequneceMethods: IShopSequnece {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <ShopSequnece as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __ShopSequnece_unity2_raw::ctor(
+            __ShopSequnece_StockItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(name),
                 ::core::convert::Into::into(unit),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`CreateMenu()` overload"]
-    fn create_menu(self) -> () {
+    #[doc = "`GetColumnName0()` overload"]
+    fn get_column_name0(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ShopSequnece as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __ShopSequnece_unity2_raw::create_menu(__receiver, ::core::option::Option::None)
+            __ShopSequnece_StockItem_unity2_raw::get_column_name0(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetColumnName2()` overload"]
+    fn get_column_name2(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ShopSequnece_StockItem_unity2_raw::get_column_name2(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-shopsequnece")]
-impl<__T: IShopSequnece> IShopSequneceMethods for __T {}
+impl<__T: IShopSequnece_StockItem> IShopSequnece_StockItemMethods for __T {}
 
 #[cfg(feature = "app-shopsequnece")]
-impl ShopSequnece {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, unit: crate::app::unit::Unit) -> Self {
+impl ShopSequnece_StockItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSequnece),
+                ::core::stringify!(ShopSequnece_StockItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSequneceMethods>::ctor(this, name, unit);
+        <Self as IShopSequnece_StockItemMethods>::ctor(this, unit);
         this
     }
 }
@@ -836,7 +817,7 @@ impl ShopSequnece_ParamItem {
 #[cfg(feature = "app-shopsequnece")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ShopSequnece_StockItem_unity2_raw {
+mod __ShopSequnece_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -845,12 +826,14 @@ mod __ShopSequnece_StockItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
+                <ShopSequnece as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -860,7 +843,7 @@ mod __ShopSequnece_StockItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
+                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -873,12 +856,14 @@ mod __ShopSequnece_StockItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ShopSequnece_StockItem,
+        this: ShopSequnece,
+        name: ::unity2::Il2CppString,
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ShopSequnece_StockItem,
+            ShopSequnece,
+            ::unity2::Il2CppString,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -886,19 +871,19 @@ mod __ShopSequnece_StockItem_unity2_raw {
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, unit, __unity2_method_info)
+        inner(this, name, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_column_name0 {
+    pub mod __lookup_create_menu {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnName0",
+                <ShopSequnece as ::unity2::ClassIdentity>::class(),
+                "CreateMenu",
                 0,
                 param_types,
                 false,
@@ -909,8 +894,8 @@ mod __ShopSequnece_StockItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName0",
+                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
+                    "CreateMenu",
                     e
                 ),
             }
@@ -921,34 +906,36 @@ mod __ShopSequnece_StockItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_column_name0(
-        this: ShopSequnece_StockItem,
+    pub unsafe fn create_menu(
+        this: ShopSequnece,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ShopSequnece_StockItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column_name0::get_offset() as isize),
-        );
+    ) -> () {
+        let inner: extern "C" fn(ShopSequnece, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_menu::get_offset() as isize),
+            );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_column_name2 {
+    pub mod __lookup_create_bind {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ShopSequnece_StockItem as ::unity2::ClassIdentity>::class(),
-                "GetColumnName2",
-                0,
+                <ShopSequnece as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -956,8 +943,8 @@ mod __ShopSequnece_StockItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ShopSequnece_StockItem as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnName2",
+                    <ShopSequnece as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
                     e
                 ),
             }
@@ -968,78 +955,91 @@ mod __ShopSequnece_StockItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_column_name2(
-        this: ShopSequnece_StockItem,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+        unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    ) -> () {
         let inner: extern "C" fn(
-            ShopSequnece_StockItem,
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_column_name2::get_offset() as isize),
+                .offset(__lookup_create_bind::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(super_, name, unit, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-shopsequnece")]
-pub trait IShopSequnece_StockItemMethods: IShopSequnece_StockItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    fn ctor(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+impl ShopSequnece {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
         unsafe {
-            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ShopSequnece_StockItem_unity2_raw::ctor(
-                __receiver,
+            __ShopSequnece_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(name),
                 ::core::convert::Into::into(unit),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetColumnName0()` overload"]
-    fn get_column_name0(self) -> ::unity2::Il2CppString {
+}
+
+#[cfg(feature = "app-shopsequnece")]
+pub trait IShopSequneceMethods: IShopSequnece {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
+    fn ctor(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
         unsafe {
-            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <ShopSequnece as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __ShopSequnece_StockItem_unity2_raw::get_column_name0(
+            __ShopSequnece_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(unit),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetColumnName2()` overload"]
-    fn get_column_name2(self) -> ::unity2::Il2CppString {
+    #[doc = "`CreateMenu()` overload"]
+    fn create_menu(self) -> () {
         unsafe {
-            let __receiver = <ShopSequnece_StockItem as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <ShopSequnece as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __ShopSequnece_StockItem_unity2_raw::get_column_name2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            __ShopSequnece_unity2_raw::create_menu(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-shopsequnece")]
-impl<__T: IShopSequnece_StockItem> IShopSequnece_StockItemMethods for __T {}
+impl<__T: IShopSequnece> IShopSequneceMethods for __T {}
 
 #[cfg(feature = "app-shopsequnece")]
-impl ShopSequnece_StockItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
+impl ShopSequnece {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString, unit: crate::app::unit::Unit) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSequnece_StockItem),
+                ::core::stringify!(ShopSequnece),
                 ::core::stringify!(new),
             )
         });
-        <Self as IShopSequnece_StockItemMethods>::ctor(this, unit);
+        <Self as IShopSequneceMethods>::ctor(this, name, unit);
         this
     }
 }

@@ -11,19 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))]
-    #[::unity2::class(
-        namespace = "",
-        name = "AkObstructionOcclusion.ObstructionOcclusionValue"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct AkObstructionOcclusion_ObstructionOcclusionValue {
-        #[rename(name = "currentValue")]
-        pub current_value: f32,
-        #[rename(name = "targetValue")]
-        pub target_value: f32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion.md"))]
     #[::unity2::class(namespace = "", name = "AkObstructionOcclusion")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -38,135 +25,23 @@ mod __types {
 # [rename (name = "refreshInterval")] pub refresh_interval : f32 ,
 # [rename (name = "refreshTime")] pub refresh_time : f32 ,
 }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))]
+    #[::unity2::class(
+        namespace = "",
+        name = "AkObstructionOcclusion.ObstructionOcclusionValue"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct AkObstructionOcclusion_ObstructionOcclusionValue {
+        #[rename(name = "currentValue")]
+        pub current_value: f32,
+        #[rename(name = "targetValue")]
+        pub target_value: f32,
+    }
 }
 
 #[cfg(feature = "root-akobstructionocclusion-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akobstructionocclusion")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , "Update" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: AkObstructionOcclusion_ObstructionOcclusionValue,
-        fade_rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkObstructionOcclusion_ObstructionOcclusionValue,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
-        inner(this, fade_rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkObstructionOcclusion_ObstructionOcclusionValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkObstructionOcclusion_ObstructionOcclusionValue,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akobstructionocclusion")]
-pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods:
-    IAkObstructionOcclusion_ObstructionOcclusionValue
-{
-    #[doc = "`Update(f32)` overload"]
-    fn update(self, fade_rate: impl ::core::convert::Into<f32>) -> bool {
-        unsafe {
-            let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(fade_rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akobstructionocclusion")]
-impl<__T: IAkObstructionOcclusion_ObstructionOcclusionValue>
-    IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T
-{
-}
-
-#[cfg(feature = "root-akobstructionocclusion")]
-impl AkObstructionOcclusion_ObstructionOcclusionValue {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkObstructionOcclusion_ObstructionOcclusionValue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-akobstructionocclusion")]
 #[doc(hidden)]
@@ -587,6 +462,131 @@ impl AkObstructionOcclusion {
             )
         });
         <Self as IAkObstructionOcclusionMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akobstructionocclusion")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , "Update" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: AkObstructionOcclusion_ObstructionOcclusionValue,
+        fade_rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AkObstructionOcclusion_ObstructionOcclusionValue,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, fade_rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkObstructionOcclusion_ObstructionOcclusionValue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkObstructionOcclusion_ObstructionOcclusionValue,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akobstructionocclusion")]
+pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods:
+    IAkObstructionOcclusion_ObstructionOcclusionValue
+{
+    #[doc = "`Update(f32)` overload"]
+    fn update(self, fade_rate: impl ::core::convert::Into<f32>) -> bool {
+        unsafe {
+            let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::update(
+                __receiver,
+                ::core::convert::Into::into(fade_rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < AkObstructionOcclusion_ObstructionOcclusionValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkObstructionOcclusion_ObstructionOcclusionValue_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akobstructionocclusion")]
+impl<__T: IAkObstructionOcclusion_ObstructionOcclusionValue>
+    IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T
+{
+}
+
+#[cfg(feature = "root-akobstructionocclusion")]
+impl AkObstructionOcclusion_ObstructionOcclusionValue {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkObstructionOcclusion_ObstructionOcclusionValue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods>::ctor(this);
         this
     }
 }

@@ -12,28 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
-    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
-    #[parent(crate::system::object::Object)]
-    pub struct FishingGameSequence_Ripple {
-        #[rename(name = "m_obj")]
-        pub m_obj: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BasePos")]
-        pub m_base_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_SizeList")]
-        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
-        #[rename(name = "m_BaseHeight")]
-        pub m_base_height: f32,
-        #[rename(name = "m_PopIntervalBaseTime")]
-        pub m_pop_interval_base_time: f32,
-        #[rename(name = "m_PopRandomMax")]
-        pub m_pop_random_max: f32,
-        #[rename(name = "m_Timer")]
-        pub m_timer: f32,
-        #[rename(name = "m_parentNode")]
-        pub m_parent_node: crate::unity_engine::transform::Transform,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_FishingAngleState.md"))]
     #[repr(C)]
     #[derive(
@@ -90,82 +68,26 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FishingGameSequence_AnnounceType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.AnnounceType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FishingGameSequence_AnnounceType {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fast() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn slow() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct FishingGameSequence_LureRoot {
-        pub x: f32,
-        pub y: f32,
-        pub frame: f32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingGameSequence.LureRoot";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingGameSequence_LureRoot {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishinggamesequence/FishingGameSequence_Ripple.md"))]
+    #[::unity2::class(namespace = "App", name = "FishingGameSequence.Ripple")]
+    #[parent(crate::system::object::Object)]
+    pub struct FishingGameSequence_Ripple {
+        #[rename(name = "m_obj")]
+        pub m_obj: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BasePos")]
+        pub m_base_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_SizeList")]
+        pub m_size_list: crate::system::collections::generic::list_1::List_1<i32>,
+        #[rename(name = "m_BaseHeight")]
+        pub m_base_height: f32,
+        #[rename(name = "m_PopIntervalBaseTime")]
+        pub m_pop_interval_base_time: f32,
+        #[rename(name = "m_PopRandomMax")]
+        pub m_pop_random_max: f32,
+        #[rename(name = "m_Timer")]
+        pub m_timer: f32,
+        #[rename(name = "m_parentNode")]
+        pub m_parent_node: crate::unity_engine::transform::Transform,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_Label.md"))]
@@ -659,6 +581,84 @@ mod __types {
         #[rename(name = "m_AssistDamage")]
         pub m_assist_damage: f32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_LureRoot.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct FishingGameSequence_LureRoot {
+        pub x: f32,
+        pub y: f32,
+        pub frame: f32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_LureRoot {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.LureRoot";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_LureRoot {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishinggamesequence/FishingGameSequence_AnnounceType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct FishingGameSequence_AnnounceType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingGameSequence_AnnounceType {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "FishingGameSequence.AnnounceType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingGameSequence_AnnounceType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl FishingGameSequence_AnnounceType {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fast() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn slow() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-fishinggamesequence-types")]
@@ -952,91 +952,6 @@ impl FishingGameSequence_Ripple {
         });
         <Self as IFishingGameSequence_RippleMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FishingGameSequence_LureRoot_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FishingGameSequence_LureRoot,
-        set_x: f32,
-        set_y: f32,
-        set_frame: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            FishingGameSequence_LureRoot,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, set_x, set_y, set_frame, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-fishinggamesequence")]
-impl FishingGameSequence_LureRoot {
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    pub fn ctor(
-        self,
-        set_x: impl ::core::convert::Into<f32>,
-        set_y: impl ::core::convert::Into<f32>,
-        set_frame: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __FishingGameSequence_LureRoot_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(set_x),
-                ::core::convert::Into::into(set_y),
-                ::core::convert::Into::into(set_frame),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 
@@ -5936,6 +5851,91 @@ impl FishingGameSequence {
         });
         <Self as IFishingGameSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FishingGameSequence_LureRoot_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FishingGameSequence_LureRoot as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FishingGameSequence_LureRoot,
+        set_x: f32,
+        set_y: f32,
+        set_frame: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            FishingGameSequence_LureRoot,
+            f32,
+            f32,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, set_x, set_y, set_frame, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-fishinggamesequence")]
+impl FishingGameSequence_LureRoot {
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    pub fn ctor(
+        self,
+        set_x: impl ::core::convert::Into<f32>,
+        set_y: impl ::core::convert::Into<f32>,
+        set_frame: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __FishingGameSequence_LureRoot_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(set_x),
+                ::core::convert::Into::into(set_y),
+                ::core::convert::Into::into(set_frame),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

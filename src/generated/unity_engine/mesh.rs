@@ -9,10 +9,31 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Mesh")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct Mesh {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Mesh_MeshDataArray {}
+
+    impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
+        const NAMESPACE: &'static str = "UnityEngine";
+
+        const NAME: &'static str = "Mesh.MeshDataArray";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Mesh_MeshDataArray {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshData.md"))]
     #[repr(C)]
@@ -42,35 +63,537 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct Mesh_MeshDataArray {}
-
-    impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
-        const NAMESPACE: &'static str = "UnityEngine";
-
-        const NAME: &'static str = "Mesh.MeshDataArray";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Mesh_MeshDataArray {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "Mesh")]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    pub struct Mesh {}
 }
 
 #[cfg(feature = "unity_engine-mesh-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-mesh")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Mesh_MeshDataArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_mesh_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshImpl",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_mesh_impl(
+        mesh: crate::unity_engine::mesh::Mesh,
+        data: ::unity2::IntPtr,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::mesh::Mesh,
+            ::unity2::IntPtr,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_mesh_impl::get_offset() as isize),
+        );
+        inner(mesh, data, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "get_Length",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "get_Length",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_length(
+        this: Mesh_MeshDataArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_get_length::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "Dispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn dispose(
+        this: Mesh_MeshDataArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_dispose::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_mesh_and_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshAndDispose",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshAndDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_mesh_and_dispose(
+        this: Mesh_MeshDataArray,
+        mesh: crate::unity_engine::mesh::Mesh,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            crate::unity_engine::mesh::Mesh,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_mesh_and_dispose::get_offset() as isize),
+        );
+        inner(this, mesh, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_apply_to_meshes_and_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: mesh :: Mesh > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                "ApplyToMeshesAndDispose",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    "ApplyToMeshesAndDispose",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn apply_to_meshes_and_dispose(
+        this: Mesh_MeshDataArray,
+        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_apply_to_meshes_and_dispose::get_offset() as isize),
+        );
+        inner(this, meshes, flags, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: Mesh_MeshDataArray,
+        mesh: crate::unity_engine::mesh::Mesh,
+        check_read_write: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            crate::unity_engine::mesh::Mesh,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, mesh, check_read_write, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::mesh::Mesh> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: Mesh_MeshDataArray,
+        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+        meshes_count: i32,
+        check_read_write: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            Mesh_MeshDataArray,
+            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(
+            this,
+            meshes,
+            meshes_count,
+            check_read_write,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_3(
+        this: Mesh_MeshDataArray,
+        meshes_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Mesh_MeshDataArray, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor_3::get_offset() as isize),
+            );
+        inner(this, meshes_count, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+impl Mesh_MeshDataArray {
+    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_mesh_impl(
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        data: impl ::core::convert::Into<::unity2::IntPtr>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_impl(
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+impl Mesh_MeshDataArray {
+    #[doc = "`get_Length()` overload"]
+    pub fn get_length(self) -> i32 {
+        unsafe { __Mesh_MeshDataArray_unity2_raw::get_length(self, ::core::option::Option::None) }
+    }
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(self) -> () {
+        unsafe { __Mesh_MeshDataArray_unity2_raw::dispose(self, ::core::option::Option::None) }
+    }
+    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_mesh_and_dispose(
+        self,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_and_dispose(
+                self,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    pub fn apply_to_meshes_and_dispose(
+        self,
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+        flags: impl ::core::convert::Into<
+            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+        >,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::apply_to_meshes_and_dispose(
+                self,
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(flags),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
+    pub fn ctor(
+        self,
+        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
+        check_read_write: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(mesh),
+                ::core::convert::Into::into(check_read_write),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
+    pub fn ctor_2(
+        self,
+        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
+        meshes_count: impl ::core::convert::Into<i32>,
+        check_read_write: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor_2(
+                self,
+                ::core::convert::Into::into(meshes),
+                ::core::convert::Into::into(meshes_count),
+                ::core::convert::Into::into(check_read_write),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    pub fn ctor_3(self, meshes_count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            __Mesh_MeshDataArray_unity2_raw::ctor_3(
+                self,
+                ::core::convert::Into::into(meshes_count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-mesh")]
 #[doc(hidden)]
@@ -13710,7 +14233,7 @@ mod __Mesh_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mesh as ::unity2::ClassIdentity>::class(),
                 "GetVertexAttribute_Injected",
@@ -13752,7 +14275,7 @@ mod __Mesh_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mesh as ::unity2::ClassIdentity>::class(),
                 "SetSubMesh_Injected",
@@ -13805,7 +14328,7 @@ mod __Mesh_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: submeshdescriptor :: SubMeshDescriptor as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mesh as ::unity2::ClassIdentity>::class(),
                 "GetSubMesh_Injected",
@@ -13857,7 +14380,7 @@ mod __Mesh_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mesh as ::unity2::ClassIdentity>::class(),
                 "get_bounds_Injected",
@@ -13907,7 +14430,7 @@ mod __Mesh_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Mesh as ::unity2::ClassIdentity>::class(),
                 "set_bounds_Injected",
@@ -19666,529 +20189,6 @@ impl Mesh {
         });
         <Self as IMeshMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg(feature = "unity_engine-mesh")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Mesh_MeshDataArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply_to_mesh_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                "ApplyToMeshImpl",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    "ApplyToMeshImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn apply_to_mesh_impl(
-        mesh: crate::unity_engine::mesh::Mesh,
-        data: ::unity2::IntPtr,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::IntPtr,
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_to_mesh_impl::get_offset() as isize),
-        );
-        inner(mesh, data, flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                "get_Length",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Length",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_length(
-        this: Mesh_MeshDataArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_length::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: Mesh_MeshDataArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mesh_MeshDataArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply_to_mesh_and_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: mesh :: Mesh as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                "ApplyToMeshAndDispose",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    "ApplyToMeshAndDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn apply_to_mesh_and_dispose(
-        this: Mesh_MeshDataArray,
-        mesh: crate::unity_engine::mesh::Mesh,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Mesh_MeshDataArray,
-            crate::unity_engine::mesh::Mesh,
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_to_mesh_and_dispose::get_offset() as isize),
-        );
-        inner(this, mesh, flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_apply_to_meshes_and_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: mesh :: Mesh > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: meshupdateflags :: MeshUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                "ApplyToMeshesAndDispose",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    "ApplyToMeshesAndDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn apply_to_meshes_and_dispose(
-        this: Mesh_MeshDataArray,
-        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Mesh_MeshDataArray,
-            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_to_meshes_and_dispose::get_offset() as isize),
-        );
-        inner(this, meshes, flags, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: Mesh_MeshDataArray,
-        mesh: crate::unity_engine::mesh::Mesh,
-        check_read_write: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Mesh_MeshDataArray,
-            crate::unity_engine::mesh::Mesh,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, mesh, check_read_write, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<crate::unity_engine::mesh::Mesh> as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: Mesh_MeshDataArray,
-        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-        meshes_count: i32,
-        check_read_write: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Mesh_MeshDataArray,
-            ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            meshes,
-            meshes_count,
-            check_read_write,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Mesh_MeshDataArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Mesh_MeshDataArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: Mesh_MeshDataArray,
-        meshes_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Mesh_MeshDataArray, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_3::get_offset() as isize),
-            );
-        inner(this, meshes_count, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-mesh")]
-impl Mesh_MeshDataArray {
-    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    pub fn apply_to_mesh_impl(
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        data: impl ::core::convert::Into<::unity2::IntPtr>,
-        flags: impl ::core::convert::Into<
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        >,
-    ) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_impl(
-                ::core::convert::Into::into(mesh),
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-mesh")]
-impl Mesh_MeshDataArray {
-    #[doc = "`get_Length()` overload"]
-    pub fn get_length(self) -> i32 {
-        unsafe { __Mesh_MeshDataArray_unity2_raw::get_length(self, ::core::option::Option::None) }
-    }
-    #[doc = "`Dispose()` overload"]
-    pub fn dispose(self) -> () {
-        unsafe { __Mesh_MeshDataArray_unity2_raw::dispose(self, ::core::option::Option::None) }
-    }
-    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    pub fn apply_to_mesh_and_dispose(
-        self,
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        flags: impl ::core::convert::Into<
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        >,
-    ) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::apply_to_mesh_and_dispose(
-                self,
-                ::core::convert::Into::into(mesh),
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    pub fn apply_to_meshes_and_dispose(
-        self,
-        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
-        flags: impl ::core::convert::Into<
-            crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-        >,
-    ) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::apply_to_meshes_and_dispose(
-                self,
-                ::core::convert::Into::into(meshes),
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
-    pub fn ctor(
-        self,
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        check_read_write: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(mesh),
-                ::core::convert::Into::into(check_read_write),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
-    pub fn ctor_2(
-        self,
-        meshes: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::mesh::Mesh>>,
-        meshes_count: impl ::core::convert::Into<i32>,
-        check_read_write: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::ctor_2(
-                self,
-                ::core::convert::Into::into(meshes),
-                ::core::convert::Into::into(meshes_count),
-                ::core::convert::Into::into(check_read_write),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(i32)` overload"]
-    pub fn ctor_3(self, meshes_count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __Mesh_MeshDataArray_unity2_raw::ctor_3(
-                self,
-                ::core::convert::Into::into(meshes_count),
-                ::core::option::Option::None,
-            )
-        }
     }
 }
 

@@ -10,6 +10,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialListMenuSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MaterialListMenuSequence {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -53,11 +58,6 @@ mod __types {
             Self { value: 1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialListMenuSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MaterialListMenuSequence {}
 }
 
 #[cfg(feature = "app-materiallistmenusequence-types")]

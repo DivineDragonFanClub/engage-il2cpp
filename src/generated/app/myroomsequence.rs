@@ -18,14 +18,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -34,39 +26,18 @@ mod __types {
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo"
+    )]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceUnitMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct MyRoomSequence_RelianceUnitMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsequence :: MyRoomSequence >)]
-    pub struct MyRoomSequence {
-        #[rename(name = "m_TopMenuResult")]
-        pub m_top_menu_result: crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult,
-        #[rename(name = "m_RecallMenuResult")]
-        pub m_recall_menu_result: crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult,
-        #[rename(name = "m_MenuItemResult")]
-        pub m_menu_item_result: crate::app::basicmenu::BasicMenu_Result,
-        #[static_field]
-        #[rename(name = "m_relianceActiveMenu")]
-        pub m_reliance_active_menu: crate::app::myroomsequence::MyRoomSequence_RelianceUnitMenuItem,
-        #[rename(name = "messName")]
-        pub mess_name: ::unity2::Il2CppString,
-        #[rename(name = "demoName")]
-        pub demo_name: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence.SleepConfirmDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct MyRoomSequence_SleepConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceListMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct MyRoomSequence_RelianceListMenu {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsequence/MyRoomSequence_Label.md"))]
     #[repr(C)]
@@ -159,88 +130,39 @@ mod __types {
             Self { value: 13 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsequence :: MyRoomSequence >)]
+    pub struct MyRoomSequence {
+        #[rename(name = "m_TopMenuResult")]
+        pub m_top_menu_result: crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult,
+        #[rename(name = "m_RecallMenuResult")]
+        pub m_recall_menu_result: crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult,
+        #[rename(name = "m_MenuItemResult")]
+        pub m_menu_item_result: crate::app::basicmenu::BasicMenu_Result,
+        #[static_field]
+        #[rename(name = "m_relianceActiveMenu")]
+        pub m_reliance_active_menu: crate::app::myroomsequence::MyRoomSequence_RelianceUnitMenuItem,
+        #[rename(name = "messName")]
+        pub mess_name: ::unity2::Il2CppString,
+        #[rename(name = "demoName")]
+        pub demo_name: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence.SleepConfirmDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct MyRoomSequence_SleepConfirmDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceListMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct MyRoomSequence_RelianceListMenu {}
 }
 
 #[cfg(feature = "app-myroomsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-myroomsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-myroomsequence")]
-pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods:
-    IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl<__T: IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo>
-    IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-myroomsequence")]
 #[doc(hidden)]
@@ -359,6 +281,84 @@ impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
             )
         });
         <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-myroomsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-myroomsequence")]
+pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods:
+    IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl<__T: IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo>
+    IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods for __T
+{
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
         this
     }
 }

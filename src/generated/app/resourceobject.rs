@@ -15,6 +15,91 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ResourceObject_Callback {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ResourceObject_Sequence {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "ResourceObject.Sequence";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for ResourceObject_Sequence {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl ResourceObject_Sequence {
+        pub fn start() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))]
+    #[::unity2::class(namespace = "App", name = "ResourceObject")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ResourceObject {
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "m_StartCallback")]
+        pub m_start_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_TickCallback")]
+        pub m_tick_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_EndCallback")]
+        pub m_end_callback: crate::app::resourceobject::ResourceObject_Callback,
+        #[rename(name = "m_Coroutine")]
+        pub m_coroutine: crate::app::resourceobject::ResourceObject_Coroutine,
+        #[rename(name = "m_BindProc")]
+        pub m_bind_proc: crate::app::procinst::ProcInst,
+        #[rename(name = "m_BindHolder")]
+        pub m_bind_holder: crate::app::bindholder::BindHolder,
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::resourceobject::ResourceObject_Sequence,
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::app::resourceobject::ResourceObject_Flags,
+        #[rename(name = "m_DelayTime")]
+        pub m_delay_time: f32,
+        #[rename(name = "m_BindTime")]
+        pub m_bind_time: f32,
+        #[rename(name = "m_LifeTime")]
+        pub m_life_time: f32,
+        #[rename(name = "m_SoundLabel")]
+        pub m_sound_label: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -71,99 +156,184 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ResourceObject {
-        #[rename(name = "m_Handle")]
-        pub m_handle: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "m_StartCallback")]
-        pub m_start_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_TickCallback")]
-        pub m_tick_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_EndCallback")]
-        pub m_end_callback: crate::app::resourceobject::ResourceObject_Callback,
-        #[rename(name = "m_Coroutine")]
-        pub m_coroutine: crate::app::resourceobject::ResourceObject_Coroutine,
-        #[rename(name = "m_BindProc")]
-        pub m_bind_proc: crate::app::procinst::ProcInst,
-        #[rename(name = "m_BindHolder")]
-        pub m_bind_holder: crate::app::bindholder::BindHolder,
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::resourceobject::ResourceObject_Sequence,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::app::resourceobject::ResourceObject_Flags,
-        #[rename(name = "m_DelayTime")]
-        pub m_delay_time: f32,
-        #[rename(name = "m_BindTime")]
-        pub m_bind_time: f32,
-        #[rename(name = "m_LifeTime")]
-        pub m_life_time: f32,
-        #[rename(name = "m_SoundLabel")]
-        pub m_sound_label: ::unity2::Il2CppString,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Coroutine.md"))]
     #[::unity2::class(namespace = "App", name = "ResourceObject.Coroutine")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ResourceObject_Coroutine {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceobject/ResourceObject_Callback.md"))]
-    #[::unity2::class(namespace = "App", name = "ResourceObject.Callback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ResourceObject_Callback {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceobject/ResourceObject_Sequence.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ResourceObject_Sequence {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for ResourceObject_Sequence {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "ResourceObject.Sequence";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for ResourceObject_Sequence {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl ResourceObject_Sequence {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 2 }
-        }
-    }
 }
 
 #[cfg(feature = "app-resourceobject-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-resourceobject")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ResourceObject_Callback_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ResourceObject_Callback,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceObject_Callback,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ResourceObject_Callback,
+        go: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ResourceObject_Callback,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, go, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+pub trait IResourceObject_CallbackMethods: IResourceObject_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Callback_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn invoke(
+        self,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ResourceObject_Callback_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(go),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-resourceobject")]
+impl<__T: IResourceObject_Callback> IResourceObject_CallbackMethods for __T {}
+
+#[cfg(feature = "app-resourceobject")]
+impl ResourceObject_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceObject_Callback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceObject_CallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-resourceobject")]
 #[doc(hidden)]
@@ -2951,176 +3121,6 @@ impl ResourceObject_Coroutine {
             )
         });
         <Self as IResourceObject_CoroutineMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-resourceobject")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ResourceObject_Callback_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ResourceObject_Callback,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ResourceObject_Callback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ResourceObject_Callback as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ResourceObject_Callback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: ResourceObject_Callback,
-        go: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ResourceObject_Callback,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, go, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-resourceobject")]
-pub trait IResourceObject_CallbackMethods: IResourceObject_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceObject_Callback_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn invoke(
-        self,
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <ResourceObject_Callback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ResourceObject_Callback_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(go),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-resourceobject")]
-impl<__T: IResourceObject_Callback> IResourceObject_CallbackMethods for __T {}
-
-#[cfg(feature = "app-resourceobject")]
-impl ResourceObject_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ResourceObject_Callback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IResourceObject_CallbackMethods>::ctor(this, object, method);
         this
     }
 }

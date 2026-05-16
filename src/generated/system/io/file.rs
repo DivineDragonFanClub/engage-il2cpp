@@ -618,7 +618,7 @@ mod __File_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <*mut crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
+                <crate::system::io::monoiostat::MonoIOStat as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];

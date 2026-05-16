@@ -11,20 +11,157 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CriticalParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.CriticalParam")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.SimpleHitParam")]
+    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
+    pub struct BattleDetail_SimpleHitParam {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AvoidParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.AvoidParam")]
     #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_CriticalParam {}
+    pub struct BattleDetail_AvoidParam {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CommandParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.CommandParam")]
+    #[parent(crate::app::battleparam::BattleParam)]
+    pub struct BattleDetail_CommandParam {
+        #[rename(name = "m_Command")]
+        pub m_command: crate::app::calculatorcommand::CalculatorCommand,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_HitParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.HitParam")]
+    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+    pub struct BattleDetail_HitParam {
+        #[rename(name = "m_InterferenceRod")]
+        pub m_interference_rod: crate::app::calculatorcommand::CalculatorCommand,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleCriticalParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.SimpleCriticalParam")]
+    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
+    pub struct BattleDetail_SimpleCriticalParam {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AttackParam.md"))]
     #[::unity2::class(namespace = "App", name = "BattleDetail.AttackParam")]
     #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
     pub struct BattleDetail_AttackParam {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SecureParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.SecureParam")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.UnitAttackParam")]
     #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_SecureParam {}
+    pub struct BattleDetail_UnitAttackParam {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledetail/BattleDetail_BattleParams.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct BattleDetail_BattleParams {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for BattleDetail_BattleParams {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "BattleDetail.BattleParams";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for BattleDetail_BattleParams {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl BattleDetail_BattleParams {
+        pub fn unit_attack() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn unit_defense() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn attack() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn defense() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn hit() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn avoid() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn critical() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn secure() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn continuous() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn simple_power() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn simple_hit() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn simple_critical() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 12 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitDefenseParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.UnitDefenseParam")]
+    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+    pub struct BattleDetail_UnitDefenseParam {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_ContinuousParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.ContinuousParam")]
+    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+    pub struct BattleDetail_ContinuousParam {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DetailParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.DetailParam")]
+    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
+    pub struct BattleDetail_DetailParam {
+        #[rename(name = "m_Detail")]
+        pub m_detail: crate::app::battledetail::BattleDetail,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CriticalParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.CriticalParam")]
+    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+    pub struct BattleDetail_CriticalParam {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledetail/BattleDetail_BaseParams.md"))]
     #[repr(C)]
@@ -146,140 +283,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledetail/BattleDetail_BattleParams.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct BattleDetail_BattleParams {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for BattleDetail_BattleParams {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "BattleDetail.BattleParams";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for BattleDetail_BattleParams {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl BattleDetail_BattleParams {
-        pub fn unit_attack() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn unit_defense() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn attack() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn defense() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn hit() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn avoid() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn critical() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn secure() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn continuous() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn simple_power() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn simple_hit() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn simple_critical() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 12 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AvoidParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.AvoidParam")]
-    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_AvoidParam {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DetailParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.DetailParam")]
-    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-    pub struct BattleDetail_DetailParam {
-        #[rename(name = "m_Detail")]
-        pub m_detail: crate::app::battledetail::BattleDetail,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimplePowerParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.SimplePowerParam")]
-    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-    pub struct BattleDetail_SimplePowerParam {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.UnitAttackParam")]
-    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_UnitAttackParam {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitDefenseParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.UnitDefenseParam")]
-    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_UnitDefenseParam {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleCriticalParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.SimpleCriticalParam")]
-    #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-    pub struct BattleDetail_SimpleCriticalParam {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_HitParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.HitParam")]
-    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_HitParam {
-        #[rename(name = "m_InterferenceRod")]
-        pub m_interference_rod: crate::app::calculatorcommand::CalculatorCommand,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DefenseParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.DefenseParam")]
-    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_DefenseParam {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail.md"))]
     #[::unity2::class(namespace = "App", name = "BattleDetail")]
     #[parent(crate::app::pool::Pool_Node)]
@@ -292,23 +295,20 @@ mod __types {
         pub m_active_skill: crate::app::skillarray::SkillArray,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_ContinuousParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.ContinuousParam")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SecureParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.SecureParam")]
     #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-    pub struct BattleDetail_ContinuousParam {}
+    pub struct BattleDetail_SecureParam {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CommandParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.CommandParam")]
-    #[parent(crate::app::battleparam::BattleParam)]
-    pub struct BattleDetail_CommandParam {
-        #[rename(name = "m_Command")]
-        pub m_command: crate::app::calculatorcommand::CalculatorCommand,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DefenseParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.DefenseParam")]
+    #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+    pub struct BattleDetail_DefenseParam {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleDetail.SimpleHitParam")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimplePowerParam.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleDetail.SimplePowerParam")]
     #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-    pub struct BattleDetail_SimpleHitParam {}
+    pub struct BattleDetail_SimplePowerParam {}
 }
 
 #[cfg(feature = "app-battledetail-types")]
@@ -317,7 +317,7 @@ pub use __types::*;
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_CriticalParam_unity2_raw {
+mod __BattleDetail_SimpleHitParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -326,12 +326,11 @@ mod __BattleDetail_CriticalParam_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_CriticalParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                0,
                 param_types,
                 false,
             )
@@ -341,7 +340,7 @@ mod __BattleDetail_CriticalParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_CriticalParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -354,12 +353,225 @@ mod __BattleDetail_CriticalParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_CriticalParam,
+        this: BattleDetail_SimpleHitParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleDetail_SimpleHitParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
+                "get_Kind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
+                    "get_Kind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_kind(
+        this: BattleDetail_SimpleHitParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleparam::BattleParam_Kinds {
+        let inner: extern "C" fn(
+            BattleDetail_SimpleHitParam,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleparam::BattleParam_Kinds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_kind::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BattleDetail_SimpleHitParam,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_SimpleHitParam,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+pub trait IBattleDetail_SimpleHitParamMethods: IBattleDetail_SimpleHitParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleHitParam_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Kind()` overload"]
+    fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleHitParam_unity2_raw::get_kind(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calculate(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleHitParam_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+impl<__T: IBattleDetail_SimpleHitParam> IBattleDetail_SimpleHitParamMethods for __T {}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_SimpleHitParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_SimpleHitParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_SimpleHitParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleDetail_AvoidParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleDetail_AvoidParam,
         detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_CriticalParam,
+            BattleDetail_AvoidParam,
             crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -369,10 +581,60 @@ mod __BattleDetail_CriticalParam_unity2_raw {
         );
         inner(this, detail, __unity2_method_info)
     }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BattleDetail_AvoidParam,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_AvoidParam,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_CriticalParamMethods: IBattleDetail_CriticalParam {
+pub trait IBattleDetail_AvoidParamMethods: IBattleDetail_AvoidParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     fn ctor(
         self,
@@ -380,12 +642,29 @@ pub trait IBattleDetail_CriticalParamMethods: IBattleDetail_CriticalParam {
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_CriticalParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_AvoidParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_CriticalParam_unity2_raw::ctor(
+            __BattleDetail_AvoidParam_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(detail),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calculate(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver =
+                <BattleDetail_AvoidParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_AvoidParam_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(side),
                 ::core::option::Option::None,
             )
         }
@@ -393,20 +672,691 @@ pub trait IBattleDetail_CriticalParamMethods: IBattleDetail_CriticalParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_CriticalParam> IBattleDetail_CriticalParamMethods for __T {}
+impl<__T: IBattleDetail_AvoidParam> IBattleDetail_AvoidParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_CriticalParam {
+impl BattleDetail_AvoidParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_CriticalParam),
+                ::core::stringify!(BattleDetail_AvoidParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_CriticalParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_AvoidParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleDetail_CommandParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleDetail_CommandParam,
+        command: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleDetail_CommandParam,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, command, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_command {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
+                "get_Command",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
+                    "get_Command",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_command(
+        this: BattleDetail_CommandParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::calculatorcommand::CalculatorCommand {
+        let inner: extern "C" fn(
+            BattleDetail_CommandParam,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::calculatorcommand::CalculatorCommand = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_command::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
+                "Get",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: BattleDetail_CommandParam,
+        name: ::unity2::Il2CppString,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_CommandParam,
+            ::unity2::Il2CppString,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, name, side, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BattleDetail_CommandParam,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_CommandParam,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+pub trait IBattleDetail_CommandParamMethods: IBattleDetail_CommandParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, command: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_CommandParam_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(command),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Command()` overload"]
+    fn get_command(self) -> crate::app::calculatorcommand::CalculatorCommand {
+        unsafe {
+            let __receiver =
+                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_CommandParam_unity2_raw::get_command(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn get(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver =
+                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_CommandParam_unity2_raw::get(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calculate(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver =
+                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_CommandParam_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+impl<__T: IBattleDetail_CommandParam> IBattleDetail_CommandParamMethods for __T {}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_CommandParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(command: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_CommandParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_CommandParamMethods>::ctor(this, command);
+        this
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleDetail_HitParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_HitParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_HitParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleDetail_HitParam,
+        detail: crate::app::battledetail::BattleDetail,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            BattleDetail_HitParam,
+            crate::app::battledetail::BattleDetail,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, detail, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_HitParam as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_HitParam as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BattleDetail_HitParam,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_HitParam,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+pub trait IBattleDetail_HitParamMethods: IBattleDetail_HitParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    fn ctor(
+        self,
+        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BattleDetail_HitParam as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BattleDetail_HitParam_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(detail),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calculate(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver = <BattleDetail_HitParam as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BattleDetail_HitParam_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+impl<__T: IBattleDetail_HitParam> IBattleDetail_HitParamMethods for __T {}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_HitParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_HitParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_HitParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleDetail_SimpleCriticalParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleDetail_SimpleCriticalParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleDetail_SimpleCriticalParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_kind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
+                "get_Kind",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
+                    "get_Kind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_kind(
+        this: BattleDetail_SimpleCriticalParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::battleparam::BattleParam_Kinds {
+        let inner: extern "C" fn(
+            BattleDetail_SimpleCriticalParam,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::battleparam::BattleParam_Kinds = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_kind::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calculate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
+                "Calculate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
+                    "Calculate",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn calculate(
+        this: BattleDetail_SimpleCriticalParam,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            BattleDetail_SimpleCriticalParam,
+            crate::app::battleinfoside::BattleInfoSide,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_calculate::get_offset() as isize),
+        );
+        inner(this, side, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+pub trait IBattleDetail_SimpleCriticalParamMethods: IBattleDetail_SimpleCriticalParam {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleCriticalParam_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Kind()` overload"]
+    fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleCriticalParam_unity2_raw::get_kind(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    fn calculate(
+        self,
+        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
+    ) -> f32 {
+        unsafe {
+            let __receiver =
+                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_SimpleCriticalParam_unity2_raw::calculate(
+                __receiver,
+                ::core::convert::Into::into(side),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+impl<__T: IBattleDetail_SimpleCriticalParam> IBattleDetail_SimpleCriticalParamMethods for __T {}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_SimpleCriticalParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_SimpleCriticalParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_SimpleCriticalParamMethods>::ctor(this);
         this
     }
 }
@@ -578,7 +1528,7 @@ impl BattleDetail_AttackParam {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_SecureParam_unity2_raw {
+mod __BattleDetail_UnitAttackParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -590,7 +1540,7 @@ mod __BattleDetail_SecureParam_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SecureParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_UnitAttackParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -602,7 +1552,7 @@ mod __BattleDetail_SecureParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SecureParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_UnitAttackParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -615,12 +1565,12 @@ mod __BattleDetail_SecureParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_SecureParam,
+        this: BattleDetail_UnitAttackParam,
         detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_SecureParam,
+            BattleDetail_UnitAttackParam,
             crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -633,7 +1583,7 @@ mod __BattleDetail_SecureParam_unity2_raw {
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_SecureParamMethods: IBattleDetail_SecureParam {
+pub trait IBattleDetail_UnitAttackParamMethods: IBattleDetail_UnitAttackParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     fn ctor(
         self,
@@ -641,10 +1591,10 @@ pub trait IBattleDetail_SecureParamMethods: IBattleDetail_SecureParam {
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_SecureParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_UnitAttackParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_SecureParam_unity2_raw::ctor(
+            __BattleDetail_UnitAttackParam_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(detail),
                 ::core::option::Option::None,
@@ -654,20 +1604,20 @@ pub trait IBattleDetail_SecureParamMethods: IBattleDetail_SecureParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_SecureParam> IBattleDetail_SecureParamMethods for __T {}
+impl<__T: IBattleDetail_UnitAttackParam> IBattleDetail_UnitAttackParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_SecureParam {
+impl BattleDetail_UnitAttackParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SecureParam),
+                ::core::stringify!(BattleDetail_UnitAttackParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_SecureParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_UnitAttackParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -675,7 +1625,7 @@ impl BattleDetail_SecureParam {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_AvoidParam_unity2_raw {
+mod __BattleDetail_UnitDefenseParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -687,7 +1637,7 @@ mod __BattleDetail_AvoidParam_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_UnitDefenseParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -699,7 +1649,7 @@ mod __BattleDetail_AvoidParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_UnitDefenseParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -712,12 +1662,12 @@ mod __BattleDetail_AvoidParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_AvoidParam,
+        this: BattleDetail_UnitDefenseParam,
         detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_AvoidParam,
+            BattleDetail_UnitDefenseParam,
             crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -727,18 +1677,65 @@ mod __BattleDetail_AvoidParam_unity2_raw {
         );
         inner(this, detail, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-battledetail")]
+pub trait IBattleDetail_UnitDefenseParamMethods: IBattleDetail_UnitDefenseParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    fn ctor(
+        self,
+        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <BattleDetail_UnitDefenseParam as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __BattleDetail_UnitDefenseParam_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(detail),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+impl<__T: IBattleDetail_UnitDefenseParam> IBattleDetail_UnitDefenseParamMethods for __T {}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_UnitDefenseParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_UnitDefenseParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_UnitDefenseParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+#[cfg(feature = "app-battledetail")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleDetail_ContinuousParam_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
+                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::class(),
-                "Calculate",
+                <BattleDetail_ContinuousParam as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 1,
                 param_types,
                 false,
@@ -749,8 +1746,8 @@ mod __BattleDetail_AvoidParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_AvoidParam as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
+                    <BattleDetail_ContinuousParam as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -761,26 +1758,26 @@ mod __BattleDetail_AvoidParam_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn calculate(
-        this: BattleDetail_AvoidParam,
-        side: crate::app::battleinfoside::BattleInfoSide,
+    pub unsafe fn ctor(
+        this: BattleDetail_ContinuousParam,
+        detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_AvoidParam,
-            crate::app::battleinfoside::BattleInfoSide,
+            BattleDetail_ContinuousParam,
+            crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, side, __unity2_method_info)
+        inner(this, detail, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_AvoidParamMethods: IBattleDetail_AvoidParam {
+pub trait IBattleDetail_ContinuousParamMethods: IBattleDetail_ContinuousParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     fn ctor(
         self,
@@ -788,29 +1785,12 @@ pub trait IBattleDetail_AvoidParamMethods: IBattleDetail_AvoidParam {
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_AvoidParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_ContinuousParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_AvoidParam_unity2_raw::ctor(
+            __BattleDetail_ContinuousParam_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(detail),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calculate(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
-        unsafe {
-            let __receiver =
-                <BattleDetail_AvoidParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_AvoidParam_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(side),
                 ::core::option::Option::None,
             )
         }
@@ -818,20 +1798,20 @@ pub trait IBattleDetail_AvoidParamMethods: IBattleDetail_AvoidParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_AvoidParam> IBattleDetail_AvoidParamMethods for __T {}
+impl<__T: IBattleDetail_ContinuousParam> IBattleDetail_ContinuousParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_AvoidParam {
+impl BattleDetail_ContinuousParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_AvoidParam),
+                ::core::stringify!(BattleDetail_ContinuousParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_AvoidParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_ContinuousParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -1072,162 +2052,7 @@ impl BattleDetail_DetailParam {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_SimplePowerParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleDetail_SimplePowerParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleDetail_SimplePowerParam, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::class(),
-                "Calculate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calculate(
-        this: BattleDetail_SimplePowerParam,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            BattleDetail_SimplePowerParam,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_SimplePowerParamMethods: IBattleDetail_SimplePowerParam {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimplePowerParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimplePowerParam_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calculate(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimplePowerParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimplePowerParam_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_SimplePowerParam> IBattleDetail_SimplePowerParamMethods for __T {}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_SimplePowerParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SimplePowerParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_SimplePowerParamMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_UnitAttackParam_unity2_raw {
+mod __BattleDetail_CriticalParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1239,7 +2064,7 @@ mod __BattleDetail_UnitAttackParam_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_UnitAttackParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_CriticalParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -1251,7 +2076,7 @@ mod __BattleDetail_UnitAttackParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_UnitAttackParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_CriticalParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1264,12 +2089,12 @@ mod __BattleDetail_UnitAttackParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_UnitAttackParam,
+        this: BattleDetail_CriticalParam,
         detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_UnitAttackParam,
+            BattleDetail_CriticalParam,
             crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -1282,7 +2107,7 @@ mod __BattleDetail_UnitAttackParam_unity2_raw {
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_UnitAttackParamMethods: IBattleDetail_UnitAttackParam {
+pub trait IBattleDetail_CriticalParamMethods: IBattleDetail_CriticalParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     fn ctor(
         self,
@@ -1290,10 +2115,10 @@ pub trait IBattleDetail_UnitAttackParamMethods: IBattleDetail_UnitAttackParam {
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_UnitAttackParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_CriticalParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_UnitAttackParam_unity2_raw::ctor(
+            __BattleDetail_CriticalParam_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(detail),
                 ::core::option::Option::None,
@@ -1303,591 +2128,20 @@ pub trait IBattleDetail_UnitAttackParamMethods: IBattleDetail_UnitAttackParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_UnitAttackParam> IBattleDetail_UnitAttackParamMethods for __T {}
+impl<__T: IBattleDetail_CriticalParam> IBattleDetail_CriticalParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_UnitAttackParam {
+impl BattleDetail_CriticalParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_UnitAttackParam),
+                ::core::stringify!(BattleDetail_CriticalParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_UnitAttackParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_UnitDefenseParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_UnitDefenseParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_UnitDefenseParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleDetail_UnitDefenseParam,
-        detail: crate::app::battledetail::BattleDetail,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleDetail_UnitDefenseParam,
-            crate::app::battledetail::BattleDetail,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, detail, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_UnitDefenseParamMethods: IBattleDetail_UnitDefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    fn ctor(
-        self,
-        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleDetail_UnitDefenseParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_UnitDefenseParam_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(detail),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_UnitDefenseParam> IBattleDetail_UnitDefenseParamMethods for __T {}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_UnitDefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_UnitDefenseParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_UnitDefenseParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_SimpleCriticalParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleDetail_SimpleCriticalParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleDetail_SimpleCriticalParam, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
-                "get_Kind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
-                    "get_Kind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_kind(
-        this: BattleDetail_SimpleCriticalParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleparam::BattleParam_Kinds {
-        let inner: extern "C" fn(
-            BattleDetail_SimpleCriticalParam,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleparam::BattleParam_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::class(),
-                "Calculate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleCriticalParam as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calculate(
-        this: BattleDetail_SimpleCriticalParam,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            BattleDetail_SimpleCriticalParam,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_SimpleCriticalParamMethods: IBattleDetail_SimpleCriticalParam {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimpleCriticalParam_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Kind()` overload"]
-    fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimpleCriticalParam_unity2_raw::get_kind(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calculate(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimpleCriticalParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimpleCriticalParam_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_SimpleCriticalParam> IBattleDetail_SimpleCriticalParamMethods for __T {}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_SimpleCriticalParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SimpleCriticalParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_SimpleCriticalParamMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_HitParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_HitParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_HitParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleDetail_HitParam,
-        detail: crate::app::battledetail::BattleDetail,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleDetail_HitParam,
-            crate::app::battledetail::BattleDetail,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, detail, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_HitParam as ::unity2::ClassIdentity>::class(),
-                "Calculate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_HitParam as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calculate(
-        this: BattleDetail_HitParam,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            BattleDetail_HitParam,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_HitParamMethods: IBattleDetail_HitParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    fn ctor(
-        self,
-        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
-    ) -> () {
-        unsafe {
-            let __receiver = <BattleDetail_HitParam as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleDetail_HitParam_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(detail),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calculate(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
-        unsafe {
-            let __receiver = <BattleDetail_HitParam as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleDetail_HitParam_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_HitParam> IBattleDetail_HitParamMethods for __T {}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_HitParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_HitParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_HitParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_DefenseParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_DefenseParam as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_DefenseParam as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleDetail_DefenseParam,
-        detail: crate::app::battledetail::BattleDetail,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleDetail_DefenseParam,
-            crate::app::battledetail::BattleDetail,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, detail, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_DefenseParamMethods: IBattleDetail_DefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    fn ctor(
-        self,
-        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <BattleDetail_DefenseParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_DefenseParam_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(detail),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_DefenseParam> IBattleDetail_DefenseParamMethods for __T {}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_DefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_DefenseParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_DefenseParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_CriticalParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -6481,7 +6735,7 @@ impl BattleDetail {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_ContinuousParam_unity2_raw {
+mod __BattleDetail_SecureParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -6493,7 +6747,7 @@ mod __BattleDetail_ContinuousParam_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_ContinuousParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_SecureParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -6505,7 +6759,7 @@ mod __BattleDetail_ContinuousParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_ContinuousParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_SecureParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -6518,12 +6772,12 @@ mod __BattleDetail_ContinuousParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_ContinuousParam,
+        this: BattleDetail_SecureParam,
         detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_ContinuousParam,
+            BattleDetail_SecureParam,
             crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -6536,7 +6790,7 @@ mod __BattleDetail_ContinuousParam_unity2_raw {
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_ContinuousParamMethods: IBattleDetail_ContinuousParam {
+pub trait IBattleDetail_SecureParamMethods: IBattleDetail_SecureParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     fn ctor(
         self,
@@ -6544,10 +6798,10 @@ pub trait IBattleDetail_ContinuousParamMethods: IBattleDetail_ContinuousParam {
     ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_ContinuousParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_SecureParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_ContinuousParam_unity2_raw::ctor(
+            __BattleDetail_SecureParam_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(detail),
                 ::core::option::Option::None,
@@ -6557,20 +6811,20 @@ pub trait IBattleDetail_ContinuousParamMethods: IBattleDetail_ContinuousParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_ContinuousParam> IBattleDetail_ContinuousParamMethods for __T {}
+impl<__T: IBattleDetail_SecureParam> IBattleDetail_SecureParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_ContinuousParam {
+impl BattleDetail_SecureParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_ContinuousParam),
+                ::core::stringify!(BattleDetail_SecureParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_ContinuousParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_SecureParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -6578,7 +6832,7 @@ impl BattleDetail_ContinuousParam {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_CommandParam_unity2_raw {
+mod __BattleDetail_DefenseParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -6588,9 +6842,9 @@ mod __BattleDetail_CommandParam_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+                &[<crate::app::battledetail::BattleDetail as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_DefenseParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -6602,7 +6856,7 @@ mod __BattleDetail_CommandParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_DefenseParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -6615,235 +6869,38 @@ mod __BattleDetail_CommandParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_CommandParam,
-        command: ::unity2::Il2CppString,
+        this: BattleDetail_DefenseParam,
+        detail: crate::app::battledetail::BattleDetail,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            BattleDetail_CommandParam,
-            ::unity2::Il2CppString,
+            BattleDetail_DefenseParam,
+            crate::app::battledetail::BattleDetail,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, command, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_command {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
-                "get_Command",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
-                    "get_Command",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_command(
-        this: BattleDetail_CommandParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::calculatorcommand::CalculatorCommand {
-        let inner: extern "C" fn(
-            BattleDetail_CommandParam,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::calculatorcommand::CalculatorCommand = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_command::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
-                "Get",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get(
-        this: BattleDetail_CommandParam,
-        name: ::unity2::Il2CppString,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            BattleDetail_CommandParam,
-            ::unity2::Il2CppString,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
-        inner(this, name, side, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calculate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_CommandParam as ::unity2::ClassIdentity>::class(),
-                "Calculate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_CommandParam as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calculate(
-        this: BattleDetail_CommandParam,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            BattleDetail_CommandParam,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
-        );
-        inner(this, side, __unity2_method_info)
+        inner(this, detail, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_CommandParamMethods: IBattleDetail_CommandParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, command: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_CommandParam_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(command),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Command()` overload"]
-    fn get_command(self) -> crate::app::calculatorcommand::CalculatorCommand {
-        unsafe {
-            let __receiver =
-                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_CommandParam_unity2_raw::get_command(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn get(
+pub trait IBattleDetail_DefenseParamMethods: IBattleDetail_DefenseParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    fn ctor(
         self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
+        detail: impl ::core::convert::Into<crate::app::battledetail::BattleDetail>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_DefenseParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_CommandParam_unity2_raw::get(
+            __BattleDetail_DefenseParam_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn calculate(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> f32 {
-        unsafe {
-            let __receiver =
-                <BattleDetail_CommandParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_CommandParam_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(side),
+                ::core::convert::Into::into(detail),
                 ::core::option::Option::None,
             )
         }
@@ -6851,20 +6908,20 @@ pub trait IBattleDetail_CommandParamMethods: IBattleDetail_CommandParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_CommandParam> IBattleDetail_CommandParamMethods for __T {}
+impl<__T: IBattleDetail_DefenseParam> IBattleDetail_DefenseParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_CommandParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(command: ::unity2::Il2CppString) -> Self {
+impl BattleDetail_DefenseParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_CommandParam),
+                ::core::stringify!(BattleDetail_DefenseParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_CommandParamMethods>::ctor(this, command);
+        <Self as IBattleDetail_DefenseParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -6872,7 +6929,7 @@ impl BattleDetail_CommandParam {
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleDetail_SimpleHitParam_unity2_raw {
+mod __BattleDetail_SimplePowerParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -6883,7 +6940,7 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -6895,7 +6952,7 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -6908,10 +6965,10 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: BattleDetail_SimpleHitParam,
+        this: BattleDetail_SimplePowerParam,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(BattleDetail_SimpleHitParam, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(BattleDetail_SimplePowerParam, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -6921,53 +6978,6 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_kind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
-                "get_Kind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
-                    "get_Kind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_kind(
-        this: BattleDetail_SimpleHitParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleparam::BattleParam_Kinds {
-        let inner: extern "C" fn(
-            BattleDetail_SimpleHitParam,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleparam::BattleParam_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
     pub mod __lookup_calculate {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -6976,7 +6986,7 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::class(),
+                <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::class(),
                 "Calculate",
                 1,
                 param_types,
@@ -6988,7 +6998,7 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <BattleDetail_SimpleHitParam as ::unity2::ClassIdentity>::NAME,
+                    <BattleDetail_SimplePowerParam as ::unity2::ClassIdentity>::NAME,
                     "Calculate",
                     e
                 ),
@@ -7001,12 +7011,12 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
         }
     }
     pub unsafe fn calculate(
-        this: BattleDetail_SimpleHitParam,
+        this: BattleDetail_SimplePowerParam,
         side: crate::app::battleinfoside::BattleInfoSide,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
         let inner: extern "C" fn(
-            BattleDetail_SimpleHitParam,
+            BattleDetail_SimplePowerParam,
             crate::app::battleinfoside::BattleInfoSide,
             ::unity2::OptionalMethod,
         ) -> f32 = ::core::mem::transmute(
@@ -7019,25 +7029,15 @@ mod __BattleDetail_SimpleHitParam_unity2_raw {
 }
 
 #[cfg(feature = "app-battledetail")]
-pub trait IBattleDetail_SimpleHitParamMethods: IBattleDetail_SimpleHitParam {
+pub trait IBattleDetail_SimplePowerParamMethods: IBattleDetail_SimplePowerParam {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_SimplePowerParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_SimpleHitParam_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Kind()` overload"]
-    fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds {
-        unsafe {
-            let __receiver =
-                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleDetail_SimpleHitParam_unity2_raw::get_kind(
+            __BattleDetail_SimplePowerParam_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -7050,10 +7050,10 @@ pub trait IBattleDetail_SimpleHitParamMethods: IBattleDetail_SimpleHitParam {
     ) -> f32 {
         unsafe {
             let __receiver =
-                <BattleDetail_SimpleHitParam as ::unity2::FromIlInstance>::from_il_instance(
+                <BattleDetail_SimplePowerParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __BattleDetail_SimpleHitParam_unity2_raw::calculate(
+            __BattleDetail_SimplePowerParam_unity2_raw::calculate(
                 __receiver,
                 ::core::convert::Into::into(side),
                 ::core::option::Option::None,
@@ -7063,20 +7063,20 @@ pub trait IBattleDetail_SimpleHitParamMethods: IBattleDetail_SimpleHitParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl<__T: IBattleDetail_SimpleHitParam> IBattleDetail_SimpleHitParamMethods for __T {}
+impl<__T: IBattleDetail_SimplePowerParam> IBattleDetail_SimplePowerParamMethods for __T {}
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_SimpleHitParam {
+impl BattleDetail_SimplePowerParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SimpleHitParam),
+                ::core::stringify!(BattleDetail_SimplePowerParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_SimpleHitParamMethods>::ctor(this);
+        <Self as IBattleDetail_SimplePowerParamMethods>::ctor(this);
         this
     }
 }

@@ -23,6 +23,18 @@ mod __types {
         pub m_unit_index: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
+    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
+    #[parent(crate::system::object::Object)]
+    pub struct EventSequence_Coroutine {
+        #[rename(name = "m_Func")]
+        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        #[rename(name = "m_Args")]
+        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+        #[rename(name = "m_First")]
+        pub m_first: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,18 +73,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 0 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
-    #[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
-    #[parent(crate::system::object::Object)]
-    pub struct EventSequence_Coroutine {
-        #[rename(name = "m_Func")]
-        pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        #[rename(name = "m_Args")]
-        pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        #[rename(name = "m_First")]
-        pub m_first: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))]

@@ -13,15 +13,18 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.SetUnitEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetMenu_SetUnitEventHandler {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct RefreshUnitSetMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefreshUnitSetMenu.SelectFacilityEventHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefreshUnitSetMenu_SelectFacilityEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu")]
@@ -46,6 +49,11 @@ mod __types {
             ::unity2::Array<crate::app::unit::Unit>,
         >,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.SetUnitEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefreshUnitSetMenu_SetUnitEventHandler {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_Result2.md"))]
     #[repr(C)]
@@ -98,193 +106,10 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefreshUnitSetMenu.SelectFacilityEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefreshUnitSetMenu_SelectFacilityEventHandler {}
 }
 
 #[cfg(feature = "app-refreshunitsetmenu-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefreshUnitSetMenu_SetUnitEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetMenu_SetUnitEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RefreshUnitSetMenu_SetUnitEventHandler,
-        unit_index: i32,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefreshUnitSetMenu_SetUnitEventHandler,
-            i32,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, unit_index, unit, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-pub trait IRefreshUnitSetMenu_SetUnitEventHandlerMethods:
-    IRefreshUnitSetMenu_SetUnitEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetMenu_SetUnitEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(i32, crate::app::unit::Unit)` overload"]
-    fn invoke(
-        self,
-        unit_index: impl ::core::convert::Into<i32>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefreshUnitSetMenu_SetUnitEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-impl<__T: IRefreshUnitSetMenu_SetUnitEventHandler> IRefreshUnitSetMenu_SetUnitEventHandlerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-impl RefreshUnitSetMenu_SetUnitEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetMenu_SetUnitEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetMenu_SetUnitEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "app-refreshunitsetmenu")]
 #[doc(hidden)]
@@ -471,6 +296,159 @@ impl RefreshUnitSetMenu_DecideEventHandler {
 #[cfg(feature = "app-refreshunitsetmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetMenu_SelectFacilityEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefreshUnitSetMenu_SelectFacilityEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetMenu_SelectFacilityEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubfacilitydata::HubFacilityData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefreshUnitSetMenu_SelectFacilityEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RefreshUnitSetMenu_SelectFacilityEventHandler,
+        facility_data: crate::app::hubfacilitydata::HubFacilityData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefreshUnitSetMenu_SelectFacilityEventHandler,
+            crate::app::hubfacilitydata::HubFacilityData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_invoke::get_offset() as isize),
+        );
+        inner(this, facility_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:
+    IRefreshUnitSetMenu_SelectFacilityEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::app::hubfacilitydata::HubFacilityData)` overload"]
+    fn invoke(
+        self,
+        facility_data: impl ::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(facility_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+impl<__T: IRefreshUnitSetMenu_SelectFacilityEventHandler>
+    IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+impl RefreshUnitSetMenu_SelectFacilityEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetMenu_SelectFacilityEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RefreshUnitSetMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -554,7 +532,7 @@ mod __RefreshUnitSetMenu_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < * mut i32 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshunitsetmenu :: RefreshUnitSetMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshUnitSetMenu as ::unity2::ClassIdentity>::class(),
                 "CreateMenuItem",
@@ -2253,7 +2231,7 @@ impl RefreshUnitSetMenu {
 #[cfg(feature = "app-refreshunitsetmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
+mod __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2267,7 +2245,7 @@ mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetMenu_SelectFacilityEventHandler as ::unity2::ClassIdentity>::class(),
+                <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -2275,7 +2253,15 @@ mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2284,13 +2270,13 @@ mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RefreshUnitSetMenu_SelectFacilityEventHandler,
+        this: RefreshUnitSetMenu_SetUnitEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefreshUnitSetMenu_SelectFacilityEventHandler,
+            RefreshUnitSetMenu_SetUnitEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -2308,18 +2294,28 @@ mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubfacilitydata::HubFacilityData as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefreshUnitSetMenu_SelectFacilityEventHandler as ::unity2::ClassIdentity>::class(),
+                <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                1,
+                2,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefreshUnitSetMenu_SetUnitEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2328,26 +2324,28 @@ mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: RefreshUnitSetMenu_SelectFacilityEventHandler,
-        facility_data: crate::app::hubfacilitydata::HubFacilityData,
+        this: RefreshUnitSetMenu_SetUnitEventHandler,
+        unit_index: i32,
+        unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefreshUnitSetMenu_SelectFacilityEventHandler,
-            crate::app::hubfacilitydata::HubFacilityData,
+            RefreshUnitSetMenu_SetUnitEventHandler,
+            i32,
+            crate::app::unit::Unit,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, facility_data, __unity2_method_info)
+        inner(this, unit_index, unit, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refreshunitsetmenu")]
-pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:
-    IRefreshUnitSetMenu_SelectFacilityEventHandler
+pub trait IRefreshUnitSetMenu_SetUnitEventHandlerMethods:
+    IRefreshUnitSetMenu_SetUnitEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -2356,8 +2354,8 @@ pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw::ctor(
+            let __receiver = < RefreshUnitSetMenu_SetUnitEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -2365,16 +2363,18 @@ pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::hubfacilitydata::HubFacilityData)` overload"]
+    #[doc = "`Invoke(i32, crate::app::unit::Unit)` overload"]
     fn invoke(
         self,
-        facility_data: impl ::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>,
+        unit_index: impl ::core::convert::Into<i32>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> () {
         unsafe {
-            let __receiver = < RefreshUnitSetMenu_SelectFacilityEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw::invoke(
+            let __receiver = < RefreshUnitSetMenu_SetUnitEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(facility_data),
+                ::core::convert::Into::into(unit_index),
+                ::core::convert::Into::into(unit),
                 ::core::option::Option::None,
             )
         }
@@ -2382,23 +2382,23 @@ pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refreshunitsetmenu")]
-impl<__T: IRefreshUnitSetMenu_SelectFacilityEventHandler>
-    IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods for __T
+impl<__T: IRefreshUnitSetMenu_SetUnitEventHandler> IRefreshUnitSetMenu_SetUnitEventHandlerMethods
+    for __T
 {
 }
 
 #[cfg(feature = "app-refreshunitsetmenu")]
-impl RefreshUnitSetMenu_SelectFacilityEventHandler {
+impl RefreshUnitSetMenu_SetUnitEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetMenu_SelectFacilityEventHandler),
+                ::core::stringify!(RefreshUnitSetMenu_SetUnitEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefreshUnitSetMenu_SetUnitEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

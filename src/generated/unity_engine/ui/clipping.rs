@@ -32,7 +32,7 @@ mod __Clipping_unity2_raw {
                 <crate::system::collections::generic::list_1::List_1<
                     crate::unity_engine::ui::rectmask2d::RectMask2D,
                 > as ::unity2::IlType>::il_type(),
-                <*mut bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Clipping as ::unity2::ClassIdentity>::class(),

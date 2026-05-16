@@ -10,6 +10,11 @@ mod __types {
     use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/floattween_2/FloatTween_FloatTweenCallback_2.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "FloatTween.FloatTweenCallback")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
+    pub struct FloatTween_FloatTweenCallback_2 {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/floattween_2/FloatTween_2.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,15 +46,98 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/floattween_2/FloatTween_FloatTweenCallback_2.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "FloatTween.FloatTweenCallback")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-    pub struct FloatTween_FloatTweenCallback_2 {}
 }
 
 #[cfg(feature = "tm_pro-floattween_2-types")]
 pub use __types::*;
+
+#[cfg(feature = "tm_pro-floattween_2")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __FloatTween_FloatTweenCallback_2_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FloatTween_FloatTweenCallback_2 as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FloatTween_FloatTweenCallback_2 as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: FloatTween_FloatTweenCallback_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(FloatTween_FloatTweenCallback_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-floattween_2")]
+pub trait IFloatTween_FloatTweenCallback_2Methods: IFloatTween_FloatTweenCallback_2 {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <FloatTween_FloatTweenCallback_2 as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FloatTween_FloatTweenCallback_2_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-floattween_2")]
+impl<__T: IFloatTween_FloatTweenCallback_2> IFloatTween_FloatTweenCallback_2Methods for __T {}
+
+#[cfg(feature = "tm_pro-floattween_2")]
+impl FloatTween_FloatTweenCallback_2 {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FloatTween_FloatTweenCallback_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFloatTween_FloatTweenCallback_2Methods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "tm_pro-floattween_2")]
 #[doc(hidden)]
@@ -709,94 +797,6 @@ impl FloatTween_2 {
     #[doc = "`ValidTarget()` overload"]
     pub fn valid_target(self) -> bool {
         unsafe { __FloatTween_2_unity2_raw::valid_target(self, ::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FloatTween_FloatTweenCallback_2_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FloatTween_FloatTweenCallback_2 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FloatTween_FloatTweenCallback_2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: FloatTween_FloatTweenCallback_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(FloatTween_FloatTweenCallback_2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-pub trait IFloatTween_FloatTweenCallback_2Methods: IFloatTween_FloatTweenCallback_2 {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <FloatTween_FloatTweenCallback_2 as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FloatTween_FloatTweenCallback_2_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-impl<__T: IFloatTween_FloatTweenCallback_2> IFloatTween_FloatTweenCallback_2Methods for __T {}
-
-#[cfg(feature = "tm_pro-floattween_2")]
-impl FloatTween_FloatTweenCallback_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FloatTween_FloatTweenCallback_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFloatTween_FloatTweenCallback_2Methods>::ctor(this);
-        this
     }
 }
 

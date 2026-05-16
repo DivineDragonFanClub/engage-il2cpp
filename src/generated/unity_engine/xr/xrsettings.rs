@@ -9,6 +9,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))]
+    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRSettings")]
+    #[parent(crate::system::object::Object)]
+    pub struct XRSettings {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
     #[repr(C)]
     #[derive(
@@ -60,11 +65,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))]
-    #[::unity2::class(namespace = "UnityEngine.XR", name = "XRSettings")]
-    #[parent(crate::system::object::Object)]
-    pub struct XRSettings {}
 }
 
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]
@@ -585,7 +585,7 @@ mod __XRSettings_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< * mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSettings as ::unity2::ClassIdentity>::class(),
                 "get_eyeTextureDesc_Injected",

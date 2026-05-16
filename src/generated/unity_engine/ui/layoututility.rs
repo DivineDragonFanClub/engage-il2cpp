@@ -542,7 +542,7 @@ mod __LayoutUtility_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface , f32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < * mut crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: recttransform :: RectTransform as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface , f32 > as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: ui :: ilayoutelement_interface :: ILayoutElement_Interface as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutUtility as ::unity2::ClassIdentity>::class(),
                 "GetLayoutProperty",

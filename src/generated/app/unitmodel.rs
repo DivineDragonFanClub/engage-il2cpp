@@ -118,81 +118,6 @@ mod __types {
         pub m_sound: crate::app::assettable::AssetTable_Sound,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitModel_ResourceHandle {
-        #[rename(name = "BodyPrefab")]
-        pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "HeadPrefab")]
-        pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "RidePrefab")]
-        pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "LeftHandPrefab")]
-        pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "RightHandPrefab")]
-        pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-        #[rename(name = "BodyAnim")]
-        pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-        #[rename(name = "RideAnim")]
-        pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-        #[rename(name = "AccPrefabs")]
-        pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcegameobject::ResourceGameObject,
-        >,
-        #[rename(name = "AccLocators")]
-        pub acc_locators:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnitModel_LoadMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnitModel_LoadMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "UnitModel.LoadMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnitModel_LoadMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnitModel_LoadMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn loading() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn done() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -246,6 +171,54 @@ mod __types {
 
         pub fn dirty() -> Self {
             Self { value: 16 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnitModel_LoadMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnitModel_LoadMode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "UnitModel.LoadMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnitModel_LoadMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnitModel_LoadMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn loading() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn done() -> Self {
+            Self { value: 2 }
         }
     }
 
@@ -307,6 +280,33 @@ mod __types {
         pub fn bright() -> Self {
             Self { value: 32 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitModel_ResourceHandle {
+        #[rename(name = "BodyPrefab")]
+        pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "HeadPrefab")]
+        pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "RidePrefab")]
+        pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "LeftHandPrefab")]
+        pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "RightHandPrefab")]
+        pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+        #[rename(name = "BodyAnim")]
+        pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+        #[rename(name = "RideAnim")]
+        pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+        #[rename(name = "AccPrefabs")]
+        pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
+            crate::app::resourcegameobject::ResourceGameObject,
+        >,
+        #[rename(name = "AccLocators")]
+        pub acc_locators:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }
 }
 
@@ -2270,9 +2270,8 @@ mod __UnitModel_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitModel as ::unity2::ClassIdentity>::class(),
                 "TryDestroy",

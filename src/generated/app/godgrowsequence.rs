@@ -10,22 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GodGrowSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GodGrowSequence {
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Unit")]
-        pub m_unit: crate::app::unit::Unit,
-        #[rename(name = "m_Exp")]
-        pub m_exp: i32,
-        #[rename(name = "m_Dirty")]
-        pub m_dirty: i32,
-        #[rename(name = "m_OldLevel")]
-        pub m_old_level: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowsequence/GodGrowSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -68,6 +52,22 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowsequence/GodGrowSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GodGrowSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GodGrowSequence {
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Unit")]
+        pub m_unit: crate::app::unit::Unit,
+        #[rename(name = "m_Exp")]
+        pub m_exp: i32,
+        #[rename(name = "m_Dirty")]
+        pub m_dirty: i32,
+        #[rename(name = "m_OldLevel")]
+        pub m_old_level: i32,
     }
 }
 

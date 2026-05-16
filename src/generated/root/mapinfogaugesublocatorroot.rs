@@ -13,171 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_BreakEffectKind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        const NAMESPACE: &'static str = "";
-
-        const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.BreakEffectKind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn flash() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn solid() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot.md"))]
-    #[::unity2::class(namespace = "", name = "MapInfoGaugeSubLocatorRoot")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MapInfoGaugeSubLocatorRoot {
-        #[static_field]
-        #[rename(name = "HpStockMax")]
-        pub hp_stock_max: i32,
-        #[rename(name = "m_OnMapStatuses")]
-        pub m_on_map_statuses: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_Images")]
-        pub m_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-        #[rename(name = "m_BaseBalloonPos")]
-        pub m_base_balloon_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_BaseColor")]
-        pub m_base_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_UnitScreenPosLocalScale")]
-        pub m_unit_screen_pos_local_scale: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_ScreenHalf")]
-        pub m_screen_half: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_StateList")]
-        pub m_state_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::mapuigauge::MapUIGauge_IconIndex,
-        >,
-        #[rename(name = "m_BalloonList")]
-        pub m_balloon_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::mapuigauge::MapUIGauge_IconIndex,
-        >,
-        #[rename(name = "m_HpBeforeBattle")]
-        pub m_hp_before_battle: i32,
-        #[rename(name = "m_HpAfterBattle")]
-        pub m_hp_after_battle: i32,
-        #[rename(name = "m_IsBreakAfterBattle")]
-        pub m_is_break_after_battle: bool,
-        #[rename(name = "m_IsSuppressForHpStock")]
-        pub m_is_suppress_for_hp_stock: bool,
-        #[rename(name = "m_IsComplete")]
-        pub m_is_complete: bool,
-        #[rename(name = "m_Weapon")]
-        pub m_weapon: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Break")]
-        pub m_break: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Rod")]
-        pub m_rod: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_Balloon")]
-        pub m_balloon: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_FadeBalloon")]
-        pub m_fade_balloon: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RelayExit")]
-        pub m_relay_exit: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_SkillEffect")]
-        pub m_skill_effect: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_FadeSkillEffect")]
-        pub m_fade_skill_effect: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_DropItem")]
-        pub m_drop_item: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_GodFace")]
-        pub m_god_face: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_EngageCount")]
-        pub m_engage_count: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_ShineEngageCount")]
-        pub m_shine_engage_count: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_EngageCountMaxEffect")]
-        pub m_engage_count_max_effect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_ChargeEffect")]
-        pub m_charge_effect: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RecoveryEffect")]
-        pub m_recovery_effect: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_EngageCountCharge")]
-        pub m_engage_count_charge: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_EngageCountFull")]
-        pub m_engage_count_full: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TurnRecovery")]
-        pub m_turn_recovery: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HpGaugeBase")]
-        pub m_hp_gauge_base: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpGaugeFront")]
-        pub m_hp_gauge_front: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpGaugeDamage")]
-        pub m_hp_gauge_damage: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpGaugeShineDamage")]
-        pub m_hp_gauge_shine_damage: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpGaugeFrame")]
-        pub m_hp_gauge_frame: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpStock0")]
-        pub m_hp_stock0: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpStock1")]
-        pub m_hp_stock1: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpStock2")]
-        pub m_hp_stock2: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_HpStockEffect")]
-        pub m_hp_stock_effect: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RedStockBreakEffect")]
-        pub m_red_stock_break_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RedStockCreateEffect")]
-        pub m_red_stock_create_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BlueStockBreakEffect")]
-        pub m_blue_stock_break_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_BlueStockCreateEffect")]
-        pub m_blue_stock_create_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_LeftTop")]
-        pub m_left_top: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RightBottom")]
-        pub m_right_bottom: crate::unity_engine::transform::Transform,
-        #[rename(name = "m_RodBasePos")]
-        pub m_rod_base_pos: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_RodLocalOffset")]
-        pub m_rod_local_offset: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_OrigCountMaxScale")]
-        pub m_orig_count_max_scale: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_EngageTurnRecoveryEffectOffset")]
-        pub m_engage_turn_recovery_effect_offset: crate::unity_engine::vector3::Vector3,
-        #[rename(name = "m_EngageTurnFlipbook")]
-        pub m_engage_turn_flipbook: crate::app::flipbook::Flipbook,
-        #[rename(name = "m_HpStockFlipbook")]
-        pub m_hp_stock_flipbook: crate::app::flipbook::Flipbook,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_Parts.md"))]
     #[repr(C)]
     #[derive(
@@ -299,6 +134,171 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 21 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot.md"))]
+    #[::unity2::class(namespace = "", name = "MapInfoGaugeSubLocatorRoot")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapInfoGaugeSubLocatorRoot {
+        #[static_field]
+        #[rename(name = "HpStockMax")]
+        pub hp_stock_max: i32,
+        #[rename(name = "m_OnMapStatuses")]
+        pub m_on_map_statuses: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_Images")]
+        pub m_images: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+        #[rename(name = "m_BaseBalloonPos")]
+        pub m_base_balloon_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_BaseColor")]
+        pub m_base_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_UnitScreenPosLocalScale")]
+        pub m_unit_screen_pos_local_scale: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_ScreenHalf")]
+        pub m_screen_half: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_StateList")]
+        pub m_state_list: crate::system::collections::generic::list_1::List_1<
+            crate::root::mapuigauge::MapUIGauge_IconIndex,
+        >,
+        #[rename(name = "m_BalloonList")]
+        pub m_balloon_list: crate::system::collections::generic::list_1::List_1<
+            crate::root::mapuigauge::MapUIGauge_IconIndex,
+        >,
+        #[rename(name = "m_HpBeforeBattle")]
+        pub m_hp_before_battle: i32,
+        #[rename(name = "m_HpAfterBattle")]
+        pub m_hp_after_battle: i32,
+        #[rename(name = "m_IsBreakAfterBattle")]
+        pub m_is_break_after_battle: bool,
+        #[rename(name = "m_IsSuppressForHpStock")]
+        pub m_is_suppress_for_hp_stock: bool,
+        #[rename(name = "m_IsComplete")]
+        pub m_is_complete: bool,
+        #[rename(name = "m_Weapon")]
+        pub m_weapon: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_Break")]
+        pub m_break: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_Rod")]
+        pub m_rod: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_Balloon")]
+        pub m_balloon: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_FadeBalloon")]
+        pub m_fade_balloon: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RelayExit")]
+        pub m_relay_exit: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_SkillEffect")]
+        pub m_skill_effect: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_FadeSkillEffect")]
+        pub m_fade_skill_effect: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_DropItem")]
+        pub m_drop_item: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_GodFace")]
+        pub m_god_face: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_EngageCount")]
+        pub m_engage_count: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_ShineEngageCount")]
+        pub m_shine_engage_count: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_EngageCountMaxEffect")]
+        pub m_engage_count_max_effect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_ChargeEffect")]
+        pub m_charge_effect: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RecoveryEffect")]
+        pub m_recovery_effect: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_EngageCountCharge")]
+        pub m_engage_count_charge: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_EngageCountFull")]
+        pub m_engage_count_full: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TurnRecovery")]
+        pub m_turn_recovery: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_HpGaugeBase")]
+        pub m_hp_gauge_base: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpGaugeFront")]
+        pub m_hp_gauge_front: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpGaugeDamage")]
+        pub m_hp_gauge_damage: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpGaugeShineDamage")]
+        pub m_hp_gauge_shine_damage: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpGaugeFrame")]
+        pub m_hp_gauge_frame: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpStock0")]
+        pub m_hp_stock0: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpStock1")]
+        pub m_hp_stock1: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpStock2")]
+        pub m_hp_stock2: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_HpStockEffect")]
+        pub m_hp_stock_effect: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RedStockBreakEffect")]
+        pub m_red_stock_break_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RedStockCreateEffect")]
+        pub m_red_stock_create_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BlueStockBreakEffect")]
+        pub m_blue_stock_break_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_BlueStockCreateEffect")]
+        pub m_blue_stock_create_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_LeftTop")]
+        pub m_left_top: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RightBottom")]
+        pub m_right_bottom: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RodBasePos")]
+        pub m_rod_base_pos: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_RodLocalOffset")]
+        pub m_rod_local_offset: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_OrigCountMaxScale")]
+        pub m_orig_count_max_scale: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_EngageTurnRecoveryEffectOffset")]
+        pub m_engage_turn_recovery_effect_offset: crate::unity_engine::vector3::Vector3,
+        #[rename(name = "m_EngageTurnFlipbook")]
+        pub m_engage_turn_flipbook: crate::app::flipbook::Flipbook,
+        #[rename(name = "m_HpStockFlipbook")]
+        pub m_hp_stock_flipbook: crate::app::flipbook::Flipbook,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_BreakEffectKind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapInfoGaugeSubLocatorRoot_BreakEffectKind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
+        const NAMESPACE: &'static str = "";
+
+        const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.BreakEffectKind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapInfoGaugeSubLocatorRoot_BreakEffectKind {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn flash() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn solid() -> Self {
+            Self { value: 2 }
         }
     }
 }

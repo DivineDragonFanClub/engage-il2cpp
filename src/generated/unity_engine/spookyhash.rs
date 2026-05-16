@@ -8,15 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SpookyHash")]
-    #[parent(crate::system::object::Object)]
-    pub struct SpookyHash {
-        #[static_field]
-        #[rename(name = "AllowUnalignedRead")]
-        pub allow_unaligned_read: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash_U.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -41,6 +32,15 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "SpookyHash")]
+    #[parent(crate::system::object::Object)]
+    pub struct SpookyHash {
+        #[static_field]
+        #[rename(name = "AllowUnalignedRead")]
+        pub allow_unaligned_read: bool,
     }
 }
 
@@ -103,18 +103,18 @@ mod __SpookyHash_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpookyHash as ::unity2::ClassIdentity>::class(),
@@ -199,7 +199,7 @@ mod __SpookyHash_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -244,10 +244,10 @@ mod __SpookyHash_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpookyHash as ::unity2::ClassIdentity>::class(),
@@ -302,10 +302,10 @@ mod __SpookyHash_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
-                <*mut u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
+                <u64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpookyHash as ::unity2::ClassIdentity>::class(),

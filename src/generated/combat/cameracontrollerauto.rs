@@ -13,6 +13,20 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]
+    #[::unity2::class(namespace = "Combat", name = "CameraControllerAuto")]
+    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
+    pub struct CameraControllerAuto {
+        #[rename(name = "DistanceCurve")]
+        pub distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+        #[rename(name = "VirticalMinMax")]
+        pub virtical_min_max: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "HorizontalMinMax")]
+        pub horizontal_min_max: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -42,95 +56,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]
-    #[::unity2::class(namespace = "Combat", name = "CameraControllerAuto")]
-    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
-    pub struct CameraControllerAuto {
-        #[rename(name = "DistanceCurve")]
-        pub distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
-        #[rename(name = "VirticalMinMax")]
-        pub virtical_min_max: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "HorizontalMinMax")]
-        pub horizontal_min_max: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Time")]
-        pub m_time: f32,
-    }
 }
 
 #[cfg(feature = "combat-cameracontrollerauto-types")]
 pub use __types::*;
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CameraControllerAuto_CamRotate_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get(
-        this: CameraControllerAuto_CamRotate,
-        rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            CameraControllerAuto_CamRotate,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
-        inner(this, rate, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto_CamRotate {
-    #[doc = "`Get(f32)` overload"]
-    pub fn get(self, rate: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __CameraControllerAuto_CamRotate_unity2_raw::get(
-                self,
-                ::core::convert::Into::into(rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "combat-cameracontrollerauto")]
 #[doc(hidden)]
@@ -916,6 +845,77 @@ impl CameraControllerAuto {
         });
         <Self as ICameraControllerAutoMethods>::ctor(this);
         this
+    }
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CameraControllerAuto_CamRotate_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::class(),
+                "Get",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CameraControllerAuto_CamRotate as ::unity2::ClassIdentity>::NAME,
+                    "Get",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get(
+        this: CameraControllerAuto_CamRotate,
+        rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            CameraControllerAuto_CamRotate,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get::get_offset() as isize),
+        );
+        inner(this, rate, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+impl CameraControllerAuto_CamRotate {
+    #[doc = "`Get(f32)` overload"]
+    pub fn get(self, rate: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            __CameraControllerAuto_CamRotate_unity2_raw::get(
+                self,
+                ::core::convert::Into::into(rate),
+                ::core::option::Option::None,
+            )
+        }
     }
 }
 

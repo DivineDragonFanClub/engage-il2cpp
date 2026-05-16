@@ -14,10 +14,35 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ProfileCardRoot_StartHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardRoot_SortieCountInfo {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitIcon")]
+        pub m_unit_icon: crate::app::uniticon::UnitIcon,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_SortieCount")]
+        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BgImage")]
+        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct ProfileCardRoot_AchievementInfo {
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Caption")]
+        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Count")]
+        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_BgImage")]
+        pub m_bg_image: crate::unity_engine::ui::image::Image,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardRoot")]
@@ -203,19 +228,10 @@ mod __types {
         pub m_start_handler: crate::app::profilecardroot::ProfileCardRoot_StartHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_AchievementInfo {
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Caption")]
-        pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Count")]
-        pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BgImage")]
-        pub m_bg_image: crate::unity_engine::ui::image::Image,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.StartHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ProfileCardRoot_StartHandler {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]
     #[repr(C)]
@@ -247,22 +263,6 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct ProfileCardRoot_SortieCountInfo {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitIcon")]
-        pub m_unit_icon: crate::app::uniticon::UnitIcon,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_SortieCount")]
-        pub m_sortie_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_BgImage")]
-        pub m_bg_image: crate::unity_engine::ui::image::Image,
-    }
 }
 
 #[cfg(feature = "app-profilecardroot-types")]
@@ -271,7 +271,7 @@ pub use __types::*;
 #[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_StartHandler_unity2_raw {
+mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -280,14 +280,11 @@ mod __ProfileCardRoot_StartHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
+                <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                2,
+                0,
                 param_types,
                 false,
             )
@@ -297,7 +294,7 @@ mod __ProfileCardRoot_StartHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -310,34 +307,71 @@ mod __ProfileCardRoot_StartHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardRoot_StartHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: ProfileCardRoot_SortieCountInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardRoot_StartHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
+        let inner: extern "C" fn(ProfileCardRoot_SortieCountInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_SortieCountInfo as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_SortieCountInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl<__T: IProfileCardRoot_SortieCountInfo> IProfileCardRoot_SortieCountInfoMethods for __T {}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_SortieCountInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardroot")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardRoot_AchievementInfo_unity2_raw {
+    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
+                <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -348,8 +382,8 @@ mod __ProfileCardRoot_StartHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
+                    <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -360,49 +394,30 @@ mod __ProfileCardRoot_StartHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: ProfileCardRoot_StartHandler,
+    pub unsafe fn ctor(
+        this: ProfileCardRoot_AchievementInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ProfileCardRoot_StartHandler, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(ProfileCardRoot_AchievementInfo, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_invoke::get_offset() as isize),
+                    .offset(__lookup_ctor::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_StartHandlerMethods: IProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <ProfileCardRoot_AchievementInfo as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ProfileCardRoot_StartHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardRoot_StartHandler_unity2_raw::invoke(
+            __ProfileCardRoot_AchievementInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -411,20 +426,20 @@ pub trait IProfileCardRoot_StartHandlerMethods: IProfileCardRoot_StartHandler {
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl<__T: IProfileCardRoot_StartHandler> IProfileCardRoot_StartHandlerMethods for __T {}
+impl<__T: IProfileCardRoot_AchievementInfo> IProfileCardRoot_AchievementInfoMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_StartHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl ProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_StartHandler),
+                ::core::stringify!(ProfileCardRoot_AchievementInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
+        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
         this
     }
 }
@@ -4478,7 +4493,7 @@ impl ProfileCardRoot {
 #[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_AchievementInfo_unity2_raw {
+mod __ProfileCardRoot_StartHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -4487,11 +4502,14 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::class(),
+                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                2,
                 param_types,
                 false,
             )
@@ -4501,7 +4519,7 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_AchievementInfo as ::unity2::ClassIdentity>::NAME,
+                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -4514,29 +4532,99 @@ mod __ProfileCardRoot_AchievementInfo_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ProfileCardRoot_AchievementInfo,
+        this: ProfileCardRoot_StartHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ProfileCardRoot_AchievementInfo, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(
+            ProfileCardRoot_StartHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ProfileCardRoot_StartHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn invoke(
+        this: ProfileCardRoot_StartHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardRoot_StartHandler, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_invoke::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IProfileCardRoot_StartHandlerMethods: IProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(
+        self,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardRoot_AchievementInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ProfileCardRoot_AchievementInfo_unity2_raw::ctor(
+            __ProfileCardRoot_StartHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver =
+                <ProfileCardRoot_StartHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __ProfileCardRoot_StartHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -4545,20 +4633,20 @@ pub trait IProfileCardRoot_AchievementInfoMethods: IProfileCardRoot_AchievementI
 }
 
 #[cfg(feature = "app-profilecardroot")]
-impl<__T: IProfileCardRoot_AchievementInfo> IProfileCardRoot_AchievementInfoMethods for __T {}
+impl<__T: IProfileCardRoot_StartHandler> IProfileCardRoot_StartHandlerMethods for __T {}
 
 #[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl ProfileCardRoot_StartHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_AchievementInfo),
+                ::core::stringify!(ProfileCardRoot_StartHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
+        <Self as IProfileCardRoot_StartHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -4843,94 +4931,6 @@ impl ProfileCardRoot_RectInfo {
                 ::core::option::Option::None,
             )
         }
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardRoot_SortieCountInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardRoot_SortieCountInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardRoot_SortieCountInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(ProfileCardRoot_SortieCountInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-pub trait IProfileCardRoot_SortieCountInfoMethods: IProfileCardRoot_SortieCountInfo {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <ProfileCardRoot_SortieCountInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardRoot_SortieCountInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardroot")]
-impl<__T: IProfileCardRoot_SortieCountInfo> IProfileCardRoot_SortieCountInfoMethods for __T {}
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_SortieCountInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_SortieCountInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
-        this
     }
 }
 

@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))]
-    #[::unity2::class(namespace = "App", name = "InteractData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
-    pub struct InteractData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md"))]
     #[repr(C)]
     #[derive(
@@ -64,6 +59,11 @@ mod __types {
             Self { value: 2 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interactdata/InteractData.md"))]
+    #[::unity2::class(namespace = "App", name = "InteractData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
+    pub struct InteractData {}
 }
 
 #[cfg(feature = "app-interactdata-types")]

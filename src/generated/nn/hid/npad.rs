@@ -546,7 +546,7 @@ mod __Npad_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <*mut crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadstate::NpadState as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
                 <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
             ];

@@ -1219,7 +1219,7 @@ mod __Input_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <*mut crate::unity_engine::touch::Touch as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::touch::Touch as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -1270,7 +1270,7 @@ mod __Input_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_mousePosition_Injected",
@@ -1318,7 +1318,7 @@ mod __Input_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_mouseScrollDelta_Injected",
@@ -1366,7 +1366,7 @@ mod __Input_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_compositionCursorPos_Injected",
@@ -1414,7 +1414,7 @@ mod __Input_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<*mut crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "set_compositionCursorPos_Injected",

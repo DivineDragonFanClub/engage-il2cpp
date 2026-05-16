@@ -55,60 +55,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md"))]
-    #[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)]
-    pub struct TalkSequence {
-        #[static_field]
-        #[rename(name = "sm_IsContinue")]
-        pub sm_is_continue: bool,
-        #[static_field]
-        #[rename(name = "sm_ReservedPrefabRootObject")]
-        pub sm_reserved_prefab_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PrefabRootObject")]
-        pub m_prefab_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TalkSound")]
-        pub m_talk_sound: crate::app::talksound::TalkSound,
-        #[rename(name = "m_TagParser")]
-        pub m_tag_parser: crate::app::talk3_d::talktagparser::TalkTagParser,
-        #[rename(name = "m_TalkPtr")]
-        pub m_talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
-        #[rename(name = "m_ReservedTag")]
-        pub m_reserved_tag: crate::app::talk3_d::talktag::TalkTag,
-        #[rename(name = "m_ReplaceText")]
-        pub m_replace_text: crate::app::talk3_d::talksequence::TalkSequence_ReplaceText,
-        #[rename(name = "m_BindProc")]
-        pub m_bind_proc: crate::app::procinst::ProcInst,
-        #[rename(name = "m_ErrorMessageBuilder")]
-        pub m_error_message_builder: crate::app::talk3_d::talkbuilder::TalkBuilder,
-        #[rename(name = "m_IsStartByContinuousNumber")]
-        pub m_is_start_by_continuous_number: bool,
-        #[rename(name = "m_IsFlushedSoundList")]
-        pub m_is_flushed_sound_list: bool,
-        #[rename(name = "m_IsShowMapTerrainInfo")]
-        pub m_is_show_map_terrain_info: bool,
-        #[rename(name = "m_IsBindMapCamera")]
-        pub m_is_bind_map_camera: bool,
-        #[rename(name = "m_IsPushedUnitInfo")]
-        pub m_is_pushed_unit_info: bool,
-        #[rename(name = "m_LoadedSoundBankNameList")]
-        pub m_loaded_sound_bank_name_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        #[rename(name = "m_IsLoadingCharacter")]
-        pub m_is_loading_character: bool,
-        #[static_field]
-        #[rename(name = "LoadingCharacterTimeoutCounterMax")]
-        pub loading_character_timeout_counter_max: f32,
-        #[rename(name = "m_LoadingCharacterTimeoutCounter")]
-        pub m_loading_character_timeout_counter: f32,
-        #[rename(name = "m_ReplaceTalkerNameDictionary")]
-        pub m_replace_talker_name_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                ::unity2::Il2CppString,
-            >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -183,6 +129,60 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 9 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)]
+    pub struct TalkSequence {
+        #[static_field]
+        #[rename(name = "sm_IsContinue")]
+        pub sm_is_continue: bool,
+        #[static_field]
+        #[rename(name = "sm_ReservedPrefabRootObject")]
+        pub sm_reserved_prefab_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PrefabRootObject")]
+        pub m_prefab_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TalkSound")]
+        pub m_talk_sound: crate::app::talksound::TalkSound,
+        #[rename(name = "m_TagParser")]
+        pub m_tag_parser: crate::app::talk3_d::talktagparser::TalkTagParser,
+        #[rename(name = "m_TalkPtr")]
+        pub m_talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
+        #[rename(name = "m_ReservedTag")]
+        pub m_reserved_tag: crate::app::talk3_d::talktag::TalkTag,
+        #[rename(name = "m_ReplaceText")]
+        pub m_replace_text: crate::app::talk3_d::talksequence::TalkSequence_ReplaceText,
+        #[rename(name = "m_BindProc")]
+        pub m_bind_proc: crate::app::procinst::ProcInst,
+        #[rename(name = "m_ErrorMessageBuilder")]
+        pub m_error_message_builder: crate::app::talk3_d::talkbuilder::TalkBuilder,
+        #[rename(name = "m_IsStartByContinuousNumber")]
+        pub m_is_start_by_continuous_number: bool,
+        #[rename(name = "m_IsFlushedSoundList")]
+        pub m_is_flushed_sound_list: bool,
+        #[rename(name = "m_IsShowMapTerrainInfo")]
+        pub m_is_show_map_terrain_info: bool,
+        #[rename(name = "m_IsBindMapCamera")]
+        pub m_is_bind_map_camera: bool,
+        #[rename(name = "m_IsPushedUnitInfo")]
+        pub m_is_pushed_unit_info: bool,
+        #[rename(name = "m_LoadedSoundBankNameList")]
+        pub m_loaded_sound_bank_name_list:
+            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "m_IsLoadingCharacter")]
+        pub m_is_loading_character: bool,
+        #[static_field]
+        #[rename(name = "LoadingCharacterTimeoutCounterMax")]
+        pub loading_character_timeout_counter_max: f32,
+        #[rename(name = "m_LoadingCharacterTimeoutCounter")]
+        pub m_loading_character_timeout_counter: f32,
+        #[rename(name = "m_ReplaceTalkerNameDictionary")]
+        pub m_replace_talker_name_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                ::unity2::Il2CppString,
+            >,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]
