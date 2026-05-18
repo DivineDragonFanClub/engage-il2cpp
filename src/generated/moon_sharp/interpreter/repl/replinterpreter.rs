@@ -593,6 +593,7 @@ impl ReplInterpreter {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReplInterpreter;
     pub use super::IReplInterpreterMethods;

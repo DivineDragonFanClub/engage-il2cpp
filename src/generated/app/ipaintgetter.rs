@@ -101,6 +101,7 @@ pub trait IIPaintGetterMethods: IIPaintGetter {
 impl<__T: IIPaintGetter> IIPaintGetterMethods for __T {}
 
 #[cfg(feature = "app-ipaintgetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPaintGetter;
     pub use super::IIPaintGetterMethods;

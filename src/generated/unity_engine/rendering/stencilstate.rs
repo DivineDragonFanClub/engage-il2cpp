@@ -1923,6 +1923,7 @@ impl StencilState {
 }
 
 #[cfg(feature = "unity_engine-rendering-stencilstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::StencilState;
     pub use crate::system::object::IObject;

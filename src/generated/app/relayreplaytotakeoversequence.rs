@@ -582,6 +582,7 @@ impl RelayReplayToTakeOverSequence {
 }
 
 #[cfg(feature = "app-relayreplaytotakeoversequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayReplayToTakeOverSequence;
     pub use super::IRelayReplayToTakeOverSequenceMethods;

@@ -263,6 +263,7 @@ impl RuntimeInitializeOnLoadMethodAttribute {
 }
 
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeInitializeOnLoadMethodAttribute;
     pub use super::IRuntimeInitializeOnLoadMethodAttributeMethods;

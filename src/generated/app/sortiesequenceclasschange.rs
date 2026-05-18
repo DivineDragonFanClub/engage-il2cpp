@@ -1083,6 +1083,7 @@ impl SortieSequenceClassChange {
 }
 
 #[cfg(feature = "app-sortiesequenceclasschange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceClassChange;
     pub use super::ISortieSequenceClassChangeMethods;

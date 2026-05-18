@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ai-navmeshpathstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NavMeshPathStatus;
     pub use crate::system::object::IObject;

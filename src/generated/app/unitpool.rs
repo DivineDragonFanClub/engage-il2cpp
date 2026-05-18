@@ -1535,6 +1535,7 @@ impl UnitPool {
 }
 
 #[cfg(feature = "app-unitpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitPool;
     pub use super::IUnitPoolMethods;

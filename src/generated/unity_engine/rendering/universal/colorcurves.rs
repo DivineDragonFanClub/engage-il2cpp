@@ -230,6 +230,7 @@ impl ColorCurves {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-colorcurves")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorCurves;
     pub use super::IColorCurves;

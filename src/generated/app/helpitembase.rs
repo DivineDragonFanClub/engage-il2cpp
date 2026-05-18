@@ -899,6 +899,7 @@ impl HelpItemBase {
 }
 
 #[cfg(feature = "app-helpitembase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemBase;
     pub use super::IHelpItemBase;

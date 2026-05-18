@@ -340,6 +340,7 @@ impl VerticalLayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-verticallayoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVerticalLayoutGroup;
     pub use super::IVerticalLayoutGroupMethods;

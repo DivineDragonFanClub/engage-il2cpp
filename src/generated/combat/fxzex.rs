@@ -571,6 +571,7 @@ impl FXZEx {
 }
 
 #[cfg(feature = "combat-fxzex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FXZEx;
     pub use super::FXZEx_HitPoint;

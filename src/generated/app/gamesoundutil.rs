@@ -403,6 +403,7 @@ impl GameSoundUtil {
 }
 
 #[cfg(feature = "app-gamesoundutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameSoundUtil;
     pub use super::IGameSoundUtil;

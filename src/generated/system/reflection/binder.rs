@@ -353,6 +353,7 @@ impl Binder {
 }
 
 #[cfg(feature = "system-reflection-binder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Binder;
     pub use super::IBinder;

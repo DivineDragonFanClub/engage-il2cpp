@@ -99,6 +99,7 @@ impl VideoClip {
 }
 
 #[cfg(feature = "unity_engine-video-videoclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVideoClip;
     pub use super::IVideoClipMethods;

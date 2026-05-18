@@ -1012,6 +1012,7 @@ pub trait IIPixelPerfectCamera_InterfaceMethods: IIPixelPerfectCamera_Interface 
 impl<__T: IIPixelPerfectCamera_Interface> IIPixelPerfectCamera_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-ipixelperfectcamera_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPixelPerfectCamera_Interface;
     pub use super::IIPixelPerfectCamera_InterfaceMethods;

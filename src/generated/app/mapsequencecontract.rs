@@ -539,6 +539,7 @@ impl MapSequenceContract {
 }
 
 #[cfg(feature = "app-mapsequencecontract")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceContract;
     pub use super::IMapSequenceContractMethods;

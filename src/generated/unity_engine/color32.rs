@@ -300,6 +300,7 @@ impl Color32 {
 }
 
 #[cfg(feature = "unity_engine-color32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Color32;
     pub use crate::system::object::IObject;

@@ -89,6 +89,7 @@ impl<T0: ::unity2::ClassIdentity> MapImageCore_1<T0> {
 }
 
 #[cfg(feature = "app-mapimagecore_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCore_1;
     pub use super::IMapImageCore_1Methods;

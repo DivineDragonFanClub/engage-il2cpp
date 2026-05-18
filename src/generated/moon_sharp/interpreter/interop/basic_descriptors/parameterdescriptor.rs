@@ -1526,6 +1526,7 @@ impl ParameterDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParameterDescriptor;
     pub use super::IParameterDescriptorMethods;

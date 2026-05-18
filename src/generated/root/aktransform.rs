@@ -1102,6 +1102,7 @@ impl AkTransform {
 }
 
 #[cfg(feature = "root-aktransform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTransform;
     pub use super::IAkTransform;

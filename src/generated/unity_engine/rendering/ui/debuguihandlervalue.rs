@@ -418,6 +418,7 @@ impl DebugUIHandlerValue {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerValue;
     pub use super::IDebugUIHandlerValue;

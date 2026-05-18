@@ -287,6 +287,7 @@ impl MiniMapPanelRouteRenderer {
 }
 
 #[cfg(feature = "app-minimappanelrouterenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelRouteRenderer;
     pub use super::IMiniMapPanelRouteRendererMethods;

@@ -372,6 +372,7 @@ impl CapabilitySbyte {
 }
 
 #[cfg(feature = "app-capabilitysbyte")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilitySbyte;
     pub use super::ICapabilitySbyte;

@@ -110,6 +110,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-magiccommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MagicCommand;
     pub use crate::system::object::IObject;

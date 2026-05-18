@@ -7,6 +7,23 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "UnitInfoWindowCharaModel.ReservedCharaVoice"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitInfoWindowCharaModel_ReservedCharaVoice {
+        #[rename(name = "m_PersonSwitchName")]
+        pub m_person_switch_name: ::unity2::Il2CppString,
+        #[rename(name = "m_EngageSwitchName")]
+        pub m_engage_switch_name: ::unity2::Il2CppString,
+        #[rename(name = "m_EventName")]
+        pub m_event_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Chara")]
+        pub m_chara: crate::combat::character::Character,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel.md"))]
     #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaModel")]
     #[parent(crate::system::object::Object)]
@@ -55,27 +72,246 @@ mod __types {
 # [rename (name = "m_OnSetupDoneCallback")] pub m_on_setup_done_callback : crate :: system :: action :: Action ,
 # [rename (name = "m_DelayFrameCount")] pub m_delay_frame_count : crate :: app :: gameparam :: GameParam_Holder ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "UnitInfoWindowCharaModel.ReservedCharaVoice"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitInfoWindowCharaModel_ReservedCharaVoice {
-        #[rename(name = "m_PersonSwitchName")]
-        pub m_person_switch_name: ::unity2::Il2CppString,
-        #[rename(name = "m_EngageSwitchName")]
-        pub m_engage_switch_name: ::unity2::Il2CppString,
-        #[rename(name = "m_EventName")]
-        pub m_event_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Chara")]
-        pub m_chara: crate::combat::character::Character,
-    }
 }
 
 #[cfg(feature = "app-unitinfowindowcharamodel-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reserve_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
+                "ReserveVoice",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                    "ReserveVoice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reserve_voice(
+        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
+        person_switch_name: ::unity2::Il2CppString,
+        engage_switch_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+        chara: crate::combat::character::Character,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWindowCharaModel_ReservedCharaVoice,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::combat::character::Character,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reserve_voice::get_offset() as isize),
+        );
+        inner(
+            this,
+            person_switch_name,
+            engage_switch_name,
+            event_name,
+            chara,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_voice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
+                "PlayVoice",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                    "PlayVoice",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn play_voice(
+        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWindowCharaModel_ReservedCharaVoice,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_play_voice::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            UnitInfoWindowCharaModel_ReservedCharaVoice,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:
+    IUnitInfoWindowCharaModel_ReservedCharaVoice
+{
+    #[doc = "`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]
+    fn reserve_voice(
+        self,
+        person_switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        engage_switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        chara: impl ::core::convert::Into<crate::combat::character::Character>,
+    ) -> () {
+        unsafe {
+            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::reserve_voice(
+                __receiver,
+                ::core::convert::Into::into(person_switch_name),
+                ::core::convert::Into::into(engage_switch_name),
+                ::core::convert::Into::into(event_name),
+                ::core::convert::Into::into(chara),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PlayVoice()` overload"]
+    fn play_voice(self) -> () {
+        unsafe {
+            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::play_voice(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+impl<__T: IUnitInfoWindowCharaModel_ReservedCharaVoice>
+    IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T
+{
+}
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+impl UnitInfoWindowCharaModel_ReservedCharaVoice {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 #[doc(hidden)]
@@ -4537,241 +4773,6 @@ impl UnitInfoWindowCharaModel {
 
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reserve_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
-                "ReserveVoice",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    "ReserveVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reserve_voice(
-        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
-        person_switch_name: ::unity2::Il2CppString,
-        engage_switch_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-        chara: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel_ReservedCharaVoice,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reserve_voice::get_offset() as isize),
-        );
-        inner(
-            this,
-            person_switch_name,
-            engage_switch_name,
-            event_name,
-            chara,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_voice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
-                "PlayVoice",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayVoice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_voice(
-        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel_ReservedCharaVoice,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_voice::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoWindowCharaModel_ReservedCharaVoice as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitInfoWindowCharaModel_ReservedCharaVoice,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitInfoWindowCharaModel_ReservedCharaVoice,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
-pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:
-    IUnitInfoWindowCharaModel_ReservedCharaVoice
-{
-    #[doc = "`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]
-    fn reserve_voice(
-        self,
-        person_switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        engage_switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        chara: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> () {
-        unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::reserve_voice(
-                __receiver,
-                ::core::convert::Into::into(person_switch_name),
-                ::core::convert::Into::into(engage_switch_name),
-                ::core::convert::Into::into(event_name),
-                ::core::convert::Into::into(chara),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayVoice()` overload"]
-    fn play_voice(self) -> () {
-        unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::play_voice(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < UnitInfoWindowCharaModel_ReservedCharaVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitInfoWindowCharaModel_ReservedCharaVoice_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
-impl<__T: IUnitInfoWindowCharaModel_ReservedCharaVoice>
-    IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T
-{
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
-impl UnitInfoWindowCharaModel_ReservedCharaVoice {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
 pub mod prelude {
     pub use super::IUnitInfoWindowCharaModel;
     pub use super::IUnitInfoWindowCharaModelMethods;

@@ -118,6 +118,7 @@ impl CustomShadowData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customshadowdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomShadowData;
     pub use super::ICustomShadowData;

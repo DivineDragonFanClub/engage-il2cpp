@@ -1088,6 +1088,7 @@ impl WatchItem {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWatchItem;
     pub use super::IWatchItemMethods;

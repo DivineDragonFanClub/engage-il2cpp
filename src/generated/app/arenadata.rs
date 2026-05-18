@@ -495,6 +495,7 @@ impl ArenaData {
 }
 
 #[cfg(feature = "app-arenadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaData;
     pub use super::IArenaData;

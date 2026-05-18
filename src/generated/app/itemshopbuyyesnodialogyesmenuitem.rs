@@ -318,6 +318,7 @@ impl ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {
 }
 
 #[cfg(feature = "app-itemshopbuyyesnodialogyesmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemShopBuyYesNoDialogYesMenuItem;
     pub use super::IItemShopBuyYesNoDialogYesMenuItemMethods;

@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffieldmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthOfFieldMode;
     pub use crate::system::object::IObject;

@@ -665,6 +665,7 @@ impl ChartVariableData {
 }
 
 #[cfg(feature = "app-chartvariabledata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChartVariableData;
     pub use super::IChartVariableData;

@@ -105,6 +105,7 @@ impl MapBakeOffset {
 }
 
 #[cfg(feature = "app-mapbakeoffset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBakeOffset;
     pub use super::IMapBakeOffsetMethods;

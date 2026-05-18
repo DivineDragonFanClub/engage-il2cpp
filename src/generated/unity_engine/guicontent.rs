@@ -819,6 +819,7 @@ impl GUIContent {
 }
 
 #[cfg(feature = "unity_engine-guicontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIContent;
     pub use super::IGUIContent;

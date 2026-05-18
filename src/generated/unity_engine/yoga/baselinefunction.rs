@@ -198,6 +198,7 @@ impl BaselineFunction {
 }
 
 #[cfg(feature = "unity_engine-yoga-baselinefunction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaselineFunction;
     pub use super::IBaselineFunction;

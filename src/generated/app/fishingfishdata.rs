@@ -3675,6 +3675,7 @@ impl FishingFishData {
 }
 
 #[cfg(feature = "app-fishingfishdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingFishData;
     pub use super::IFishingFishData;

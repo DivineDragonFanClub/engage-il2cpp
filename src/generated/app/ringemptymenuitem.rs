@@ -289,6 +289,7 @@ impl RingEmptyMenuItem {
 }
 
 #[cfg(feature = "app-ringemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingEmptyMenuItem;
     pub use super::IRingEmptyMenuItemMethods;

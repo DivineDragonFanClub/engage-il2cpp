@@ -581,6 +581,7 @@ impl DemoTitleMenuContent {
 }
 
 #[cfg(feature = "app-demotitlemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DemoTitleMenuContent;
     pub use super::IDemoTitleMenuContent;

@@ -236,6 +236,7 @@ impl KeyHelpRenderer {
 }
 
 #[cfg(feature = "root-keyhelprenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyHelpRenderer;
     pub use super::IKeyHelpRendererMethods;

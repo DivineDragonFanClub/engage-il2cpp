@@ -22,11 +22,6 @@ mod __types {
             crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TutorialListTopMenu_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallisttopmenu/TutorialListTopMenu_SelectCategoryType.md"))]
     #[repr(C)]
     #[derive(
@@ -94,6 +89,11 @@ mod __types {
             Self { value: 7 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TutorialListTopMenu_DecideEventHandler {}
 }
 
 #[cfg(feature = "root-tutoriallisttopmenu-types")]
@@ -870,6 +870,7 @@ impl TutorialListTopMenu_DecideEventHandler {
 }
 
 #[cfg(feature = "root-tutoriallisttopmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialListTopMenu;
     pub use super::ITutorialListTopMenuMethods;

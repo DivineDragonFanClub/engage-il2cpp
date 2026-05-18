@@ -302,6 +302,7 @@ impl DragonRideTestCourseMenu {
 }
 
 #[cfg(feature = "app-dragonridetestcoursemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideTestCourseMenu;
     pub use super::IDragonRideTestCourseMenu;

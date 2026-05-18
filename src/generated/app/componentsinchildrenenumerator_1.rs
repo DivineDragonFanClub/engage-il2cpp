@@ -87,6 +87,7 @@ impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1<T0> {
 }
 
 #[cfg(feature = "app-componentsinchildrenenumerator_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComponentsInChildrenEnumerator_1;
     pub use super::ComponentsInChildrenEnumerator_1_Func;

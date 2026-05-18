@@ -697,6 +697,7 @@ impl CommonRelianceTalkSequence {
 }
 
 #[cfg(feature = "app-commonreliancetalksequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRelianceTalkSequence;
     pub use super::ICommonRelianceTalkSequence;

@@ -108,6 +108,7 @@ impl GmapLightColorTable {
 }
 
 #[cfg(feature = "app-gmaplightcolortable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapLightColorTable;
     pub use super::IGmapLightColorTable;

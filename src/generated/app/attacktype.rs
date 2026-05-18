@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-attacktype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AttackType;
     pub use crate::system::object::IObject;

@@ -116,6 +116,7 @@ impl FileSystemEnumerableFactory {
 }
 
 #[cfg(feature = "system-io-filesystemenumerablefactory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileSystemEnumerableFactory;
     pub use super::IFileSystemEnumerableFactory;

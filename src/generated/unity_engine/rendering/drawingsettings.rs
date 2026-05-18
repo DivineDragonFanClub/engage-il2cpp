@@ -944,6 +944,7 @@ impl DrawingSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-drawingsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrawingSettings;
     pub use crate::system::object::IObject;

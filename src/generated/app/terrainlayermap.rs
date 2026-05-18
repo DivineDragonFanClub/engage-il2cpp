@@ -1301,6 +1301,7 @@ impl TerrainLayerMap {
 }
 
 #[cfg(feature = "app-terrainlayermap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainLayerMap;
     pub use super::ITerrainLayerMapMethods;

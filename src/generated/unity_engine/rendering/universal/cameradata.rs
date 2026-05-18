@@ -550,6 +550,7 @@ impl CameraData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameradata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraData;
     pub use crate::system::object::IObject;

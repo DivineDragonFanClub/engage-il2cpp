@@ -143,6 +143,7 @@ impl TimeUtility {
 }
 
 #[cfg(feature = "unity_engine-timeline-timeutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimeUtility;
     pub use super::TimeUtility;

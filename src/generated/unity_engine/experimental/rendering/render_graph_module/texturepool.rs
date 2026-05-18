@@ -422,6 +422,7 @@ impl TexturePool {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TexturePool;
     pub use super::ITexturePool;

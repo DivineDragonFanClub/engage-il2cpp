@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akconnectiontype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkConnectionType;
     pub use crate::system::object::IObject;

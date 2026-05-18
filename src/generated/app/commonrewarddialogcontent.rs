@@ -475,6 +475,7 @@ impl CommonRewardDialogContent {
 }
 
 #[cfg(feature = "app-commonrewarddialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRewardDialogContent;
     pub use super::ICommonRewardDialogContent;

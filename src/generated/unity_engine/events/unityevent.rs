@@ -473,6 +473,7 @@ impl UnityEvent {
 }
 
 #[cfg(feature = "unity_engine-events-unityevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEvent;
     pub use super::IUnityEventMethods;

@@ -49,6 +49,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-jvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::jvalue;
     pub use crate::system::object::IObject;

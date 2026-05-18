@@ -466,6 +466,7 @@ impl CharacterHUD {
 }
 
 #[cfg(feature = "combat-characterhud")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterHUD;
     pub use super::ICharacterHUD;

@@ -267,6 +267,7 @@ impl WaterTileV2 {
 }
 
 #[cfg(feature = "app-water-watertilev2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaterTileV2;
     pub use super::IWaterTileV2Methods;

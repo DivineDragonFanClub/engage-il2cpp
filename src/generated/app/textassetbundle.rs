@@ -336,6 +336,7 @@ impl TextAssetBundle {
 }
 
 #[cfg(feature = "app-textassetbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextAssetBundle;
     pub use super::ITextAssetBundleMethods;

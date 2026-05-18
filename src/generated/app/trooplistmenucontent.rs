@@ -508,6 +508,7 @@ impl TroopListMenuContent {
 }
 
 #[cfg(feature = "app-trooplistmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITroopListMenuContent;
     pub use super::ITroopListMenuContentMethods;

@@ -144,6 +144,7 @@ impl FaceInfo_Legacy {
 }
 
 #[cfg(feature = "tm_pro-faceinfo_legacy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FaceInfo_Legacy;
     pub use super::IFaceInfo_Legacy;

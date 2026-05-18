@@ -223,6 +223,7 @@ impl CombatStyleExMethods {
 }
 
 #[cfg(feature = "combat-combatstyleexmethods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatStyleExMethods;
     pub use super::ICombatStyleExMethods;

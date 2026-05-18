@@ -382,6 +382,7 @@ impl BuiltinRuntimeReflectionSystem {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BuiltinRuntimeReflectionSystem;
     pub use super::IBuiltinRuntimeReflectionSystem;

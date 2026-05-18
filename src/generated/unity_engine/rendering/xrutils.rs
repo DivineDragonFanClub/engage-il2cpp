@@ -94,6 +94,7 @@ impl XRUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-xrutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRUtils;
     pub use super::XRUtils;

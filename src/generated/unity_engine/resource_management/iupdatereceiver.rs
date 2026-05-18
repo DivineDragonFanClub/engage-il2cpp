@@ -89,6 +89,7 @@ pub trait IIUpdateReceiverMethods: IIUpdateReceiver {
 impl<__T: IIUpdateReceiver> IIUpdateReceiverMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-iupdatereceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIUpdateReceiver;
     pub use super::IIUpdateReceiverMethods;

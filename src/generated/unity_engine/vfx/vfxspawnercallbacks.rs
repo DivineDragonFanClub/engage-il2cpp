@@ -328,6 +328,7 @@ impl VFXSpawnerCallbacks {
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVFXSpawnerCallbacks;
     pub use super::IVFXSpawnerCallbacksMethods;

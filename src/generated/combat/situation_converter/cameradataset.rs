@@ -292,6 +292,7 @@ impl CameraDataSet {
 }
 
 #[cfg(feature = "combat-situation_converter-cameradataset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraDataSet;
     pub use super::ICameraDataSet;

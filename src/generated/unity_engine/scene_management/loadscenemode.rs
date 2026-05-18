@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-loadscenemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LoadSceneMode;
     pub use crate::system::object::IObject;

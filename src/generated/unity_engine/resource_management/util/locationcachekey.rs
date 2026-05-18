@@ -367,6 +367,7 @@ impl LocationCacheKey {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-locationcachekey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILocationCacheKey;
     pub use super::ILocationCacheKeyMethods;

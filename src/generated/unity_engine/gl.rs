@@ -313,6 +313,7 @@ impl GL {
 }
 
 #[cfg(feature = "unity_engine-gl")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GL;
     pub use super::IGL;

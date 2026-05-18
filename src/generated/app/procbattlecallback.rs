@@ -307,6 +307,7 @@ impl ProcBattleCallback {
 }
 
 #[cfg(feature = "app-procbattlecallback")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcBattleCallback;
     pub use super::IProcBattleCallbackMethods;

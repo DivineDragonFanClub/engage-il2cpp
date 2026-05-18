@@ -163,6 +163,7 @@ impl WwiseBankReference {
 }
 
 #[cfg(feature = "root-wwisebankreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseBankReference;
     pub use super::IWwiseBankReferenceMethods;

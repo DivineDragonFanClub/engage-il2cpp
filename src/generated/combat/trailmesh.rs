@@ -696,6 +696,7 @@ impl TrailMesh {
 }
 
 #[cfg(feature = "combat-trailmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrailMesh;
     pub use super::ITrailMeshMethods;

@@ -72,6 +72,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> KeyValuePair_2<T0
 }
 
 #[cfg(feature = "system-collections-generic-keyvaluepair_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::KeyValuePair_2;
     pub use crate::system::object::IObject;

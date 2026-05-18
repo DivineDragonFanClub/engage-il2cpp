@@ -567,6 +567,7 @@ impl ShadowSplitData {
 }
 
 #[cfg(feature = "unity_engine-rendering-shadowsplitdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowSplitData;
     pub use crate::system::object::IObject;

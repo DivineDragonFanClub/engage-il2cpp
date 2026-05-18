@@ -171,6 +171,7 @@ impl NativeNameAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativenameattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeNameAttribute;
     pub use super::INativeNameAttributeMethods;

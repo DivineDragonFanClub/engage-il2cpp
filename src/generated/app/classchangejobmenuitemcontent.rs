@@ -700,6 +700,7 @@ impl ClassChangeJobMenuItemContent {
 }
 
 #[cfg(feature = "app-classchangejobmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClassChangeJobMenuItemContent;
     pub use super::ClassChangeJobMenuItemContent_WeaponLevelItem;

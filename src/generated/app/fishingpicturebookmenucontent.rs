@@ -842,6 +842,7 @@ impl FishingPictureBookMenuContent {
 }
 
 #[cfg(feature = "app-fishingpicturebookmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingPictureBookMenuContent;
     pub use super::IFishingPictureBookMenuContent;

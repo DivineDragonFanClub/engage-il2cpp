@@ -229,6 +229,7 @@ impl HelpItemCapability {
 }
 
 #[cfg(feature = "app-helpitemcapability")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemCapability;
     pub use super::IHelpItemCapability;

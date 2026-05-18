@@ -979,6 +979,7 @@ impl Logger {
 }
 
 #[cfg(feature = "unity_engine-logger")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILogger;
     pub use super::ILoggerMethods;

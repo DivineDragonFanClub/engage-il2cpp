@@ -38,6 +38,7 @@ impl<T0: ::unity2::ClassIdentity> GlobalLinkedListNodeCache_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-globallinkedlistnodecache_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlobalLinkedListNodeCache_1;
     pub use super::IGlobalLinkedListNodeCache_1;

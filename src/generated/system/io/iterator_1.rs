@@ -88,6 +88,7 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
 }
 
 #[cfg(feature = "system-io-iterator_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIterator_1;
     pub use super::IIterator_1Methods;

@@ -1031,6 +1031,7 @@ impl HubFacilityData {
 }
 
 #[cfg(feature = "app-hubfacilitydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubFacilityData;
     pub use super::IHubFacilityData;

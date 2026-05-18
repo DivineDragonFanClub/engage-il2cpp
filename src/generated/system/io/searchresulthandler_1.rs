@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity> SearchResultHandler_1<T0> {
 }
 
 #[cfg(feature = "system-io-searchresulthandler_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISearchResultHandler_1;
     pub use super::ISearchResultHandler_1Methods;

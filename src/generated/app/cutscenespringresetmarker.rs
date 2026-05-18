@@ -162,6 +162,7 @@ impl CutSceneSpringResetMarker {
 }
 
 #[cfg(feature = "app-cutscenespringresetmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CutSceneSpringResetMarker;
     pub use super::ICutSceneSpringResetMarker;

@@ -110,6 +110,7 @@ impl ContourVertex {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourvertex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContourVertex;
     pub use crate::system::object::IObject;

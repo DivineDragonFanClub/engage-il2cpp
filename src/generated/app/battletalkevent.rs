@@ -492,6 +492,7 @@ impl BattleTalkEvent {
 }
 
 #[cfg(feature = "app-battletalkevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleTalkEvent;
     pub use super::IBattleTalkEvent;

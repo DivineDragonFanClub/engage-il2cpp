@@ -1797,6 +1797,7 @@ impl MascotMenuSequence {
 }
 
 #[cfg(feature = "app-mascotmenusequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotMenuSequence;
     pub use super::IMascotMenuSequenceMethods;

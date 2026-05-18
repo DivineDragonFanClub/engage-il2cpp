@@ -981,6 +981,7 @@ impl CallbackFunction {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-callbackfunction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CallbackFunction;
     pub use super::ICallbackFunction;

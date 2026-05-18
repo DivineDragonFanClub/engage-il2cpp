@@ -362,6 +362,7 @@ impl MascotColorChangeItemContent {
 }
 
 #[cfg(feature = "app-mascotcolorchangeitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotColorChangeItemContent;
     pub use super::IMascotColorChangeItemContentMethods;

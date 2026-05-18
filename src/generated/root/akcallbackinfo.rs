@@ -530,6 +530,7 @@ impl AkCallbackInfo {
 }
 
 #[cfg(feature = "root-akcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCallbackInfo;
     pub use super::IAkCallbackInfo;

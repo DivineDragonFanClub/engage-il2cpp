@@ -628,6 +628,7 @@ impl FileData {
 }
 
 #[cfg(feature = "app-filedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileData;
     pub use super::IFileData;

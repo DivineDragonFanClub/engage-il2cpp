@@ -1665,6 +1665,7 @@ impl HubBalloon {
 }
 
 #[cfg(feature = "app-hubballoon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubBalloon;
     pub use super::HubBalloon_Type;

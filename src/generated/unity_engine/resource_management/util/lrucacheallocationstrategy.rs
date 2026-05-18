@@ -421,6 +421,7 @@ pub trait ILRUCacheAllocationStrategyMethods: ILRUCacheAllocationStrategy {
 impl<__T: ILRUCacheAllocationStrategy> ILRUCacheAllocationStrategyMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-lrucacheallocationstrategy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILRUCacheAllocationStrategy;
     pub use super::ILRUCacheAllocationStrategyMethods;

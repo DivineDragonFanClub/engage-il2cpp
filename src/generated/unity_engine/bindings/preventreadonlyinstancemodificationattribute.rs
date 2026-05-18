@@ -110,6 +110,7 @@ impl PreventReadOnlyInstanceModificationAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPreventReadOnlyInstanceModificationAttribute;
     pub use super::IPreventReadOnlyInstanceModificationAttributeMethods;

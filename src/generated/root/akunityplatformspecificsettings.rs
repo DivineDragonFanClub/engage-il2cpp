@@ -369,6 +369,7 @@ impl AkUnityPlatformSpecificSettings {
 }
 
 #[cfg(feature = "root-akunityplatformspecificsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkUnityPlatformSpecificSettings;
     pub use super::IAkUnityPlatformSpecificSettings;

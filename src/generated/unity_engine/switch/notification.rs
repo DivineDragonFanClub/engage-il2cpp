@@ -9,6 +9,58 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/notification/Notification_FocusHandlingMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Notification_FocusHandlingMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Notification_FocusHandlingMode {
+        const NAMESPACE: &'static str = "UnityEngine.Switch";
+
+        const NAME: &'static str = "Notification.FocusHandlingMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Notification_FocusHandlingMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Notification_FocusHandlingMode {
+        pub fn suspend() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn notify() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn suspend_and_notify() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn in_focus_only() -> Self {
+            Self { value: 3 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/notification/Notification_Message.md"))]
     #[repr(C)]
     #[derive(
@@ -122,58 +174,6 @@ mod __types {
         pub notification_message_received: crate::system::action_1::Action_1<
             crate::unity_engine::switch::notification::Notification_Message,
         >,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/notification/Notification_FocusHandlingMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Notification_FocusHandlingMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Notification_FocusHandlingMode {
-        const NAMESPACE: &'static str = "UnityEngine.Switch";
-
-        const NAME: &'static str = "Notification.FocusHandlingMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Notification_FocusHandlingMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Notification_FocusHandlingMode {
-        pub fn suspend() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn notify() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn suspend_and_notify() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn in_focus_only() -> Self {
-            Self { value: 3 }
-        }
     }
 }
 
@@ -1149,6 +1149,7 @@ impl Notification {
 }
 
 #[cfg(feature = "unity_engine-switch-notification")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INotification;
     pub use super::Notification;

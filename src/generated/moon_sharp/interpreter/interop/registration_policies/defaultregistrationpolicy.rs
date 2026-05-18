@@ -241,6 +241,7 @@ impl DefaultRegistrationPolicy {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-defaultregistrationpolicy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultRegistrationPolicy;
     pub use super::IDefaultRegistrationPolicy;

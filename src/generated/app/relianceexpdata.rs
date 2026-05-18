@@ -670,6 +670,7 @@ impl RelianceExpData {
 }
 
 #[cfg(feature = "app-relianceexpdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelianceExpData;
     pub use super::IRelianceExpDataMethods;

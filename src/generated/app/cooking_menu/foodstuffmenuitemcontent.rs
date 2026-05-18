@@ -739,6 +739,7 @@ impl FoodstuffMenuItemContent {
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FoodstuffMenuItemContent;
     pub use super::IFoodstuffMenuItemContent;

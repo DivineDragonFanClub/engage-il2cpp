@@ -111,6 +111,7 @@ impl DifficultySelectMenuContent {
 }
 
 #[cfg(feature = "app-difficultyselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DifficultySelectMenuContent;
     pub use super::IDifficultySelectMenuContent;

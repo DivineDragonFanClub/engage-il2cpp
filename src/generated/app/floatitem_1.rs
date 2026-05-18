@@ -75,6 +75,7 @@ impl<T0: ::unity2::ClassIdentity> FloatItem_1<T0> {
 }
 
 #[cfg(feature = "app-floatitem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FloatItem_1;
     pub use super::IFloatItem_1;

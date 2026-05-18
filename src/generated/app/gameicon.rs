@@ -1544,6 +1544,7 @@ impl GameIcon {
 }
 
 #[cfg(feature = "app-gameicon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameIcon;
     pub use super::IGameIcon;

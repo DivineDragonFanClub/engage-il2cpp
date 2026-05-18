@@ -2246,6 +2246,7 @@ impl Pad {
 }
 
 #[cfg(feature = "app-pad")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPad;
     pub use super::IPadMethods;

@@ -260,6 +260,7 @@ impl Crc32 {
 }
 
 #[cfg(feature = "app-crc32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Crc32;
     pub use super::ICrc32;

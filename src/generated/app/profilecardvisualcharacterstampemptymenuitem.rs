@@ -294,6 +294,7 @@ impl ProfileCardVisualCharacterStampEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualCharacterStampEmptyMenuItem;
     pub use super::IProfileCardVisualCharacterStampEmptyMenuItemMethods;

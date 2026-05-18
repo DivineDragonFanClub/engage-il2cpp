@@ -215,6 +215,7 @@ impl BmapCamera {
 }
 
 #[cfg(feature = "app-bmapcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BmapCamera;
     pub use super::IBmapCamera;

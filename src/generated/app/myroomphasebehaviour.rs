@@ -250,6 +250,7 @@ impl MyRoomPhaseBehaviour {
 }
 
 #[cfg(feature = "app-myroomphasebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomPhaseBehaviour;
     pub use super::IMyRoomPhaseBehaviourMethods;

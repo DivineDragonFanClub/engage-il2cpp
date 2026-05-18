@@ -1040,6 +1040,7 @@ impl ProfileCardTitleMenu_DisposeEventHandler {
 }
 
 #[cfg(feature = "app-profilecardtitlemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTitleMenu;
     pub use super::IProfileCardTitleMenuMethods;

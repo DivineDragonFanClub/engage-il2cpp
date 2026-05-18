@@ -388,6 +388,7 @@ impl SphericalHarmonicsL2 {
 }
 
 #[cfg(feature = "unity_engine-rendering-sphericalharmonicsl2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SphericalHarmonicsL2;
     pub use crate::system::object::IObject;

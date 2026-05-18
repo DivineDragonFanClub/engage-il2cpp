@@ -351,6 +351,7 @@ impl BattleDebugManager {
 }
 
 #[cfg(feature = "app-battledebugmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleDebugManager;
     pub use super::IBattleDebugManager;

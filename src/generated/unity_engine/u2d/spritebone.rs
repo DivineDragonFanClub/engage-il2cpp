@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-u2d-spritebone")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SpriteBone;
     pub use crate::system::object::IObject;

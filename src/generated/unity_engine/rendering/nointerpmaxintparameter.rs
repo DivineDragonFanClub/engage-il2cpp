@@ -251,6 +251,7 @@ impl NoInterpMaxIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpMaxIntParameter;
     pub use super::INoInterpMaxIntParameterMethods;

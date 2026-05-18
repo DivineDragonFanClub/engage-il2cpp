@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-charactercontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterController;
     pub use super::ICharacterController;

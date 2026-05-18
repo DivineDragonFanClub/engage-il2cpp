@@ -272,6 +272,7 @@ impl IntCommand {
 }
 
 #[cfg(feature = "app-intcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntCommand;
     pub use super::IIntCommandMethods;

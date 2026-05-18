@@ -755,6 +755,7 @@ impl AkAmbient {
 }
 
 #[cfg(feature = "root-akambient")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAmbient;
     pub use super::IAkAmbient;

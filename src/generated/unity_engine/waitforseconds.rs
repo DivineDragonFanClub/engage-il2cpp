@@ -111,6 +111,7 @@ impl WaitForSeconds {
 }
 
 #[cfg(feature = "unity_engine-waitforseconds")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaitForSeconds;
     pub use super::IWaitForSecondsMethods;

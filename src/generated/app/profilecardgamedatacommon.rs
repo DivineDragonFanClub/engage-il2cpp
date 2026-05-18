@@ -380,6 +380,7 @@ impl ProfileCardGameDataCommon {
 }
 
 #[cfg(feature = "app-profilecardgamedatacommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardGameDataCommon;
     pub use super::IProfileCardGameDataCommonMethods;

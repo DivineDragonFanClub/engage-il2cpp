@@ -204,6 +204,7 @@ impl RefreshRelianceSetter {
 }
 
 #[cfg(feature = "app-refreshreliancesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshRelianceSetter;
     pub use super::IRefreshRelianceSetterMethods;

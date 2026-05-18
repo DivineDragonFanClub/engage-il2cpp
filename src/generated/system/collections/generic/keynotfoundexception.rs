@@ -178,6 +178,7 @@ impl KeyNotFoundException {
 }
 
 #[cfg(feature = "system-collections-generic-keynotfoundexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyNotFoundException;
     pub use super::IKeyNotFoundExceptionMethods;

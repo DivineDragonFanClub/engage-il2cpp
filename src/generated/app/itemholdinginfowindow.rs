@@ -293,6 +293,7 @@ impl ItemHoldingInfoWindow {
 }
 
 #[cfg(feature = "app-itemholdinginfowindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemHoldingInfoWindow;
     pub use super::IItemHoldingInfoWindowMethods;

@@ -159,6 +159,7 @@ impl CustomRenderTextureManager {
 }
 
 #[cfg(feature = "unity_engine-customrendertexturemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomRenderTextureManager;
     pub use super::ICustomRenderTextureManager;

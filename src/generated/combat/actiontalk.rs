@@ -339,6 +339,7 @@ impl ActionTalk {
 }
 
 #[cfg(feature = "combat-actiontalk")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionTalk;
     pub use super::IActionTalk;

@@ -196,6 +196,7 @@ impl<T0: ::unity2::ClassIdentity> Collection_1<T0> {
 }
 
 #[cfg(feature = "system-collections-object_model-collection_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Collection_1;
     pub use super::ICollection_1;

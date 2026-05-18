@@ -112,6 +112,7 @@ impl AssemblyCopyrightAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblycopyrightattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyCopyrightAttribute;
     pub use super::IAssemblyCopyrightAttribute;

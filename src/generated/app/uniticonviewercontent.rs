@@ -598,6 +598,7 @@ impl UnitIconViewerContent {
 }
 
 #[cfg(feature = "app-uniticonviewercontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitIconViewerContent;
     pub use super::IUnitIconViewerContentMethods;

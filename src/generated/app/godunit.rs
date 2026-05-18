@@ -10365,6 +10365,7 @@ impl GodUnit {
 }
 
 #[cfg(feature = "app-godunit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodUnit;
     pub use super::IGodUnit;

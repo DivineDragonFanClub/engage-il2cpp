@@ -268,6 +268,7 @@ impl CameraControllerBehindLastBoss {
 }
 
 #[cfg(feature = "combat-cameracontrollerbehindlastboss")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerBehindLastBoss;
     pub use super::ICameraControllerBehindLastBoss;

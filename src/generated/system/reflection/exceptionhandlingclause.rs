@@ -170,6 +170,7 @@ impl ExceptionHandlingClause {
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExceptionHandlingClause;
     pub use super::IExceptionHandlingClause;

@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-meshvertexattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshVertexAttributes;
     pub use crate::system::object::IObject;

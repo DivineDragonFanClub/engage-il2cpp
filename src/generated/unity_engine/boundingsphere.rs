@@ -122,6 +122,7 @@ impl BoundingSphere {
 }
 
 #[cfg(feature = "unity_engine-boundingsphere")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoundingSphere;
     pub use crate::system::object::IObject;

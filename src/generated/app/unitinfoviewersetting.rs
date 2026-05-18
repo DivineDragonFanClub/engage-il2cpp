@@ -13,30 +13,18 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
     #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_ForceList {
-        #[static_field]
-        #[rename(name = "Types")]
-        pub types: ::unity2::Array<crate::app::force::Force_Type>,
-        #[static_field]
-        #[rename(name = "Names")]
-        pub names: ::unity2::Array<::unity2::Il2CppString>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct UnitInfoViewerSetting {
-        #[rename(name = "m_LeftUnit")]
-        pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[rename(name = "m_RightUnit")]
-        pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
-        #[rename(name = "m_IsCharaOnlyTransition")]
-        pub m_is_chara_only_transition: bool,
-        #[rename(name = "m_Seq")]
-        pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
+    pub struct UnitInfoViewerSetting_UnitData {
+        #[rename(name = "person")]
+        pub person: ::unity2::Il2CppString,
+        #[rename(name = "job")]
+        pub job: ::unity2::Il2CppString,
+        #[rename(name = "weapon")]
+        pub weapon: ::unity2::Il2CppString,
+        #[rename(name = "force")]
+        pub force: ::unity2::Il2CppString,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
@@ -87,18 +75,30 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct UnitInfoViewerSetting {
+        #[rename(name = "m_LeftUnit")]
+        pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[rename(name = "m_RightUnit")]
+        pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+        #[rename(name = "m_IsCharaOnlyTransition")]
+        pub m_is_chara_only_transition: bool,
+        #[rename(name = "m_Seq")]
+        pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
     #[parent(crate::system::object::Object)]
-    pub struct UnitInfoViewerSetting_UnitData {
-        #[rename(name = "person")]
-        pub person: ::unity2::Il2CppString,
-        #[rename(name = "job")]
-        pub job: ::unity2::Il2CppString,
-        #[rename(name = "weapon")]
-        pub weapon: ::unity2::Il2CppString,
-        #[rename(name = "force")]
-        pub force: ::unity2::Il2CppString,
+    pub struct UnitInfoViewerSetting_ForceList {
+        #[static_field]
+        #[rename(name = "Types")]
+        pub types: ::unity2::Array<crate::app::force::Force_Type>,
+        #[static_field]
+        #[rename(name = "Names")]
+        pub names: ::unity2::Array<::unity2::Il2CppString>,
     }
 }
 
@@ -108,164 +108,22 @@ pub use __types::*;
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_ForceList_unity2_raw {
+mod __UnitInfoViewerSetting_UnitData_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetIndex",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_index(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_type {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetForceType",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                    "GetForceType",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_force_type(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::force::Force_Type {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::force::Force_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_force_type::get_offset() as isize),
-        );
-        inner(name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        force_type: crate::app::force::Force_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(force_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
-                ".cctor",
+                <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -273,8 +131,8 @@ mod __UnitInfoViewerSetting_ForceList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
+                    <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -285,52 +143,53 @@ mod __UnitInfoViewerSetting_ForceList_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
+    pub unsafe fn ctor(
+        this: UnitInfoViewerSetting_UnitData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitInfoViewerSetting_UnitData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_ForceList {
-    #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
-    pub fn get_index(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
+pub trait IUnitInfoViewerSetting_UnitDataMethods: IUnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            __UnitInfoViewerSetting_ForceList_unity2_raw::get_index(
-                ::core::convert::Into::into(name),
+            let __receiver =
+                <UnitInfoViewerSetting_UnitData as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitInfoViewerSetting_UnitData_unity2_raw::ctor(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
-    pub fn get_force_type(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::force::Force_Type {
-        unsafe {
-            __UnitInfoViewerSetting_ForceList_unity2_raw::get_force_type(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl<__T: IUnitInfoViewerSetting_UnitData> IUnitInfoViewerSetting_UnitDataMethods for __T {}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting_UnitData),
+                ::core::stringify!(new),
             )
-        }
-    }
-    #[doc = "`GetName(crate::app::force::Force_Type)` overload"]
-    pub fn get_name(
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __UnitInfoViewerSetting_ForceList_unity2_raw::get_name(
-                ::core::convert::Into::into(force_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::cctor(::core::option::Option::None) }
+        });
+        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
+        this
     }
 }
 
@@ -1189,22 +1048,23 @@ impl UnitInfoViewerSetting {
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitInfoViewerSetting_UnitData_unity2_raw {
+mod __UnitInfoViewerSetting_ForceList_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_get_index {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
+                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
+                "GetIndex",
+                1,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -1212,8 +1072,8 @@ mod __UnitInfoViewerSetting_UnitData_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitInfoViewerSetting_UnitData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
+                    "GetIndex",
                     e
                 ),
             }
@@ -1224,57 +1084,198 @@ mod __UnitInfoViewerSetting_UnitData_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: UnitInfoViewerSetting_UnitData,
+    pub unsafe fn get_index(
+        name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitInfoViewerSetting_UnitData, ::unity2::OptionalMethod) -> () =
+    ) -> i32 {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_get_index::get_offset() as isize),
             );
-        inner(this, __unity2_method_info)
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_force_type {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
+                "GetForceType",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
+                    "GetForceType",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_force_type(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::force::Force_Type {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::force::Force_Type = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_force_type::get_offset() as isize),
+        );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        force_type: crate::app::force::Force_Type,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            crate::app::force::Force_Type,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(force_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitInfoViewerSetting_ForceList as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
-pub trait IUnitInfoViewerSetting_UnitDataMethods: IUnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+impl UnitInfoViewerSetting_ForceList {
+    #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
+    pub fn get_index(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
         unsafe {
-            let __receiver =
-                <UnitInfoViewerSetting_UnitData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitInfoViewerSetting_UnitData_unity2_raw::ctor(
-                __receiver,
+            __UnitInfoViewerSetting_ForceList_unity2_raw::get_index(
+                ::core::convert::Into::into(name),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl<__T: IUnitInfoViewerSetting_UnitData> IUnitInfoViewerSetting_UnitDataMethods for __T {}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting_UnitData),
-                ::core::stringify!(new),
+    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
+    pub fn get_force_type(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::app::force::Force_Type {
+        unsafe {
+            __UnitInfoViewerSetting_ForceList_unity2_raw::get_force_type(
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
             )
-        });
-        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
-        this
+        }
+    }
+    #[doc = "`GetName(crate::app::force::Force_Type)` overload"]
+    pub fn get_name(
+        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
+    ) -> ::unity2::Il2CppString {
+        unsafe {
+            __UnitInfoViewerSetting_ForceList_unity2_raw::get_name(
+                ::core::convert::Into::into(force_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __UnitInfoViewerSetting_ForceList_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-unitinfoviewersetting")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoViewerSetting;
     pub use super::IUnitInfoViewerSettingMethods;

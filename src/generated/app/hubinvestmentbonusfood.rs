@@ -389,6 +389,7 @@ impl HubInvestmentBonusFood {
 }
 
 #[cfg(feature = "app-hubinvestmentbonusfood")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubInvestmentBonusFood;
     pub use super::IHubInvestmentBonusFood;

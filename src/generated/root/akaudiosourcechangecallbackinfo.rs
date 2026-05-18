@@ -500,6 +500,7 @@ impl AkAudioSourceChangeCallbackInfo {
 }
 
 #[cfg(feature = "root-akaudiosourcechangecallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAudioSourceChangeCallbackInfo;
     pub use super::IAkAudioSourceChangeCallbackInfo;

@@ -172,6 +172,7 @@ impl AkTriggerEnter {
 }
 
 #[cfg(feature = "root-aktriggerenter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerEnter;
     pub use super::IAkTriggerEnter;

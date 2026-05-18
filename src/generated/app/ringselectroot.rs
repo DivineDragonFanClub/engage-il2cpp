@@ -808,6 +808,7 @@ impl RingSelectRoot_CharaPhoto {
 }
 
 #[cfg(feature = "app-ringselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingSelectRoot;
     pub use super::IRingSelectRootMethods;

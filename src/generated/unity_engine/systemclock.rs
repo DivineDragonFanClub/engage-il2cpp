@@ -73,6 +73,7 @@ impl SystemClock {
 }
 
 #[cfg(feature = "unity_engine-systemclock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISystemClock;
     pub use super::SystemClock;

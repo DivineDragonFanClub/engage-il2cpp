@@ -432,6 +432,7 @@ impl JobIntroInfoSetter {
 }
 
 #[cfg(feature = "app-jobintroinfosetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJobIntroInfoSetter;
     pub use super::IJobIntroInfoSetterMethods;

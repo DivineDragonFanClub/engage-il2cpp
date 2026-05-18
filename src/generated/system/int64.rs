@@ -508,6 +508,7 @@ impl Int64 {
 }
 
 #[cfg(feature = "system-int64")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Int64;
     pub use crate::system::object::IObject;

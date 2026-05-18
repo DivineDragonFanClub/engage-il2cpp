@@ -295,6 +295,7 @@ impl VariableCommand {
 }
 
 #[cfg(feature = "app-variablecommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVariableCommand;
     pub use super::IVariableCommandMethods;

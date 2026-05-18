@@ -291,6 +291,7 @@ impl CommandInspector {
 }
 
 #[cfg(feature = "app-commandinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommandInspector;
     pub use super::ICommandInspector;

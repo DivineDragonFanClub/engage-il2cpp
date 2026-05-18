@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-fileshare")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileShare;
     pub use crate::system::object::IObject;

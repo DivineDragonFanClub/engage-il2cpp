@@ -1196,6 +1196,7 @@ impl RenderGraphDefaultResources {
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdefaultresources"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphDefaultResources;
     pub use super::IRenderGraphDefaultResourcesMethods;

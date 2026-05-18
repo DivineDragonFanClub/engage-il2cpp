@@ -193,6 +193,7 @@ impl SelfieCamera {
 }
 
 #[cfg(feature = "combat-selfiecamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISelfieCamera;
     pub use super::ISelfieCameraMethods;

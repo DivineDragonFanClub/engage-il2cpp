@@ -3707,6 +3707,7 @@ impl MuscleExercisePrizeData {
 }
 
 #[cfg(feature = "app-muscleexerciseprizedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleExercisePrizeData;
     pub use super::IMuscleExercisePrizeDataMethods;

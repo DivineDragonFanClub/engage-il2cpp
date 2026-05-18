@@ -144,6 +144,7 @@ impl MovedFromAttributeData {
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MovedFromAttributeData;
     pub use crate::system::object::IObject;

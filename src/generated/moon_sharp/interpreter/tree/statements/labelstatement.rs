@@ -1121,6 +1121,7 @@ impl LabelStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILabelStatement;
     pub use super::ILabelStatementMethods;

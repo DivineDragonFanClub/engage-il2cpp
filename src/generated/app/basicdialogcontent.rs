@@ -1006,6 +1006,7 @@ impl BasicDialogContent {
 }
 
 #[cfg(feature = "app-basicdialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicDialogContent;
     pub use super::IBasicDialogContent;

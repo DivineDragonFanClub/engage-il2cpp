@@ -4194,6 +4194,7 @@ impl Animation_Enumerator {
 }
 
 #[cfg(feature = "unity_engine-animation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Animation;
     pub use super::Animation_Enumerator;

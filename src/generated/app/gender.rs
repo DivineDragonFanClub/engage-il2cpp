@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Gender;
     pub use crate::system::object::IObject;

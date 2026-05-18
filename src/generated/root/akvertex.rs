@@ -789,6 +789,7 @@ impl AkVertex {
 }
 
 #[cfg(feature = "root-akvertex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkVertex;
     pub use super::IAkVertex;

@@ -908,6 +908,7 @@ impl TagProcessorBase {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITagProcessorBase;
     pub use super::ITagProcessorBaseMethods;

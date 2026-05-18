@@ -1028,6 +1028,7 @@ impl FunctionDefinitionExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-functiondefinitionexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionDefinitionExpression;
     pub use super::IFunctionDefinitionExpression;

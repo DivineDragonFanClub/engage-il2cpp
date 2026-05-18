@@ -182,6 +182,7 @@ impl MyRoomCaptionBehaviour {
 }
 
 #[cfg(feature = "app-myroomcaptionbehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomCaptionBehaviour;
     pub use super::IMyRoomCaptionBehaviourMethods;

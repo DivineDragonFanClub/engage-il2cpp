@@ -545,6 +545,7 @@ impl TileBase {
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tilebase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITileBase;
     pub use super::ITileBaseMethods;

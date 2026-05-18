@@ -685,6 +685,7 @@ impl BGMChangeMenuItem {
 }
 
 #[cfg(feature = "root-bgmchangemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BGMChangeMenuItem;
     pub use super::IBGMChangeMenuItem;

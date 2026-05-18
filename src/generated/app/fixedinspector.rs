@@ -120,6 +120,7 @@ impl FixedInspector {
 }
 
 #[cfg(feature = "app-fixedinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FixedInspector;
     pub use super::IFixedInspector;

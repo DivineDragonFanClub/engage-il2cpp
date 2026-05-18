@@ -144,6 +144,7 @@ impl Gesture {
 }
 
 #[cfg(feature = "nn-hid-gesture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Gesture;
     pub use super::IGesture;

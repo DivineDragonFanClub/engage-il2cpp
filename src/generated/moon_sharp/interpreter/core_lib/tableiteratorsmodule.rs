@@ -372,6 +372,7 @@ impl TableIteratorsModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tableiteratorsmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITableIteratorsModule;
     pub use super::ITableIteratorsModuleMethods;

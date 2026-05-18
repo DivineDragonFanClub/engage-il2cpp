@@ -602,6 +602,7 @@ impl ChallengeMapSelectManager {
 }
 
 #[cfg(feature = "app-challengemapselectmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeMapSelectManager;
     pub use super::ChallengeMapSelectManager_ReturnEventHandler;

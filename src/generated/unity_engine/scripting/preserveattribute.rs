@@ -99,6 +99,7 @@ impl PreserveAttribute {
 }
 
 #[cfg(feature = "unity_engine-scripting-preserveattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPreserveAttribute;
     pub use super::IPreserveAttributeMethods;

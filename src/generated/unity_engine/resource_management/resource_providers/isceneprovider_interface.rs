@@ -152,6 +152,7 @@ pub trait IISceneProvider_InterfaceMethods: IISceneProvider_Interface {
 impl<__T: IISceneProvider_Interface> IISceneProvider_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-isceneprovider_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IISceneProvider_Interface;
     pub use super::IISceneProvider_InterfaceMethods;

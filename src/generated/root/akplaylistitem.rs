@@ -1051,6 +1051,7 @@ impl AkPlaylistItem {
 }
 
 #[cfg(feature = "root-akplaylistitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkPlaylistItem;
     pub use super::IAkPlaylistItem;

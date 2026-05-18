@@ -16,23 +16,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieConfirmBattleDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct SortieConfirmBattleDialog {
-        #[static_field]
-        #[rename(name = "m_from")]
-        pub m_from: crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SortieConfirmBattleDialog.ConfirmYesDialogItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md"))]
     #[repr(C)]
     #[derive(
@@ -84,6 +67,23 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieConfirmBattleDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SortieConfirmBattleDialog {
+        #[static_field]
+        #[rename(name = "m_from")]
+        pub m_from: crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "SortieConfirmBattleDialog.ConfirmYesDialogItem"
+    )]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem {}
 }
 
 #[cfg(feature = "app-sortieconfirmbattledialog-types")]
@@ -453,6 +453,7 @@ impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
 }
 
 #[cfg(feature = "app-sortieconfirmbattledialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieConfirmBattleDialog;
     pub use super::ISortieConfirmBattleDialogMethods;

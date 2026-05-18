@@ -723,6 +723,7 @@ impl CompositeUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-compositeuserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompositeUserDataDescriptor;
     pub use super::ICompositeUserDataDescriptor;

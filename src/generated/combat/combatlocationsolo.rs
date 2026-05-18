@@ -571,6 +571,7 @@ impl CombatLocationSolo {
 }
 
 #[cfg(feature = "combat-combatlocationsolo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationSolo;
     pub use super::ICombatLocationSolo;

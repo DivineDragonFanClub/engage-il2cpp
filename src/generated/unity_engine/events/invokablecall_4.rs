@@ -118,6 +118,7 @@ impl<
 }
 
 #[cfg(feature = "unity_engine-events-invokablecall_4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvokableCall_4;
     pub use super::IInvokableCall_4Methods;

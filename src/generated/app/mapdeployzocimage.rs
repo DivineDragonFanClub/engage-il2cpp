@@ -103,6 +103,7 @@ impl MapDeployZocImage {
 }
 
 #[cfg(feature = "app-mapdeployzocimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployZocImage;
     pub use super::IMapDeployZocImageMethods;

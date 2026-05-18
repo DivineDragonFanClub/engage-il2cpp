@@ -13,18 +13,6 @@ mod __types {
     use crate::unity_engine::event_systems::baseeventdata::{BaseEventData, IBaseEventData};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))]
-    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerEventData")]
-    #[parent(crate::unity_engine::event_systems::baseeventdata::BaseEventData)]
-    pub struct PointerEventData {
-        #[rename(name = "m_PointerPress")]
-        pub m_pointer_press: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "hovered")]
-        pub hovered: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
     #[repr(C)]
     #[derive(
@@ -71,6 +59,18 @@ mod __types {
         pub fn middle() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerEventData")]
+    #[parent(crate::unity_engine::event_systems::baseeventdata::BaseEventData)]
+    pub struct PointerEventData {
+        #[rename(name = "m_PointerPress")]
+        pub m_pointer_press: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "hovered")]
+        pub hovered: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]
@@ -3053,6 +3053,7 @@ impl PointerEventData {
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointereventdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPointerEventData;
     pub use super::IPointerEventDataMethods;

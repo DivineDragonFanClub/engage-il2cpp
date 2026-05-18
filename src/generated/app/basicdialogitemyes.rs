@@ -294,6 +294,7 @@ impl BasicDialogItemYes {
 }
 
 #[cfg(feature = "app-basicdialogitemyes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicDialogItemYes;
     pub use super::IBasicDialogItemYes;

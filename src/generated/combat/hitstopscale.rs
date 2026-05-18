@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-hitstopscale")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HitstopScale;
     pub use crate::system::object::IObject;

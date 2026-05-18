@@ -101,6 +101,7 @@ impl UnmanagedMarshal {
 }
 
 #[cfg(feature = "system-reflection-emit-unmanagedmarshal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnmanagedMarshal;
     pub use super::IUnmanagedMarshalMethods;

@@ -574,6 +574,7 @@ impl PostProcessManager {
 }
 
 #[cfg(feature = "app-postprocessmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPostProcessManager;
     pub use super::IPostProcessManagerMethods;

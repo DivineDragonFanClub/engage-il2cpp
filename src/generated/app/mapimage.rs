@@ -3318,6 +3318,7 @@ impl MapImage {
 }
 
 #[cfg(feature = "app-mapimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImage;
     pub use super::IMapImageMethods;

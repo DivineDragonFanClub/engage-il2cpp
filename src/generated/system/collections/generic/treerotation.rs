@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-treerotation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TreeRotation;
     pub use crate::system::object::IObject;

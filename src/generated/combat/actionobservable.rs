@@ -409,6 +409,7 @@ impl ActionObservable {
 }
 
 #[cfg(feature = "combat-actionobservable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionObservable;
     pub use super::IActionObservable;

@@ -1012,6 +1012,7 @@ impl TypeDescriptorRegistry {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-typedescriptorregistry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeDescriptorRegistry;
     pub use super::TypeDescriptorRegistry;

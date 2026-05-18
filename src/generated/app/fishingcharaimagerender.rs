@@ -750,6 +750,7 @@ impl FishingCharaImageRender {
 }
 
 #[cfg(feature = "app-fishingcharaimagerender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingCharaImageRender;
     pub use super::IFishingCharaImageRender;

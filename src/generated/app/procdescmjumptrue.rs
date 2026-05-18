@@ -187,6 +187,7 @@ impl ProcDescMJumpTrue {
 }
 
 #[cfg(feature = "app-procdescmjumptrue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMJumpTrue;
     pub use super::IProcDescMJumpTrueMethods;

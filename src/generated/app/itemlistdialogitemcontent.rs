@@ -255,6 +255,7 @@ impl ItemListDialogItemContent {
 }
 
 #[cfg(feature = "app-itemlistdialogitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemListDialogItemContent;
     pub use super::IItemListDialogItemContentMethods;

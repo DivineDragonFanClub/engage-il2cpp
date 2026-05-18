@@ -483,6 +483,7 @@ impl ValueType {
 }
 
 #[cfg(feature = "system-valuetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IValueType;
     pub use super::IValueTypeMethods;

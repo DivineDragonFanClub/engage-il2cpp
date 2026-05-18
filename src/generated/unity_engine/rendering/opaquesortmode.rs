@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-opaquesortmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::OpaqueSortMode;
     pub use crate::system::object::IObject;

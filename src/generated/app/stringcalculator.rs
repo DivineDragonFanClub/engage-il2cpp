@@ -835,6 +835,7 @@ impl StringCalculator {
 }
 
 #[cfg(feature = "app-stringcalculator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringCalculator;
     pub use super::IStringCalculatorMethods;

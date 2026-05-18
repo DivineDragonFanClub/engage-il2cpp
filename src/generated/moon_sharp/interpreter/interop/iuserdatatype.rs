@@ -273,6 +273,7 @@ pub trait IIUserDataTypeMethods: IIUserDataType {
 impl<__T: IIUserDataType> IIUserDataTypeMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatatype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIUserDataType;
     pub use super::IIUserDataTypeMethods;

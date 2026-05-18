@@ -826,6 +826,7 @@ impl BackgroundManager {
 }
 
 #[cfg(feature = "app-backgroundmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BackgroundManager;
     pub use super::BackgroundManager_BindType;

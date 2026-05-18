@@ -16,6 +16,54 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapInfoCircle_Animes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapInfoCircle.Animes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapInfoCircle_Animes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapInfoCircle_Animes {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn low_rotate() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn high_rotate() -> Self {
+            Self { value: 2 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfocircle/MapInfoCircle.md"))]
     #[::unity2::class(namespace = "App", name = "MapInfoCircle")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfocircle :: MapInfoCircle >)]
@@ -113,7 +161,7 @@ mod __types {
         pub m_resist_rewarp_unit: crate::app::mapfor::MapFor_UnitFunction,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -122,14 +170,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct MapInfoCircle_Animes {
+    pub struct MapInfoCircle_MeshIndex {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
+    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "MapInfoCircle.Animes";
+        const NAME: &'static str = "MapInfoCircle.MeshIndex";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -138,7 +186,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for MapInfoCircle_Animes {
+    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -147,17 +195,21 @@ mod __types {
         }
     }
 
-    impl MapInfoCircle_Animes {
-        pub fn none() -> Self {
+    impl MapInfoCircle_MeshIndex {
+        pub fn normal() -> Self {
             Self { value: 0 }
         }
 
-        pub fn low_rotate() -> Self {
+        pub fn boss() -> Self {
             Self { value: 1 }
         }
 
-        pub fn high_rotate() -> Self {
+        pub fn last_boss() -> Self {
             Self { value: 2 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -258,58 +310,6 @@ mod __types {
 
         pub fn rotate() -> Self {
             Self { value: 1 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapInfoCircle_MeshIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapInfoCircle.MeshIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapInfoCircle_MeshIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapInfoCircle_MeshIndex {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn boss() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn last_boss() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 3 }
         }
     }
 }
@@ -2318,6 +2318,7 @@ impl MapInfoCircle {
 }
 
 #[cfg(feature = "app-mapinfocircle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoCircle;
     pub use super::IMapInfoCircleMethods;

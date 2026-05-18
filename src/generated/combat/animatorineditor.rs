@@ -105,6 +105,7 @@ impl AnimatorInEditor {
 }
 
 #[cfg(feature = "combat-animatorineditor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorInEditor;
     pub use super::IAnimatorInEditor;

@@ -272,6 +272,7 @@ impl LogCommand {
 }
 
 #[cfg(feature = "app-logcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILogCommand;
     pub use super::ILogCommandMethods;

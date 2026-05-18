@@ -187,6 +187,7 @@ impl ConvertNoRecord {
 }
 
 #[cfg(feature = "combat-situation_converter-convertnorecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertNoRecord;
     pub use super::IConvertNoRecord;

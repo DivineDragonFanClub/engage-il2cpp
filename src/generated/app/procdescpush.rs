@@ -231,6 +231,7 @@ impl ProcDescPush {
 }
 
 #[cfg(feature = "app-procdescpush")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescPush;
     pub use super::IProcDescPushMethods;

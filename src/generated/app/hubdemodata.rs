@@ -1374,6 +1374,7 @@ impl HubDemoData {
 }
 
 #[cfg(feature = "app-hubdemodata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubDemoData;
     pub use super::IHubDemoData;

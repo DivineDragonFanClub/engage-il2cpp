@@ -1309,6 +1309,7 @@ impl AkInitializationSettings {
 }
 
 #[cfg(feature = "root-akinitializationsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkInitializationSettings;
     pub use super::IAkInitializationSettings;

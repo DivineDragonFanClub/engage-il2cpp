@@ -107,6 +107,7 @@ impl MapDeploySupportForUnitImage {
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeploySupportForUnitImage;
     pub use super::IMapDeploySupportForUnitImageMethods;

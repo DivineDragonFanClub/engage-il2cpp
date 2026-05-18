@@ -103,6 +103,7 @@ pub trait IIClosureBuilderMethods: IIClosureBuilder {
 impl<__T: IIClosureBuilder> IIClosureBuilderMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IClosureBuilder;
     pub use super::IIClosureBuilder;

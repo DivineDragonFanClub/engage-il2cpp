@@ -104,6 +104,7 @@ impl VibrationDeviceInfo {
 }
 
 #[cfg(feature = "nn-hid-vibrationdeviceinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VibrationDeviceInfo;
     pub use crate::system::object::IObject;

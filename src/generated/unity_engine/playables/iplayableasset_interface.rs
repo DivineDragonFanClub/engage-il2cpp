@@ -157,6 +157,7 @@ pub trait IIPlayableAsset_InterfaceMethods: IIPlayableAsset_Interface {
 impl<__T: IIPlayableAsset_Interface> IIPlayableAsset_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-iplayableasset_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlayableAsset_Interface;
     pub use super::IIPlayableAsset_InterfaceMethods;

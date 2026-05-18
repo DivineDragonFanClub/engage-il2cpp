@@ -641,6 +641,7 @@ impl ExpSequence {
 }
 
 #[cfg(feature = "app-expsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExpSequence;
     pub use super::IExpSequence;

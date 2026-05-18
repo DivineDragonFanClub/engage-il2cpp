@@ -100,6 +100,7 @@ impl TargetInvocationException {
 }
 
 #[cfg(feature = "system-reflection-targetinvocationexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetInvocationException;
     pub use super::ITargetInvocationExceptionMethods;

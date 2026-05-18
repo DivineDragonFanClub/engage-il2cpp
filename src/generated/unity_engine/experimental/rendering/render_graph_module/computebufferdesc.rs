@@ -241,6 +241,7 @@ impl ComputeBufferDesc {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeBufferDesc;
     pub use crate::system::object::IObject;

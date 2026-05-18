@@ -202,6 +202,7 @@ impl ColorUsageAttribute {
 }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorUsageAttribute;
     pub use super::IColorUsageAttribute;

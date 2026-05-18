@@ -273,6 +273,7 @@ impl MapGridAlphaMenuItem {
 }
 
 #[cfg(feature = "root-mapgridalphamenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapGridAlphaMenuItem;
     pub use super::IMapGridAlphaMenuItemMethods;

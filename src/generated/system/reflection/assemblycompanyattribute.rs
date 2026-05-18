@@ -112,6 +112,7 @@ impl AssemblyCompanyAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblycompanyattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyCompanyAttribute;
     pub use super::IAssemblyCompanyAttribute;

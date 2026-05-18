@@ -12,61 +12,6 @@ mod __types {
     };
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))]
-    #[::unity2::class(namespace = "", name = "AkEventPlayableBehavior")]
-    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
-    pub struct AkEventPlayableBehavior {
-        #[rename(name = "currentDuration")]
-        pub current_duration: f32,
-        #[rename(name = "currentDurationProportion")]
-        pub current_duration_proportion: f32,
-        #[rename(name = "eventIsPlaying")]
-        pub event_is_playing: bool,
-        #[rename(name = "fadeinTriggered")]
-        pub fadein_triggered: bool,
-        #[rename(name = "fadeoutTriggered")]
-        pub fadeout_triggered: bool,
-        #[rename(name = "previousEventStartTime")]
-        pub previous_event_start_time: f32,
-        #[static_field]
-        #[rename(name = "CallbackFlags")]
-        pub callback_flags: u32,
-        #[rename(name = "requiredActions")]
-        pub required_actions: crate::root::akeventplayablebehavior::AkEventPlayableBehavior_Actions,
-        #[static_field]
-        #[rename(name = "scrubPlaybackLengthMs")]
-        pub scrub_playback_length_ms: i32,
-        #[rename(name = "eventDurationMax")]
-        pub event_duration_max: f32,
-        #[rename(name = "eventDurationMin")]
-        pub event_duration_min: f32,
-        #[rename(name = "blendInDuration")]
-        pub blend_in_duration: f32,
-        #[rename(name = "blendOutDuration")]
-        pub blend_out_duration: f32,
-        #[rename(name = "easeInDuration")]
-        pub ease_in_duration: f32,
-        #[rename(name = "easeOutDuration")]
-        pub ease_out_duration: f32,
-        #[rename(name = "blendInCurve")]
-        pub blend_in_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
-        #[rename(name = "blendOutCurve")]
-        pub blend_out_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
-        #[rename(name = "eventObject")]
-        pub event_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "retriggerEvent")]
-        pub retrigger_event_field: bool,
-        #[rename(name = "wasScrubbingAndRequiresRetrigger")]
-        pub was_scrubbing_and_requires_retrigger: bool,
-        #[rename(name = "StopEventAtClipEnd")]
-        pub stop_event_at_clip_end: bool,
-        #[rename(name = "overrideTrackEmitterObject")]
-        pub override_track_emitter_object: bool,
-        #[static_field]
-        #[rename(name = "alph")]
-        pub alph: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akeventplayablebehavior/AkEventPlayableBehavior_Actions.md"))]
     #[repr(C)]
     #[derive(
@@ -129,6 +74,61 @@ mod __types {
         pub fn fade_out() -> Self {
             Self { value: 32 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventplayablebehavior/AkEventPlayableBehavior.md"))]
+    #[::unity2::class(namespace = "", name = "AkEventPlayableBehavior")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct AkEventPlayableBehavior {
+        #[rename(name = "currentDuration")]
+        pub current_duration: f32,
+        #[rename(name = "currentDurationProportion")]
+        pub current_duration_proportion: f32,
+        #[rename(name = "eventIsPlaying")]
+        pub event_is_playing: bool,
+        #[rename(name = "fadeinTriggered")]
+        pub fadein_triggered: bool,
+        #[rename(name = "fadeoutTriggered")]
+        pub fadeout_triggered: bool,
+        #[rename(name = "previousEventStartTime")]
+        pub previous_event_start_time: f32,
+        #[static_field]
+        #[rename(name = "CallbackFlags")]
+        pub callback_flags: u32,
+        #[rename(name = "requiredActions")]
+        pub required_actions: crate::root::akeventplayablebehavior::AkEventPlayableBehavior_Actions,
+        #[static_field]
+        #[rename(name = "scrubPlaybackLengthMs")]
+        pub scrub_playback_length_ms: i32,
+        #[rename(name = "eventDurationMax")]
+        pub event_duration_max: f32,
+        #[rename(name = "eventDurationMin")]
+        pub event_duration_min: f32,
+        #[rename(name = "blendInDuration")]
+        pub blend_in_duration: f32,
+        #[rename(name = "blendOutDuration")]
+        pub blend_out_duration: f32,
+        #[rename(name = "easeInDuration")]
+        pub ease_in_duration: f32,
+        #[rename(name = "easeOutDuration")]
+        pub ease_out_duration: f32,
+        #[rename(name = "blendInCurve")]
+        pub blend_in_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        #[rename(name = "blendOutCurve")]
+        pub blend_out_curve: crate::root::akcurveinterpolation::AkCurveInterpolation,
+        #[rename(name = "eventObject")]
+        pub event_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "retriggerEvent")]
+        pub retrigger_event_field: bool,
+        #[rename(name = "wasScrubbingAndRequiresRetrigger")]
+        pub was_scrubbing_and_requires_retrigger: bool,
+        #[rename(name = "StopEventAtClipEnd")]
+        pub stop_event_at_clip_end: bool,
+        #[rename(name = "overrideTrackEmitterObject")]
+        pub override_track_emitter_object: bool,
+        #[static_field]
+        #[rename(name = "alph")]
+        pub alph: f32,
     }
 }
 
@@ -1395,6 +1395,7 @@ impl AkEventPlayableBehavior {
 }
 
 #[cfg(feature = "root-akeventplayablebehavior")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEventPlayableBehavior;
     pub use super::AkEventPlayableBehavior_Actions;

@@ -266,6 +266,7 @@ impl ShaderKeywordStrings {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderkeywordstrings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderKeywordStrings;
     pub use super::ShaderKeywordStrings;

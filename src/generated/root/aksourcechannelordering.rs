@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-aksourcechannelordering")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSourceChannelOrdering;
     pub use crate::system::object::IObject;

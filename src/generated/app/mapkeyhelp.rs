@@ -107,25 +107,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
-    pub struct MapKeyHelp {
-        #[static_field]
-        #[rename(name = "ShowTime")]
-        pub show_time: f32,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
-        #[rename(name = "m_TemporaryHidingCount")]
-        pub m_temporary_hiding_count: i32,
-        #[rename(name = "m_LastType")]
-        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_RequestType")]
-        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_Progress")]
-        pub m_progress: f32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]
     #[repr(C)]
     #[derive(
@@ -260,6 +241,25 @@ mod __types {
         pub fn map_edit_free_on_unit() -> Self {
             Self { value: 24 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
+    pub struct MapKeyHelp {
+        #[static_field]
+        #[rename(name = "ShowTime")]
+        pub show_time: f32,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
+        #[rename(name = "m_TemporaryHidingCount")]
+        pub m_temporary_hiding_count: i32,
+        #[rename(name = "m_LastType")]
+        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[rename(name = "m_RequestType")]
+        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[rename(name = "m_Progress")]
+        pub m_progress: f32,
     }
 }
 
@@ -1066,6 +1066,7 @@ impl MapKeyHelp {
 }
 
 #[cfg(feature = "app-mapkeyhelp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapKeyHelp;
     pub use super::IMapKeyHelpMethods;

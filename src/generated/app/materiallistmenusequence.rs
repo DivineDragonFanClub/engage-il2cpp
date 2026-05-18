@@ -494,6 +494,7 @@ impl MaterialListMenuSequence {
 }
 
 #[cfg(feature = "app-materiallistmenusequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialListMenuSequence;
     pub use super::IMaterialListMenuSequenceMethods;

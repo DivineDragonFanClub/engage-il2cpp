@@ -1295,6 +1295,7 @@ impl DragonRideTargetPatternData {
 }
 
 #[cfg(feature = "app-dragonridetargetpatterndata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideTargetPatternData;
     pub use super::IDragonRideTargetPatternData;

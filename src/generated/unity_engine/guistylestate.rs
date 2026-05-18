@@ -546,6 +546,7 @@ impl GUIStyleState {
 }
 
 #[cfg(feature = "unity_engine-guistylestate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIStyleState;
     pub use super::IGUIStyleState;

@@ -429,6 +429,7 @@ impl PhotographSelectCharacterMenuContent {
 }
 
 #[cfg(feature = "app-photographselectcharactermenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectCharacterMenuContent;
     pub use super::IPhotographSelectCharacterMenuContentMethods;

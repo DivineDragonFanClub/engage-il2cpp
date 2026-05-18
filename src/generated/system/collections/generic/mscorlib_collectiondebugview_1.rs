@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-mscorlib_collectiondebugview_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMscorlib_CollectionDebugView_1;
     pub use super::Mscorlib_CollectionDebugView_1;

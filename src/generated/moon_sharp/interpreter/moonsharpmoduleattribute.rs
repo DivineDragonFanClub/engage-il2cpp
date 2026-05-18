@@ -224,6 +224,7 @@ impl MoonSharpModuleAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpModuleAttribute;
     pub use super::IMoonSharpModuleAttributeMethods;

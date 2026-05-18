@@ -277,6 +277,7 @@ impl MapRange {
 }
 
 #[cfg(feature = "app-maprange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MapRange;
     pub use crate::system::object::IObject;

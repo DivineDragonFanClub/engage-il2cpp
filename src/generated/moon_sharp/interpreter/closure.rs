@@ -1089,6 +1089,7 @@ impl Closure {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-closure")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Closure;
     pub use super::Closure_UpvaluesType;

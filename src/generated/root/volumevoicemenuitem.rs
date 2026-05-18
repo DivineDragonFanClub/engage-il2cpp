@@ -451,6 +451,7 @@ impl VolumeVoiceMenuItem {
 }
 
 #[cfg(feature = "root-volumevoicemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeVoiceMenuItem;
     pub use super::IVolumeVoiceMenuItemMethods;

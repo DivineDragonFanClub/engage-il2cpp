@@ -185,6 +185,7 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
 }
 
 #[cfg(feature = "system-io-filesystemenumerableiterator_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileSystemEnumerableIterator_1;
     pub use super::IFileSystemEnumerableIterator_1;

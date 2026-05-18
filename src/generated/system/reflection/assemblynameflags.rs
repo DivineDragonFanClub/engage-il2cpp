@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-assemblynameflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyNameFlags;
     pub use crate::system::object::IObject;

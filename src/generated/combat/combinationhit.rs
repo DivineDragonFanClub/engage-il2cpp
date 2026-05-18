@@ -1327,6 +1327,7 @@ impl CombinationHit {
 }
 
 #[cfg(feature = "combat-combinationhit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombinationHit;
     pub use super::ICombinationHit;

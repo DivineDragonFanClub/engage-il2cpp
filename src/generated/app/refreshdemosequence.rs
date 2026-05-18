@@ -934,6 +934,7 @@ impl RefreshDemoSequence {
 }
 
 #[cfg(feature = "app-refreshdemosequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshDemoSequence;
     pub use super::IRefreshDemoSequenceMethods;

@@ -625,6 +625,7 @@ impl AkDynamicSequenceItemCallbackInfo {
 }
 
 #[cfg(feature = "root-akdynamicsequenceitemcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDynamicSequenceItemCallbackInfo;
     pub use super::IAkDynamicSequenceItemCallbackInfo;

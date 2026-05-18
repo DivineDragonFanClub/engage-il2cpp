@@ -291,6 +291,7 @@ impl WeaponHoldingInfoWindow {
 }
 
 #[cfg(feature = "app-weaponholdinginfowindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponHoldingInfoWindow;
     pub use super::IWeaponHoldingInfoWindowMethods;

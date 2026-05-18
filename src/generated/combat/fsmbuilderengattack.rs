@@ -427,6 +427,7 @@ impl FSMBuilderEngAttack {
 }
 
 #[cfg(feature = "combat-fsmbuilderengattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderEngAttack;
     pub use super::IFSMBuilderEngAttack;

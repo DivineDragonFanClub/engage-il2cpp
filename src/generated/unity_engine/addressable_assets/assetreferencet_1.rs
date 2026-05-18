@@ -64,6 +64,7 @@ impl<T0: ::unity2::ClassIdentity> AssetReferenceT_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceT_1;
     pub use super::IAssetReferenceT_1;

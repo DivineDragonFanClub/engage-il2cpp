@@ -4861,6 +4861,7 @@ impl CoreUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-coreutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoreUtils;
     pub use super::ICoreUtils;

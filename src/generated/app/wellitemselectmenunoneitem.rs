@@ -403,6 +403,7 @@ impl WellItemSelectMenuNoneItem {
 }
 
 #[cfg(feature = "app-wellitemselectmenunoneitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWellItemSelectMenuNoneItem;
     pub use super::IWellItemSelectMenuNoneItemMethods;

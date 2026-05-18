@@ -253,6 +253,7 @@ impl Statement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStatement;
     pub use super::IStatementMethods;

@@ -209,6 +209,7 @@ impl TalkTagFinish {
 }
 
 #[cfg(feature = "app-talk3_d-talktagfinish")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagFinish;
     pub use super::ITalkTagFinishMethods;

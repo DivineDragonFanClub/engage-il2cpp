@@ -1682,6 +1682,7 @@ impl PhotographSequence {
 }
 
 #[cfg(feature = "app-photographsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSequence;
     pub use super::IPhotographSequenceMethods;

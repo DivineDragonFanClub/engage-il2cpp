@@ -121,6 +121,7 @@ impl NetworkServiceSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-networkserviceselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INetworkServiceSelectMenuItemContent;
     pub use super::INetworkServiceSelectMenuItemContentMethods;

@@ -463,6 +463,7 @@ impl GiftMenu {
 }
 
 #[cfg(feature = "app-giftmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftMenu;
     pub use super::IGiftMenu;

@@ -867,6 +867,7 @@ impl Glyph {
 }
 
 #[cfg(feature = "unity_engine-text_core-glyph")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Glyph;
     pub use super::IGlyph;

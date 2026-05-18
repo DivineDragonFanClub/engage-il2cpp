@@ -8,6 +8,40 @@ mod __types {
     use crate::unity_engine::rendering::renderpipeline::{IRenderPipeline, RenderPipeline};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Context.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "UniversalRenderPipeline.Profiling.Pipeline.Context"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct UniversalRenderPipeline_Profiling_Pipeline_Context {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "submit")]
+        pub submit: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Renderer.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "UniversalRenderPipeline.Profiling.Pipeline.Renderer"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct UniversalRenderPipeline_Profiling_Pipeline_Renderer {
+        #[static_field]
+        #[rename(name = "k_Name")]
+        pub k_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "setupCullingParameters")]
+        pub setup_culling_parameters:
+            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[static_field]
+        #[rename(name = "setup")]
+        pub setup: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -89,38 +123,37 @@ mod __types {
             crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Renderer.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_CustomRPTime.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalRenderPipeline.Profiling.Pipeline.Renderer"
+        name = "UniversalRenderPipeline.CustomRPTime"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct UniversalRenderPipeline_Profiling_Pipeline_Renderer {
+    pub struct UniversalRenderPipeline_CustomRPTime {
         #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
+        #[rename(name = "_Enabled")]
+        pub enabled: bool,
         #[static_field]
-        #[rename(name = "setupCullingParameters")]
-        pub setup_culling_parameters:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "_Time")]
+        pub time: f64,
         #[static_field]
-        #[rename(name = "setup")]
-        pub setup: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "_PrevTime")]
+        pub prev_time: f64,
+        #[static_field]
+        #[rename(name = "_TimeResetValue")]
+        pub time_reset_value: f64,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Context.md"))]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_XR.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalRenderPipeline.Profiling.Pipeline.Context"
+        name = "UniversalRenderPipeline.Profiling.Pipeline.XR"
     )]
     #[parent(crate::system::object::Object)]
-    pub struct UniversalRenderPipeline_Profiling_Pipeline_Context {
+    pub struct UniversalRenderPipeline_Profiling_Pipeline_XR {
         #[static_field]
-        #[rename(name = "k_Name")]
-        pub k_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "submit")]
-        pub submit: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+        #[rename(name = "mirrorView")]
+        pub mirror_view: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline.md"))]
@@ -148,43 +181,102 @@ mod __types {
 # [static_field] # [rename (name = "ResolutionRateScreenOnGpuSaveMode")] pub resolution_rate_screen_on_gpu_save_mode : f32 ,
 # [static_field] # [rename (name = "ResolutionRateRTOnGpuSaveMode")] pub resolution_rate_rt_on_gpu_save_mode : f32 ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_XR.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalRenderPipeline.Profiling.Pipeline.XR"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct UniversalRenderPipeline_Profiling_Pipeline_XR {
-        #[static_field]
-        #[rename(name = "mirrorView")]
-        pub mirror_view: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_CustomRPTime.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalRenderPipeline.CustomRPTime"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct UniversalRenderPipeline_CustomRPTime {
-        #[static_field]
-        #[rename(name = "_Enabled")]
-        pub enabled: bool,
-        #[static_field]
-        #[rename(name = "_Time")]
-        pub time: f64,
-        #[static_field]
-        #[rename(name = "_PrevTime")]
-        pub prev_time: f64,
-        #[static_field]
-        #[rename(name = "_TimeResetValue")]
-        pub time_reset_value: f64,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalRenderPipeline_Profiling_Pipeline_Context as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_Context as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
+impl UniversalRenderPipeline_Profiling_Pipeline_Context {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw::cctor(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalRenderPipeline_Profiling_Pipeline_Renderer as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_Renderer as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
+impl UniversalRenderPipeline_Profiling_Pipeline_Renderer {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw::cctor(
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[doc(hidden)]
@@ -359,7 +451,7 @@ impl UniversalRenderPipeline_Profiling_Pipeline {
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw {
+mod __UniversalRenderPipeline_CustomRPTime_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -369,10 +461,24 @@ mod __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalRenderPipeline_Profiling_Pipeline_Renderer as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UniversalRenderPipeline_CustomRPTime as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_Renderer as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UniversalRenderPipeline_CustomRPTime as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -391,13 +497,11 @@ mod __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-impl UniversalRenderPipeline_Profiling_Pipeline_Renderer {
+impl UniversalRenderPipeline_CustomRPTime {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe {
-            __UniversalRenderPipeline_Profiling_Pipeline_Renderer_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
+            __UniversalRenderPipeline_CustomRPTime_unity2_raw::cctor(::core::option::Option::None)
         }
     }
 }
@@ -405,7 +509,7 @@ impl UniversalRenderPipeline_Profiling_Pipeline_Renderer {
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw {
+mod __UniversalRenderPipeline_Profiling_Pipeline_XR_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -415,10 +519,16 @@ mod __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw {
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< UniversalRenderPipeline_Profiling_Pipeline_Context as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UniversalRenderPipeline_Profiling_Pipeline_XR as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_Context as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_XR as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -437,11 +547,11 @@ mod __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-impl UniversalRenderPipeline_Profiling_Pipeline_Context {
+impl UniversalRenderPipeline_Profiling_Pipeline_XR {
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe {
-            __UniversalRenderPipeline_Profiling_Pipeline_Context_unity2_raw::cctor(
+            __UniversalRenderPipeline_Profiling_Pipeline_XR_unity2_raw::cctor(
                 ::core::option::Option::None,
             )
         }
@@ -2665,115 +2775,6 @@ impl UniversalRenderPipeline {
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipeline_Profiling_Pipeline_XR_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalRenderPipeline_Profiling_Pipeline_XR as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UniversalRenderPipeline_Profiling_Pipeline_XR as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-impl UniversalRenderPipeline_Profiling_Pipeline_XR {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __UniversalRenderPipeline_Profiling_Pipeline_XR_unity2_raw::cctor(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UniversalRenderPipeline_CustomRPTime_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UniversalRenderPipeline_CustomRPTime as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalRenderPipeline_CustomRPTime as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-impl UniversalRenderPipeline_CustomRPTime {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe {
-            __UniversalRenderPipeline_CustomRPTime_unity2_raw::cctor(::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 pub mod prelude {
     pub use super::IUniversalRenderPipeline;
     pub use super::IUniversalRenderPipelineMethods;

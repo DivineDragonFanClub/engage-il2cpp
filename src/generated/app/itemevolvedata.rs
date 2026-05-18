@@ -1299,6 +1299,7 @@ impl ItemEvolveData {
 }
 
 #[cfg(feature = "app-itemevolvedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemEvolveData;
     pub use super::IItemEvolveDataMethods;

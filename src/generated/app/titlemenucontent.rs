@@ -110,6 +110,7 @@ impl TitleMenuContent {
 }
 
 #[cfg(feature = "app-titlemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITitleMenuContent;
     pub use super::ITitleMenuContentMethods;

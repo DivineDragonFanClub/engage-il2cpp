@@ -283,6 +283,7 @@ impl HubCameraRotateSpeedMenuItem {
 }
 
 #[cfg(feature = "root-hubcamerarotatespeedmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCameraRotateSpeedMenuItem;
     pub use super::IHubCameraRotateSpeedMenuItem;

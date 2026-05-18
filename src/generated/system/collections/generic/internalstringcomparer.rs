@@ -324,6 +324,7 @@ impl InternalStringComparer {
 }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInternalStringComparer;
     pub use super::IInternalStringComparerMethods;

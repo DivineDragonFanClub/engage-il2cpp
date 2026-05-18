@@ -66,6 +66,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DelegateProxyFact
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-delegateproxyfactory_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DelegateProxyFactory_2;
     pub use super::IDelegateProxyFactory_2;

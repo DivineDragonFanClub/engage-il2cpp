@@ -246,6 +246,7 @@ impl MinFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-minfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMinFloatParameter;
     pub use super::IMinFloatParameterMethods;

@@ -328,6 +328,7 @@ impl AssetName {
 }
 
 #[cfg(feature = "combat-assetname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetName;
     pub use super::AssetName_SplitMode;

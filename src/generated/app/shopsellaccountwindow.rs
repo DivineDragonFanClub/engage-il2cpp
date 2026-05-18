@@ -582,6 +582,7 @@ impl ShopSellAccountWindow {
 }
 
 #[cfg(feature = "app-shopsellaccountwindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopSellAccountWindow;
     pub use super::IShopSellAccountWindowMethods;

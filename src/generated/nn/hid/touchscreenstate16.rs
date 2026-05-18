@@ -1129,6 +1129,7 @@ impl TouchScreenState16_TouchStateArray16 {
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate16")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TouchScreenState16;
     pub use super::TouchScreenState16_TouchStateArray16;

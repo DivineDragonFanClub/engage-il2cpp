@@ -226,6 +226,7 @@ impl LowLevelComparer {
 }
 
 #[cfg(feature = "system-collections-lowlevelcomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILowLevelComparer;
     pub use super::ILowLevelComparerMethods;

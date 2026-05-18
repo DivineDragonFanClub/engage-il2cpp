@@ -1515,6 +1515,7 @@ impl LightProbes {
 }
 
 #[cfg(feature = "unity_engine-lightprobes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightProbes;
     pub use super::ILightProbesMethods;

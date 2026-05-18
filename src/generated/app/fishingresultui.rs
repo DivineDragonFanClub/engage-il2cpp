@@ -792,6 +792,7 @@ impl FishingResultUI {
 }
 
 #[cfg(feature = "app-fishingresultui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingResultUI;
     pub use super::FishingResultUI_ResultPhase;

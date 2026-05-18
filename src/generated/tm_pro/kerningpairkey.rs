@@ -119,6 +119,7 @@ impl KerningPairKey {
 }
 
 #[cfg(feature = "tm_pro-kerningpairkey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::KerningPairKey;
     pub use crate::system::object::IObject;

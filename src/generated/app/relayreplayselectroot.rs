@@ -602,6 +602,7 @@ impl RelayReplaySelectRoot {
 }
 
 #[cfg(feature = "app-relayreplayselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayReplaySelectRoot;
     pub use super::IRelayReplaySelectRootMethods;

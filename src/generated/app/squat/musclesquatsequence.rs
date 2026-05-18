@@ -10,6 +10,88 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
+    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
+    #[parent(crate::system::object::Object)]
+    pub struct MuscleSquatSequence_RandomPack {
+        #[rename(name = "type")]
+        pub r#type: ::unity2::Il2CppString,
+        #[rename(name = "param")]
+        pub param: f32,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MuscleSquatSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MuscleSquatSequence_Label {
+        const NAMESPACE: &'static str = "App.Squat";
+
+        const NAME: &'static str = "MuscleSquatSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MuscleSquatSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MuscleSquatSequence_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn ready_count() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn tick() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn ready_finish() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn finish() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn result() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn mascot_bond() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn prize() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn r#final() -> Self {
+            Self { value: 8 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md"))]
     #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence")]
     #[parent(crate::app::procinst::ProcInst)]
@@ -295,92 +377,184 @@ mod __types {
         #[rename(name = "m_JudgeLB")]
         pub m_judge_lb: f32,
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MuscleSquatSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MuscleSquatSequence_Label {
-        const NAMESPACE: &'static str = "App.Squat";
-
-        const NAME: &'static str = "MuscleSquatSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MuscleSquatSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MuscleSquatSequence_Label {
-        pub fn init() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn ready_count() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn tick() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn ready_finish() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn result() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn mascot_bond() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn prize() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn r#final() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
-    #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
-    #[parent(crate::system::object::Object)]
-    pub struct MuscleSquatSequence_RandomPack {
-        #[rename(name = "type")]
-        pub r#type: ::unity2::Il2CppString,
-        #[rename(name = "param")]
-        pub param: f32,
-    }
 }
 
 #[cfg(feature = "app-squat-musclesquatsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MuscleSquatSequence_RandomPack_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MuscleSquatSequence_RandomPack,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MuscleSquatSequence_RandomPack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: MuscleSquatSequence_RandomPack,
+        set_type: ::unity2::Il2CppString,
+        set_param: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MuscleSquatSequence_RandomPack,
+            ::unity2::Il2CppString,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, set_type, set_param, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+pub trait IMuscleSquatSequence_RandomPackMethods: IMuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MuscleSquatSequence_RandomPack as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MuscleSquatSequence_RandomPack_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
+    fn ctor_2(
+        self,
+        set_type: impl ::core::convert::Into<::unity2::Il2CppString>,
+        set_param: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MuscleSquatSequence_RandomPack as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MuscleSquatSequence_RandomPack_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(set_type),
+                ::core::convert::Into::into(set_param),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+impl<__T: IMuscleSquatSequence_RandomPack> IMuscleSquatSequence_RandomPackMethods for __T {}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+impl MuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
+    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
+        this
+    }
+}
 
 #[cfg(feature = "app-squat-musclesquatsequence")]
 #[doc(hidden)]
@@ -4463,179 +4637,6 @@ impl MuscleSquatSequence {
 
 #[cfg(feature = "app-squat-musclesquatsequence")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MuscleSquatSequence_RandomPack_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MuscleSquatSequence_RandomPack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MuscleSquatSequence_RandomPack, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MuscleSquatSequence_RandomPack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: MuscleSquatSequence_RandomPack,
-        set_type: ::unity2::Il2CppString,
-        set_param: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MuscleSquatSequence_RandomPack,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, set_type, set_param, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-pub trait IMuscleSquatSequence_RandomPackMethods: IMuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MuscleSquatSequence_RandomPack as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MuscleSquatSequence_RandomPack_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
-    fn ctor_2(
-        self,
-        set_type: impl ::core::convert::Into<::unity2::Il2CppString>,
-        set_param: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MuscleSquatSequence_RandomPack as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MuscleSquatSequence_RandomPack_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(set_type),
-                ::core::convert::Into::into(set_param),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-impl<__T: IMuscleSquatSequence_RandomPack> IMuscleSquatSequence_RandomPackMethods for __T {}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-impl MuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
-    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
-        this
-    }
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
 pub mod prelude {
     pub use super::IMuscleSquatSequence;
     pub use super::IMuscleSquatSequenceMethods;

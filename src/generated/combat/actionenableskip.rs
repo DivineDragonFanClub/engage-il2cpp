@@ -212,6 +212,7 @@ impl ActionEnableSkip {
 }
 
 #[cfg(feature = "combat-actionenableskip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionEnableSkip;
     pub use super::IActionEnableSkip;

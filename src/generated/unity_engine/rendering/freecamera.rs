@@ -417,6 +417,7 @@ impl FreeCamera {
 }
 
 #[cfg(feature = "unity_engine-rendering-freecamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FreeCamera;
     pub use super::IFreeCamera;

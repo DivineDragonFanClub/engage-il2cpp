@@ -669,6 +669,7 @@ impl HubMoveController {
 }
 
 #[cfg(feature = "app-hubmovecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveController;
     pub use super::IHubMoveController;

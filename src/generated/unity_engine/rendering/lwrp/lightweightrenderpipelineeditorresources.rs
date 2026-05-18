@@ -112,6 +112,7 @@ impl LightweightRenderPipelineEditorResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineeditorresources")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightweightRenderPipelineEditorResources;
     pub use super::ILightweightRenderPipelineEditorResourcesMethods;

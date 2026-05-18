@@ -645,6 +645,7 @@ impl ProvideHandle {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ProvideHandle;
     pub use crate::system::object::IObject;

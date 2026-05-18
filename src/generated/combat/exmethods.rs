@@ -562,6 +562,7 @@ impl ExMethods {
 }
 
 #[cfg(feature = "combat-exmethods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExMethods;
     pub use super::IExMethods;

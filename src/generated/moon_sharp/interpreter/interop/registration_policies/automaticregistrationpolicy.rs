@@ -179,6 +179,7 @@ impl AutomaticRegistrationPolicy {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-automaticregistrationpolicy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AutomaticRegistrationPolicy;
     pub use super::IAutomaticRegistrationPolicy;

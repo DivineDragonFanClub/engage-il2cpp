@@ -2165,6 +2165,7 @@ impl ScriptableRenderPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableRenderPass;
     pub use super::IScriptableRenderPassMethods;

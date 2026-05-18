@@ -957,6 +957,7 @@ impl AnimationEvent {
 }
 
 #[cfg(feature = "unity_engine-animationevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationEvent;
     pub use super::IAnimationEvent;

@@ -110,6 +110,7 @@ impl<T0: ::unity2::ClassIdentity> DelegateList_1<T0> {
 }
 
 #[cfg(feature = "root-delegatelist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DelegateList_1;
     pub use super::IDelegateList_1;

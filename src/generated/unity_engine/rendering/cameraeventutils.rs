@@ -86,6 +86,7 @@ impl CameraEventUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraEventUtils;
     pub use super::ICameraEventUtils;

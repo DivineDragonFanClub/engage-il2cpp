@@ -41,6 +41,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-parametermodifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParameterModifier;
     pub use crate::system::object::IObject;

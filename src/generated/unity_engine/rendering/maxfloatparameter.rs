@@ -246,6 +246,7 @@ impl MaxFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-maxfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaxFloatParameter;
     pub use super::IMaxFloatParameterMethods;

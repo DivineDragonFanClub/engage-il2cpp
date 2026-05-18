@@ -26,6 +26,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IReadOnlyDictiona
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlydictionary_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIReadOnlyDictionary_2;
     pub use super::IIReadOnlyDictionary_2Methods;

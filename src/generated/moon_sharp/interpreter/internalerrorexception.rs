@@ -201,6 +201,7 @@ impl InternalErrorException {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-internalerrorexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInternalErrorException;
     pub use super::IInternalErrorExceptionMethods;

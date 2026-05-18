@@ -374,6 +374,7 @@ impl TextMeshMessage {
 }
 
 #[cfg(feature = "app-textmeshmessage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextMeshMessage;
     pub use super::ITextMeshMessageMethods;

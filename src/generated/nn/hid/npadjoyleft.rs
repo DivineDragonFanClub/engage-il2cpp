@@ -299,6 +299,7 @@ impl NpadJoyLeft {
 }
 
 #[cfg(feature = "nn-hid-npadjoyleft")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpadJoyLeft;
     pub use super::NpadJoyLeft;

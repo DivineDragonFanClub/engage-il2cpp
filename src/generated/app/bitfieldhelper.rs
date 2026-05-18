@@ -232,6 +232,7 @@ impl BitFieldHelper {
 }
 
 #[cfg(feature = "app-bitfieldhelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitFieldHelper;
     pub use super::IBitFieldHelper;

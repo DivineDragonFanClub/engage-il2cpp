@@ -299,6 +299,7 @@ impl BreakdownEnemyInspector {
 }
 
 #[cfg(feature = "app-breakdownenemyinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BreakdownEnemyInspector;
     pub use super::IBreakdownEnemyInspector;

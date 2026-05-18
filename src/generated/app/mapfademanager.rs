@@ -1317,6 +1317,7 @@ impl MapFadeManager {
 }
 
 #[cfg(feature = "app-mapfademanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapFadeManager;
     pub use super::IMapFadeManagerMethods;

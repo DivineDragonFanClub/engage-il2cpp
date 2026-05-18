@@ -213,6 +213,7 @@ impl NameCheckDialog {
 }
 
 #[cfg(feature = "app-namecheckdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INameCheckDialog;
     pub use super::INameCheckDialogMethods;

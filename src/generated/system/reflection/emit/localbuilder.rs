@@ -27,6 +27,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-localbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILocalBuilder;
     pub use super::LocalBuilder;

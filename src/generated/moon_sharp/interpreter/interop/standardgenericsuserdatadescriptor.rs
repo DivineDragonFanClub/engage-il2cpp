@@ -959,6 +959,7 @@ impl StandardGenericsUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standardgenericsuserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStandardGenericsUserDataDescriptor;
     pub use super::IStandardGenericsUserDataDescriptorMethods;

@@ -641,6 +641,7 @@ impl TableConversions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-tableconversions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITableConversions;
     pub use super::TableConversions;

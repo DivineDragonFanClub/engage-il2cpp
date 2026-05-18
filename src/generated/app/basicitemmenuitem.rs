@@ -680,6 +680,7 @@ impl BasicItemMenuItem {
 }
 
 #[cfg(feature = "app-basicitemmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicItemMenuItem;
     pub use super::IBasicItemMenuItem;

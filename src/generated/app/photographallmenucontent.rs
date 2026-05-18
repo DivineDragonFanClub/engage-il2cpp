@@ -535,6 +535,7 @@ impl PhotographAllMenuContent {
 }
 
 #[cfg(feature = "app-photographallmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographAllMenuContent;
     pub use super::IPhotographAllMenuContentMethods;

@@ -96,6 +96,7 @@ pub trait IICancelHandlerMethods: IICancelHandler {
 impl<__T: IICancelHandler> IICancelHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-icancelhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICancelHandler;
     pub use super::IICancelHandler;

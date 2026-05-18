@@ -1611,6 +1611,7 @@ impl Parabola {
 }
 
 #[cfg(feature = "combat-parabola")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParabola;
     pub use super::IParabolaMethods;

@@ -106,6 +106,7 @@ impl ShadowSliceData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowSliceData;
     pub use crate::system::object::IObject;

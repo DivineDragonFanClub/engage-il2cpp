@@ -411,6 +411,7 @@ impl PhotographSelectPauseMenuItemContent {
 }
 
 #[cfg(feature = "app-photographselectpausemenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectPauseMenuItemContent;
     pub use super::IPhotographSelectPauseMenuItemContentMethods;

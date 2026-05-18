@@ -338,6 +338,7 @@ impl DragonRideEventCameraChecker {
 }
 
 #[cfg(feature = "app-dragonrideeventcamerachecker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideEventCameraChecker;
     pub use super::IDragonRideEventCameraChecker;

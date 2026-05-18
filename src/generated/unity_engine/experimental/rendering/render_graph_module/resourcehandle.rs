@@ -505,6 +505,7 @@ impl ResourceHandle {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ResourceHandle;
     pub use crate::system::object::IObject;

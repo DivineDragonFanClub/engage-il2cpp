@@ -484,6 +484,7 @@ impl DebugUIHandlerPanel {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerPanel;
     pub use super::IDebugUIHandlerPanel;

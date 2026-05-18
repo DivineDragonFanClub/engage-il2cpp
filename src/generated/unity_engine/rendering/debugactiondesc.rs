@@ -117,6 +117,7 @@ impl DebugActionDesc {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugActionDesc;
     pub use super::IDebugActionDesc;

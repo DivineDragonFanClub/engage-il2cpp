@@ -348,6 +348,7 @@ impl Iron19MaterialColorChanger {
 }
 
 #[cfg(feature = "root-iron19materialcolorchanger")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIron19MaterialColorChanger;
     pub use super::IIron19MaterialColorChangerMethods;

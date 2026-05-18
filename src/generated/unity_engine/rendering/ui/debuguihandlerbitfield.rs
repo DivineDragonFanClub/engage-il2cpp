@@ -667,6 +667,7 @@ impl DebugUIHandlerBitField {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerBitField;
     pub use super::IDebugUIHandlerBitField;

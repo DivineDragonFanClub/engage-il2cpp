@@ -310,6 +310,7 @@ impl ConfigMenuItemContent {
 }
 
 #[cfg(feature = "root-configmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigMenuItemContent;
     pub use super::IConfigMenuItemContent;

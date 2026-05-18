@@ -212,6 +212,7 @@ impl MVPRoot {
 }
 
 #[cfg(feature = "root-mvproot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMVPRoot;
     pub use super::IMVPRootMethods;

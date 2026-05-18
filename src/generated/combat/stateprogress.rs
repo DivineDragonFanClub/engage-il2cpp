@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-stateprogress")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::StateProgress;
     pub use crate::system::object::IObject;

@@ -88,6 +88,7 @@ pub trait IOperationExceptionMethods: IOperationException {
 impl<__T: IOperationException> IOperationExceptionMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IOperationException;
     pub use super::IOperationExceptionMethods;

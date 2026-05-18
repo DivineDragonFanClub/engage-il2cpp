@@ -665,6 +665,7 @@ impl ResourcesAPI {
 }
 
 #[cfg(feature = "unity_engine-resourcesapi")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourcesAPI;
     pub use super::IResourcesAPIMethods;

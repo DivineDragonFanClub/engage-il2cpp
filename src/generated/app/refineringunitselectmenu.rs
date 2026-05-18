@@ -409,6 +409,7 @@ impl RefineRingUnitSelectMenu {
 }
 
 #[cfg(feature = "app-refineringunitselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineRingUnitSelectMenu;
     pub use super::IRefineRingUnitSelectMenuMethods;

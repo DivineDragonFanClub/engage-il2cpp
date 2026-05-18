@@ -171,6 +171,7 @@ impl Mesh_Extents {
 }
 
 #[cfg(feature = "tm_pro-mesh_extents")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Mesh_Extents;
     pub use crate::system::object::IObject;

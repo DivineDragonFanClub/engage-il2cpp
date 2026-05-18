@@ -362,6 +362,7 @@ impl DeferredConfig {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DeferredConfig;
     pub use super::IDeferredConfig;

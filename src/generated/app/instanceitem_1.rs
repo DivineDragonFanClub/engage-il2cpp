@@ -52,6 +52,7 @@ impl<T0: ::unity2::ClassIdentity> InstanceItem_1<T0> {
 }
 
 #[cfg(feature = "app-instanceitem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstanceItem_1;
     pub use super::IInstanceItem_1Methods;

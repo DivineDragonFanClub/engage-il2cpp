@@ -186,6 +186,7 @@ impl HubMenuItem {
 }
 
 #[cfg(feature = "root-hubmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMenuItem;
     pub use super::IHubMenuItem;

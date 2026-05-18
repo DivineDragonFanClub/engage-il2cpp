@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-callingconventions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CallingConventions;
     pub use crate::system::object::IObject;

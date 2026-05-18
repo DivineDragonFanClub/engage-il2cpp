@@ -111,6 +111,7 @@ impl CustomStyleAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-customstyleattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomStyleAttribute;
     pub use super::ICustomStyleAttribute;

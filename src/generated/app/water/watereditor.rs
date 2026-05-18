@@ -153,6 +153,7 @@ impl WaterEditor {
 }
 
 #[cfg(feature = "app-water-watereditor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaterEditor;
     pub use super::IWaterEditorMethods;

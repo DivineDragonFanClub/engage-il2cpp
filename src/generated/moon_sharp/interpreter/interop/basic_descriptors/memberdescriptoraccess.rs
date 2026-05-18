@@ -64,6 +64,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-memberdescriptoraccess")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MemberDescriptorAccess;
     pub use crate::system::object::IObject;

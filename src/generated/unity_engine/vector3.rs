@@ -3583,6 +3583,7 @@ impl Vector3 {
 }
 
 #[cfg(feature = "unity_engine-vector3")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vector3;
     pub use crate::system::object::IObject;

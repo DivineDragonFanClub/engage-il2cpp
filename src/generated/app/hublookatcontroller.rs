@@ -1214,6 +1214,7 @@ impl HubLookAtController_LookAtIKParam {
 }
 
 #[cfg(feature = "app-hublookatcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubLookAtController;
     pub use super::HubLookAtController_LookAtIKParam;

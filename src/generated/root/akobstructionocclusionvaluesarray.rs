@@ -370,6 +370,7 @@ impl AkObstructionOcclusionValuesArray {
 }
 
 #[cfg(feature = "root-akobstructionocclusionvaluesarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkObstructionOcclusionValuesArray;
     pub use super::IAkObstructionOcclusionValuesArray;

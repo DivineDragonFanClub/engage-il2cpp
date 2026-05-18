@@ -231,6 +231,7 @@ impl ProcDescWaitFunc {
 }
 
 #[cfg(feature = "app-procdescwaitfunc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescWaitFunc;
     pub use super::IProcDescWaitFuncMethods;

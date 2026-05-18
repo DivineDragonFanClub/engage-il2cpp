@@ -102,6 +102,7 @@ impl ShowMeshBounds {
 }
 
 #[cfg(feature = "combat-showmeshbounds")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShowMeshBounds;
     pub use super::IShowMeshBoundsMethods;

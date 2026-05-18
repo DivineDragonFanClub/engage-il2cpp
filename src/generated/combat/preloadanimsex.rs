@@ -328,6 +328,7 @@ impl PreloadAnimsEx {
 }
 
 #[cfg(feature = "combat-preloadanimsex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPreloadAnimsEx;
     pub use super::PreloadAnimsEx;

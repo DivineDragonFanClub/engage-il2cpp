@@ -512,6 +512,7 @@ impl CustomZPrePass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomZPrePass;
     pub use super::ICustomZPrePass;

@@ -102,6 +102,7 @@ impl HierarchyInfo {
 }
 
 #[cfg(feature = "app-hierarchyinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HierarchyInfo;
     pub use super::IHierarchyInfo;

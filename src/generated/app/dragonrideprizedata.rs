@@ -1516,6 +1516,7 @@ impl DragonRidePrizeData {
 }
 
 #[cfg(feature = "app-dragonrideprizedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRidePrizeData;
     pub use super::IDragonRidePrizeData;

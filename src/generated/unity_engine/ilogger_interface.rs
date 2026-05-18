@@ -503,6 +503,7 @@ pub trait IILogger_InterfaceMethods: IILogger_Interface {
 impl<__T: IILogger_Interface> IILogger_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-ilogger_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILogger_Interface;
     pub use super::IILogger_InterfaceMethods;

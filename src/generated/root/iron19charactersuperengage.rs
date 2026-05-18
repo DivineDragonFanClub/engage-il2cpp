@@ -591,6 +591,7 @@ impl Iron19CharacterSuperEngage {
 }
 
 #[cfg(feature = "root-iron19charactersuperengage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIron19CharacterSuperEngage;
     pub use super::IIron19CharacterSuperEngageMethods;

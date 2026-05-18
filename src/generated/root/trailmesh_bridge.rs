@@ -214,6 +214,7 @@ impl TrailMesh_Bridge {
 }
 
 #[cfg(feature = "root-trailmesh_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrailMesh_Bridge;
     pub use super::ITrailMesh_BridgeMethods;

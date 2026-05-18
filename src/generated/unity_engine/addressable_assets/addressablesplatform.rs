@@ -94,6 +94,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-addressable_assets-addressablesplatform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AddressablesPlatform;
     pub use crate::system::object::IObject;

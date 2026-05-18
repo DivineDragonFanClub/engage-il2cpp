@@ -426,6 +426,7 @@ impl AttributeHelperEngine {
 }
 
 #[cfg(feature = "unity_engine-attributehelperengine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AttributeHelperEngine;
     pub use super::IAttributeHelperEngine;

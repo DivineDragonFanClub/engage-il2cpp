@@ -105,6 +105,7 @@ impl SliderState {
 }
 
 #[cfg(feature = "unity_engine-sliderstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISliderState;
     pub use super::ISliderStateMethods;

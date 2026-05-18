@@ -288,6 +288,7 @@ impl Lyn_Skill_Arrow_01_Trail {
 }
 
 #[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILyn_Skill_Arrow_01_Trail;
     pub use super::ILyn_Skill_Arrow_01_TrailMethods;

@@ -1656,6 +1656,7 @@ impl AkDeviceSettings {
 }
 
 #[cfg(feature = "root-akdevicesettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDeviceSettings;
     pub use super::IAkDeviceSettings;

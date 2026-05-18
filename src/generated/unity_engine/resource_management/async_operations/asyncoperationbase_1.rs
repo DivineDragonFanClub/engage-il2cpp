@@ -455,6 +455,7 @@ impl<T0: ::unity2::ClassIdentity> AsyncOperationBase_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AsyncOperationBase_1;
     pub use super::IAsyncOperationBase_1;

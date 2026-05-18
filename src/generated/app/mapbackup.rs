@@ -410,6 +410,7 @@ impl MapBackup {
 }
 
 #[cfg(feature = "app-mapbackup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBackup;
     pub use super::IMapBackupMethods;

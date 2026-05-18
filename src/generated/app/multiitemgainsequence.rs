@@ -254,6 +254,7 @@ impl MultiItemGainSequence {
 }
 
 #[cfg(feature = "app-multiitemgainsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMultiItemGainSequence;
     pub use super::IMultiItemGainSequenceMethods;

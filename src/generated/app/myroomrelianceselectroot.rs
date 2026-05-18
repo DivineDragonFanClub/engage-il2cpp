@@ -1811,6 +1811,7 @@ impl MyRoomRelianceSelectRoot_CursorTop {
 }
 
 #[cfg(feature = "app-myroomrelianceselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomRelianceSelectRoot;
     pub use super::IMyRoomRelianceSelectRootMethods;

@@ -291,6 +291,7 @@ impl FadeMarkerReciever {
 }
 
 #[cfg(feature = "app-fademarkerreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FadeMarkerReciever;
     pub use super::IFadeMarkerReciever;

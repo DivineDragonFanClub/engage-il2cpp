@@ -582,6 +582,7 @@ impl MapMaterial_Node {
 }
 
 #[cfg(feature = "app-mapmaterial")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapMaterial;
     pub use super::IMapMaterialMethods;

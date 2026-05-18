@@ -7,24 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_AsyncBankHandle.md"))]
-    #[::unity2::class(namespace = "", name = "AkBankManager.AsyncBankHandle")]
-    #[parent(crate::root::akbankmanager::AkBankManager_BankHandle)]
-    pub struct AkBankManager_AsyncBankHandle {
-        #[rename(name = "bankCallback")]
-        pub bank_callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_BankHandle.md"))]
-    #[::unity2::class(namespace = "", name = "AkBankManager.BankHandle")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkBankManager_BankHandle {
-        #[rename(name = "bankName")]
-        pub bank_name: ::unity2::Il2CppString,
-        #[rename(name = "m_BankID")]
-        pub m_bank_id: u32,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager.md"))]
     #[::unity2::class(namespace = "", name = "AkBankManager")]
     #[parent(crate::system::object::Object)]
@@ -40,6 +22,24 @@ mod __types {
         pub banks_to_unload: crate::system::collections::generic::list_1::List_1<
             crate::root::akbankmanager::AkBankManager_BankHandle,
         >,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_BankHandle.md"))]
+    #[::unity2::class(namespace = "", name = "AkBankManager.BankHandle")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkBankManager_BankHandle {
+        #[rename(name = "bankName")]
+        pub bank_name: ::unity2::Il2CppString,
+        #[rename(name = "m_BankID")]
+        pub m_bank_id: u32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_AsyncBankHandle.md"))]
+    #[::unity2::class(namespace = "", name = "AkBankManager.AsyncBankHandle")]
+    #[parent(crate::root::akbankmanager::AkBankManager_BankHandle)]
+    pub struct AkBankManager_AsyncBankHandle {
+        #[rename(name = "bankCallback")]
+        pub bank_callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbankmanager/AkBankManager_DecodableBankHandle.md"))]
@@ -61,76 +61,20 @@ pub use __types::*;
 #[cfg(feature = "root-akbankmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkBankManager_AsyncBankHandle_unity2_raw {
+mod __AkBankManager_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_do_unload_banks {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkBankManager_AsyncBankHandle,
-        name: ::unity2::Il2CppString,
-        callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkBankManager_AsyncBankHandle,
-            ::unity2::Il2CppString,
-            crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, name, callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_global_bank_callback {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <crate::root::akresult::AKRESULT as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
-                "GlobalBankCallback",
-                4,
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "DoUnloadBanks",
+                0,
                 param_types,
                 true,
             )
@@ -140,8 +84,8 @@ mod __AkBankManager_AsyncBankHandle_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
-                    "GlobalBankCallback",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "DoUnloadBanks",
                     e
                 ),
             }
@@ -152,46 +96,28 @@ mod __AkBankManager_AsyncBankHandle_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn global_bank_callback(
-        in_bank_id: u32,
-        in_p_in_memory_bank_ptr: ::unity2::IntPtr,
-        in_e_load_result: crate::root::akresult::AKRESULT,
-        in_cookie: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            u32,
-            ::unity2::IntPtr,
-            crate::root::akresult::AKRESULT,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+    pub unsafe fn do_unload_banks(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_global_bank_callback::get_offset() as isize),
+                .offset(__lookup_do_unload_banks::get_offset() as isize),
         );
-        inner(
-            in_bank_id,
-            in_p_in_memory_bank_ptr,
-            in_e_load_result,
-            in_cookie,
-            __unity2_method_info,
-        )
+        inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_do_load_bank {
+    pub mod __lookup_reset {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
-                "DoLoadBank",
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "Reset",
                 0,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -199,8 +125,8 @@ mod __AkBankManager_AsyncBankHandle_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
-                    "DoLoadBank",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
                     e
                 ),
             }
@@ -211,100 +137,358 @@ mod __AkBankManager_AsyncBankHandle_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn do_load_bank(
-        this: AkBankManager_AsyncBankHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akresult::AKRESULT {
-        let inner: extern "C" fn(
-            AkBankManager_AsyncBankHandle,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(
+    pub unsafe fn reset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_do_load_bank::get_offset() as isize),
+                .offset(__lookup_reset::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_init_bank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "LoadInitBank",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadInitBank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_init_bank(
+        do_reset: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_init_bank::get_offset() as isize),
+        );
+        inner(do_reset, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_init_bank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "UnloadInitBank",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadInitBank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_init_bank(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_init_bank::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_bank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "LoadBank",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadBank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_bank(
+        name: ::unity2::Il2CppString,
+        decode_bank: bool,
+        save_decoded_bank: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_bank::get_offset() as isize),
+        );
+        inner(name, decode_bank, save_decoded_bank, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_bank_async {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "LoadBankAsync",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "LoadBankAsync",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn load_bank_async(
+        name: ::unity2::Il2CppString,
+        callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_bank_async::get_offset() as isize),
+        );
+        inner(name, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_bank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                "UnloadBank",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    "UnloadBank",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_bank(
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_unload_bank::get_offset() as isize),
+            );
+        inner(name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkBankManager as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_AsyncBankHandle {
-    #[doc = "`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]
-    pub fn global_bank_callback(
-        in_bank_id: impl ::core::convert::Into<u32>,
-        in_p_in_memory_bank_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        in_e_load_result: impl ::core::convert::Into<crate::root::akresult::AKRESULT>,
-        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+impl AkBankManager {
+    #[doc = "`DoUnloadBanks()` overload"]
+    pub fn do_unload_banks() -> () {
+        unsafe { __AkBankManager_unity2_raw::do_unload_banks(::core::option::Option::None) }
+    }
+    #[doc = "`Reset()` overload"]
+    pub fn reset() -> () {
+        unsafe { __AkBankManager_unity2_raw::reset(::core::option::Option::None) }
+    }
+    #[doc = "`LoadInitBank(bool)` overload"]
+    pub fn load_init_bank(do_reset: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            __AkBankManager_AsyncBankHandle_unity2_raw::global_bank_callback(
-                ::core::convert::Into::into(in_bank_id),
-                ::core::convert::Into::into(in_p_in_memory_bank_ptr),
-                ::core::convert::Into::into(in_e_load_result),
-                ::core::convert::Into::into(in_cookie),
+            __AkBankManager_unity2_raw::load_init_bank(
+                ::core::convert::Into::into(do_reset),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "root-akbankmanager")]
-pub trait IAkBankManager_AsyncBankHandleMethods: IAkBankManager_AsyncBankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]
-    fn ctor(
-        self,
+    #[doc = "`UnloadInitBank()` overload"]
+    pub fn unload_init_bank() -> () {
+        unsafe { __AkBankManager_unity2_raw::unload_init_bank(::core::option::Option::None) }
+    }
+    #[doc = "`LoadBank(::unity2::Il2CppString, bool, bool)` overload"]
+    pub fn load_bank(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        decode_bank: impl ::core::convert::Into<bool>,
+        save_decoded_bank: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __AkBankManager_unity2_raw::load_bank(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(decode_bank),
+                ::core::convert::Into::into(save_decoded_bank),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`LoadBankAsync(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]
+    pub fn load_bank_async(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         callback: impl ::core::convert::Into<
             crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
         >,
     ) -> () {
         unsafe {
-            let __receiver =
-                <AkBankManager_AsyncBankHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkBankManager_AsyncBankHandle_unity2_raw::ctor(
-                __receiver,
+            __AkBankManager_unity2_raw::load_bank_async(
                 ::core::convert::Into::into(name),
                 ::core::convert::Into::into(callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`DoLoadBank()` overload"]
-    fn do_load_bank(self) -> crate::root::akresult::AKRESULT {
+    #[doc = "`UnloadBank(::unity2::Il2CppString)` overload"]
+    pub fn unload_bank(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver =
-                <AkBankManager_AsyncBankHandle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkBankManager_AsyncBankHandle_unity2_raw::do_load_bank(
-                __receiver,
+            __AkBankManager_unity2_raw::unload_bank(
+                ::core::convert::Into::into(name),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "root-akbankmanager")]
-impl<__T: IAkBankManager_AsyncBankHandle> IAkBankManager_AsyncBankHandleMethods for __T {}
-
-#[cfg(feature = "root-akbankmanager")]
-impl AkBankManager_AsyncBankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` — overload selector"]
-    pub fn new(
-        name: ::unity2::Il2CppString,
-        callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkBankManager_AsyncBankHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkBankManager_AsyncBankHandleMethods>::ctor(this, name, callback);
-        this
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AkBankManager_unity2_raw::cctor(::core::option::Option::None) }
     }
 }
 
@@ -877,245 +1061,22 @@ impl AkBankManager_BankHandle {
 #[cfg(feature = "root-akbankmanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkBankManager_unity2_raw {
+mod __AkBankManager_AsyncBankHandle_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_do_unload_banks {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "DoUnloadBanks",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "DoUnloadBanks",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn do_unload_banks(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_unload_banks::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_init_bank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "LoadInitBank",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadInitBank",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_init_bank(
-        do_reset: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_init_bank::get_offset() as isize),
-        );
-        inner(do_reset, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_init_bank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "UnloadInitBank",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadInitBank",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload_init_bank(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_init_bank::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_bank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "LoadBank",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadBank",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_bank(
-        name: ::unity2::Il2CppString,
-        decode_bank: bool,
-        save_decoded_bank: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_bank::get_offset() as isize),
-        );
-        inner(name, decode_bank, save_decoded_bank, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_bank_async {
+    pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "LoadBankAsync",
+                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 2,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -1123,8 +1084,8 @@ mod __AkBankManager_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadBankAsync",
+                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -1135,35 +1096,41 @@ mod __AkBankManager_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn load_bank_async(
+    pub unsafe fn ctor(
+        this: AkBankManager_AsyncBankHandle,
         name: ::unity2::Il2CppString,
         callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
+            AkBankManager_AsyncBankHandle,
             ::unity2::Il2CppString,
             crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_load_bank_async::get_offset() as isize),
+                .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(name, callback, __unity2_method_info)
+        inner(this, name, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_unload_bank {
+    pub mod __lookup_global_bank_callback {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::root::akresult::AKRESULT as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                "UnloadBank",
-                1,
+                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
+                "GlobalBankCallback",
+                4,
                 param_types,
                 true,
             )
@@ -1173,8 +1140,8 @@ mod __AkBankManager_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadBank",
+                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
+                    "GlobalBankCallback",
                     e
                 ),
             }
@@ -1185,32 +1152,46 @@ mod __AkBankManager_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn unload_bank(
-        name: ::unity2::Il2CppString,
+    pub unsafe fn global_bank_callback(
+        in_bank_id: u32,
+        in_p_in_memory_bank_ptr: ::unity2::IntPtr,
+        in_e_load_result: crate::root::akresult::AKRESULT,
+        in_cookie: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_bank::get_offset() as isize),
-            );
-        inner(name, __unity2_method_info)
+        let inner: extern "C" fn(
+            u32,
+            ::unity2::IntPtr,
+            crate::root::akresult::AKRESULT,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_global_bank_callback::get_offset() as isize),
+        );
+        inner(
+            in_bank_id,
+            in_p_in_memory_bank_ptr,
+            in_e_load_result,
+            in_cookie,
+            __unity2_method_info,
+        )
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
+    pub mod __lookup_do_load_bank {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkBankManager as ::unity2::ClassIdentity>::class(),
-                ".cctor",
+                <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::class(),
+                "DoLoadBank",
                 0,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -1218,8 +1199,8 @@ mod __AkBankManager_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <AkBankManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
+                    <AkBankManager_AsyncBankHandle as ::unity2::ClassIdentity>::NAME,
+                    "DoLoadBank",
                     e
                 ),
             }
@@ -1230,81 +1211,100 @@ mod __AkBankManager_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+    pub unsafe fn do_load_bank(
+        this: AkBankManager_AsyncBankHandle,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::root::akresult::AKRESULT {
+        let inner: extern "C" fn(
+            AkBankManager_AsyncBankHandle,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
+                .offset(__lookup_do_load_bank::get_offset() as isize),
         );
-        inner(__unity2_method_info)
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akbankmanager")]
-impl AkBankManager {
-    #[doc = "`DoUnloadBanks()` overload"]
-    pub fn do_unload_banks() -> () {
-        unsafe { __AkBankManager_unity2_raw::do_unload_banks(::core::option::Option::None) }
-    }
-    #[doc = "`Reset()` overload"]
-    pub fn reset() -> () {
-        unsafe { __AkBankManager_unity2_raw::reset(::core::option::Option::None) }
-    }
-    #[doc = "`LoadInitBank(bool)` overload"]
-    pub fn load_init_bank(do_reset: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __AkBankManager_unity2_raw::load_init_bank(
-                ::core::convert::Into::into(do_reset),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnloadInitBank()` overload"]
-    pub fn unload_init_bank() -> () {
-        unsafe { __AkBankManager_unity2_raw::unload_init_bank(::core::option::Option::None) }
-    }
-    #[doc = "`LoadBank(::unity2::Il2CppString, bool, bool)` overload"]
-    pub fn load_bank(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decode_bank: impl ::core::convert::Into<bool>,
-        save_decoded_bank: impl ::core::convert::Into<bool>,
+impl AkBankManager_AsyncBankHandle {
+    #[doc = "`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]
+    pub fn global_bank_callback(
+        in_bank_id: impl ::core::convert::Into<u32>,
+        in_p_in_memory_bank_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        in_e_load_result: impl ::core::convert::Into<crate::root::akresult::AKRESULT>,
+        in_cookie: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            __AkBankManager_unity2_raw::load_bank(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(decode_bank),
-                ::core::convert::Into::into(save_decoded_bank),
+            __AkBankManager_AsyncBankHandle_unity2_raw::global_bank_callback(
+                ::core::convert::Into::into(in_bank_id),
+                ::core::convert::Into::into(in_p_in_memory_bank_ptr),
+                ::core::convert::Into::into(in_e_load_result),
+                ::core::convert::Into::into(in_cookie),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`LoadBankAsync(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]
-    pub fn load_bank_async(
+}
+
+#[cfg(feature = "root-akbankmanager")]
+pub trait IAkBankManager_AsyncBankHandleMethods: IAkBankManager_AsyncBankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` overload"]
+    fn ctor(
+        self,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         callback: impl ::core::convert::Into<
             crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
         >,
     ) -> () {
         unsafe {
-            __AkBankManager_unity2_raw::load_bank_async(
+            let __receiver =
+                <AkBankManager_AsyncBankHandle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkBankManager_AsyncBankHandle_unity2_raw::ctor(
+                __receiver,
                 ::core::convert::Into::into(name),
                 ::core::convert::Into::into(callback),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`UnloadBank(::unity2::Il2CppString)` overload"]
-    pub fn unload_bank(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    #[doc = "`DoLoadBank()` overload"]
+    fn do_load_bank(self) -> crate::root::akresult::AKRESULT {
         unsafe {
-            __AkBankManager_unity2_raw::unload_bank(
-                ::core::convert::Into::into(name),
+            let __receiver =
+                <AkBankManager_AsyncBankHandle as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkBankManager_AsyncBankHandle_unity2_raw::do_load_bank(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AkBankManager_unity2_raw::cctor(::core::option::Option::None) }
+}
+
+#[cfg(feature = "root-akbankmanager")]
+impl<__T: IAkBankManager_AsyncBankHandle> IAkBankManager_AsyncBankHandleMethods for __T {}
+
+#[cfg(feature = "root-akbankmanager")]
+impl AkBankManager_AsyncBankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::root::akcallbackmanager::AkCallbackManager_BankCallback)` — overload selector"]
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        callback: crate::root::akcallbackmanager::AkCallbackManager_BankCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkBankManager_AsyncBankHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkBankManager_AsyncBankHandleMethods>::ctor(this, name, callback);
+        this
     }
 }
 
@@ -1532,6 +1532,7 @@ impl AkBankManager_DecodableBankHandle {
 }
 
 #[cfg(feature = "root-akbankmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBankManager;
     pub use super::AkBankManager_AsyncBankHandle;

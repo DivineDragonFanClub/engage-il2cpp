@@ -85,6 +85,7 @@ impl ListExtension {
 }
 
 #[cfg(feature = "app-listextension")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IListExtension;
     pub use super::ListExtension;

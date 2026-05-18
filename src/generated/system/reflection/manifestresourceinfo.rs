@@ -325,6 +325,7 @@ impl ManifestResourceInfo {
 }
 
 #[cfg(feature = "system-reflection-manifestresourceinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IManifestResourceInfo;
     pub use super::IManifestResourceInfoMethods;

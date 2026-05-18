@@ -295,6 +295,7 @@ impl CameraControllerOverHead {
 }
 
 #[cfg(feature = "combat-cameracontrolleroverhead")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerOverHead;
     pub use super::ICameraControllerOverHead;

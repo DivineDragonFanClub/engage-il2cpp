@@ -215,6 +215,7 @@ impl Deco___ {
 }
 
 #[cfg(feature = "combat-deco___")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco___;
     pub use super::IDeco___;

@@ -8,36 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_DefaultControls")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_DefaultControls {
-        #[static_field]
-        #[rename(name = "kWidth")]
-        pub k_width: f32,
-        #[static_field]
-        #[rename(name = "kThickHeight")]
-        pub k_thick_height: f32,
-        #[static_field]
-        #[rename(name = "kThinHeight")]
-        pub k_thin_height: f32,
-        #[static_field]
-        #[rename(name = "s_TextElementSize")]
-        pub s_text_element_size: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "s_ThickElementSize")]
-        pub s_thick_element_size: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "s_ThinElementSize")]
-        pub s_thin_element_size: crate::unity_engine::vector2::Vector2,
-        #[static_field]
-        #[rename(name = "s_DefaultSelectableColor")]
-        pub s_default_selectable_color: crate::unity_engine::color::Color,
-        #[static_field]
-        #[rename(name = "s_TextColor")]
-        pub s_text_color: crate::unity_engine::color::Color,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -70,6 +40,36 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_DefaultControls")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_DefaultControls {
+        #[static_field]
+        #[rename(name = "kWidth")]
+        pub k_width: f32,
+        #[static_field]
+        #[rename(name = "kThickHeight")]
+        pub k_thick_height: f32,
+        #[static_field]
+        #[rename(name = "kThinHeight")]
+        pub k_thin_height: f32,
+        #[static_field]
+        #[rename(name = "s_TextElementSize")]
+        pub s_text_element_size: crate::unity_engine::vector2::Vector2,
+        #[static_field]
+        #[rename(name = "s_ThickElementSize")]
+        pub s_thick_element_size: crate::unity_engine::vector2::Vector2,
+        #[static_field]
+        #[rename(name = "s_ThinElementSize")]
+        pub s_thin_element_size: crate::unity_engine::vector2::Vector2,
+        #[static_field]
+        #[rename(name = "s_DefaultSelectableColor")]
+        pub s_default_selectable_color: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "s_TextColor")]
+        pub s_text_color: crate::unity_engine::color::Color,
     }
 }
 
@@ -812,6 +812,7 @@ impl TMP_DefaultControls {
 }
 
 #[cfg(feature = "tm_pro-tmp_defaultcontrols")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_DefaultControls;
     pub use super::TMP_DefaultControls;

@@ -4091,6 +4091,7 @@ impl DynValue {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-dynvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynValue;
     pub use super::IDynValue;

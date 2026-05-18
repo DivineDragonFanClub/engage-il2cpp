@@ -119,6 +119,7 @@ impl NoInterpIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpIntParameter;
     pub use super::INoInterpIntParameterMethods;

@@ -1775,6 +1775,7 @@ impl PixelPerfectCamera {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPixelPerfectCamera;
     pub use super::IPixelPerfectCameraMethods;

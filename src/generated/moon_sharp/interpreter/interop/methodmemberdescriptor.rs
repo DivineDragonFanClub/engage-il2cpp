@@ -832,6 +832,7 @@ impl MethodMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-methodmemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMethodMemberDescriptor;
     pub use super::IMethodMemberDescriptorMethods;

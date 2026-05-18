@@ -240,6 +240,7 @@ impl ProcDescCallBase {
 }
 
 #[cfg(feature = "app-procdesccallbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescCallBase;
     pub use super::IProcDescCallBaseMethods;

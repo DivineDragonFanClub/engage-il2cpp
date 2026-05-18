@@ -274,6 +274,7 @@ pub trait ICertificateHandlerMethods: ICertificateHandler {
 impl<__T: ICertificateHandler> ICertificateHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-networking-certificatehandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CertificateHandler;
     pub use super::ICertificateHandler;

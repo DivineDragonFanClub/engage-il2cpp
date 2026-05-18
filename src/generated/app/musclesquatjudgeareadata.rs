@@ -1047,6 +1047,7 @@ impl MuscleSquatJudgeAreaData {
 }
 
 #[cfg(feature = "app-musclesquatjudgeareadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleSquatJudgeAreaData;
     pub use super::IMuscleSquatJudgeAreaDataMethods;

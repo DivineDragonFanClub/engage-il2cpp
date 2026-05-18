@@ -1150,6 +1150,7 @@ impl PhaseArray {
 }
 
 #[cfg(feature = "combat-phasearray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhaseArray;
     pub use super::IPhaseArrayMethods;

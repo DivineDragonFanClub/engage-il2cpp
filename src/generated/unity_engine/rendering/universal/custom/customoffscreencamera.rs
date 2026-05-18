@@ -352,6 +352,7 @@ impl CustomOffscreenCamera {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomOffscreenCamera;
     pub use super::ICustomOffscreenCamera;

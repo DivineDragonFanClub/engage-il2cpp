@@ -12,6 +12,20 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))]
+    #[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
+    #[parent(crate::system::object::Object)]
+    pub struct CasualMap_ObjectData {
+        #[rename(name = "x")]
+        pub x: i32,
+        #[rename(name = "z")]
+        pub z: i32,
+        #[rename(name = "id")]
+        pub id: i32,
+        #[rename(name = "rotate")]
+        pub rotate: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap.md"))]
     #[::unity2::class(namespace = "App", name = "CasualMap")]
     # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: casualmap :: CasualMap >)]
@@ -57,24 +71,122 @@ mod __types {
             crate::app::casualmap::CasualMap_ObjectData,
         >,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))]
-    #[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
-    #[parent(crate::system::object::Object)]
-    pub struct CasualMap_ObjectData {
-        #[rename(name = "x")]
-        pub x: i32,
-        #[rename(name = "z")]
-        pub z: i32,
-        #[rename(name = "id")]
-        pub id: i32,
-        #[rename(name = "rotate")]
-        pub rotate: i32,
-    }
 }
 
 #[cfg(feature = "app-casualmap-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-casualmap")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CasualMap_ObjectData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CasualMap_ObjectData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CasualMap_ObjectData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: CasualMap_ObjectData,
+        x: i32,
+        z: i32,
+        id: i32,
+        rotate: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            CasualMap_ObjectData,
+            i32,
+            i32,
+            i32,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, x, z, id, rotate, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-casualmap")]
+pub trait ICasualMap_ObjectDataMethods: ICasualMap_ObjectData {
+    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
+    fn ctor(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        id: impl ::core::convert::Into<i32>,
+        rotate: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <CasualMap_ObjectData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CasualMap_ObjectData_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(id),
+                ::core::convert::Into::into(rotate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-casualmap")]
+impl<__T: ICasualMap_ObjectData> ICasualMap_ObjectDataMethods for __T {}
+
+#[cfg(feature = "app-casualmap")]
+impl CasualMap_ObjectData {
+    #[doc = "`.ctor(i32, i32, i32, i32)` — overload selector"]
+    pub fn new(x: i32, z: i32, id: i32, rotate: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CasualMap_ObjectData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICasualMap_ObjectDataMethods>::ctor(this, x, z, id, rotate);
+        this
+    }
+}
 
 #[cfg(feature = "app-casualmap")]
 #[doc(hidden)]
@@ -231,117 +343,6 @@ impl CasualMap {
 
 #[cfg(feature = "app-casualmap")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CasualMap_ObjectData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CasualMap_ObjectData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CasualMap_ObjectData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CasualMap_ObjectData,
-        x: i32,
-        z: i32,
-        id: i32,
-        rotate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CasualMap_ObjectData,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, x, z, id, rotate, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-casualmap")]
-pub trait ICasualMap_ObjectDataMethods: ICasualMap_ObjectData {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    fn ctor(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        id: impl ::core::convert::Into<i32>,
-        rotate: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <CasualMap_ObjectData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CasualMap_ObjectData_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(id),
-                ::core::convert::Into::into(rotate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-casualmap")]
-impl<__T: ICasualMap_ObjectData> ICasualMap_ObjectDataMethods for __T {}
-
-#[cfg(feature = "app-casualmap")]
-impl CasualMap_ObjectData {
-    #[doc = "`.ctor(i32, i32, i32, i32)` — overload selector"]
-    pub fn new(x: i32, z: i32, id: i32, rotate: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CasualMap_ObjectData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICasualMap_ObjectDataMethods>::ctor(this, x, z, id, rotate);
-        this
-    }
-}
-
-#[cfg(feature = "app-casualmap")]
 pub mod prelude {
     pub use super::CasualMap;
     pub use super::CasualMap_ObjectData;

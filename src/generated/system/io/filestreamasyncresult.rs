@@ -217,6 +217,7 @@ pub trait IFileStreamAsyncResultMethods: IFileStreamAsyncResult {
 impl<__T: IFileStreamAsyncResult> IFileStreamAsyncResultMethods for __T {}
 
 #[cfg(feature = "system-io-filestreamasyncresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileStreamAsyncResult;
     pub use super::IFileStreamAsyncResult;

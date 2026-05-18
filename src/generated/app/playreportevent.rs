@@ -832,6 +832,7 @@ impl PlayReportEvent {
 }
 
 #[cfg(feature = "app-playreportevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayReportEvent;
     pub use super::IPlayReportEventMethods;

@@ -397,6 +397,7 @@ impl CheckCatalogsOperation {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CheckCatalogsOperation;
     pub use super::ICheckCatalogsOperation;

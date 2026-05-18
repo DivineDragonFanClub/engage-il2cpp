@@ -1611,6 +1611,7 @@ impl Debug_2 {
 }
 
 #[cfg(feature = "root-debug_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Debug_2;
     pub use super::IDebug_2;

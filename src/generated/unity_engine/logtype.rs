@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-logtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LogType;
     pub use crate::system::object::IObject;

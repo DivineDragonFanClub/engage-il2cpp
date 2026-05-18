@@ -539,6 +539,7 @@ impl StencilMaterial {
 }
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStencilMaterial;
     pub use super::IStencilMaterial_MatEntry;

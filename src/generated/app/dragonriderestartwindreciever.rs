@@ -304,6 +304,7 @@ impl DragonRideRestartWindReciever {
 }
 
 #[cfg(feature = "app-dragonriderestartwindreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideRestartWindReciever;
     pub use super::IDragonRideRestartWindReciever;

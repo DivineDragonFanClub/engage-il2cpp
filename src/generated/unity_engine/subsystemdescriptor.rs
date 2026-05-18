@@ -157,6 +157,7 @@ impl SubsystemDescriptor {
 }
 
 #[cfg(feature = "unity_engine-subsystemdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemDescriptor;
     pub use super::ISubsystemDescriptorMethods;

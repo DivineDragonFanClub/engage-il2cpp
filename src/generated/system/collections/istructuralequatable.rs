@@ -167,6 +167,7 @@ pub trait IIStructuralEquatableMethods: IIStructuralEquatable {
 impl<__T: IIStructuralEquatable> IIStructuralEquatableMethods for __T {}
 
 #[cfg(feature = "system-collections-istructuralequatable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIStructuralEquatable;
     pub use super::IIStructuralEquatableMethods;

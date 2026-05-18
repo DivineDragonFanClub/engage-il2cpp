@@ -1846,6 +1846,7 @@ impl MonoMethod {
 }
 
 #[cfg(feature = "system-reflection-monomethod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoMethod;
     pub use super::IMonoMethodMethods;

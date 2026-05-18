@@ -540,6 +540,7 @@ pub trait IMulticastDelegateMethods: IMulticastDelegate {
 impl<__T: IMulticastDelegate> IMulticastDelegateMethods for __T {}
 
 #[cfg(feature = "system-multicastdelegate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMulticastDelegate;
     pub use super::IMulticastDelegateMethods;

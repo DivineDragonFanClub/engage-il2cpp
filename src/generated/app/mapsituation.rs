@@ -13,102 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapSituation_SubPhases {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapSituation_SubPhases {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapSituation.SubPhases";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapSituation_SubPhases {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapSituation_SubPhases {
-        pub fn normal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn charm_confusion() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSituation")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)]
-    pub struct MapSituation {
-        #[static_field]
-        #[rename(name = "TurnMax")]
-        pub turn_max: i32,
-        #[rename(name = "m_Status")]
-        pub m_status: crate::app::mapsituation::MapSituation_StatusField,
-        #[rename(name = "m_Players")]
-        pub m_players: ::unity2::Array<crate::app::mapsituation::MapSituation_Player>,
-        #[rename(name = "m_Groups")]
-        pub m_groups: ::unity2::Array<crate::app::force::Force_Type>,
-        #[rename(name = "m_CurrentForceType")]
-        pub m_current_force_type: crate::app::force::Force_Type,
-        #[rename(name = "m_HumanForceType")]
-        pub m_human_force_type: crate::app::force::Force_Type,
-        #[rename(name = "m_ForceCursors")]
-        pub m_force_cursors: ::unity2::Array<crate::app::mapsituation::MapSituation_ForceCursor>,
-        #[rename(name = "m_Turn")]
-        pub m_turn: i32,
-        #[rename(name = "m_SubPhase")]
-        pub m_sub_phase: crate::app::mapsituation::MapSituation_SubPhases,
-        #[rename(name = "m_WinRuleEnemyNumLessThanOrEqualTo")]
-        pub m_win_rule_enemy_num_less_than_or_equal_to: i32,
-        #[rename(name = "m_WinRuleLimitTurn")]
-        pub m_win_rule_limit_turn: i32,
-        #[rename(name = "m_WinLoseResult")]
-        pub m_win_lose_result: crate::app::winloserule::WinLoseRule,
-        #[rename(name = "m_Entrust")]
-        pub m_entrust: crate::app::unitentrust::UnitEntrust_Type,
-        #[rename(name = "m_WinRuleMID")]
-        pub m_win_rule_mid: ::unity2::Il2CppString,
-        #[rename(name = "m_WinRuleMIDArg")]
-        pub m_win_rule_mid_arg: ::unity2::Il2CppString,
-        #[rename(name = "m_LoseRuleMID")]
-        pub m_lose_rule_mid: ::unity2::Il2CppString,
-        #[rename(name = "m_LoseRuleMIDArg")]
-        pub m_lose_rule_mid_arg: ::unity2::Il2CppString,
-        #[rename(name = "m_AverageLevel")]
-        pub m_average_level: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSituation.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)]
-    pub struct MapSituation_StatusField {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md"))]
     #[repr(C)]
     #[derive(
@@ -168,6 +72,59 @@ mod __types {
             Self { value: 5 }
         }
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MapSituation_SubPhases {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapSituation_SubPhases {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapSituation.SubPhases";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapSituation_SubPhases {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MapSituation_SubPhases {
+        pub fn normal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn charm_confusion() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSituation.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)]
+    pub struct MapSituation_StatusField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Status.md"))]
     #[repr(C)]
@@ -237,6 +194,49 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSituation")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)]
+    pub struct MapSituation {
+        #[static_field]
+        #[rename(name = "TurnMax")]
+        pub turn_max: i32,
+        #[rename(name = "m_Status")]
+        pub m_status: crate::app::mapsituation::MapSituation_StatusField,
+        #[rename(name = "m_Players")]
+        pub m_players: ::unity2::Array<crate::app::mapsituation::MapSituation_Player>,
+        #[rename(name = "m_Groups")]
+        pub m_groups: ::unity2::Array<crate::app::force::Force_Type>,
+        #[rename(name = "m_CurrentForceType")]
+        pub m_current_force_type: crate::app::force::Force_Type,
+        #[rename(name = "m_HumanForceType")]
+        pub m_human_force_type: crate::app::force::Force_Type,
+        #[rename(name = "m_ForceCursors")]
+        pub m_force_cursors: ::unity2::Array<crate::app::mapsituation::MapSituation_ForceCursor>,
+        #[rename(name = "m_Turn")]
+        pub m_turn: i32,
+        #[rename(name = "m_SubPhase")]
+        pub m_sub_phase: crate::app::mapsituation::MapSituation_SubPhases,
+        #[rename(name = "m_WinRuleEnemyNumLessThanOrEqualTo")]
+        pub m_win_rule_enemy_num_less_than_or_equal_to: i32,
+        #[rename(name = "m_WinRuleLimitTurn")]
+        pub m_win_rule_limit_turn: i32,
+        #[rename(name = "m_WinLoseResult")]
+        pub m_win_lose_result: crate::app::winloserule::WinLoseRule,
+        #[rename(name = "m_Entrust")]
+        pub m_entrust: crate::app::unitentrust::UnitEntrust_Type,
+        #[rename(name = "m_WinRuleMID")]
+        pub m_win_rule_mid: ::unity2::Il2CppString,
+        #[rename(name = "m_WinRuleMIDArg")]
+        pub m_win_rule_mid_arg: ::unity2::Il2CppString,
+        #[rename(name = "m_LoseRuleMID")]
+        pub m_lose_rule_mid: ::unity2::Il2CppString,
+        #[rename(name = "m_LoseRuleMIDArg")]
+        pub m_lose_rule_mid_arg: ::unity2::Il2CppString,
+        #[rename(name = "m_AverageLevel")]
+        pub m_average_level: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))]
     #[::unity2::class(namespace = "App", name = "MapSituation.ForceCursor")]
     #[parent(crate::system::object::Object)]
@@ -245,6 +245,158 @@ mod __types {
 
 #[cfg(feature = "app-mapsituation-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapsituation")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSituation_StatusField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapsituation::MapSituation_Status as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSituation_StatusField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSituation_StatusField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: MapSituation_StatusField,
+        value: crate::app::mapsituation::MapSituation_Status,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            MapSituation_StatusField,
+            crate::app::mapsituation::MapSituation_Status,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSituation_StatusField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapSituation_StatusField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapSituation_StatusField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapSituation_StatusField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsituation")]
+pub trait IMapSituation_StatusFieldMethods: IMapSituation_StatusField {
+    #[doc = "`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<crate::app::mapsituation::MapSituation_Status>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <MapSituation_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSituation_StatusField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSituation_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __MapSituation_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsituation")]
+impl<__T: IMapSituation_StatusField> IMapSituation_StatusFieldMethods for __T {}
+
+#[cfg(feature = "app-mapsituation")]
+impl MapSituation_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSituation_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSituation_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapsituation")]
 #[doc(hidden)]
@@ -5027,158 +5179,6 @@ impl MapSituation {
 #[cfg(feature = "app-mapsituation")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSituation_StatusField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapsituation::MapSituation_Status as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSituation_StatusField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSituation_StatusField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: MapSituation_StatusField,
-        value: crate::app::mapsituation::MapSituation_Status,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            MapSituation_StatusField,
-            crate::app::mapsituation::MapSituation_Status,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSituation_StatusField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSituation_StatusField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSituation_StatusField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSituation_StatusField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsituation")]
-pub trait IMapSituation_StatusFieldMethods: IMapSituation_StatusField {
-    #[doc = "`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::mapsituation::MapSituation_Status>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <MapSituation_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSituation_StatusField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSituation_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSituation_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsituation")]
-impl<__T: IMapSituation_StatusField> IMapSituation_StatusFieldMethods for __T {}
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSituation_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSituation_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsituation")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapSituation_ForceCursor_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -5618,6 +5618,7 @@ impl MapSituation_ForceCursor {
 }
 
 #[cfg(feature = "app-mapsituation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSituation;
     pub use super::IMapSituationMethods;

@@ -330,6 +330,7 @@ impl TutorialShowMenuItem {
 }
 
 #[cfg(feature = "root-tutorialshowmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialShowMenuItem;
     pub use super::ITutorialShowMenuItemMethods;

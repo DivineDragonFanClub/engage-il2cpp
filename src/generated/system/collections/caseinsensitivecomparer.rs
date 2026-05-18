@@ -223,6 +223,7 @@ impl CaseInsensitiveComparer {
 }
 
 #[cfg(feature = "system-collections-caseinsensitivecomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CaseInsensitiveComparer;
     pub use super::ICaseInsensitiveComparer;

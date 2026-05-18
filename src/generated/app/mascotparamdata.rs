@@ -497,6 +497,7 @@ impl MascotParamData {
 }
 
 #[cfg(feature = "app-mascotparamdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotParamData;
     pub use super::IMascotParamDataMethods;

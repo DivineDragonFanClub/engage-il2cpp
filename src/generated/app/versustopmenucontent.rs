@@ -652,6 +652,7 @@ impl VersusTopMenuContent {
 }
 
 #[cfg(feature = "app-versustopmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusTopMenuContent;
     pub use super::IVersusTopMenuContentMethods;

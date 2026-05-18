@@ -14,27 +14,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ForwardRendererData"
-    )]
-    #[parent(
-        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
-    )]
-    pub struct ForwardRendererData {
-# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
-# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
-# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
-# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
-# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
-}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md"))]
     #[repr(C)]
     #[derive(
@@ -98,6 +77,27 @@ mod __types {
             Self { value: 6 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal",
+        name = "ForwardRendererData"
+    )]
+    #[parent(
+        crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData
+    )]
+    pub struct ForwardRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
+# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
+# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
+# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
     #[::unity2::class(
@@ -1253,6 +1253,7 @@ impl ForwardRendererData_ShaderResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ForwardRendererData;
     pub use super::ForwardRendererData_MixedResolutionFlag;

@@ -97,6 +97,7 @@ impl AstNode {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AstNode;
     pub use super::IAstNode;

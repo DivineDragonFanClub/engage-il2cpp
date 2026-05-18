@@ -153,6 +153,7 @@ impl ScriptPlayableBinding {
 }
 
 #[cfg(feature = "unity_engine-playables-scriptplayablebinding")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptPlayableBinding;
     pub use super::ScriptPlayableBinding;

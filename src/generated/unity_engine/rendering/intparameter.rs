@@ -191,6 +191,7 @@ impl IntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-intparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntParameter;
     pub use super::IIntParameterMethods;

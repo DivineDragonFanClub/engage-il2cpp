@@ -612,6 +612,7 @@ impl DeferredShaderData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DeferredShaderData;
     pub use super::DeferredShaderData_ComputeBufferInfo;

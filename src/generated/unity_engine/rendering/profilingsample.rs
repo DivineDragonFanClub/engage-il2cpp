@@ -373,6 +373,7 @@ impl ProfilingSample {
 }
 
 #[cfg(feature = "unity_engine-rendering-profilingsample")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ProfilingSample;
     pub use crate::system::object::IObject;

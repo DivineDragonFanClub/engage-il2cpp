@@ -124,6 +124,7 @@ impl NoInterpVector2Parameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpVector2Parameter;
     pub use super::INoInterpVector2ParameterMethods;

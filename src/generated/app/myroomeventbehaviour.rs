@@ -466,6 +466,7 @@ impl MyRoomEventBehaviour {
 }
 
 #[cfg(feature = "app-myroomeventbehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomEventBehaviour;
     pub use super::IMyRoomEventBehaviourMethods;

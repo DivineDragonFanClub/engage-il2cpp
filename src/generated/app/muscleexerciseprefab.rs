@@ -362,6 +362,7 @@ impl MuscleExercisePrefab {
 }
 
 #[cfg(feature = "app-muscleexerciseprefab")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleExercisePrefab;
     pub use super::IMuscleExercisePrefabMethods;

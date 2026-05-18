@@ -88,6 +88,7 @@ impl Internal_SubsystemDescriptors {
 }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInternal_SubsystemDescriptors;
     pub use super::Internal_SubsystemDescriptors;

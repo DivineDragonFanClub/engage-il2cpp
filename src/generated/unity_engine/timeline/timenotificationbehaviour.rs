@@ -1137,6 +1137,7 @@ impl TimeNotificationBehaviour_NotificationEntry {
 }
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimeNotificationBehaviour;
     pub use super::ITimeNotificationBehaviourMethods;

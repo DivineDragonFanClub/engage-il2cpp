@@ -249,6 +249,7 @@ impl GodUnitEmptyMenuItem {
 }
 
 #[cfg(feature = "app-godunitemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodUnitEmptyMenuItem;
     pub use super::IGodUnitEmptyMenuItem;

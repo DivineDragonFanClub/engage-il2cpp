@@ -558,6 +558,7 @@ impl ProfileCardTopMenuRoot {
 }
 
 #[cfg(feature = "app-profilecardtopmenuroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTopMenuRoot;
     pub use super::IProfileCardTopMenuRootMethods;

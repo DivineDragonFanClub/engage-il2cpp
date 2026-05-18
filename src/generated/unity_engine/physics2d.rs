@@ -1426,6 +1426,7 @@ impl Physics2D {
 }
 
 #[cfg(feature = "unity_engine-physics2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysics2D;
     pub use super::Physics2D;

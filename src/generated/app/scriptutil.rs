@@ -2647,6 +2647,7 @@ impl ScriptUtil {
 }
 
 #[cfg(feature = "app-scriptutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptUtil;
     pub use super::IScriptUtilMethods;

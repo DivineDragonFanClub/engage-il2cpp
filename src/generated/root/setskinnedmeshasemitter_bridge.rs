@@ -112,6 +112,7 @@ impl SetSkinnedMeshAsEmitter_Bridge {
 }
 
 #[cfg(feature = "root-setskinnedmeshasemitter_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISetSkinnedMeshAsEmitter_Bridge;
     pub use super::ISetSkinnedMeshAsEmitter_BridgeMethods;

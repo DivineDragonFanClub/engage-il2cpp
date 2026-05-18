@@ -355,6 +355,7 @@ impl SortieConfirmBackDialog_ConfirmYesDialogItem {
 }
 
 #[cfg(feature = "app-sortieconfirmbackdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieConfirmBackDialog;
     pub use super::ISortieConfirmBackDialogMethods;

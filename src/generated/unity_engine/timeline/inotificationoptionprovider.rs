@@ -85,6 +85,7 @@ pub trait IINotificationOptionProviderMethods: IINotificationOptionProvider {
 impl<__T: IINotificationOptionProvider> IINotificationOptionProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IINotificationOptionProvider;
     pub use super::IINotificationOptionProviderMethods;

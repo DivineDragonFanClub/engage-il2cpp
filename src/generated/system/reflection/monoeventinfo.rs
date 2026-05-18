@@ -185,6 +185,7 @@ impl MonoEventInfo {
 }
 
 #[cfg(feature = "system-reflection-monoeventinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MonoEventInfo;
     pub use crate::system::object::IObject;

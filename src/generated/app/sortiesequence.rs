@@ -11,17 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "SortieSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)]
-    pub struct SortieSequence {
-        #[static_field]
-        #[rename(name = "s_IsDecidedToBattle")]
-        pub s_is_decided_to_battle: bool,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::sortiesequence::SortieSequence_Modes,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -116,6 +105,17 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 14 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequence/SortieSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "SortieSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)]
+    pub struct SortieSequence {
+        #[static_field]
+        #[rename(name = "s_IsDecidedToBattle")]
+        pub s_is_decided_to_battle: bool,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::sortiesequence::SortieSequence_Modes,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
@@ -1311,6 +1311,7 @@ impl SortieSequence {
 }
 
 #[cfg(feature = "app-sortiesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequence;
     pub use super::ISortieSequenceMethods;

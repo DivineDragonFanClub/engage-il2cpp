@@ -1051,6 +1051,7 @@ impl AkGameObj {
 }
 
 #[cfg(feature = "root-akgameobj")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkGameObj;
     pub use super::IAkGameObj;

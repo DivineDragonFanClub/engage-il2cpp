@@ -417,6 +417,7 @@ impl TMP_GlyphAdjustmentRecord {
 }
 
 #[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_GlyphAdjustmentRecord;
     pub use crate::system::object::IObject;

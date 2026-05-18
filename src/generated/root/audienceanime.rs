@@ -251,6 +251,7 @@ impl AudienceAnime {
 }
 
 #[cfg(feature = "root-audienceanime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudienceAnime;
     pub use super::IAudienceAnime;

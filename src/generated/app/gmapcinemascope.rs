@@ -524,6 +524,7 @@ impl GmapCinemaScope {
 }
 
 #[cfg(feature = "app-gmapcinemascope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapCinemaScope;
     pub use super::IGmapCinemaScope;

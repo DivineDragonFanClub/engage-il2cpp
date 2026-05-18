@@ -532,6 +532,7 @@ impl SortieSequenceRelianceTalk {
 }
 
 #[cfg(feature = "app-sortiesequencereliancetalk")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceRelianceTalk;
     pub use super::ISortieSequenceRelianceTalkMethods;

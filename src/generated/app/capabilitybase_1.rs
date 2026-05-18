@@ -259,6 +259,7 @@ impl<T0: ::unity2::ClassIdentity> CapabilityBase_1<T0> {
 }
 
 #[cfg(feature = "app-capabilitybase_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilityBase_1;
     pub use super::ICapabilityBase_1;

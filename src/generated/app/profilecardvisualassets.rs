@@ -1575,6 +1575,7 @@ impl ProfileCardVisualAssets {
 }
 
 #[cfg(feature = "app-profilecardvisualassets")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualAssets;
     pub use super::IProfileCardVisualAssetsMethods;

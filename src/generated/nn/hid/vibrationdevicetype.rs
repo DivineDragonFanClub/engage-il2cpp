@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-vibrationdevicetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VibrationDeviceType;
     pub use crate::system::object::IObject;

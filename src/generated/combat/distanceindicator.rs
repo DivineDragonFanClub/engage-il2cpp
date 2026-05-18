@@ -105,6 +105,7 @@ impl DistanceIndicator {
 }
 
 #[cfg(feature = "combat-distanceindicator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DistanceIndicator;
     pub use super::IDistanceIndicator;

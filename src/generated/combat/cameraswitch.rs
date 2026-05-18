@@ -896,6 +896,7 @@ impl CameraSwitch {
 }
 
 #[cfg(feature = "combat-cameraswitch")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraSwitch;
     pub use super::ICameraSwitch;

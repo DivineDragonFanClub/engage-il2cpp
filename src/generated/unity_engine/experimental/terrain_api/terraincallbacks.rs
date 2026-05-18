@@ -575,6 +575,7 @@ impl TerrainCallbacks_HeightmapChangedCallback {
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainCallbacks;
     pub use super::ITerrainCallbacks_HeightmapChangedCallback;

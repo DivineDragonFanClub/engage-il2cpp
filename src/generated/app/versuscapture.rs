@@ -378,6 +378,7 @@ impl VersusCapture {
 }
 
 #[cfg(feature = "app-versuscapture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusCapture;
     pub use super::IVersusCaptureMethods;

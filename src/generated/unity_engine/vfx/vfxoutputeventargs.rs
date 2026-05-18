@@ -118,6 +118,7 @@ impl VFXOutputEventArgs {
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VFXOutputEventArgs;
     pub use crate::system::object::IObject;

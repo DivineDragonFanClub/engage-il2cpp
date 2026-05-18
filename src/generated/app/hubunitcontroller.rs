@@ -4157,6 +4157,7 @@ impl HubUnitController {
 }
 
 #[cfg(feature = "app-hubunitcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubUnitController;
     pub use super::IHubUnitController;

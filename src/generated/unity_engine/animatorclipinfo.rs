@@ -216,6 +216,7 @@ impl AnimatorClipInfo {
 }
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorClipInfo;
     pub use crate::system::object::IObject;

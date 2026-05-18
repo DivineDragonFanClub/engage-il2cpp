@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-lightevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightEvent;
     pub use crate::system::object::IObject;

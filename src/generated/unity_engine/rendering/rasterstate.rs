@@ -364,6 +364,7 @@ impl RasterState {
 }
 
 #[cfg(feature = "unity_engine-rendering-rasterstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RasterState;
     pub use crate::system::object::IObject;

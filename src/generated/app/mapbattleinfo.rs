@@ -174,6 +174,7 @@ impl MapBattleInfo {
 }
 
 #[cfg(feature = "app-mapbattleinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleInfo;
     pub use super::IMapBattleInfoMethods;

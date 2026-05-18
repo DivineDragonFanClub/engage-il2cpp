@@ -298,6 +298,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-tree-tokentype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TokenType;
     pub use crate::system::object::IObject;

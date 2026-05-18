@@ -442,6 +442,7 @@ impl Int16 {
 }
 
 #[cfg(feature = "system-int16")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Int16;
     pub use crate::system::object::IObject;

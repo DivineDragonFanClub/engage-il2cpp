@@ -85,6 +85,7 @@ pub trait IIRenderPass2DMethods: IIRenderPass2D {
 impl<__T: IIRenderPass2D> IIRenderPass2DMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIRenderPass2D;
     pub use super::IIRenderPass2DMethods;

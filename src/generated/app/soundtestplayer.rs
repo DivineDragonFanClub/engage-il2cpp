@@ -522,6 +522,7 @@ impl SoundTestPlayer {
 }
 
 #[cfg(feature = "app-soundtestplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISoundTestPlayer;
     pub use super::ISoundTestPlayerMethods;

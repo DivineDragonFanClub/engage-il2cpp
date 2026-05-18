@@ -157,6 +157,7 @@ impl MarkerTrack {
 }
 
 #[cfg(feature = "unity_engine-timeline-markertrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMarkerTrack;
     pub use super::IMarkerTrackMethods;

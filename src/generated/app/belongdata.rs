@@ -560,6 +560,7 @@ impl BelongData {
 }
 
 #[cfg(feature = "app-belongdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BelongData;
     pub use super::IBelongData;

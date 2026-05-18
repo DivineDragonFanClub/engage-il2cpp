@@ -572,6 +572,7 @@ impl SignalEmitter {
 }
 
 #[cfg(feature = "unity_engine-timeline-signalemitter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalEmitter;
     pub use super::ISignalEmitterMethods;

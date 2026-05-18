@@ -896,6 +896,7 @@ pub trait IPropertyBuilderMethods: IPropertyBuilder {
 impl<__T: IPropertyBuilder> IPropertyBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-propertybuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyBuilder;
     pub use super::IPropertyBuilderMethods;

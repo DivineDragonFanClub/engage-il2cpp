@@ -124,6 +124,7 @@ impl NoInterpTextureParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerptextureparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpTextureParameter;
     pub use super::INoInterpTextureParameterMethods;

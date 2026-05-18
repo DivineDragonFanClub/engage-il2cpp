@@ -120,6 +120,7 @@ impl TurnAfterInspector {
 }
 
 #[cfg(feature = "app-turnafterinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITurnAfterInspector;
     pub use super::ITurnAfterInspectorMethods;

@@ -1396,6 +1396,7 @@ impl CharacterAssetForm {
 }
 
 #[cfg(feature = "combat-characterassetform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAssetForm;
     pub use super::ICharacterAssetForm;

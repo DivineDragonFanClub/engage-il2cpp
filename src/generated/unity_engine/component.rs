@@ -1610,6 +1610,7 @@ impl Component {
 }
 
 #[cfg(feature = "unity_engine-component")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Component;
     pub use super::IComponent;

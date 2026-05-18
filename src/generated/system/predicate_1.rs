@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity> Predicate_1<T0> {
 }
 
 #[cfg(feature = "system-predicate_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPredicate_1;
     pub use super::IPredicate_1Methods;

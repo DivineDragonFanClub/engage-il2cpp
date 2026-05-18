@@ -159,6 +159,7 @@ pub trait IRemoteProviderExceptionMethods: IRemoteProviderException {
 impl<__T: IRemoteProviderException> IRemoteProviderExceptionMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-remoteproviderexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRemoteProviderException;
     pub use super::IRemoteProviderExceptionMethods;

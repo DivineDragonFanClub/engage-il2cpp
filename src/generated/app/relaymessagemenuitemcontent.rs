@@ -237,6 +237,7 @@ impl RelayMessageMenuItemContent {
 }
 
 #[cfg(feature = "app-relaymessagemenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayMessageMenuItemContent;
     pub use super::IRelayMessageMenuItemContentMethods;

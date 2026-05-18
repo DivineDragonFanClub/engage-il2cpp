@@ -157,6 +157,7 @@ impl Startup {
 }
 
 #[cfg(feature = "app-startup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStartup;
     pub use super::IStartupMethods;

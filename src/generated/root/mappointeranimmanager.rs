@@ -231,6 +231,7 @@ impl MapPointerAnimManager {
 }
 
 #[cfg(feature = "root-mappointeranimmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPointerAnimManager;
     pub use super::IMapPointerAnimManagerMethods;

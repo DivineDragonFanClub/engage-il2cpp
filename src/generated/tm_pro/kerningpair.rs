@@ -812,6 +812,7 @@ impl KerningPair {
 }
 
 #[cfg(feature = "tm_pro-kerningpair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKerningPair;
     pub use super::IKerningPairMethods;

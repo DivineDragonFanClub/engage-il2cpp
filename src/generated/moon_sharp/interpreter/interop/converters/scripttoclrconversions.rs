@@ -366,6 +366,7 @@ impl ScriptToClrConversions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptToClrConversions;
     pub use super::ScriptToClrConversions;

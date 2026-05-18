@@ -228,6 +228,7 @@ impl ProfileCardAlbumListEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardalbumlistemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardAlbumListEmptyMenuItem;
     pub use super::IProfileCardAlbumListEmptyMenuItemMethods;

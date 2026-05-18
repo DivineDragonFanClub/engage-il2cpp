@@ -404,6 +404,7 @@ impl ParticleFadeoutComponent {
 }
 
 #[cfg(feature = "combat-particlefadeoutcomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParticleFadeoutComponent;
     pub use super::IParticleFadeoutComponentMethods;

@@ -698,6 +698,7 @@ impl EncountEquipData {
 }
 
 #[cfg(feature = "app-encountequipdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountEquipData;
     pub use super::IEncountEquipData;

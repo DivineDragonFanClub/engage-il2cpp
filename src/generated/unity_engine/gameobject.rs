@@ -4900,6 +4900,7 @@ impl GameObject {
 }
 
 #[cfg(feature = "unity_engine-gameobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameObject;
     pub use super::IGameObject;

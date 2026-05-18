@@ -392,6 +392,7 @@ impl MemoryProfiler {
 }
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemoryProfiler;
     pub use super::MemoryProfiler;

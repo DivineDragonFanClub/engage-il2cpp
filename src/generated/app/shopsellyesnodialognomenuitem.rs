@@ -228,6 +228,7 @@ impl ShopSellYesNoDialogNoMenuItem {
 }
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopSellYesNoDialogNoMenuItem;
     pub use super::IShopSellYesNoDialogNoMenuItemMethods;

@@ -1816,6 +1816,7 @@ impl UnitInfoWindow {
 }
 
 #[cfg(feature = "app-unitinfowindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoWindow;
     pub use super::IUnitInfoWindowMethods;

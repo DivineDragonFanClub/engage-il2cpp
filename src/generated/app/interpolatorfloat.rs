@@ -243,6 +243,7 @@ impl InterpolatorFloat {
 }
 
 #[cfg(feature = "app-interpolatorfloat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorFloat;
     pub use super::IInterpolatorFloatMethods;

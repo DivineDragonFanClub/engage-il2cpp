@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_pageinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_PageInfo;
     pub use crate::system::object::IObject;

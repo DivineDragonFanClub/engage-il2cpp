@@ -1416,6 +1416,7 @@ impl Puppet {
 }
 
 #[cfg(feature = "combat-puppet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPuppet;
     pub use super::IPuppetMethods;

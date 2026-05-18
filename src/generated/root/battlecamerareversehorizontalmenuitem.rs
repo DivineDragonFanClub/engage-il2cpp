@@ -339,6 +339,7 @@ impl BattleCameraReverseHorizontalMenuItem {
 }
 
 #[cfg(feature = "root-battlecamerareversehorizontalmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleCameraReverseHorizontalMenuItem;
     pub use super::IBattleCameraReverseHorizontalMenuItem;

@@ -221,6 +221,7 @@ impl ChromaticAberration {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-chromaticaberration")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChromaticAberration;
     pub use super::IChromaticAberration;

@@ -99,6 +99,7 @@ impl<__T: IIPerformanceStopwatch_Interface> IIPerformanceStopwatch_InterfaceMeth
 #[cfg(
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPerformanceStopwatch_Interface;
     pub use super::IIPerformanceStopwatch_InterfaceMethods;

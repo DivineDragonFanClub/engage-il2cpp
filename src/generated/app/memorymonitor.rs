@@ -102,6 +102,7 @@ impl MemoryMonitor {
 }
 
 #[cfg(feature = "app-memorymonitor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemoryMonitor;
     pub use super::IMemoryMonitorMethods;

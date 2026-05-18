@@ -42,6 +42,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_materialreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_MaterialReference;
     pub use crate::system::object::IObject;

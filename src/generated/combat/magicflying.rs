@@ -510,6 +510,7 @@ impl MagicFlying {
 }
 
 #[cfg(feature = "combat-magicflying")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicFlying;
     pub use super::IMagicFlyingMethods;

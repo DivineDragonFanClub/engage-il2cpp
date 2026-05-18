@@ -2468,6 +2468,7 @@ impl TutorialListRoot {
 }
 
 #[cfg(feature = "root-tutoriallistroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialListRoot;
     pub use super::ITutorialListRootMethods;

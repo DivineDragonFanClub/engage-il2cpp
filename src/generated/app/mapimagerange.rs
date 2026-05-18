@@ -903,6 +903,7 @@ impl MapImageRange {
 }
 
 #[cfg(feature = "app-mapimagerange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageRange;
     pub use super::IMapImageRangeMethods;

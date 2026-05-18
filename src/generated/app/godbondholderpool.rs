@@ -506,6 +506,7 @@ impl GodBondHolderPool {
 }
 
 #[cfg(feature = "app-godbondholderpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodBondHolderPool;
     pub use super::IGodBondHolderPool;

@@ -3629,6 +3629,7 @@ impl RenderSettings {
 }
 
 #[cfg(feature = "unity_engine-rendersettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderSettings;
     pub use super::IRenderSettingsMethods;

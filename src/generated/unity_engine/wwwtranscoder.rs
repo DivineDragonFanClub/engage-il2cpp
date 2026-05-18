@@ -690,6 +690,7 @@ impl WWWTranscoder {
 }
 
 #[cfg(feature = "unity_engine-wwwtranscoder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWWWTranscoder;
     pub use super::WWWTranscoder;

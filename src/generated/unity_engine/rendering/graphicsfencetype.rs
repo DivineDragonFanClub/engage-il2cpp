@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-graphicsfencetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicsFenceType;
     pub use crate::system::object::IObject;

@@ -357,6 +357,7 @@ impl RingMenuItemContent {
 }
 
 #[cfg(feature = "app-ringmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingMenuItemContent;
     pub use super::IRingMenuItemContentMethods;

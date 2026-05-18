@@ -862,6 +862,7 @@ impl MyRoomRelianceSubSelectItemContent {
 }
 
 #[cfg(feature = "app-myroomreliancesubselectitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomRelianceSubSelectItemContent;
     pub use super::IMyRoomRelianceSubSelectItemContentMethods;

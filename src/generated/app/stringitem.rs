@@ -425,6 +425,7 @@ impl StringItem {
 }
 
 #[cfg(feature = "app-stringitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringItem;
     pub use super::IStringItemMethods;

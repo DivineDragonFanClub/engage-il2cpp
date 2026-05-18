@@ -602,6 +602,7 @@ impl MapPanelGimmick {
 }
 
 #[cfg(feature = "app-mappanelgimmick")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelGimmick;
     pub use super::IMapPanelGimmickMethods;

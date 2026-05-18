@@ -901,6 +901,7 @@ impl SubOrderMenu {
 }
 
 #[cfg(feature = "app-subordermenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubOrderMenu;
     pub use super::ISubOrderMenuMethods;

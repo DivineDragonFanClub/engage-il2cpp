@@ -662,6 +662,7 @@ impl DishResultDialog {
 }
 
 #[cfg(feature = "app-dishresultdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DishResultDialog;
     pub use super::DishResultDialog_Label;

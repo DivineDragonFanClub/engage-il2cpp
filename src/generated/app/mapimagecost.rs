@@ -220,6 +220,7 @@ impl MapImageCost {
 }
 
 #[cfg(feature = "app-mapimagecost")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCost;
     pub use super::IMapImageCostMethods;

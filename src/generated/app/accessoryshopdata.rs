@@ -531,6 +531,7 @@ impl AccessoryShopData {
 }
 
 #[cfg(feature = "app-accessoryshopdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryShopData;
     pub use super::IAccessoryShopData;

@@ -398,6 +398,7 @@ impl HubControlMouthSing {
 }
 
 #[cfg(feature = "app-hubcontrolmouthsing")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubControlMouthSing;
     pub use super::IHubControlMouthSing;

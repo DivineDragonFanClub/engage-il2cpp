@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-namespacedoc_8")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INamespaceDoc_8;
     pub use super::NamespaceDoc_8;

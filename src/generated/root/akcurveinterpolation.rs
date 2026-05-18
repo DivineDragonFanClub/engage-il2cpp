@@ -94,6 +94,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akcurveinterpolation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCurveInterpolation;
     pub use crate::system::object::IObject;

@@ -597,6 +597,7 @@ impl AkMarkerCallbackInfo {
 }
 
 #[cfg(feature = "root-akmarkercallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMarkerCallbackInfo;
     pub use super::IAkMarkerCallbackInfo;

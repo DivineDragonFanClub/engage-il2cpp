@@ -515,6 +515,7 @@ impl AIConst {
 }
 
 #[cfg(feature = "app-aiconst")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIConst;
     pub use super::IAIConst;

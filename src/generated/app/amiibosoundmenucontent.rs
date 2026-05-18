@@ -823,6 +823,7 @@ impl AmiiboSoundMenuContent {
 }
 
 #[cfg(feature = "app-amiibosoundmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboSoundMenuContent;
     pub use super::IAmiiboSoundMenuContent;

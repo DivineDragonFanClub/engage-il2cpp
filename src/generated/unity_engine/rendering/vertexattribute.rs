@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-vertexattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VertexAttribute;
     pub use crate::system::object::IObject;

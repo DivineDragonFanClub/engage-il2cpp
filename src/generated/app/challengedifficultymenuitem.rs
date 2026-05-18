@@ -182,6 +182,7 @@ impl ChallengeDifficultyMenuItem {
 }
 
 #[cfg(feature = "app-challengedifficultymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeDifficultyMenuItem;
     pub use super::IChallengeDifficultyMenuItem;

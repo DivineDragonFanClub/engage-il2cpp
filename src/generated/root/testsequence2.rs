@@ -10,6 +10,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsequence2/TestSequence2.md"))]
+    #[::unity2::class(namespace = "", name = "TestSequence2")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TestSequence2 {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsequence2/TestSequence2_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -49,11 +54,6 @@ mod __types {
             Self { value: 0 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsequence2/TestSequence2.md"))]
-    #[::unity2::class(namespace = "", name = "TestSequence2")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TestSequence2 {}
 }
 
 #[cfg(feature = "root-testsequence2-types")]
@@ -308,6 +308,7 @@ impl TestSequence2 {
 }
 
 #[cfg(feature = "root-testsequence2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITestSequence2;
     pub use super::ITestSequence2Methods;

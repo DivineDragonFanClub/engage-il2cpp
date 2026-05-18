@@ -654,6 +654,7 @@ impl CameraControllerBullet {
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerBullet;
     pub use super::CameraControllerBullet_State;

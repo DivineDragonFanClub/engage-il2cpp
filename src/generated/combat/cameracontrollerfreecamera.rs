@@ -230,6 +230,7 @@ impl CameraControllerFreeCamera {
 }
 
 #[cfg(feature = "combat-cameracontrollerfreecamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerFreeCamera;
     pub use super::ICameraControllerFreeCamera;

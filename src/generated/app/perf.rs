@@ -262,6 +262,7 @@ impl Perf {
 }
 
 #[cfg(feature = "app-perf")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPerf;
     pub use super::IPerfMethods;

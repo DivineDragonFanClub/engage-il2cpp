@@ -114,6 +114,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-methodimplattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MethodImplAttributes;
     pub use crate::system::object::IObject;

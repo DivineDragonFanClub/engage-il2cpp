@@ -316,6 +316,7 @@ impl TerrainPaintGetter {
 }
 
 #[cfg(feature = "app-terrainpaintgetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainPaintGetter;
     pub use super::ITerrainPaintGetterMethods;

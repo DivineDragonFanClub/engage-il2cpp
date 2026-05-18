@@ -492,6 +492,7 @@ impl DebugTextWriter {
 }
 
 #[cfg(feature = "app-debugtextwriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugTextWriter;
     pub use super::IDebugTextWriter;

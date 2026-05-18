@@ -360,6 +360,7 @@ impl TMP_FontUtilities {
 }
 
 #[cfg(feature = "tm_pro-tmp_fontutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_FontUtilities;
     pub use super::TMP_FontUtilities;

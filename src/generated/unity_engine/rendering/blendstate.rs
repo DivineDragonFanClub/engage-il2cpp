@@ -365,6 +365,7 @@ impl BlendState {
 }
 
 #[cfg(feature = "unity_engine-rendering-blendstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BlendState;
     pub use crate::system::object::IObject;

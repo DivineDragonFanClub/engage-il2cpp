@@ -2187,6 +2187,7 @@ impl SortieSequenceTrade {
 }
 
 #[cfg(feature = "app-sortiesequencetrade")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceTrade;
     pub use super::ISortieSequenceTradeMethods;

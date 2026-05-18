@@ -65,6 +65,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> Key2Dictionary_2<
 }
 
 #[cfg(feature = "app-key2dictionary_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKey2Dictionary_2;
     pub use super::IKey2Dictionary_2Methods;

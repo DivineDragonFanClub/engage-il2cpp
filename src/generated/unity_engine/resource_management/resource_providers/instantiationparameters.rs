@@ -527,6 +527,7 @@ impl InstantiationParameters {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::InstantiationParameters;
     pub use crate::system::object::IObject;

@@ -734,6 +734,7 @@ impl CalculatorData {
 }
 
 #[cfg(feature = "app-calculatordata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorData;
     pub use super::ICalculatorData;

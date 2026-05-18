@@ -597,6 +597,7 @@ impl MapSequenceDance {
 }
 
 #[cfg(feature = "app-mapsequencedance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceDance;
     pub use super::IMapSequenceDanceMethods;

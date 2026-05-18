@@ -374,6 +374,7 @@ impl CapabilityDefinition {
 }
 
 #[cfg(feature = "app-capabilitydefinition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilityDefinition;
     pub use super::CapabilityDefinition_Type;

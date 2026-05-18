@@ -15,6 +15,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-iconstraintinternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IConstraintInternal;
     pub use super::IIConstraintInternal;

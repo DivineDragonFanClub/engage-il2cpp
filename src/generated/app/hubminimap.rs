@@ -2316,6 +2316,7 @@ impl HubMiniMap {
 }
 
 #[cfg(feature = "app-hubminimap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMiniMap;
     pub use super::HubMiniMap_IconData;

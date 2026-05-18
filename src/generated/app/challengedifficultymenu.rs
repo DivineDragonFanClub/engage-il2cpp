@@ -11,13 +11,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ChallengeDifficultyMenu.RequestCloseEventHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ChallengeDifficultyMenu_RequestCloseEventHandler {}
+    pub struct ChallengeDifficultyMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu.md"))]
     #[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenu")]
@@ -32,10 +29,13 @@ mod __types {
         pub m_text_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenu.DecideEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "ChallengeDifficultyMenu.RequestCloseEventHandler"
+    )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct ChallengeDifficultyMenu_DecideEventHandler {}
+    pub struct ChallengeDifficultyMenu_RequestCloseEventHandler {}
 }
 
 #[cfg(feature = "app-challengedifficultymenu-types")]
@@ -44,7 +44,7 @@ pub use __types::*;
 #[cfg(feature = "app-challengedifficultymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
+mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -57,10 +57,24 @@ mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -69,13 +83,13 @@ mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ChallengeDifficultyMenu_RequestCloseEventHandler,
+        this: ChallengeDifficultyMenu_DecideEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ChallengeDifficultyMenu_RequestCloseEventHandler,
+            ChallengeDifficultyMenu_DecideEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -95,10 +109,24 @@ mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<i32 as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -107,12 +135,12 @@ mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ChallengeDifficultyMenu_RequestCloseEventHandler,
+        this: ChallengeDifficultyMenu_DecideEventHandler,
         difficulty: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ChallengeDifficultyMenu_RequestCloseEventHandler,
+            ChallengeDifficultyMenu_DecideEventHandler,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -125,8 +153,8 @@ mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:
-    IChallengeDifficultyMenu_RequestCloseEventHandler
+pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:
+    IChallengeDifficultyMenu_DecideEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -135,8 +163,8 @@ pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw::ctor(
+            let __receiver = < ChallengeDifficultyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -147,8 +175,8 @@ pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:
     #[doc = "`Invoke(i32)` overload"]
     fn invoke(self, difficulty: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw::invoke(
+            let __receiver = < ChallengeDifficultyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(difficulty),
                 ::core::option::Option::None,
@@ -158,25 +186,23 @@ pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl<__T: IChallengeDifficultyMenu_RequestCloseEventHandler>
-    IChallengeDifficultyMenu_RequestCloseEventHandlerMethods for __T
+impl<__T: IChallengeDifficultyMenu_DecideEventHandler>
+    IChallengeDifficultyMenu_DecideEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl ChallengeDifficultyMenu_RequestCloseEventHandler {
+impl ChallengeDifficultyMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler),
+                ::core::stringify!(ChallengeDifficultyMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IChallengeDifficultyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -826,7 +852,7 @@ impl ChallengeDifficultyMenu {
 #[cfg(feature = "app-challengedifficultymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
+mod __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -839,24 +865,10 @@ mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -865,13 +877,13 @@ mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ChallengeDifficultyMenu_DecideEventHandler,
+        this: ChallengeDifficultyMenu_RequestCloseEventHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ChallengeDifficultyMenu_DecideEventHandler,
+            ChallengeDifficultyMenu_RequestCloseEventHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -891,24 +903,10 @@ mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -917,12 +915,12 @@ mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: ChallengeDifficultyMenu_DecideEventHandler,
+        this: ChallengeDifficultyMenu_RequestCloseEventHandler,
         difficulty: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            ChallengeDifficultyMenu_DecideEventHandler,
+            ChallengeDifficultyMenu_RequestCloseEventHandler,
             i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
@@ -935,8 +933,8 @@ mod __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:
-    IChallengeDifficultyMenu_DecideEventHandler
+pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:
+    IChallengeDifficultyMenu_RequestCloseEventHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -945,8 +943,8 @@ pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -957,8 +955,8 @@ pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:
     #[doc = "`Invoke(i32)` overload"]
     fn invoke(self, difficulty: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ChallengeDifficultyMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < ChallengeDifficultyMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ChallengeDifficultyMenu_RequestCloseEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(difficulty),
                 ::core::option::Option::None,
@@ -968,28 +966,31 @@ pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl<__T: IChallengeDifficultyMenu_DecideEventHandler>
-    IChallengeDifficultyMenu_DecideEventHandlerMethods for __T
+impl<__T: IChallengeDifficultyMenu_RequestCloseEventHandler>
+    IChallengeDifficultyMenu_RequestCloseEventHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl ChallengeDifficultyMenu_DecideEventHandler {
+impl ChallengeDifficultyMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeDifficultyMenu_DecideEventHandler),
+                ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IChallengeDifficultyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeDifficultyMenu;
     pub use super::ChallengeDifficultyMenu_DecideEventHandler;

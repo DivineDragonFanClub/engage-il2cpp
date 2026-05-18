@@ -494,6 +494,7 @@ impl ModuleRegister {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moduleregister")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IModuleRegister;
     pub use super::ModuleRegister;

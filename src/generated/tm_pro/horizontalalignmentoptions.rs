@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-horizontalalignmentoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HorizontalAlignmentOptions;
     pub use crate::system::object::IObject;

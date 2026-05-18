@@ -214,6 +214,7 @@ pub trait ICollisionMethods: ICollision {
 impl<__T: ICollision> ICollisionMethods for __T {}
 
 #[cfg(feature = "unity_engine-collision")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Collision;
     pub use super::ICollision;

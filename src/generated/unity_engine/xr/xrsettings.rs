@@ -707,6 +707,7 @@ impl XRSettings {
 }
 
 #[cfg(feature = "unity_engine-xr-xrsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRSettings;
     pub use super::XRSettings;

@@ -102,6 +102,7 @@ impl WaitForEndOfFrame {
 }
 
 #[cfg(feature = "unity_engine-waitforendofframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaitForEndOfFrame;
     pub use super::IWaitForEndOfFrameMethods;

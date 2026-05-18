@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-userdatamembertype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UserDataMemberType;
     pub use crate::system::object::IObject;

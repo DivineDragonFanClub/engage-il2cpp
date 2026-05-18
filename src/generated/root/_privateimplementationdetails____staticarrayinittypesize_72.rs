@@ -39,6 +39,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-_privateimplementationdetails____staticarrayinittypesize_72")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::_PrivateImplementationDetails____StaticArrayInitTypeSize_72;
     pub use crate::system::object::IObject;

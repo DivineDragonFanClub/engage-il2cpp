@@ -107,6 +107,7 @@ impl MyRoomCaptionMID {
 }
 
 #[cfg(feature = "app-myroomcaptionmid")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomCaptionMID;
     pub use super::IMyRoomCaptionMIDMethods;

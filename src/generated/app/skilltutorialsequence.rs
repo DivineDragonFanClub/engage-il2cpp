@@ -275,6 +275,7 @@ impl SkillTutorialSequence {
 }
 
 #[cfg(feature = "app-skilltutorialsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillTutorialSequence;
     pub use super::ISkillTutorialSequenceMethods;

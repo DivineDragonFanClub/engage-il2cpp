@@ -633,6 +633,7 @@ impl SystemScrollMenuItemContent {
 }
 
 #[cfg(feature = "app-systemscrollmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISystemScrollMenuItemContent;
     pub use super::ISystemScrollMenuItemContentMethods;

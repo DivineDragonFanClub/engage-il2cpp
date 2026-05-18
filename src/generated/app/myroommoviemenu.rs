@@ -494,6 +494,7 @@ impl MyRoomMovieMenu {
 }
 
 #[cfg(feature = "app-myroommoviemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomMovieMenu;
     pub use super::IMyRoomMovieMenuMethods;

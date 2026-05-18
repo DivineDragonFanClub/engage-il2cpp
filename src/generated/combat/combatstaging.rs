@@ -174,6 +174,7 @@ impl CombatStaging {
 }
 
 #[cfg(feature = "combat-combatstaging")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatStaging;
     pub use super::ICombatStaging;

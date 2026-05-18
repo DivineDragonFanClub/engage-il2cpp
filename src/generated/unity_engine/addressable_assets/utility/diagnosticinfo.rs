@@ -176,6 +176,7 @@ impl DiagnosticInfo {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-diagnosticinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiagnosticInfo;
     pub use super::IDiagnosticInfo;

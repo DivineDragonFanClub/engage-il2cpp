@@ -86,6 +86,7 @@ pub trait IIGameColorValidateMethods: IIGameColorValidate {
 impl<__T: IIGameColorValidate> IIGameColorValidateMethods for __T {}
 
 #[cfg(feature = "app-igamecolorvalidate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IGameColorValidate;
     pub use super::IIGameColorValidate;

@@ -213,6 +213,7 @@ impl FSMBuilderFullBullet {
 }
 
 #[cfg(feature = "combat-fsmbuilderfullbullet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderFullBullet;
     pub use super::IFSMBuilderFullBullet;

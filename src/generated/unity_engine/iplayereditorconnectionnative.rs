@@ -261,6 +261,7 @@ pub trait IIPlayerEditorConnectionNativeMethods: IIPlayerEditorConnectionNative 
 impl<__T: IIPlayerEditorConnectionNative> IIPlayerEditorConnectionNativeMethods for __T {}
 
 #[cfg(feature = "unity_engine-iplayereditorconnectionnative")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlayerEditorConnectionNative;
     pub use super::IIPlayerEditorConnectionNativeMethods;

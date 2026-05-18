@@ -149,6 +149,7 @@ impl ComponentUtility {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComponentUtility;
     pub use super::IComponentUtility;

@@ -159,6 +159,7 @@ impl UnitInfo2MenuItem {
 }
 
 #[cfg(feature = "root-unitinfo2menuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfo2MenuItem;
     pub use super::IUnitInfo2MenuItemMethods;

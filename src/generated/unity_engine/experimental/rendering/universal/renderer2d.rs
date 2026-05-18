@@ -731,6 +731,7 @@ impl Renderer2D {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderer2D;
     pub use super::IRenderer2DMethods;

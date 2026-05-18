@@ -946,6 +946,7 @@ impl Vector2Int {
 }
 
 #[cfg(feature = "unity_engine-vector2int")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vector2Int;
     pub use crate::system::object::IObject;

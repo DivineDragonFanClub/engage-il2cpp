@@ -156,6 +156,7 @@ impl UpdateEnd {
 }
 
 #[cfg(feature = "app-updateend")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUpdateEnd;
     pub use super::IUpdateEndMethods;

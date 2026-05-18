@@ -318,6 +318,7 @@ pub trait IICanvasElementMethods: IICanvasElement {
 impl<__T: IICanvasElement> IICanvasElementMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-icanvaselement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICanvasElement;
     pub use super::IICanvasElement;

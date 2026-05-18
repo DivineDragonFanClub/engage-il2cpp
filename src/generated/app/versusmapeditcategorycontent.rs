@@ -498,6 +498,7 @@ impl VersusMapEditCategoryContent {
 }
 
 #[cfg(feature = "app-versusmapeditcategorycontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMapEditCategoryContent;
     pub use super::IVersusMapEditCategoryContentMethods;

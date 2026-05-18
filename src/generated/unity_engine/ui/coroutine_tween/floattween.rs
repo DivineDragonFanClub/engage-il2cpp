@@ -803,6 +803,7 @@ impl FloatTween {
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FloatTween;
     pub use super::FloatTween_FloatTweenCallback;

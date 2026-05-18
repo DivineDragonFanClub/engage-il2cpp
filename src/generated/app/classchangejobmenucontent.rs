@@ -263,6 +263,7 @@ impl ClassChangeJobMenuContent {
 }
 
 #[cfg(feature = "app-classchangejobmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClassChangeJobMenuContent;
     pub use super::IClassChangeJobMenuContent;

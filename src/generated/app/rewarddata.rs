@@ -1575,6 +1575,7 @@ impl RewardData {
 }
 
 #[cfg(feature = "app-rewarddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRewardData;
     pub use super::IRewardDataMethods;

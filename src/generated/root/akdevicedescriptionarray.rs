@@ -371,6 +371,7 @@ impl AkDeviceDescriptionArray {
 }
 
 #[cfg(feature = "root-akdevicedescriptionarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDeviceDescriptionArray;
     pub use super::IAkDeviceDescriptionArray;

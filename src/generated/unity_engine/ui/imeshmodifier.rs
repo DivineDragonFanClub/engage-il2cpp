@@ -160,6 +160,7 @@ pub trait IIMeshModifierMethods: IIMeshModifier {
 impl<__T: IIMeshModifier> IIMeshModifierMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMeshModifier;
     pub use super::IIMeshModifierMethods;

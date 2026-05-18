@@ -269,6 +269,7 @@ impl PhotographSelectWeaponMenu {
 }
 
 #[cfg(feature = "app-photographselectweaponmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectWeaponMenu;
     pub use super::IPhotographSelectWeaponMenuMethods;

@@ -5363,6 +5363,7 @@ impl CharacterSignal {
 }
 
 #[cfg(feature = "combat-charactersignal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterSignal;
     pub use super::ICharacterSignal;

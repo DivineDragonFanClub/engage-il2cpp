@@ -294,6 +294,7 @@ impl ActionGranEnemyApproach {
 }
 
 #[cfg(feature = "combat-actiongranenemyapproach")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranEnemyApproach;
     pub use super::IActionGranEnemyApproach;

@@ -392,6 +392,7 @@ impl LayerMask {
 }
 
 #[cfg(feature = "unity_engine-layermask")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LayerMask;
     pub use crate::system::object::IObject;

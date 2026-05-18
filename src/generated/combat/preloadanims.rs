@@ -242,6 +242,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-preloadanims")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PreloadAnims;
     pub use crate::system::object::IObject;

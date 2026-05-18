@@ -184,6 +184,7 @@ impl ProcBoolFunction {
 }
 
 #[cfg(feature = "app-procboolfunction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcBoolFunction;
     pub use super::IProcBoolFunctionMethods;

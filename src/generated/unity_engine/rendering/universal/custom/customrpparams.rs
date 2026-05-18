@@ -130,6 +130,7 @@ impl CustomRPParams {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customrpparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomRPParams;
     pub use super::ICustomRPParams;

@@ -221,6 +221,7 @@ impl ForEachLoopStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-foreachloopstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ForEachLoopStatement;
     pub use super::IForEachLoopStatement;

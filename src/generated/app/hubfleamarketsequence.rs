@@ -1053,6 +1053,7 @@ impl HubFleaMarketSequence {
 }
 
 #[cfg(feature = "app-hubfleamarketsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubFleaMarketSequence;
     pub use super::HubFleaMarketSequence_Label2;

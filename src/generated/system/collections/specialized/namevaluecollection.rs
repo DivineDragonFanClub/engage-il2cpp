@@ -985,6 +985,7 @@ impl NameValueCollection {
 }
 
 #[cfg(feature = "system-collections-specialized-namevaluecollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INameValueCollection;
     pub use super::INameValueCollectionMethods;

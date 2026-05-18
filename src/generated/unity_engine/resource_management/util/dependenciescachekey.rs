@@ -360,6 +360,7 @@ impl DependenciesCacheKey {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DependenciesCacheKey;
     pub use super::IDependenciesCacheKey;

@@ -313,6 +313,7 @@ impl TMP_ScrollbarEventHandler {
 }
 
 #[cfg(feature = "tm_pro-tmp_scrollbareventhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_ScrollbarEventHandler;
     pub use super::ITMP_ScrollbarEventHandlerMethods;

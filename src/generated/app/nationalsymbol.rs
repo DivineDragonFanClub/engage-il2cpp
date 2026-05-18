@@ -303,6 +303,7 @@ impl NationalSymbol {
 }
 
 #[cfg(feature = "app-nationalsymbol")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INationalSymbol;
     pub use super::INationalSymbolMethods;

@@ -195,6 +195,7 @@ impl ProfileCardColor {
 }
 
 #[cfg(feature = "app-profilecardcolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardColor;
     pub use super::IProfileCardColorMethods;

@@ -786,6 +786,7 @@ impl PerformanceResult {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performanceresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPerformanceResult;
     pub use super::IPerformanceResultMethods;

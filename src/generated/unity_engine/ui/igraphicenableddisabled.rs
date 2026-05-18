@@ -87,6 +87,7 @@ pub trait IIGraphicEnabledDisabledMethods: IIGraphicEnabledDisabled {
 impl<__T: IIGraphicEnabledDisabled> IIGraphicEnabledDisabledMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IGraphicEnabledDisabled;
     pub use super::IIGraphicEnabledDisabled;

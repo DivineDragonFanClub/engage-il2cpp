@@ -713,6 +713,7 @@ impl ProfileCardDefaultCommentData {
 }
 
 #[cfg(feature = "app-profilecarddefaultcommentdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardDefaultCommentData;
     pub use super::IProfileCardDefaultCommentDataMethods;

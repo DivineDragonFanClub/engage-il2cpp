@@ -71,6 +71,7 @@ impl<T0: ::unity2::ClassIdentity> BoolItem_1<T0> {
 }
 
 #[cfg(feature = "app-boolitem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoolItem_1;
     pub use super::IBoolItem_1;

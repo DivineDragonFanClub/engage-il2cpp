@@ -681,6 +681,7 @@ impl AnimalAccessCamera {
 }
 
 #[cfg(feature = "app-animalaccesscamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimalAccessCamera;
     pub use super::IAnimalAccessCamera;

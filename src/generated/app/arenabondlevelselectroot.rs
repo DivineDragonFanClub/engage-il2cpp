@@ -805,6 +805,7 @@ impl ArenaBondLevelSelectRoot {
 }
 
 #[cfg(feature = "app-arenabondlevelselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondLevelSelectRoot;
     pub use super::IArenaBondLevelSelectRoot;

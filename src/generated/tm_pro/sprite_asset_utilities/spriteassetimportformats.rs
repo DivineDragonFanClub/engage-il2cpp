@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-sprite_asset_utilities-spriteassetimportformats")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SpriteAssetImportFormats;
     pub use crate::system::object::IObject;

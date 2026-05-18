@@ -104,6 +104,7 @@ impl PrefetchedCurve_Bridge {
 }
 
 #[cfg(feature = "root-prefetchedcurve_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrefetchedCurve_Bridge;
     pub use super::IPrefetchedCurve_BridgeMethods;

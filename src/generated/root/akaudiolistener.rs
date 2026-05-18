@@ -11,18 +11,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudiolistener/AkAudioListener_BaseListenerList.md"))]
-    #[::unity2::class(namespace = "", name = "AkAudioListener.BaseListenerList")]
-    #[parent(crate::system::object::Object)]
-    pub struct AkAudioListener_BaseListenerList {
-        #[rename(name = "listenerIdList")]
-        pub listener_id_list: crate::system::collections::generic::list_1::List_1<u64>,
-        #[rename(name = "listenerList")]
-        pub listener_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::akaudiolistener::AkAudioListener,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudiolistener/AkAudioListener.md"))]
     #[::unity2::class(namespace = "", name = "AkAudioListener")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -44,6 +32,18 @@ mod __types {
         pub listener_id: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudiolistener/AkAudioListener_BaseListenerList.md"))]
+    #[::unity2::class(namespace = "", name = "AkAudioListener.BaseListenerList")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkAudioListener_BaseListenerList {
+        #[rename(name = "listenerIdList")]
+        pub listener_id_list: crate::system::collections::generic::list_1::List_1<u64>,
+        #[rename(name = "listenerList")]
+        pub listener_list: crate::system::collections::generic::list_1::List_1<
+            crate::root::akaudiolistener::AkAudioListener,
+        >,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudiolistener/AkAudioListener_DefaultListenerList.md"))]
     #[::unity2::class(namespace = "", name = "AkAudioListener.DefaultListenerList")]
     #[parent(crate::root::akaudiolistener::AkAudioListener_BaseListenerList)]
@@ -52,356 +52,6 @@ mod __types {
 
 #[cfg(feature = "root-akaudiolistener-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akaudiolistener")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkAudioListener_BaseListenerList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_listener_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
-                "get_ListenerList",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
-                    "get_ListenerList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_listener_list(
-        this: AkAudioListener_BaseListenerList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::root::akaudiolistener::AkAudioListener,
-    > {
-        let inner: extern "C" fn(
-            AkAudioListener_BaseListenerList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::root::akaudiolistener::AkAudioListener,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_listener_list::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add(
-        this: AkAudioListener_BaseListenerList,
-        listener: crate::root::akaudiolistener::AkAudioListener,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkAudioListener_BaseListenerList,
-            crate::root::akaudiolistener::AkAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(this, listener, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove(
-        this: AkAudioListener_BaseListenerList,
-        listener: crate::root::akaudiolistener::AkAudioListener,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AkAudioListener_BaseListenerList,
-            crate::root::akaudiolistener::AkAudioListener,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
-        inner(this, listener, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_listener_ids {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
-                "GetListenerIds",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
-                    "GetListenerIds",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_listener_ids(
-        this: AkAudioListener_BaseListenerList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u64> {
-        let inner: extern "C" fn(
-            AkAudioListener_BaseListenerList,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u64> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_listener_ids::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkAudioListener_BaseListenerList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AkAudioListener_BaseListenerList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akaudiolistener")]
-pub trait IAkAudioListener_BaseListenerListMethods: IAkAudioListener_BaseListenerList {
-    #[doc = "`get_ListenerList()` overload"]
-    fn get_listener_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::root::akaudiolistener::AkAudioListener,
-    > {
-        unsafe {
-            let __receiver =
-                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAudioListener_BaseListenerList_unity2_raw::get_listener_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]
-    fn add(
-        self,
-        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAudioListener_BaseListenerList_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]
-    fn remove(
-        self,
-        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
-    ) -> bool {
-        unsafe {
-            let __receiver =
-                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAudioListener_BaseListenerList_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(listener),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetListenerIds()` overload"]
-    fn get_listener_ids(self) -> ::unity2::Array<u64> {
-        unsafe {
-            let __receiver =
-                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAudioListener_BaseListenerList_unity2_raw::get_listener_ids(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAudioListener_BaseListenerList_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akaudiolistener")]
-impl<__T: IAkAudioListener_BaseListenerList> IAkAudioListener_BaseListenerListMethods for __T {}
-
-#[cfg(feature = "root-akaudiolistener")]
-impl AkAudioListener_BaseListenerList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkAudioListener_BaseListenerList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkAudioListener_BaseListenerListMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-akaudiolistener")]
 #[doc(hidden)]
@@ -1102,6 +752,356 @@ impl AkAudioListener {
 #[cfg(feature = "root-akaudiolistener")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkAudioListener_BaseListenerList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_listener_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
+                "get_ListenerList",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
+                    "get_ListenerList",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_listener_list(
+        this: AkAudioListener_BaseListenerList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::root::akaudiolistener::AkAudioListener,
+    > {
+        let inner: extern "C" fn(
+            AkAudioListener_BaseListenerList,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::root::akaudiolistener::AkAudioListener,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_listener_list::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
+                "Add",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn add(
+        this: AkAudioListener_BaseListenerList,
+        listener: crate::root::akaudiolistener::AkAudioListener,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AkAudioListener_BaseListenerList,
+            crate::root::akaudiolistener::AkAudioListener,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_add::get_offset() as isize),
+        );
+        inner(this, listener, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::akaudiolistener::AkAudioListener as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
+                "Remove",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
+                    "Remove",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn remove(
+        this: AkAudioListener_BaseListenerList,
+        listener: crate::root::akaudiolistener::AkAudioListener,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            AkAudioListener_BaseListenerList,
+            crate::root::akaudiolistener::AkAudioListener,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_remove::get_offset() as isize),
+        );
+        inner(this, listener, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_listener_ids {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
+                "GetListenerIds",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
+                    "GetListenerIds",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_listener_ids(
+        this: AkAudioListener_BaseListenerList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u64> {
+        let inner: extern "C" fn(
+            AkAudioListener_BaseListenerList,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u64> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_listener_ids::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkAudioListener_BaseListenerList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkAudioListener_BaseListenerList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(AkAudioListener_BaseListenerList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akaudiolistener")]
+pub trait IAkAudioListener_BaseListenerListMethods: IAkAudioListener_BaseListenerList {
+    #[doc = "`get_ListenerList()` overload"]
+    fn get_listener_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::root::akaudiolistener::AkAudioListener,
+    > {
+        unsafe {
+            let __receiver =
+                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkAudioListener_BaseListenerList_unity2_raw::get_listener_list(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]
+    fn add(
+        self,
+        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkAudioListener_BaseListenerList_unity2_raw::add(
+                __receiver,
+                ::core::convert::Into::into(listener),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]
+    fn remove(
+        self,
+        listener: impl ::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>,
+    ) -> bool {
+        unsafe {
+            let __receiver =
+                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkAudioListener_BaseListenerList_unity2_raw::remove(
+                __receiver,
+                ::core::convert::Into::into(listener),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetListenerIds()` overload"]
+    fn get_listener_ids(self) -> ::unity2::Array<u64> {
+        unsafe {
+            let __receiver =
+                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkAudioListener_BaseListenerList_unity2_raw::get_listener_ids(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AkAudioListener_BaseListenerList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __AkAudioListener_BaseListenerList_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akaudiolistener")]
+impl<__T: IAkAudioListener_BaseListenerList> IAkAudioListener_BaseListenerListMethods for __T {}
+
+#[cfg(feature = "root-akaudiolistener")]
+impl AkAudioListener_BaseListenerList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkAudioListener_BaseListenerList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkAudioListener_BaseListenerListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akaudiolistener")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __AkAudioListener_DefaultListenerList_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -1329,6 +1329,7 @@ impl AkAudioListener_DefaultListenerList {
 }
 
 #[cfg(feature = "root-akaudiolistener")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAudioListener;
     pub use super::AkAudioListener_BaseListenerList;

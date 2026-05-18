@@ -5017,6 +5017,7 @@ impl MusclePushupSequence {
 }
 
 #[cfg(feature = "app-push_up-musclepushupsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMusclePushupSequence;
     pub use super::IMusclePushupSequenceMethods;

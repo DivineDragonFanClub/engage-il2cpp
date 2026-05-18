@@ -800,6 +800,7 @@ impl Throwing {
 }
 
 #[cfg(feature = "combat-throwing")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IThrowing;
     pub use super::IThrowingMethods;

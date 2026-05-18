@@ -267,6 +267,7 @@ impl VolumeBgmMenuItem {
 }
 
 #[cfg(feature = "root-volumebgmmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeBgmMenuItem;
     pub use super::IVolumeBgmMenuItemMethods;

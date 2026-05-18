@@ -570,6 +570,7 @@ impl GlyphMetrics {
 }
 
 #[cfg(feature = "unity_engine-text_core-glyphmetrics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphMetrics;
     pub use crate::system::object::IObject;

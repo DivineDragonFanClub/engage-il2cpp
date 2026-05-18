@@ -103,6 +103,7 @@ impl ResourceGameObject {
 }
 
 #[cfg(feature = "app-resourcegameobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceGameObject;
     pub use super::IResourceGameObjectMethods;

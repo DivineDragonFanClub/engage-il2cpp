@@ -239,6 +239,7 @@ impl XRNodeState {
 }
 
 #[cfg(feature = "unity_engine-xr-xrnodestate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::XRNodeState;
     pub use crate::system::object::IObject;

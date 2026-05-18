@@ -346,6 +346,7 @@ impl ImageConversion {
 }
 
 #[cfg(feature = "unity_engine-imageconversion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IImageConversion;
     pub use super::ImageConversion;

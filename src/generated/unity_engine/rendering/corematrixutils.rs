@@ -497,6 +497,7 @@ impl CoreMatrixUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-corematrixutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoreMatrixUtils;
     pub use super::ICoreMatrixUtils;

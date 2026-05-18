@@ -743,6 +743,7 @@ impl StatusModelRenderer {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStatusModelRenderer;
     pub use super::IStatusModelRendererMethods;

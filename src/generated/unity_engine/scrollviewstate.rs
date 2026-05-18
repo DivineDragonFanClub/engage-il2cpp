@@ -122,6 +122,7 @@ impl ScrollViewState {
 }
 
 #[cfg(feature = "unity_engine-scrollviewstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScrollViewState;
     pub use super::IScrollViewStateMethods;

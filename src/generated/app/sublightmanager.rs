@@ -105,6 +105,7 @@ impl SubLightManager {
 }
 
 #[cfg(feature = "app-sublightmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubLightManager;
     pub use super::ISubLightManagerMethods;

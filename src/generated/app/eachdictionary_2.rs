@@ -65,6 +65,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EachDictionary_2<
 }
 
 #[cfg(feature = "app-eachdictionary_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EachDictionary_2;
     pub use super::IEachDictionary_2;

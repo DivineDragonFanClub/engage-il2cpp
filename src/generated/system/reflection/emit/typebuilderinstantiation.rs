@@ -98,6 +98,7 @@ impl TypeBuilderInstantiation {
 }
 
 #[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeBuilderInstantiation;
     pub use super::TypeBuilderInstantiation;

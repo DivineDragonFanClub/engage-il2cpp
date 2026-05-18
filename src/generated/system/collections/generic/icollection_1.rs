@@ -47,6 +47,7 @@ impl<T0: ::unity2::ClassIdentity> ICollection_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-icollection_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICollection_1;
     pub use super::IICollection_1;

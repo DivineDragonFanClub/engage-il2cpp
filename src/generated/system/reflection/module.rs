@@ -896,6 +896,7 @@ impl Module {
 }
 
 #[cfg(feature = "system-reflection-module")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IModule;
     pub use super::IModuleMethods;

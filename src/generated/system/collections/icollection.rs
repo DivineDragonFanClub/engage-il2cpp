@@ -265,6 +265,7 @@ pub trait IICollectionMethods: IICollection {
 impl<__T: IICollection> IICollectionMethods for __T {}
 
 #[cfg(feature = "system-collections-icollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICollection;
     pub use super::IICollection;

@@ -159,6 +159,7 @@ impl CombatObservable {
 }
 
 #[cfg(feature = "combat-combatobservable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatObservable;
     pub use super::ICombatObservable;

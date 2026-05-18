@@ -105,6 +105,7 @@ impl MapBattleDebug {
 }
 
 #[cfg(feature = "app-mapbattledebug")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleDebug;
     pub use super::IMapBattleDebugMethods;

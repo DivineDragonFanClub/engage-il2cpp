@@ -96,6 +96,7 @@ pub trait IIEndDragHandlerMethods: IIEndDragHandler {
 impl<__T: IIEndDragHandler> IIEndDragHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ienddraghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEndDragHandler;
     pub use super::IIEndDragHandler;

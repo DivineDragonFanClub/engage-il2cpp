@@ -9,16 +9,10 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ClassArray_1.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.ClassArray`1")]
-    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < T0 >)]
-    #[parent(crate::system::object::Object)]
-    pub struct BattleSide_ClassArray_1<T0: ::unity2::ClassIdentity> {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_IntArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.IntArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i32 >)]
-    pub struct BattleSide_IntArray {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ShortArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.ShortArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i16 >)]
+    pub struct BattleSide_ShortArray {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_StructArray_1.md"))]
     #[::unity2::class(namespace = "App", name = "BattleSide.StructArray`1")]
@@ -27,6 +21,27 @@ mod __types {
         #[rename(name = "m_Array")]
         pub m_array: ::unity2::Array<T0>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ClassArray_1.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.ClassArray`1")]
+    # [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < T0 >)]
+    #[parent(crate::system::object::Object)]
+    pub struct BattleSide_ClassArray_1<T0: ::unity2::ClassIdentity> {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_SbyteArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.SbyteArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i8 >)]
+    pub struct BattleSide_SbyteArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_IntArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.IntArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i32 >)]
+    pub struct BattleSide_IntArray {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_FloatArray.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleSide.FloatArray")]
+    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < f32 >)]
+    pub struct BattleSide_FloatArray {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide.md"))]
     #[::unity2::class(namespace = "App", name = "BattleSide")]
@@ -89,21 +104,6 @@ mod __types {
         #[rename(name = "m_Array")]
         pub m_array: ::unity2::Array<T0>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_SbyteArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.SbyteArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i8 >)]
-    pub struct BattleSide_SbyteArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_FloatArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.FloatArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < f32 >)]
-    pub struct BattleSide_FloatArray {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleside/BattleSide_ShortArray.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleSide.ShortArray")]
-    # [parent (crate :: app :: battleside :: BattleSide_StructArray_1 < i16 >)]
-    pub struct BattleSide_ShortArray {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleside/BattleSide_Type.md"))]
     #[repr(C)]
@@ -270,6 +270,130 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-battleside")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleSide_ShortArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleSide_ShortArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleSide_ShortArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleSide_ShortArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleSide_ShortArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+pub trait IBattleSide_ShortArrayMethods: IBattleSide_ShortArray {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BattleSide_ShortArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BattleSide_ShortArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+impl<__T: IBattleSide_ShortArray> IBattleSide_ShortArrayMethods for __T {}
+
+#[cfg(feature = "app-battleside")]
+impl BattleSide_ShortArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_ShortArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_ShortArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> T0;
+
+    #[doc = "`set_Item(i32, T0)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: T0) -> ();
+
+    #[doc = "`get_Item(crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(self, r#type: crate::app::battleside::BattleSide_Type) -> T0;
+
+    #[doc = "`set_Item(crate::app::battleside::BattleSide_Type, T0)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item_2(self, r#type: crate::app::battleside::BattleSide_Type, value: T0) -> ();
+}
+
+#[cfg(feature = "app-battleside")]
+impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_StructArray_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_StructArray_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
 #[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
     #[doc = "`.ctor()` overload"]
@@ -289,6 +413,90 @@ impl<T0: ::unity2::ClassIdentity> BattleSide_ClassArray_1<T0> {
             )
         });
         <Self as IBattleSide_ClassArray_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleSide_SbyteArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleSide_SbyteArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleSide_SbyteArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleSide_SbyteArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleSide_SbyteArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+pub trait IBattleSide_SbyteArrayMethods: IBattleSide_SbyteArray {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BattleSide_SbyteArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BattleSide_SbyteArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+impl<__T: IBattleSide_SbyteArray> IBattleSide_SbyteArrayMethods for __T {}
+
+#[cfg(feature = "app-battleside")]
+impl BattleSide_SbyteArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleSide_SbyteArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleSide_SbyteArrayMethods>::ctor(this);
         this
     }
 }
@@ -378,41 +586,85 @@ impl BattleSide_IntArray {
 }
 
 #[cfg(feature = "app-battleside")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> T0;
-
-    #[doc = "`set_Item(i32, T0)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, i: i32, value: T0) -> ();
-
-    #[doc = "`get_Item(crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item_2(self, r#type: crate::app::battleside::BattleSide_Type) -> T0;
-
-    #[doc = "`set_Item(crate::app::battleside::BattleSide_Type, T0)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item_2(self, r#type: crate::app::battleside::BattleSide_Type, value: T0) -> ();
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __BattleSide_FloatArray_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <BattleSide_FloatArray as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <BattleSide_FloatArray as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: BattleSide_FloatArray,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(BattleSide_FloatArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-battleside")]
-impl<T0: ::unity2::ClassIdentity> BattleSide_StructArray_1<T0> {
+pub trait IBattleSide_FloatArrayMethods: IBattleSide_FloatArray {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BattleSide_FloatArray as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __BattleSide_FloatArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-battleside")]
+impl<__T: IBattleSide_FloatArray> IBattleSide_FloatArrayMethods for __T {}
+
+#[cfg(feature = "app-battleside")]
+impl BattleSide_FloatArray {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_StructArray_1),
+                ::core::stringify!(BattleSide_FloatArray),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleSide_StructArray_1Methods<T0>>::ctor(this);
+        <Self as IBattleSide_FloatArrayMethods>::ctor(this);
         this
     }
 }
@@ -1110,257 +1362,6 @@ impl<T0: ::unity2::ClassIdentity> BattleSide_ContainerArray_1<T0> {
 
 #[cfg(feature = "app-battleside")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleSide_SbyteArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleSide_SbyteArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleSide_SbyteArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleSide_SbyteArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleSide_SbyteArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-pub trait IBattleSide_SbyteArrayMethods: IBattleSide_SbyteArray {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BattleSide_SbyteArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleSide_SbyteArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-impl<__T: IBattleSide_SbyteArray> IBattleSide_SbyteArrayMethods for __T {}
-
-#[cfg(feature = "app-battleside")]
-impl BattleSide_SbyteArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_SbyteArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_SbyteArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleSide_FloatArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleSide_FloatArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleSide_FloatArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleSide_FloatArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleSide_FloatArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-pub trait IBattleSide_FloatArrayMethods: IBattleSide_FloatArray {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BattleSide_FloatArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleSide_FloatArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-impl<__T: IBattleSide_FloatArray> IBattleSide_FloatArrayMethods for __T {}
-
-#[cfg(feature = "app-battleside")]
-impl BattleSide_FloatArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_FloatArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_FloatArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __BattleSide_ShortArray_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleSide_ShortArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleSide_ShortArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: BattleSide_ShortArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(BattleSide_ShortArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-pub trait IBattleSide_ShortArrayMethods: IBattleSide_ShortArray {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <BattleSide_ShortArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleSide_ShortArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-battleside")]
-impl<__T: IBattleSide_ShortArray> IBattleSide_ShortArrayMethods for __T {}
-
-#[cfg(feature = "app-battleside")]
-impl BattleSide_ShortArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleSide_ShortArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleSide_ShortArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-battleside")]
 pub mod prelude {
     pub use super::BattleSide;
     pub use super::BattleSide_ClassArray_1;

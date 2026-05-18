@@ -688,6 +688,7 @@ impl ProfileCardBgData {
 }
 
 #[cfg(feature = "app-profilecardbgdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardBgData;
     pub use super::IProfileCardBgDataMethods;

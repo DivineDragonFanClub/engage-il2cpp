@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akmonitorerrorlevel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMonitorErrorLevel;
     pub use crate::system::object::IObject;

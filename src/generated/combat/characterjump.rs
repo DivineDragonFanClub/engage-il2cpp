@@ -761,6 +761,7 @@ impl CharacterJump {
 }
 
 #[cfg(feature = "combat-characterjump")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterJump;
     pub use super::ICharacterJump;

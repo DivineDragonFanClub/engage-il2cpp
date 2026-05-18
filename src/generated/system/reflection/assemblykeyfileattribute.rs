@@ -112,6 +112,7 @@ impl AssemblyKeyFileAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyKeyFileAttribute;
     pub use super::IAssemblyKeyFileAttribute;

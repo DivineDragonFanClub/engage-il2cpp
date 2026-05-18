@@ -198,6 +198,7 @@ impl InvokeOnRenderObjectCallbackPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvokeOnRenderObjectCallbackPass;
     pub use super::IInvokeOnRenderObjectCallbackPassMethods;

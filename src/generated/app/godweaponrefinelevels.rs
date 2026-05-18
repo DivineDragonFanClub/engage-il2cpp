@@ -243,6 +243,7 @@ impl GodWeaponRefineLevels {
 }
 
 #[cfg(feature = "app-godweaponrefinelevels")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodWeaponRefineLevels;
     pub use super::IGodWeaponRefineLevels;

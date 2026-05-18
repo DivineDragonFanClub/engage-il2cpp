@@ -107,6 +107,7 @@ impl AkEvent_Bridge {
 }
 
 #[cfg(feature = "root-akevent_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEvent_Bridge;
     pub use super::IAkEvent_Bridge;

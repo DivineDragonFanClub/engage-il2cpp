@@ -650,6 +650,7 @@ impl ShaderData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderData;
     pub use super::IShaderDataMethods;

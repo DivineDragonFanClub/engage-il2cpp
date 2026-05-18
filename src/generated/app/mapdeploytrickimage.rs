@@ -103,6 +103,7 @@ impl MapDeployTrickImage {
 }
 
 #[cfg(feature = "app-mapdeploytrickimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployTrickImage;
     pub use super::IMapDeployTrickImageMethods;

@@ -1776,6 +1776,7 @@ impl CollectionBase {
 }
 
 #[cfg(feature = "system-collections-collectionbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CollectionBase;
     pub use super::ICollectionBase;

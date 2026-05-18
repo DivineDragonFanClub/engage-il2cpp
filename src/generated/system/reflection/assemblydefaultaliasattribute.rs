@@ -115,6 +115,7 @@ impl AssemblyDefaultAliasAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyDefaultAliasAttribute;
     pub use super::IAssemblyDefaultAliasAttribute;

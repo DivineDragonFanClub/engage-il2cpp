@@ -690,6 +690,7 @@ impl MagicSignalTimeline {
 }
 
 #[cfg(feature = "combat-magicsignaltimeline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSignalTimeline;
     pub use super::IMagicSignalTimelineMethods;

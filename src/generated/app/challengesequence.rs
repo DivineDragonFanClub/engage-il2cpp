@@ -952,6 +952,7 @@ impl ChallengeSequence {
 }
 
 #[cfg(feature = "app-challengesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeSequence;
     pub use super::ChallengeSequence_Label2;

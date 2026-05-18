@@ -263,6 +263,7 @@ impl StandardIOFileUserDataBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStandardIOFileUserDataBase;
     pub use super::IStandardIOFileUserDataBaseMethods;

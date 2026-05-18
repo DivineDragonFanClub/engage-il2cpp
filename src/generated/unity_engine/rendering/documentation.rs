@@ -114,6 +114,7 @@ impl Documentation {
 }
 
 #[cfg(feature = "unity_engine-rendering-documentation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Documentation;
     pub use super::IDocumentation;

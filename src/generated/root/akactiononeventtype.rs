@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akactiononeventtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkActionOnEventType;
     pub use crate::system::object::IObject;

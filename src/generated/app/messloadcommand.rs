@@ -221,6 +221,7 @@ impl MessLoadCommand {
 }
 
 #[cfg(feature = "app-messloadcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMessLoadCommand;
     pub use super::IMessLoadCommandMethods;

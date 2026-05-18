@@ -248,6 +248,7 @@ impl CombatSubspace {
 }
 
 #[cfg(feature = "combat-combatsubspace")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatSubspace;
     pub use super::ICombatSubspace;

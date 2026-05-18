@@ -917,6 +917,7 @@ impl DebugUIHandlerCanvas {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerCanvas;
     pub use super::IDebugUIHandlerCanvas;

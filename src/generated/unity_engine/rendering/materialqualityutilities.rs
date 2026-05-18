@@ -430,6 +430,7 @@ impl MaterialQualityUtilities {
 }
 
 #[cfg(feature = "unity_engine-rendering-materialqualityutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialQualityUtilities;
     pub use super::MaterialQualityUtilities;

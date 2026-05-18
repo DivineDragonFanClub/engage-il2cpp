@@ -1526,6 +1526,7 @@ impl DiscreteTime {
 }
 
 #[cfg(feature = "unity_engine-timeline-discretetime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiscreteTime;
     pub use crate::system::object::IObject;

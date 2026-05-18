@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tagattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TagAttribute;
     pub use crate::system::object::IObject;

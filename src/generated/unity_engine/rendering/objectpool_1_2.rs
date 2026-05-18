@@ -144,6 +144,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectPool_1_2;
     pub use super::IObjectPool_1_2Methods;

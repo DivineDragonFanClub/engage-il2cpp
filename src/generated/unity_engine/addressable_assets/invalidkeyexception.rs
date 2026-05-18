@@ -633,6 +633,7 @@ impl InvalidKeyException {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvalidKeyException;
     pub use super::IInvalidKeyExceptionMethods;

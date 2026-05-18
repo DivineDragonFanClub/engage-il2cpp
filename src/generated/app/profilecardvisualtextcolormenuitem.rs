@@ -442,6 +442,7 @@ impl ProfileCardVisualTextColorMenuItem {
 }
 
 #[cfg(feature = "app-profilecardvisualtextcolormenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualTextColorMenuItem;
     pub use super::IProfileCardVisualTextColorMenuItemMethods;

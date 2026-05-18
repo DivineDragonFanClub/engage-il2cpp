@@ -296,6 +296,7 @@ impl Bit {
 }
 
 #[cfg(feature = "combat-bit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bit;
     pub use super::IBit;

@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-skeletonbone")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SkeletonBone;
     pub use crate::system::object::IObject;

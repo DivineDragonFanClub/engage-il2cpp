@@ -529,6 +529,7 @@ impl SortingSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-sortingsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SortingSettings;
     pub use crate::system::object::IObject;

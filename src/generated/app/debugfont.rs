@@ -812,6 +812,7 @@ impl DebugFont {
 }
 
 #[cfg(feature = "app-debugfont")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugFont;
     pub use super::DebugFont_Scope;

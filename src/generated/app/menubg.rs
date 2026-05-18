@@ -342,6 +342,7 @@ impl MenuBg {
 }
 
 #[cfg(feature = "app-menubg")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMenuBg;
     pub use super::IMenuBgMethods;

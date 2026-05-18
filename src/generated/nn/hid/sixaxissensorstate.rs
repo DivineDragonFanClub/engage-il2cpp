@@ -283,6 +283,7 @@ impl SixAxisSensorState {
 }
 
 #[cfg(feature = "nn-hid-sixaxissensorstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SixAxisSensorState;
     pub use crate::system::object::IObject;

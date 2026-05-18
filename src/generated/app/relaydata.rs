@@ -1679,6 +1679,7 @@ impl RelayData {
 }
 
 #[cfg(feature = "app-relaydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayData;
     pub use super::IRelayDataMethods;

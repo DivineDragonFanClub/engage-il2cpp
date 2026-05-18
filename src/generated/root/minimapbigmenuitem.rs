@@ -159,6 +159,7 @@ impl MiniMapBigMenuItem {
 }
 
 #[cfg(feature = "root-minimapbigmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapBigMenuItem;
     pub use super::IMiniMapBigMenuItemMethods;

@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-propertyattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PropertyAttributes;
     pub use crate::system::object::IObject;

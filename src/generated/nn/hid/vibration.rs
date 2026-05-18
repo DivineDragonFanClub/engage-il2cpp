@@ -401,6 +401,7 @@ impl Vibration {
 }
 
 #[cfg(feature = "nn-hid-vibration")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVibration;
     pub use super::Vibration;

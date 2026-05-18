@@ -19,6 +19,16 @@ mod __types {
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: gameparam :: GameParam >)]
     pub struct GameParam {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_Holder.md"))]
+    #[::unity2::class(namespace = "App", name = "GameParam.Holder")]
+    #[parent(crate::system::object::Object)]
+    pub struct GameParam_Holder {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_Param")]
+        pub m_param: crate::app::gameparam::GameParam,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameparam/GameParam_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -69,16 +79,6 @@ mod __types {
         pub fn close() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_Holder.md"))]
-    #[::unity2::class(namespace = "App", name = "GameParam.Holder")]
-    #[parent(crate::system::object::Object)]
-    pub struct GameParam_Holder {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_Param")]
-        pub m_param: crate::app::gameparam::GameParam,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_ParamFunction.md"))]
@@ -2499,6 +2499,7 @@ impl GameParam_ParamFunction {
 }
 
 #[cfg(feature = "app-gameparam")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameParam;
     pub use super::GameParam_Holder;

@@ -1791,6 +1791,7 @@ impl FunctionMemberDescriptorBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionMemberDescriptorBase;
     pub use super::IFunctionMemberDescriptorBase;

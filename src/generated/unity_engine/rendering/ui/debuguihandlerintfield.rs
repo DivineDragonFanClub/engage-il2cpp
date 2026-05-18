@@ -560,6 +560,7 @@ impl DebugUIHandlerIntField {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerintfield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerIntField;
     pub use super::IDebugUIHandlerIntField;

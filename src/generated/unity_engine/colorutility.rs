@@ -87,6 +87,7 @@ impl ColorUtility {
 }
 
 #[cfg(feature = "unity_engine-colorutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorUtility;
     pub use super::IColorUtility;

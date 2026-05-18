@@ -146,6 +146,7 @@ impl<T0: ::unity2::ClassIdentity> RenderGraphResourcePool_1<T0> {
 #[cfg(
     feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphResourcePool_1;
     pub use super::IRenderGraphResourcePool_1Methods;

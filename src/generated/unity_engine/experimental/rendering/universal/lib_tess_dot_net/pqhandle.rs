@@ -100,6 +100,7 @@ impl PQHandle {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PQHandle;
     pub use crate::system::object::IObject;

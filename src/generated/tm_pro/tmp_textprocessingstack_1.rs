@@ -122,6 +122,7 @@ impl<T0: ::unity2::ClassIdentity> TMP_TextProcessingStack_1<T0> {
 }
 
 #[cfg(feature = "tm_pro-tmp_textprocessingstack_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_TextProcessingStack_1;
     pub use crate::system::object::IObject;

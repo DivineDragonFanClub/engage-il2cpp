@@ -358,6 +358,7 @@ impl ShopUnitSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-shopunitselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopUnitSelectMenuItemContent;
     pub use super::IShopUnitSelectMenuItemContentMethods;

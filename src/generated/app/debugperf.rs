@@ -102,6 +102,7 @@ impl DebugPerf {
 }
 
 #[cfg(feature = "app-debugperf")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPerf;
     pub use super::IDebugPerf;

@@ -231,6 +231,7 @@ impl GridMesh {
 }
 
 #[cfg(feature = "app-gridmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridMesh;
     pub use super::IGridMesh;

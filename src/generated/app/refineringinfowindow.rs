@@ -11,6 +11,30 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineRingInfoWindow.RingRefineStatistics")]
+    #[parent(crate::system::object::Object)]
+    pub struct RefineRingInfoWindow_RingRefineStatistics {
+        #[rename(name = "m_Name")]
+        pub m_name: ::unity2::Il2CppString,
+        #[rename(name = "m_ExistS")]
+        pub m_exist_s: bool,
+        #[rename(name = "m_ExistA")]
+        pub m_exist_a: bool,
+        #[rename(name = "m_ExistB")]
+        pub m_exist_b: bool,
+        #[rename(name = "m_ExistC")]
+        pub m_exist_c: bool,
+        #[rename(name = "m_RefinedS")]
+        pub m_refined_s: bool,
+        #[rename(name = "m_RefinedA")]
+        pub m_refined_a: bool,
+        #[rename(name = "m_RefinedB")]
+        pub m_refined_b: bool,
+        #[rename(name = "m_RefinedC")]
+        pub m_refined_c: bool,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow.md"))]
     #[::unity2::class(namespace = "App", name = "RefineRingInfoWindow")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -51,34 +75,102 @@ mod __types {
         #[rename(name = "m_RingSImage")]
         pub m_ring_s_image: crate::unity_engine::ui::image::Image,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineRingInfoWindow.RingRefineStatistics")]
-    #[parent(crate::system::object::Object)]
-    pub struct RefineRingInfoWindow_RingRefineStatistics {
-        #[rename(name = "m_Name")]
-        pub m_name: ::unity2::Il2CppString,
-        #[rename(name = "m_ExistS")]
-        pub m_exist_s: bool,
-        #[rename(name = "m_ExistA")]
-        pub m_exist_a: bool,
-        #[rename(name = "m_ExistB")]
-        pub m_exist_b: bool,
-        #[rename(name = "m_ExistC")]
-        pub m_exist_c: bool,
-        #[rename(name = "m_RefinedS")]
-        pub m_refined_s: bool,
-        #[rename(name = "m_RefinedA")]
-        pub m_refined_a: bool,
-        #[rename(name = "m_RefinedB")]
-        pub m_refined_b: bool,
-        #[rename(name = "m_RefinedC")]
-        pub m_refined_c: bool,
-    }
 }
 
 #[cfg(feature = "app-refineringinfowindow-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-refineringinfowindow")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineRingInfoWindow_RingRefineStatistics_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineRingInfoWindow_RingRefineStatistics as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineRingInfoWindow_RingRefineStatistics as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineRingInfoWindow_RingRefineStatistics,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineRingInfoWindow_RingRefineStatistics,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+pub trait IRefineRingInfoWindow_RingRefineStatisticsMethods:
+    IRefineRingInfoWindow_RingRefineStatistics
+{
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineRingInfoWindow_RingRefineStatistics_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl<__T: IRefineRingInfoWindow_RingRefineStatistics>
+    IRefineRingInfoWindow_RingRefineStatisticsMethods for __T
+{
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow_RingRefineStatistics {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingInfoWindow_RingRefineStatistics),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingInfoWindow_RingRefineStatisticsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-refineringinfowindow")]
 #[doc(hidden)]
@@ -483,97 +575,6 @@ impl RefineRingInfoWindow_RingRefinedInfo {
 
 #[cfg(feature = "app-refineringinfowindow")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineRingInfoWindow_RingRefineStatistics_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineRingInfoWindow_RingRefineStatistics as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingInfoWindow_RingRefineStatistics as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineRingInfoWindow_RingRefineStatistics,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineRingInfoWindow_RingRefineStatistics,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineringinfowindow")]
-pub trait IRefineRingInfoWindow_RingRefineStatisticsMethods:
-    IRefineRingInfoWindow_RingRefineStatistics
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RefineRingInfoWindow_RingRefineStatistics as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineRingInfoWindow_RingRefineStatistics_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl<__T: IRefineRingInfoWindow_RingRefineStatistics>
-    IRefineRingInfoWindow_RingRefineStatisticsMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineringinfowindow")]
-impl RefineRingInfoWindow_RingRefineStatistics {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineRingInfoWindow_RingRefineStatistics),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineRingInfoWindow_RingRefineStatisticsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-refineringinfowindow")]
 pub mod prelude {
     pub use super::IRefineRingInfoWindow;
     pub use super::IRefineRingInfoWindowMethods;

@@ -509,6 +509,7 @@ impl FieldLoader {
 }
 
 #[cfg(feature = "combat-fieldloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FieldLoader;
     pub use super::IFieldLoader;

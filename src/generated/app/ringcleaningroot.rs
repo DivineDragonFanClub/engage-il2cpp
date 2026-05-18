@@ -475,6 +475,7 @@ impl RingCleaningRoot {
 }
 
 #[cfg(feature = "app-ringcleaningroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningRoot;
     pub use super::IRingCleaningRootMethods;

@@ -199,6 +199,7 @@ pub trait IIDictionaryEnumeratorMethods: IIDictionaryEnumerator {
 impl<__T: IIDictionaryEnumerator> IIDictionaryEnumeratorMethods for __T {}
 
 #[cfg(feature = "system-collections-idictionaryenumerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDictionaryEnumerator;
     pub use super::IIDictionaryEnumerator;

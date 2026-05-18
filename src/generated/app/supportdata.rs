@@ -771,6 +771,7 @@ impl SupportData {
 }
 
 #[cfg(feature = "app-supportdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportData;
     pub use super::ISupportDataMethods;

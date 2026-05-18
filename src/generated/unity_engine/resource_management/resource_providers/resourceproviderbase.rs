@@ -891,6 +891,7 @@ impl ResourceProviderBase {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceProviderBase;
     pub use super::IResourceProviderBaseMethods;

@@ -277,6 +277,7 @@ impl CombatSubspaceGo {
 }
 
 #[cfg(feature = "combat-combatsubspacego")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatSubspaceGo;
     pub use super::ICombatSubspaceGo;

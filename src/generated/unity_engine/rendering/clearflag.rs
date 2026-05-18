@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-clearflag")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClearFlag;
     pub use crate::system::object::IObject;

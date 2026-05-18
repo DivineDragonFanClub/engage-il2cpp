@@ -81,6 +81,7 @@ impl<T0: ::unity2::ClassIdentity> ArrayBuilder_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-arraybuilder_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArrayBuilder_1;
     pub use crate::system::object::IObject;

@@ -121,6 +121,7 @@ impl UnitCommandPrepareInspector {
 }
 
 #[cfg(feature = "app-unitcommandprepareinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitCommandPrepareInspector;
     pub use super::IUnitCommandPrepareInspectorMethods;

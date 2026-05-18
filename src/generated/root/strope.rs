@@ -2397,6 +2397,7 @@ impl StrOpe {
 }
 
 #[cfg(feature = "root-strope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStrOpe;
     pub use super::IStrOpeMethods;

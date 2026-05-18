@@ -292,6 +292,7 @@ pub trait IVisualEffectMethods: IVisualEffect {
 impl<__T: IVisualEffect> IVisualEffectMethods for __T {}
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisualEffect;
     pub use super::IVisualEffectMethods;

@@ -387,6 +387,7 @@ impl DisposUnit {
 }
 
 #[cfg(feature = "app-disposunit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisposUnit;
     pub use super::DisposUnit_Item;

@@ -411,6 +411,7 @@ impl OsTimeModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-ostimemodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IOsTimeModule;
     pub use super::IOsTimeModuleMethods;

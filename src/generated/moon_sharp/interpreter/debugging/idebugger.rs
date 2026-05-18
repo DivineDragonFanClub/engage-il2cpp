@@ -737,6 +737,7 @@ pub trait IIDebuggerMethods: IIDebugger {
 impl<__T: IIDebugger> IIDebuggerMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDebugger;
     pub use super::IIDebugger;

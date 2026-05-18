@@ -694,6 +694,7 @@ impl ProfileCardTitleData {
 }
 
 #[cfg(feature = "app-profilecardtitledata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTitleData;
     pub use super::IProfileCardTitleDataMethods;

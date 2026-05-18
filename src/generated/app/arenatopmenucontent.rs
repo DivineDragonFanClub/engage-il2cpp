@@ -597,6 +597,7 @@ impl ArenaTopMenuContent {
 }
 
 #[cfg(feature = "app-arenatopmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaTopMenuContent;
     pub use super::IArenaTopMenuContent;

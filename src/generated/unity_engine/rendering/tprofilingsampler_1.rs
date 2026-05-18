@@ -54,6 +54,7 @@ impl<T0: ::unity2::ClassIdentity> TProfilingSampler_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITProfilingSampler_1;
     pub use super::ITProfilingSampler_1Methods;

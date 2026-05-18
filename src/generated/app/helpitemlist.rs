@@ -271,6 +271,7 @@ impl HelpItemList {
 }
 
 #[cfg(feature = "app-helpitemlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemList;
     pub use super::IHelpItemList;

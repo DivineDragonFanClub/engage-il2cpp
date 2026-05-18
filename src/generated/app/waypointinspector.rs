@@ -286,6 +286,7 @@ impl WaypointInspector {
 }
 
 #[cfg(feature = "app-waypointinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaypointInspector;
     pub use super::IWaypointInspectorMethods;

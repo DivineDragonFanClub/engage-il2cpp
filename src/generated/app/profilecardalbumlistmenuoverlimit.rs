@@ -20,16 +20,6 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardAlbumListMenuOverLimit_CancelEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuOverLimit")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct ProfileCardAlbumListMenuOverLimit {
-# [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
-# [rename (name = "m_ProfileCardAlbumRoot")] pub m_profile_card_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
-# [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -38,6 +28,16 @@ mod __types {
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
 # [rename (name = "m_Profile")] pub m_profile : crate :: app :: profilecard :: ProfileCard ,
+# [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuOverLimit")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct ProfileCardAlbumListMenuOverLimit {
+# [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
+# [rename (name = "m_ProfileCardAlbumRoot")] pub m_profile_card_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
+# [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
 # [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler ,
 }
 }
@@ -184,6 +184,285 @@ impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
         <Self as IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        profile: crate::app::profilecard::ProfileCard,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, profile, cancel_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build_menu_item_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "OnBuildMenuItemContent" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuildMenuItemContent" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_build_menu_item_content(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_select(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_select::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn b_call(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_b_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_profile {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "get_Profile" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "get_Profile" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_profile(
+        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::profilecard::ProfileCard {
+        let inner: extern "C" fn(
+            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecard::ProfileCard = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_profile::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+pub trait IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods:
+    IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem
+{
+    #[doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenuoverlimit::ProfileCardAlbumListMenuOverLimit_CancelEventHandler)` overload"]
+    fn ctor(
+        self,
+        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
+        cancel_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler >,
+    ) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (profile) , :: core :: convert :: Into :: into (cancel_event_handler) , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    fn on_build_menu_item_content(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: on_build_menu_item_content (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+    #[doc = "`get_Profile()` overload"]
+    fn get_profile(self) -> crate::app::profilecard::ProfileCard {
+        unsafe {
+            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: get_profile (__receiver , :: core :: option :: Option :: None)
+        }
+    }
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl<__T: IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem>
+    IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
+    #[doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenuoverlimit::ProfileCardAlbumListMenuOverLimit_CancelEventHandler)` — overload selector"]
+    pub fn new(
+        profile: crate::app::profilecard::ProfileCard,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods > :: ctor (this , profile , cancel_event_handler) ;
         this
     }
 }
@@ -785,284 +1064,6 @@ impl ProfileCardAlbumListMenuOverLimit {
 
 #[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        profile: crate::app::profilecard::ProfileCard,
-        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, profile, cancel_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "OnBuildMenuItemContent" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "OnBuildMenuItemContent" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_build_menu_item_content(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "OnSelect" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "OnSelect" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_profile {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: class () , "get_Profile" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: ClassIdentity > :: NAME , "get_Profile" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_profile(
-        this: ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::profilecard::ProfileCard {
-        let inner: extern "C" fn(
-            ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::profilecard::ProfileCard = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_profile::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
-pub trait IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods:
-    IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem
-{
-    #[doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenuoverlimit::ProfileCardAlbumListMenuOverLimit_CancelEventHandler)` overload"]
-    fn ctor(
-        self,
-        profile: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        cancel_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler >,
-    ) -> () {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (profile) , :: core :: convert :: Into :: into (cancel_event_handler) , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    fn on_build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: on_build_menu_item_content (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: on_select (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: b_call (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`get_Profile()` overload"]
-    fn get_profile(self) -> crate::app::profilecard::ProfileCard {
-        unsafe {
-            let __receiver = < ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem_unity2_raw :: get_profile (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
-impl<__T: IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem>
-    IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
-impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
-    #[doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenuoverlimit::ProfileCardAlbumListMenuOverLimit_CancelEventHandler)` — overload selector"]
-    pub fn new(
-        profile: crate::app::profilecard::ProfileCard,
-        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods > :: ctor (this , profile , cancel_event_handler) ;
-        this
-    }
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
 pub mod prelude {
     pub use super::IProfileCardAlbumListMenuOverLimit;
     pub use super::IProfileCardAlbumListMenuOverLimitMethods;

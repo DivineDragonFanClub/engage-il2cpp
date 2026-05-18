@@ -767,6 +767,7 @@ impl LoadModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-loadmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoadModule;
     pub use super::ILoadModuleMethods;

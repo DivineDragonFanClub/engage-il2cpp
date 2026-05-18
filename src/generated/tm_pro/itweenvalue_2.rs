@@ -254,6 +254,7 @@ pub trait IITweenValue_2Methods: IITweenValue_2 {
 impl<__T: IITweenValue_2> IITweenValue_2Methods for __T {}
 
 #[cfg(feature = "tm_pro-itweenvalue_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITweenValue_2;
     pub use super::IITweenValue_2Methods;

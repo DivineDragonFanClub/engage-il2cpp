@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-u2d-spriteshaperenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteShapeRenderer;
     pub use super::SpriteShapeRenderer;

@@ -1649,6 +1649,7 @@ impl VersusServerReplayMetaData {
 }
 
 #[cfg(feature = "app-versusserverreplaymetadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerReplayMetaData;
     pub use super::IVersusServerReplayMetaDataMethods;

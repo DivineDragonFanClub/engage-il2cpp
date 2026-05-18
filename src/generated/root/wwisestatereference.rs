@@ -354,6 +354,7 @@ impl WwiseStateReference {
 }
 
 #[cfg(feature = "root-wwisestatereference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseStateReference;
     pub use super::IWwiseStateReferenceMethods;

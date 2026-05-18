@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akqueryrtpcvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkQueryRTPCValue;
     pub use crate::system::object::IObject;

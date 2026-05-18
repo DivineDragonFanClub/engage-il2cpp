@@ -240,6 +240,7 @@ impl TableModule_Globals {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule_globals")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITableModule_Globals;
     pub use super::ITableModule_GlobalsMethods;

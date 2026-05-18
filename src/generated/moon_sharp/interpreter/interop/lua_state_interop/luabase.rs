@@ -4268,6 +4268,7 @@ impl LuaBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luabase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILuaBase;
     pub use super::ILuaBaseMethods;

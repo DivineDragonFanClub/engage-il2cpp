@@ -281,6 +281,7 @@ impl LegacyResourcesLocator {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILegacyResourcesLocator;
     pub use super::ILegacyResourcesLocatorMethods;

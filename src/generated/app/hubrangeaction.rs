@@ -843,6 +843,7 @@ impl HubRangeAction {
 }
 
 #[cfg(feature = "app-hubrangeaction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubRangeAction;
     pub use super::IHubRangeAction;

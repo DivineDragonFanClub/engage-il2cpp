@@ -1959,6 +1959,7 @@ impl CombatSequence {
 }
 
 #[cfg(feature = "combat-combatsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatSequence;
     pub use super::ICombatSequence;

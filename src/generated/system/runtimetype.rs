@@ -7579,6 +7579,7 @@ impl RuntimeType {
 }
 
 #[cfg(feature = "system-runtimetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeType;
     pub use super::IRuntimeTypeMethods;

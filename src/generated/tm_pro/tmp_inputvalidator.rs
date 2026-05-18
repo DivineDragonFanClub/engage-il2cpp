@@ -180,6 +180,7 @@ impl TMP_InputValidator {
 }
 
 #[cfg(feature = "tm_pro-tmp_inputvalidator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_InputValidator;
     pub use super::ITMP_InputValidatorMethods;

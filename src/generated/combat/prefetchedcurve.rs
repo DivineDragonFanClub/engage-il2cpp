@@ -177,6 +177,7 @@ impl PrefetchedCurve {
 }
 
 #[cfg(feature = "combat-prefetchedcurve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrefetchedCurve;
     pub use super::IPrefetchedCurveMethods;

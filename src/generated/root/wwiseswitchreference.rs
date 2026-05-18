@@ -354,6 +354,7 @@ impl WwiseSwitchReference {
 }
 
 #[cfg(feature = "root-wwiseswitchreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseSwitchReference;
     pub use super::IWwiseSwitchReferenceMethods;

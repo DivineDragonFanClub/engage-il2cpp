@@ -421,6 +421,7 @@ impl DebugUIHandlerToggle {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlertoggle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerToggle;
     pub use super::IDebugUIHandlerToggle;

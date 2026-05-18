@@ -92,6 +92,7 @@ pub trait IIHashCodeProviderMethods: IIHashCodeProvider {
 impl<__T: IIHashCodeProvider> IIHashCodeProviderMethods for __T {}
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IHashCodeProvider;
     pub use super::IIHashCodeProvider;

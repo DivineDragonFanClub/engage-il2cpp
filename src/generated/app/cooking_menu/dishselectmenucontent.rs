@@ -537,6 +537,7 @@ impl DishSelectMenuContent {
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DishSelectMenuContent;
     pub use super::IDishSelectMenuContent;

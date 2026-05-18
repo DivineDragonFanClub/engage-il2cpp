@@ -458,6 +458,7 @@ impl RelaySprite {
 }
 
 #[cfg(feature = "app-relaysprite")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelaySprite;
     pub use super::IRelaySpriteMethods;

@@ -300,6 +300,7 @@ impl BinDumpBinaryWriter {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-bindumpbinarywriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinDumpBinaryWriter;
     pub use super::IBinDumpBinaryWriter;

@@ -339,6 +339,7 @@ impl CurveText {
 }
 
 #[cfg(feature = "app-curvetext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CurveText;
     pub use super::ICurveText;

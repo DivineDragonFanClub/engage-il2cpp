@@ -405,6 +405,7 @@ pub trait IIClippableMethods: IIClippable {
 impl<__T: IIClippable> IIClippableMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IClippable;
     pub use super::IIClippable;

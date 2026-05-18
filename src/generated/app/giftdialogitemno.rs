@@ -104,6 +104,7 @@ impl GiftDialogItemNo {
 }
 
 #[cfg(feature = "app-giftdialogitemno")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftDialogItemNo;
     pub use super::IGiftDialogItemNo;

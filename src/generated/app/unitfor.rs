@@ -853,6 +853,7 @@ impl UnitFor {
 }
 
 #[cfg(feature = "app-unitfor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitFor;
     pub use super::IUnitForMethods;

@@ -200,6 +200,7 @@ impl Vector3Parameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-vector3parameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVector3Parameter;
     pub use super::IVector3ParameterMethods;

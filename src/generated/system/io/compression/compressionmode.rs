@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-compression-compressionmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompressionMode;
     pub use crate::system::object::IObject;

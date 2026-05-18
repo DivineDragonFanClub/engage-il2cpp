@@ -2850,6 +2850,7 @@ impl Table {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-table")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITable;
     pub use super::ITableMethods;

@@ -183,6 +183,7 @@ impl ProcDescMPersistent {
 }
 
 #[cfg(feature = "app-procdescmpersistent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMPersistent;
     pub use super::IProcDescMPersistentMethods;

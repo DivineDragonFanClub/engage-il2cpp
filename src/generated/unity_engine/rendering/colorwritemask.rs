@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-colorwritemask")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorWriteMask;
     pub use crate::system::object::IObject;

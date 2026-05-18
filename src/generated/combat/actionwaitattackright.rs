@@ -342,6 +342,7 @@ impl ActionWaitAttackRight {
 }
 
 #[cfg(feature = "combat-actionwaitattackright")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionWaitAttackRight;
     pub use super::IActionWaitAttackRight;

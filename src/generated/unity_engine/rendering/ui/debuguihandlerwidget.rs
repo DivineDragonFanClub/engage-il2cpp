@@ -1105,6 +1105,7 @@ impl DebugUIHandlerWidget {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerwidget")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerWidget;
     pub use super::IDebugUIHandlerWidget;

@@ -221,6 +221,7 @@ pub trait IComputeShaderMethods: IComputeShader {
 impl<__T: IComputeShader> IComputeShaderMethods for __T {}
 
 #[cfg(feature = "unity_engine-computeshader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeShader;
     pub use super::IComputeShader;

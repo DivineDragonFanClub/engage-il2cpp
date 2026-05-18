@@ -2520,6 +2520,7 @@ impl TMP_Settings_LineBreakingTable {
 }
 
 #[cfg(feature = "tm_pro-tmp_settings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Settings;
     pub use super::ITMP_SettingsMethods;

@@ -101,6 +101,7 @@ impl DebugChapterRecordMenu {
 }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugChapterRecordMenu;
     pub use super::IDebugChapterRecordMenu;

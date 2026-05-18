@@ -694,6 +694,7 @@ impl RefineGodWeaponSelectManager_ReturnEventHandler {
 }
 
 #[cfg(feature = "app-refinegodweaponselectmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponSelectManager;
     pub use super::IRefineGodWeaponSelectManagerMethods;

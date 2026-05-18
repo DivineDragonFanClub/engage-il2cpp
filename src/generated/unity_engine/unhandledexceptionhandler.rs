@@ -77,6 +77,7 @@ impl UnhandledExceptionHandler {
 }
 
 #[cfg(feature = "unity_engine-unhandledexceptionhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnhandledExceptionHandler;
     pub use super::UnhandledExceptionHandler;

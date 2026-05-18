@@ -673,6 +673,7 @@ impl AkSerializedCallbackHeader {
 }
 
 #[cfg(feature = "root-akserializedcallbackheader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSerializedCallbackHeader;
     pub use super::IAkSerializedCallbackHeader;

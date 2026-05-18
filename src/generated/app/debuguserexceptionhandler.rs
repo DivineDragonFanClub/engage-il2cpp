@@ -130,6 +130,7 @@ impl DebugUserExceptionHandler {
 }
 
 #[cfg(feature = "app-debuguserexceptionhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUserExceptionHandler;
     pub use super::IDebugUserExceptionHandler;

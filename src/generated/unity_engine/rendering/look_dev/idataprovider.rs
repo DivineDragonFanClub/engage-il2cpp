@@ -562,6 +562,7 @@ pub trait IIDataProviderMethods: IIDataProvider {
 impl<__T: IIDataProvider> IIDataProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-look_dev-idataprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDataProvider;
     pub use super::IIDataProvider;

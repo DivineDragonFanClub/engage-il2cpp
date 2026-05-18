@@ -137,6 +137,7 @@ impl ProfileCardCommentListDoEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardCommentListDoEmptyMenuItem;
     pub use super::IProfileCardCommentListDoEmptyMenuItemMethods;

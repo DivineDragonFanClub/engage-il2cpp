@@ -3149,6 +3149,7 @@ impl XRPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRPass;
     pub use super::IXRPassMethods;

@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-additionalcanvasshaderchannels")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AdditionalCanvasShaderChannels;
     pub use crate::system::object::IObject;

@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-transitonphase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TransitonPhase;
     pub use crate::system::object::IObject;

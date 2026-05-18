@@ -854,6 +854,7 @@ impl BitArrayUtilities {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArrayUtilities;
     pub use super::IBitArrayUtilities;

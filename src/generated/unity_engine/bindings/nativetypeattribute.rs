@@ -547,6 +547,7 @@ impl NativeTypeAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativetypeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeTypeAttribute;
     pub use super::INativeTypeAttributeMethods;

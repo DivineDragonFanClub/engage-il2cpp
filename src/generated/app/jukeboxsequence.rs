@@ -11,6 +11,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jukeboxsequence/JukeboxSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "JukeboxSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: jukeboxsequence :: JukeboxSequence >)]
+    pub struct JukeboxSequence {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jukeboxsequence/JukeboxSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -58,11 +63,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jukeboxsequence/JukeboxSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "JukeboxSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: jukeboxsequence :: JukeboxSequence >)]
-    pub struct JukeboxSequence {}
 }
 
 #[cfg(feature = "app-jukeboxsequence-types")]
@@ -651,6 +651,7 @@ impl JukeboxSequence {
 }
 
 #[cfg(feature = "app-jukeboxsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJukeboxSequence;
     pub use super::IJukeboxSequenceMethods;

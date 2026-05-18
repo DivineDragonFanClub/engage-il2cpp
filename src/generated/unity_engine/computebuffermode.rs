@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-computebuffermode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeBufferMode;
     pub use crate::system::object::IObject;

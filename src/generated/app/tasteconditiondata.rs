@@ -678,6 +678,7 @@ impl TasteConditionData_ConditionFunc {
 }
 
 #[cfg(feature = "app-tasteconditiondata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITasteConditionData;
     pub use super::ITasteConditionDataMethods;

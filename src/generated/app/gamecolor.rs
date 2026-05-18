@@ -174,6 +174,7 @@ impl GameColor {
 }
 
 #[cfg(feature = "app-gamecolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameColor;
     pub use super::IGameColor;

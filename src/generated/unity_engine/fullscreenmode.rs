@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-fullscreenmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FullScreenMode;
     pub use crate::system::object::IObject;

@@ -278,6 +278,7 @@ impl BinDumpBinaryReader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-bindumpbinaryreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinDumpBinaryReader;
     pub use super::IBinDumpBinaryReader;

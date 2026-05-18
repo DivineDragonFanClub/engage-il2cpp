@@ -303,6 +303,7 @@ impl ProfileCardVisualFrameEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardvisualframeemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualFrameEmptyMenuItem;
     pub use super::IProfileCardVisualFrameEmptyMenuItemMethods;

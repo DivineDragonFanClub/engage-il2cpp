@@ -1203,6 +1203,7 @@ impl GZipStream {
 }
 
 #[cfg(feature = "system-io-compression-gzipstream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GZipStream;
     pub use super::IGZipStream;

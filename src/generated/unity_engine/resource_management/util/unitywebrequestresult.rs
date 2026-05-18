@@ -449,6 +449,7 @@ impl UnityWebRequestResult {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityWebRequestResult;
     pub use super::IUnityWebRequestResultMethods;

@@ -163,6 +163,7 @@ impl WwiseRtpcReference {
 }
 
 #[cfg(feature = "root-wwisertpcreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseRtpcReference;
     pub use super::IWwiseRtpcReferenceMethods;

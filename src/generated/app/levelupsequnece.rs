@@ -1520,6 +1520,7 @@ impl LevelUpSequnece {
 }
 
 #[cfg(feature = "app-levelupsequnece")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILevelUpSequnece;
     pub use super::ILevelUpSequneceMethods;

@@ -360,6 +360,7 @@ impl RelayModeMenuContent {
 }
 
 #[cfg(feature = "app-relaymodemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayModeMenuContent;
     pub use super::IRelayModeMenuContentMethods;

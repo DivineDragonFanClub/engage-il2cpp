@@ -291,6 +291,7 @@ impl ScriptPrivateResource_Extension {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptprivateresource_extension")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptPrivateResource_Extension;
     pub use super::ScriptPrivateResource_Extension;

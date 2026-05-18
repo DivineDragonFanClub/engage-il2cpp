@@ -3342,6 +3342,7 @@ impl Cubemap {
 }
 
 #[cfg(feature = "unity_engine-cubemap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Cubemap;
     pub use super::ICubemap;

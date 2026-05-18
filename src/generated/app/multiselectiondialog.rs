@@ -216,6 +216,7 @@ impl MultiSelectionDialog {
 }
 
 #[cfg(feature = "app-multiselectiondialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMultiSelectionDialog;
     pub use super::IMultiSelectionDialogMethods;

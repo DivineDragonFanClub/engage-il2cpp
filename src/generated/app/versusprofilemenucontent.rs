@@ -308,6 +308,7 @@ impl VersusProfileMenuContent {
 }
 
 #[cfg(feature = "app-versusprofilemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusProfileMenuContent;
     pub use super::IVersusProfileMenuContentMethods;

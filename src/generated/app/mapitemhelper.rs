@@ -1929,6 +1929,7 @@ impl MapItemHelper {
 }
 
 #[cfg(feature = "app-mapitemhelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapItemHelper;
     pub use super::IMapItemHelperMethods;

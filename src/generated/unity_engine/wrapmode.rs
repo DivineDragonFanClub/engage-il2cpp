@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-wrapmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::WrapMode;
     pub use crate::system::object::IObject;

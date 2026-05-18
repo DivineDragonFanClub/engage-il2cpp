@@ -220,6 +220,7 @@ impl Vignette {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-vignette")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVignette;
     pub use super::IVignetteMethods;

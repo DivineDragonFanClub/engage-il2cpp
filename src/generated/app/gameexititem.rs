@@ -263,6 +263,7 @@ impl GameExitItem {
 }
 
 #[cfg(feature = "app-gameexititem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameExitItem;
     pub use super::IGameExitItem;

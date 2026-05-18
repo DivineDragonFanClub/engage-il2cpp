@@ -1050,6 +1050,7 @@ impl TMPro_ExtensionMethods {
 }
 
 #[cfg(feature = "tm_pro-tmpro_extensionmethods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMPro_ExtensionMethods;
     pub use super::TMPro_ExtensionMethods;

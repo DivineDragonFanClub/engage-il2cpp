@@ -6880,6 +6880,7 @@ impl Processor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcessor;
     pub use super::IProcessorMethods;

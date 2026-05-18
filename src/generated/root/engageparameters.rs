@@ -112,6 +112,7 @@ impl EngageParameters {
 }
 
 #[cfg(feature = "root-engageparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EngageParameters;
     pub use super::IEngageParameters;

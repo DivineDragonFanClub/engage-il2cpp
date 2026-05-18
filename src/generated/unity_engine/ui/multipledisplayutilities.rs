@@ -151,6 +151,7 @@ impl MultipleDisplayUtilities {
 }
 
 #[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMultipleDisplayUtilities;
     pub use super::MultipleDisplayUtilities;

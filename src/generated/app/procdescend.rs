@@ -165,6 +165,7 @@ impl ProcDescEnd {
 }
 
 #[cfg(feature = "app-procdescend")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescEnd;
     pub use super::IProcDescEndMethods;

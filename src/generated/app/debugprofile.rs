@@ -99,6 +99,7 @@ impl DebugProfile {
 }
 
 #[cfg(feature = "app-debugprofile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugProfile;
     pub use super::IDebugProfile;

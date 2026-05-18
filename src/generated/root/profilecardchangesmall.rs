@@ -187,6 +187,7 @@ impl ProfileCardChangeSmall {
 }
 
 #[cfg(feature = "root-profilecardchangesmall")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardChangeSmall;
     pub use super::IProfileCardChangeSmallMethods;

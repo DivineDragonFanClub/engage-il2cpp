@@ -87,6 +87,7 @@ pub trait IIPlayable_InterfaceMethods: IIPlayable_Interface {
 impl<__T: IIPlayable_Interface> IIPlayable_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-iplayable_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlayable_Interface;
     pub use super::IIPlayable_InterfaceMethods;

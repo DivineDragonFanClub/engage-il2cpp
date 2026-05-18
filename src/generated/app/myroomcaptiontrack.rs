@@ -178,6 +178,7 @@ impl MyRoomCaptionTrack {
 }
 
 #[cfg(feature = "app-myroomcaptiontrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomCaptionTrack;
     pub use super::IMyRoomCaptionTrackMethods;

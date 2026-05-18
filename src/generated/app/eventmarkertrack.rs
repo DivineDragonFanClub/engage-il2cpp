@@ -106,6 +106,7 @@ impl EventMarkerTrack {
 }
 
 #[cfg(feature = "app-eventmarkertrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventMarkerTrack;
     pub use super::IEventMarkerTrack;

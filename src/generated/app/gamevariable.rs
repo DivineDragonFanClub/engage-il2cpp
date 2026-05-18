@@ -3316,6 +3316,7 @@ impl GameVariable {
 }
 
 #[cfg(feature = "app-gamevariable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameVariable;
     pub use super::GameVariable_Value;

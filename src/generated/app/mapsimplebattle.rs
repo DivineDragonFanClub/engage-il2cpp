@@ -989,6 +989,7 @@ impl MapSimpleBattle {
 }
 
 #[cfg(feature = "app-mapsimplebattle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSimpleBattle;
     pub use super::IMapSimpleBattleMethods;

@@ -46,6 +46,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-richtexttagattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RichTextTagAttribute;
     pub use crate::system::object::IObject;

@@ -212,6 +212,7 @@ impl CompletedCommand {
 }
 
 #[cfg(feature = "app-completedcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompletedCommand;
     pub use super::ICompletedCommand;

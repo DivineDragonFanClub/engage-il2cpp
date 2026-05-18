@@ -101,6 +101,7 @@ impl MapGroup {
 }
 
 #[cfg(feature = "app-mapgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapGroup;
     pub use super::IMapGroupMethods;

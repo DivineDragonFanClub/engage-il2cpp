@@ -344,6 +344,7 @@ impl SkillEditRoot {
 }
 
 #[cfg(feature = "app-skilleditroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillEditRoot;
     pub use super::ISkillEditRootMethods;

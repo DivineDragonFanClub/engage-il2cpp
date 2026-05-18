@@ -117,6 +117,7 @@ impl ProfileCardFavoriteRelayMapEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteRelayMapEmptyMenuItem;
     pub use super::IProfileCardFavoriteRelayMapEmptyMenuItemMethods;

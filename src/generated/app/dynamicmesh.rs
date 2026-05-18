@@ -9,23 +9,19 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DynamicMesh_Mode {
-        pub value: i32,
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DynamicMesh_State {
+        pub mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+        pub index: u16,
+        pub count: u16,
     }
 
-    impl ::unity2::ClassIdentity for DynamicMesh_Mode {
+    impl ::unity2::ClassIdentity for DynamicMesh_State {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "DynamicMesh.Mode";
+        const NAME: &'static str = "DynamicMesh.State";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,60 +30,13 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for DynamicMesh_Mode {
+    impl ::unity2::IlType for DynamicMesh_State {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
                 ._1
                 .byval_arg
         }
-    }
-
-    impl DynamicMesh_Mode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn triangle() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn quad() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn pyramid() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn fan() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn fan_ccw() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn strip() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn lines() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn cell() -> Self {
-            Self { value: 3 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]
-    #[::unity2::class(namespace = "App", name = "DynamicMesh.StaticIndices")]
-    #[parent(crate::system::object::Object)]
-    pub struct DynamicMesh_StaticIndices {
-        #[static_field]
-        #[rename(name = "s_Indices")]
-        pub s_indices: ::unity2::Array<::unity2::Array<u16>>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh.md"))]
@@ -162,19 +111,32 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_State.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct DynamicMesh_State {
-        pub mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        pub index: u16,
-        pub count: u16,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]
+    #[::unity2::class(namespace = "App", name = "DynamicMesh.StaticIndices")]
+    #[parent(crate::system::object::Object)]
+    pub struct DynamicMesh_StaticIndices {
+        #[static_field]
+        #[rename(name = "s_Indices")]
+        pub s_indices: ::unity2::Array<::unity2::Array<u16>>,
     }
 
-    impl ::unity2::ClassIdentity for DynamicMesh_State {
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DynamicMesh_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DynamicMesh_Mode {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "DynamicMesh.State";
+        const NAME: &'static str = "DynamicMesh.Mode";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -183,12 +145,50 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for DynamicMesh_State {
+    impl ::unity2::IlType for DynamicMesh_Mode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
                 ._1
                 .byval_arg
+        }
+    }
+
+    impl DynamicMesh_Mode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn triangle() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn quad() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn pyramid() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn fan() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn fan_ccw() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn strip() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn lines() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn cell() -> Self {
+            Self { value: 3 }
         }
     }
 }
@@ -199,64 +199,23 @@ pub use __types::*;
 #[cfg(feature = "app-dynamicmesh")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_StaticIndices_unity2_raw {
+mod __DynamicMesh_State_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_indices {
+    pub mod __lookup_can_connect {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type()];
+                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                "GetIndices",
+                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
+                "CanConnect",
                 1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -264,8 +223,8 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                    "GetIndices",
+                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
+                    "CanConnect",
                     e
                 ),
             }
@@ -276,37 +235,37 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_indices(
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+    pub unsafe fn can_connect(
+        this: DynamicMesh_State,
+        state: crate::app::dynamicmesh::DynamicMesh_State,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u16> {
+    ) -> bool {
         let inner: extern "C" fn(
-            crate::app::dynamicmesh::DynamicMesh_Mode,
+            DynamicMesh_State,
+            crate::app::dynamicmesh::DynamicMesh_State,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u16> = ::core::mem::transmute(
+        ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_indices::get_offset() as isize),
+                .offset(__lookup_can_connect::get_offset() as isize),
         );
-        inner(mode, __unity2_method_info)
+        inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_triangle_count {
+    pub mod __lookup_connect {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                "GetTriangleCount",
-                2,
+                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
+                "Connect",
+                1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -314,8 +273,8 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                    "GetTriangleCount",
+                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
+                    "Connect",
                     e
                 ),
             }
@@ -326,33 +285,33 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_triangle_count(
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        vertex_count: i32,
+    pub unsafe fn connect(
+        this: DynamicMesh_State,
+        state: crate::app::dynamicmesh::DynamicMesh_State,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    ) -> () {
         let inner: extern "C" fn(
-            crate::app::dynamicmesh::DynamicMesh_Mode,
-            i32,
+            DynamicMesh_State,
+            crate::app::dynamicmesh::DynamicMesh_State,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
+        ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_get_triangle_count::get_offset() as isize),
+                .offset(__lookup_connect::get_offset() as isize),
         );
-        inner(mode, vertex_count, __unity2_method_info)
+        inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_clear {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
+                "Clear",
                 0,
                 param_types,
                 false,
@@ -363,8 +322,8 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
+                    "Clear",
                     e
                 ),
             }
@@ -375,82 +334,51 @@ mod __DynamicMesh_StaticIndices_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: DynamicMesh_StaticIndices,
+    pub unsafe fn clear(
+        this: DynamicMesh_State,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(DynamicMesh_StaticIndices, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(DynamicMesh_State, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
+                    .offset(__lookup_clear::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __DynamicMesh_StaticIndices_unity2_raw::cctor(::core::option::Option::None) }
-    }
-    #[doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]
-    pub fn get_indices(
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-    ) -> ::unity2::Array<u16> {
+impl DynamicMesh_State {
+    #[doc = "`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
+    pub fn can_connect(
+        self,
+        state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>,
+    ) -> bool {
         unsafe {
-            __DynamicMesh_StaticIndices_unity2_raw::get_indices(
-                ::core::convert::Into::into(mode),
+            __DynamicMesh_State_unity2_raw::can_connect(
+                self,
+                ::core::convert::Into::into(state),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    pub fn get_triangle_count(
-        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
-        vertex_count: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    #[doc = "`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
+    pub fn connect(
+        self,
+        state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>,
+    ) -> () {
         unsafe {
-            __DynamicMesh_StaticIndices_unity2_raw::get_triangle_count(
-                ::core::convert::Into::into(mode),
-                ::core::convert::Into::into(vertex_count),
+            __DynamicMesh_State_unity2_raw::connect(
+                self,
+                ::core::convert::Into::into(state),
                 ::core::option::Option::None,
             )
         }
     }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-pub trait IDynamicMesh_StaticIndicesMethods: IDynamicMesh_StaticIndices {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <DynamicMesh_StaticIndices as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DynamicMesh_StaticIndices_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-impl<__T: IDynamicMesh_StaticIndices> IDynamicMesh_StaticIndicesMethods for __T {}
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DynamicMesh_StaticIndices),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDynamicMesh_StaticIndicesMethods>::ctor(this);
-        this
+    #[doc = "`Clear()` overload"]
+    pub fn clear(self) -> () {
+        unsafe { __DynamicMesh_State_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
@@ -2333,119 +2261,160 @@ impl DynamicMesh_Scope {
 #[cfg(feature = "app-dynamicmesh")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DynamicMesh_State_unity2_raw {
+mod __DynamicMesh_StaticIndices_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_can_connect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "CanConnect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                    "CanConnect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_connect(
-        this: DynamicMesh_State,
-        state: crate::app::dynamicmesh::DynamicMesh_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DynamicMesh_State,
-            crate::app::dynamicmesh::DynamicMesh_State,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_connect::get_offset() as isize),
-        );
-        inner(this, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_connect {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dynamicmesh::DynamicMesh_State as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "Connect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                    "Connect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn connect(
-        this: DynamicMesh_State,
-        state: crate::app::dynamicmesh::DynamicMesh_State,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DynamicMesh_State,
-            crate::app::dynamicmesh::DynamicMesh_State,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_connect::get_offset() as isize),
-        );
-        inner(this, state, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
+    pub mod __lookup_cctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <DynamicMesh_State as ::unity2::ClassIdentity>::class(),
-                "Clear",
+                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
+                    ".cctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_cctor::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_indices {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
+                "GetIndices",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
+                    "GetIndices",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_indices(
+        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<u16> {
+        let inner: extern "C" fn(
+            crate::app::dynamicmesh::DynamicMesh_Mode,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Array<u16> = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_indices::get_offset() as isize),
+        );
+        inner(mode, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_triangle_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::dynamicmesh::DynamicMesh_Mode as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
+                "GetTriangleCount",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
+                    "GetTriangleCount",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_triangle_count(
+        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+        vertex_count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            crate::app::dynamicmesh::DynamicMesh_Mode,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_triangle_count::get_offset() as isize),
+        );
+        inner(mode, vertex_count, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -2456,8 +2425,8 @@ mod __DynamicMesh_State_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <DynamicMesh_State as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
+                    <DynamicMesh_StaticIndices as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
                     e
                 ),
             }
@@ -2468,55 +2437,87 @@ mod __DynamicMesh_State_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn clear(
-        this: DynamicMesh_State,
+    pub unsafe fn ctor(
+        this: DynamicMesh_StaticIndices,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(DynamicMesh_State, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(DynamicMesh_StaticIndices, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
+                    .offset(__lookup_ctor::get_offset() as isize),
             );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_State {
-    #[doc = "`CanConnect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
-    pub fn can_connect(
-        self,
-        state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>,
-    ) -> bool {
+impl DynamicMesh_StaticIndices {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __DynamicMesh_StaticIndices_unity2_raw::cctor(::core::option::Option::None) }
+    }
+    #[doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]
+    pub fn get_indices(
+        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
+    ) -> ::unity2::Array<u16> {
         unsafe {
-            __DynamicMesh_State_unity2_raw::can_connect(
-                self,
-                ::core::convert::Into::into(state),
+            __DynamicMesh_StaticIndices_unity2_raw::get_indices(
+                ::core::convert::Into::into(mode),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Connect(crate::app::dynamicmesh::DynamicMesh_State)` overload"]
-    pub fn connect(
-        self,
-        state: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_State>,
-    ) -> () {
+    #[doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
+    pub fn get_triangle_count(
+        mode: impl ::core::convert::Into<crate::app::dynamicmesh::DynamicMesh_Mode>,
+        vertex_count: impl ::core::convert::Into<i32>,
+    ) -> i32 {
         unsafe {
-            __DynamicMesh_State_unity2_raw::connect(
-                self,
-                ::core::convert::Into::into(state),
+            __DynamicMesh_StaticIndices_unity2_raw::get_triangle_count(
+                ::core::convert::Into::into(mode),
+                ::core::convert::Into::into(vertex_count),
                 ::core::option::Option::None,
             )
         }
-    }
-    #[doc = "`Clear()` overload"]
-    pub fn clear(self) -> () {
-        unsafe { __DynamicMesh_State_unity2_raw::clear(self, ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-dynamicmesh")]
+pub trait IDynamicMesh_StaticIndicesMethods: IDynamicMesh_StaticIndices {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DynamicMesh_StaticIndices as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __DynamicMesh_StaticIndices_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+impl<__T: IDynamicMesh_StaticIndices> IDynamicMesh_StaticIndicesMethods for __T {}
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh_StaticIndices {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynamicMesh_StaticIndices),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDynamicMesh_StaticIndicesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicMesh;
     pub use super::DynamicMesh_Mode;

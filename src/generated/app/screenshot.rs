@@ -164,6 +164,7 @@ impl ScreenShot {
 }
 
 #[cfg(feature = "app-screenshot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScreenShot;
     pub use super::IScreenShotMethods;

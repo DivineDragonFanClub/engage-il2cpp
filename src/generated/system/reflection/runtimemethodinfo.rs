@@ -657,6 +657,7 @@ impl RuntimeMethodInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimemethodinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeMethodInfo;
     pub use super::IRuntimeMethodInfoMethods;

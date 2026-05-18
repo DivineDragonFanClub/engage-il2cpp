@@ -338,6 +338,7 @@ impl TestMove {
 }
 
 #[cfg(feature = "root-testmove")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITestMove;
     pub use super::ITestMoveMethods;

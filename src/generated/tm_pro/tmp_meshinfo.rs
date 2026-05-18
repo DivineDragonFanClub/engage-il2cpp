@@ -844,6 +844,7 @@ impl TMP_MeshInfo {
 }
 
 #[cfg(feature = "tm_pro-tmp_meshinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_MeshInfo;
     pub use crate::system::object::IObject;

@@ -943,6 +943,7 @@ impl MapBattleInfoWindow {
 }
 
 #[cfg(feature = "app-mapbattleinfowindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleInfoWindow;
     pub use super::IMapBattleInfoWindowMethods;

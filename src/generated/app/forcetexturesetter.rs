@@ -175,6 +175,7 @@ impl ForceTextureSetter {
 }
 
 #[cfg(feature = "app-forcetexturesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ForceTextureSetter;
     pub use super::IForceTextureSetter;

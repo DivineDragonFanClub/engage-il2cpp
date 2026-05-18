@@ -953,6 +953,7 @@ impl ContentCatalogDataEntry {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContentCatalogDataEntry;
     pub use super::IContentCatalogDataEntry;

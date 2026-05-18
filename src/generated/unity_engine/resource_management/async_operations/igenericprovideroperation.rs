@@ -735,6 +735,7 @@ pub trait IIGenericProviderOperationMethods: IIGenericProviderOperation {
 impl<__T: IIGenericProviderOperation> IIGenericProviderOperationMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-igenericprovideroperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IGenericProviderOperation;
     pub use super::IIGenericProviderOperation;

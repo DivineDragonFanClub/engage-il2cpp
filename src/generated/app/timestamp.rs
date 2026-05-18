@@ -102,6 +102,7 @@ impl TimeStamp {
 }
 
 #[cfg(feature = "app-timestamp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimeStamp;
     pub use super::ITimeStampMethods;

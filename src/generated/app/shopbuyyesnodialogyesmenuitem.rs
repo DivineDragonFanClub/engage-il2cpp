@@ -331,6 +331,7 @@ impl ShopBuyYesNoDialogYesMenuItem {
 }
 
 #[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopBuyYesNoDialogYesMenuItem;
     pub use super::IShopBuyYesNoDialogYesMenuItemMethods;

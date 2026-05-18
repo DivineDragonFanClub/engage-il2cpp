@@ -159,6 +159,7 @@ impl HubFruitsController {
 }
 
 #[cfg(feature = "app-hubfruitscontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubFruitsController;
     pub use super::IHubFruitsController;

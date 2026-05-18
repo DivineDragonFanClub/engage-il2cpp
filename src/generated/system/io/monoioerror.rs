@@ -154,6 +154,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-monoioerror")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MonoIOError;
     pub use crate::system::object::IObject;

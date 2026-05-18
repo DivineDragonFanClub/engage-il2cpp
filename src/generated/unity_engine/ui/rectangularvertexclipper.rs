@@ -180,6 +180,7 @@ impl RectangularVertexClipper {
 }
 
 #[cfg(feature = "unity_engine-ui-rectangularvertexclipper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRectangularVertexClipper;
     pub use super::IRectangularVertexClipperMethods;

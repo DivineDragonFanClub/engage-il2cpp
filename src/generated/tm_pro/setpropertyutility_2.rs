@@ -255,6 +255,7 @@ impl SetPropertyUtility_2 {
 }
 
 #[cfg(feature = "tm_pro-setpropertyutility_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISetPropertyUtility_2;
     pub use super::SetPropertyUtility_2;

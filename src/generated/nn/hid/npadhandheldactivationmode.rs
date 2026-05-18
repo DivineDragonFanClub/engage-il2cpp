@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadhandheldactivationmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadHandheldActivationMode;
     pub use crate::system::object::IObject;

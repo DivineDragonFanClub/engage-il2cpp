@@ -1267,6 +1267,7 @@ impl Gizmos {
 }
 
 #[cfg(feature = "unity_engine-gizmos")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Gizmos;
     pub use super::IGizmos;

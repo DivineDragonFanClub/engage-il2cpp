@@ -1374,6 +1374,7 @@ impl CubemapArray {
 }
 
 #[cfg(feature = "unity_engine-cubemaparray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CubemapArray;
     pub use super::ICubemapArray;

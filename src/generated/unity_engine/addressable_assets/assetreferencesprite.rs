@@ -182,6 +182,7 @@ impl AssetReferenceSprite {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceSprite;
     pub use super::IAssetReferenceSprite;

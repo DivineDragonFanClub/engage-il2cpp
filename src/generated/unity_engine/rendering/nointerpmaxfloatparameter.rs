@@ -254,6 +254,7 @@ impl NoInterpMaxFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpmaxfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpMaxFloatParameter;
     pub use super::INoInterpMaxFloatParameterMethods;

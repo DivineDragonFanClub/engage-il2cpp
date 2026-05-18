@@ -702,6 +702,7 @@ impl EnumerableWrapper {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-enumerablewrapper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EnumerableWrapper;
     pub use super::IEnumerableWrapper;

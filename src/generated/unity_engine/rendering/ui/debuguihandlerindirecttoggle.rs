@@ -432,6 +432,7 @@ impl DebugUIHandlerIndirectToggle {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirecttoggle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerIndirectToggle;
     pub use super::IDebugUIHandlerIndirectToggle;

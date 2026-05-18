@@ -103,6 +103,7 @@ impl DownloadStatus {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DownloadStatus;
     pub use crate::system::object::IObject;

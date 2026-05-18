@@ -222,6 +222,7 @@ impl VersusBackupData {
 }
 
 #[cfg(feature = "app-versusbackupdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusBackupData;
     pub use super::IVersusBackupDataMethods;

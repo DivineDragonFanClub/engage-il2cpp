@@ -194,6 +194,7 @@ impl GiftDialogItemYes {
 }
 
 #[cfg(feature = "app-giftdialogitemyes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftDialogItemYes;
     pub use super::IGiftDialogItemYes;

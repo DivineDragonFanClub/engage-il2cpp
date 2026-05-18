@@ -923,6 +923,7 @@ impl AkObjectInfo {
 }
 
 #[cfg(feature = "root-akobjectinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkObjectInfo;
     pub use super::IAkObjectInfo;

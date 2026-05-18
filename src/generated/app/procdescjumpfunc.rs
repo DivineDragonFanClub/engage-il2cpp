@@ -294,6 +294,7 @@ impl ProcDescJumpFunc {
 }
 
 #[cfg(feature = "app-procdescjumpfunc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescJumpFunc;
     pub use super::IProcDescJumpFuncMethods;

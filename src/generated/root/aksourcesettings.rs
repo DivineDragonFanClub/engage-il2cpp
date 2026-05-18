@@ -943,6 +943,7 @@ impl AkSourceSettings {
 }
 
 #[cfg(feature = "root-aksourcesettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSourceSettings;
     pub use super::IAkSourceSettings;

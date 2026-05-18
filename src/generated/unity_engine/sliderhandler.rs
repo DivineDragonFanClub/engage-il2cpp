@@ -1567,6 +1567,7 @@ impl SliderHandler {
 }
 
 #[cfg(feature = "unity_engine-sliderhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SliderHandler;
     pub use crate::system::object::IObject;

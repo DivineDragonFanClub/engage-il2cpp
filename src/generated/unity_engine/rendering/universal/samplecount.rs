@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-samplecount")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SampleCount;
     pub use crate::system::object::IObject;

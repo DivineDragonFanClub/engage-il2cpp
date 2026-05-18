@@ -83,6 +83,7 @@ pub trait IILayoutIgnorerMethods: IILayoutIgnorer {
 impl<__T: IILayoutIgnorer> IILayoutIgnorerMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILayoutIgnorer;
     pub use super::IILayoutIgnorerMethods;

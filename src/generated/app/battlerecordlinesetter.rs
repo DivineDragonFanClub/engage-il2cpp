@@ -295,6 +295,7 @@ impl BattleRecordLineSetter {
 }
 
 #[cfg(feature = "app-battlerecordlinesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleRecordLineSetter;
     pub use super::IBattleRecordLineSetter;

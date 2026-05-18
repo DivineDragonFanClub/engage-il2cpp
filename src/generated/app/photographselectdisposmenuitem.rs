@@ -244,6 +244,7 @@ impl PhotographSelectDisposMenuItem {
 }
 
 #[cfg(feature = "app-photographselectdisposmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectDisposMenuItem;
     pub use super::IPhotographSelectDisposMenuItemMethods;

@@ -169,6 +169,7 @@ impl CameraPlayable {
 }
 
 #[cfg(feature = "unity_engine-experimental-playables-cameraplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraPlayable;
     pub use crate::system::object::IObject;

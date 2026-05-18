@@ -340,6 +340,7 @@ impl CameraRaycastHelper {
 }
 
 #[cfg(feature = "unity_engine-cameraraycasthelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraRaycastHelper;
     pub use super::ICameraRaycastHelper;

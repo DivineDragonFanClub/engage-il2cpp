@@ -330,6 +330,7 @@ impl DynamicExprExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicExprExpression;
     pub use super::IDynamicExprExpression;

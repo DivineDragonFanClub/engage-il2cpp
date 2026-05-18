@@ -600,6 +600,7 @@ impl ShopUnitSelectMenuItem {
 }
 
 #[cfg(feature = "app-shopunitselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopUnitSelectMenuItem;
     pub use super::IShopUnitSelectMenuItemMethods;

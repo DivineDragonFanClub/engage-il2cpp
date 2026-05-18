@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-cullinggroupevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CullingGroupEvent;
     pub use crate::system::object::IObject;

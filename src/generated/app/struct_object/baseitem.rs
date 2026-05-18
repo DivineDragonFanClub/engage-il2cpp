@@ -332,6 +332,7 @@ impl BaseItem {
 }
 
 #[cfg(feature = "app-struct_object-baseitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseItem;
     pub use super::IBaseItem;

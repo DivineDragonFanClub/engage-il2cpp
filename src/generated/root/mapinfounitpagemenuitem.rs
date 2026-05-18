@@ -338,6 +338,7 @@ impl MapInfoUnitPageMenuItem {
 }
 
 #[cfg(feature = "root-mapinfounitpagemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoUnitPageMenuItem;
     pub use super::IMapInfoUnitPageMenuItemMethods;

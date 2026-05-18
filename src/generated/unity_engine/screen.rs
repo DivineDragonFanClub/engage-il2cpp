@@ -212,6 +212,7 @@ impl Screen {
 }
 
 #[cfg(feature = "unity_engine-screen")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScreen;
     pub use super::Screen;

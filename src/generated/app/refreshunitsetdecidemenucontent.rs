@@ -608,6 +608,7 @@ impl RefreshUnitSetDecideMenuContent {
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSetDecideMenuContent;
     pub use super::IRefreshUnitSetDecideMenuContentMethods;

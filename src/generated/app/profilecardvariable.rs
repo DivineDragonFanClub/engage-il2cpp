@@ -404,6 +404,7 @@ impl ProfileCardVariable {
 }
 
 #[cfg(feature = "app-profilecardvariable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVariable;
     pub use super::IProfileCardVariableMethods;

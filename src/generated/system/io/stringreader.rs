@@ -516,6 +516,7 @@ impl StringReader {
 }
 
 #[cfg(feature = "system-io-stringreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringReader;
     pub use super::IStringReaderMethods;

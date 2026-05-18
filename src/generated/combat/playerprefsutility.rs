@@ -80,6 +80,7 @@ impl PlayerPrefsUtility {
 }
 
 #[cfg(feature = "combat-playerprefsutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerPrefsUtility;
     pub use super::PlayerPrefsUtility;

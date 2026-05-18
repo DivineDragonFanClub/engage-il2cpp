@@ -181,6 +181,7 @@ impl ProcDescMCall {
 }
 
 #[cfg(feature = "app-procdescmcall")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMCall;
     pub use super::IProcDescMCallMethods;

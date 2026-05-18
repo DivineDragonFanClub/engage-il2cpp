@@ -405,6 +405,7 @@ impl ValueCountController {
 }
 
 #[cfg(feature = "app-valuecountcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IValueCountController;
     pub use super::IValueCountControllerMethods;

@@ -419,6 +419,7 @@ impl CapabilityFloat {
 }
 
 #[cfg(feature = "app-capabilityfloat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilityFloat;
     pub use super::ICapabilityFloat;

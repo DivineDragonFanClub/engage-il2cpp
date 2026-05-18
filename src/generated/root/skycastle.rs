@@ -592,6 +592,7 @@ impl SkyCastle {
 }
 
 #[cfg(feature = "root-skycastle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkyCastle;
     pub use super::ISkyCastleMethods;

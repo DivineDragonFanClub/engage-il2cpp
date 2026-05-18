@@ -242,6 +242,7 @@ impl GUIWordWrapSizer {
 }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIWordWrapSizer;
     pub use super::IGUIWordWrapSizer;

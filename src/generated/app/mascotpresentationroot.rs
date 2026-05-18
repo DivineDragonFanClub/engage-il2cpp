@@ -520,6 +520,7 @@ impl MascotPresentationRoot {
 }
 
 #[cfg(feature = "app-mascotpresentationroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotPresentationRoot;
     pub use super::IMascotPresentationRootMethods;

@@ -338,6 +338,7 @@ impl SupportAnimeTypeMenuItem {
 }
 
 #[cfg(feature = "root-supportanimetypemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportAnimeTypeMenuItem;
     pub use super::ISupportAnimeTypeMenuItemMethods;

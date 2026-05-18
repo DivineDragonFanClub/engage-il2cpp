@@ -296,6 +296,7 @@ impl ItemShopBuyEmptyMenuItem {
 }
 
 #[cfg(feature = "app-itemshopbuyemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemShopBuyEmptyMenuItem;
     pub use super::IItemShopBuyEmptyMenuItemMethods;

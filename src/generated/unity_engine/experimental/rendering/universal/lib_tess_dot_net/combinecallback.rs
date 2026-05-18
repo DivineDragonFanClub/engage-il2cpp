@@ -203,6 +203,7 @@ impl CombineCallback {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombineCallback;
     pub use super::ICombineCallback;

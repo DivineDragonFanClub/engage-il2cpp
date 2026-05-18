@@ -353,6 +353,7 @@ pub trait IIMemberDescriptor_InterfaceMethods: IIMemberDescriptor_Interface {
 impl<__T: IIMemberDescriptor_Interface> IIMemberDescriptor_InterfaceMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMemberDescriptor_Interface;
     pub use super::IIMemberDescriptor_InterfaceMethods;

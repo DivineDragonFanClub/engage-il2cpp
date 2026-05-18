@@ -105,6 +105,7 @@ impl DocumentationInfo {
 }
 
 #[cfg(feature = "unity_engine-rendering-documentationinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DocumentationInfo;
     pub use super::IDocumentationInfo;

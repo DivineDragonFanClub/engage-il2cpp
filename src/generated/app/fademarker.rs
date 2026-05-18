@@ -162,6 +162,7 @@ impl FadeMarker {
 }
 
 #[cfg(feature = "app-fademarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FadeMarker;
     pub use super::IFadeMarker;

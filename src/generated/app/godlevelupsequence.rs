@@ -379,6 +379,7 @@ impl GodLevelUpSequence {
 }
 
 #[cfg(feature = "app-godlevelupsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodLevelUpSequence;
     pub use super::IGodLevelUpSequence;

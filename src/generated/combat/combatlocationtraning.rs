@@ -405,6 +405,7 @@ impl CombatLocationTraning {
 }
 
 #[cfg(feature = "combat-combatlocationtraning")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationTraning;
     pub use super::ICombatLocationTraning;

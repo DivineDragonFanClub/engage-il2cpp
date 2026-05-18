@@ -3060,6 +3060,7 @@ impl Canvas {
 }
 
 #[cfg(feature = "unity_engine-canvas")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Canvas;
     pub use super::Canvas_WillRenderCanvases;

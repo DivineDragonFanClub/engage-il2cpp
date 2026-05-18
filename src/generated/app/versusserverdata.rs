@@ -500,6 +500,7 @@ impl VersusServerData {
 }
 
 #[cfg(feature = "app-versusserverdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerData;
     pub use super::IVersusServerDataMethods;

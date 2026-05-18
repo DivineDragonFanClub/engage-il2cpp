@@ -22,17 +22,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))]
-    #[::unity2::class(namespace = "", name = "AkWindowsSettings.PlatformAdvancedSettings")]
-    #[parent(crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings)]
-    pub struct AkWindowsSettings_PlatformAdvancedSettings {
-        #[rename(name = "m_AudioAPI")]
-        pub m_audio_api:
-            crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI,
-        #[rename(name = "m_GlobalFocus")]
-        pub m_global_focus: bool,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings.md"))]
     #[::unity2::class(namespace = "", name = "AkWindowsSettings")]
     #[parent(
@@ -46,6 +35,17 @@ mod __types {
             crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings,
         #[rename(name = "CommsSettings")]
         pub comms_settings: crate::root::akcommoncommsettings::AkCommonCommSettings,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings.md"))]
+    #[::unity2::class(namespace = "", name = "AkWindowsSettings.PlatformAdvancedSettings")]
+    #[parent(crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings)]
+    pub struct AkWindowsSettings_PlatformAdvancedSettings {
+        #[rename(name = "m_AudioAPI")]
+        pub m_audio_api:
+            crate::root::akwindowssettings::AkWindowsSettings_PlatformAdvancedSettings_AudioAPI,
+        #[rename(name = "m_GlobalFocus")]
+        pub m_global_focus: bool,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akwindowssettings/AkWindowsSettings_PlatformAdvancedSettings_AudioAPI.md"))]
@@ -107,163 +107,6 @@ mod __types {
 
 #[cfg(feature = "root-akwindowssettings-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-akwindowssettings")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akplatforminitsettings :: AkPlatformInitSettings as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: AkWindowsSettings_PlatformAdvancedSettings,
-        settings: crate::root::akplatforminitsettings::AkPlatformInitSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkWindowsSettings_PlatformAdvancedSettings,
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_to::get_offset() as isize),
-        );
-        inner(this, settings, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: AkWindowsSettings_PlatformAdvancedSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkWindowsSettings_PlatformAdvancedSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-akwindowssettings")]
-pub trait IAkWindowsSettings_PlatformAdvancedSettingsMethods:
-    IAkWindowsSettings_PlatformAdvancedSettings
-{
-    #[doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]
-    fn copy_to(
-        self,
-        settings: impl ::core::convert::Into<
-            crate::root::akplatforminitsettings::AkPlatformInitSettings,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw::copy_to(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-akwindowssettings")]
-impl<__T: IAkWindowsSettings_PlatformAdvancedSettings>
-    IAkWindowsSettings_PlatformAdvancedSettingsMethods for __T
-{
-}
-
-#[cfg(feature = "root-akwindowssettings")]
-impl AkWindowsSettings_PlatformAdvancedSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkWindowsSettings_PlatformAdvancedSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAkWindowsSettings_PlatformAdvancedSettingsMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "root-akwindowssettings")]
 #[doc(hidden)]
@@ -524,6 +367,164 @@ impl AkWindowsSettings {
 }
 
 #[cfg(feature = "root-akwindowssettings")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: akplatforminitsettings :: AkPlatformInitSettings as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::class(),
+                "CopyTo",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::NAME,
+                    "CopyTo",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn copy_to(
+        this: AkWindowsSettings_PlatformAdvancedSettings,
+        settings: crate::root::akplatforminitsettings::AkPlatformInitSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkWindowsSettings_PlatformAdvancedSettings,
+            crate::root::akplatforminitsettings::AkPlatformInitSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_copy_to::get_offset() as isize),
+        );
+        inner(this, settings, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AkWindowsSettings_PlatformAdvancedSettings as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: AkWindowsSettings_PlatformAdvancedSettings,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            AkWindowsSettings_PlatformAdvancedSettings,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-akwindowssettings")]
+pub trait IAkWindowsSettings_PlatformAdvancedSettingsMethods:
+    IAkWindowsSettings_PlatformAdvancedSettings
+{
+    #[doc = "`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]
+    fn copy_to(
+        self,
+        settings: impl ::core::convert::Into<
+            crate::root::akplatforminitsettings::AkPlatformInitSettings,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw::copy_to(
+                __receiver,
+                ::core::convert::Into::into(settings),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < AkWindowsSettings_PlatformAdvancedSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __AkWindowsSettings_PlatformAdvancedSettings_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-akwindowssettings")]
+impl<__T: IAkWindowsSettings_PlatformAdvancedSettings>
+    IAkWindowsSettings_PlatformAdvancedSettingsMethods for __T
+{
+}
+
+#[cfg(feature = "root-akwindowssettings")]
+impl AkWindowsSettings_PlatformAdvancedSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AkWindowsSettings_PlatformAdvancedSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkWindowsSettings_PlatformAdvancedSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "root-akwindowssettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkWindowsSettings;
     pub use super::AkWindowsSettings_PlatformAdvancedSettings;

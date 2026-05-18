@@ -180,6 +180,7 @@ pub trait IIInstanceProvider_InterfaceMethods: IIInstanceProvider_Interface {
 impl<__T: IIInstanceProvider_Interface> IIInstanceProvider_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIInstanceProvider_Interface;
     pub use super::IIInstanceProvider_InterfaceMethods;

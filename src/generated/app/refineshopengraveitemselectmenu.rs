@@ -493,6 +493,7 @@ impl RefineShopEngraveItemSelectMenu {
 }
 
 #[cfg(feature = "app-refineshopengraveitemselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveItemSelectMenu;
     pub use super::IRefineShopEngraveItemSelectMenuMethods;

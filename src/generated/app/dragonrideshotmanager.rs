@@ -554,6 +554,7 @@ impl DragonRideShotManager {
 }
 
 #[cfg(feature = "app-dragonrideshotmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideShotManager;
     pub use super::IDragonRideShotManager;

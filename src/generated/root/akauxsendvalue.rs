@@ -894,6 +894,7 @@ impl AkAuxSendValue {
 }
 
 #[cfg(feature = "root-akauxsendvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAuxSendValue;
     pub use super::IAkAuxSendValue;

@@ -402,6 +402,7 @@ impl AssetLabelReference {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetLabelReference;
     pub use super::IAssetLabelReference;

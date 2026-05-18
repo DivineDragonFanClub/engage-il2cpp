@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-ilgenerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILGenerator;
     pub use super::ILGenerator;

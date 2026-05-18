@@ -388,6 +388,7 @@ impl HubResource {
 }
 
 #[cfg(feature = "app-hubresource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubResource;
     pub use super::IHubResource;

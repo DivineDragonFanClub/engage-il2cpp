@@ -225,6 +225,7 @@ impl LensDistortion {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-lensdistortion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILensDistortion;
     pub use super::ILensDistortionMethods;

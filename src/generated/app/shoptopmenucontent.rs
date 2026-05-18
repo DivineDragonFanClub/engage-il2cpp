@@ -583,6 +583,7 @@ impl ShopTopMenuContent {
 }
 
 #[cfg(feature = "app-shoptopmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopTopMenuContent;
     pub use super::IShopTopMenuContentMethods;

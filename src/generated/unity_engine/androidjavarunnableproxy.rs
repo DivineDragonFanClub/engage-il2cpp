@@ -119,6 +119,7 @@ impl AndroidJavaRunnableProxy {
 }
 
 #[cfg(feature = "unity_engine-androidjavarunnableproxy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaRunnableProxy;
     pub use super::IAndroidJavaRunnableProxy;

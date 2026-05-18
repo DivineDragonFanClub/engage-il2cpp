@@ -2175,6 +2175,7 @@ impl HubNationData {
 }
 
 #[cfg(feature = "app-hubnationdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubNationData;
     pub use super::IHubNationData;

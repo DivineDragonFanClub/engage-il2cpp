@@ -43,6 +43,7 @@ impl<T0: ::unity2::ClassIdentity> GenericPool_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-genericpool_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GenericPool_1;
     pub use super::IGenericPool_1;

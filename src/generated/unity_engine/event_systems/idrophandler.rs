@@ -96,6 +96,7 @@ pub trait IIDropHandlerMethods: IIDropHandler {
 impl<__T: IIDropHandler> IIDropHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-idrophandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDropHandler;
     pub use super::IIDropHandler;

@@ -66,6 +66,7 @@ impl<T0: ::unity2::ClassIdentity> RawClassList_1<T0> {
 }
 
 #[cfg(feature = "app-rawclasslist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawClassList_1;
     pub use super::IRawClassList_1Methods;

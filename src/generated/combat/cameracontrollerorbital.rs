@@ -241,6 +241,7 @@ impl CameraControllerOrbital {
 }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerOrbital;
     pub use super::ICameraControllerOrbital;

@@ -46,6 +46,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-low_level-playerloopsysteminternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayerLoopSystemInternal;
     pub use crate::system::object::IObject;

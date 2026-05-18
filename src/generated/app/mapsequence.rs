@@ -12,24 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequence/MapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mapsequence :: MapSequence >)]
-    pub struct MapSequence {
-        #[rename(name = "m_IsCompleted")]
-        pub m_is_completed: bool,
-        #[rename(name = "m_IsSortieCancel")]
-        pub m_is_sortie_cancel: bool,
-        #[rename(name = "m_IsCallangeFailer")]
-        pub m_is_callange_failer: bool,
-        #[rename(name = "m_PreloadHandles")]
-        pub m_preload_handles: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
-        #[rename(name = "m_Time")]
-        pub m_time: f64,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequence/MapSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -188,6 +170,24 @@ mod __types {
         pub fn patch() -> Self {
             Self { value: 30 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequence/MapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: mapsequence :: MapSequence >)]
+    pub struct MapSequence {
+        #[rename(name = "m_IsCompleted")]
+        pub m_is_completed: bool,
+        #[rename(name = "m_IsSortieCancel")]
+        pub m_is_sortie_cancel: bool,
+        #[rename(name = "m_IsCallangeFailer")]
+        pub m_is_callange_failer: bool,
+        #[rename(name = "m_PreloadHandles")]
+        pub m_preload_handles: crate::system::collections::generic::list_1::List_1<
+            crate::app::resourcehandle_2::ResourceHandle_2,
+        >,
+        #[rename(name = "m_Time")]
+        pub m_time: f64,
     }
 }
 
@@ -6886,6 +6886,7 @@ impl MapSequence {
 }
 
 #[cfg(feature = "app-mapsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequence;
     pub use super::IMapSequenceMethods;

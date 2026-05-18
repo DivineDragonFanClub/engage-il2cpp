@@ -90,6 +90,7 @@ impl HashCodeHelper {
 }
 
 #[cfg(feature = "unity_engine-xr-hashcodehelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashCodeHelper;
     pub use super::IHashCodeHelper;

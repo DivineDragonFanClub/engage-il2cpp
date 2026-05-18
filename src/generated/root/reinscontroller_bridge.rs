@@ -106,6 +106,7 @@ impl ReinsController_Bridge {
 }
 
 #[cfg(feature = "root-reinscontroller_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReinsController_Bridge;
     pub use super::IReinsController_BridgeMethods;

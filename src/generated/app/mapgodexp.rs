@@ -35,35 +35,6 @@ mod __types {
         pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc>,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct MapGodExp_KindDesc {
-        pub param_name: ::unity2::Il2CppString,
-        pub is_multi: bool,
-    }
-
-    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapGodExp.KindDesc";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapGodExp_KindDesc {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -125,6 +96,35 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 6 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapgodexp/MapGodExp_KindDesc.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MapGodExp_KindDesc {
+        pub param_name: ::unity2::Il2CppString,
+        pub is_multi: bool,
+    }
+
+    impl ::unity2::ClassIdentity for MapGodExp_KindDesc {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MapGodExp.KindDesc";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapGodExp_KindDesc {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
         }
     }
 }
@@ -1063,6 +1063,7 @@ impl MapGodExp_KindDesc {
 }
 
 #[cfg(feature = "app-mapgodexp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapGodExp;
     pub use super::IMapGodExpMethods;

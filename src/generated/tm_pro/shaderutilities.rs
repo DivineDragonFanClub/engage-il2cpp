@@ -748,6 +748,7 @@ impl ShaderUtilities {
 }
 
 #[cfg(feature = "tm_pro-shaderutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderUtilities;
     pub use super::ShaderUtilities;

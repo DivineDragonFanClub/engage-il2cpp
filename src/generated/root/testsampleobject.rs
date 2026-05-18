@@ -106,6 +106,7 @@ impl TestSampleObject {
 }
 
 #[cfg(feature = "root-testsampleobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITestSampleObject;
     pub use super::ITestSampleObjectMethods;

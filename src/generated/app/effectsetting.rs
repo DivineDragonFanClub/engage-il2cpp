@@ -326,6 +326,7 @@ impl EffectSetting {
 }
 
 #[cfg(feature = "app-effectsetting")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectSetting;
     pub use super::IEffectSetting;

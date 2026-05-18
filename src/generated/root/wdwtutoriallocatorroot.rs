@@ -835,6 +835,7 @@ impl WdwTutorialLocatorRoot {
 }
 
 #[cfg(feature = "root-wdwtutoriallocatorroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWdwTutorialLocatorRoot;
     pub use super::IWdwTutorialLocatorRootMethods;

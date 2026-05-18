@@ -105,6 +105,7 @@ impl CombatTestSettings {
 }
 
 #[cfg(feature = "combat-combattestsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatTestSettings;
     pub use super::ICombatTestSettings;

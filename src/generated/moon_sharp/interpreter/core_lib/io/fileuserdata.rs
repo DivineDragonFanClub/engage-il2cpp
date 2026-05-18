@@ -24,6 +24,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileUserData;
     pub use super::IFileUserData;

@@ -235,6 +235,7 @@ impl AnimationPlayableGraphExtensions {
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayableGraphExtensions;
     pub use super::IAnimationPlayableGraphExtensions;

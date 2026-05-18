@@ -217,6 +217,7 @@ impl SceneRenderPipeline {
 }
 
 #[cfg(feature = "root-scenerenderpipeline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISceneRenderPipeline;
     pub use super::ISceneRenderPipelineMethods;

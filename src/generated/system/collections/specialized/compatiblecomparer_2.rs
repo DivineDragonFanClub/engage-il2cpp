@@ -476,6 +476,7 @@ impl CompatibleComparer_2 {
 }
 
 #[cfg(feature = "system-collections-specialized-compatiblecomparer_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompatibleComparer_2;
     pub use super::ICompatibleComparer_2;

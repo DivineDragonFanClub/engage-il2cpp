@@ -201,6 +201,7 @@ impl GCBinder {
 }
 
 #[cfg(feature = "app-gcbinder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GCBinder;
     pub use super::IGCBinder;

@@ -100,6 +100,7 @@ pub trait IIStructuralComparableMethods: IIStructuralComparable {
 impl<__T: IIStructuralComparable> IIStructuralComparableMethods for __T {}
 
 #[cfg(feature = "system-collections-istructuralcomparable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIStructuralComparable;
     pub use super::IIStructuralComparableMethods;

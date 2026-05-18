@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-video-videotimesource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VideoTimeSource;
     pub use crate::system::object::IObject;

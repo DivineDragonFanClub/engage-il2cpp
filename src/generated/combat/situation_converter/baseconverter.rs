@@ -415,6 +415,7 @@ impl BaseConverter {
 }
 
 #[cfg(feature = "combat-situation_converter-baseconverter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseConverter;
     pub use super::IBaseConverter;

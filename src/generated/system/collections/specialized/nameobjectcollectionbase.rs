@@ -7,6 +7,22 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]
+    #[::unity2::class(
+        namespace = "System.Collections.Specialized",
+        name = "NameObjectCollectionBase"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct NameObjectCollectionBase {
+# [rename (name = "_readOnly")] pub read_only : bool ,
+# [rename (name = "_entriesArray")] pub entries_array : crate :: system :: collections :: arraylist :: ArrayList ,
+# [rename (name = "_keyComparer")] pub key_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer ,
+# [rename (name = "_entriesTable")] pub entries_table : crate :: system :: collections :: hashtable :: Hashtable ,
+# [rename (name = "_nullKeyEntry")] pub null_key_entry : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase_NameObjectEntry ,
+# [rename (name = "_version")] pub version : i32 ,
+# [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
+}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]
     #[::unity2::class(
         namespace = "System.Collections.Specialized",
@@ -31,338 +47,10 @@ mod __types {
 # [rename (name = "_coll")] pub coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase ,
 # [rename (name = "_version")] pub version : i32 ,
 }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Specialized",
-        name = "NameObjectCollectionBase"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct NameObjectCollectionBase {
-# [rename (name = "_readOnly")] pub read_only : bool ,
-# [rename (name = "_entriesArray")] pub entries_array : crate :: system :: collections :: arraylist :: ArrayList ,
-# [rename (name = "_keyComparer")] pub key_comparer : crate :: system :: collections :: iequalitycomparer :: IEqualityComparer ,
-# [rename (name = "_entriesTable")] pub entries_table : crate :: system :: collections :: hashtable :: Hashtable ,
-# [rename (name = "_nullKeyEntry")] pub null_key_entry : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase_NameObjectEntry ,
-# [rename (name = "_version")] pub version : i32 ,
-# [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-}
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NameObjectCollectionBase_NameObjectEntry_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NameObjectCollectionBase_NameObjectEntry as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameObjectCollectionBase_NameObjectEntry as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NameObjectCollectionBase_NameObjectEntry,
-        name: ::unity2::Il2CppString,
-        value: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NameObjectCollectionBase_NameObjectEntry,
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, name, value, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-pub trait INameObjectCollectionBase_NameObjectEntryMethods:
-    INameObjectCollectionBase_NameObjectEntry
-{
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    fn ctor(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
-        unsafe {
-            let __receiver = < NameObjectCollectionBase_NameObjectEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NameObjectCollectionBase_NameObjectEntry_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl<__T: INameObjectCollectionBase_NameObjectEntry>
-    INameObjectCollectionBase_NameObjectEntryMethods for __T
-{
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectEntry {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, value: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NameObjectCollectionBase_NameObjectEntry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INameObjectCollectionBase_NameObjectEntryMethods>::ctor(this, name, value);
-        this
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
-        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
-        inner(this, coll, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_next(
-        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            NameObjectCollectionBase_NameObjectKeysEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_next::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(
-        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NameObjectCollectionBase_NameObjectKeysEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current(
-        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            NameObjectCollectionBase_NameObjectKeysEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods:
-    INameObjectCollectionBase_NameObjectKeysEnumerator
-{
-    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]
-    fn ctor(
-        self,
-        coll : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase >,
-    ) -> () {
-        unsafe {
-            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(coll),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveNext()` overload"]
-    fn move_next(self) -> bool {
-        unsafe {
-            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::move_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::reset(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Current()` overload"]
-    fn get_current(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl<__T: INameObjectCollectionBase_NameObjectKeysEnumerator>
-    INameObjectCollectionBase_NameObjectKeysEnumeratorMethods for __T
-{
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectKeysEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]
-    pub fn new(
-        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods>::ctor(this, coll);
-        this
-    }
-}
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 #[doc(hidden)]
@@ -1677,6 +1365,319 @@ impl NameObjectCollectionBase {
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NameObjectCollectionBase_NameObjectEntry_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <NameObjectCollectionBase_NameObjectEntry as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <NameObjectCollectionBase_NameObjectEntry as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NameObjectCollectionBase_NameObjectEntry,
+        name: ::unity2::Il2CppString,
+        value: crate::system::object::Object,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NameObjectCollectionBase_NameObjectEntry,
+            ::unity2::Il2CppString,
+            crate::system::object::Object,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, name, value, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+pub trait INameObjectCollectionBase_NameObjectEntryMethods:
+    INameObjectCollectionBase_NameObjectEntry
+{
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]
+    fn ctor(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = < NameObjectCollectionBase_NameObjectEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NameObjectCollectionBase_NameObjectEntry_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl<__T: INameObjectCollectionBase_NameObjectEntry>
+    INameObjectCollectionBase_NameObjectEntryMethods for __T
+{
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl NameObjectCollectionBase_NameObjectEntry {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString, value: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NameObjectCollectionBase_NameObjectEntry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INameObjectCollectionBase_NameObjectEntryMethods>::ctor(this, name, value);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
+        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner : extern "C" fn (NameObjectCollectionBase_NameObjectKeysEnumerator , crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        inner(this, coll, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "MoveNext" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "MoveNext" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn move_next(
+        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            NameObjectCollectionBase_NameObjectKeysEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_move_next::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "Reset" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "Reset" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            NameObjectCollectionBase_NameObjectKeysEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: class () , "get_Current" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: ClassIdentity > :: NAME , "get_Current" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_current(
+        this: NameObjectCollectionBase_NameObjectKeysEnumerator,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::object::Object {
+        let inner: extern "C" fn(
+            NameObjectCollectionBase_NameObjectKeysEnumerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_current::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods:
+    INameObjectCollectionBase_NameObjectKeysEnumerator
+{
+    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]
+    fn ctor(
+        self,
+        coll : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase >,
+    ) -> () {
+        unsafe {
+            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(coll),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`MoveNext()` overload"]
+    fn move_next(self) -> bool {
+        unsafe {
+            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::move_next(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::reset(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Current()` overload"]
+    fn get_current(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = < NameObjectCollectionBase_NameObjectKeysEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::get_current(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl<__T: INameObjectCollectionBase_NameObjectKeysEnumerator>
+    INameObjectCollectionBase_NameObjectKeysEnumeratorMethods for __T
+{
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl NameObjectCollectionBase_NameObjectKeysEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]
+    pub fn new(
+        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods>::ctor(this, coll);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INameObjectCollectionBase;
     pub use super::INameObjectCollectionBaseMethods;

@@ -102,6 +102,7 @@ impl VisualEffectObject {
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffectobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisualEffectObject;
     pub use super::IVisualEffectObjectMethods;

@@ -526,6 +526,7 @@ impl InvokableCall {
 }
 
 #[cfg(feature = "unity_engine-events-invokablecall")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvokableCall;
     pub use super::IInvokableCallMethods;

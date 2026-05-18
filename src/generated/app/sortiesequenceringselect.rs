@@ -745,6 +745,7 @@ impl SortieSequenceRingSelect {
 }
 
 #[cfg(feature = "app-sortiesequenceringselect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceRingSelect;
     pub use super::ISortieSequenceRingSelectMethods;

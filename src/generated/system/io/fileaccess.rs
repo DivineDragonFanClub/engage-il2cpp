@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-fileaccess")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileAccess;
     pub use crate::system::object::IObject;

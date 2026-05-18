@@ -321,6 +321,7 @@ impl TalkPageScroll {
 }
 
 #[cfg(feature = "app-talk3_d-talkpagescroll")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkPageScroll;
     pub use super::ITalkPageScrollMethods;

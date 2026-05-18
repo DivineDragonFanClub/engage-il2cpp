@@ -280,6 +280,7 @@ impl MapCursorColor {
 }
 
 #[cfg(feature = "root-mapcursorcolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapCursorColor;
     pub use super::IMapCursorColorMethods;

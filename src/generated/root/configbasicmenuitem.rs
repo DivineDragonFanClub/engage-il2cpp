@@ -892,6 +892,7 @@ impl ConfigBasicMenuItem {
 }
 
 #[cfg(feature = "root-configbasicmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigBasicMenuItem;
     pub use super::ConfigBasicMenuItem_ConfigMethodKind;

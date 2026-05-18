@@ -1399,6 +1399,7 @@ impl StructHeader {
 }
 
 #[cfg(feature = "app-structheader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructHeader;
     pub use super::IStructHeaderMethods;

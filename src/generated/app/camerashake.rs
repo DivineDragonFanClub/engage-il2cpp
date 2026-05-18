@@ -214,6 +214,7 @@ impl CameraShake {
 }
 
 #[cfg(feature = "app-camerashake")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraShake;
     pub use super::ICameraShake;

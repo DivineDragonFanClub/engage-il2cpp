@@ -102,6 +102,7 @@ impl EnumFlagsAttribute {
 }
 
 #[cfg(feature = "root-enumflagsattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EnumFlagsAttribute;
     pub use super::IEnumFlagsAttribute;

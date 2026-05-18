@@ -13,58 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_DisplayPosSize {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.DisplayPosSize";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_DisplayPosSize {
-        pub fn small() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn large() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn menu() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn none() -> Self {
-            Self { value: 3 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
     #[repr(C)]
     #[derive(
@@ -137,152 +85,16 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_IconIndex {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.IconIndex";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_IconIndex {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_IconIndex {
-        pub fn normal_unit() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn boss_unit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn tbox() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn door() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn torch() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn torch_off() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn visit() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn escape() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn destroy() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn breakdown_enemy() -> Self {
-            Self { value: 9 }
-        }
-
-        pub fn cannon() -> Self {
-            Self { value: 10 }
-        }
-
-        pub fn crystal() -> Self {
-            Self { value: 11 }
-        }
-
-        pub fn dragon_stone() -> Self {
-            Self { value: 12 }
-        }
-
-        pub fn ring() -> Self {
-            Self { value: 13 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 14 }
-        }
-
-        pub fn invalid() -> Self {
-            Self { value: 15 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MiniMapController_FadeMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MiniMapController_FadeMode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MiniMapController.FadeMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MiniMapController_FadeMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MiniMapController_FadeMode {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fade_in() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn fade_out() -> Self {
-            Self { value: 2 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
+    #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "image")]
+        pub image: T0,
+        #[rename(name = "gameObject")]
+        pub game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "transform")]
+        pub transform: crate::unity_engine::recttransform::RectTransform,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
@@ -415,21 +227,233 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
-    #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "image")]
-        pub image: T0,
-        #[rename(name = "gameObject")]
-        pub game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "transform")]
-        pub transform: crate::unity_engine::recttransform::RectTransform,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_DisplayPosSize {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.DisplayPosSize";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_DisplayPosSize {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_DisplayPosSize {
+        pub fn small() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn large() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn menu() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn none() -> Self {
+            Self { value: 3 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_FadeMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_FadeMode {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.FadeMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_FadeMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_FadeMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fade_in() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn fade_out() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct MiniMapController_IconIndex {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "MiniMapController.IconIndex";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MiniMapController_IconIndex {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl MiniMapController_IconIndex {
+        pub fn normal_unit() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn boss_unit() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn tbox() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn door() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn torch() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn torch_off() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn visit() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn escape() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn destroy() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn breakdown_enemy() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn cannon() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn crystal() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn dragon_stone() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn ring() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn invalid() -> Self {
+            Self { value: 15 }
+        }
     }
 }
 
 #[cfg(feature = "app-minimapcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-minimapcontroller")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
+    #[doc = "`.ctor(T0)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, image: T0) -> ();
+}
+
+#[cfg(feature = "app-minimapcontroller")]
+impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
+    #[doc = "`.ctor(T0)` — overload selector"]
+    pub fn new(image: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapController_TImage_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapController_TImage_1Methods<T0>>::ctor(this, image);
+        this
+    }
+}
 
 #[cfg(feature = "app-minimapcontroller")]
 #[doc(hidden)]
@@ -1763,30 +1787,7 @@ impl MiniMapController {
 }
 
 #[cfg(feature = "app-minimapcontroller")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
-    #[doc = "`.ctor(T0)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, image: T0) -> ();
-}
-
-#[cfg(feature = "app-minimapcontroller")]
-impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
-    #[doc = "`.ctor(T0)` — overload selector"]
-    pub fn new(image: T0) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MiniMapController_TImage_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMiniMapController_TImage_1Methods<T0>>::ctor(this, image);
-        this
-    }
-}
-
-#[cfg(feature = "app-minimapcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapController;
     pub use super::IMiniMapControllerMethods;

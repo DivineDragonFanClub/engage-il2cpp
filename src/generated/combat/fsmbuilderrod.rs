@@ -204,6 +204,7 @@ impl FSMBuilderRod {
 }
 
 #[cfg(feature = "combat-fsmbuilderrod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderRod;
     pub use super::IFSMBuilderRod;

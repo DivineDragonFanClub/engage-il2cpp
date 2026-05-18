@@ -5836,6 +5836,7 @@ impl CharacterJoint {
 }
 
 #[cfg(feature = "combat-characterjoint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterJoint;
     pub use super::ICharacterJoint;

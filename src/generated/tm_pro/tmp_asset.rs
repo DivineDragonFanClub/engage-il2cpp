@@ -163,6 +163,7 @@ impl TMP_Asset {
 }
 
 #[cfg(feature = "tm_pro-tmp_asset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Asset;
     pub use super::ITMP_AssetMethods;

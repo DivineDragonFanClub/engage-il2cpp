@@ -581,6 +581,7 @@ impl Render2DLightingPass {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-render2dlightingpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRender2DLightingPass;
     pub use super::IRender2DLightingPassMethods;

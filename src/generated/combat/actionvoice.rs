@@ -232,6 +232,7 @@ impl ActionVoice {
 }
 
 #[cfg(feature = "combat-actionvoice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionVoice;
     pub use super::IActionVoice;

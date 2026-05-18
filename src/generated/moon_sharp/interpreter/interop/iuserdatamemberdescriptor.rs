@@ -474,6 +474,7 @@ pub trait IIUserDataMemberDescriptorMethods: IIUserDataMemberDescriptor {
 impl<__T: IIUserDataMemberDescriptor> IIUserDataMemberDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatamemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIUserDataMemberDescriptor;
     pub use super::IIUserDataMemberDescriptorMethods;

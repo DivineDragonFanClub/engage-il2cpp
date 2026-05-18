@@ -462,6 +462,7 @@ impl Ray {
 }
 
 #[cfg(feature = "unity_engine-ray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Ray;
     pub use crate::system::object::IObject;

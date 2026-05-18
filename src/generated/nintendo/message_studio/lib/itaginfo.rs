@@ -134,6 +134,7 @@ pub trait IITagInfoMethods: IITagInfo {
 impl<__T: IITagInfo> IITagInfoMethods for __T {}
 
 #[cfg(feature = "nintendo-message_studio-lib-itaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITagInfo;
     pub use super::IITagInfoMethods;

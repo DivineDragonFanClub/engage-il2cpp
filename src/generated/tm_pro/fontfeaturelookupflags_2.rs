@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-fontfeaturelookupflags_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontFeatureLookupFlags_2;
     pub use crate::system::object::IObject;

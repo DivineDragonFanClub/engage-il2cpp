@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-unityeventcallstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UnityEventCallState;
     pub use crate::system::object::IObject;

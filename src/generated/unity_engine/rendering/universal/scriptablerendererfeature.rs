@@ -594,6 +594,7 @@ impl ScriptableRendererFeature {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableRendererFeature;
     pub use super::IScriptableRendererFeatureMethods;

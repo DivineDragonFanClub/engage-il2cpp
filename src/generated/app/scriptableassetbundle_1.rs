@@ -43,6 +43,7 @@ impl<T0: ::unity2::ClassIdentity> ScriptableAssetBundle_1<T0> {
 }
 
 #[cfg(feature = "app-scriptableassetbundle_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableAssetBundle_1;
     pub use super::IScriptableAssetBundle_1Methods;

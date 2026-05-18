@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-cursorlockmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CursorLockMode;
     pub use crate::system::object::IObject;

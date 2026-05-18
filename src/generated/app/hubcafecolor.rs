@@ -271,6 +271,7 @@ impl HubCafeColor {
 }
 
 #[cfg(feature = "app-hubcafecolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCafeColor;
     pub use super::IHubCafeColor;

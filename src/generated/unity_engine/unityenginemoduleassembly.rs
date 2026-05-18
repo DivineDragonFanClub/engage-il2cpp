@@ -100,6 +100,7 @@ impl UnityEngineModuleAssembly {
 }
 
 #[cfg(feature = "unity_engine-unityenginemoduleassembly")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEngineModuleAssembly;
     pub use super::IUnityEngineModuleAssemblyMethods;

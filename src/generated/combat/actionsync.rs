@@ -286,6 +286,7 @@ impl ActionSync {
 }
 
 #[cfg(feature = "combat-actionsync")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionSync;
     pub use super::IActionSync;

@@ -624,6 +624,7 @@ impl GmapSpotController {
 }
 
 #[cfg(feature = "app-gmapspotcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapSpotController;
     pub use super::GmapSpotController_Type;

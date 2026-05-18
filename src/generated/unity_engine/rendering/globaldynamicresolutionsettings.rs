@@ -101,6 +101,7 @@ impl GlobalDynamicResolutionSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlobalDynamicResolutionSettings;
     pub use crate::system::object::IObject;

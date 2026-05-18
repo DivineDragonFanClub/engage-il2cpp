@@ -134,6 +134,7 @@ impl<T0: ::unity2::ClassIdentity> VolumeParameter_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeParameter_1;
     pub use super::IVolumeParameter_1Methods;

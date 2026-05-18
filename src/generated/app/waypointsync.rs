@@ -533,6 +533,7 @@ impl WaypointSync_Relative {
 }
 
 #[cfg(feature = "app-waypointsync")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaypointSync;
     pub use super::IWaypointSyncMethods;

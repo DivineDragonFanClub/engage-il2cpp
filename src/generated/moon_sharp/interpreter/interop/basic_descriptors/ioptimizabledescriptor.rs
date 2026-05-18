@@ -88,6 +88,7 @@ pub trait IIOptimizableDescriptorMethods: IIOptimizableDescriptor {
 impl<__T: IIOptimizableDescriptor> IIOptimizableDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIOptimizableDescriptor;
     pub use super::IIOptimizableDescriptorMethods;

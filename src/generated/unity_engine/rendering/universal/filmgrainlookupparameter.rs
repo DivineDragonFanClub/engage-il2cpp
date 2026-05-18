@@ -129,6 +129,7 @@ impl FilmGrainLookupParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-filmgrainlookupparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FilmGrainLookupParameter;
     pub use super::IFilmGrainLookupParameter;

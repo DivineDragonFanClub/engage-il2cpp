@@ -163,6 +163,7 @@ impl WwiseTriggerReference {
 }
 
 #[cfg(feature = "root-wwisetriggerreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseTriggerReference;
     pub use super::IWwiseTriggerReferenceMethods;

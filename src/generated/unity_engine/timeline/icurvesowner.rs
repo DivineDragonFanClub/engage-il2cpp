@@ -254,6 +254,7 @@ pub trait IICurvesOwnerMethods: IICurvesOwner {
 impl<__T: IICurvesOwner> IICurvesOwnerMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICurvesOwner;
     pub use super::IICurvesOwner;

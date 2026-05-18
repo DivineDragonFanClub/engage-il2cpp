@@ -156,6 +156,7 @@ impl DisposManager {
 }
 
 #[cfg(feature = "app-disposmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisposManager;
     pub use super::IDisposManager;

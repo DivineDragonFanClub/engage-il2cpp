@@ -1587,6 +1587,7 @@ impl StringCollection {
 }
 
 #[cfg(feature = "system-collections-specialized-stringcollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringCollection;
     pub use super::IStringCollectionMethods;

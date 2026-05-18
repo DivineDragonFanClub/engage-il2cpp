@@ -553,6 +553,7 @@ impl CinemachineMixer_MasterDirectorDelegate {
 }
 
 #[cfg(feature = "root-cinemachinemixer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineMixer;
     pub use super::CinemachineMixer_MasterDirectorDelegate;

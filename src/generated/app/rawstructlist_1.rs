@@ -86,6 +86,7 @@ impl<T0: ::unity2::ClassIdentity> RawStructList_1<T0> {
 }
 
 #[cfg(feature = "app-rawstructlist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawStructList_1;
     pub use super::IRawStructList_1Methods;

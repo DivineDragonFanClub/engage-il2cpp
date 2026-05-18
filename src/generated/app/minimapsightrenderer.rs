@@ -896,6 +896,7 @@ impl MiniMapSightRenderer {
 }
 
 #[cfg(feature = "app-minimapsightrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapSightRenderer;
     pub use super::IMiniMapSightRendererMethods;

@@ -1910,6 +1910,7 @@ impl JobIntroData {
 }
 
 #[cfg(feature = "app-jobintrodata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJobIntroData;
     pub use super::IJobIntroDataMethods;

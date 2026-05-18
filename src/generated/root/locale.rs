@@ -152,6 +152,7 @@ impl Locale {
 }
 
 #[cfg(feature = "root-locale")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILocale;
     pub use super::Locale;

@@ -155,6 +155,7 @@ impl PropertyNameUtils {
 }
 
 #[cfg(feature = "unity_engine-propertynameutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyNameUtils;
     pub use super::PropertyNameUtils;

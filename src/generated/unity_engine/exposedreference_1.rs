@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity> ExposedReference_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-exposedreference_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExposedReference_1;
     pub use crate::system::object::IObject;

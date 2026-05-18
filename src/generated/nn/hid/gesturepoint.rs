@@ -408,6 +408,7 @@ impl GesturePoint {
 }
 
 #[cfg(feature = "nn-hid-gesturepoint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GesturePoint;
     pub use crate::system::object::IObject;

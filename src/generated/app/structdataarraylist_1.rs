@@ -61,6 +61,7 @@ impl<T0: ::unity2::ClassIdentity> StructDataArrayList_1<T0> {
 }
 
 #[cfg(feature = "app-structdataarraylist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructDataArrayList_1;
     pub use super::IStructDataArrayList_1Methods;

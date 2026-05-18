@@ -959,6 +959,7 @@ impl MascotAccChangeMenu {
 }
 
 #[cfg(feature = "app-mascotaccchangemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotAccChangeMenu;
     pub use super::IMascotAccChangeMenuMethods;

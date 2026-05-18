@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<
 }
 
 #[cfg(feature = "unity_engine-rendering-dictionarypool_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DictionaryPool_2;
     pub use super::IDictionaryPool_2;

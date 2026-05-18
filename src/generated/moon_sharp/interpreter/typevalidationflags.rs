@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-typevalidationflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TypeValidationFlags;
     pub use crate::system::object::IObject;

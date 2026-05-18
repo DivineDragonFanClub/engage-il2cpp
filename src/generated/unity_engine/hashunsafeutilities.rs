@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-hashunsafeutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashUnsafeUtilities;
     pub use super::IHashUnsafeUtilities;

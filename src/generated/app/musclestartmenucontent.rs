@@ -526,6 +526,7 @@ impl MuscleStartMenuContent {
 }
 
 #[cfg(feature = "app-musclestartmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleStartMenuContent;
     pub use super::IMuscleStartMenuContentMethods;

@@ -338,6 +338,7 @@ impl IsMinimapRotateMenuItem {
 }
 
 #[cfg(feature = "root-isminimaprotatemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIsMinimapRotateMenuItem;
     pub use super::IIsMinimapRotateMenuItemMethods;

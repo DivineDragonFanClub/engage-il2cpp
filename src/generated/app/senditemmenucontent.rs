@@ -281,6 +281,7 @@ impl SendItemMenuContent {
 }
 
 #[cfg(feature = "app-senditemmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISendItemMenuContent;
     pub use super::ISendItemMenuContentMethods;

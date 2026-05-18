@@ -1668,6 +1668,7 @@ impl RendererLighting {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-rendererlighting")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRendererLighting;
     pub use super::RendererLighting;

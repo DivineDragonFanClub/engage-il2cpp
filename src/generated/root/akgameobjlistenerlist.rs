@@ -371,6 +371,7 @@ impl AkGameObjListenerList {
 }
 
 #[cfg(feature = "root-akgameobjlistenerlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkGameObjListenerList;
     pub use super::IAkGameObjListenerList;

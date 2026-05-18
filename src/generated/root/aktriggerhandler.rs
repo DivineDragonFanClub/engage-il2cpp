@@ -660,6 +660,7 @@ impl AkTriggerHandler {
 }
 
 #[cfg(feature = "root-aktriggerhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerHandler;
     pub use super::IAkTriggerHandler;

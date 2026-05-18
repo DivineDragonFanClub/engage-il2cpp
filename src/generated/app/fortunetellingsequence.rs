@@ -10,11 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingsequence/FortuneTellingSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "FortuneTellingSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct FortuneTellingSequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingsequence/FortuneTellingSequence_Label2.md"))]
     #[repr(C)]
     #[derive(
@@ -66,6 +61,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingsequence/FortuneTellingSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "FortuneTellingSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct FortuneTellingSequence {}
 }
 
 #[cfg(feature = "app-fortunetellingsequence-types")]
@@ -813,6 +813,7 @@ impl FortuneTellingSequence {
 }
 
 #[cfg(feature = "app-fortunetellingsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FortuneTellingSequence;
     pub use super::FortuneTellingSequence_Label2;

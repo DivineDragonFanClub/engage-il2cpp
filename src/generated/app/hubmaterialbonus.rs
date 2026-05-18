@@ -386,6 +386,7 @@ impl HubMaterialBonus {
 }
 
 #[cfg(feature = "app-hubmaterialbonus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMaterialBonus;
     pub use super::IHubMaterialBonus;

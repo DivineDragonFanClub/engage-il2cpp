@@ -42,6 +42,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_fontweightpair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_FontWeightPair;
     pub use crate::system::object::IObject;

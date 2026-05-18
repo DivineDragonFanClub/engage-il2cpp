@@ -266,6 +266,7 @@ impl AbstractEventData {
 }
 
 #[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AbstractEventData;
     pub use super::IAbstractEventData;

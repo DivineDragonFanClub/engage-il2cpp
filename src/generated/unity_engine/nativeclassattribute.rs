@@ -325,6 +325,7 @@ impl NativeClassAttribute {
 }
 
 #[cfg(feature = "unity_engine-nativeclassattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeClassAttribute;
     pub use super::INativeClassAttributeMethods;

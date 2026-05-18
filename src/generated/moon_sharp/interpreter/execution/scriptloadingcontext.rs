@@ -829,6 +829,7 @@ impl ScriptLoadingContext {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptLoadingContext;
     pub use super::IScriptLoadingContextMethods;

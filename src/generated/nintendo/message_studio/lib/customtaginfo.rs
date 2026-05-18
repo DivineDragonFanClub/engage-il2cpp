@@ -469,6 +469,7 @@ impl CustomTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomTagInfo;
     pub use super::ICustomTagInfo;

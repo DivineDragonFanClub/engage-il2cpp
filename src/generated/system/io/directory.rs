@@ -1356,6 +1356,7 @@ impl Directory {
 }
 
 #[cfg(feature = "system-io-directory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Directory;
     pub use super::Directory_SearchData;

@@ -523,6 +523,7 @@ impl CharacterIllusion {
 }
 
 #[cfg(feature = "combat-characterillusion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIllusion;
     pub use super::ICharacterIllusion;

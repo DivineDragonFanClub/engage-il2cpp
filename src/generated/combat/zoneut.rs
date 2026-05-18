@@ -195,6 +195,7 @@ impl ZoneUt {
 }
 
 #[cfg(feature = "combat-zoneut")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IZoneUt;
     pub use super::ZoneUt;

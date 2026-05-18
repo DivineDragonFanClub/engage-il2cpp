@@ -120,6 +120,7 @@ impl AkSpatialAudioEmitter {
 }
 
 #[cfg(feature = "root-akspatialaudioemitter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSpatialAudioEmitter;
     pub use super::IAkSpatialAudioEmitter;

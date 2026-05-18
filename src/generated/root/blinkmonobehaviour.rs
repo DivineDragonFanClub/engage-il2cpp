@@ -341,6 +341,7 @@ impl BlinkMonoBehaviour {
 }
 
 #[cfg(feature = "root-blinkmonobehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BlinkMonoBehaviour;
     pub use super::IBlinkMonoBehaviour;

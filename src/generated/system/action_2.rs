@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> Action_2<T0, T1> 
 }
 
 #[cfg(feature = "system-action_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Action_2;
     pub use super::IAction_2;

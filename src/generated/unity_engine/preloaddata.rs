@@ -89,6 +89,7 @@ pub trait IPreloadDataMethods: IPreloadData {
 impl<__T: IPreloadData> IPreloadDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-preloaddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPreloadData;
     pub use super::IPreloadDataMethods;

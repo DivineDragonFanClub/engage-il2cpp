@@ -1103,6 +1103,7 @@ impl ShadowUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowUtils;
     pub use super::ShadowUtils;

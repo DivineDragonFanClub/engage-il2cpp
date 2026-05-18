@@ -236,6 +236,7 @@ impl UnitSelectSortieMenuContent {
 }
 
 #[cfg(feature = "app-unitselectsortiemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectSortieMenuContent;
     pub use super::IUnitSelectSortieMenuContentMethods;

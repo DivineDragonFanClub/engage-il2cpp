@@ -458,6 +458,7 @@ pub trait IUnexceptionalStreamReaderMethods: IUnexceptionalStreamReader {
 impl<__T: IUnexceptionalStreamReader> IUnexceptionalStreamReaderMethods for __T {}
 
 #[cfg(feature = "system-io-unexceptionalstreamreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnexceptionalStreamReader;
     pub use super::IUnexceptionalStreamReaderMethods;

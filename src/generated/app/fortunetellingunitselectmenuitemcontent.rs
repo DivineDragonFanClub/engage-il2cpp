@@ -352,6 +352,7 @@ impl FortuneTellingUnitSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FortuneTellingUnitSelectMenuItemContent;
     pub use super::IFortuneTellingUnitSelectMenuItemContent;

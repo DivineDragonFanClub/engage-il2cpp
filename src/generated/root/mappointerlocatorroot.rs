@@ -575,6 +575,7 @@ impl MapPointerLocatorRoot {
 }
 
 #[cfg(feature = "root-mappointerlocatorroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPointerLocatorRoot;
     pub use super::IMapPointerLocatorRootMethods;

@@ -563,6 +563,7 @@ impl BinaryEncoding {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-binaryencoding")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinaryEncoding;
     pub use super::IBinaryEncoding;

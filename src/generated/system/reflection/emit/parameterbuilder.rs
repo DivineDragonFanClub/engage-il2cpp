@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-parameterbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParameterBuilder;
     pub use super::ParameterBuilder;

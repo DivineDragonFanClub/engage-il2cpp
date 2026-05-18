@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-avatarmaskbodypart")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AvatarMaskBodyPart;
     pub use crate::system::object::IObject;

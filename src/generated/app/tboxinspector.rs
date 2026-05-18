@@ -267,6 +267,7 @@ impl TboxInspector {
 }
 
 #[cfg(feature = "app-tboxinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITboxInspector;
     pub use super::ITboxInspectorMethods;

@@ -410,6 +410,7 @@ impl CommonRingFaceFrame {
 }
 
 #[cfg(feature = "app-commonringfaceframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRingFaceFrame;
     pub use super::ICommonRingFaceFrame;

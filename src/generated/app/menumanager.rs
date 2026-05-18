@@ -487,6 +487,7 @@ impl MenuManager {
 }
 
 #[cfg(feature = "app-menumanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMenuManager;
     pub use super::IMenuManagerMethods;

@@ -109,6 +109,7 @@ impl VibrationValueArrayInfo {
 }
 
 #[cfg(feature = "nn-hid-vibrationvaluearrayinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VibrationValueArrayInfo;
     pub use crate::system::object::IObject;

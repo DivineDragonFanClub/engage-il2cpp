@@ -595,6 +595,7 @@ impl GraphicRegistry {
 }
 
 #[cfg(feature = "unity_engine-ui-graphicregistry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicRegistry;
     pub use super::IGraphicRegistry;

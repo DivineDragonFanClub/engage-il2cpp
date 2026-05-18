@@ -318,6 +318,7 @@ impl MagicSubAnim {
 }
 
 #[cfg(feature = "combat-magicsubanim")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSubAnim;
     pub use super::IMagicSubAnimMethods;

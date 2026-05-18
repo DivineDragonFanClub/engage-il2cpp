@@ -544,6 +544,7 @@ impl __SkillStackEx {
 }
 
 #[cfg(feature = "combat-__skillstackex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::__SkillStackEx;
     pub use super::I__SkillStackEx;

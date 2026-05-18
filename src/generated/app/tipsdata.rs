@@ -1434,6 +1434,7 @@ impl TipsData {
 }
 
 #[cfg(feature = "app-tipsdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITipsData;
     pub use super::ITipsDataMethods;

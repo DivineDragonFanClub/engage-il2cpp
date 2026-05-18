@@ -322,6 +322,7 @@ impl ActionDive {
 }
 
 #[cfg(feature = "combat-actiondive")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionDive;
     pub use super::IActionDive;

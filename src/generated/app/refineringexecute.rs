@@ -295,6 +295,7 @@ impl RefineRingExecute {
 }
 
 #[cfg(feature = "app-refineringexecute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineRingExecute;
     pub use super::IRefineRingExecuteMethods;

@@ -105,6 +105,7 @@ impl ReferenceEqualityComparer {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-referenceequalitycomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReferenceEqualityComparer;
     pub use super::IReferenceEqualityComparerMethods;

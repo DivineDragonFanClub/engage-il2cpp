@@ -338,6 +338,7 @@ impl MapUnitOperationMenuItem {
 }
 
 #[cfg(feature = "root-mapunitoperationmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUnitOperationMenuItem;
     pub use super::IMapUnitOperationMenuItemMethods;

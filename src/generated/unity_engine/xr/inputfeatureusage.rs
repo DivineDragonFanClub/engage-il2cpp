@@ -329,6 +329,7 @@ impl InputFeatureUsage {
 }
 
 #[cfg(feature = "unity_engine-xr-inputfeatureusage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::InputFeatureUsage;
     pub use crate::system::object::IObject;

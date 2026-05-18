@@ -468,6 +468,7 @@ impl CombatLocationShoot {
 }
 
 #[cfg(feature = "combat-combatlocationshoot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationShoot;
     pub use super::ICombatLocationShoot;

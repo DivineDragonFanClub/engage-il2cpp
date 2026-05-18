@@ -3598,6 +3598,7 @@ impl ProfileCardFlags {
 }
 
 #[cfg(feature = "app-profilecardflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFlags;
     pub use super::IProfileCardFlagsMethods;

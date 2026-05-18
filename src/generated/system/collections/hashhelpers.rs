@@ -233,6 +233,7 @@ impl HashHelpers {
 }
 
 #[cfg(feature = "system-collections-hashhelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashHelpers;
     pub use super::IHashHelpers;

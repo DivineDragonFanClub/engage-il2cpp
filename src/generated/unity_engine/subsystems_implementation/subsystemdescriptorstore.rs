@@ -374,6 +374,7 @@ impl SubsystemDescriptorStore {
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorstore")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemDescriptorStore;
     pub use super::SubsystemDescriptorStore;

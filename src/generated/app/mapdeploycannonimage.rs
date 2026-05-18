@@ -103,6 +103,7 @@ impl MapDeployCannonImage {
 }
 
 #[cfg(feature = "app-mapdeploycannonimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployCannonImage;
     pub use super::IMapDeployCannonImageMethods;

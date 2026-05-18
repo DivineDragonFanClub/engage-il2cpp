@@ -727,6 +727,7 @@ impl VersusServerCasualMetaData {
 }
 
 #[cfg(feature = "app-versusservercasualmetadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerCasualMetaData;
     pub use super::IVersusServerCasualMetaDataMethods;

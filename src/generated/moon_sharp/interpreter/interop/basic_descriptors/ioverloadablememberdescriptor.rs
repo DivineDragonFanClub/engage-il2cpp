@@ -406,6 +406,7 @@ pub trait IIOverloadableMemberDescriptorMethods: IIOverloadableMemberDescriptor 
 impl<__T: IIOverloadableMemberDescriptor> IIOverloadableMemberDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioverloadablememberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIOverloadableMemberDescriptor;
     pub use super::IIOverloadableMemberDescriptorMethods;

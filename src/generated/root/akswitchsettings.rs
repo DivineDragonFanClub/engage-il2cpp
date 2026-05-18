@@ -113,6 +113,7 @@ impl AkSwitchSettings {
 }
 
 #[cfg(feature = "root-akswitchsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSwitchSettings;
     pub use super::IAkSwitchSettings;

@@ -555,6 +555,7 @@ impl InteractData {
 }
 
 #[cfg(feature = "app-interactdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInteractData;
     pub use super::IInteractDataMethods;

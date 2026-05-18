@@ -11,13 +11,10 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "PhotographEditDisposMenu.UpdateUIObjHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_ReturnHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu.ReturnHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographEditDisposMenu_UpdateUIObjHandler {}
+    pub struct PhotographEditDisposMenu_ReturnHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu")]
@@ -42,10 +39,13 @@ mod __types {
             crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_ReturnHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu.ReturnHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "PhotographEditDisposMenu.UpdateUIObjHandler"
+    )]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct PhotographEditDisposMenu_ReturnHandler {}
+    pub struct PhotographEditDisposMenu_UpdateUIObjHandler {}
 }
 
 #[cfg(feature = "app-photographeditdisposmenu-types")]
@@ -54,7 +54,7 @@ pub use __types::*;
 #[cfg(feature = "app-photographeditdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
+mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -68,7 +68,7 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::class(),
+                <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -80,7 +80,7 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
+                    <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -93,13 +93,13 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PhotographEditDisposMenu_UpdateUIObjHandler,
+        this: PhotographEditDisposMenu_ReturnHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            PhotographEditDisposMenu_UpdateUIObjHandler,
+            PhotographEditDisposMenu_ReturnHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -117,16 +117,11 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographsequence :: PhotographSequence_Label as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::class(),
+                <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                4,
+                1,
                 param_types,
                 false,
             )
@@ -136,7 +131,7 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
+                    <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -149,39 +144,26 @@ mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: PhotographEditDisposMenu_UpdateUIObjHandler,
-        is_arrow_active: bool,
-        is_mascot: bool,
-        pause_no: i32,
-        pause_count: i32,
+        this: PhotographEditDisposMenu_ReturnHandler,
+        label: crate::app::photographsequence::PhotographSequence_Label,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            PhotographEditDisposMenu_UpdateUIObjHandler,
-            bool,
-            bool,
-            i32,
-            i32,
+            PhotographEditDisposMenu_ReturnHandler,
+            crate::app::photographsequence::PhotographSequence_Label,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(
-            this,
-            is_arrow_active,
-            is_mascot,
-            pause_no,
-            pause_count,
-            __unity2_method_info,
-        )
+        inner(this, label, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:
-    IPhotographEditDisposMenu_UpdateUIObjHandler
+pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:
+    IPhotographEditDisposMenu_ReturnHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -190,8 +172,8 @@ pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographEditDisposMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw::ctor(
+            let __receiver = < PhotographEditDisposMenu_ReturnHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographEditDisposMenu_ReturnHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -199,22 +181,16 @@ pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(bool, bool, i32, i32)` overload"]
+    #[doc = "`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]
     fn invoke(
         self,
-        is_arrow_active: impl ::core::convert::Into<bool>,
-        is_mascot: impl ::core::convert::Into<bool>,
-        pause_no: impl ::core::convert::Into<i32>,
-        pause_count: impl ::core::convert::Into<i32>,
+        label: impl ::core::convert::Into<crate::app::photographsequence::PhotographSequence_Label>,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographEditDisposMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw::invoke(
+            let __receiver = < PhotographEditDisposMenu_ReturnHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographEditDisposMenu_ReturnHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(is_arrow_active),
-                ::core::convert::Into::into(is_mascot),
-                ::core::convert::Into::into(pause_no),
-                ::core::convert::Into::into(pause_count),
+                ::core::convert::Into::into(label),
                 ::core::option::Option::None,
             )
         }
@@ -222,23 +198,23 @@ pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-impl<__T: IPhotographEditDisposMenu_UpdateUIObjHandler>
-    IPhotographEditDisposMenu_UpdateUIObjHandlerMethods for __T
+impl<__T: IPhotographEditDisposMenu_ReturnHandler> IPhotographEditDisposMenu_ReturnHandlerMethods
+    for __T
 {
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-impl PhotographEditDisposMenu_UpdateUIObjHandler {
+impl PhotographEditDisposMenu_ReturnHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler),
+                ::core::stringify!(PhotographEditDisposMenu_ReturnHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
+        <Self as IPhotographEditDisposMenu_ReturnHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1368,7 +1344,7 @@ impl PhotographEditDisposMenu {
 #[cfg(feature = "app-photographeditdisposmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
+mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1382,7 +1358,7 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::class(),
+                <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 2,
                 param_types,
@@ -1394,7 +1370,7 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::NAME,
+                    <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1407,13 +1383,13 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: PhotographEditDisposMenu_ReturnHandler,
+        this: PhotographEditDisposMenu_UpdateUIObjHandler,
         object: crate::system::object::Object,
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            PhotographEditDisposMenu_ReturnHandler,
+            PhotographEditDisposMenu_UpdateUIObjHandler,
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
@@ -1431,11 +1407,16 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: photographsequence :: PhotographSequence_Label as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::class(),
+                <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
-                1,
+                4,
                 param_types,
                 false,
             )
@@ -1445,7 +1426,7 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <PhotographEditDisposMenu_ReturnHandler as ::unity2::ClassIdentity>::NAME,
+                    <PhotographEditDisposMenu_UpdateUIObjHandler as ::unity2::ClassIdentity>::NAME,
                     "Invoke",
                     e
                 ),
@@ -1458,26 +1439,39 @@ mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw {
         }
     }
     pub unsafe fn invoke(
-        this: PhotographEditDisposMenu_ReturnHandler,
-        label: crate::app::photographsequence::PhotographSequence_Label,
+        this: PhotographEditDisposMenu_UpdateUIObjHandler,
+        is_arrow_active: bool,
+        is_mascot: bool,
+        pause_no: i32,
+        pause_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            PhotographEditDisposMenu_ReturnHandler,
-            crate::app::photographsequence::PhotographSequence_Label,
+            PhotographEditDisposMenu_UpdateUIObjHandler,
+            bool,
+            bool,
+            i32,
+            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, label, __unity2_method_info)
+        inner(
+            this,
+            is_arrow_active,
+            is_mascot,
+            pause_no,
+            pause_count,
+            __unity2_method_info,
+        )
     }
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:
-    IPhotographEditDisposMenu_ReturnHandler
+pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:
+    IPhotographEditDisposMenu_UpdateUIObjHandler
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
@@ -1486,8 +1480,8 @@ pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:
         method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographEditDisposMenu_ReturnHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographEditDisposMenu_ReturnHandler_unity2_raw::ctor(
+            let __receiver = < PhotographEditDisposMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
                 ::core::convert::Into::into(method),
@@ -1495,16 +1489,22 @@ pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:
             )
         }
     }
-    #[doc = "`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]
+    #[doc = "`Invoke(bool, bool, i32, i32)` overload"]
     fn invoke(
         self,
-        label: impl ::core::convert::Into<crate::app::photographsequence::PhotographSequence_Label>,
+        is_arrow_active: impl ::core::convert::Into<bool>,
+        is_mascot: impl ::core::convert::Into<bool>,
+        pause_no: impl ::core::convert::Into<i32>,
+        pause_count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = < PhotographEditDisposMenu_ReturnHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographEditDisposMenu_ReturnHandler_unity2_raw::invoke(
+            let __receiver = < PhotographEditDisposMenu_UpdateUIObjHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::convert::Into::into(label),
+                ::core::convert::Into::into(is_arrow_active),
+                ::core::convert::Into::into(is_mascot),
+                ::core::convert::Into::into(pause_no),
+                ::core::convert::Into::into(pause_count),
                 ::core::option::Option::None,
             )
         }
@@ -1512,28 +1512,29 @@ pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-impl<__T: IPhotographEditDisposMenu_ReturnHandler> IPhotographEditDisposMenu_ReturnHandlerMethods
-    for __T
+impl<__T: IPhotographEditDisposMenu_UpdateUIObjHandler>
+    IPhotographEditDisposMenu_UpdateUIObjHandlerMethods for __T
 {
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
-impl PhotographEditDisposMenu_ReturnHandler {
+impl PhotographEditDisposMenu_UpdateUIObjHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographEditDisposMenu_ReturnHandler),
+                ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographEditDisposMenu_ReturnHandlerMethods>::ctor(this, object, method);
+        <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
         this
     }
 }
 
 #[cfg(feature = "app-photographeditdisposmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographEditDisposMenu;
     pub use super::IPhotographEditDisposMenuMethods;

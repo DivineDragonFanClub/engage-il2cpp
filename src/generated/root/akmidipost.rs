@@ -717,6 +717,7 @@ impl AkMIDIPost {
 }
 
 #[cfg(feature = "root-akmidipost")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMIDIPost;
     pub use super::IAkMIDIPost;

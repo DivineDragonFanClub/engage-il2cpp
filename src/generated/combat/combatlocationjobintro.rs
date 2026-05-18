@@ -405,6 +405,7 @@ impl CombatLocationJobIntro {
 }
 
 #[cfg(feature = "combat-combatlocationjobintro")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationJobIntro;
     pub use super::ICombatLocationJobIntro;

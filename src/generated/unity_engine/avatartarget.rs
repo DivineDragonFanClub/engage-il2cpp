@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-avatartarget")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AvatarTarget;
     pub use crate::system::object::IObject;

@@ -731,6 +731,7 @@ impl BoxCollider {
 }
 
 #[cfg(feature = "unity_engine-boxcollider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoxCollider;
     pub use super::IBoxCollider;

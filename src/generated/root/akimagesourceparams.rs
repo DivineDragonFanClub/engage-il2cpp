@@ -1236,6 +1236,7 @@ impl AkImageSourceParams {
 }
 
 #[cfg(feature = "root-akimagesourceparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkImageSourceParams;
     pub use super::IAkImageSourceParams;

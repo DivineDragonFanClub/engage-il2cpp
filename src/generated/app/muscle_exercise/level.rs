@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-muscle_exercise-level")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Level;
     pub use crate::system::object::IObject;

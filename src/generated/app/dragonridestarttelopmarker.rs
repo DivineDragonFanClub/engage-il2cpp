@@ -165,6 +165,7 @@ impl DragonRideStartTelopMarker {
 }
 
 #[cfg(feature = "app-dragonridestarttelopmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideStartTelopMarker;
     pub use super::IDragonRideStartTelopMarker;

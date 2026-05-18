@@ -39,6 +39,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shadergenuint4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderGenUInt4;
     pub use crate::system::object::IObject;

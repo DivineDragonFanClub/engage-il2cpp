@@ -272,6 +272,7 @@ impl TanCommand {
 }
 
 #[cfg(feature = "app-tancommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITanCommand;
     pub use super::ITanCommandMethods;

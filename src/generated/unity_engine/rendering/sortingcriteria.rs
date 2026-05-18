@@ -90,6 +90,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-sortingcriteria")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SortingCriteria;
     pub use crate::system::object::IObject;

@@ -426,6 +426,7 @@ impl TransformAccess {
 }
 
 #[cfg(feature = "unity_engine-jobs-transformaccess")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TransformAccess;
     pub use crate::system::object::IObject;

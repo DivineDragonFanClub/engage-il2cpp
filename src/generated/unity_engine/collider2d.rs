@@ -349,6 +349,7 @@ pub trait ICollider2DMethods: ICollider2D {
 impl<__T: ICollider2D> ICollider2DMethods for __T {}
 
 #[cfg(feature = "unity_engine-collider2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Collider2D;
     pub use super::ICollider2D;

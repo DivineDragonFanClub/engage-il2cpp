@@ -577,6 +577,7 @@ impl DebugUIHandlerIndirectFloatField {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerIndirectFloatField;
     pub use super::IDebugUIHandlerIndirectFloatField;

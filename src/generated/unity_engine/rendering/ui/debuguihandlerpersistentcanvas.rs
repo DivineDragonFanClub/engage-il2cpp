@@ -245,6 +245,7 @@ impl DebugUIHandlerPersistentCanvas {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpersistentcanvas")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerPersistentCanvas;
     pub use super::IDebugUIHandlerPersistentCanvas;

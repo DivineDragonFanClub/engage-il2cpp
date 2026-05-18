@@ -463,6 +463,7 @@ impl HubEnv {
 }
 
 #[cfg(feature = "app-hubenv")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubEnv;
     pub use super::IHubEnv;

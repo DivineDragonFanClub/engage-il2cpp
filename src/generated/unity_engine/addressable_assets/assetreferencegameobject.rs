@@ -120,6 +120,7 @@ impl AssetReferenceGameObject {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceGameObject;
     pub use super::IAssetReferenceGameObject;

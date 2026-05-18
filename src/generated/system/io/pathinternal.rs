@@ -147,6 +147,7 @@ impl PathInternal {
 }
 
 #[cfg(feature = "system-io-pathinternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPathInternal;
     pub use super::PathInternal;

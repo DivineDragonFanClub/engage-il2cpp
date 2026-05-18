@@ -103,6 +103,7 @@ impl ImageEffectAllowedInSceneView {
 }
 
 #[cfg(feature = "unity_engine-imageeffectallowedinsceneview")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IImageEffectAllowedInSceneView;
     pub use super::IImageEffectAllowedInSceneViewMethods;

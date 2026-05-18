@@ -175,6 +175,7 @@ impl AndroidJavaRunnable {
 }
 
 #[cfg(feature = "unity_engine-androidjavarunnable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaRunnable;
     pub use super::IAndroidJavaRunnable;

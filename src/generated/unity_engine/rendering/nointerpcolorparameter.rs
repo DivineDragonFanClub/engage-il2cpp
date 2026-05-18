@@ -251,6 +251,7 @@ impl NoInterpColorParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpColorParameter;
     pub use super::INoInterpColorParameterMethods;

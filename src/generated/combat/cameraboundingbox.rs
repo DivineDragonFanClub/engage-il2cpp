@@ -460,6 +460,7 @@ impl CameraBoundingBox {
 }
 
 #[cfg(feature = "combat-cameraboundingbox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraBoundingBox;
     pub use super::ICameraBoundingBox;

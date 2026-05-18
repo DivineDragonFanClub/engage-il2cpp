@@ -43,6 +43,7 @@ impl<T0: ::unity2::ClassIdentity> IntegratedSubsystem_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntegratedSubsystem_1;
     pub use super::IIntegratedSubsystem_1Methods;

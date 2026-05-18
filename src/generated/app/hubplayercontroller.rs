@@ -3119,6 +3119,7 @@ impl HubPlayerController {
 }
 
 #[cfg(feature = "app-hubplayercontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubPlayerController;
     pub use super::IHubPlayerController;

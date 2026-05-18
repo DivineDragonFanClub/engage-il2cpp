@@ -12,20 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)]
-    pub struct RingData {
-        #[rename(name = "m_Group")]
-        pub m_group: ::unity2::Il2CppString,
-        #[rename(name = "m_FlagName")]
-        pub m_flag_name: ::unity2::Il2CppString,
-        #[rename(name = "m_JewelColor")]
-        pub m_jewel_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_RimColor")]
-        pub m_rim_color: crate::unity_engine::color::Color,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +62,20 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md"))]
+    #[::unity2::class(namespace = "App", name = "RingData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)]
+    pub struct RingData {
+        #[rename(name = "m_Group")]
+        pub m_group: ::unity2::Il2CppString,
+        #[rename(name = "m_FlagName")]
+        pub m_flag_name: ::unity2::Il2CppString,
+        #[rename(name = "m_JewelColor")]
+        pub m_jewel_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_RimColor")]
+        pub m_rim_color: crate::unity_engine::color::Color,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md"))]
@@ -3572,6 +3572,7 @@ impl RingData {
 }
 
 #[cfg(feature = "app-ringdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingData;
     pub use super::IRingDataMethods;

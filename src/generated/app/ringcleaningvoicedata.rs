@@ -1145,6 +1145,7 @@ impl RingCleaningVoiceData {
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningVoiceData;
     pub use super::IRingCleaningVoiceDataMethods;

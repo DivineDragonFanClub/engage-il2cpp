@@ -796,6 +796,7 @@ impl EndRollSequence {
 }
 
 #[cfg(feature = "app-endrollsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EndRollSequence;
     pub use super::IEndRollSequence;

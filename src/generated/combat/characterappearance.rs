@@ -3060,6 +3060,7 @@ impl CharacterAppearance {
 }
 
 #[cfg(feature = "combat-characterappearance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAppearance;
     pub use super::ICharacterAppearance;

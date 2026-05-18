@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lighttype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightType;
     pub use crate::system::object::IObject;

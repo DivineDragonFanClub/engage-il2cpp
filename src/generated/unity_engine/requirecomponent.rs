@@ -208,6 +208,7 @@ impl RequireComponent {
 }
 
 #[cfg(feature = "unity_engine-requirecomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRequireComponent;
     pub use super::IRequireComponentMethods;

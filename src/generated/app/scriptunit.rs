@@ -5536,6 +5536,7 @@ impl ScriptUnit {
 }
 
 #[cfg(feature = "app-scriptunit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptUnit;
     pub use super::IScriptUnitMethods;

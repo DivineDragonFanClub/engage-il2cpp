@@ -83,6 +83,7 @@ pub trait IIMaskableMethods: IIMaskable {
 impl<__T: IIMaskable> IIMaskableMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-imaskable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMaskable;
     pub use super::IIMaskableMethods;

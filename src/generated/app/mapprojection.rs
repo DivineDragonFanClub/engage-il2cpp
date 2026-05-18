@@ -1057,6 +1057,7 @@ impl MapProjection {
 }
 
 #[cfg(feature = "app-mapprojection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapProjection;
     pub use super::IMapProjectionMethods;

@@ -278,6 +278,7 @@ impl VersusServerRankedData {
 }
 
 #[cfg(feature = "app-versusserverrankeddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerRankedData;
     pub use super::IVersusServerRankedDataMethods;

@@ -400,6 +400,7 @@ impl ReinsController {
 }
 
 #[cfg(feature = "combat-reinscontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReinsController;
     pub use super::IReinsControllerMethods;

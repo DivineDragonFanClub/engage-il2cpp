@@ -187,6 +187,7 @@ impl ScaleFunc {
 }
 
 #[cfg(feature = "unity_engine-rendering-scalefunc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScaleFunc;
     pub use super::IScaleFuncMethods;

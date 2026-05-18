@@ -224,6 +224,7 @@ impl ScriptableRuntimeReflectionSystemSettings {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableRuntimeReflectionSystemSettings;
     pub use super::ScriptableRuntimeReflectionSystemSettings;

@@ -88,6 +88,7 @@ pub trait IIScriptPrivateResourceMethods: IIScriptPrivateResource {
 impl<__T: IIScriptPrivateResource> IIScriptPrivateResourceMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-iscriptprivateresource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIScriptPrivateResource;
     pub use super::IIScriptPrivateResourceMethods;

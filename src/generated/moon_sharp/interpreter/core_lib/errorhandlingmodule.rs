@@ -518,6 +518,7 @@ impl ErrorHandlingModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-errorhandlingmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ErrorHandlingModule;
     pub use super::IErrorHandlingModule;

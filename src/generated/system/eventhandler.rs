@@ -121,6 +121,7 @@ impl EventHandler {
 }
 
 #[cfg(feature = "system-eventhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventHandler;
     pub use super::IEventHandler;

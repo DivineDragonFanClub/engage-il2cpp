@@ -187,6 +187,7 @@ impl ScriptFunctionDelegate {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptFunctionDelegate;
     pub use super::IScriptFunctionDelegateMethods;

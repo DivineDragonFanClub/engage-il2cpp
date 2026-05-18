@@ -3962,6 +3962,7 @@ impl GUISkin_SkinChangedDelegate {
 }
 
 #[cfg(feature = "unity_engine-guiskin")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUISkin;
     pub use super::GUISkin_SkinChangedDelegate;

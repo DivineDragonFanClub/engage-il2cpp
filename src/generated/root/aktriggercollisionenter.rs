@@ -244,6 +244,7 @@ impl AkTriggerCollisionEnter {
 }
 
 #[cfg(feature = "root-aktriggercollisionenter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerCollisionEnter;
     pub use super::IAkTriggerCollisionEnter;

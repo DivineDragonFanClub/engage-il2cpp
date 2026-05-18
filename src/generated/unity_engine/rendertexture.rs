@@ -6681,6 +6681,7 @@ impl RenderTexture {
 }
 
 #[cfg(feature = "unity_engine-rendertexture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderTexture;
     pub use super::IRenderTextureMethods;

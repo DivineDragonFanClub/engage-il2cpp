@@ -261,6 +261,7 @@ impl EmptyScene {
 }
 
 #[cfg(feature = "app-emptyscene")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EmptyScene;
     pub use super::IEmptyScene;

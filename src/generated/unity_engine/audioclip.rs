@@ -512,6 +512,7 @@ pub trait IAudioClipMethods: IAudioClip {
 impl<__T: IAudioClip> IAudioClipMethods for __T {}
 
 #[cfg(feature = "unity_engine-audioclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioClip;
     pub use super::AudioClip_PCMReaderCallback;

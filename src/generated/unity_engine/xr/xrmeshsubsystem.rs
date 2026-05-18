@@ -189,6 +189,7 @@ impl XRMeshSubsystem {
 }
 
 #[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRMeshSubsystem;
     pub use super::IXRMeshSubsystemMethods;

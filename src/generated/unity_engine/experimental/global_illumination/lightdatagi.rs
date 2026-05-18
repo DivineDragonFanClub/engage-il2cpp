@@ -475,6 +475,7 @@ impl LightDataGI {
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightDataGI;
     pub use crate::system::object::IObject;

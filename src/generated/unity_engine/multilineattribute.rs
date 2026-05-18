@@ -105,6 +105,7 @@ impl MultilineAttribute {
 }
 
 #[cfg(feature = "unity_engine-multilineattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMultilineAttribute;
     pub use super::IMultilineAttributeMethods;

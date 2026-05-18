@@ -253,6 +253,7 @@ impl AndroidJavaClass {
 }
 
 #[cfg(feature = "unity_engine-androidjavaclass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaClass;
     pub use super::IAndroidJavaClass;

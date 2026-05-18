@@ -339,6 +339,7 @@ impl EatUnitsSelectMenuRelianceContent {
 }
 
 #[cfg(feature = "app-eatunitsselectmenureliancecontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EatUnitsSelectMenuRelianceContent;
     pub use super::IEatUnitsSelectMenuRelianceContent;

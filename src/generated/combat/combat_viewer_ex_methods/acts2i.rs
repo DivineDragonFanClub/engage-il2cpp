@@ -958,6 +958,7 @@ impl ActS2I {
 }
 
 #[cfg(feature = "combat-combat_viewer_ex_methods-acts2i")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActS2I;
     pub use super::IActS2I;

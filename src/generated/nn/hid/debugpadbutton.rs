@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-debugpadbutton")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPadButton;
     pub use crate::system::object::IObject;

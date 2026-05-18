@@ -272,6 +272,7 @@ impl MaxCommand {
 }
 
 #[cfg(feature = "app-maxcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaxCommand;
     pub use super::IMaxCommandMethods;

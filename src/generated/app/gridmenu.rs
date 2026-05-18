@@ -1250,6 +1250,7 @@ impl GridMenu {
 }
 
 #[cfg(feature = "app-gridmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridMenu;
     pub use super::IGridMenu;

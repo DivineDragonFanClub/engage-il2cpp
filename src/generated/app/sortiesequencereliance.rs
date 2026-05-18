@@ -439,6 +439,7 @@ impl SortieSequenceReliance {
 }
 
 #[cfg(feature = "app-sortiesequencereliance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceReliance;
     pub use super::ISortieSequenceRelianceMethods;

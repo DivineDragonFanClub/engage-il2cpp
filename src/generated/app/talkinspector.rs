@@ -202,6 +202,7 @@ impl TalkInspector {
 }
 
 #[cfg(feature = "app-talkinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkInspector;
     pub use super::ITalkInspectorMethods;

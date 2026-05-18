@@ -253,6 +253,7 @@ impl ClampedFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-clampedfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClampedFloatParameter;
     pub use super::IClampedFloatParameter;

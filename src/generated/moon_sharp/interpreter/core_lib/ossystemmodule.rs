@@ -564,6 +564,7 @@ impl OsSystemModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-ossystemmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IOsSystemModule;
     pub use super::IOsSystemModuleMethods;

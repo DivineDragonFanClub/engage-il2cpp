@@ -350,6 +350,7 @@ impl ProfileCardListData {
 }
 
 #[cfg(feature = "app-profilecardlistdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardListData;
     pub use super::IProfileCardListDataMethods;

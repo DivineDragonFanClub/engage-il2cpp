@@ -299,6 +299,7 @@ impl NpadFullKey {
 }
 
 #[cfg(feature = "nn-hid-npadfullkey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpadFullKey;
     pub use super::NpadFullKey;

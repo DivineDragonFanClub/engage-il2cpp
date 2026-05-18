@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity> RenderFunc_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-renderfunc_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderFunc_1;
     pub use super::IRenderFunc_1Methods;

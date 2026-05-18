@@ -338,6 +338,7 @@ impl BattleAnimeTypeMenuItem {
 }
 
 #[cfg(feature = "root-battleanimetypemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleAnimeTypeMenuItem;
     pub use super::IBattleAnimeTypeMenuItem;

@@ -923,6 +923,7 @@ impl CustomCharaOpaquePass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customcharaopaquepass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomCharaOpaquePass;
     pub use super::ICustomCharaOpaquePass;

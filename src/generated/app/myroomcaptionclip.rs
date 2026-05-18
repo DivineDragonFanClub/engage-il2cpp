@@ -232,6 +232,7 @@ impl MyRoomCaptionClip {
 }
 
 #[cfg(feature = "app-myroomcaptionclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomCaptionClip;
     pub use super::IMyRoomCaptionClipMethods;

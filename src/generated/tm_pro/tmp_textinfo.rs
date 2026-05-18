@@ -967,6 +967,7 @@ impl TMP_TextInfo {
 }
 
 #[cfg(feature = "tm_pro-tmp_textinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_TextInfo;
     pub use super::ITMP_TextInfoMethods;

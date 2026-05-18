@@ -178,6 +178,7 @@ impl PathTooLongException {
 }
 
 #[cfg(feature = "system-io-pathtoolongexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPathTooLongException;
     pub use super::IPathTooLongExceptionMethods;

@@ -1120,6 +1120,7 @@ impl BitArray256 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray256")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray256;
     pub use crate::system::object::IObject;

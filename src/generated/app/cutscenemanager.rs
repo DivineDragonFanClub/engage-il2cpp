@@ -105,6 +105,7 @@ impl CutSceneManager {
 }
 
 #[cfg(feature = "app-cutscenemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CutSceneManager;
     pub use super::ICutSceneManager;

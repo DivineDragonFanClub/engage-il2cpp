@@ -549,6 +549,7 @@ impl HubRandomSet {
 }
 
 #[cfg(feature = "app-hubrandomset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubRandomSet;
     pub use super::IHubRandomSet;

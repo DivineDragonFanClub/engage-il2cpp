@@ -329,6 +329,7 @@ impl SizeTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISizeTagInfo;
     pub use super::ISizeTagInfoMethods;

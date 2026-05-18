@@ -1123,6 +1123,7 @@ impl TouchScreenState10 {
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate10")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TouchScreenState10;
     pub use super::TouchScreenState10_TouchStateArray10;

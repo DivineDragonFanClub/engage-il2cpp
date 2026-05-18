@@ -276,6 +276,7 @@ impl ArenaUnitSelectStatus {
 }
 
 #[cfg(feature = "app-arenaunitselectstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaUnitSelectStatus;
     pub use super::IArenaUnitSelectStatus;

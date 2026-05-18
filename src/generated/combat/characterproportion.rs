@@ -563,6 +563,7 @@ impl CharacterProportion {
 }
 
 #[cfg(feature = "combat-characterproportion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterProportion;
     pub use super::ICharacterProportion;

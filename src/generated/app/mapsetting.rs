@@ -1200,6 +1200,7 @@ impl MapSetting {
 }
 
 #[cfg(feature = "app-mapsetting")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSetting;
     pub use super::IMapSettingMethods;

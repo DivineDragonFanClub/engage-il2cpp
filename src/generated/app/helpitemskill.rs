@@ -363,6 +363,7 @@ impl HelpItemSkill {
 }
 
 #[cfg(feature = "app-helpitemskill")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemSkill;
     pub use super::IHelpItemSkill;

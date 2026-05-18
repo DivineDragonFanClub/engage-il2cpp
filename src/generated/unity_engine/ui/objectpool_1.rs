@@ -79,6 +79,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-ui-objectpool_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectPool_1;
     pub use super::IObjectPool_1Methods;

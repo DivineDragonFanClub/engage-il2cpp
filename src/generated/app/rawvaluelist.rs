@@ -414,6 +414,7 @@ impl RawValueList {
 }
 
 #[cfg(feature = "app-rawvaluelist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawValueList;
     pub use super::IRawValueListMethods;

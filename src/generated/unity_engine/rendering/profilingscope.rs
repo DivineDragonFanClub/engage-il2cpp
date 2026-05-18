@@ -167,6 +167,7 @@ impl ProfilingScope {
 }
 
 #[cfg(feature = "unity_engine-rendering-profilingscope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ProfilingScope;
     pub use crate::system::object::IObject;

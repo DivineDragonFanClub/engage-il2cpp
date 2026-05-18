@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystemrenderspace")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleSystemRenderSpace;
     pub use crate::system::object::IObject;

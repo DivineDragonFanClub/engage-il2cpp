@@ -558,6 +558,7 @@ impl KillBonusData {
 }
 
 #[cfg(feature = "app-killbonusdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKillBonusData;
     pub use super::IKillBonusDataMethods;

@@ -231,6 +231,7 @@ impl DirUt {
 }
 
 #[cfg(feature = "combat-dirut")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DirUt;
     pub use super::IDirUt;

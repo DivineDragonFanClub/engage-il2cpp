@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::InstructionFieldUsage;
     pub use crate::system::object::IObject;

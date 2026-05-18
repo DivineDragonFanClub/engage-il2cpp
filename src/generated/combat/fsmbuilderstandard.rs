@@ -1018,6 +1018,7 @@ impl FSMBuilderStandard {
 }
 
 #[cfg(feature = "combat-fsmbuilderstandard")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderStandard;
     pub use super::IFSMBuilderStandard;

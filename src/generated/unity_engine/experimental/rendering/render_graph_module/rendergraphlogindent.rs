@@ -221,6 +221,7 @@ impl RenderGraphLogIndent {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderGraphLogIndent;
     pub use crate::system::object::IObject;

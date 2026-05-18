@@ -1196,6 +1196,7 @@ impl SortieSkillEditManager {
 }
 
 #[cfg(feature = "app-sortieskilleditmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSkillEditManager;
     pub use super::ISortieSkillEditManagerMethods;

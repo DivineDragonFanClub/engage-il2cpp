@@ -911,6 +911,7 @@ impl ConsoleManager {
 }
 
 #[cfg(feature = "app-consolemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConsoleManager;
     pub use super::IConsoleManager;

@@ -565,6 +565,7 @@ impl CombatInput {
 }
 
 #[cfg(feature = "combat-combatinput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatInput;
     pub use super::ICombatInput;

@@ -7,27 +7,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "RenderingUtils")]
-    #[parent(crate::system::object::Object)]
-    pub struct RenderingUtils {
-# [static_field] # [rename (name = "m_LegacyShaderPassNames")] pub m_legacy_shader_pass_names : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
-# [static_field] # [rename (name = "s_FullscreenMesh")] pub s_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [static_field] # [rename (name = "s_ErrorMaterial")] pub s_error_material : crate :: unity_engine :: material :: Material ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_V")] pub unity_stereo_matrix_v : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IV")] pub unity_stereo_matrix_iv : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_P")] pub unity_stereo_matrix_p : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IP")] pub unity_stereo_matrix_ip : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_VP")] pub unity_stereo_matrix_vp : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IVP")] pub unity_stereo_matrix_ivp : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_CAMERA_PROJECTION")] pub unity_stereo_camera_projection : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_CAMERA_INV_PROJECTION")] pub unity_stereo_camera_inv_projection : i32 ,
-# [static_field] # [rename (name = "UNITY_STEREO_VECTOR_CAMPOS")] pub unity_stereo_vector_campos : i32 ,
-# [static_field] # [rename (name = "stereoConstants")] pub stereo_constants : crate :: unity_engine :: rendering :: universal :: renderingutils :: RenderingUtils_StereoConstants ,
-# [static_field] # [rename (name = "m_RenderTextureFormatSupport")] pub m_render_texture_format_support : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat , bool > ,
-# [static_field] # [rename (name = "m_GraphicsFormatSupport")] pub m_graphics_format_support : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: rendering :: formatusage :: FormatUsage , bool > > ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils_StereoConstants.md"))]
     #[::unity2::class(
         namespace = "UnityEngine.Rendering.Universal",
@@ -48,10 +27,119 @@ mod __types {
         #[rename(name = "worldSpaceCameraPos")]
         pub world_space_camera_pos: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "RenderingUtils")]
+    #[parent(crate::system::object::Object)]
+    pub struct RenderingUtils {
+# [static_field] # [rename (name = "m_LegacyShaderPassNames")] pub m_legacy_shader_pass_names : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
+# [static_field] # [rename (name = "s_FullscreenMesh")] pub s_fullscreen_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [static_field] # [rename (name = "s_ErrorMaterial")] pub s_error_material : crate :: unity_engine :: material :: Material ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_V")] pub unity_stereo_matrix_v : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IV")] pub unity_stereo_matrix_iv : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_P")] pub unity_stereo_matrix_p : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IP")] pub unity_stereo_matrix_ip : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_VP")] pub unity_stereo_matrix_vp : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_MATRIX_IVP")] pub unity_stereo_matrix_ivp : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_CAMERA_PROJECTION")] pub unity_stereo_camera_projection : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_CAMERA_INV_PROJECTION")] pub unity_stereo_camera_inv_projection : i32 ,
+# [static_field] # [rename (name = "UNITY_STEREO_VECTOR_CAMPOS")] pub unity_stereo_vector_campos : i32 ,
+# [static_field] # [rename (name = "stereoConstants")] pub stereo_constants : crate :: unity_engine :: rendering :: universal :: renderingutils :: RenderingUtils_StereoConstants ,
+# [static_field] # [rename (name = "m_RenderTextureFormatSupport")] pub m_render_texture_format_support : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: rendertextureformat :: RenderTextureFormat , bool > ,
+# [static_field] # [rename (name = "m_GraphicsFormatSupport")] pub m_graphics_format_support : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: rendering :: formatusage :: FormatUsage , bool > > ,
+}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-renderingutils-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RenderingUtils_StereoConstants_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RenderingUtils_StereoConstants as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RenderingUtils_StereoConstants as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RenderingUtils_StereoConstants,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RenderingUtils_StereoConstants, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
+pub trait IRenderingUtils_StereoConstantsMethods: IRenderingUtils_StereoConstants {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RenderingUtils_StereoConstants as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RenderingUtils_StereoConstants_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
+impl<__T: IRenderingUtils_StereoConstants> IRenderingUtils_StereoConstantsMethods for __T {}
+
+#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
+impl RenderingUtils_StereoConstants {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderingUtils_StereoConstants),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderingUtils_StereoConstantsMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
 #[doc(hidden)]
@@ -1445,93 +1533,6 @@ impl RenderingUtils {
 
 #[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RenderingUtils_StereoConstants_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RenderingUtils_StereoConstants as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderingUtils_StereoConstants as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RenderingUtils_StereoConstants,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RenderingUtils_StereoConstants, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
-pub trait IRenderingUtils_StereoConstantsMethods: IRenderingUtils_StereoConstants {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RenderingUtils_StereoConstants as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RenderingUtils_StereoConstants_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
-impl<__T: IRenderingUtils_StereoConstants> IRenderingUtils_StereoConstantsMethods for __T {}
-
-#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
-impl RenderingUtils_StereoConstants {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RenderingUtils_StereoConstants),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRenderingUtils_StereoConstantsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-renderingutils")]
 pub mod prelude {
     pub use super::IRenderingUtils;
     pub use super::IRenderingUtils_StereoConstants;

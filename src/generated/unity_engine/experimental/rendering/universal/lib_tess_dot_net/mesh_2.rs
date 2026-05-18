@@ -681,6 +681,7 @@ impl Mesh_2 {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMesh_2;
     pub use super::IMesh_2Methods;

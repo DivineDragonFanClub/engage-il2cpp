@@ -1727,6 +1727,7 @@ impl Framework_2 {
 }
 
 #[cfg(feature = "app-framework_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Framework_2;
     pub use super::IFramework_2;

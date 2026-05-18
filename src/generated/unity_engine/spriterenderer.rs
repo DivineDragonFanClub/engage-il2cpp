@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-spriterenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteRenderer;
     pub use super::SpriteRenderer;

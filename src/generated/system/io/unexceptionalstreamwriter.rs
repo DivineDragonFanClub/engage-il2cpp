@@ -355,6 +355,7 @@ pub trait IUnexceptionalStreamWriterMethods: IUnexceptionalStreamWriter {
 impl<__T: IUnexceptionalStreamWriter> IUnexceptionalStreamWriterMethods for __T {}
 
 #[cfg(feature = "system-io-unexceptionalstreamwriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnexceptionalStreamWriter;
     pub use super::IUnexceptionalStreamWriterMethods;

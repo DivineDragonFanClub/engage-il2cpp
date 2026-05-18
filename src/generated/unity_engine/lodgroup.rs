@@ -1407,6 +1407,7 @@ impl LODGroup {
 }
 
 #[cfg(feature = "unity_engine-lodgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILODGroup;
     pub use super::ILODGroupMethods;

@@ -1125,6 +1125,7 @@ impl GameUserHubData {
 }
 
 #[cfg(feature = "app-gameuserhubdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameUserHubData;
     pub use super::IGameUserHubData;

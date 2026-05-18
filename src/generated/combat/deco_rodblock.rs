@@ -273,6 +273,7 @@ impl Deco_RodBlock {
 }
 
 #[cfg(feature = "combat-deco_rodblock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_RodBlock;
     pub use super::IDeco_RodBlock;

@@ -103,6 +103,7 @@ impl MapDeployAttackImage {
 }
 
 #[cfg(feature = "app-mapdeployattackimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployAttackImage;
     pub use super::IMapDeployAttackImageMethods;

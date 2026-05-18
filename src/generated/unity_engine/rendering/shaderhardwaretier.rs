@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shaderhardwaretier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderHardwareTier;
     pub use crate::system::object::IObject;

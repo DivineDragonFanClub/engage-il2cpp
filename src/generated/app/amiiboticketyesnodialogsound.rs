@@ -350,6 +350,7 @@ impl AmiiboTicketYesNoDialogSound {
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogsound")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboTicketYesNoDialogSound;
     pub use super::IAmiiboTicketYesNoDialogSound;

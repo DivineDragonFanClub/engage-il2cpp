@@ -657,6 +657,7 @@ impl MapBattleInfoSequenceAttack {
 }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleInfoSequenceAttack;
     pub use super::IMapBattleInfoSequenceAttackMethods;

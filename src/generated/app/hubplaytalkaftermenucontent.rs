@@ -659,6 +659,7 @@ impl HubPlayTalkAfterMenuContent {
 }
 
 #[cfg(feature = "app-hubplaytalkaftermenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubPlayTalkAfterMenuContent;
     pub use super::IHubPlayTalkAfterMenuContent;

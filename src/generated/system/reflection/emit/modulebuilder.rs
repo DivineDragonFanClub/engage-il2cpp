@@ -18,6 +18,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-modulebuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IModuleBuilder;
     pub use super::ModuleBuilder;

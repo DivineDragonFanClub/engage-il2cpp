@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-movedirection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MoveDirection;
     pub use crate::system::object::IObject;

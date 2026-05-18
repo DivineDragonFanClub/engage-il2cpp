@@ -167,6 +167,7 @@ impl DragonRideOneShotSEMarker {
 }
 
 #[cfg(feature = "app-dragonrideoneshotsemarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideOneShotSEMarker;
     pub use super::IDragonRideOneShotSEMarker;

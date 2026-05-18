@@ -1121,6 +1121,7 @@ impl BitHash {
 }
 
 #[cfg(feature = "app-bithash")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitHash;
     pub use super::IBitHash;

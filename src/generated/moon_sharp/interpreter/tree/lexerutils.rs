@@ -616,6 +616,7 @@ impl LexerUtils {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-lexerutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILexerUtils;
     pub use super::LexerUtils;

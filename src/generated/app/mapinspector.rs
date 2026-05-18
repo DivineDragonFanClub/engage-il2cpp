@@ -3091,6 +3091,7 @@ impl MapInspector {
 }
 
 #[cfg(feature = "app-mapinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInspector;
     pub use super::IMapInspectorMethods;

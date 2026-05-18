@@ -271,6 +271,7 @@ impl Behaviour {
 }
 
 #[cfg(feature = "unity_engine-behaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Behaviour;
     pub use super::IBehaviour;

@@ -240,6 +240,7 @@ impl ProcDescTickBase {
 }
 
 #[cfg(feature = "app-procdesctickbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescTickBase;
     pub use super::IProcDescTickBaseMethods;

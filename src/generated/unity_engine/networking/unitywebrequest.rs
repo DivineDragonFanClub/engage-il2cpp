@@ -98,6 +98,62 @@ mod __types {
         }
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct UnityWebRequest_Result {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for UnityWebRequest_Result {
+        const NAMESPACE: &'static str = "UnityEngine.Networking";
+
+        const NAME: &'static str = "UnityWebRequest.Result";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for UnityWebRequest_Result {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl UnityWebRequest_Result {
+        pub fn in_progress() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn success() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn connection_error() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn protocol_error() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn data_processing_error() -> Self {
+            Self { value: 4 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
     #[repr(C)]
     #[derive(
@@ -247,62 +303,6 @@ mod __types {
 
         pub fn no_internet_connection() -> Self {
             Self { value: 28 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct UnityWebRequest_Result {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for UnityWebRequest_Result {
-        const NAMESPACE: &'static str = "UnityEngine.Networking";
-
-        const NAME: &'static str = "UnityWebRequest.Result";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for UnityWebRequest_Result {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl UnityWebRequest_Result {
-        pub fn in_progress() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn success() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn connection_error() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn protocol_error() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn data_processing_error() -> Self {
-            Self { value: 4 }
         }
     }
 }
@@ -3803,6 +3803,7 @@ impl UnityWebRequest {
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityWebRequest;
     pub use super::IUnityWebRequestMethods;

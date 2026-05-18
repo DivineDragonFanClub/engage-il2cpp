@@ -232,6 +232,7 @@ impl FleaMarketBuyMenuItemContent {
 }
 
 #[cfg(feature = "app-fleamarketbuymenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FleaMarketBuyMenuItemContent;
     pub use super::IFleaMarketBuyMenuItemContent;

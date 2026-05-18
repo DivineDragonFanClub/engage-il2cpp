@@ -599,6 +599,7 @@ impl DrawObjectsPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrawObjectsPass;
     pub use super::IDrawObjectsPass;

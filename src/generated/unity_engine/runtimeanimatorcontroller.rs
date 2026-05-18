@@ -167,6 +167,7 @@ impl RuntimeAnimatorController {
 }
 
 #[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeAnimatorController;
     pub use super::IRuntimeAnimatorControllerMethods;

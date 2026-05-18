@@ -1740,6 +1740,7 @@ impl ContentCatalogData {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContentCatalogData;
     pub use super::ContentCatalogData_Bucket;

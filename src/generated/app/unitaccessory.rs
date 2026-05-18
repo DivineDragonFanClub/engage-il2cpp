@@ -864,6 +864,7 @@ pub trait IUnitAccessoryMethods: IUnitAccessory {
 impl<__T: IUnitAccessory> IUnitAccessoryMethods for __T {}
 
 #[cfg(feature = "app-unitaccessory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitAccessory;
     pub use super::IUnitAccessoryMethods;

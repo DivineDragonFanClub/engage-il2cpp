@@ -308,6 +308,7 @@ impl HierarchyCache {
 }
 
 #[cfg(feature = "combat-hierarchycache")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HierarchyCache;
     pub use super::IHierarchyCache;

@@ -635,6 +635,7 @@ impl RelayBackupData {
 }
 
 #[cfg(feature = "app-relaybackupdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayBackupData;
     pub use super::IRelayBackupDataMethods;

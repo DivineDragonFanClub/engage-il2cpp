@@ -212,6 +212,7 @@ impl DifficultyCommand {
 }
 
 #[cfg(feature = "app-difficultycommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DifficultyCommand;
     pub use super::IDifficultyCommand;

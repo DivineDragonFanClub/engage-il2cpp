@@ -930,6 +930,7 @@ impl BaseTransitionCameraController {
 }
 
 #[cfg(feature = "combat-basetransitioncameracontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseTransitionCameraController;
     pub use super::IBaseTransitionCameraController;

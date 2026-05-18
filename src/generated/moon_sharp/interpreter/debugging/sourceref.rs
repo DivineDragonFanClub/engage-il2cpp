@@ -1529,6 +1529,7 @@ impl SourceRef {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-sourceref")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISourceRef;
     pub use super::ISourceRefMethods;

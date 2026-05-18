@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightshadowcastermode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightShadowCasterMode;
     pub use crate::system::object::IObject;

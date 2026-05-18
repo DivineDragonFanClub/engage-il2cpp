@@ -224,6 +224,7 @@ impl CachedAssetBundle {
 }
 
 #[cfg(feature = "unity_engine-cachedassetbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CachedAssetBundle;
     pub use crate::system::object::IObject;

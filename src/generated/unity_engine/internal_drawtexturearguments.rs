@@ -57,6 +57,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-internal_drawtexturearguments")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Internal_DrawTextureArguments;
     pub use crate::system::object::IObject;

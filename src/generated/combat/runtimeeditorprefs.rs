@@ -164,6 +164,7 @@ impl RuntimeEditorPrefs {
 }
 
 #[cfg(feature = "combat-runtimeeditorprefs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeEditorPrefs;
     pub use super::RuntimeEditorPrefs;

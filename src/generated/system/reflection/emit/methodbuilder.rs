@@ -580,6 +580,7 @@ pub trait IMethodBuilderMethods: IMethodBuilder {
 impl<__T: IMethodBuilder> IMethodBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-methodbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMethodBuilder;
     pub use super::IMethodBuilderMethods;

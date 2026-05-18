@@ -3649,6 +3649,7 @@ impl Graphic {
 }
 
 #[cfg(feature = "unity_engine-ui-graphic")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Graphic;
     pub use super::IGraphic;

@@ -2553,6 +2553,7 @@ impl AkPositioningInfo {
 }
 
 #[cfg(feature = "root-akpositioninginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkPositioningInfo;
     pub use super::IAkPositioningInfo;

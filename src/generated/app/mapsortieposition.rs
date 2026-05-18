@@ -1160,6 +1160,7 @@ impl MapSortiePosition_Data {
 }
 
 #[cfg(feature = "app-mapsortieposition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSortiePosition;
     pub use super::IMapSortiePositionMethods;

@@ -274,6 +274,7 @@ impl NoInterpFloatRangeParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpfloatrangeparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpFloatRangeParameter;
     pub use super::INoInterpFloatRangeParameterMethods;

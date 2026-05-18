@@ -2292,6 +2292,7 @@ impl PlayableGraph {
 }
 
 #[cfg(feature = "unity_engine-playables-playablegraph")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayableGraph;
     pub use crate::system::object::IObject;

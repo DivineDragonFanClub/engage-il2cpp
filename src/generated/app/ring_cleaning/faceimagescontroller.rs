@@ -1526,6 +1526,7 @@ impl FaceImagesController_ReturnEntryComponent {
 }
 
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FaceImagesController;
     pub use super::FaceImagesController_AnimType;

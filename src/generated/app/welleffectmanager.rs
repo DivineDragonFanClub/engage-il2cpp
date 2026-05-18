@@ -440,6 +440,7 @@ impl WellEffectManager {
 }
 
 #[cfg(feature = "app-welleffectmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWellEffectManager;
     pub use super::IWellEffectManagerMethods;

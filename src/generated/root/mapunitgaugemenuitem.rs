@@ -330,6 +330,7 @@ impl MapUnitGaugeMenuItem {
 }
 
 #[cfg(feature = "root-mapunitgaugemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUnitGaugeMenuItem;
     pub use super::IMapUnitGaugeMenuItemMethods;

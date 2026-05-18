@@ -1052,6 +1052,7 @@ impl MapPopup {
 }
 
 #[cfg(feature = "app-mappopup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPopup;
     pub use super::IMapPopupMethods;

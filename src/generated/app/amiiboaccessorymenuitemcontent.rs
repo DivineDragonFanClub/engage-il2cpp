@@ -251,6 +251,7 @@ impl AmiiboAccessoryMenuItemContent {
 }
 
 #[cfg(feature = "app-amiiboaccessorymenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboAccessoryMenuItemContent;
     pub use super::IAmiiboAccessoryMenuItemContent;

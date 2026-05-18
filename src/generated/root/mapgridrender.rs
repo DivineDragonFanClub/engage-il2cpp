@@ -378,6 +378,7 @@ impl MapGridRender {
 }
 
 #[cfg(feature = "root-mapgridrender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapGridRender;
     pub use super::IMapGridRenderMethods;

@@ -505,6 +505,7 @@ impl AkBank {
 }
 
 #[cfg(feature = "root-akbank")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBank;
     pub use super::IAkBank;

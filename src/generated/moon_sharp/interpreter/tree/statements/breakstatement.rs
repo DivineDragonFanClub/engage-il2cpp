@@ -191,6 +191,7 @@ impl BreakStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-breakstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BreakStatement;
     pub use super::IBreakStatement;

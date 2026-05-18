@@ -406,6 +406,7 @@ impl FinalBlitPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-finalblitpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FinalBlitPass;
     pub use super::IFinalBlitPass;

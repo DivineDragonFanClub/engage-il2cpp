@@ -579,6 +579,7 @@ impl MapUnitCommandMenuContent {
 }
 
 #[cfg(feature = "app-mapunitcommandmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUnitCommandMenuContent;
     pub use super::IMapUnitCommandMenuContentMethods;

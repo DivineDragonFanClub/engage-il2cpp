@@ -103,6 +103,7 @@ impl MapDeployDanceImage {
 }
 
 #[cfg(feature = "app-mapdeploydanceimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployDanceImage;
     pub use super::IMapDeployDanceImageMethods;

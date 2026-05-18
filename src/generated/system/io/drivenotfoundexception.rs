@@ -178,6 +178,7 @@ impl DriveNotFoundException {
 }
 
 #[cfg(feature = "system-io-drivenotfoundexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DriveNotFoundException;
     pub use super::IDriveNotFoundException;

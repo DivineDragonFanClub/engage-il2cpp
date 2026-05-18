@@ -1204,6 +1204,7 @@ impl Hash128 {
 }
 
 #[cfg(feature = "unity_engine-hash128")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Hash128;
     pub use crate::system::object::IObject;

@@ -64,6 +64,7 @@ impl<T0: ::unity2::ClassIdentity> LongEnumEqualityComparer_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-longenumequalitycomparer_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILongEnumEqualityComparer_1;
     pub use super::ILongEnumEqualityComparer_1Methods;

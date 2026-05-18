@@ -164,6 +164,7 @@ impl TextMeshUtility {
 }
 
 #[cfg(feature = "app-textmeshutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextMeshUtility;
     pub use super::ITextMeshUtilityMethods;

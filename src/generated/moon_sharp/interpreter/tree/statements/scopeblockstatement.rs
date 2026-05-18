@@ -198,6 +198,7 @@ impl ScopeBlockStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-scopeblockstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScopeBlockStatement;
     pub use super::IScopeBlockStatementMethods;

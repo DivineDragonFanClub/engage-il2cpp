@@ -182,6 +182,7 @@ impl MyRoomFadeBehaviour {
 }
 
 #[cfg(feature = "app-myroomfadebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomFadeBehaviour;
     pub use super::IMyRoomFadeBehaviourMethods;

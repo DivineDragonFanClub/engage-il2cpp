@@ -2490,6 +2490,7 @@ impl GameCalculatorCommand {
 }
 
 #[cfg(feature = "app-gamecalculatorcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameCalculatorCommand;
     pub use super::IGameCalculatorCommand;

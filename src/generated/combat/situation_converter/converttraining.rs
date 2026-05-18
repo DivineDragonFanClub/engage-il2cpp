@@ -190,6 +190,7 @@ impl ConvertTraining {
 }
 
 #[cfg(feature = "combat-situation_converter-converttraining")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertTraining;
     pub use super::IConvertTraining;

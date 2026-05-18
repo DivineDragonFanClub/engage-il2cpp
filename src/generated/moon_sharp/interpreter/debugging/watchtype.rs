@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-watchtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::WatchType;
     pub use crate::system::object::IObject;

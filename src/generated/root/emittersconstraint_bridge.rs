@@ -107,6 +107,7 @@ impl EmittersConstraint_Bridge {
 }
 
 #[cfg(feature = "root-emittersconstraint_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EmittersConstraint_Bridge;
     pub use super::IEmittersConstraint_Bridge;

@@ -189,6 +189,7 @@ impl SupportInfo {
 }
 
 #[cfg(feature = "app-supportinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportInfo;
     pub use super::ISupportInfoMethods;

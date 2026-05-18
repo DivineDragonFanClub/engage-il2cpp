@@ -202,6 +202,7 @@ impl Deco_Rod {
 }
 
 #[cfg(feature = "combat-deco_rod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_Rod;
     pub use super::IDeco_Rod;

@@ -120,6 +120,7 @@ impl BattleBeforeInspector {
 }
 
 #[cfg(feature = "app-battlebeforeinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleBeforeInspector;
     pub use super::IBattleBeforeInspector;

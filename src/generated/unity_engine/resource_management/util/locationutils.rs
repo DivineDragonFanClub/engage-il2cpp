@@ -139,6 +139,7 @@ impl LocationUtils {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-locationutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILocationUtils;
     pub use super::LocationUtils;

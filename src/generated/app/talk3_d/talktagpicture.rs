@@ -284,6 +284,7 @@ impl TalkTagPicture {
 }
 
 #[cfg(feature = "app-talk3_d-talktagpicture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagPicture;
     pub use super::ITalkTagPictureMethods;

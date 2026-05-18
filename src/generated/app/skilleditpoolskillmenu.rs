@@ -928,6 +928,7 @@ impl SkillEditPoolSkillMenu {
 }
 
 #[cfg(feature = "app-skilleditpoolskillmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillEditPoolSkillMenu;
     pub use super::ISkillEditPoolSkillMenuMethods;

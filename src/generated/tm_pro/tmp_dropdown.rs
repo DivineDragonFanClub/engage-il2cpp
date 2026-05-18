@@ -34,16 +34,6 @@ mod __types {
         pub m_toggle: crate::unity_engine::ui::toggle::Toggle,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionDataList")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Dropdown_OptionDataList {
-        #[rename(name = "m_Options")]
-        pub m_options: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-        >,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionData.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionData")]
     #[parent(crate::system::object::Object)]
@@ -97,6 +87,16 @@ mod __types {
         #[static_field]
         #[rename(name = "s_NoOptionData")]
         pub s_no_option_data: crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Dropdown.OptionDataList")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_Dropdown_OptionDataList {
+        #[rename(name = "m_Options")]
+        pub m_options: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+        >,
     }
 }
 
@@ -911,236 +911,6 @@ impl TMP_Dropdown_DropdownItem {
             )
         });
         <Self as ITMP_Dropdown_DropdownItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_Dropdown_OptionDataList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_options {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                "get_options",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    "get_options",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_options(
-        this: TMP_Dropdown_OptionDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-    > {
-        let inner: extern "C" fn(
-            TMP_Dropdown_OptionDataList,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_options::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_options {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                "set_options",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    "set_options",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_options(
-        this: TMP_Dropdown_OptionDataList,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_Dropdown_OptionDataList,
-            crate::system::collections::generic::list_1::List_1<
-                crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_options::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_Dropdown_OptionDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_Dropdown_OptionDataList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-pub trait ITMP_Dropdown_OptionDataListMethods: ITMP_Dropdown_OptionDataList {
-    #[doc = "`get_options()` overload"]
-    fn get_options(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-    > {
-        unsafe {
-            let __receiver =
-                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_Dropdown_OptionDataList_unity2_raw::get_options(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]
-    fn set_options(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_Dropdown_OptionDataList_unity2_raw::set_options(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_Dropdown_OptionDataList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-impl<__T: ITMP_Dropdown_OptionDataList> ITMP_Dropdown_OptionDataListMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_dropdown")]
-impl TMP_Dropdown_OptionDataList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_Dropdown_OptionDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_Dropdown_OptionDataListMethods>::ctor(this);
         this
     }
 }
@@ -5036,6 +4806,237 @@ impl TMP_Dropdown {
 }
 
 #[cfg(feature = "tm_pro-tmp_dropdown")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_Dropdown_OptionDataList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
+                "get_options",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
+                    "get_options",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_options(
+        this: TMP_Dropdown_OptionDataList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+    > {
+        let inner: extern "C" fn(
+            TMP_Dropdown_OptionDataList,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_options::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_options {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<
+                    crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+                > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
+                "set_options",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
+                    "set_options",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_options(
+        this: TMP_Dropdown_OptionDataList,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_Dropdown_OptionDataList,
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_options::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_Dropdown_OptionDataList as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_Dropdown_OptionDataList,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(TMP_Dropdown_OptionDataList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+pub trait ITMP_Dropdown_OptionDataListMethods: ITMP_Dropdown_OptionDataList {
+    #[doc = "`get_options()` overload"]
+    fn get_options(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+    > {
+        unsafe {
+            let __receiver =
+                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TMP_Dropdown_OptionDataList_unity2_raw::get_options(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]
+    fn set_options(
+        self,
+        value: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TMP_Dropdown_OptionDataList_unity2_raw::set_options(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_Dropdown_OptionDataList as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __TMP_Dropdown_OptionDataList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+impl<__T: ITMP_Dropdown_OptionDataList> ITMP_Dropdown_OptionDataListMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+impl TMP_Dropdown_OptionDataList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Dropdown_OptionDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_Dropdown_OptionDataListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_dropdown")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Dropdown;
     pub use super::ITMP_DropdownMethods;

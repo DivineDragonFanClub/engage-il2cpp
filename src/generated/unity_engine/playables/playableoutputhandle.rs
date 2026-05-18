@@ -1796,6 +1796,7 @@ impl PlayableOutputHandle {
 }
 
 #[cfg(feature = "unity_engine-playables-playableoutputhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayableOutputHandle;
     pub use crate::system::object::IObject;

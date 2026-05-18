@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_spriteinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_SpriteInfo;
     pub use crate::system::object::IObject;

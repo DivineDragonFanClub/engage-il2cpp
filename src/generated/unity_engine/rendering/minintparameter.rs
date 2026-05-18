@@ -241,6 +241,7 @@ impl MinIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-minintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMinIntParameter;
     pub use super::IMinIntParameterMethods;

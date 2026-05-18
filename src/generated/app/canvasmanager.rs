@@ -890,6 +890,7 @@ impl CanvasManager {
 }
 
 #[cfg(feature = "app-canvasmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasManager;
     pub use super::ICanvasManager;

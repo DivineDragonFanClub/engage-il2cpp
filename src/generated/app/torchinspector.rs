@@ -384,6 +384,7 @@ impl TorchInspector {
 }
 
 #[cfg(feature = "app-torchinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITorchInspector;
     pub use super::ITorchInspectorMethods;

@@ -102,6 +102,7 @@ impl SortConstant {
 }
 
 #[cfg(feature = "app-sortconstant")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortConstant;
     pub use super::ISortConstantMethods;

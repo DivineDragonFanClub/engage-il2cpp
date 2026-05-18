@@ -242,6 +242,7 @@ impl PieceOfBondGainSequence {
 }
 
 #[cfg(feature = "app-pieceofbondgainsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPieceOfBondGainSequence;
     pub use super::IPieceOfBondGainSequenceMethods;

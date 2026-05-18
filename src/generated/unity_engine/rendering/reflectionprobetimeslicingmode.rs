@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-reflectionprobetimeslicingmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionProbeTimeSlicingMode;
     pub use crate::system::object::IObject;

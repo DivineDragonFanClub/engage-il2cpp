@@ -120,6 +120,7 @@ impl TargetSelectInspector {
 }
 
 #[cfg(feature = "app-targetselectinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetSelectInspector;
     pub use super::ITargetSelectInspectorMethods;

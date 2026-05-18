@@ -177,6 +177,7 @@ impl ProcEnumMethod {
 }
 
 #[cfg(feature = "app-procenummethod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcEnumMethod;
     pub use super::IProcEnumMethodMethods;

@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-gamemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameMode;
     pub use crate::system::object::IObject;

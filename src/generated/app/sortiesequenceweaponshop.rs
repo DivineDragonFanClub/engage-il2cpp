@@ -337,6 +337,7 @@ impl SortieSequenceWeaponShop {
 }
 
 #[cfg(feature = "app-sortiesequenceweaponshop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceWeaponShop;
     pub use super::ISortieSequenceWeaponShopMethods;

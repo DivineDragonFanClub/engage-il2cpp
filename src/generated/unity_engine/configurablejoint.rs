@@ -6456,6 +6456,7 @@ impl ConfigurableJoint {
 }
 
 #[cfg(feature = "unity_engine-configurablejoint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigurableJoint;
     pub use super::IConfigurableJoint;

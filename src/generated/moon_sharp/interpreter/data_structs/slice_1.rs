@@ -142,6 +142,7 @@ impl<T0: ::unity2::ClassIdentity> Slice_1<T0> {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-slice_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISlice_1;
     pub use super::ISlice_1Methods;

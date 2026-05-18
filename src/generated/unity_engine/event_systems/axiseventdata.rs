@@ -356,6 +356,7 @@ impl AxisEventData {
 }
 
 #[cfg(feature = "unity_engine-event_systems-axiseventdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AxisEventData;
     pub use super::IAxisEventData;

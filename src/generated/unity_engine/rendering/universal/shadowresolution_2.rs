@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowresolution_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowResolution_2;
     pub use crate::system::object::IObject;

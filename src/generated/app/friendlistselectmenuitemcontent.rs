@@ -358,6 +358,7 @@ impl FriendListSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-friendlistselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FriendListSelectMenuItemContent;
     pub use super::IFriendListSelectMenuItemContent;

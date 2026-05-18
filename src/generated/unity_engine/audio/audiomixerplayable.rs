@@ -169,6 +169,7 @@ impl AudioMixerPlayable {
 }
 
 #[cfg(feature = "unity_engine-audio-audiomixerplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioMixerPlayable;
     pub use crate::system::object::IObject;

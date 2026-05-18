@@ -258,6 +258,7 @@ impl AkEventPlayable {
 }
 
 #[cfg(feature = "root-akeventplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEventPlayable;
     pub use super::IAkEventPlayable;

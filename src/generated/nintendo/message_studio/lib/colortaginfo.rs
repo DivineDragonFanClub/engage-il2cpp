@@ -454,6 +454,7 @@ impl ColorTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-colortaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorTagInfo;
     pub use super::IColorTagInfo;

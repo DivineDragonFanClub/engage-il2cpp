@@ -341,6 +341,7 @@ impl NpadState {
 }
 
 #[cfg(feature = "nn-hid-npadstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadState;
     pub use crate::system::object::IObject;

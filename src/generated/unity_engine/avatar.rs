@@ -1682,6 +1682,7 @@ impl Avatar {
 }
 
 #[cfg(feature = "unity_engine-avatar")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Avatar;
     pub use super::IAvatar;

@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightrendermode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightRenderMode;
     pub use crate::system::object::IObject;

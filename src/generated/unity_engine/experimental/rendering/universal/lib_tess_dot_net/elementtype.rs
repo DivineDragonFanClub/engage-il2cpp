@@ -65,6 +65,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-elementtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ElementType;
     pub use crate::system::object::IObject;

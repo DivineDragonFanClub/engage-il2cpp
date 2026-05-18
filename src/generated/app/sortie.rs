@@ -191,6 +191,7 @@ impl Sortie {
 }
 
 #[cfg(feature = "app-sortie")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortie;
     pub use super::ISortieMethods;

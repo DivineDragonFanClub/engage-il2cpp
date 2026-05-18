@@ -362,6 +362,7 @@ impl ResourceManagerDiagnostics {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceManagerDiagnostics;
     pub use super::IResourceManagerDiagnosticsMethods;

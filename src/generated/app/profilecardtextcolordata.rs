@@ -707,6 +707,7 @@ impl ProfileCardTextColorData {
 }
 
 #[cfg(feature = "app-profilecardtextcolordata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTextColorData;
     pub use super::IProfileCardTextColorDataMethods;

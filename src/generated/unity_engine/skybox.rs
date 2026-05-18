@@ -156,6 +156,7 @@ pub trait ISkyboxMethods: ISkybox {
 impl<__T: ISkybox> ISkyboxMethods for __T {}
 
 #[cfg(feature = "unity_engine-skybox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkybox;
     pub use super::ISkyboxMethods;

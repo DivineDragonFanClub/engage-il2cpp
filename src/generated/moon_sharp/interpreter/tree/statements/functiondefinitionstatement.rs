@@ -349,6 +349,7 @@ impl FunctionDefinitionStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-functiondefinitionstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionDefinitionStatement;
     pub use super::IFunctionDefinitionStatement;

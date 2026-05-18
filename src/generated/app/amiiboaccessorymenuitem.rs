@@ -530,6 +530,7 @@ impl AmiiboAccessoryMenuItem {
 }
 
 #[cfg(feature = "app-amiiboaccessorymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboAccessoryMenuItem;
     pub use super::IAmiiboAccessoryMenuItem;

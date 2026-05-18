@@ -689,6 +689,7 @@ impl LightmapperUtils {
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapperutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightmapperUtils;
     pub use super::LightmapperUtils;

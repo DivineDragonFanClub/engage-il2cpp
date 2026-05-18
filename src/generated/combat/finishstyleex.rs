@@ -144,6 +144,7 @@ impl FinishStyleEx {
 }
 
 #[cfg(feature = "combat-finishstyleex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FinishStyleEx;
     pub use super::IFinishStyleEx;

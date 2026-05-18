@@ -110,6 +110,7 @@ impl RingListSkillMenuContent {
 }
 
 #[cfg(feature = "app-ringlistskillmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingListSkillMenuContent;
     pub use super::IRingListSkillMenuContentMethods;

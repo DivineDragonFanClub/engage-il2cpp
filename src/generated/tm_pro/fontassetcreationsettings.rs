@@ -189,6 +189,7 @@ impl FontAssetCreationSettings {
 }
 
 #[cfg(feature = "tm_pro-fontassetcreationsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontAssetCreationSettings;
     pub use crate::system::object::IObject;

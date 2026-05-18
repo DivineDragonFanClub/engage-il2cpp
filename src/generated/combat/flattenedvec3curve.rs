@@ -600,6 +600,7 @@ impl FlattenedVec3Curve {
 }
 
 #[cfg(feature = "combat-flattenedvec3curve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FlattenedVec3Curve;
     pub use super::IFlattenedVec3Curve;

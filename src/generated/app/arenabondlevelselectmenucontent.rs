@@ -174,6 +174,7 @@ impl ArenaBondLevelSelectMenuContent {
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondLevelSelectMenuContent;
     pub use super::IArenaBondLevelSelectMenuContent;

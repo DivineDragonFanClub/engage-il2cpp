@@ -1039,6 +1039,7 @@ impl TriggeredSkillListSetter_ShowSkill {
 }
 
 #[cfg(feature = "app-triggeredskilllistsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITriggeredSkillListSetter;
     pub use super::ITriggeredSkillListSetterMethods;

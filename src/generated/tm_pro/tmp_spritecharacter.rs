@@ -543,6 +543,7 @@ impl TMP_SpriteCharacter {
 }
 
 #[cfg(feature = "tm_pro-tmp_spritecharacter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_SpriteCharacter;
     pub use super::ITMP_SpriteCharacterMethods;

@@ -104,6 +104,7 @@ pub trait IIVariableMethods: IIVariable {
 impl<__T: IIVariable> IIVariableMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIVariable;
     pub use super::IIVariableMethods;

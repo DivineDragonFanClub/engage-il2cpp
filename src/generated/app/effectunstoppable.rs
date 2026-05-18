@@ -226,6 +226,7 @@ impl EffectUnstoppable {
 }
 
 #[cfg(feature = "app-effectunstoppable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectUnstoppable;
     pub use super::IEffectUnstoppable;

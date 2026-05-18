@@ -13,66 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Kind.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Inactivator_Kind {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Inactivator_Kind {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "Inactivator.Kind";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Inactivator_Kind {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Inactivator_Kind {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn story() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn encount() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn kizuna() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn hub() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn gmap() -> Self {
-            Self { value: 5 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))]
     #[::unity2::class(namespace = "App", name = "Inactivator")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -136,6 +76,66 @@ mod __types {
 
         pub fn gmap() -> Self {
             Self { value: 16 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Kind.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Inactivator_Kind {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Inactivator_Kind {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "Inactivator.Kind";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Inactivator_Kind {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Inactivator_Kind {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn story() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn encount() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn kizuna() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn hub() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn gmap() -> Self {
+            Self { value: 5 }
         }
     }
 }
@@ -383,6 +383,7 @@ impl Inactivator {
 }
 
 #[cfg(feature = "app-inactivator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInactivator;
     pub use super::IInactivatorMethods;

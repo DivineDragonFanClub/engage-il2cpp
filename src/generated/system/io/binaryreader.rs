@@ -1557,6 +1557,7 @@ impl BinaryReader {
 }
 
 #[cfg(feature = "system-io-binaryreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinaryReader;
     pub use super::IBinaryReader;

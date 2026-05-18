@@ -366,6 +366,7 @@ impl ObjectInitializationData {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-objectinitializationdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ObjectInitializationData;
     pub use crate::system::object::IObject;

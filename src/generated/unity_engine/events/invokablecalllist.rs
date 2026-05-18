@@ -443,6 +443,7 @@ impl InvokableCallList {
 }
 
 #[cfg(feature = "unity_engine-events-invokablecalllist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvokableCallList;
     pub use super::IInvokableCallListMethods;

@@ -1161,6 +1161,7 @@ impl UnitRing {
 }
 
 #[cfg(feature = "app-unitring")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitRing;
     pub use super::IUnitRingMethods;

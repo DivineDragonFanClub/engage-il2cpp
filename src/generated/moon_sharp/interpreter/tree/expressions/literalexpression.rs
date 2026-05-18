@@ -406,6 +406,7 @@ impl LiteralExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-literalexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILiteralExpression;
     pub use super::ILiteralExpressionMethods;

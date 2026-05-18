@@ -492,6 +492,7 @@ impl ProfileCardMessageSelectMenuContent {
 }
 
 #[cfg(feature = "app-profilecardmessageselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardMessageSelectMenuContent;
     pub use super::IProfileCardMessageSelectMenuContentMethods;

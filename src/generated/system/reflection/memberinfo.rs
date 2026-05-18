@@ -945,6 +945,7 @@ impl MemberInfo {
 }
 
 #[cfg(feature = "system-reflection-memberinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemberInfo;
     pub use super::IMemberInfoMethods;

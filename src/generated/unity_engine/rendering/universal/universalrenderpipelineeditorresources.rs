@@ -315,6 +315,7 @@ impl UniversalRenderPipelineEditorResources_MaterialResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineeditorresources")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUniversalRenderPipelineEditorResources;
     pub use super::IUniversalRenderPipelineEditorResourcesMethods;

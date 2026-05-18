@@ -207,6 +207,7 @@ impl MuscleSquatNotesData {
 }
 
 #[cfg(feature = "app-musclesquatnotesdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleSquatNotesData;
     pub use super::IMuscleSquatNotesDataMethods;

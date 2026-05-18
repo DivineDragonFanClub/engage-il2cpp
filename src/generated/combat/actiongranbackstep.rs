@@ -278,6 +278,7 @@ impl ActionGranBackstep {
 }
 
 #[cfg(feature = "combat-actiongranbackstep")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranBackstep;
     pub use super::IActionGranBackstep;

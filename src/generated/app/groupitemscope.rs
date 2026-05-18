@@ -421,6 +421,7 @@ impl GroupItemScope {
 }
 
 #[cfg(feature = "app-groupitemscope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroupItemScope;
     pub use super::IGroupItemScope;

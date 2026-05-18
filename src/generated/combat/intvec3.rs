@@ -146,6 +146,7 @@ impl IntVec3 {
 }
 
 #[cfg(feature = "combat-intvec3")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntVec3;
     pub use super::IntVec3;

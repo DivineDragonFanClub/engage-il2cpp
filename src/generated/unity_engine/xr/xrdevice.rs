@@ -134,6 +134,7 @@ impl XRDevice {
 }
 
 #[cfg(feature = "unity_engine-xr-xrdevice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRDevice;
     pub use super::XRDevice;

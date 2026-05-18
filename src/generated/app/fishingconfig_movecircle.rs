@@ -125,6 +125,7 @@ impl FishingConfig_MoveCircle {
 }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_MoveCircle;
     pub use super::IFishingConfig_MoveCircle;

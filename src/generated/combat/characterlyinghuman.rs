@@ -410,6 +410,7 @@ impl CharacterLyingHuman {
 }
 
 #[cfg(feature = "combat-characterlyinghuman")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterLyingHuman;
     pub use super::ICharacterLyingHuman;

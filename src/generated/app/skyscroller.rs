@@ -263,6 +263,7 @@ impl SkyScroller {
 }
 
 #[cfg(feature = "app-skyscroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkyScroller;
     pub use super::ISkyScrollerMethods;

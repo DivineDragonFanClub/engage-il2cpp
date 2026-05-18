@@ -209,6 +209,7 @@ impl FileDumpItem {
 }
 
 #[cfg(feature = "app-filedumpitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileDumpItem;
     pub use super::IFileDumpItem;

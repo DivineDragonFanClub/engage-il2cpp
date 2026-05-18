@@ -449,6 +449,7 @@ impl GmapPathCollection {
 }
 
 #[cfg(feature = "app-gmap-gmappathcollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapPathCollection;
     pub use super::IGmapPathCollection;

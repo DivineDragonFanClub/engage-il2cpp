@@ -98,6 +98,7 @@ impl MapUtility {
 }
 
 #[cfg(feature = "root-maputility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUtility;
     pub use super::IMapUtilityMethods;

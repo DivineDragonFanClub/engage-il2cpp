@@ -1155,6 +1155,7 @@ impl StringModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-stringmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringModule;
     pub use super::IStringModuleMethods;

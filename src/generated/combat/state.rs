@@ -510,6 +510,7 @@ impl State {
 }
 
 #[cfg(feature = "combat-state")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IState;
     pub use super::IStateMethods;

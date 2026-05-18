@@ -393,6 +393,7 @@ impl HubMoveStateMoveSpline {
 }
 
 #[cfg(feature = "app-hubmovestatemovespline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveStateMoveSpline;
     pub use super::IHubMoveStateMoveSpline;

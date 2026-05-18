@@ -125,6 +125,7 @@ impl LOD {
 }
 
 #[cfg(feature = "unity_engine-lod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LOD;
     pub use crate::system::object::IObject;

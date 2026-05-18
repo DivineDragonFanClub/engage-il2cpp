@@ -849,6 +849,7 @@ impl DescriptorHelpers {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-descriptorhelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DescriptorHelpers;
     pub use super::IDescriptorHelpers;

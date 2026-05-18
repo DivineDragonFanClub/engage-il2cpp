@@ -1295,6 +1295,7 @@ impl TalkPtr {
 }
 
 #[cfg(feature = "app-talk3_d-talkptr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkPtr;
     pub use super::ITalkPtrMethods;

@@ -2647,6 +2647,7 @@ impl CameraPositionData {
 }
 
 #[cfg(feature = "combat-camerapositiondata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraPositionData;
     pub use super::CameraPositionData_CameraShakeSettings;

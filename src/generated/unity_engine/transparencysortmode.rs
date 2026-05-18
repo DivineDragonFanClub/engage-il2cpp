@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-transparencysortmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TransparencySortMode;
     pub use crate::system::object::IObject;

@@ -1051,6 +1051,7 @@ impl JobIntroSequence {
 }
 
 #[cfg(feature = "app-jobintrosequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJobIntroSequence;
     pub use super::IJobIntroSequenceMethods;

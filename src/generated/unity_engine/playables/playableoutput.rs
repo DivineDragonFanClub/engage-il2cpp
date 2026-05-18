@@ -375,6 +375,7 @@ impl PlayableOutput {
 }
 
 #[cfg(feature = "unity_engine-playables-playableoutput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayableOutput;
     pub use crate::system::object::IObject;

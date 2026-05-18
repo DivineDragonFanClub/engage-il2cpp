@@ -193,6 +193,7 @@ impl DrawSkyboxPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-drawskyboxpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrawSkyboxPass;
     pub use super::IDrawSkyboxPass;

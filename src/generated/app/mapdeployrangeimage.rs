@@ -103,6 +103,7 @@ impl MapDeployRangeImage {
 }
 
 #[cfg(feature = "app-mapdeployrangeimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployRangeImage;
     pub use super::IMapDeployRangeImageMethods;

@@ -105,6 +105,7 @@ impl MapSandBox {
 }
 
 #[cfg(feature = "app-mapsandbox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSandBox;
     pub use super::IMapSandBoxMethods;

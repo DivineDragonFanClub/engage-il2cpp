@@ -107,6 +107,7 @@ impl DebugPadState {
 }
 
 #[cfg(feature = "nn-hid-debugpadstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPadState;
     pub use crate::system::object::IObject;

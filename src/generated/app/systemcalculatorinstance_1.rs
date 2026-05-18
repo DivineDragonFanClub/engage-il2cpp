@@ -59,6 +59,7 @@ impl<T0: ::unity2::ClassIdentity> SystemCalculatorInstance_1<T0> {
 }
 
 #[cfg(feature = "app-systemcalculatorinstance_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISystemCalculatorInstance_1;
     pub use super::ISystemCalculatorInstance_1Methods;

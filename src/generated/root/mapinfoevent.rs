@@ -834,6 +834,7 @@ impl MapInfoEvent {
 }
 
 #[cfg(feature = "root-mapinfoevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoEvent;
     pub use super::IMapInfoEventMethods;

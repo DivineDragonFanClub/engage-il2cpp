@@ -474,6 +474,7 @@ impl MeshGenerationResult {
 }
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshGenerationResult;
     pub use crate::system::object::IObject;

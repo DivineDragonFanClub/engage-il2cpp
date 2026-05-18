@@ -9710,6 +9710,7 @@ impl ExpTable {
 }
 
 #[cfg(feature = "app-exptable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExpTable;
     pub use super::ExpTable_TableCommand;

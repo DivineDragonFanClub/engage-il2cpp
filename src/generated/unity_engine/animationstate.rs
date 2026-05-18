@@ -275,6 +275,7 @@ impl AnimationState {
 }
 
 #[cfg(feature = "unity_engine-animationstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationState;
     pub use super::IAnimationState;

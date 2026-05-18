@@ -163,6 +163,7 @@ impl TargetShowMarker {
 }
 
 #[cfg(feature = "app-targetshowmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetShowMarker;
     pub use super::ITargetShowMarkerMethods;

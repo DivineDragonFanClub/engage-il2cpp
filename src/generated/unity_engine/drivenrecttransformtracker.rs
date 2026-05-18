@@ -179,6 +179,7 @@ impl DrivenRectTransformTracker {
 }
 
 #[cfg(feature = "unity_engine-drivenrecttransformtracker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrivenRectTransformTracker;
     pub use crate::system::object::IObject;

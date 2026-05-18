@@ -1230,6 +1230,7 @@ impl GUILayoutEntry {
 }
 
 #[cfg(feature = "unity_engine-guilayoutentry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUILayoutEntry;
     pub use super::IGUILayoutEntry;

@@ -557,6 +557,7 @@ impl CameraControllerChainAttack {
 }
 
 #[cfg(feature = "combat-cameracontrollerchainattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerChainAttack;
     pub use super::ICameraControllerChainAttack;

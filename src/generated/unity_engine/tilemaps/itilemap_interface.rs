@@ -221,6 +221,7 @@ impl ITilemap_Interface {
 }
 
 #[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITilemap_Interface;
     pub use super::IITilemap_InterfaceMethods;

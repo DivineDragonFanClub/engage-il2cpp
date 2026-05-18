@@ -1122,6 +1122,7 @@ impl BattleMath {
 }
 
 #[cfg(feature = "app-battlemath")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleMath;
     pub use super::BattleMath_Probability;

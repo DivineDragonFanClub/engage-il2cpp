@@ -276,6 +276,7 @@ impl Rigidbody2D {
 }
 
 #[cfg(feature = "unity_engine-rigidbody2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRigidbody2D;
     pub use super::IRigidbody2DMethods;

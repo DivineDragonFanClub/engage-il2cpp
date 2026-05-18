@@ -1730,6 +1730,7 @@ impl Input {
 }
 
 #[cfg(feature = "unity_engine-input")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInput;
     pub use super::Input;

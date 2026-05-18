@@ -150,6 +150,7 @@ impl TMP_Vertex {
 }
 
 #[cfg(feature = "tm_pro-tmp_vertex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_Vertex;
     pub use crate::system::object::IObject;

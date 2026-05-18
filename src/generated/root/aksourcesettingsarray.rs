@@ -369,6 +369,7 @@ impl AkSourceSettingsArray {
 }
 
 #[cfg(feature = "root-aksourcesettingsarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSourceSettingsArray;
     pub use super::IAkSourceSettingsArray;

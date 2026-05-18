@@ -195,6 +195,7 @@ impl SceneManagerAPIInternal {
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISceneManagerAPIInternal;
     pub use super::SceneManagerAPIInternal;

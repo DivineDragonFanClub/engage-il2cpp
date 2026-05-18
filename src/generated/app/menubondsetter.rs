@@ -404,6 +404,7 @@ impl MenuBondSetter {
 }
 
 #[cfg(feature = "app-menubondsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMenuBondSetter;
     pub use super::IMenuBondSetterMethods;

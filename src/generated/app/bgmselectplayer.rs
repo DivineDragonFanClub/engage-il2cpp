@@ -400,6 +400,7 @@ impl BgmSelectPlayer {
 }
 
 #[cfg(feature = "app-bgmselectplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BgmSelectPlayer;
     pub use super::IBgmSelectPlayer;

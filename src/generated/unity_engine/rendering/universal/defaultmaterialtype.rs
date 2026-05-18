@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-defaultmaterialtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultMaterialType;
     pub use crate::system::object::IObject;

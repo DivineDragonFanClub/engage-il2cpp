@@ -749,6 +749,7 @@ impl RefineShopExchangeCountMenuContent {
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopExchangeCountMenuContent;
     pub use super::IRefineShopExchangeCountMenuContentMethods;

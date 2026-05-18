@@ -432,6 +432,7 @@ impl PlanarReflectionV2 {
 }
 
 #[cfg(feature = "app-water-planarreflectionv2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlanarReflectionV2;
     pub use super::IPlanarReflectionV2Methods;

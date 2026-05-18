@@ -347,6 +347,7 @@ impl SpriteDataAccessExtensions {
 }
 
 #[cfg(feature = "unity_engine-u2d-spritedataaccessextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteDataAccessExtensions;
     pub use super::SpriteDataAccessExtensions;

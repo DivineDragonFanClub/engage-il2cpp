@@ -417,6 +417,7 @@ impl InfiniteRuntimeClip {
 }
 
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInfiniteRuntimeClip;
     pub use super::IInfiniteRuntimeClipMethods;

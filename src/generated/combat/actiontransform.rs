@@ -394,6 +394,7 @@ impl ActionTransform {
 }
 
 #[cfg(feature = "combat-actiontransform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionTransform;
     pub use super::ActionTransform_State;

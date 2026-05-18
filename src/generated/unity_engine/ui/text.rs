@@ -2833,6 +2833,7 @@ impl Text {
 }
 
 #[cfg(feature = "unity_engine-ui-text")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IText;
     pub use super::ITextMethods;

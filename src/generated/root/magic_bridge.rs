@@ -104,6 +104,7 @@ impl Magic_Bridge {
 }
 
 #[cfg(feature = "root-magic_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagic_Bridge;
     pub use super::IMagic_BridgeMethods;

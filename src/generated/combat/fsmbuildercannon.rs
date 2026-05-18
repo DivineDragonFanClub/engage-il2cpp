@@ -266,6 +266,7 @@ impl FSMBuilderCannon {
 }
 
 #[cfg(feature = "combat-fsmbuildercannon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderCannon;
     pub use super::IFSMBuilderCannon;

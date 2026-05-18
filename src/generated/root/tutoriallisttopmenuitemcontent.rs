@@ -298,6 +298,7 @@ impl TutorialListTopMenuItemContent {
 }
 
 #[cfg(feature = "root-tutoriallisttopmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialListTopMenuItemContent;
     pub use super::ITutorialListTopMenuItemContentMethods;

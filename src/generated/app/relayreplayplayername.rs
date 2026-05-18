@@ -997,6 +997,7 @@ impl RelayReplayPlayerName {
 }
 
 #[cfg(feature = "app-relayreplayplayername")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayReplayPlayerName;
     pub use super::IRelayReplayPlayerNameMethods;

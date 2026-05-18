@@ -768,6 +768,7 @@ impl TMP_GlyphValueRecord {
 }
 
 #[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_GlyphValueRecord;
     pub use crate::system::object::IObject;

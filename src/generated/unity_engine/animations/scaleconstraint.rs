@@ -2206,6 +2206,7 @@ impl ScaleConstraint {
 }
 
 #[cfg(feature = "unity_engine-animations-scaleconstraint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScaleConstraint;
     pub use super::IScaleConstraintMethods;

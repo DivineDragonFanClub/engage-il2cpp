@@ -4013,6 +4013,7 @@ impl CanvasRenderer {
 }
 
 #[cfg(feature = "unity_engine-canvasrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasRenderer;
     pub use super::ICanvasRenderer;

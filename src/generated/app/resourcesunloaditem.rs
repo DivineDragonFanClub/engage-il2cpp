@@ -214,6 +214,7 @@ impl ResourcesUnloadItem {
 }
 
 #[cfg(feature = "app-resourcesunloaditem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourcesUnloadItem;
     pub use super::IResourcesUnloadItemMethods;

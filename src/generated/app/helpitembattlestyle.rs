@@ -285,6 +285,7 @@ impl HelpItemBattleStyle {
 }
 
 #[cfg(feature = "app-helpitembattlestyle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemBattleStyle;
     pub use super::IHelpItemBattleStyle;

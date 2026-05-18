@@ -289,6 +289,7 @@ impl CreateAssetMenuAttribute {
 }
 
 #[cfg(feature = "unity_engine-createassetmenuattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CreateAssetMenuAttribute;
     pub use super::ICreateAssetMenuAttribute;

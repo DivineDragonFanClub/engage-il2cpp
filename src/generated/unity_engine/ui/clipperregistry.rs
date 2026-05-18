@@ -335,6 +335,7 @@ impl ClipperRegistry {
 }
 
 #[cfg(feature = "unity_engine-ui-clipperregistry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClipperRegistry;
     pub use super::IClipperRegistry;

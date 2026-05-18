@@ -15,6 +15,20 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
+    pub struct RelayAwardData_FlagField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayAwardData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
+    pub struct RelayAwardData {
+        #[static_field]
+        #[rename(name = "s_Infos")]
+        pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
     #[repr(C)]
     #[derive(
@@ -70,67 +84,6 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RelayAwardData_Flags {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RelayAwardData_Flags {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RelayAwardData.Flags";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RelayAwardData_Flags {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RelayAwardData_Flags {
-        pub fn mixed() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn show_count() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn negative() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn attack_plus() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn attack_minus() -> Self {
-            Self { value: 16 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
-    pub struct RelayAwardData_FlagField {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
     #[repr(C)]
@@ -272,15 +225,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayAwardData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
-    pub struct RelayAwardData {
-        #[static_field]
-        #[rename(name = "s_Infos")]
-        pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -308,6 +252,62 @@ mod __types {
                 .raw()
                 ._1
                 .byval_arg
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct RelayAwardData_Flags {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RelayAwardData_Flags {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "RelayAwardData.Flags";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RelayAwardData_Flags {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl RelayAwardData_Flags {
+        pub fn mixed() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn show_count() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn negative() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn attack_plus() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn attack_minus() -> Self {
+            Self { value: 16 }
         }
     }
 }
@@ -1844,6 +1844,7 @@ impl RelayAwardData_Info {
 }
 
 #[cfg(feature = "app-relayawarddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayAwardData;
     pub use super::IRelayAwardDataMethods;

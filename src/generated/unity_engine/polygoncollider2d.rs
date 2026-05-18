@@ -280,6 +280,7 @@ pub trait IPolygonCollider2DMethods: IPolygonCollider2D {
 impl<__T: IPolygonCollider2D> IPolygonCollider2DMethods for __T {}
 
 #[cfg(feature = "unity_engine-polygoncollider2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPolygonCollider2D;
     pub use super::IPolygonCollider2DMethods;

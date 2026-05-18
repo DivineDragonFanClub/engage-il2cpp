@@ -338,6 +338,7 @@ impl EngageAnimeTypeMenuItem {
 }
 
 #[cfg(feature = "root-engageanimetypemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EngageAnimeTypeMenuItem;
     pub use super::IEngageAnimeTypeMenuItem;

@@ -890,6 +890,7 @@ impl PlayerConnection {
 }
 
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerConnection;
     pub use super::IPlayerConnectionMethods;

@@ -240,6 +240,7 @@ impl ResourceManagerException {
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-resourcemanagerexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceManagerException;
     pub use super::IResourceManagerExceptionMethods;

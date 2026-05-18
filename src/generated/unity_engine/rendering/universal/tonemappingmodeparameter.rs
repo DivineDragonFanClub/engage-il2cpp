@@ -129,6 +129,7 @@ impl TonemappingModeParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemappingmodeparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITonemappingModeParameter;
     pub use super::ITonemappingModeParameterMethods;

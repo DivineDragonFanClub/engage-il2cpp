@@ -112,6 +112,7 @@ impl VersusViolationTypeMenuItemContent {
 }
 
 #[cfg(feature = "app-versusviolationtypemenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusViolationTypeMenuItemContent;
     pub use super::IVersusViolationTypeMenuItemContentMethods;

@@ -381,6 +381,7 @@ impl DebugAutoPlay {
 }
 
 #[cfg(feature = "app-debugautoplay")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugAutoPlay;
     pub use super::IDebugAutoPlay;

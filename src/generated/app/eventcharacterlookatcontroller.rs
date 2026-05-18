@@ -1020,6 +1020,7 @@ impl EventCharacterLookAtController {
 }
 
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventCharacterLookAtController;
     pub use super::EventCharacterLookAtController_PositionFader;

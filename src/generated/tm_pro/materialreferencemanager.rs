@@ -1572,6 +1572,7 @@ impl MaterialReferenceManager {
 }
 
 #[cfg(feature = "tm_pro-materialreferencemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialReferenceManager;
     pub use super::IMaterialReferenceManagerMethods;

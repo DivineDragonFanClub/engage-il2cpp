@@ -499,6 +499,7 @@ impl KerningTable {
 }
 
 #[cfg(feature = "tm_pro-kerningtable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKerningTable;
     pub use super::IKerningTableMethods;

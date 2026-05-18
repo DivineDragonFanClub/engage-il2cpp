@@ -8928,6 +8928,7 @@ impl SoundManager {
 }
 
 #[cfg(feature = "app-soundmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISoundManager;
     pub use super::ISoundManagerMethods;

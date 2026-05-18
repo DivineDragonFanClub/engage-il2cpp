@@ -861,6 +861,7 @@ impl DynValueMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-dynvaluememberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynValueMemberDescriptor;
     pub use super::IDynValueMemberDescriptor;

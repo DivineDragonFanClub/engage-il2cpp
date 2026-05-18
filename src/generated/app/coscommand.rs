@@ -272,6 +272,7 @@ impl CosCommand {
 }
 
 #[cfg(feature = "app-coscommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CosCommand;
     pub use super::ICosCommand;

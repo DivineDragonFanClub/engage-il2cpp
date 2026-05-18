@@ -825,6 +825,7 @@ impl ProfileCardFavoriteMapData {
 }
 
 #[cfg(feature = "app-profilecardfavoritemapdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteMapData;
     pub use super::IProfileCardFavoriteMapDataMethods;

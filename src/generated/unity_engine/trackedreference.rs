@@ -407,6 +407,7 @@ impl TrackedReference {
 }
 
 #[cfg(feature = "unity_engine-trackedreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrackedReference;
     pub use super::ITrackedReferenceMethods;

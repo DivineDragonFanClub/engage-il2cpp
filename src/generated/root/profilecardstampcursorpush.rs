@@ -189,6 +189,7 @@ impl ProfileCardStampCursorPush {
 }
 
 #[cfg(feature = "root-profilecardstampcursorpush")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardStampCursorPush;
     pub use super::IProfileCardStampCursorPushMethods;

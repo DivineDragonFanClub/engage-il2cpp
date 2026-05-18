@@ -1175,6 +1175,7 @@ impl UnitInfoCharaImageMaskOffset {
 }
 
 #[cfg(feature = "app-unitinfocharaimagemaskoffset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoCharaImageMaskOffset;
     pub use super::IUnitInfoCharaImageMaskOffsetMethods;

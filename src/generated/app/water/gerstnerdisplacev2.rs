@@ -106,6 +106,7 @@ impl GerstnerDisplaceV2 {
 }
 
 #[cfg(feature = "app-water-gerstnerdisplacev2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GerstnerDisplaceV2;
     pub use super::IGerstnerDisplaceV2;

@@ -338,6 +338,7 @@ impl DownloadHandlerBuffer {
 }
 
 #[cfg(feature = "unity_engine-networking-downloadhandlerbuffer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DownloadHandlerBuffer;
     pub use super::IDownloadHandlerBuffer;

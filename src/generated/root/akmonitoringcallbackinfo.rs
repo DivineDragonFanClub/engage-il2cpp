@@ -728,6 +728,7 @@ impl AkMonitoringCallbackInfo {
 }
 
 #[cfg(feature = "root-akmonitoringcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMonitoringCallbackInfo;
     pub use super::IAkMonitoringCallbackInfo;

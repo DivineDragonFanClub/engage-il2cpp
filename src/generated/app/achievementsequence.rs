@@ -483,6 +483,7 @@ impl AchievementSequence {
 }
 
 #[cfg(feature = "app-achievementsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AchievementSequence;
     pub use super::AchievementSequence_Label2;

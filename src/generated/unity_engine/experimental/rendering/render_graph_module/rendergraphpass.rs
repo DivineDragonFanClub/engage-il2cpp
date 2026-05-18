@@ -2043,6 +2043,7 @@ impl RenderGraphPass {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphPass;
     pub use super::IRenderGraphPassMethods;

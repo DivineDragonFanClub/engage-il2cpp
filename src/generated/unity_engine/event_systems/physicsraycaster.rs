@@ -932,6 +932,7 @@ impl PhysicsRaycaster {
 }
 
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysicsRaycaster;
     pub use super::IPhysicsRaycasterMethods;

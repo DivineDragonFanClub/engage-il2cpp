@@ -637,6 +637,7 @@ impl CharacterInfo {
 }
 
 #[cfg(feature = "unity_engine-characterinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterInfo;
     pub use crate::system::object::IObject;

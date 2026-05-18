@@ -743,6 +743,7 @@ impl RankingMenu_RankingMenuItem {
 }
 
 #[cfg(feature = "app-rankingmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRankingMenu;
     pub use super::IRankingMenuMethods;

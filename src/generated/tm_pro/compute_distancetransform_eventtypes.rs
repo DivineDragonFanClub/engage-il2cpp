@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-compute_distancetransform_eventtypes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Compute_DistanceTransform_EventTypes;
     pub use crate::system::object::IObject;

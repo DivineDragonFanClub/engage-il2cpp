@@ -341,6 +341,7 @@ impl StageRuntimeInterface {
 }
 
 #[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStageRuntimeInterface;
     pub use super::IStageRuntimeInterfaceMethods;

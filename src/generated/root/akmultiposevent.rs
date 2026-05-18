@@ -184,6 +184,7 @@ impl AkMultiPosEvent {
 }
 
 #[cfg(feature = "root-akmultiposevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMultiPosEvent;
     pub use super::IAkMultiPosEvent;

@@ -580,6 +580,7 @@ impl InventoryRoot {
 }
 
 #[cfg(feature = "app-inventoryroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInventoryRoot;
     pub use super::IInventoryRootMethods;

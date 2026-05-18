@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-genericparameterattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GenericParameterAttributes;
     pub use crate::system::object::IObject;

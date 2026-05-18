@@ -175,6 +175,7 @@ impl AkEventTrack {
 }
 
 #[cfg(feature = "root-akeventtrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEventTrack;
     pub use super::IAkEventTrack;

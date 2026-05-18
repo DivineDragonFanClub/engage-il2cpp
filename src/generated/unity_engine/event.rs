@@ -1947,6 +1947,7 @@ impl Event {
 }
 
 #[cfg(feature = "unity_engine-event")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Event;
     pub use super::IEvent;

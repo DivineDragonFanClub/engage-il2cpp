@@ -516,6 +516,7 @@ impl BattleRecordSequence {
 }
 
 #[cfg(feature = "app-battlerecordsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleRecordSequence;
     pub use super::IBattleRecordSequence;

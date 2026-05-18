@@ -704,6 +704,7 @@ impl LightmapSettings {
 }
 
 #[cfg(feature = "unity_engine-lightmapsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightmapSettings;
     pub use super::ILightmapSettingsMethods;

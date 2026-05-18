@@ -424,6 +424,7 @@ impl CameraControllerBird {
 }
 
 #[cfg(feature = "combat-cameracontrollerbird")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerBird;
     pub use super::ICameraControllerBird;

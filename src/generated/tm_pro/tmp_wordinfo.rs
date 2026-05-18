@@ -104,6 +104,7 @@ impl TMP_WordInfo {
 }
 
 #[cfg(feature = "tm_pro-tmp_wordinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_WordInfo;
     pub use crate::system::object::IObject;

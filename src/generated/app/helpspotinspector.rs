@@ -270,6 +270,7 @@ impl HelpSpotInspector {
 }
 
 #[cfg(feature = "app-helpspotinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpSpotInspector;
     pub use super::IHelpSpotInspector;

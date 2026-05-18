@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-reflectionprobesortingcriteria")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionProbeSortingCriteria;
     pub use crate::system::object::IObject;

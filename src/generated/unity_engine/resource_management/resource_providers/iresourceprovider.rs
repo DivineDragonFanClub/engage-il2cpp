@@ -372,6 +372,7 @@ pub trait IIResourceProviderMethods: IIResourceProvider {
 impl<__T: IIResourceProvider> IIResourceProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iresourceprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIResourceProvider;
     pub use super::IIResourceProviderMethods;

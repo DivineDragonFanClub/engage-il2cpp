@@ -225,6 +225,7 @@ impl DragonRideExplode {
 }
 
 #[cfg(feature = "app-dragonrideexplode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideExplode;
     pub use super::IDragonRideExplode;

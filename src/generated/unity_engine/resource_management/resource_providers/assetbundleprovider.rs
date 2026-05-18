@@ -283,6 +283,7 @@ impl AssetBundleProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundleProvider;
     pub use super::IAssetBundleProvider;

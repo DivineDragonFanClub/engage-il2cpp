@@ -162,6 +162,7 @@ impl TMP_Glyph {
 }
 
 #[cfg(feature = "tm_pro-tmp_glyph")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Glyph;
     pub use super::ITMP_GlyphMethods;

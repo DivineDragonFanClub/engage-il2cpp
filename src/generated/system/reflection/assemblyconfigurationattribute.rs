@@ -115,6 +115,7 @@ impl AssemblyConfigurationAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyConfigurationAttribute;
     pub use super::IAssemblyConfigurationAttribute;

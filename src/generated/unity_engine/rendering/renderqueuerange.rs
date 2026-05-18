@@ -518,6 +518,7 @@ impl RenderQueueRange {
 }
 
 #[cfg(feature = "unity_engine-rendering-renderqueuerange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderQueueRange;
     pub use crate::system::object::IObject;

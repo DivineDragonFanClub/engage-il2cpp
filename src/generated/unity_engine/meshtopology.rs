@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-meshtopology")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshTopology;
     pub use crate::system::object::IObject;

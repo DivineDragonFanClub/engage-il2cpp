@@ -120,6 +120,7 @@ impl ReviveAfterInspector {
 }
 
 #[cfg(feature = "app-reviveafterinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReviveAfterInspector;
     pub use super::IReviveAfterInspectorMethods;

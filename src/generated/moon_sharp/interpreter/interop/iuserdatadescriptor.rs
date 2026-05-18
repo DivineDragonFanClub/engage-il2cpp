@@ -543,6 +543,7 @@ pub trait IIUserDataDescriptorMethods: IIUserDataDescriptor {
 impl<__T: IIUserDataDescriptor> IIUserDataDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIUserDataDescriptor;
     pub use super::IIUserDataDescriptorMethods;

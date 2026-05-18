@@ -1037,6 +1037,7 @@ impl ArenaBondGodSelectRoot {
 }
 
 #[cfg(feature = "app-arenabondgodselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondGodSelectRoot;
     pub use super::ArenaBondGodSelectRoot_DecideEventHandler;

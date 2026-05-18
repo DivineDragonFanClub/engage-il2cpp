@@ -175,6 +175,7 @@ impl RelayStamp {
 }
 
 #[cfg(feature = "app-relaystamp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayStamp;
     pub use super::IRelayStampMethods;

@@ -171,6 +171,7 @@ impl NotNullAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-notnullattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INotNullAttribute;
     pub use super::INotNullAttributeMethods;

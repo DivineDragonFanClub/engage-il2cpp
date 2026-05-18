@@ -359,6 +359,7 @@ impl DragonRideOneShotSEReciever {
 }
 
 #[cfg(feature = "app-dragonrideoneshotsereciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideOneShotSEReciever;
     pub use super::IDragonRideOneShotSEReciever;

@@ -959,6 +959,7 @@ impl ConverterWithUt {
 }
 
 #[cfg(feature = "combat-situation_converter-converterwithut")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConverterWithUt;
     pub use super::IConverterWithUt;

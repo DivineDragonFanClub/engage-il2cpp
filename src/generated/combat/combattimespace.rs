@@ -1551,6 +1551,7 @@ impl CombatTimespace {
 }
 
 #[cfg(feature = "combat-combattimespace")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatTimespace;
     pub use super::ICombatTimespace;

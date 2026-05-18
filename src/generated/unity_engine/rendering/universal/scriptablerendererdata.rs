@@ -543,6 +543,7 @@ impl ScriptableRendererData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableRendererData;
     pub use super::IScriptableRendererDataMethods;

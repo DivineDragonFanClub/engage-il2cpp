@@ -84,6 +84,7 @@ impl<T0: ::unity2::ClassIdentity> Interpolator_1<T0> {
 }
 
 #[cfg(feature = "app-interpolator_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolator_1;
     pub use super::IInterpolator_1Methods;

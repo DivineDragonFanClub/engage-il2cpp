@@ -1136,6 +1136,7 @@ impl UnitInfoWeaponModelPool {
 }
 
 #[cfg(feature = "app-unitinfoweaponmodelpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoWeaponModelPool;
     pub use super::IUnitInfoWeaponModelPoolMethods;

@@ -624,6 +624,7 @@ impl PhotographSelectPauseMenu_UpdateUIObjHandler {
 }
 
 #[cfg(feature = "app-photographselectpausemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectPauseMenu;
     pub use super::IPhotographSelectPauseMenuMethods;

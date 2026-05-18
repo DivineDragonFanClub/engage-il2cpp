@@ -2229,6 +2229,7 @@ impl TalkCharacterController {
 }
 
 #[cfg(feature = "app-talk3_d-talkcharactercontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkCharacterController;
     pub use super::ITalkCharacterControllerMethods;

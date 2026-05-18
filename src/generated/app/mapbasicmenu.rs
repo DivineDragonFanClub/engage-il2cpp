@@ -190,6 +190,7 @@ impl MapBasicMenu {
 }
 
 #[cfg(feature = "app-mapbasicmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBasicMenu;
     pub use super::IMapBasicMenuMethods;

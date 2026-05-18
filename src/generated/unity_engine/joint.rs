@@ -287,6 +287,7 @@ impl Joint {
 }
 
 #[cfg(feature = "unity_engine-joint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJoint;
     pub use super::IJointMethods;

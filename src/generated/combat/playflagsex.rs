@@ -223,6 +223,7 @@ impl PlayFlagsEx {
 }
 
 #[cfg(feature = "combat-playflagsex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayFlagsEx;
     pub use super::PlayFlagsEx;

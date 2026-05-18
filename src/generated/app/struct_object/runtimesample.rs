@@ -261,6 +261,7 @@ impl RuntimeSample {
 }
 
 #[cfg(feature = "app-struct_object-runtimesample")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeSample;
     pub use super::IRuntimeSampleMethods;

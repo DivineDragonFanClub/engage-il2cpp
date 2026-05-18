@@ -2633,6 +2633,7 @@ impl UnitReliance {
 }
 
 #[cfg(feature = "app-unitreliance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitReliance;
     pub use super::IUnitRelianceMethods;

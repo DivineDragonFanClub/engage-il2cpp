@@ -227,6 +227,7 @@ impl CustomColorGrading {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customcolorgrading")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomColorGrading;
     pub use super::ICustomColorGrading;

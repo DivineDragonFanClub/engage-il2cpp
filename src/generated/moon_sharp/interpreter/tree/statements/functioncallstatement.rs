@@ -258,6 +258,7 @@ impl FunctionCallStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-functioncallstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionCallStatement;
     pub use super::IFunctionCallStatement;

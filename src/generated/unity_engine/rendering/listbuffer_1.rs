@@ -76,6 +76,7 @@ impl<T0: ::unity2::ClassIdentity> ListBuffer_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-listbuffer_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ListBuffer_1;
     pub use crate::system::object::IObject;

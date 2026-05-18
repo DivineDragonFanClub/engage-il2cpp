@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-look_dev-sky")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Sky;
     pub use crate::system::object::IObject;

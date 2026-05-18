@@ -105,6 +105,7 @@ impl TerrainImporter {
 }
 
 #[cfg(feature = "app-terrainimporter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainImporter;
     pub use super::ITerrainImporterMethods;

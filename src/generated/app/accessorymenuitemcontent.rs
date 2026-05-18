@@ -354,6 +354,7 @@ impl AccessoryMenuItemContent {
 }
 
 #[cfg(feature = "app-accessorymenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryMenuItemContent;
     pub use super::IAccessoryMenuItemContent;

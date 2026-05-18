@@ -96,6 +96,7 @@ pub trait IISelectHandlerMethods: IISelectHandler {
 impl<__T: IISelectHandler> IISelectHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-iselecthandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IISelectHandler;
     pub use super::IISelectHandlerMethods;

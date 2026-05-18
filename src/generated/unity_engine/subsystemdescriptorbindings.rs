@@ -87,6 +87,7 @@ impl SubsystemDescriptorBindings {
 }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemDescriptorBindings;
     pub use super::SubsystemDescriptorBindings;

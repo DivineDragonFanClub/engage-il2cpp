@@ -774,6 +774,7 @@ impl Recorder {
 }
 
 #[cfg(feature = "unity_engine-profiling-recorder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRecorder;
     pub use super::IRecorderMethods;

@@ -1110,6 +1110,7 @@ impl RefineShopEngraveDemo {
 }
 
 #[cfg(feature = "app-refineshopengravedemo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveDemo;
     pub use super::IRefineShopEngraveDemoMethods;

@@ -553,6 +553,7 @@ impl UnitSelectMenu {
 }
 
 #[cfg(feature = "app-unitselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectMenu;
     pub use super::IUnitSelectMenuMethods;

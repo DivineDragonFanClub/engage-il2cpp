@@ -109,6 +109,7 @@ impl DebugCollisionRendererManager {
 }
 
 #[cfg(feature = "root-debugcollisionrenderermanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugCollisionRendererManager;
     pub use super::IDebugCollisionRendererManager;

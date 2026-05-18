@@ -120,6 +120,7 @@ impl PlayerBirthdayInputDayMenuItemContent {
 }
 
 #[cfg(feature = "app-playerbirthdayinputdaymenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerBirthdayInputDayMenuItemContent;
     pub use super::IPlayerBirthdayInputDayMenuItemContentMethods;

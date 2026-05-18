@@ -813,6 +813,7 @@ impl AkPlaylist {
 }
 
 #[cfg(feature = "root-akplaylist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkPlaylist;
     pub use super::IAkPlaylist;

@@ -408,6 +408,7 @@ impl ShadowRendering {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowrendering")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowRendering;
     pub use super::ShadowRendering;

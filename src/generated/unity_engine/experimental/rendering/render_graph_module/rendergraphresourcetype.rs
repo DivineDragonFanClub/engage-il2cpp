@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderGraphResourceType;
     pub use crate::system::object::IObject;

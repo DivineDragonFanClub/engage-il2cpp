@@ -646,6 +646,7 @@ impl CommonRewardMenuItem {
 }
 
 #[cfg(feature = "app-commonrewardmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRewardMenuItem;
     pub use super::ICommonRewardMenuItem;

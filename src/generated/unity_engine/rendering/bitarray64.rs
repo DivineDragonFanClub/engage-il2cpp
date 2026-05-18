@@ -1094,6 +1094,7 @@ impl BitArray64 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray64")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray64;
     pub use crate::system::object::IObject;

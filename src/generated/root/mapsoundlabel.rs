@@ -107,6 +107,7 @@ impl MapSoundLabel {
 }
 
 #[cfg(feature = "root-mapsoundlabel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSoundLabel;
     pub use super::IMapSoundLabelMethods;

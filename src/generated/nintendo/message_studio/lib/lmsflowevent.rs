@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflowevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LMSFlowEvent;
     pub use crate::system::object::IObject;

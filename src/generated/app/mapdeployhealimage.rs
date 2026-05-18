@@ -103,6 +103,7 @@ impl MapDeployHealImage {
 }
 
 #[cfg(feature = "app-mapdeployhealimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployHealImage;
     pub use super::IMapDeployHealImageMethods;

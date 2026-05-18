@@ -1433,6 +1433,7 @@ impl PhysicMaterial {
 }
 
 #[cfg(feature = "unity_engine-physicmaterial")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysicMaterial;
     pub use super::IPhysicMaterialMethods;

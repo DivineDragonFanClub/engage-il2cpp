@@ -267,6 +267,7 @@ impl VolumeSeMenuItem {
 }
 
 #[cfg(feature = "root-volumesemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeSeMenuItem;
     pub use super::IVolumeSeMenuItemMethods;

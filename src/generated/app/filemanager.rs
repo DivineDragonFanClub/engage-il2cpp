@@ -491,6 +491,7 @@ impl FileManager {
 }
 
 #[cfg(feature = "app-filemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileManager;
     pub use super::IFileManager;

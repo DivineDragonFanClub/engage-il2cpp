@@ -1271,6 +1271,7 @@ impl FieldMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-fieldmemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FieldMemberDescriptor;
     pub use super::IFieldMemberDescriptor;

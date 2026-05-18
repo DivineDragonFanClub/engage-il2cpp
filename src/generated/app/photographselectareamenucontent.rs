@@ -804,6 +804,7 @@ impl PhotographSelectAreaMenuContent {
 }
 
 #[cfg(feature = "app-photographselectareamenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectAreaMenuContent;
     pub use super::IPhotographSelectAreaMenuContentMethods;

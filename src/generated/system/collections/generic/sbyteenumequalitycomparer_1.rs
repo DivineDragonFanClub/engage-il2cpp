@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity> SByteEnumEqualityComparer_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISByteEnumEqualityComparer_1;
     pub use super::ISByteEnumEqualityComparer_1Methods;

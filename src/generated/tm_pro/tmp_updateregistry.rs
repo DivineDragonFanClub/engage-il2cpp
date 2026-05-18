@@ -736,6 +736,7 @@ impl TMP_UpdateRegistry {
 }
 
 #[cfg(feature = "tm_pro-tmp_updateregistry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_UpdateRegistry;
     pub use super::ITMP_UpdateRegistryMethods;

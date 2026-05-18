@@ -510,6 +510,7 @@ impl RuntimeElement {
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeelement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeElement;
     pub use super::IRuntimeElementMethods;

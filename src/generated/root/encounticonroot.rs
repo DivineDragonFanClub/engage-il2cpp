@@ -356,6 +356,7 @@ impl EncountIconRoot {
 }
 
 #[cfg(feature = "root-encounticonroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountIconRoot;
     pub use super::IEncountIconRoot;

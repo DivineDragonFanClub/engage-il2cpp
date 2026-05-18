@@ -461,6 +461,7 @@ impl VibrationValue {
 }
 
 #[cfg(feature = "nn-hid-vibrationvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VibrationValue;
     pub use crate::system::object::IObject;

@@ -212,6 +212,7 @@ impl GameModeCommand {
 }
 
 #[cfg(feature = "app-gamemodecommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameModeCommand;
     pub use super::IGameModeCommand;

@@ -1277,6 +1277,7 @@ impl GUILayoutUtility_LayoutCache {
 }
 
 #[cfg(feature = "unity_engine-guilayoututility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUILayoutUtility;
     pub use super::GUILayoutUtility_LayoutCache;

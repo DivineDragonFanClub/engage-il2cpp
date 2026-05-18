@@ -255,6 +255,7 @@ impl NonRandomizedStringEqualityComparer {
 }
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INonRandomizedStringEqualityComparer;
     pub use super::INonRandomizedStringEqualityComparerMethods;

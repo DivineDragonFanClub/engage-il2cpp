@@ -321,6 +321,7 @@ impl DebugService {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-debugservice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugService;
     pub use super::IDebugService;

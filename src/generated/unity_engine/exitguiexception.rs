@@ -108,6 +108,7 @@ impl ExitGUIException {
 }
 
 #[cfg(feature = "unity_engine-exitguiexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExitGUIException;
     pub use super::IExitGUIException;

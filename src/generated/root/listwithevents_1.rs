@@ -132,6 +132,7 @@ impl<T0: ::unity2::ClassIdentity> ListWithEvents_1<T0> {
 }
 
 #[cfg(feature = "root-listwithevents_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IListWithEvents_1;
     pub use super::IListWithEvents_1Methods;

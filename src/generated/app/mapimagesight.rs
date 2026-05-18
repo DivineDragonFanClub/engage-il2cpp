@@ -169,6 +169,7 @@ impl MapImageSight {
 }
 
 #[cfg(feature = "app-mapimagesight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageSight;
     pub use super::IMapImageSightMethods;

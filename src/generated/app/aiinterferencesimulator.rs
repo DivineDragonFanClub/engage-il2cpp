@@ -670,6 +670,7 @@ impl AIInterferenceSimulator_Flag {
 }
 
 #[cfg(feature = "app-aiinterferencesimulator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIInterferenceSimulator;
     pub use super::AIInterferenceSimulator_Flag;

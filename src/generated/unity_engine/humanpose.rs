@@ -100,6 +100,7 @@ impl HumanPose {
 }
 
 #[cfg(feature = "unity_engine-humanpose")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HumanPose;
     pub use crate::system::object::IObject;

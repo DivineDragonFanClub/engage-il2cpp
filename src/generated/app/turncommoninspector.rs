@@ -198,6 +198,7 @@ impl TurnCommonInspector {
 }
 
 #[cfg(feature = "app-turncommoninspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITurnCommonInspector;
     pub use super::ITurnCommonInspectorMethods;

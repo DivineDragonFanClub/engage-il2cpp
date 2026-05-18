@@ -881,6 +881,7 @@ impl ToggleGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-togglegroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IToggleGroup;
     pub use super::IToggleGroupMethods;

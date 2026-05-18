@@ -597,6 +597,7 @@ impl AkBankCallbackInfo {
 }
 
 #[cfg(feature = "root-akbankcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBankCallbackInfo;
     pub use super::IAkBankCallbackInfo;

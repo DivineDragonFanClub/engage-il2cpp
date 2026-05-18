@@ -163,6 +163,7 @@ impl AmiiboAccessoryMenuNoneItem {
 }
 
 #[cfg(feature = "app-amiiboaccessorymenunoneitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboAccessoryMenuNoneItem;
     pub use super::IAmiiboAccessoryMenuNoneItem;

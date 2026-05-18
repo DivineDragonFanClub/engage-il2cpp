@@ -501,6 +501,7 @@ impl RuntimeAnimUtil {
 }
 
 #[cfg(feature = "combat-runtimeanimutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeAnimUtil;
     pub use super::RuntimeAnimUtil;

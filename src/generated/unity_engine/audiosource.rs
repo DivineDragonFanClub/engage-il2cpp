@@ -102,6 +102,7 @@ impl AudioSource {
 }
 
 #[cfg(feature = "unity_engine-audiosource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioSource;
     pub use super::IAudioSource;

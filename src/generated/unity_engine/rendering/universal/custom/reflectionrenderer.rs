@@ -883,6 +883,7 @@ impl ReflectionRenderer {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReflectionRenderer;
     pub use super::IReflectionRendererMethods;

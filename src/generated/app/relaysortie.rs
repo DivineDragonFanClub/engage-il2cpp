@@ -1652,6 +1652,7 @@ impl RelaySortie {
 }
 
 #[cfg(feature = "app-relaysortie")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelaySortie;
     pub use super::IRelaySortieMethods;

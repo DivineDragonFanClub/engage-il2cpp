@@ -338,6 +338,7 @@ impl ExprListExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-exprlistexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExprListExpression;
     pub use super::IExprListExpression;

@@ -577,6 +577,7 @@ impl RuntimePropertyInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimepropertyinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimePropertyInfo;
     pub use super::IRuntimePropertyInfoMethods;

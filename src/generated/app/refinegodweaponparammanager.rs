@@ -1278,6 +1278,7 @@ impl RefineGodWeaponParamManager_ReturnEventHandler {
 }
 
 #[cfg(feature = "app-refinegodweaponparammanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponParamManager;
     pub use super::IRefineGodWeaponParamManagerMethods;

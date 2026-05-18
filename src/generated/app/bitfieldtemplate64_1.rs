@@ -97,6 +97,7 @@ impl<T0: ::unity2::ClassIdentity> BitFieldTemplate64_1<T0> {
 }
 
 #[cfg(feature = "app-bitfieldtemplate64_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitFieldTemplate64_1;
     pub use super::IBitFieldTemplate64_1;

@@ -380,6 +380,7 @@ impl SortieTopMenuItemContent {
 }
 
 #[cfg(feature = "app-sortietopmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieTopMenuItemContent;
     pub use super::ISortieTopMenuItemContentMethods;

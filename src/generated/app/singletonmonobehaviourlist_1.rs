@@ -69,6 +69,7 @@ impl<T0: ::unity2::ClassIdentity> SingletonMonoBehaviourList_1<T0> {
 }
 
 #[cfg(feature = "app-singletonmonobehaviourlist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISingletonMonoBehaviourList_1;
     pub use super::ISingletonMonoBehaviourList_1Methods;

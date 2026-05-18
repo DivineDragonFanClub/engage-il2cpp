@@ -1172,6 +1172,7 @@ impl AkResourceMonitorDataSummary {
 }
 
 #[cfg(feature = "root-akresourcemonitordatasummary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkResourceMonitorDataSummary;
     pub use super::IAkResourceMonitorDataSummary;

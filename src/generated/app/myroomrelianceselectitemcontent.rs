@@ -360,6 +360,7 @@ impl MyRoomRelianceSelectItemContent {
 }
 
 #[cfg(feature = "app-myroomrelianceselectitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomRelianceSelectItemContent;
     pub use super::IMyRoomRelianceSelectItemContentMethods;

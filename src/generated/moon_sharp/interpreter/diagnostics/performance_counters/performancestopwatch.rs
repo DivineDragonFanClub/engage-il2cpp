@@ -236,6 +236,7 @@ impl PerformanceStopwatch {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-performancestopwatch")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPerformanceStopwatch;
     pub use super::IPerformanceStopwatchMethods;

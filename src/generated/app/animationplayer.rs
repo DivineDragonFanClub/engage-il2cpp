@@ -105,6 +105,7 @@ impl AnimationPlayer {
 }
 
 #[cfg(feature = "app-animationplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayer;
     pub use super::IAnimationPlayer;

@@ -574,6 +574,7 @@ impl BinLibmsFileBase {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinLibmsFileBase;
     pub use super::IBinLibmsFileBase;

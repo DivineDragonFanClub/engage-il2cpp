@@ -1158,6 +1158,7 @@ impl BattleStyle {
 }
 
 #[cfg(feature = "app-battlestyle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleStyle;
     pub use super::BattleStyle_Types;

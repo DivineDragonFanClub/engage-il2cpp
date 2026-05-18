@@ -165,6 +165,7 @@ impl RingInfoDirty {
 }
 
 #[cfg(feature = "app-ringinfodirty")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingInfoDirty;
     pub use super::IRingInfoDirtyMethods;

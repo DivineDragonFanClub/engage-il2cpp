@@ -1694,6 +1694,7 @@ impl WeaponLevels {
 }
 
 #[cfg(feature = "app-weaponlevels")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponLevels;
     pub use super::IWeaponLevelsMethods;

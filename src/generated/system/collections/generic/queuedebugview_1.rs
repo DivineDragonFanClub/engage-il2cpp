@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-queuedebugview_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IQueueDebugView_1;
     pub use super::QueueDebugView_1;

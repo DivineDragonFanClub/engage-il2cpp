@@ -2591,6 +2591,7 @@ impl HubAccessData {
 }
 
 #[cfg(feature = "app-hubaccessdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessData;
     pub use super::IHubAccessData;

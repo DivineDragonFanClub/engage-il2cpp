@@ -1877,6 +1877,7 @@ impl SystemInfo {
 }
 
 #[cfg(feature = "unity_engine-systeminfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISystemInfo;
     pub use super::SystemInfo;

@@ -73,6 +73,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 }
 
 #[cfg(feature = "tm_pro-fastaction_3")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FastAction_3;
     pub use super::IFastAction_3;

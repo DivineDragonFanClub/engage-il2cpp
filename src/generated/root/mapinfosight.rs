@@ -102,6 +102,7 @@ impl MapInfoSight {
 }
 
 #[cfg(feature = "root-mapinfosight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoSight;
     pub use super::IMapInfoSightMethods;

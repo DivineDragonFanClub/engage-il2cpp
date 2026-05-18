@@ -971,6 +971,7 @@ impl UnmanagedMemoryStream {
 }
 
 #[cfg(feature = "system-io-unmanagedmemorystream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnmanagedMemoryStream;
     pub use super::IUnmanagedMemoryStreamMethods;

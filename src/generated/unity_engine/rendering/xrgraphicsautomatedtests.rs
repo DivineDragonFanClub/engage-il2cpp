@@ -173,6 +173,7 @@ impl XRGraphicsAutomatedTests {
 }
 
 #[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRGraphicsAutomatedTests;
     pub use super::XRGraphicsAutomatedTests;

@@ -1792,6 +1792,7 @@ impl CharacterAnimset {
 }
 
 #[cfg(feature = "combat-characteranimset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAnimset;
     pub use super::ICharacterAnimset;

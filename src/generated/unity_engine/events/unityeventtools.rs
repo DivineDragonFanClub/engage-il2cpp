@@ -87,6 +87,7 @@ impl UnityEventTools {
 }
 
 #[cfg(feature = "unity_engine-events-unityeventtools")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEventTools;
     pub use super::UnityEventTools;

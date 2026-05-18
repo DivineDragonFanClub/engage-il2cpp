@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_textelementtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_TextElementType;
     pub use crate::system::object::IObject;

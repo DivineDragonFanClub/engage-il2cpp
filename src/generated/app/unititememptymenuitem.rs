@@ -366,6 +366,7 @@ impl UnitItemEmptyMenuItem {
 }
 
 #[cfg(feature = "app-unititememptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitItemEmptyMenuItem;
     pub use super::IUnitItemEmptyMenuItemMethods;

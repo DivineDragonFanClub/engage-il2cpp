@@ -100,6 +100,7 @@ impl NativeAsStructAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeasstructattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeAsStructAttribute;
     pub use super::INativeAsStructAttributeMethods;

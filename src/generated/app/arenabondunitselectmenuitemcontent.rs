@@ -302,6 +302,7 @@ impl ArenaBondUnitSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-arenabondunitselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondUnitSelectMenuItemContent;
     pub use super::IArenaBondUnitSelectMenuItemContent;

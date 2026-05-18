@@ -534,6 +534,7 @@ impl VersusFriendMenuContent {
 }
 
 #[cfg(feature = "app-versusfriendmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusFriendMenuContent;
     pub use super::IVersusFriendMenuContentMethods;

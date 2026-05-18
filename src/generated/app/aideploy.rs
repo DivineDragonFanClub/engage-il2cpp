@@ -99,6 +99,7 @@ impl AIDeploy {
 }
 
 #[cfg(feature = "app-aideploy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIDeploy;
     pub use super::IAIDeploy;

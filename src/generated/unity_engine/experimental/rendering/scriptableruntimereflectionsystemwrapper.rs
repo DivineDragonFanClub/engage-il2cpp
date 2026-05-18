@@ -267,6 +267,7 @@ impl ScriptableRuntimeReflectionSystemWrapper {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableRuntimeReflectionSystemWrapper;
     pub use super::IScriptableRuntimeReflectionSystemWrapperMethods;

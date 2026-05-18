@@ -82,6 +82,7 @@ impl PixelPerfectRendering {
 }
 
 #[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPixelPerfectRendering;
     pub use super::PixelPerfectRendering;

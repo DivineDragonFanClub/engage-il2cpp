@@ -845,6 +845,7 @@ impl MonoEvent {
 }
 
 #[cfg(feature = "system-reflection-monoevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoEvent;
     pub use super::IMonoEventMethods;

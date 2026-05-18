@@ -1124,6 +1124,7 @@ impl AkTriangle {
 }
 
 #[cfg(feature = "root-aktriangle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriangle;
     pub use super::IAkTriangle;

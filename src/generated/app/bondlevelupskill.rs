@@ -424,6 +424,7 @@ impl BondLevelUpSkill {
 }
 
 #[cfg(feature = "app-bondlevelupskill")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BondLevelUpSkill;
     pub use super::IBondLevelUpSkill;

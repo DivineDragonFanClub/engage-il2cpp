@@ -100,6 +100,7 @@ impl MapDeploy {
 }
 
 #[cfg(feature = "app-mapdeploy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeploy;
     pub use super::IMapDeployMethods;

@@ -111,6 +111,7 @@ impl MinAttribute {
 }
 
 #[cfg(feature = "unity_engine-minattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMinAttribute;
     pub use super::IMinAttributeMethods;

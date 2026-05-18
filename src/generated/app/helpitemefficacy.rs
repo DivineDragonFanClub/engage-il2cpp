@@ -288,6 +288,7 @@ impl HelpItemEfficacy {
 }
 
 #[cfg(feature = "app-helpitemefficacy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemEfficacy;
     pub use super::IHelpItemEfficacy;

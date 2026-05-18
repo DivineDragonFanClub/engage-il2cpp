@@ -330,6 +330,7 @@ impl TalkPlayModeMenuItem {
 }
 
 #[cfg(feature = "root-talkplaymodemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkPlayModeMenuItem;
     pub use super::ITalkPlayModeMenuItemMethods;

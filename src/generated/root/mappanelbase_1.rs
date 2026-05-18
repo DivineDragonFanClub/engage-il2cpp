@@ -18,13 +18,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1_ImageGetFunction.md"))]
-    #[::unity2::class(namespace = "", name = "MapPanelBase`1.ImageGetFunction")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapPanelBase_1_ImageGetFunction<T0: ::unity2::ClassIdentity> {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))]
     #[::unity2::class(namespace = "", name = "MapPanelBase`1")]
     # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)]
@@ -51,6 +44,13 @@ mod __types {
         #[rename(name = "CheckIMageOffsetZTable")]
         pub check_i_mage_offset_z_table: ::unity2::Array<i32>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1_ImageGetFunction.md"))]
+    #[::unity2::class(namespace = "", name = "MapPanelBase`1.ImageGetFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapPanelBase_1_ImageGetFunction<T0: ::unity2::ClassIdentity> {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelbase_1/MapPanelBase_1_PanelType.md"))]
     #[repr(C)]
@@ -134,34 +134,6 @@ mod __types {
 
 #[cfg(feature = "root-mappanelbase_1-types")]
 pub use __types::*;
-
-#[cfg(feature = "root-mappanelbase_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, x: i32, z: i32) -> bool;
-}
-
-#[cfg(feature = "root-mappanelbase_1")]
-impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelBase_1_ImageGetFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelBase_1_ImageGetFunctionMethods<T0>>::ctor(this, object, method);
-        this
-    }
-}
 
 #[cfg(feature = "root-mappanelbase_1")]
 #[::unity2::methods]
@@ -398,6 +370,35 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 }
 
 #[cfg(feature = "root-mappanelbase_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> bool;
+}
+
+#[cfg(feature = "root-mappanelbase_1")]
+impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelBase_1_ImageGetFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelBase_1_ImageGetFunctionMethods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "root-mappanelbase_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelBase_1;
     pub use super::IMapPanelBase_1Methods;

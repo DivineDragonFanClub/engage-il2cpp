@@ -98,6 +98,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-vertexattributeformat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VertexAttributeFormat;
     pub use crate::system::object::IObject;

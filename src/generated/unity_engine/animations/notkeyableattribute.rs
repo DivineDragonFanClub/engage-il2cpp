@@ -99,6 +99,7 @@ impl NotKeyableAttribute {
 }
 
 #[cfg(feature = "unity_engine-animations-notkeyableattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INotKeyableAttribute;
     pub use super::INotKeyableAttributeMethods;

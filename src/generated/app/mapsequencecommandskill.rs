@@ -920,6 +920,7 @@ impl MapSequenceCommandSkill {
 }
 
 #[cfg(feature = "app-mapsequencecommandskill")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceCommandSkill;
     pub use super::IMapSequenceCommandSkillMethods;

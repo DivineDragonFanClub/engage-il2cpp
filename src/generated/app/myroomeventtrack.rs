@@ -178,6 +178,7 @@ impl MyRoomEventTrack {
 }
 
 #[cfg(feature = "app-myroomeventtrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomEventTrack;
     pub use super::IMyRoomEventTrackMethods;

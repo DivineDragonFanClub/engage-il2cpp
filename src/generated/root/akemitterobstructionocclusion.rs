@@ -290,6 +290,7 @@ impl AkEmitterObstructionOcclusion {
 }
 
 #[cfg(feature = "root-akemitterobstructionocclusion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEmitterObstructionOcclusion;
     pub use super::IAkEmitterObstructionOcclusion;

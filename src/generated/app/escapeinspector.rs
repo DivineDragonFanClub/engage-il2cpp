@@ -286,6 +286,7 @@ impl EscapeInspector {
 }
 
 #[cfg(feature = "app-escapeinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EscapeInspector;
     pub use super::IEscapeInspector;

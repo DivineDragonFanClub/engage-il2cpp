@@ -86,6 +86,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-membertypes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MemberTypes;
     pub use crate::system::object::IObject;

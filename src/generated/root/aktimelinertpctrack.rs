@@ -232,6 +232,7 @@ impl AkTimelineRtpcTrack {
 }
 
 #[cfg(feature = "root-aktimelinertpctrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTimelineRtpcTrack;
     pub use super::IAkTimelineRtpcTrack;

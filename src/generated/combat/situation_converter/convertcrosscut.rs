@@ -471,6 +471,7 @@ impl ConvertCrossCut {
 }
 
 #[cfg(feature = "combat-situation_converter-convertcrosscut")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertCrossCut;
     pub use super::IConvertCrossCut;

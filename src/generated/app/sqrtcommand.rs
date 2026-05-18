@@ -272,6 +272,7 @@ impl SqrtCommand {
 }
 
 #[cfg(feature = "app-sqrtcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISqrtCommand;
     pub use super::ISqrtCommandMethods;

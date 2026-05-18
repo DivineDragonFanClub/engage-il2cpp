@@ -190,6 +190,7 @@ impl Compute_DT_EventArgs {
 }
 
 #[cfg(feature = "tm_pro-compute_dt_eventargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Compute_DT_EventArgs;
     pub use super::ICompute_DT_EventArgs;

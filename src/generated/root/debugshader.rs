@@ -103,6 +103,7 @@ impl DebugShader {
 }
 
 #[cfg(feature = "root-debugshader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugShader;
     pub use super::IDebugShader;

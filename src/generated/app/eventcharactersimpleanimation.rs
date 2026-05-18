@@ -110,6 +110,7 @@ impl EventCharacterSimpleAnimation {
 }
 
 #[cfg(feature = "app-eventcharactersimpleanimation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventCharacterSimpleAnimation;
     pub use super::IEventCharacterSimpleAnimation;

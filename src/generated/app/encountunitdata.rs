@@ -971,6 +971,7 @@ impl EncountUnitData {
 }
 
 #[cfg(feature = "app-encountunitdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountUnitData;
     pub use super::EncountUnitData_RareType;

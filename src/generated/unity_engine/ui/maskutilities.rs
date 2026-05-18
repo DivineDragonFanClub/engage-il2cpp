@@ -544,6 +544,7 @@ impl MaskUtilities {
 }
 
 #[cfg(feature = "unity_engine-ui-maskutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaskUtilities;
     pub use super::IMaskUtilitiesMethods;

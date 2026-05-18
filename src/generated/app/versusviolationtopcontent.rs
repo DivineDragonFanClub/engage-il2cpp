@@ -860,6 +860,7 @@ impl VersusViolationTopContent {
 }
 
 #[cfg(feature = "app-versusviolationtopcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusViolationTopContent;
     pub use super::IVersusViolationTopContentMethods;

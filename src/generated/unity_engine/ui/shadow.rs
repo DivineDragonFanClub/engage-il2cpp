@@ -742,6 +742,7 @@ impl Shadow {
 }
 
 #[cfg(feature = "unity_engine-ui-shadow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadow;
     pub use super::IShadowMethods;

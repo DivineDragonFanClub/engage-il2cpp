@@ -937,6 +937,7 @@ impl LaunchBehaviour {
 }
 
 #[cfg(feature = "combat-launchbehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILaunchBehaviour;
     pub use super::ILaunchBehaviourMethods;

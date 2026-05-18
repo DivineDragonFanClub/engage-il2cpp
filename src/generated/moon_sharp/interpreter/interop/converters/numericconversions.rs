@@ -214,6 +214,7 @@ impl NumericConversions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-numericconversions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INumericConversions;
     pub use super::NumericConversions;

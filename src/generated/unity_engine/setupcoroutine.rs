@@ -164,6 +164,7 @@ impl SetupCoroutine {
 }
 
 #[cfg(feature = "unity_engine-setupcoroutine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISetupCoroutine;
     pub use super::SetupCoroutine;

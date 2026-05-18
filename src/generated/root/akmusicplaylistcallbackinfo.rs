@@ -672,6 +672,7 @@ impl AkMusicPlaylistCallbackInfo {
 }
 
 #[cfg(feature = "root-akmusicplaylistcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMusicPlaylistCallbackInfo;
     pub use super::IAkMusicPlaylistCallbackInfo;

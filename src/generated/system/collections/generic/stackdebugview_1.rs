@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-stackdebugview_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStackDebugView_1;
     pub use super::StackDebugView_1;

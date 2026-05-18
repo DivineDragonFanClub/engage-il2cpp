@@ -151,6 +151,7 @@ impl Motion {
 }
 
 #[cfg(feature = "unity_engine-motion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMotion;
     pub use super::IMotionMethods;

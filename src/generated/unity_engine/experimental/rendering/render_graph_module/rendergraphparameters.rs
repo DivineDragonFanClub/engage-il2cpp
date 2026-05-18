@@ -48,6 +48,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderGraphParameters;
     pub use crate::system::object::IObject;

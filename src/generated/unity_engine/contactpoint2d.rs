@@ -51,6 +51,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-contactpoint2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContactPoint2D;
     pub use crate::system::object::IObject;

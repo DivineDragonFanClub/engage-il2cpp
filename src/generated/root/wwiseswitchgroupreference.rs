@@ -165,6 +165,7 @@ impl WwiseSwitchGroupReference {
 }
 
 #[cfg(feature = "root-wwiseswitchgroupreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseSwitchGroupReference;
     pub use super::IWwiseSwitchGroupReferenceMethods;

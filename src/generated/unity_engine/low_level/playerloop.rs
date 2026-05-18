@@ -400,6 +400,7 @@ impl PlayerLoop {
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerLoop;
     pub use super::PlayerLoop;

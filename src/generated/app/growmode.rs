@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-growmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrowMode;
     pub use crate::system::object::IObject;

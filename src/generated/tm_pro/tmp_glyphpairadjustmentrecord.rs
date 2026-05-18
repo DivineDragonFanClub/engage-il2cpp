@@ -585,6 +585,7 @@ impl TMP_GlyphPairAdjustmentRecord {
 }
 
 #[cfg(feature = "tm_pro-tmp_glyphpairadjustmentrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_GlyphPairAdjustmentRecord;
     pub use super::ITMP_GlyphPairAdjustmentRecordMethods;

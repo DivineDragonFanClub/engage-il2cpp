@@ -460,6 +460,7 @@ impl UnityLogWriter {
 }
 
 #[cfg(feature = "unity_engine-unitylogwriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityLogWriter;
     pub use super::IUnityLogWriterMethods;

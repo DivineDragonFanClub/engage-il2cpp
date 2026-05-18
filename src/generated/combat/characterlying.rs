@@ -664,6 +664,7 @@ impl CharacterLying {
 }
 
 #[cfg(feature = "combat-characterlying")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterLying;
     pub use super::ICharacterLying;

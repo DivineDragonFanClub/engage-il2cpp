@@ -232,6 +232,7 @@ impl CustomRadialBlur {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customradialblur")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomRadialBlur;
     pub use super::ICustomRadialBlur;

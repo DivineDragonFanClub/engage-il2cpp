@@ -387,6 +387,7 @@ impl RefineShopRefineTargetEvolveMenuItem {
 }
 
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopRefineTargetEvolveMenuItem;
     pub use super::IRefineShopRefineTargetEvolveMenuItemMethods;

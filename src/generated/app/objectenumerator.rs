@@ -1072,6 +1072,7 @@ impl ObjectEnumerator {
 }
 
 #[cfg(feature = "app-objectenumerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectEnumerator;
     pub use super::IObjectEnumeratorMethods;

@@ -555,6 +555,7 @@ impl JukeboxData {
 }
 
 #[cfg(feature = "app-jukeboxdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJukeboxData;
     pub use super::IJukeboxDataMethods;

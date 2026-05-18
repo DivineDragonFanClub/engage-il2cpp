@@ -344,6 +344,7 @@ impl MapImageSightCore {
 }
 
 #[cfg(feature = "app-mapimagesightcore")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageSightCore;
     pub use super::IMapImageSightCoreMethods;

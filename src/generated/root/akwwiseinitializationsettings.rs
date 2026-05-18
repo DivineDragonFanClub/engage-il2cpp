@@ -1605,6 +1605,7 @@ impl AkWwiseInitializationSettings_PlatformSettings {
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkWwiseInitializationSettings;
     pub use super::AkWwiseInitializationSettings_CommonPlatformSettings;

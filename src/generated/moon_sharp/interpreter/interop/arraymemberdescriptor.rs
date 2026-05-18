@@ -485,6 +485,7 @@ impl ArrayMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-arraymemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArrayMemberDescriptor;
     pub use super::IArrayMemberDescriptor;

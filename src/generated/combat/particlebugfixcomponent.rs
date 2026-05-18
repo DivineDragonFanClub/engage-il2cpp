@@ -234,6 +234,7 @@ impl ParticleBugfixComponent {
 }
 
 #[cfg(feature = "combat-particlebugfixcomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParticleBugfixComponent;
     pub use super::IParticleBugfixComponentMethods;

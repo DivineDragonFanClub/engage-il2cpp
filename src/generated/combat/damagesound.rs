@@ -104,6 +104,7 @@ impl DamageSound {
 }
 
 #[cfg(feature = "combat-damagesound")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DamageSound;
     pub use super::IDamageSound;

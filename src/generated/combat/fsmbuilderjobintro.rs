@@ -219,6 +219,7 @@ impl FSMBuilderJobIntro {
 }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FSMBuilderJobIntro;
     pub use super::IFSMBuilderJobIntro;

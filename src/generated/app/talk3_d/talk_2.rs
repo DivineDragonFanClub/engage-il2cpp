@@ -159,6 +159,7 @@ impl Talk_2 {
 }
 
 #[cfg(feature = "app-talk3_d-talk_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalk_2;
     pub use super::ITalk_2Methods;

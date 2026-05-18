@@ -178,6 +178,7 @@ impl MyRoomFadeTrack {
 }
 
 #[cfg(feature = "app-myroomfadetrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomFadeTrack;
     pub use super::IMyRoomFadeTrackMethods;

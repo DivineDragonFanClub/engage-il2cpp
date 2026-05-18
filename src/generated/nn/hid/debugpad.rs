@@ -198,6 +198,7 @@ impl DebugPad {
 }
 
 #[cfg(feature = "nn-hid-debugpad")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPad;
     pub use super::IDebugPad;

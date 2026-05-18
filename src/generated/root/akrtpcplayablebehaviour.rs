@@ -552,6 +552,7 @@ impl AkRTPCPlayableBehaviour {
 }
 
 #[cfg(feature = "root-akrtpcplayablebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRTPCPlayableBehaviour;
     pub use super::IAkRTPCPlayableBehaviour;

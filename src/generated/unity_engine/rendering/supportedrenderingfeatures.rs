@@ -9,19 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering",
-        name = "SupportedRenderingFeatures"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct SupportedRenderingFeatures {
-        #[static_field]
-        #[rename(name = "s_Active")]
-        pub s_active:
-            crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]
     #[repr(C)]
     #[derive(
@@ -116,6 +103,19 @@ mod __types {
         pub fn rotation() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering",
+        name = "SupportedRenderingFeatures"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct SupportedRenderingFeatures {
+        #[static_field]
+        #[rename(name = "s_Active")]
+        pub s_active:
+            crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,
     }
 }
 
@@ -1470,6 +1470,7 @@ impl SupportedRenderingFeatures {
 }
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeaturesMethods;

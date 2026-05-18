@@ -300,6 +300,7 @@ impl ContextMenu {
 }
 
 #[cfg(feature = "unity_engine-contextmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContextMenu;
     pub use super::IContextMenu;

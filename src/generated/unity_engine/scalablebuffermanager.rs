@@ -185,6 +185,7 @@ impl ScalableBufferManager {
 }
 
 #[cfg(feature = "unity_engine-scalablebuffermanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScalableBufferManager;
     pub use super::ScalableBufferManager;

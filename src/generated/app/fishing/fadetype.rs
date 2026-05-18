@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-fishing-fadetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FadeType;
     pub use crate::system::object::IObject;

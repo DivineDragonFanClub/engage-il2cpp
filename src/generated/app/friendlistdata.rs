@@ -12,6 +12,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))]
+    #[::unity2::class(namespace = "App", name = "FriendListData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)]
+    pub struct FriendListData {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistdata/FriendListData_States.md"))]
     #[repr(C)]
     #[derive(
@@ -71,11 +76,6 @@ mod __types {
             Self { value: 5 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))]
-    #[::unity2::class(namespace = "App", name = "FriendListData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)]
-    pub struct FriendListData {}
 }
 
 #[cfg(feature = "app-friendlistdata-types")]
@@ -1736,6 +1736,7 @@ impl FriendListData {
 }
 
 #[cfg(feature = "app-friendlistdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FriendListData;
     pub use super::FriendListData_States;

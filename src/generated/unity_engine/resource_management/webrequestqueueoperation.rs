@@ -238,6 +238,7 @@ impl WebRequestQueueOperation {
 }
 
 #[cfg(feature = "unity_engine-resource_management-webrequestqueueoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWebRequestQueueOperation;
     pub use super::IWebRequestQueueOperationMethods;

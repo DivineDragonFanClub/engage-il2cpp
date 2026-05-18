@@ -120,6 +120,7 @@ impl AssetReferenceTexture2D {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceTexture2D;
     pub use super::IAssetReferenceTexture2D;

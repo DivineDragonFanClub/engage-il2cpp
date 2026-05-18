@@ -846,6 +846,7 @@ impl ReliancePopUpController {
 }
 
 #[cfg(feature = "app-reliancepopupcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReliancePopUpController;
     pub use super::IReliancePopUpControllerMethods;

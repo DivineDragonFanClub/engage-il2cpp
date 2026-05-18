@@ -222,6 +222,7 @@ impl AkEarlyReflections {
 }
 
 #[cfg(feature = "root-akearlyreflections")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEarlyReflections;
     pub use super::IAkEarlyReflections;

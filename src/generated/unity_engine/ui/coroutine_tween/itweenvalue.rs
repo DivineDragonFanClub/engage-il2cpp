@@ -254,6 +254,7 @@ pub trait IITweenValueMethods: IITweenValue {
 impl<__T: IITweenValue> IITweenValueMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITweenValue;
     pub use super::IITweenValueMethods;

@@ -178,6 +178,7 @@ impl MyRoomPhaseTrack {
 }
 
 #[cfg(feature = "app-myroomphasetrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomPhaseTrack;
     pub use super::IMyRoomPhaseTrackMethods;

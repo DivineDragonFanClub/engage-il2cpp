@@ -603,6 +603,7 @@ impl InstanceCache {
 }
 
 #[cfg(feature = "combat-instancecache")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstanceCache;
     pub use super::IInstanceCacheMethods;

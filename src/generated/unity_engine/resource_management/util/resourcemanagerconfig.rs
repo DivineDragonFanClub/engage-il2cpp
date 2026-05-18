@@ -559,6 +559,7 @@ impl ResourceManagerConfig {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-resourcemanagerconfig")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceManagerConfig;
     pub use super::ResourceManagerConfig;

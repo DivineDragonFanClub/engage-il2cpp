@@ -318,6 +318,7 @@ impl AISkipMenuItem {
 }
 
 #[cfg(feature = "root-aiskipmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AISkipMenuItem;
     pub use super::IAISkipMenuItem;

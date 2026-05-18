@@ -263,6 +263,7 @@ impl AdjustmentExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-adjustmentexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AdjustmentExpression;
     pub use super::IAdjustmentExpression;

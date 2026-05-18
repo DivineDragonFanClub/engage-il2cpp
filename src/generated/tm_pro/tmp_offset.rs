@@ -1291,6 +1291,7 @@ impl TMP_Offset {
 }
 
 #[cfg(feature = "tm_pro-tmp_offset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_Offset;
     pub use crate::system::object::IObject;

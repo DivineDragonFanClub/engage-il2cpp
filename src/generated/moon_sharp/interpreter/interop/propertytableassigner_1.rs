@@ -81,6 +81,7 @@ impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyTableAssigner_1;
     pub use super::IPropertyTableAssigner_1Methods;

@@ -993,6 +993,7 @@ impl AkAcousticSurface {
 }
 
 #[cfg(feature = "root-akacousticsurface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAcousticSurface;
     pub use super::IAkAcousticSurface;

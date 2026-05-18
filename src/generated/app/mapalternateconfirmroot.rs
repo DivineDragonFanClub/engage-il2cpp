@@ -407,6 +407,7 @@ impl MapAlternateConfirmRoot {
 }
 
 #[cfg(feature = "app-mapalternateconfirmroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapAlternateConfirmRoot;
     pub use super::IMapAlternateConfirmRootMethods;

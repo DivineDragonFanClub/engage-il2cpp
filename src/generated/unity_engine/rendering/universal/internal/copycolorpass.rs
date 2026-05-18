@@ -680,6 +680,7 @@ impl CopyColorPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-copycolorpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CopyColorPass;
     pub use super::ICopyColorPass;

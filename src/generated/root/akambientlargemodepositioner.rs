@@ -289,6 +289,7 @@ impl AkAmbientLargeModePositioner {
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAmbientLargeModePositioner;
     pub use super::IAkAmbientLargeModePositioner;

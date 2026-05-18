@@ -342,6 +342,7 @@ impl TMP_SpriteGlyph {
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteglyph")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_SpriteGlyph;
     pub use super::ITMP_SpriteGlyphMethods;

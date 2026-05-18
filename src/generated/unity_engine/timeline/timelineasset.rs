@@ -12,50 +12,6 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TimelineAsset_DurationMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
-        const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-        const NAME: &'static str = "TimelineAsset.DurationMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TimelineAsset_DurationMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TimelineAsset_DurationMode {
-        pub fn based_on_clips() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn fixed_length() -> Self {
-            Self { value: 1 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
     #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -112,6 +68,50 @@ mod __types {
         pub m_framerate: f32,
         #[rename(name = "m_ScenePreview")]
         pub m_scene_preview: bool,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct TimelineAsset_DurationMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
+        const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+        const NAME: &'static str = "TimelineAsset.DurationMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TimelineAsset_DurationMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl TimelineAsset_DurationMode {
+        pub fn based_on_clips() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn fixed_length() -> Self {
+            Self { value: 1 }
+        }
     }
 }
 
@@ -3103,6 +3103,7 @@ impl TimelineAsset_EditorSettings {
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimelineAsset;
     pub use super::ITimelineAssetMethods;

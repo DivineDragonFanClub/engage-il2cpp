@@ -359,6 +359,7 @@ impl ActionGranApproach {
 }
 
 #[cfg(feature = "combat-actiongranapproach")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranApproach;
     pub use super::IActionGranApproach;

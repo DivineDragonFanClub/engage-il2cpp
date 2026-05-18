@@ -113,6 +113,7 @@ impl<
 }
 
 #[cfg(feature = "system-func_14")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Func_14;
     pub use super::IFunc_14;

@@ -236,6 +236,7 @@ impl ProcEventWait {
 }
 
 #[cfg(feature = "app-proceventwait")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcEventWait;
     pub use super::IProcEventWaitMethods;

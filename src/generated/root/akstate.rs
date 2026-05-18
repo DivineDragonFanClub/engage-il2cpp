@@ -394,6 +394,7 @@ impl AkState {
 }
 
 #[cfg(feature = "root-akstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkState;
     pub use super::IAkState;

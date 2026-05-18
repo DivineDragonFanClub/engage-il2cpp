@@ -1203,6 +1203,7 @@ impl RewindMenuItemContent {
 }
 
 #[cfg(feature = "app-rewindmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRewindMenuItemContent;
     pub use super::IRewindMenuItemContentMethods;

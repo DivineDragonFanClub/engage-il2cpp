@@ -475,6 +475,7 @@ impl ConvertChaseArrow {
 }
 
 #[cfg(feature = "combat-situation_converter-convertchasearrow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertChaseArrow;
     pub use super::IConvertChaseArrow;

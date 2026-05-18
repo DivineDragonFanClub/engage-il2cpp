@@ -270,6 +270,7 @@ impl NoInterpClampedFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpclampedfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpClampedFloatParameter;
     pub use super::INoInterpClampedFloatParameterMethods;

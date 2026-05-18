@@ -103,6 +103,7 @@ impl ResourceTexture2D {
 }
 
 #[cfg(feature = "app-resourcetexture2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceTexture2D;
     pub use super::IResourceTexture2DMethods;

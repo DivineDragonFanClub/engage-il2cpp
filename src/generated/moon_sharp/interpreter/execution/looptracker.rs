@@ -103,6 +103,7 @@ impl LoopTracker {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-looptracker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoopTracker;
     pub use super::ILoopTrackerMethods;

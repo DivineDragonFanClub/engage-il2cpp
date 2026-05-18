@@ -471,6 +471,7 @@ impl ControllerSupportApplet {
 }
 
 #[cfg(feature = "app-controllersupportapplet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerSupportApplet;
     pub use super::ControllerSupportApplet_CallState;

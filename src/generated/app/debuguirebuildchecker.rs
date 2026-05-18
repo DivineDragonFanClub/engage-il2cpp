@@ -102,6 +102,7 @@ impl DebugUIRebuildChecker {
 }
 
 #[cfg(feature = "app-debuguirebuildchecker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIRebuildChecker;
     pub use super::IDebugUIRebuildChecker;

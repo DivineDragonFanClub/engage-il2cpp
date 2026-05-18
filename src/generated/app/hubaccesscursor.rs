@@ -1151,6 +1151,7 @@ impl HubAccessCursor {
 }
 
 #[cfg(feature = "app-hubaccesscursor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessCursor;
     pub use super::IHubAccessCursor;

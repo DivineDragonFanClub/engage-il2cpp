@@ -88,6 +88,7 @@ impl<
 }
 
 #[cfg(feature = "system-action_8")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Action_8;
     pub use super::IAction_8;

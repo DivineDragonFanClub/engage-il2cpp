@@ -393,6 +393,7 @@ impl TerrainMesh {
 }
 
 #[cfg(feature = "app-terrainmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainMesh;
     pub use super::ITerrainMeshMethods;

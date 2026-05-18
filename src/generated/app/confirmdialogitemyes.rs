@@ -186,6 +186,7 @@ impl ConfirmDialogItemYes {
 }
 
 #[cfg(feature = "app-confirmdialogitemyes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfirmDialogItemYes;
     pub use super::IConfirmDialogItemYes;

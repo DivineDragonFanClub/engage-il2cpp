@@ -251,6 +251,7 @@ impl AnalogStickState {
 }
 
 #[cfg(feature = "nn-hid-analogstickstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnalogStickState;
     pub use crate::system::object::IObject;

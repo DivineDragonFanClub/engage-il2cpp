@@ -433,6 +433,7 @@ impl AmiiboSoundSequence {
 }
 
 #[cfg(feature = "app-amiibosoundsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboSoundSequence;
     pub use super::AmiiboSoundSequence_Label;

@@ -64,6 +64,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturesizemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TextureSizeMode;
     pub use crate::system::object::IObject;

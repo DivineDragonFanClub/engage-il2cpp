@@ -599,6 +599,7 @@ impl WeaponModelManager {
 }
 
 #[cfg(feature = "app-weaponmodelmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponModelManager;
     pub use super::IWeaponModelManagerMethods;

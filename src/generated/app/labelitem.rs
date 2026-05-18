@@ -515,6 +515,7 @@ impl LabelItem {
 }
 
 #[cfg(feature = "app-labelitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILabelItem;
     pub use super::ILabelItemMethods;

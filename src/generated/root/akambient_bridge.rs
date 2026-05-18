@@ -111,6 +111,7 @@ impl AkAmbient_Bridge {
 }
 
 #[cfg(feature = "root-akambient_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAmbient_Bridge;
     pub use super::IAkAmbient_Bridge;

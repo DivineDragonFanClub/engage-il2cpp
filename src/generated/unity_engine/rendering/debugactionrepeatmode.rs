@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-debugactionrepeatmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugActionRepeatMode;
     pub use crate::system::object::IObject;

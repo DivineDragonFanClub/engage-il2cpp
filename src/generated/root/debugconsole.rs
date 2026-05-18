@@ -209,6 +209,7 @@ impl DebugConsole {
 }
 
 #[cfg(feature = "root-debugconsole")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugConsole;
     pub use super::IDebugConsole;

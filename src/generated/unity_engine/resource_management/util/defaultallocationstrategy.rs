@@ -235,6 +235,7 @@ pub trait IDefaultAllocationStrategyMethods: IDefaultAllocationStrategy {
 impl<__T: IDefaultAllocationStrategy> IDefaultAllocationStrategyMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultAllocationStrategy;
     pub use super::IDefaultAllocationStrategy;

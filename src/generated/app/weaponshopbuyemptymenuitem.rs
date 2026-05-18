@@ -300,6 +300,7 @@ impl WeaponShopBuyEmptyMenuItem {
 }
 
 #[cfg(feature = "app-weaponshopbuyemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponShopBuyEmptyMenuItem;
     pub use super::IWeaponShopBuyEmptyMenuItemMethods;

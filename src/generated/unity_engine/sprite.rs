@@ -3494,6 +3494,7 @@ impl Sprite {
 }
 
 #[cfg(feature = "unity_engine-sprite")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISprite;
     pub use super::ISpriteMethods;

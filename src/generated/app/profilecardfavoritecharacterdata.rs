@@ -768,6 +768,7 @@ impl ProfileCardFavoriteCharacterData {
 }
 
 #[cfg(feature = "app-profilecardfavoritecharacterdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteCharacterData;
     pub use super::IProfileCardFavoriteCharacterDataMethods;

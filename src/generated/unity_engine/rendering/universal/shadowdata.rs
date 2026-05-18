@@ -54,6 +54,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowData;
     pub use crate::system::object::IObject;

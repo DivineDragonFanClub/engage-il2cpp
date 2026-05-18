@@ -105,6 +105,7 @@ pub trait IIPropertyTableAssigner_InterfaceMethods: IIPropertyTableAssigner_Inte
 impl<__T: IIPropertyTableAssigner_Interface> IIPropertyTableAssigner_InterfaceMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPropertyTableAssigner_Interface;
     pub use super::IIPropertyTableAssigner_InterfaceMethods;

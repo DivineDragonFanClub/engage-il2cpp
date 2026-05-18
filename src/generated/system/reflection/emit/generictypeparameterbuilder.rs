@@ -2238,6 +2238,7 @@ pub trait IGenericTypeParameterBuilderMethods: IGenericTypeParameterBuilder {
 impl<__T: IGenericTypeParameterBuilder> IGenericTypeParameterBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-generictypeparameterbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GenericTypeParameterBuilder;
     pub use super::IGenericTypeParameterBuilder;

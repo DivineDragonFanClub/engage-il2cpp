@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akmeteringflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMeteringFlags;
     pub use crate::system::object::IObject;

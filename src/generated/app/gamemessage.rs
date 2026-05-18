@@ -1873,6 +1873,7 @@ impl GameMessage_Status {
 }
 
 #[cfg(feature = "app-gamemessage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameMessage;
     pub use super::GameMessage_Status;

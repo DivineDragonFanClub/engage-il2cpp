@@ -960,6 +960,7 @@ impl Debug {
 }
 
 #[cfg(feature = "unity_engine-debug")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Debug;
     pub use super::IDebug;

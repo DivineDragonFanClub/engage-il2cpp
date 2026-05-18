@@ -415,6 +415,7 @@ impl TouchState {
 }
 
 #[cfg(feature = "nn-hid-touchstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TouchState;
     pub use crate::system::object::IObject;

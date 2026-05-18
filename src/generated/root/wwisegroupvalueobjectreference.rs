@@ -355,6 +355,7 @@ impl WwiseGroupValueObjectReference {
 }
 
 #[cfg(feature = "root-wwisegroupvalueobjectreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseGroupValueObjectReference;
     pub use super::IWwiseGroupValueObjectReferenceMethods;

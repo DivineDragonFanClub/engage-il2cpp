@@ -590,6 +590,7 @@ impl EventCharacterAnimController {
 }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventCharacterAnimController;
     pub use super::IEventCharacterAnimController;

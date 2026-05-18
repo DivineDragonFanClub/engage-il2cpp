@@ -214,6 +214,7 @@ impl FilmGrain {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-filmgrain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FilmGrain;
     pub use super::IFilmGrain;

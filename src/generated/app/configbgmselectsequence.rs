@@ -594,6 +594,7 @@ impl ConfigBgmSelectSequence {
 }
 
 #[cfg(feature = "app-configbgmselectsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigBgmSelectSequence;
     pub use super::ConfigBgmSelectSequence_Label;

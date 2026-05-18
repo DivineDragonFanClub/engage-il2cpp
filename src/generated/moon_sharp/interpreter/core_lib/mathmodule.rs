@@ -2232,6 +2232,7 @@ impl MathModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-mathmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMathModule;
     pub use super::IMathModuleMethods;

@@ -272,6 +272,7 @@ impl AbsCommand {
 }
 
 #[cfg(feature = "app-abscommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AbsCommand;
     pub use super::IAbsCommand;

@@ -101,6 +101,7 @@ impl DebugPlayerLoop {
 }
 
 #[cfg(feature = "app-debugplayerloop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPlayerLoop;
     pub use super::IDebugPlayerLoop;

@@ -739,6 +739,7 @@ impl TransformAccessArray {
 }
 
 #[cfg(feature = "unity_engine-jobs-transformaccessarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TransformAccessArray;
     pub use crate::system::object::IObject;

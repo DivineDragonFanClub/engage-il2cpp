@@ -412,6 +412,7 @@ impl ConfigMenu {
 }
 
 #[cfg(feature = "root-configmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigMenu;
     pub use super::IConfigMenu;

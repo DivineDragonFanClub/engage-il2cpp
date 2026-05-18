@@ -942,6 +942,7 @@ impl StandardPlatformAccessor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-standardplatformaccessor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStandardPlatformAccessor;
     pub use super::IStandardPlatformAccessorMethods;

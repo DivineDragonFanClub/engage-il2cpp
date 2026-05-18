@@ -405,6 +405,7 @@ impl CombatLocationSky {
 }
 
 #[cfg(feature = "combat-combatlocationsky")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationSky;
     pub use super::ICombatLocationSky;

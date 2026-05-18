@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-softjointlimit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SoftJointLimit;
     pub use crate::system::object::IObject;

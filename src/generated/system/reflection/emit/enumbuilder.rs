@@ -2149,6 +2149,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
 impl<__T: IEnumBuilder> IEnumBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-enumbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EnumBuilder;
     pub use super::IEnumBuilder;

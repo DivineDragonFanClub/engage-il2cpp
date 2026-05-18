@@ -116,6 +116,7 @@ impl PrivateEffectCatalog {
 }
 
 #[cfg(feature = "combat-privateeffectcatalog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrivateEffectCatalog;
     pub use super::IPrivateEffectCatalogMethods;

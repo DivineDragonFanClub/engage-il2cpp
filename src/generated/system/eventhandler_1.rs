@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity> EventHandler_1<T0> {
 }
 
 #[cfg(feature = "system-eventhandler_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventHandler_1;
     pub use super::IEventHandler_1;

@@ -3444,6 +3444,7 @@ impl ParentConstraint {
 }
 
 #[cfg(feature = "unity_engine-animations-parentconstraint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParentConstraint;
     pub use super::IParentConstraintMethods;

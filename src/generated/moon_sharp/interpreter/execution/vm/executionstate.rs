@@ -114,6 +114,7 @@ impl ExecutionState {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExecutionState;
     pub use super::IExecutionState;

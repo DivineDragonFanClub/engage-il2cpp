@@ -113,6 +113,7 @@ impl ThreadAndSerializationSafeAttribute {
 }
 
 #[cfg(feature = "unity_engine-threadandserializationsafeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IThreadAndSerializationSafeAttribute;
     pub use super::IThreadAndSerializationSafeAttributeMethods;

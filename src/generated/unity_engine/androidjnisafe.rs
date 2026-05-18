@@ -3476,6 +3476,7 @@ impl AndroidJNISafe {
 }
 
 #[cfg(feature = "unity_engine-androidjnisafe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJNISafe;
     pub use super::IAndroidJNISafe;

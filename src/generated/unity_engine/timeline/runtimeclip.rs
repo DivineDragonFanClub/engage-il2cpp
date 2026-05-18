@@ -799,6 +799,7 @@ impl RuntimeClip {
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeClip;
     pub use super::IRuntimeClipMethods;

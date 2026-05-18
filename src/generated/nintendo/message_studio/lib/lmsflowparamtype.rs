@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflowparamtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LMSFlowParamType;
     pub use crate::system::object::IObject;

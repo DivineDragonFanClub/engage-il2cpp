@@ -743,6 +743,7 @@ impl Token {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-token")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IToken;
     pub use super::ITokenMethods;

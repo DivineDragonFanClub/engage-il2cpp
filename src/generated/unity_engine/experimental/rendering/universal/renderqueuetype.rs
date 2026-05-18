@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderqueuetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderQueueType;
     pub use crate::system::object::IObject;

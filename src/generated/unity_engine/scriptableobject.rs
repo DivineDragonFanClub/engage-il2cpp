@@ -339,6 +339,7 @@ impl ScriptableObject {
 }
 
 #[cfg(feature = "unity_engine-scriptableobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptableObject;
     pub use super::IScriptableObjectMethods;

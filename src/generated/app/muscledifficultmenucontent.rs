@@ -538,6 +538,7 @@ impl MuscleDifficultMenuContent {
 }
 
 #[cfg(feature = "app-muscledifficultmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleDifficultMenuContent;
     pub use super::IMuscleDifficultMenuContentMethods;

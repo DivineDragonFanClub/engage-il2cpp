@@ -163,6 +163,7 @@ impl WwiseAuxBusReference {
 }
 
 #[cfg(feature = "root-wwiseauxbusreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseAuxBusReference;
     pub use super::IWwiseAuxBusReferenceMethods;

@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-icollectiondebugview_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICollectionDebugView_1;
     pub use super::IICollectionDebugView_1;

@@ -89,6 +89,7 @@ pub trait IISubsystemDescriptor_InterfaceMethods: IISubsystemDescriptor_Interfac
 impl<__T: IISubsystemDescriptor_Interface> IISubsystemDescriptor_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IISubsystemDescriptor_Interface;
     pub use super::IISubsystemDescriptor_InterfaceMethods;

@@ -214,6 +214,7 @@ impl MotionBlur {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblur")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMotionBlur;
     pub use super::IMotionBlurMethods;

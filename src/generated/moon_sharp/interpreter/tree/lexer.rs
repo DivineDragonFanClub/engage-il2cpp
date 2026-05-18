@@ -1573,6 +1573,7 @@ impl Lexer {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILexer;
     pub use super::ILexerMethods;

@@ -980,6 +980,7 @@ impl TextureXR {
 }
 
 #[cfg(feature = "unity_engine-rendering-texturexr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextureXR;
     pub use super::TextureXR;

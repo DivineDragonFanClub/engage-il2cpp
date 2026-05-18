@@ -623,6 +623,7 @@ impl GrassData_SpriteInfo {
 }
 
 #[cfg(feature = "app-grassdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrassData;
     pub use super::GrassData_SpriteInfo;

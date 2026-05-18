@@ -390,6 +390,7 @@ impl GCTimeItem {
 }
 
 #[cfg(feature = "app-gctimeitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GCTimeItem;
     pub use super::IGCTimeItem;

@@ -1273,6 +1273,7 @@ impl DragonRideShot {
 }
 
 #[cfg(feature = "app-dragonrideshot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideShot;
     pub use super::IDragonRideShot;

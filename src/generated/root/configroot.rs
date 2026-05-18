@@ -411,6 +411,7 @@ impl ConfigRoot {
 }
 
 #[cfg(feature = "root-configroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigRoot;
     pub use super::IConfigRoot;

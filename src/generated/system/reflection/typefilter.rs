@@ -193,6 +193,7 @@ impl TypeFilter {
 }
 
 #[cfg(feature = "system-reflection-typefilter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeFilter;
     pub use super::ITypeFilterMethods;

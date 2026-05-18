@@ -152,6 +152,7 @@ impl BitFieldCommon {
 }
 
 #[cfg(feature = "app-bitfieldcommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitFieldCommon;
     pub use super::IBitFieldCommon;

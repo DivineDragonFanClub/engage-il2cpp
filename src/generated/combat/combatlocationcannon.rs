@@ -405,6 +405,7 @@ impl CombatLocationCannon {
 }
 
 #[cfg(feature = "combat-combatlocationcannon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationCannon;
     pub use super::ICombatLocationCannon;

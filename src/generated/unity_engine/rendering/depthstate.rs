@@ -467,6 +467,7 @@ impl DepthState {
 }
 
 #[cfg(feature = "unity_engine-rendering-depthstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthState;
     pub use crate::system::object::IObject;

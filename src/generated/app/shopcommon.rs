@@ -83,6 +83,7 @@ impl ShopCommon {
 }
 
 #[cfg(feature = "app-shopcommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopCommon;
     pub use super::ShopCommon;

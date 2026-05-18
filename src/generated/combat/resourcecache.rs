@@ -350,6 +350,7 @@ impl ResourceCache {
 }
 
 #[cfg(feature = "combat-resourcecache")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceCache;
     pub use super::IResourceCacheMethods;

@@ -320,6 +320,7 @@ impl FrameworkCurrent {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FrameworkCurrent;
     pub use super::IFrameworkCurrent;

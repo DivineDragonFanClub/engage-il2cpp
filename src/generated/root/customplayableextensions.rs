@@ -93,6 +93,7 @@ impl CustomPlayableExtensions {
 }
 
 #[cfg(feature = "root-customplayableextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomPlayableExtensions;
     pub use super::ICustomPlayableExtensions;

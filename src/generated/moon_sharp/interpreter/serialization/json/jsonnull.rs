@@ -258,6 +258,7 @@ impl JsonNull {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsonnull")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJsonNull;
     pub use super::IJsonNullMethods;

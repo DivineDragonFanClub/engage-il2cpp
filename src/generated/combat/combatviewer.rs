@@ -320,6 +320,7 @@ impl CombatViewer {
 }
 
 #[cfg(feature = "combat-combatviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatViewer;
     pub use super::ICombatViewer;

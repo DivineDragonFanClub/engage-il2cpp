@@ -197,6 +197,7 @@ impl GodColor {
 }
 
 #[cfg(feature = "app-godcolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodColor;
     pub use super::IGodColor;

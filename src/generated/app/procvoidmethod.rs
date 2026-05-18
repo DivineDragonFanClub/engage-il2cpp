@@ -175,6 +175,7 @@ impl ProcVoidMethod {
 }
 
 #[cfg(feature = "app-procvoidmethod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcVoidMethod;
     pub use super::IProcVoidMethodMethods;

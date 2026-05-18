@@ -697,6 +697,7 @@ impl DebugFs {
 }
 
 #[cfg(feature = "app-debugfs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugFs;
     pub use super::IDebugFs;

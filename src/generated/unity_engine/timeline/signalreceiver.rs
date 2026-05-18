@@ -1464,6 +1464,7 @@ impl SignalReceiver {
 }
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalReceiver;
     pub use super::ISignalReceiverMethods;

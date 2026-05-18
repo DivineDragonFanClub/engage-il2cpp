@@ -202,6 +202,7 @@ impl ForecastFishData {
 }
 
 #[cfg(feature = "app-fishing-forecastfishdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ForecastFishData;
     pub use super::IForecastFishData;

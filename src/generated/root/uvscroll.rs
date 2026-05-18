@@ -210,6 +210,7 @@ impl UVScroll {
 }
 
 #[cfg(feature = "root-uvscroll")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUVScroll;
     pub use super::IUVScrollMethods;

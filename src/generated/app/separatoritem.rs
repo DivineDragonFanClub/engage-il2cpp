@@ -372,6 +372,7 @@ impl SeparatorItem {
 }
 
 #[cfg(feature = "app-separatoritem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISeparatorItem;
     pub use super::ISeparatorItemMethods;

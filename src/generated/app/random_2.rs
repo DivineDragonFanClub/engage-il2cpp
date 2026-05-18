@@ -1957,6 +1957,7 @@ impl Random_2 {
 }
 
 #[cfg(feature = "app-random_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRandom_2;
     pub use super::IRandom_2Methods;

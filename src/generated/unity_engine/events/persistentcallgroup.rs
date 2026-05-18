@@ -179,6 +179,7 @@ impl PersistentCallGroup {
 }
 
 #[cfg(feature = "unity_engine-events-persistentcallgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPersistentCallGroup;
     pub use super::IPersistentCallGroupMethods;

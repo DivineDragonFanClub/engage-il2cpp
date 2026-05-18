@@ -99,6 +99,7 @@ impl ExecuteInEditMode {
 }
 
 #[cfg(feature = "unity_engine-executeineditmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExecuteInEditMode;
     pub use super::IExecuteInEditMode;

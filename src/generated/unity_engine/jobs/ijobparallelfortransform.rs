@@ -101,6 +101,7 @@ pub trait IIJobParallelForTransformMethods: IIJobParallelForTransform {
 impl<__T: IIJobParallelForTransform> IIJobParallelForTransformMethods for __T {}
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIJobParallelForTransform;
     pub use super::IIJobParallelForTransformMethods;

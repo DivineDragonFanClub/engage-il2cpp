@@ -105,6 +105,7 @@ impl DynamicBone_Bridge {
 }
 
 #[cfg(feature = "root-dynamicbone_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicBone_Bridge;
     pub use super::IDynamicBone_Bridge;

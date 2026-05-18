@@ -1157,6 +1157,7 @@ impl TradeMenuItem {
 }
 
 #[cfg(feature = "app-trademenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITradeMenuItem;
     pub use super::ITradeMenuItemMethods;

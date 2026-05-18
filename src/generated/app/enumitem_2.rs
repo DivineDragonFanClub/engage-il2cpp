@@ -67,6 +67,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1
 }
 
 #[cfg(feature = "app-enumitem_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EnumItem_2;
     pub use super::IEnumItem_2;

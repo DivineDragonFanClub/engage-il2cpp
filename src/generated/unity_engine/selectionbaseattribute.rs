@@ -99,6 +99,7 @@ impl SelectionBaseAttribute {
 }
 
 #[cfg(feature = "unity_engine-selectionbaseattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISelectionBaseAttribute;
     pub use super::ISelectionBaseAttributeMethods;

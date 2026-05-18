@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystemcustomdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleSystemCustomData;
     pub use crate::system::object::IObject;

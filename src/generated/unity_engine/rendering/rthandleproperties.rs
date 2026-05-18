@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-rthandleproperties")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RTHandleProperties;
     pub use crate::system::object::IObject;

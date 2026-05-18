@@ -39,6 +39,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-batchrenderercullingoutput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BatchRendererCullingOutput;
     pub use crate::system::object::IObject;

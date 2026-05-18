@@ -438,6 +438,7 @@ impl AkExternalSourceInfoArray {
 }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkExternalSourceInfoArray;
     pub use super::IAkExternalSourceInfoArray;

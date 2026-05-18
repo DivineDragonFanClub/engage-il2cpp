@@ -190,6 +190,7 @@ pub trait IIEnumeratorMethods: IIEnumerator {
 impl<__T: IIEnumerator> IIEnumeratorMethods for __T {}
 
 #[cfg(feature = "system-collections-ienumerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEnumerator;
     pub use super::IIEnumerator;

@@ -189,6 +189,7 @@ impl ProcDescMArgS {
 }
 
 #[cfg(feature = "app-procdescmargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMArgS;
     pub use super::IProcDescMArgSMethods;

@@ -1325,6 +1325,7 @@ impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
 }
 
 #[cfg(feature = "app-refreshunitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSelectRoot;
     pub use super::IRefreshUnitSelectRootMethods;

@@ -302,6 +302,7 @@ impl SignalAsset {
 }
 
 #[cfg(feature = "unity_engine-timeline-signalasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalAsset;
     pub use super::ISignalAssetMethods;

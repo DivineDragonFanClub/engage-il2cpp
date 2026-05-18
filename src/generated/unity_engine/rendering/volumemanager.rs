@@ -1755,6 +1755,7 @@ impl VolumeManager {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeManager;
     pub use super::IVolumeManagerMethods;

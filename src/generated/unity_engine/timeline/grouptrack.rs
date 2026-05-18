@@ -211,6 +211,7 @@ impl GroupTrack {
 }
 
 #[cfg(feature = "unity_engine-timeline-grouptrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroupTrack;
     pub use super::IGroupTrack;

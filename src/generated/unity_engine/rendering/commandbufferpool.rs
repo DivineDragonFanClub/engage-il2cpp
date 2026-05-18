@@ -249,6 +249,7 @@ impl CommandBufferPool {
 }
 
 #[cfg(feature = "unity_engine-rendering-commandbufferpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommandBufferPool;
     pub use super::ICommandBufferPool;

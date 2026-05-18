@@ -103,6 +103,7 @@ impl MapDnagerDeploy {
 }
 
 #[cfg(feature = "app-mapdnagerdeploy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDnagerDeploy;
     pub use super::IMapDnagerDeployMethods;

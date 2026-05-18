@@ -249,6 +249,7 @@ impl InterpolatorVector2 {
 }
 
 #[cfg(feature = "app-interpolatorvector2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorVector2;
     pub use super::IInterpolatorVector2Methods;

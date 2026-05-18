@@ -213,6 +213,7 @@ impl APIUpdaterRuntimeHelpers {
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::APIUpdaterRuntimeHelpers;
     pub use super::IAPIUpdaterRuntimeHelpers;

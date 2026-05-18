@@ -82,6 +82,7 @@ impl ListBufferExtensions {
 }
 
 #[cfg(feature = "unity_engine-rendering-listbufferextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IListBufferExtensions;
     pub use super::ListBufferExtensions;

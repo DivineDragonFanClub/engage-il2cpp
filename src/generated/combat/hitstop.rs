@@ -718,6 +718,7 @@ impl HitStop {
 }
 
 #[cfg(feature = "combat-hitstop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HitStop;
     pub use super::IHitStop;

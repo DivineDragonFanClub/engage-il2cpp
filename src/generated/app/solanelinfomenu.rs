@@ -13,16 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SolanelInfoMenu_DecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct SolanelInfoMenu {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfomenu/SolanelInfoMenu_InfoResult.md"))]
     #[repr(C)]
     #[derive(
@@ -66,6 +56,16 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SolanelInfoMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenu/SolanelInfoMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct SolanelInfoMenu {}
 }
 
 #[cfg(feature = "app-solanelinfomenu-types")]
@@ -861,6 +861,7 @@ impl SolanelInfoMenu {
 }
 
 #[cfg(feature = "app-solanelinfomenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISolanelInfoMenu;
     pub use super::ISolanelInfoMenuMethods;

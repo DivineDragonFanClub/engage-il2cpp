@@ -713,6 +713,7 @@ impl MuscleExerciseContinueDialog_DecideEventHandler {
 }
 
 #[cfg(feature = "app-muscleexercisecontinuedialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleExerciseContinueDialog;
     pub use super::IMuscleExerciseContinueDialogMethods;

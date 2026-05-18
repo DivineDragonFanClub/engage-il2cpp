@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-formatusage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FormatUsage;
     pub use crate::system::object::IObject;

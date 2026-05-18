@@ -164,6 +164,7 @@ impl SortPrePunctualLight {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortPrePunctualLight;
     pub use super::ISortPrePunctualLightMethods;

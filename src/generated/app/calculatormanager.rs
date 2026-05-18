@@ -26,10 +26,10 @@ mod __types {
         pub temp_args: crate::system::collections::generic::list_1::List_1<f32>,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorManager.CommandList")]
-    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)]
-    pub struct CalculatorManager_CommandList {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_StackPool.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorManager.StackPool")]
+    # [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)]
+    pub struct CalculatorManager_StackPool {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager.md"))]
     #[::unity2::class(namespace = "App", name = "CalculatorManager")]
@@ -50,10 +50,10 @@ mod __types {
         pub m_pool: crate::app::calculatormanager::CalculatorManager_StackPool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_StackPool.md"))]
-    #[::unity2::class(namespace = "App", name = "CalculatorManager.StackPool")]
-    # [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)]
-    pub struct CalculatorManager_StackPool {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))]
+    #[::unity2::class(namespace = "App", name = "CalculatorManager.CommandList")]
+    # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)]
+    pub struct CalculatorManager_CommandList {}
 }
 
 #[cfg(feature = "app-calculatormanager-types")]
@@ -208,7 +208,7 @@ impl CalculatorManager_CommandStack {
 #[cfg(feature = "app-calculatormanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CalculatorManager_CommandList_unity2_raw {
+mod __CalculatorManager_StackPool_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -219,7 +219,7 @@ mod __CalculatorManager_CommandList_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorManager_CommandList as ::unity2::ClassIdentity>::class(),
+                <CalculatorManager_StackPool as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -231,7 +231,7 @@ mod __CalculatorManager_CommandList_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CalculatorManager_CommandList as ::unity2::ClassIdentity>::NAME,
+                    <CalculatorManager_StackPool as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -244,10 +244,10 @@ mod __CalculatorManager_CommandList_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: CalculatorManager_CommandList,
+        this: CalculatorManager_StackPool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(CalculatorManager_CommandList, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(CalculatorManager_StackPool, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -258,37 +258,34 @@ mod __CalculatorManager_CommandList_unity2_raw {
 }
 
 #[cfg(feature = "app-calculatormanager")]
-pub trait ICalculatorManager_CommandListMethods: ICalculatorManager_CommandList {
+pub trait ICalculatorManager_StackPoolMethods: ICalculatorManager_StackPool {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CalculatorManager_CommandList as ::unity2::FromIlInstance>::from_il_instance(
+                <CalculatorManager_StackPool as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CalculatorManager_CommandList_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            __CalculatorManager_StackPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-calculatormanager")]
-impl<__T: ICalculatorManager_CommandList> ICalculatorManager_CommandListMethods for __T {}
+impl<__T: ICalculatorManager_StackPool> ICalculatorManager_StackPoolMethods for __T {}
 
 #[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandList {
+impl CalculatorManager_StackPool {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorManager_CommandList),
+                ::core::stringify!(CalculatorManager_StackPool),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICalculatorManager_CommandListMethods>::ctor(this);
+        <Self as ICalculatorManager_StackPoolMethods>::ctor(this);
         this
     }
 }
@@ -2348,7 +2345,7 @@ impl CalculatorManager {
 #[cfg(feature = "app-calculatormanager")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CalculatorManager_StackPool_unity2_raw {
+mod __CalculatorManager_CommandList_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -2359,7 +2356,7 @@ mod __CalculatorManager_StackPool_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <CalculatorManager_StackPool as ::unity2::ClassIdentity>::class(),
+                <CalculatorManager_CommandList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -2371,7 +2368,7 @@ mod __CalculatorManager_StackPool_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <CalculatorManager_StackPool as ::unity2::ClassIdentity>::NAME,
+                    <CalculatorManager_CommandList as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -2384,10 +2381,10 @@ mod __CalculatorManager_StackPool_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: CalculatorManager_StackPool,
+        this: CalculatorManager_CommandList,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(CalculatorManager_StackPool, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(CalculatorManager_CommandList, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -2398,39 +2395,43 @@ mod __CalculatorManager_StackPool_unity2_raw {
 }
 
 #[cfg(feature = "app-calculatormanager")]
-pub trait ICalculatorManager_StackPoolMethods: ICalculatorManager_StackPool {
+pub trait ICalculatorManager_CommandListMethods: ICalculatorManager_CommandList {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CalculatorManager_StackPool as ::unity2::FromIlInstance>::from_il_instance(
+                <CalculatorManager_CommandList as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __CalculatorManager_StackPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __CalculatorManager_CommandList_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "app-calculatormanager")]
-impl<__T: ICalculatorManager_StackPool> ICalculatorManager_StackPoolMethods for __T {}
+impl<__T: ICalculatorManager_CommandList> ICalculatorManager_CommandListMethods for __T {}
 
 #[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_StackPool {
+impl CalculatorManager_CommandList {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorManager_StackPool),
+                ::core::stringify!(CalculatorManager_CommandList),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICalculatorManager_StackPoolMethods>::ctor(this);
+        <Self as ICalculatorManager_CommandListMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-calculatormanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorManager;
     pub use super::CalculatorManager_CommandList;

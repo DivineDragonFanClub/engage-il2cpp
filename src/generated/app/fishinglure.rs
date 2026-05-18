@@ -483,6 +483,7 @@ impl FishingLure {
 }
 
 #[cfg(feature = "app-fishinglure")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingLure;
     pub use super::IFishingLure;

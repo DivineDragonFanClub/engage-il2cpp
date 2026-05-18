@@ -533,6 +533,7 @@ impl RefineGodWeaponParamMenuContent {
 }
 
 #[cfg(feature = "app-refinegodweaponparammenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponParamMenuContent;
     pub use super::IRefineGodWeaponParamMenuContentMethods;

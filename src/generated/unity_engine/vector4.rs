@@ -1658,6 +1658,7 @@ impl Vector4 {
 }
 
 #[cfg(feature = "unity_engine-vector4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vector4;
     pub use crate::system::object::IObject;

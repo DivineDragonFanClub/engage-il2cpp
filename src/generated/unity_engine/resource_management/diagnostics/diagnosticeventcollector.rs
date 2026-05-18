@@ -345,6 +345,7 @@ impl DiagnosticEventCollector {
 }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiagnosticEventCollector;
     pub use super::IDiagnosticEventCollector;

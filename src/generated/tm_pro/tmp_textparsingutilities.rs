@@ -699,6 +699,7 @@ impl TMP_TextParsingUtilities {
 }
 
 #[cfg(feature = "tm_pro-tmp_textparsingutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_TextParsingUtilities;
     pub use super::ITMP_TextParsingUtilitiesMethods;

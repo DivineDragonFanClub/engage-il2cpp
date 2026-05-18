@@ -662,6 +662,7 @@ impl DragonRideTargetManager {
 }
 
 #[cfg(feature = "app-dragonridetargetmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideTargetManager;
     pub use super::IDragonRideTargetManager;

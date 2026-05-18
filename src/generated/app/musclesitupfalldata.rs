@@ -869,6 +869,7 @@ impl MuscleSitUpFallData {
 }
 
 #[cfg(feature = "app-musclesitupfalldata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleSitUpFallData;
     pub use super::IMuscleSitUpFallDataMethods;

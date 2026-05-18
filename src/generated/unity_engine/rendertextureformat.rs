@@ -162,6 +162,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendertextureformat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderTextureFormat;
     pub use crate::system::object::IObject;

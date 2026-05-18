@@ -335,6 +335,7 @@ impl SerializationExtensions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-serializationextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISerializationExtensions;
     pub use super::SerializationExtensions;

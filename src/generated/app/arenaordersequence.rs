@@ -11,18 +11,50 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_GodInfo.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct ArenaOrderSequence_GodInfo {
-        pub god: crate::app::godunit::GodUnit,
-        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaordersequence/ArenaOrderSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "ArenaOrderSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: arenaordersequence :: ArenaOrderSequence >)]
+    pub struct ArenaOrderSequence {
+        #[rename(name = "m_ExpUnitSelectRoot")]
+        pub m_exp_unit_select_root: crate::app::arenaexpunitselectroot::ArenaExpUnitSelectRoot,
+        #[rename(name = "m_BondUnitSelectRoot")]
+        pub m_bond_unit_select_root: crate::app::arenabondunitselectroot::ArenaBondUnitSelectRoot,
+        #[rename(name = "m_BondEmblemSelectRoot")]
+        pub m_bond_emblem_select_root: crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot,
+        #[rename(name = "m_BondLevelSelectRoot")]
+        pub m_bond_level_select_root:
+            crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot,
+        #[rename(name = "m_NextLabel")]
+        pub m_next_label: crate::app::arenaordersequence::ArenaOrderSequence_Label,
+        #[rename(name = "m_IsBackBondSelectEmblem")]
+        pub m_is_back_bond_select_emblem: bool,
+        #[rename(name = "m_ArenaObjects")]
+        pub m_arena_objects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_GodUnit")]
+        pub m_god_unit: crate::app::godunit::GodUnit,
+        #[rename(name = "m_Ring")]
+        pub m_ring: crate::app::unitring::UnitRing,
     }
 
-    impl ::unity2::ClassIdentity for ArenaOrderSequence_GodInfo {
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_TrainType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct ArenaOrderSequence_TrainType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for ArenaOrderSequence_TrainType {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "ArenaOrderSequence.GodInfo";
+        const NAME: &'static str = "ArenaOrderSequence.TrainType";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,12 +63,22 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ArenaOrderSequence_GodInfo {
+    impl ::unity2::IlType for ArenaOrderSequence_TrainType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
                 ._1
                 .byval_arg
+        }
+    }
+
+    impl ArenaOrderSequence_TrainType {
+        pub fn random() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn emblem() -> Self {
+            Self { value: 1 }
         }
     }
 
@@ -112,50 +154,18 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaordersequence/ArenaOrderSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "ArenaOrderSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: arenaordersequence :: ArenaOrderSequence >)]
-    pub struct ArenaOrderSequence {
-        #[rename(name = "m_ExpUnitSelectRoot")]
-        pub m_exp_unit_select_root: crate::app::arenaexpunitselectroot::ArenaExpUnitSelectRoot,
-        #[rename(name = "m_BondUnitSelectRoot")]
-        pub m_bond_unit_select_root: crate::app::arenabondunitselectroot::ArenaBondUnitSelectRoot,
-        #[rename(name = "m_BondEmblemSelectRoot")]
-        pub m_bond_emblem_select_root: crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot,
-        #[rename(name = "m_BondLevelSelectRoot")]
-        pub m_bond_level_select_root:
-            crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot,
-        #[rename(name = "m_NextLabel")]
-        pub m_next_label: crate::app::arenaordersequence::ArenaOrderSequence_Label,
-        #[rename(name = "m_IsBackBondSelectEmblem")]
-        pub m_is_back_bond_select_emblem: bool,
-        #[rename(name = "m_ArenaObjects")]
-        pub m_arena_objects: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_GodUnit")]
-        pub m_god_unit: crate::app::godunit::GodUnit,
-        #[rename(name = "m_Ring")]
-        pub m_ring: crate::app::unitring::UnitRing,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_TrainType.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaordersequence/ArenaOrderSequence_GodInfo.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct ArenaOrderSequence_TrainType {
-        pub value: i32,
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ArenaOrderSequence_GodInfo {
+        pub god: crate::app::godunit::GodUnit,
+        pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
     }
 
-    impl ::unity2::ClassIdentity for ArenaOrderSequence_TrainType {
+    impl ::unity2::ClassIdentity for ArenaOrderSequence_GodInfo {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "ArenaOrderSequence.TrainType";
+        const NAME: &'static str = "ArenaOrderSequence.GodInfo";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -164,22 +174,12 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for ArenaOrderSequence_TrainType {
+    impl ::unity2::IlType for ArenaOrderSequence_GodInfo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
                 ._1
                 .byval_arg
-        }
-    }
-
-    impl ArenaOrderSequence_TrainType {
-        pub fn random() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn emblem() -> Self {
-            Self { value: 1 }
         }
     }
 }
@@ -3563,6 +3563,7 @@ impl ArenaOrderSequence {
 }
 
 #[cfg(feature = "app-arenaordersequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaOrderSequence;
     pub use super::ArenaOrderSequence_GodInfo;

@@ -174,6 +174,7 @@ impl GmapGroundSphereController {
 }
 
 #[cfg(feature = "app-gmapgroundspherecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapGroundSphereController;
     pub use super::IGmapGroundSphereController;

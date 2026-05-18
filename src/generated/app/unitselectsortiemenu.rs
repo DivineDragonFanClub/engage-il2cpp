@@ -440,6 +440,7 @@ impl UnitSelectSortieMenu {
 }
 
 #[cfg(feature = "app-unitselectsortiemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectSortieMenu;
     pub use super::IUnitSelectSortieMenuMethods;

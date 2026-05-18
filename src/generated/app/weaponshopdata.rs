@@ -638,6 +638,7 @@ impl WeaponShopData {
 }
 
 #[cfg(feature = "app-weaponshopdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponShopData;
     pub use super::IWeaponShopDataMethods;

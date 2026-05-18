@@ -114,6 +114,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-fileattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileAttributes;
     pub use crate::system::object::IObject;

@@ -42,6 +42,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-softjointlimitspring")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SoftJointLimitSpring;
     pub use crate::system::object::IObject;

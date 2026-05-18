@@ -528,6 +528,7 @@ impl MascotAccChangeMenuItem {
 }
 
 #[cfg(feature = "app-mascotaccchangemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotAccChangeMenuItem;
     pub use super::IMascotAccChangeMenuItemMethods;

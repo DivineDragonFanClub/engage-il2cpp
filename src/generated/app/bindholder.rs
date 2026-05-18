@@ -419,6 +419,7 @@ impl BindHolder {
 }
 
 #[cfg(feature = "app-bindholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BindHolder;
     pub use super::IBindHolder;

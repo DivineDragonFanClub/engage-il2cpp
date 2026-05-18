@@ -61,6 +61,7 @@ impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
 }
 
 #[cfg(feature = "app-procdescargt_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescArgT_1;
     pub use super::IProcDescArgT_1Methods;

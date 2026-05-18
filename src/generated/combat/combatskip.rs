@@ -1151,6 +1151,7 @@ impl CombatSkip {
 }
 
 #[cfg(feature = "combat-combatskip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatSkip;
     pub use super::CombatSkip_State;

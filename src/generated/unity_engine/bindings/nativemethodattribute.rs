@@ -668,6 +668,7 @@ impl NativeMethodAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativemethodattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeMethodAttribute;
     pub use super::INativeMethodAttributeMethods;

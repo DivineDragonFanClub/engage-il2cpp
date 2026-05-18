@@ -3520,6 +3520,7 @@ impl CharacterBuilder {
 }
 
 #[cfg(feature = "combat-characterbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterBuilder;
     pub use super::ICharacterBuilder;

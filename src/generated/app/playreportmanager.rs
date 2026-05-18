@@ -438,6 +438,7 @@ impl PlayReportManager {
 }
 
 #[cfg(feature = "app-playreportmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayReportManager;
     pub use super::IPlayReportManagerMethods;

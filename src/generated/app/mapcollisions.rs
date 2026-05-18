@@ -784,6 +784,7 @@ impl MapCollisions {
 }
 
 #[cfg(feature = "app-mapcollisions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapCollisions;
     pub use super::IMapCollisionsMethods;

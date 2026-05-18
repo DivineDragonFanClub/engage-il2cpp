@@ -534,6 +534,7 @@ impl CombatLocationLastBoss {
 }
 
 #[cfg(feature = "combat-combatlocationlastboss")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationLastBoss;
     pub use super::ICombatLocationLastBoss;

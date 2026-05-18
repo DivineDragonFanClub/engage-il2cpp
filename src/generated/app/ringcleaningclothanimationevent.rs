@@ -811,6 +811,7 @@ impl RingCleaningClothAnimationEvent {
 }
 
 #[cfg(feature = "app-ringcleaningclothanimationevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningClothAnimationEvent;
     pub use super::IRingCleaningClothAnimationEventMethods;

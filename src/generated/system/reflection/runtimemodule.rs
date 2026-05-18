@@ -99,6 +99,7 @@ impl RuntimeModule {
 }
 
 #[cfg(feature = "system-reflection-runtimemodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeModule;
     pub use super::IRuntimeModuleMethods;

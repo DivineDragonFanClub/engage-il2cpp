@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tagunittype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TagUnitType;
     pub use crate::system::object::IObject;

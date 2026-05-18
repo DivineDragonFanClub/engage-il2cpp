@@ -339,6 +339,7 @@ impl Deco_RodHeal {
 }
 
 #[cfg(feature = "combat-deco_rodheal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_RodHeal;
     pub use super::IDeco_RodHeal;

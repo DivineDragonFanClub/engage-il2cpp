@@ -139,6 +139,7 @@ impl FishingConfig_WaitCatch {
 }
 
 #[cfg(feature = "app-fishingconfig_waitcatch")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_WaitCatch;
     pub use super::IFishingConfig_WaitCatch;

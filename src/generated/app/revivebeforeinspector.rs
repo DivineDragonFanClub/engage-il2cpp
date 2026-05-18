@@ -120,6 +120,7 @@ impl ReviveBeforeInspector {
 }
 
 #[cfg(feature = "app-revivebeforeinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReviveBeforeInspector;
     pub use super::IReviveBeforeInspectorMethods;

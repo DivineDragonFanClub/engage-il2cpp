@@ -920,6 +920,7 @@ impl ShaderVariantCollection {
 }
 
 #[cfg(feature = "unity_engine-shadervariantcollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderVariantCollection;
     pub use super::IShaderVariantCollectionMethods;

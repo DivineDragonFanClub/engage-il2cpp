@@ -1016,6 +1016,7 @@ impl AniBodyRide {
 }
 
 #[cfg(feature = "combat-anibodyride")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AniBodyRide;
     pub use super::IAniBodyRide;

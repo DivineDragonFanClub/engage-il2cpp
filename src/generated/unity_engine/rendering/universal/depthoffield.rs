@@ -221,6 +221,7 @@ impl DepthOfField {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthOfField;
     pub use super::IDepthOfField;

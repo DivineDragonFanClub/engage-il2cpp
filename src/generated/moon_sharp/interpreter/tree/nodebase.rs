@@ -855,6 +855,7 @@ impl NodeBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INodeBase;
     pub use super::INodeBaseMethods;

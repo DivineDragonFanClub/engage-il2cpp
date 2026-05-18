@@ -601,6 +601,7 @@ impl AutoCameraBase {
 }
 
 #[cfg(feature = "combat-autocamerabase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AutoCameraBase;
     pub use super::IAutoCameraBase;

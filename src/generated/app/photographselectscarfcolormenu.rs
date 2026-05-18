@@ -269,6 +269,7 @@ impl PhotographSelectScarfColorMenu {
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectScarfColorMenu;
     pub use super::IPhotographSelectScarfColorMenuMethods;

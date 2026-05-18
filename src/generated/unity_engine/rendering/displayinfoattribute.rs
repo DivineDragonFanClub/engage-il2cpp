@@ -104,6 +104,7 @@ impl DisplayInfoAttribute {
 }
 
 #[cfg(feature = "unity_engine-rendering-displayinfoattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisplayInfoAttribute;
     pub use super::IDisplayInfoAttribute;

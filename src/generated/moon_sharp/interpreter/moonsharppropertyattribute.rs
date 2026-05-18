@@ -304,6 +304,7 @@ impl MoonSharpPropertyAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharppropertyattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpPropertyAttribute;
     pub use super::IMoonSharpPropertyAttributeMethods;

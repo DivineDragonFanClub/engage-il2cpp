@@ -2088,6 +2088,7 @@ impl TouchScreen {
 }
 
 #[cfg(feature = "nn-hid-touchscreen")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITouchScreen;
     pub use super::TouchScreen;

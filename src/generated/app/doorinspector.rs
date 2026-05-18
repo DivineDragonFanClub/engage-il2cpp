@@ -396,6 +396,7 @@ impl DoorInspector {
 }
 
 #[cfg(feature = "app-doorinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DoorInspector;
     pub use super::IDoorInspector;

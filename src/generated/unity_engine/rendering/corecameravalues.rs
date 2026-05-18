@@ -227,6 +227,7 @@ impl CoreCameraValues {
 }
 
 #[cfg(feature = "unity_engine-rendering-corecameravalues")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoreCameraValues;
     pub use crate::system::object::IObject;

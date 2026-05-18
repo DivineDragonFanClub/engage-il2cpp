@@ -975,6 +975,7 @@ impl MascotAccChangeContent {
 }
 
 #[cfg(feature = "app-mascotaccchangecontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotAccChangeContent;
     pub use super::IMascotAccChangeContentMethods;

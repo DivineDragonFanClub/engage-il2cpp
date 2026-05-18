@@ -228,6 +228,7 @@ impl CompositeShadowCaster2D {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-compositeshadowcaster2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompositeShadowCaster2D;
     pub use super::ICompositeShadowCaster2D;

@@ -261,6 +261,7 @@ impl DisplaceV2 {
 }
 
 #[cfg(feature = "app-water-displacev2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisplaceV2;
     pub use super::IDisplaceV2;

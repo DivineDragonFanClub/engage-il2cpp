@@ -39,6 +39,7 @@ impl<T0: ::unity2::ClassIdentity> IList_1_Interface<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIList_1_Interface;
     pub use super::IIList_1_InterfaceMethods;

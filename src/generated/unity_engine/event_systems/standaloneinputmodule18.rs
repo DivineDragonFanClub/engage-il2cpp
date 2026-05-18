@@ -18,41 +18,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "StandaloneInputModule18"
-    )]
-    #[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
-    pub struct StandaloneInputModule18 {
-        #[rename(name = "m_PrevActionTime")]
-        pub m_prev_action_time: f32,
-        #[rename(name = "m_LastMoveVector")]
-        pub m_last_move_vector: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_ConsecutiveMoveCount")]
-        pub m_consecutive_move_count: i32,
-        #[rename(name = "m_LastMousePosition")]
-        pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_MousePosition")]
-        pub m_mouse_position: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_CurrentFocusedGameObject")]
-        pub m_current_focused_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_HorizontalAxis")]
-        pub m_horizontal_axis: ::unity2::Il2CppString,
-        #[rename(name = "m_VerticalAxis")]
-        pub m_vertical_axis: ::unity2::Il2CppString,
-        #[rename(name = "m_SubmitButton")]
-        pub m_submit_button: ::unity2::Il2CppString,
-        #[rename(name = "m_CancelButton")]
-        pub m_cancel_button: ::unity2::Il2CppString,
-        #[rename(name = "m_InputActionsPerSecond")]
-        pub m_input_actions_per_second: f32,
-        #[rename(name = "m_RepeatDelay")]
-        pub m_repeat_delay: f32,
-        #[rename(name = "m_ForceModuleActive")]
-        pub m_force_module_active: bool,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18_InputMode.md"))]
     #[repr(C)]
     #[derive(
@@ -95,6 +60,41 @@ mod __types {
         pub fn buttons() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule18/StandaloneInputModule18.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.EventSystems",
+        name = "StandaloneInputModule18"
+    )]
+    #[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
+    pub struct StandaloneInputModule18 {
+        #[rename(name = "m_PrevActionTime")]
+        pub m_prev_action_time: f32,
+        #[rename(name = "m_LastMoveVector")]
+        pub m_last_move_vector: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_ConsecutiveMoveCount")]
+        pub m_consecutive_move_count: i32,
+        #[rename(name = "m_LastMousePosition")]
+        pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_MousePosition")]
+        pub m_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_CurrentFocusedGameObject")]
+        pub m_current_focused_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_HorizontalAxis")]
+        pub m_horizontal_axis: ::unity2::Il2CppString,
+        #[rename(name = "m_VerticalAxis")]
+        pub m_vertical_axis: ::unity2::Il2CppString,
+        #[rename(name = "m_SubmitButton")]
+        pub m_submit_button: ::unity2::Il2CppString,
+        #[rename(name = "m_CancelButton")]
+        pub m_cancel_button: ::unity2::Il2CppString,
+        #[rename(name = "m_InputActionsPerSecond")]
+        pub m_input_actions_per_second: f32,
+        #[rename(name = "m_RepeatDelay")]
+        pub m_repeat_delay: f32,
+        #[rename(name = "m_ForceModuleActive")]
+        pub m_force_module_active: bool,
     }
 }
 
@@ -2457,6 +2457,7 @@ impl StandaloneInputModule18 {
 }
 
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStandaloneInputModule18;
     pub use super::IStandaloneInputModule18Methods;

@@ -31,6 +31,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-memberinfoserializationholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemberInfoSerializationHolder;
     pub use super::MemberInfoSerializationHolder;

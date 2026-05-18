@@ -949,6 +949,7 @@ impl LaterTalkSequence {
 }
 
 #[cfg(feature = "app-latertalksequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILaterTalkSequence;
     pub use super::ILaterTalkSequenceMethods;

@@ -200,6 +200,7 @@ impl BasePiece {
 }
 
 #[cfg(feature = "app-struct_object-basepiece")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasePiece;
     pub use super::IBasePiece;

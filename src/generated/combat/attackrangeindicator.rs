@@ -105,6 +105,7 @@ impl AttackRangeIndicator {
 }
 
 #[cfg(feature = "combat-attackrangeindicator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AttackRangeIndicator;
     pub use super::IAttackRangeIndicator;

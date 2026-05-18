@@ -101,6 +101,7 @@ impl FlareLayer {
 }
 
 #[cfg(feature = "unity_engine-flarelayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FlareLayer;
     pub use super::IFlareLayer;

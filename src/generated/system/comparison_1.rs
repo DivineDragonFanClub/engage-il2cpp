@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity> Comparison_1<T0> {
 }
 
 #[cfg(feature = "system-comparison_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Comparison_1;
     pub use super::IComparison_1;

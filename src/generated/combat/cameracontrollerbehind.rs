@@ -826,6 +826,7 @@ impl CameraControllerBehind {
 }
 
 #[cfg(feature = "combat-cameracontrollerbehind")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerBehind;
     pub use super::ICameraControllerBehind;

@@ -194,6 +194,7 @@ impl GenerateHLSL {
 }
 
 #[cfg(feature = "unity_engine-rendering-generatehlsl")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GenerateHLSL;
     pub use super::IGenerateHLSL;

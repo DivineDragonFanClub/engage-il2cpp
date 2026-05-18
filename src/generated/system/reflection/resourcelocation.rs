@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-resourcelocation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ResourceLocation;
     pub use crate::system::object::IObject;

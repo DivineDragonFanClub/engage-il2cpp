@@ -404,6 +404,7 @@ impl CameraCaptureBridge {
 }
 
 #[cfg(feature = "unity_engine-rendering-cameracapturebridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraCaptureBridge;
     pub use super::ICameraCaptureBridge;

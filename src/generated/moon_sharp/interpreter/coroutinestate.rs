@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-coroutinestate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoroutineState;
     pub use crate::system::object::IObject;

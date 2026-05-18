@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-dragon_ride-levels")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Levels;
     pub use crate::system::object::IObject;

@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-talk3_d-characterfactory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterFactory;
     pub use super::ICharacterFactory;

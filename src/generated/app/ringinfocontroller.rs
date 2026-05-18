@@ -508,6 +508,7 @@ impl RingInfoController {
 }
 
 #[cfg(feature = "app-ringinfocontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingInfoController;
     pub use super::IRingInfoControllerMethods;

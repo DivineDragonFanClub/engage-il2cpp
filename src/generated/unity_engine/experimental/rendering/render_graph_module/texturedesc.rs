@@ -492,6 +492,7 @@ impl TextureDesc {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturedesc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TextureDesc;
     pub use crate::system::object::IObject;

@@ -378,6 +378,7 @@ impl AssignmentStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-assignmentstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssignmentStatement;
     pub use super::IAssignmentStatement;

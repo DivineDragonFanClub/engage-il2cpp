@@ -1364,6 +1364,7 @@ impl IoModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-iomodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIoModule;
     pub use super::IIoModuleMethods;

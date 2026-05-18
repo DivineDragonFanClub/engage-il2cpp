@@ -355,6 +355,7 @@ impl SynthesisRingBaseRingMenuContent {
 }
 
 #[cfg(feature = "app-synthesisringbaseringmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISynthesisRingBaseRingMenuContent;
     pub use super::ISynthesisRingBaseRingMenuContentMethods;

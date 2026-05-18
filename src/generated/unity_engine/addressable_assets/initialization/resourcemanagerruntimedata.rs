@@ -1433,6 +1433,7 @@ impl ResourceManagerRuntimeData {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceManagerRuntimeData;
     pub use super::IResourceManagerRuntimeDataMethods;

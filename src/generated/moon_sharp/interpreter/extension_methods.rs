@@ -159,6 +159,7 @@ impl Extension_Methods {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-extension_methods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Extension_Methods;
     pub use super::IExtension_Methods;

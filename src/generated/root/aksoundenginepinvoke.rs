@@ -65967,6 +65967,7 @@ impl AkSoundEnginePINVOKE {
 }
 
 #[cfg(feature = "root-aksoundenginepinvoke")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSoundEnginePINVOKE;
     pub use super::IAkSoundEnginePINVOKE;

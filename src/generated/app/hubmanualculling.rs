@@ -228,6 +228,7 @@ impl HubManualCulling {
 }
 
 #[cfg(feature = "app-hubmanualculling")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubManualCulling;
     pub use super::IHubManualCulling;

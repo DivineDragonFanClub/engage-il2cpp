@@ -437,6 +437,7 @@ impl RenderGraphObjectPool {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphObjectPool;
     pub use super::IRenderGraphObjectPoolMethods;

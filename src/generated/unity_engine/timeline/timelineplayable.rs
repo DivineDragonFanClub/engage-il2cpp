@@ -1022,6 +1022,7 @@ impl TimelinePlayable {
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimelinePlayable;
     pub use super::ITimelinePlayableMethods;

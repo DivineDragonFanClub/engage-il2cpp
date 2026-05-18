@@ -423,6 +423,7 @@ impl CommonRingController {
 }
 
 #[cfg(feature = "app-commonringcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRingController;
     pub use super::ICommonRingController;

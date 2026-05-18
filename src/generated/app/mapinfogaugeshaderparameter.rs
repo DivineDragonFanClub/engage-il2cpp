@@ -106,6 +106,7 @@ impl MapInfoGaugeShaderParameter {
 }
 
 #[cfg(feature = "app-mapinfogaugeshaderparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoGaugeShaderParameter;
     pub use super::IMapInfoGaugeShaderParameterMethods;

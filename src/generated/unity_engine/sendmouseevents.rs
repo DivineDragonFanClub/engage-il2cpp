@@ -8,6 +8,30 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
+    #[parent(crate::system::object::Object)]
+    pub struct SendMouseEvents {
+        #[static_field]
+        #[rename(name = "s_MouseUsed")]
+        pub s_mouse_used: bool,
+        #[static_field]
+        #[rename(name = "m_LastHit")]
+        pub m_last_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_MouseDownHit")]
+        pub m_mouse_down_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_CurrentHit")]
+        pub m_current_hit:
+            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        #[static_field]
+        #[rename(name = "m_Cameras")]
+        pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,231 +60,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
-    #[parent(crate::system::object::Object)]
-    pub struct SendMouseEvents {
-        #[static_field]
-        #[rename(name = "s_MouseUsed")]
-        pub s_mouse_used: bool,
-        #[static_field]
-        #[rename(name = "m_LastHit")]
-        pub m_last_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_MouseDownHit")]
-        pub m_mouse_down_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_CurrentHit")]
-        pub m_current_hit:
-            ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        #[static_field]
-        #[rename(name = "m_Cameras")]
-        pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
-    }
 }
 
 #[cfg(feature = "unity_engine-sendmouseevents-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-sendmouseevents")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SendMouseEvents_HitInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_message {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
-                "SendMessage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
-                    "SendMessage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn send_message(
-        this: SendMouseEvents_HitInfo,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SendMouseEvents_HitInfo,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_send_message::get_offset() as isize),
-        );
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_implicit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_implicit(
-        exists: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
-        inner(exists, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
-                "Compare",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare(
-        lhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-        rhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(lhs, rhs, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents_HitInfo {
-    #[doc = "`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
-    pub fn op_implicit(
-        exists: impl ::core::convert::Into<
-            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-        >,
-    ) -> bool {
-        unsafe {
-            __SendMouseEvents_HitInfo_unity2_raw::op_implicit(
-                ::core::convert::Into::into(exists),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
-    pub fn compare(
-        lhs: impl ::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-        rhs: impl ::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-    ) -> bool {
-        unsafe {
-            __SendMouseEvents_HitInfo_unity2_raw::compare(
-                ::core::convert::Into::into(lhs),
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-sendmouseevents")]
-impl SendMouseEvents_HitInfo {
-    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
-    pub fn send_message(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __SendMouseEvents_HitInfo_unity2_raw::send_message(
-                self,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "unity_engine-sendmouseevents")]
 #[doc(hidden)]
@@ -480,6 +283,204 @@ impl SendMouseEvents {
 }
 
 #[cfg(feature = "unity_engine-sendmouseevents")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SendMouseEvents_HitInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_message {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
+                "SendMessage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
+                    "SendMessage",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_message(
+        this: SendMouseEvents_HitInfo,
+        name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SendMouseEvents_HitInfo,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_message::get_offset() as isize),
+        );
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_implicit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
+                "op_Implicit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
+                    "op_Implicit",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_implicit(
+        exists: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_op_implicit::get_offset() as isize),
+        );
+        inner(exists, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: sendmouseevents :: SendMouseEvents_HitInfo as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <SendMouseEvents_HitInfo as ::unity2::ClassIdentity>::NAME,
+                    "Compare",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn compare(
+        lhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+        rhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_compare::get_offset() as isize),
+        );
+        inner(lhs, rhs, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-sendmouseevents")]
+impl SendMouseEvents_HitInfo {
+    #[doc = "`op_Implicit(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
+    pub fn op_implicit(
+        exists: impl ::core::convert::Into<
+            crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+        >,
+    ) -> bool {
+        unsafe {
+            __SendMouseEvents_HitInfo_unity2_raw::op_implicit(
+                ::core::convert::Into::into(exists),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Compare(crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
+    pub fn compare(
+        lhs: impl ::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+        rhs: impl ::core::convert::Into<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+    ) -> bool {
+        unsafe {
+            __SendMouseEvents_HitInfo_unity2_raw::compare(
+                ::core::convert::Into::into(lhs),
+                ::core::convert::Into::into(rhs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-sendmouseevents")]
+impl SendMouseEvents_HitInfo {
+    #[doc = "`SendMessage(::unity2::Il2CppString)` overload"]
+    pub fn send_message(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            __SendMouseEvents_HitInfo_unity2_raw::send_message(
+                self,
+                ::core::convert::Into::into(name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-sendmouseevents")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISendMouseEvents;
     pub use super::SendMouseEvents;

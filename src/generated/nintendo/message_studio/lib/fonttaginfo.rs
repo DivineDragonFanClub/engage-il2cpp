@@ -329,6 +329,7 @@ impl FontTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontTagInfo;
     pub use super::IFontTagInfo;

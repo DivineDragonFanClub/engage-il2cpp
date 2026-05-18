@@ -382,6 +382,7 @@ impl NameCheckDialogContent {
 }
 
 #[cfg(feature = "app-namecheckdialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INameCheckDialogContent;
     pub use super::INameCheckDialogContentMethods;

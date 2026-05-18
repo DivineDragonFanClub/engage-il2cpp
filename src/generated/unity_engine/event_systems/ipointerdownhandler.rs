@@ -96,6 +96,7 @@ pub trait IIPointerDownHandlerMethods: IIPointerDownHandler {
 impl<__T: IIPointerDownHandler> IIPointerDownHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPointerDownHandler;
     pub use super::IIPointerDownHandlerMethods;

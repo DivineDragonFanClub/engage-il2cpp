@@ -736,6 +736,7 @@ impl CameraControllerConfrontation {
 }
 
 #[cfg(feature = "combat-cameracontrollerconfrontation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerConfrontation;
     pub use super::ICameraControllerConfrontation;

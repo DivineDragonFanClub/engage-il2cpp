@@ -532,6 +532,7 @@ impl MapStateMachine {
 }
 
 #[cfg(feature = "root-mapstatemachine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapStateMachine;
     pub use super::IMapStateMachineMethods;

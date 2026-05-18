@@ -630,6 +630,7 @@ impl SkillEditPoolNoneMenuItem {
 }
 
 #[cfg(feature = "app-skilleditpoolnonemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillEditPoolNoneMenuItem;
     pub use super::ISkillEditPoolNoneMenuItemMethods;

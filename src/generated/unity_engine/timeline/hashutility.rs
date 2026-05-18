@@ -378,6 +378,7 @@ impl HashUtility {
 }
 
 #[cfg(feature = "unity_engine-timeline-hashutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashUtility;
     pub use super::IHashUtility;

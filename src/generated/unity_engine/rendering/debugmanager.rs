@@ -2527,6 +2527,7 @@ impl DebugManager {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugManager;
     pub use super::IDebugManager;

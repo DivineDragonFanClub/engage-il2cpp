@@ -178,6 +178,7 @@ impl<T0: ::unity2::ClassIdentity> PriorityHeap_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPriorityHeap_1;
     pub use super::IPriorityHeap_1Methods;

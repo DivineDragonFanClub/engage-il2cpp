@@ -706,6 +706,7 @@ impl Object {
 }
 
 #[cfg(feature = "system-object")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObject;
     pub use super::IObjectMethods;

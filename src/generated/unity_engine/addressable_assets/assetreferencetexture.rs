@@ -119,6 +119,7 @@ impl AssetReferenceTexture {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceTexture;
     pub use super::IAssetReferenceTexture;

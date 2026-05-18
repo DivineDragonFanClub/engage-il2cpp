@@ -122,6 +122,7 @@ impl HLSLArray {
 }
 
 #[cfg(feature = "unity_engine-rendering-hlslarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HLSLArray;
     pub use super::IHLSLArray;

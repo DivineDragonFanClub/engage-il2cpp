@@ -323,6 +323,7 @@ impl VibrationFile_2 {
 }
 
 #[cfg(feature = "nn-hid-vibrationfile_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVibrationFile_2;
     pub use super::VibrationFile_2;

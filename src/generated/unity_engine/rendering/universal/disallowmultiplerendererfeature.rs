@@ -106,6 +106,7 @@ impl DisallowMultipleRendererFeature {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisallowMultipleRendererFeature;
     pub use super::IDisallowMultipleRendererFeature;

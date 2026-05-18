@@ -750,6 +750,7 @@ impl PlayerConnectionInternal {
 }
 
 #[cfg(feature = "unity_engine-playerconnectioninternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerConnectionInternal;
     pub use super::IPlayerConnectionInternalMethods;

@@ -160,6 +160,7 @@ impl MyRoomSEMarker {
 }
 
 #[cfg(feature = "app-myroomsemarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomSEMarker;
     pub use super::IMyRoomSEMarkerMethods;

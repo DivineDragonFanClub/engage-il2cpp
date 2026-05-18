@@ -101,6 +101,7 @@ impl DirectionState {
 }
 
 #[cfg(feature = "nn-hid-directionstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DirectionState;
     pub use crate::system::object::IObject;

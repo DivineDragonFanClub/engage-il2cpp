@@ -780,6 +780,7 @@ impl GmapMenuContent {
 }
 
 #[cfg(feature = "app-gmapmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapMenuContent;
     pub use super::IGmapMenuContent;

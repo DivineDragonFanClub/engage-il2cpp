@@ -296,6 +296,7 @@ impl PropertyInfoItem {
 }
 
 #[cfg(feature = "app-propertyinfoitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyInfoItem;
     pub use super::IPropertyInfoItemMethods;

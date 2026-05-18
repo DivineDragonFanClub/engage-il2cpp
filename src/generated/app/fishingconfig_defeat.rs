@@ -116,6 +116,7 @@ impl FishingConfig_Defeat {
 }
 
 #[cfg(feature = "app-fishingconfig_defeat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_Defeat;
     pub use super::IFishingConfig_Defeat;

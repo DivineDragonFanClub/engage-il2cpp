@@ -108,6 +108,7 @@ impl LightweightRenderPipelineAsset {
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipelineasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightweightRenderPipelineAsset;
     pub use super::ILightweightRenderPipelineAssetMethods;

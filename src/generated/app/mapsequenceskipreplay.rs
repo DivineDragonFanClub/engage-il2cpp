@@ -11,14 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceSkipReplay")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceskipreplay :: MapSequenceSkipReplay >)]
-    pub struct MapSequenceSkipReplay {
-        #[rename(name = "m_SetupFieldFunc")]
-        pub m_setup_field_func: crate::system::action::Action,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceskipreplay/MapSequenceSkipReplay_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -61,6 +53,14 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceSkipReplay")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceskipreplay :: MapSequenceSkipReplay >)]
+    pub struct MapSequenceSkipReplay {
+        #[rename(name = "m_SetupFieldFunc")]
+        pub m_setup_field_func: crate::system::action::Action,
     }
 }
 
@@ -455,6 +455,7 @@ impl MapSequenceSkipReplay {
 }
 
 #[cfg(feature = "app-mapsequenceskipreplay")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceSkipReplay;
     pub use super::IMapSequenceSkipReplayMethods;

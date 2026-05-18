@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-msaaquality")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MsaaQuality;
     pub use crate::system::object::IObject;

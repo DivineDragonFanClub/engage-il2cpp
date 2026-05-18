@@ -99,6 +99,7 @@ impl NotKeyableAttribute_2 {
 }
 
 #[cfg(feature = "unity_engine-timeline-notkeyableattribute_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INotKeyableAttribute_2;
     pub use super::INotKeyableAttribute_2Methods;

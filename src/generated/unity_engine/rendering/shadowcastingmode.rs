@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shadowcastingmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowCastingMode;
     pub use crate::system::object::IObject;

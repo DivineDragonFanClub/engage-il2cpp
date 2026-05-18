@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-processorarchitecture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ProcessorArchitecture;
     pub use crate::system::object::IObject;

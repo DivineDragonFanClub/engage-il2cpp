@@ -103,6 +103,7 @@ impl MapDeployLandImage {
 }
 
 #[cfg(feature = "app-mapdeploylandimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployLandImage;
     pub use super::IMapDeployLandImageMethods;

@@ -740,6 +740,7 @@ impl AnimationTriggers {
 }
 
 #[cfg(feature = "unity_engine-ui-animationtriggers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationTriggers;
     pub use super::IAnimationTriggers;

@@ -202,6 +202,7 @@ impl BattleTalkInspector {
 }
 
 #[cfg(feature = "app-battletalkinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleTalkInspector;
     pub use super::IBattleTalkInspector;

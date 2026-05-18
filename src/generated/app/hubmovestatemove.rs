@@ -343,6 +343,7 @@ impl HubMoveStateMove {
 }
 
 #[cfg(feature = "app-hubmovestatemove")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveStateMove;
     pub use super::IHubMoveStateMove;

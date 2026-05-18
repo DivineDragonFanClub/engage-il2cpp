@@ -272,6 +272,7 @@ impl PowCommand {
 }
 
 #[cfg(feature = "app-powcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPowCommand;
     pub use super::IPowCommandMethods;

@@ -96,6 +96,7 @@ pub trait IIPointerClickHandlerMethods: IIPointerClickHandler {
 impl<__T: IIPointerClickHandler> IIPointerClickHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ipointerclickhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPointerClickHandler;
     pub use super::IIPointerClickHandlerMethods;

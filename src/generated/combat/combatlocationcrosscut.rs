@@ -405,6 +405,7 @@ impl CombatLocationCrosscut {
 }
 
 #[cfg(feature = "combat-combatlocationcrosscut")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationCrosscut;
     pub use super::ICombatLocationCrosscut;

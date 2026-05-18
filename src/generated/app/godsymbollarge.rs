@@ -303,6 +303,7 @@ impl GodSymbolLarge {
 }
 
 #[cfg(feature = "app-godsymbollarge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodSymbolLarge;
     pub use super::IGodSymbolLarge;

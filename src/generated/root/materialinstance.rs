@@ -442,6 +442,7 @@ impl MaterialInstance {
 }
 
 #[cfg(feature = "root-materialinstance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialInstance;
     pub use super::IMaterialInstanceMethods;

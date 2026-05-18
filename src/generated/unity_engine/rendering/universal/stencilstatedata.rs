@@ -118,6 +118,7 @@ impl StencilStateData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStencilStateData;
     pub use super::IStencilStateDataMethods;

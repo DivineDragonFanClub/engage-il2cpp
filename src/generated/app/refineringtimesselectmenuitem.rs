@@ -907,6 +907,7 @@ impl RefineRingTimesSelectMenuItem {
 }
 
 #[cfg(feature = "app-refineringtimesselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineRingTimesSelectMenuItem;
     pub use super::IRefineRingTimesSelectMenuItemMethods;

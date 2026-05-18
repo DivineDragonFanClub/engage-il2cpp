@@ -243,6 +243,7 @@ impl UiColor {
 }
 
 #[cfg(feature = "app-uicolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUiColor;
     pub use super::IUiColorMethods;

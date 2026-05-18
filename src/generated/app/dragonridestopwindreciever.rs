@@ -298,6 +298,7 @@ impl DragonRideStopWindReciever {
 }
 
 #[cfg(feature = "app-dragonridestopwindreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideStopWindReciever;
     pub use super::IDragonRideStopWindReciever;

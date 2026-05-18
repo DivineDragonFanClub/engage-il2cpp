@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-seekorigin")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SeekOrigin;
     pub use crate::system::object::IObject;

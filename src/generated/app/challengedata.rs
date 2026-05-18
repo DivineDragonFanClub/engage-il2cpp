@@ -1980,6 +1980,7 @@ impl ChallengeData {
 }
 
 #[cfg(feature = "app-challengedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeData;
     pub use super::IChallengeData;

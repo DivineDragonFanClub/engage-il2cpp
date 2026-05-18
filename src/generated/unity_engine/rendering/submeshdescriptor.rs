@@ -458,6 +458,7 @@ impl SubMeshDescriptor {
 }
 
 #[cfg(feature = "unity_engine-rendering-submeshdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SubMeshDescriptor;
     pub use crate::system::object::IObject;

@@ -397,6 +397,7 @@ impl MemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-memberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemberDescriptor;
     pub use super::MemberDescriptor;

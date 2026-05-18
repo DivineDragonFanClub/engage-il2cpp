@@ -114,6 +114,7 @@ impl FishingResultData {
 }
 
 #[cfg(feature = "app-fishingresultdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingResultData;
     pub use super::IFishingResultData;

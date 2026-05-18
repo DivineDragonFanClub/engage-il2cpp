@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-fileoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileOptions;
     pub use crate::system::object::IObject;

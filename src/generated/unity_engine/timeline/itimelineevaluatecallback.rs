@@ -87,6 +87,7 @@ pub trait IITimelineEvaluateCallbackMethods: IITimelineEvaluateCallback {
 impl<__T: IITimelineEvaluateCallback> IITimelineEvaluateCallbackMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITimelineEvaluateCallback;
     pub use super::IITimelineEvaluateCallbackMethods;

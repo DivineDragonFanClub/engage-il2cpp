@@ -193,6 +193,7 @@ impl MemberFilter {
 }
 
 #[cfg(feature = "system-reflection-memberfilter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemberFilter;
     pub use super::IMemberFilterMethods;

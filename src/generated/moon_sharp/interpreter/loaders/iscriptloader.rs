@@ -245,6 +245,7 @@ pub trait IIScriptLoaderMethods: IIScriptLoader {
 impl<__T: IIScriptLoader> IIScriptLoaderMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIScriptLoader;
     pub use super::IIScriptLoaderMethods;

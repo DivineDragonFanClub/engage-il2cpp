@@ -108,6 +108,7 @@ impl SkinQualityLodAdjuster {
 }
 
 #[cfg(feature = "app-skinqualitylodadjuster")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkinQualityLodAdjuster;
     pub use super::ISkinQualityLodAdjusterMethods;

@@ -560,6 +560,7 @@ impl CharacterTurn {
 }
 
 #[cfg(feature = "combat-characterturn")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterTurn;
     pub use super::ICharacterTurn;

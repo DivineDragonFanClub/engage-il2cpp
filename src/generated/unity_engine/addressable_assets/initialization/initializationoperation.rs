@@ -782,6 +782,7 @@ impl InitializationOperation {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInitializationOperation;
     pub use super::IInitializationOperationMethods;

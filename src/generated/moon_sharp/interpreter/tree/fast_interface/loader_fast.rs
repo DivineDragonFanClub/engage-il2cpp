@@ -282,6 +282,7 @@ impl Loader_Fast {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-fast_interface-loader_fast")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoader_Fast;
     pub use super::Loader_Fast;

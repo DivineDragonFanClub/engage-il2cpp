@@ -88,6 +88,7 @@ pub trait IGridLayoutMethods: IGridLayout {
 impl<__T: IGridLayout> IGridLayoutMethods for __T {}
 
 #[cfg(feature = "unity_engine-gridlayout")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridLayout;
     pub use super::IGridLayout;

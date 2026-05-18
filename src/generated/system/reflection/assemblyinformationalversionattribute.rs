@@ -117,6 +117,7 @@ impl AssemblyInformationalVersionAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyInformationalVersionAttribute;
     pub use super::IAssemblyInformationalVersionAttribute;

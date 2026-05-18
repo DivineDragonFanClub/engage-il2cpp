@@ -261,6 +261,7 @@ impl NoInterpClampedIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpclampedintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpClampedIntParameter;
     pub use super::INoInterpClampedIntParameterMethods;

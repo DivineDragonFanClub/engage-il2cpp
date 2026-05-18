@@ -350,6 +350,7 @@ impl TargetHideMarkerReciever {
 }
 
 #[cfg(feature = "app-targethidemarkerreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetHideMarkerReciever;
     pub use super::ITargetHideMarkerRecieverMethods;

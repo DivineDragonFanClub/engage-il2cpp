@@ -15,6 +15,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-ui-ilayoutgroup_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILayoutGroup_Interface;
     pub use super::ILayoutGroup_Interface;

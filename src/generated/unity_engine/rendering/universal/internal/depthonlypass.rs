@@ -680,6 +680,7 @@ impl DepthOnlyPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-depthonlypass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthOnlyPass;
     pub use super::IDepthOnlyPass;

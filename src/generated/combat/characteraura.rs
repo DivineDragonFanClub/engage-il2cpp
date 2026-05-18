@@ -933,6 +933,7 @@ impl CharacterAura {
 }
 
 #[cfg(feature = "combat-characteraura")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAura;
     pub use super::ICharacterAura;

@@ -431,6 +431,7 @@ impl ProfileCardTextListMenuItemContent {
 }
 
 #[cfg(feature = "app-profilecardtextlistmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTextListMenuItemContent;
     pub use super::IProfileCardTextListMenuItemContentMethods;

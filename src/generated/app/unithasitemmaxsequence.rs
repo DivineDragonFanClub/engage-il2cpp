@@ -617,6 +617,7 @@ impl UnitHasItemMaxSequence {
 }
 
 #[cfg(feature = "app-unithasitemmaxsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitHasItemMaxSequence;
     pub use super::IUnitHasItemMaxSequenceMethods;

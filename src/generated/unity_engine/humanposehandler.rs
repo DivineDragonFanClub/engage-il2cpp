@@ -458,6 +458,7 @@ impl HumanPoseHandler {
 }
 
 #[cfg(feature = "unity_engine-humanposehandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HumanPoseHandler;
     pub use super::IHumanPoseHandler;

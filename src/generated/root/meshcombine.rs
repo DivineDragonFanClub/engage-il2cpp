@@ -98,6 +98,7 @@ impl MeshCombine {
 }
 
 #[cfg(feature = "root-meshcombine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshCombine;
     pub use super::IMeshCombineMethods;

@@ -392,6 +392,7 @@ impl PerformanceStatistics {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performancestatistics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPerformanceStatistics;
     pub use super::IPerformanceStatisticsMethods;

@@ -400,6 +400,7 @@ impl RuntimeConstructorInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimeconstructorinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeConstructorInfo;
     pub use super::IRuntimeConstructorInfoMethods;

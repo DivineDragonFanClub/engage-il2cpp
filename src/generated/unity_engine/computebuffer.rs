@@ -1195,6 +1195,7 @@ impl ComputeBuffer {
 }
 
 #[cfg(feature = "unity_engine-computebuffer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeBuffer;
     pub use super::IComputeBuffer;

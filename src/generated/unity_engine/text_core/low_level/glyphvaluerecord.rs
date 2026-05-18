@@ -428,6 +428,7 @@ impl GlyphValueRecord {
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphvaluerecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphValueRecord;
     pub use crate::system::object::IObject;

@@ -696,6 +696,7 @@ impl BasicModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-basicmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicModule;
     pub use super::IBasicModule;

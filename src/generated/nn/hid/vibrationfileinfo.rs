@@ -111,6 +111,7 @@ impl VibrationFileInfo {
 }
 
 #[cfg(feature = "nn-hid-vibrationfileinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VibrationFileInfo;
     pub use crate::system::object::IObject;

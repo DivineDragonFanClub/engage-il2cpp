@@ -568,6 +568,7 @@ impl DebugUIHandlerFloatField {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerFloatField;
     pub use super::IDebugUIHandlerFloatField;

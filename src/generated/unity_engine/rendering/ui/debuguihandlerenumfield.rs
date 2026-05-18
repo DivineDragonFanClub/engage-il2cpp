@@ -553,6 +553,7 @@ impl DebugUIHandlerEnumField {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumfield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerEnumField;
     pub use super::IDebugUIHandlerEnumField;

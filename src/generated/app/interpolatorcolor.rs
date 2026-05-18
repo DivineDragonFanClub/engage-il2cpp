@@ -249,6 +249,7 @@ impl InterpolatorColor {
 }
 
 #[cfg(feature = "app-interpolatorcolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorColor;
     pub use super::IInterpolatorColorMethods;

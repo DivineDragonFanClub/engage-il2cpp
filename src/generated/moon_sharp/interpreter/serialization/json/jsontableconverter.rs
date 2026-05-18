@@ -590,6 +590,7 @@ impl JsonTableConverter {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJsonTableConverter;
     pub use super::JsonTableConverter;

@@ -7312,6 +7312,7 @@ impl ScriptMap {
 }
 
 #[cfg(feature = "app-scriptmap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptMap;
     pub use super::IScriptMapMethods;

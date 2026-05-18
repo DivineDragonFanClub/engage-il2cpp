@@ -415,6 +415,7 @@ impl ProfileCardSelectEditMenuContent {
 }
 
 #[cfg(feature = "app-profilecardselecteditmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardSelectEditMenuContent;
     pub use super::IProfileCardSelectEditMenuContentMethods;

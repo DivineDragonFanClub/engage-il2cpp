@@ -164,6 +164,7 @@ impl LocalVariableInfo {
 }
 
 #[cfg(feature = "system-reflection-localvariableinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILocalVariableInfo;
     pub use super::ILocalVariableInfoMethods;

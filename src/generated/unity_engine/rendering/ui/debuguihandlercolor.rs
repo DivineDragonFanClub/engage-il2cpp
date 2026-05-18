@@ -734,6 +734,7 @@ impl DebugUIHandlerColor {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerColor;
     pub use super::IDebugUIHandlerColor;

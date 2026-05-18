@@ -154,6 +154,7 @@ impl TimelineClipCapsExtensions {
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimelineClipCapsExtensions;
     pub use super::TimelineClipCapsExtensions;

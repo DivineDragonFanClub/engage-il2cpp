@@ -1178,6 +1178,7 @@ impl AnimationClipPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationclipplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationClipPlayable;
     pub use crate::system::object::IObject;

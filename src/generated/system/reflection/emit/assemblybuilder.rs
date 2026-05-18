@@ -18,6 +18,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-assemblybuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyBuilder;
     pub use super::IAssemblyBuilder;

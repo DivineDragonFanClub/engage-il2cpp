@@ -103,6 +103,7 @@ impl CustomSignalEventDrawer {
 }
 
 #[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomSignalEventDrawer;
     pub use super::ICustomSignalEventDrawer;

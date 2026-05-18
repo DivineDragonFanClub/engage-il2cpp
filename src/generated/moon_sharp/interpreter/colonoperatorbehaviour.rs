@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-colonoperatorbehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColonOperatorBehaviour;
     pub use crate::system::object::IObject;

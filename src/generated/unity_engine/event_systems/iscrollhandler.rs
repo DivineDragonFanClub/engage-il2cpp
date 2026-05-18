@@ -96,6 +96,7 @@ pub trait IIScrollHandlerMethods: IIScrollHandler {
 impl<__T: IIScrollHandler> IIScrollHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-iscrollhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIScrollHandler;
     pub use super::IIScrollHandlerMethods;

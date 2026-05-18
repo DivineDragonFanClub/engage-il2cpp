@@ -209,6 +209,7 @@ impl PageBreakTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPageBreakTagInfo;
     pub use super::IPageBreakTagInfoMethods;

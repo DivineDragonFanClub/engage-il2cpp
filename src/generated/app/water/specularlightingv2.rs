@@ -105,6 +105,7 @@ impl SpecularLightingV2 {
 }
 
 #[cfg(feature = "app-water-specularlightingv2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpecularLightingV2;
     pub use super::ISpecularLightingV2Methods;

@@ -1272,6 +1272,7 @@ impl ArenaCombatSequence {
 }
 
 #[cfg(feature = "combat-arenacombatsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaCombatSequence;
     pub use super::IArenaCombatSequence;

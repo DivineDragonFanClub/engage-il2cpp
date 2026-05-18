@@ -166,6 +166,7 @@ impl TextSizeLimiter {
 }
 
 #[cfg(feature = "root-textsizelimiter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextSizeLimiter;
     pub use super::ITextSizeLimiterMethods;

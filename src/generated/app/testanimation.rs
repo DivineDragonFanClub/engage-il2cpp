@@ -212,6 +212,7 @@ impl TestAnimation {
 }
 
 #[cfg(feature = "app-testanimation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITestAnimation;
     pub use super::ITestAnimationMethods;

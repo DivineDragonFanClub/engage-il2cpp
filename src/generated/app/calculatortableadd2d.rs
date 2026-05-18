@@ -5252,6 +5252,7 @@ impl CalculatorTableAdd2D_TableCommand {
 }
 
 #[cfg(feature = "app-calculatortableadd2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorTableAdd2D;
     pub use super::CalculatorTableAdd2D_TableCommand;

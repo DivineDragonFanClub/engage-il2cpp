@@ -773,6 +773,7 @@ impl AkImageSourceSettings {
 }
 
 #[cfg(feature = "root-akimagesourcesettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkImageSourceSettings;
     pub use super::IAkImageSourceSettings;

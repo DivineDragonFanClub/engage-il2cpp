@@ -413,6 +413,7 @@ impl ClassChangeRoot {
 }
 
 #[cfg(feature = "app-classchangeroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClassChangeRoot;
     pub use super::IClassChangeRoot;

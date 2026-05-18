@@ -102,6 +102,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-mapmoveflag")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MapMoveFlag;
     pub use crate::system::object::IObject;

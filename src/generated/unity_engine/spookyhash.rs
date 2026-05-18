@@ -514,6 +514,7 @@ impl SpookyHash {
 }
 
 #[cfg(feature = "unity_engine-spookyhash")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpookyHash;
     pub use super::SpookyHash;

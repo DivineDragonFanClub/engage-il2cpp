@@ -271,6 +271,7 @@ impl VibrationFile {
 }
 
 #[cfg(feature = "app-vibrationfile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVibrationFile;
     pub use super::IVibrationFileMethods;

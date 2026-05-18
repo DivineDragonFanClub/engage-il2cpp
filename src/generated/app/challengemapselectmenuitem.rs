@@ -750,6 +750,7 @@ impl ChallengeMapSelectMenuItem {
 }
 
 #[cfg(feature = "app-challengemapselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeMapSelectMenuItem;
     pub use super::IChallengeMapSelectMenuItem;

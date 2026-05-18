@@ -807,6 +807,7 @@ impl AkCommonPlatformSettings {
 }
 
 #[cfg(feature = "root-akcommonplatformsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCommonPlatformSettings;
     pub use super::IAkCommonPlatformSettings;

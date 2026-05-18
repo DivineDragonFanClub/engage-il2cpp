@@ -320,6 +320,7 @@ impl ManagedStreamHelpers {
 }
 
 #[cfg(feature = "unity_engine-managedstreamhelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IManagedStreamHelpers;
     pub use super::ManagedStreamHelpers;

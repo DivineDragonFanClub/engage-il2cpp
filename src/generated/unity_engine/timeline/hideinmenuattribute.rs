@@ -99,6 +99,7 @@ impl HideInMenuAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-hideinmenuattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HideInMenuAttribute;
     pub use super::IHideInMenuAttribute;

@@ -286,6 +286,7 @@ impl BreakdownInspector {
 }
 
 #[cfg(feature = "app-breakdowninspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BreakdownInspector;
     pub use super::IBreakdownInspector;

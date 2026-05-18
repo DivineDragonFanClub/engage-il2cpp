@@ -421,6 +421,7 @@ impl AkTimelineRtpcPlayable {
 }
 
 #[cfg(feature = "root-aktimelinertpcplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTimelineRtpcPlayable;
     pub use super::IAkTimelineRtpcPlayable;

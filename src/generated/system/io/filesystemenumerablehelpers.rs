@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-io-filesystemenumerablehelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileSystemEnumerableHelpers;
     pub use super::IFileSystemEnumerableHelpers;

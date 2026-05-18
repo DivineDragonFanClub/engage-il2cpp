@@ -493,6 +493,7 @@ impl MapEnvironment {
 }
 
 #[cfg(feature = "app-mapenvironment")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapEnvironment;
     pub use super::IMapEnvironmentMethods;

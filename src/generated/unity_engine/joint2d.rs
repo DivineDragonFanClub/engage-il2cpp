@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-joint2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJoint2D;
     pub use super::Joint2D;

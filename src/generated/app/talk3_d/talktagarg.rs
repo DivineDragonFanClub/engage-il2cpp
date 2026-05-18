@@ -275,6 +275,7 @@ impl TalkTagArg {
 }
 
 #[cfg(feature = "app-talk3_d-talktagarg")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagArg;
     pub use super::ITalkTagArgMethods;

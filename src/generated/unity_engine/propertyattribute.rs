@@ -99,6 +99,7 @@ impl PropertyAttribute {
 }
 
 #[cfg(feature = "unity_engine-propertyattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyAttribute;
     pub use super::IPropertyAttributeMethods;

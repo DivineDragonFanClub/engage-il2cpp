@@ -463,6 +463,7 @@ impl Marker {
 }
 
 #[cfg(feature = "unity_engine-timeline-marker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMarker;
     pub use super::IMarkerMethods;

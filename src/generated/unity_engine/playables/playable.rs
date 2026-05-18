@@ -442,6 +442,7 @@ impl Playable {
 }
 
 #[cfg(feature = "unity_engine-playables-playable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Playable;
     pub use crate::system::object::IObject;

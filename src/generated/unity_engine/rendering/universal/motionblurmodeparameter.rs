@@ -129,6 +129,7 @@ impl MotionBlurModeParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblurmodeparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMotionBlurModeParameter;
     pub use super::IMotionBlurModeParameterMethods;

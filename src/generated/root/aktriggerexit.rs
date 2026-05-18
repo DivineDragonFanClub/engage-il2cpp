@@ -172,6 +172,7 @@ impl AkTriggerExit {
 }
 
 #[cfg(feature = "root-aktriggerexit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerExit;
     pub use super::IAkTriggerExit;

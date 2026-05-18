@@ -58,6 +58,14 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine",
+        name = "RectTransform.ReapplyDrivenProperties"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RectTransform_ReapplyDrivenProperties {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md"))]
     #[repr(C)]
     #[derive(
@@ -109,14 +117,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine",
-        name = "RectTransform.ReapplyDrivenProperties"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RectTransform_ReapplyDrivenProperties {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/recttransform/RectTransform.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
@@ -3031,6 +3031,7 @@ impl RectTransform {
 }
 
 #[cfg(feature = "unity_engine-recttransform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRectTransform;
     pub use super::IRectTransformMethods;

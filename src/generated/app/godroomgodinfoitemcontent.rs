@@ -190,6 +190,7 @@ impl GodRoomGodInfoItemContent {
 }
 
 #[cfg(feature = "app-godroomgodinfoitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodRoomGodInfoItemContent;
     pub use super::IGodRoomGodInfoItemContent;

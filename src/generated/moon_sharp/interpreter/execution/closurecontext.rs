@@ -321,6 +321,7 @@ impl ClosureContext {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-closurecontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClosureContext;
     pub use super::IClosureContext;

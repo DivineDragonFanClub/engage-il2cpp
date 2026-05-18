@@ -228,6 +228,7 @@ impl DebugScreenCapture {
 }
 
 #[cfg(feature = "unity_engine-profiling-experimental-debugscreencapture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugScreenCapture;
     pub use crate::system::object::IObject;

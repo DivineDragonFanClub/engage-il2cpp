@@ -101,6 +101,7 @@ impl Memo {
 }
 
 #[cfg(feature = "app-memo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemo;
     pub use super::IMemoMethods;

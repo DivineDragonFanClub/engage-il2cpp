@@ -304,6 +304,7 @@ impl BitHelper {
 }
 
 #[cfg(feature = "system-collections-generic-bithelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitHelper;
     pub use super::IBitHelper;

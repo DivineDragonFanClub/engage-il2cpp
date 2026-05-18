@@ -1414,6 +1414,7 @@ impl FrameworkClrBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FrameworkClrBase;
     pub use super::IFrameworkClrBase;

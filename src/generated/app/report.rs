@@ -872,6 +872,7 @@ impl Report {
 }
 
 #[cfg(feature = "app-report")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReport;
     pub use super::IReportMethods;

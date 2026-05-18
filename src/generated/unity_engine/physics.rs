@@ -6319,6 +6319,7 @@ impl Physics {
 }
 
 #[cfg(feature = "unity_engine-physics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysics;
     pub use super::Physics;

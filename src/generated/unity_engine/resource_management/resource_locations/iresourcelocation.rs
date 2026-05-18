@@ -548,6 +548,7 @@ pub trait IIResourceLocationMethods: IIResourceLocation {
 impl<__T: IIResourceLocation> IIResourceLocationMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIResourceLocation;
     pub use super::IIResourceLocationMethods;

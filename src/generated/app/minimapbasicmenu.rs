@@ -407,6 +407,7 @@ impl MiniMapBasicMenu {
 }
 
 #[cfg(feature = "app-minimapbasicmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapBasicMenu;
     pub use super::IMiniMapBasicMenuMethods;

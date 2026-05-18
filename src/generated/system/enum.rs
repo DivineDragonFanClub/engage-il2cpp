@@ -2397,6 +2397,7 @@ impl Enum {
 }
 
 #[cfg(feature = "system-enum")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Enum;
     pub use super::IEnum;

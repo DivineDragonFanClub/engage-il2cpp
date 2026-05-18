@@ -247,6 +247,7 @@ impl MagicBulletSettings {
 }
 
 #[cfg(feature = "combat-magicbulletsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicBulletSettings;
     pub use super::IMagicBulletSettingsMethods;

@@ -346,6 +346,7 @@ impl MapSequenceMove {
 }
 
 #[cfg(feature = "app-mapsequencemove")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceMove;
     pub use super::IMapSequenceMoveMethods;

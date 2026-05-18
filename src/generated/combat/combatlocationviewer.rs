@@ -405,6 +405,7 @@ impl CombatLocationViewer {
 }
 
 #[cfg(feature = "combat-combatlocationviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationViewer;
     pub use super::ICombatLocationViewer;

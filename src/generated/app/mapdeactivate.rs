@@ -102,6 +102,7 @@ impl MapDeactivate {
 }
 
 #[cfg(feature = "app-mapdeactivate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeactivate;
     pub use super::IMapDeactivateMethods;

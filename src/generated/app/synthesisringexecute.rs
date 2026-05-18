@@ -180,6 +180,7 @@ impl SynthesisRingExecute {
 }
 
 #[cfg(feature = "app-synthesisringexecute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISynthesisRingExecute;
     pub use super::ISynthesisRingExecuteMethods;

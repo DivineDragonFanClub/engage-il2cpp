@@ -1371,6 +1371,7 @@ impl RTHandle {
 }
 
 #[cfg(feature = "unity_engine-rendering-rthandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRTHandle;
     pub use super::IRTHandleMethods;

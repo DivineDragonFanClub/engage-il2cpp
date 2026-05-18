@@ -729,6 +729,7 @@ impl SignalArgsReaderWriter_Hit {
 }
 
 #[cfg(feature = "combat-signalargsreaderwriter_hit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalArgsReaderWriter_Hit;
     pub use super::SignalArgsReaderWriter_Hit;

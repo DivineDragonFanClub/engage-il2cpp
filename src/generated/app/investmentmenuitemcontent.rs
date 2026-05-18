@@ -237,6 +237,7 @@ impl InvestmentMenuItemContent {
 }
 
 #[cfg(feature = "app-investmentmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvestmentMenuItemContent;
     pub use super::IInvestmentMenuItemContentMethods;

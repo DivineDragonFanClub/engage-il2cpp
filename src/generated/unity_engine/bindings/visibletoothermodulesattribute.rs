@@ -186,6 +186,7 @@ impl VisibleToOtherModulesAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisibleToOtherModulesAttribute;
     pub use super::IVisibleToOtherModulesAttributeMethods;

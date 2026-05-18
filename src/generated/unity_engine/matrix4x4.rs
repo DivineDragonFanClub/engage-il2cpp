@@ -2605,6 +2605,7 @@ impl Matrix4x4 {
 }
 
 #[cfg(feature = "unity_engine-matrix4x4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Matrix4x4;
     pub use crate::system::object::IObject;

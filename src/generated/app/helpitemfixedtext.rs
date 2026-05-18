@@ -292,6 +292,7 @@ impl HelpItemFixedText {
 }
 
 #[cfg(feature = "app-helpitemfixedtext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemFixedText;
     pub use super::IHelpItemFixedText;

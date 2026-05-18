@@ -17,83 +17,10 @@ mod __types {
     #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
     pub struct RankingSequence_TopMenu_UploadMenuItem {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RankingSequence.UploadPairsMenu")]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]
-    pub struct RankingSequence_UploadPairsMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_ChapterSelect.md"))]
-    #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.ChapterSelect")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct RankingSequence_TopMenu_ChapterSelect {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RankingSequence.UploadPairsMenu.UploadPairMenuItem"
-    )]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-    pub struct RankingSequence_UploadPairsMenu_UploadPairMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu")]
-    #[parent(crate::system::object::Object)]
-    pub struct RankingSequence_TopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_PairMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RankingSequence.PairMenuItem")]
-    #[parent(crate::app::menuitem::MenuItem)]
-    pub struct RankingSequence_PairMenuItem {
-        #[rename(name = "m_Data")]
-        pub m_data: crate::app::nexranking::NexRanking_Data,
-        #[static_field]
-        #[rename(name = "MaxRatingSlot")]
-        pub max_rating_slot: u32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RankingSequence.UploadPairsMenu.ClearUploadPairsMenuItem"
-    )]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-    pub struct RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_RankingMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.RankingMenuItem")]
     #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
     pub struct RankingSequence_TopMenu_RankingMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RankingSequence.UploadPairsMenu.AddUploadPairsMenuItem"
-    )]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-    pub struct RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem {
-        #[rename(name = "m_UploadPersonMenuItem")]
-        pub m_upload_person_menu_item:
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
-        #[rename(name = "m_UploadGodMenuItem")]
-        pub m_upload_god_menu_item:
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RankingSequence.UploadPairsMenu.UploadDataMenuItem"
-    )]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-    pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RankingSequence.UploadPairsMenu.RandomAddUploadPairsMenuItem"
-    )]
-    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-    pub struct RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rankingsequence/RankingSequence_Label.md"))]
     #[repr(C)]
@@ -167,6 +94,17 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_PairMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RankingSequence.PairMenuItem")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct RankingSequence_PairMenuItem {
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::nexranking::NexRanking_Data,
+        #[static_field]
+        #[rename(name = "MaxRatingSlot")]
+        pub max_rating_slot: u32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RankingSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rankingsequence :: RankingSequence >)]
@@ -194,6 +132,16 @@ mod __types {
         >,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_ChapterSelect.md"))]
+    #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.ChapterSelect")]
+    #[parent(crate::app::menuitem::MenuItem)]
+    pub struct RankingSequence_TopMenu_ChapterSelect {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct RankingSequence_TopMenu {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadGodMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -205,10 +153,62 @@ mod __types {
         pub m_name: ::unity2::Il2CppString,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RankingSequence.UploadPairsMenu.UploadPairMenuItem"
+    )]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+    pub struct RankingSequence_UploadPairsMenu_UploadPairMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RankingSequence.UploadPairsMenu.RandomAddUploadPairsMenuItem"
+    )]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+    pub struct RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RankingSequence.UploadPairsMenu.UploadDataMenuItem"
+    )]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+    pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_BaseMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.BaseMenuItem")]
     #[parent(crate::app::menuitem::MenuItem)]
     pub struct RankingSequence_TopMenu_BaseMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RankingSequence.UploadPairsMenu.ClearUploadPairsMenuItem"
+    )]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+    pub struct RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RankingSequence.UploadPairsMenu")]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]
+    pub struct RankingSequence_UploadPairsMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RankingSequence.UploadPairsMenu.AddUploadPairsMenuItem"
+    )]
+    #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+    pub struct RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem {
+        #[rename(name = "m_UploadPersonMenuItem")]
+        pub m_upload_person_menu_item:
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
+        #[rename(name = "m_UploadGodMenuItem")]
+        pub m_upload_god_menu_item:
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPersonMenuItem.md"))]
     #[::unity2::class(
@@ -434,65 +434,19 @@ impl RankingSequence_TopMenu_UploadMenuItem {
 #[cfg(feature = "app-rankingsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_unity2_raw {
+mod __RankingSequence_TopMenu_RankingMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_get_label {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
+                "get_Label",
                 0,
                 param_types,
                 false,
@@ -503,8 +457,8 @@ mod __RankingSequence_UploadPairsMenu_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
+                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "get_Label",
                     e
                 ),
             }
@@ -515,74 +469,20 @@ mod __RankingSequence_UploadPairsMenu_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu,
+    pub unsafe fn get_label(
+        this: RankingSequence_TopMenu_RankingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RankingSequence_UploadPairsMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_TopMenu_RankingMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RankingSequence_UploadPairsMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenuMethods: IRankingSequence_UploadPairsMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RankingSequence_UploadPairsMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RankingSequence_UploadPairsMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu> IRankingSequence_UploadPairsMenuMethods for __T {}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenuMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_enable {
@@ -592,7 +492,7 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
                 "IsEnable",
                 0,
                 param_types,
@@ -604,7 +504,7 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
                     "IsEnable",
                     e
                 ),
@@ -617,11 +517,11 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
         }
     }
     pub unsafe fn is_enable(
-        this: RankingSequence_TopMenu_ChapterSelect,
+        this: RankingSequence_TopMenu_RankingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
-            RankingSequence_TopMenu_ChapterSelect,
+            RankingSequence_TopMenu_RankingMenuItem,
             ::unity2::OptionalMethod,
         ) -> bool = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -632,107 +532,6 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RankingSequence_TopMenu_ChapterSelect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RankingSequence_TopMenu_ChapterSelect,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_left_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
-                "OnLeftRight",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
-                    "OnLeftRight",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_left_right(
-        this: RankingSequence_TopMenu_ChapterSelect,
-        step: i32,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_TopMenu_ChapterSelect,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_left_right::get_offset() as isize),
-        );
-        inner(this, step, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
@@ -740,7 +539,7 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -752,7 +551,7 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -765,11 +564,11 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RankingSequence_TopMenu_ChapterSelect,
+        this: RankingSequence_TopMenu_RankingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RankingSequence_TopMenu_ChapterSelect,
+            RankingSequence_TopMenu_RankingMenuItem,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -781,41 +580,25 @@ mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
 }
 
 #[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_TopMenu_ChapterSelectMethods:
-    IRankingSequence_TopMenu_ChapterSelect
+pub trait IRankingSequence_TopMenu_RankingMenuItemMethods:
+    IRankingSequence_TopMenu_RankingMenuItem
 {
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`IsEnable()` overload"]
     fn is_enable(self) -> bool {
         unsafe {
-            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::is_enable(
+            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::is_enable(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    fn on_left_right(
-        self,
-        step: impl ::core::convert::Into<i32>,
-        is_trigger: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::on_left_right(
-                __receiver,
-                ::core::convert::Into::into(step),
-                ::core::convert::Into::into(is_trigger),
                 ::core::option::Option::None,
             )
         }
@@ -823,8 +606,8 @@ pub trait IRankingSequence_TopMenu_ChapterSelectMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::ctor(
+            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -833,374 +616,23 @@ pub trait IRankingSequence_TopMenu_ChapterSelectMethods:
 }
 
 #[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_TopMenu_ChapterSelect> IRankingSequence_TopMenu_ChapterSelectMethods
+impl<__T: IRankingSequence_TopMenu_RankingMenuItem> IRankingSequence_TopMenu_RankingMenuItemMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_ChapterSelect {
+impl RankingSequence_TopMenu_RankingMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_ChapterSelect),
+                ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRankingSequence_TopMenu_ChapterSelectMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods:
-    IRankingSequence_UploadPairsMenu_UploadPairMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu_UploadPairMenuItem>
-    IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_UploadPairMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPairMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_TopMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_TopMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RankingSequence_TopMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RankingSequence_TopMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_TopMenuMethods: IRankingSequence_TopMenu {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RankingSequence_TopMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RankingSequence_TopMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_TopMenu> IRankingSequence_TopMenuMethods for __T {}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_TopMenuMethods>::ctor(this);
+        <Self as IRankingSequence_TopMenu_RankingMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -1415,1031 +847,6 @@ impl RankingSequence_PairMenuItem {
             )
         });
         <Self as IRankingSequence_PairMenuItemMethods>::ctor(this, data);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods:
-    IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem>
-    IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_TopMenu_RankingMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "get_Label",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_Label",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_TopMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_TopMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsEnable",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsEnable",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_TopMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_TopMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RankingSequence_TopMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_TopMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_TopMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_TopMenu_RankingMenuItemMethods:
-    IRankingSequence_TopMenu_RankingMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_TopMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_TopMenu_RankingMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_TopMenu_RankingMenuItem> IRankingSequence_TopMenu_RankingMenuItemMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_RankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_TopMenu_RankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadGodMenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-        person_item : crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
-        god_item: crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, person_item, god_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods:
-    IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` overload"]
-    fn ctor(
-        self,
-        person_item: impl ::core::convert::Into<
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
-        >,
-        god_item: impl ::core::convert::Into<
-            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(person_item),
-                ::core::convert::Into::into(god_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem>
-    IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem {
-    #[doc = "`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` — overload selector"]
-    pub fn new(
-        person_item : crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
-        god_item: crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods>::ctor(
-            this,
-            person_item,
-            god_item,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods:
-    IRankingSequence_UploadPairsMenu_UploadDataMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu_UploadDataMenuItem>
-    IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadDataMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_label {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_label(
-        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::rankingsequence::RankingSequence_Label {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_enable(
-        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_left_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnLeftRight" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnLeftRight" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_left_right(
-        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-        step: i32,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_left_right::get_offset() as isize),
-        );
-        inner(this, step, is_trigger, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-pub trait IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods:
-    IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem
-{
-    #[doc = "`get_Label()` overload"]
-    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnable()` overload"]
-    fn is_enable(self) -> bool {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::is_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    fn on_left_right(
-        self,
-        step: impl ::core::convert::Into<i32>,
-        is_trigger: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::on_left_right(
-                __receiver,
-                ::core::convert::Into::into(step),
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl<__T: IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem>
-    IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -3819,6 +2226,426 @@ impl RankingSequence {
 #[cfg(feature = "app-rankingsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                "IsEnable",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    "IsEnable",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_TopMenu_ChapterSelect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_TopMenu_ChapterSelect,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RankingSequence_TopMenu_ChapterSelect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RankingSequence_TopMenu_ChapterSelect,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_left_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                "OnLeftRight",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    "OnLeftRight",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_left_right(
+        this: RankingSequence_TopMenu_ChapterSelect,
+        step: i32,
+        is_trigger: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_TopMenu_ChapterSelect,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_left_right::get_offset() as isize),
+        );
+        inner(this, step, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu_ChapterSelect as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_TopMenu_ChapterSelect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_TopMenu_ChapterSelect,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_TopMenu_ChapterSelectMethods:
+    IRankingSequence_TopMenu_ChapterSelect
+{
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnLeftRight(i32, bool)` overload"]
+    fn on_left_right(
+        self,
+        step: impl ::core::convert::Into<i32>,
+        is_trigger: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::on_left_right(
+                __receiver,
+                ::core::convert::Into::into(step),
+                ::core::convert::Into::into(is_trigger),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_TopMenu_ChapterSelect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_TopMenu_ChapterSelect_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_TopMenu_ChapterSelect> IRankingSequence_TopMenu_ChapterSelectMethods
+    for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu_ChapterSelect {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu_ChapterSelect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenu_ChapterSelectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_TopMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_TopMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_TopMenu as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_TopMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RankingSequence_TopMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __RankingSequence_TopMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_TopMenuMethods: IRankingSequence_TopMenu {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RankingSequence_TopMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RankingSequence_TopMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_TopMenu> IRankingSequence_TopMenuMethods for __T {}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4075,6 +2902,683 @@ impl RankingSequence_UploadPairsMenu_UploadGodMenuItem {
             )
         });
         <Self as IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_label(
+        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadPairMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods:
+    IRankingSequence_UploadPairsMenu_UploadPairMenuItem
+{
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadPairMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu_UploadPairMenuItem>
+    IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_UploadPairMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPairMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_label(
+        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_left_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "OnLeftRight" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "OnLeftRight" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn on_left_right(
+        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+        step: i32,
+        is_trigger: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+            i32,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_on_left_right::get_offset() as isize),
+        );
+        inner(this, step, is_trigger, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods:
+    IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem
+{
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnLeftRight(i32, bool)` overload"]
+    fn on_left_right(
+        self,
+        step: impl ::core::convert::Into<i32>,
+        is_trigger: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::on_left_right(
+                __receiver,
+                ::core::convert::Into::into(step),
+                ::core::convert::Into::into(is_trigger),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem>
+    IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_label(
+        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_UploadDataMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods:
+    IRankingSequence_UploadPairsMenu_UploadDataMenuItem
+{
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_UploadDataMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu_UploadDataMenuItem>
+    IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadDataMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -4345,6 +3849,502 @@ impl RankingSequence_TopMenu_BaseMenuItem {
 #[cfg(feature = "app-rankingsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_label(
+        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods:
+    IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem
+{
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem>
+    IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RankingSequence_UploadPairsMenu as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RankingSequence_UploadPairsMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            __RankingSequence_UploadPairsMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenuMethods: IRankingSequence_UploadPairsMenu {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RankingSequence_UploadPairsMenu as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RankingSequence_UploadPairsMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu> IRankingSequence_UploadPairsMenuMethods for __T {}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_label {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_label(
+        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::rankingsequence::RankingSequence_Label {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::rankingsequence::RankingSequence_Label = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_label::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadGodMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+        person_item : crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
+        god_item: crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, person_item, god_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: class () , "IsEnable" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsEnable" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_enable(
+        this: RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_enable::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+pub trait IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods:
+    IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem
+{
+    #[doc = "`get_Label()` overload"]
+    fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::get_label(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` overload"]
+    fn ctor(
+        self,
+        person_item: impl ::core::convert::Into<
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
+        >,
+        god_item: impl ::core::convert::Into<
+            crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(person_item),
+                ::core::convert::Into::into(god_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnable()` overload"]
+    fn is_enable(self) -> bool {
+        unsafe {
+            let __receiver = < RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::is_enable(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl<__T: IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem>
+    IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem {
+    #[doc = "`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` — overload selector"]
+    pub fn new(
+        person_item : crate :: app :: rankingsequence :: RankingSequence_UploadPairsMenu_UploadPersonMenuItem,
+        god_item: crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods>::ctor(
+            this,
+            person_item,
+            god_item,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -4606,6 +4606,7 @@ impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem {
 }
 
 #[cfg(feature = "app-rankingsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRankingSequence;
     pub use super::IRankingSequenceMethods;

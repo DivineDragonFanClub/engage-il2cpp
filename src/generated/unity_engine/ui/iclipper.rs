@@ -82,6 +82,7 @@ pub trait IIClipperMethods: IIClipper {
 impl<__T: IIClipper> IIClipperMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-iclipper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IClipper;
     pub use super::IIClipper;

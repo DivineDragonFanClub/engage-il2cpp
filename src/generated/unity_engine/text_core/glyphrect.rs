@@ -590,6 +590,7 @@ impl GlyphRect {
 }
 
 #[cfg(feature = "unity_engine-text_core-glyphrect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphRect;
     pub use crate::system::object::IObject;

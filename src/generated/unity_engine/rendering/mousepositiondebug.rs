@@ -503,6 +503,7 @@ impl MousePositionDebug {
 }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMousePositionDebug;
     pub use super::IMousePositionDebugMethods;

@@ -467,6 +467,7 @@ impl FishingConfig_Battle {
 }
 
 #[cfg(feature = "app-fishingconfig_battle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_Battle;
     pub use super::FishingConfig_Battle_AngleBorder;

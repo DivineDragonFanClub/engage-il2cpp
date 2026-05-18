@@ -23,6 +23,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IProxyFactory_2<T
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIProxyFactory_2;
     pub use super::IIProxyFactory_2Methods;

@@ -30,6 +30,17 @@ mod __types {
 # [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
 }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Rendering.Universal.Custom",
+        name = "ReflectionRendererData.ShaderResources"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct ReflectionRendererData_ShaderResources {
+        #[rename(name = "blitPS")]
+        pub blit_ps: crate::unity_engine::shader::Shader,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
     #[repr(C)]
     #[derive(
@@ -76,17 +87,6 @@ mod __types {
         pub fn chara_special_reflection() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "ReflectionRendererData.ShaderResources"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct ReflectionRendererData_ShaderResources {
-        #[rename(name = "blitPS")]
-        pub blit_ps: crate::unity_engine::shader::Shader,
     }
 }
 
@@ -672,6 +672,7 @@ impl ReflectionRendererData_ShaderResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReflectionRendererData;
     pub use super::IReflectionRendererDataMethods;

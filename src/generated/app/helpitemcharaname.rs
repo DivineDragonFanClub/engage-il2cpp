@@ -353,6 +353,7 @@ impl HelpItemCharaName {
 }
 
 #[cfg(feature = "app-helpitemcharaname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemCharaName;
     pub use super::IHelpItemCharaName;

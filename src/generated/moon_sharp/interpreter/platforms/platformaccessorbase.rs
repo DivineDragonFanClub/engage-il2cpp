@@ -1164,6 +1164,7 @@ impl PlatformAccessorBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-platformaccessorbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlatformAccessorBase;
     pub use super::IPlatformAccessorBaseMethods;

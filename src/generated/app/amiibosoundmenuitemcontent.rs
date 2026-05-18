@@ -359,6 +359,7 @@ impl AmiiboSoundMenuItemContent {
 }
 
 #[cfg(feature = "app-amiibosoundmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboSoundMenuItemContent;
     pub use super::IAmiiboSoundMenuItemContent;

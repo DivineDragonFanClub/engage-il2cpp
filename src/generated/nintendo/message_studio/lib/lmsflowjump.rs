@@ -43,6 +43,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflowjump")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LMSFlowJump;
     pub use crate::system::object::IObject;

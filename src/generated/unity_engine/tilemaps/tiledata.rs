@@ -436,6 +436,7 @@ impl TileData {
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TileData;
     pub use crate::system::object::IObject;

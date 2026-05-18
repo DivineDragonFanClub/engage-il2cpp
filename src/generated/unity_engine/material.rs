@@ -12188,6 +12188,7 @@ impl Material {
 }
 
 #[cfg(feature = "unity_engine-material")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterial;
     pub use super::IMaterialMethods;

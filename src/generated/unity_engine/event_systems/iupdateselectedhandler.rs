@@ -99,6 +99,7 @@ pub trait IIUpdateSelectedHandlerMethods: IIUpdateSelectedHandler {
 impl<__T: IIUpdateSelectedHandler> IIUpdateSelectedHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIUpdateSelectedHandler;
     pub use super::IIUpdateSelectedHandlerMethods;

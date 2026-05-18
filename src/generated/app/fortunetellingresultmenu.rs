@@ -416,6 +416,7 @@ impl FortuneTellingResultMenu {
 }
 
 #[cfg(feature = "app-fortunetellingresultmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FortuneTellingResultMenu;
     pub use super::IFortuneTellingResultMenu;

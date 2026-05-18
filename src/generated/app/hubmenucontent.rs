@@ -788,6 +788,7 @@ impl HubMenuContent {
 }
 
 #[cfg(feature = "app-hubmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMenuContent;
     pub use super::IHubMenuContent;

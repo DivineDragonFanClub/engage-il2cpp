@@ -721,6 +721,7 @@ impl CacheInitializationData {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CacheInitializationData;
     pub use super::ICacheInitializationData;

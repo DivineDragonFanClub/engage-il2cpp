@@ -171,6 +171,7 @@ impl MeshContainer {
 }
 
 #[cfg(feature = "app-water-meshcontainer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshContainer;
     pub use super::IMeshContainerMethods;

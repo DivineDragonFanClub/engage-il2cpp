@@ -164,6 +164,7 @@ impl RangeInt {
 }
 
 #[cfg(feature = "unity_engine-rangeint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RangeInt;
     pub use crate::system::object::IObject;

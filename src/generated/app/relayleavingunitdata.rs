@@ -925,6 +925,7 @@ impl RelayLeavingUnitData {
 }
 
 #[cfg(feature = "app-relayleavingunitdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayLeavingUnitData;
     pub use super::IRelayLeavingUnitDataMethods;

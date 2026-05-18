@@ -355,6 +355,7 @@ impl FuncItem_Func {
 }
 
 #[cfg(feature = "app-funcitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FuncItem;
     pub use super::FuncItem_Func;

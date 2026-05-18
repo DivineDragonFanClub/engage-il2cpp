@@ -2048,6 +2048,7 @@ impl RefineGodWeaponParamMenu_SelectEventHandler {
 }
 
 #[cfg(feature = "app-refinegodweaponparammenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponParamMenu;
     pub use super::IRefineGodWeaponParamMenuMethods;

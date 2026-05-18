@@ -276,6 +276,7 @@ impl JukeboxPlayer {
 }
 
 #[cfg(feature = "app-jukeboxplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJukeboxPlayer;
     pub use super::IJukeboxPlayerMethods;

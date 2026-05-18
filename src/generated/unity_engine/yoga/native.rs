@@ -199,6 +199,7 @@ impl Native {
 }
 
 #[cfg(feature = "unity_engine-yoga-native")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INative;
     pub use super::Native;

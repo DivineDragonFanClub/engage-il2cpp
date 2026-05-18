@@ -588,6 +588,7 @@ impl Deco_Skill {
 }
 
 #[cfg(feature = "combat-deco_skill")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_Skill;
     pub use super::IDeco_Skill;

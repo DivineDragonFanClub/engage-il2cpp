@@ -434,6 +434,7 @@ impl ConvertInterrupt {
 }
 
 #[cfg(feature = "combat-situation_converter-convertinterrupt")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertInterrupt;
     pub use super::IConvertInterrupt;

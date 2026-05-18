@@ -102,6 +102,7 @@ impl AkTerminator {
 }
 
 #[cfg(feature = "root-akterminator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTerminator;
     pub use super::IAkTerminator;

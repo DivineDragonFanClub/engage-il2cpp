@@ -474,6 +474,7 @@ impl EventCamera {
 }
 
 #[cfg(feature = "app-eventcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventCamera;
     pub use super::IEventCamera;

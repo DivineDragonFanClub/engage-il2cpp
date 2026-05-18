@@ -269,6 +269,7 @@ impl ChunkStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-chunkstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChunkStatement;
     pub use super::IChunkStatement;

@@ -218,6 +218,7 @@ impl RelayUnsettledSequence {
 }
 
 #[cfg(feature = "app-relayunsettledsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayUnsettledSequence;
     pub use super::IRelayUnsettledSequenceMethods;

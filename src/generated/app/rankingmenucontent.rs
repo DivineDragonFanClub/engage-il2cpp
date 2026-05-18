@@ -707,6 +707,7 @@ impl RankingMenuContent {
 }
 
 #[cfg(feature = "app-rankingmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRankingMenuContent;
     pub use super::IRankingMenuContentMethods;

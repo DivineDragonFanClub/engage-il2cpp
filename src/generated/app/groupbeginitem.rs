@@ -726,6 +726,7 @@ impl GroupBeginItem {
 }
 
 #[cfg(feature = "app-groupbeginitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroupBeginItem;
     pub use super::IGroupBeginItem;

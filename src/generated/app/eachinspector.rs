@@ -312,6 +312,7 @@ impl EachInspector {
 }
 
 #[cfg(feature = "app-eachinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EachInspector;
     pub use super::IEachInspector;

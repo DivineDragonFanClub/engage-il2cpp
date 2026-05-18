@@ -622,6 +622,7 @@ impl DiagnosticEvent {
 }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiagnosticEvent;
     pub use crate::system::object::IObject;

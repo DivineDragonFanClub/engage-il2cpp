@@ -237,6 +237,7 @@ impl UnitBaseCapability {
 }
 
 #[cfg(feature = "app-unitbasecapability")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitBaseCapability;
     pub use super::IUnitBaseCapabilityMethods;

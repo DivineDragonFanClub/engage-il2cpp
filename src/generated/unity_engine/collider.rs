@@ -1191,6 +1191,7 @@ impl Collider {
 }
 
 #[cfg(feature = "unity_engine-collider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Collider;
     pub use super::ICollider;

@@ -193,6 +193,7 @@ impl ArenaBondLevelSelectSetter {
 }
 
 #[cfg(feature = "app-arenabondlevelselectsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondLevelSelectSetter;
     pub use super::IArenaBondLevelSelectSetter;

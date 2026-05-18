@@ -168,6 +168,7 @@ impl RuntimeAssembly {
 }
 
 #[cfg(feature = "system-reflection-runtimeassembly")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeAssembly;
     pub use super::IRuntimeAssemblyMethods;

@@ -94,6 +94,7 @@ pub trait IIScriptableRuntimeReflectionSystemMethods: IIScriptableRuntimeReflect
 impl<__T: IIScriptableRuntimeReflectionSystem> IIScriptableRuntimeReflectionSystemMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIScriptableRuntimeReflectionSystem;
     pub use super::IIScriptableRuntimeReflectionSystemMethods;

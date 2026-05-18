@@ -2147,6 +2147,7 @@ impl FishingBattleRader {
 }
 
 #[cfg(feature = "app-fishingbattlerader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingBattleRader;
     pub use super::IFishingBattleRader;

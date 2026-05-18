@@ -232,6 +232,7 @@ impl MyRoomVoiceClip {
 }
 
 #[cfg(feature = "app-myroomvoiceclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomVoiceClip;
     pub use super::IMyRoomVoiceClipMethods;

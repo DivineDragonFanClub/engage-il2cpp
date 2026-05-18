@@ -691,6 +691,7 @@ impl AkGameObjEnvironmentData {
 }
 
 #[cfg(feature = "root-akgameobjenvironmentdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkGameObjEnvironmentData;
     pub use super::IAkGameObjEnvironmentData;

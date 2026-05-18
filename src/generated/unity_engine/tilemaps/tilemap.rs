@@ -167,6 +167,7 @@ pub trait ITilemapMethods: ITilemap {
 impl<__T: ITilemap> ITilemapMethods for __T {}
 
 #[cfg(feature = "unity_engine-tilemaps-tilemap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITilemap;
     pub use super::ITilemapMethods;

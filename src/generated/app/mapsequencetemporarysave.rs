@@ -351,6 +351,7 @@ impl MapSequenceTemporarySave {
 }
 
 #[cfg(feature = "app-mapsequencetemporarysave")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceTemporarySave;
     pub use super::IMapSequenceTemporarySaveMethods;

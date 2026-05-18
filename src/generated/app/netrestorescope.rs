@@ -164,6 +164,7 @@ impl NetRestoreScope {
 }
 
 #[cfg(feature = "app-netrestorescope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NetRestoreScope;
     pub use crate::system::object::IObject;

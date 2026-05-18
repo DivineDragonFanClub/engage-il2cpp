@@ -87,6 +87,7 @@ impl DecoratorFactory {
 }
 
 #[cfg(feature = "combat-decoratorfactory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DecoratorFactory;
     pub use super::IDecoratorFactory;

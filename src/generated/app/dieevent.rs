@@ -959,6 +959,7 @@ impl DieEvent {
 }
 
 #[cfg(feature = "app-dieevent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DieEvent;
     pub use super::IDieEvent;

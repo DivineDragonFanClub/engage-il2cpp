@@ -1103,6 +1103,7 @@ impl ShopData {
 }
 
 #[cfg(feature = "app-shopdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopData;
     pub use super::IShopDataMethods;

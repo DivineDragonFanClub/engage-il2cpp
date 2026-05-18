@@ -1387,6 +1387,7 @@ impl ResourceManager_2 {
 }
 
 #[cfg(feature = "app-resourcemanager_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceManager_2;
     pub use super::IResourceManager_2Methods;

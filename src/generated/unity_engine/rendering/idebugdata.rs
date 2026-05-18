@@ -85,6 +85,7 @@ pub trait IIDebugDataMethods: IIDebugData {
 impl<__T: IIDebugData> IIDebugDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDebugData;
     pub use super::IIDebugData;

@@ -187,6 +187,7 @@ impl ConvertLastBoss {
 }
 
 #[cfg(feature = "combat-situation_converter-convertlastboss")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertLastBoss;
     pub use super::IConvertLastBoss;

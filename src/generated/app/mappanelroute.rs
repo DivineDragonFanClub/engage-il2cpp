@@ -970,6 +970,7 @@ impl MapPanelRoute {
 }
 
 #[cfg(feature = "app-mappanelroute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelRoute;
     pub use super::IMapPanelRouteMethods;

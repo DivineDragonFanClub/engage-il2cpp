@@ -162,6 +162,7 @@ impl DragonRideStopWindMarker {
 }
 
 #[cfg(feature = "app-dragonridestopwindmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideStopWindMarker;
     pub use super::IDragonRideStopWindMarker;

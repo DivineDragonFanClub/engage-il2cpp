@@ -313,6 +313,7 @@ impl RefineItemDetailWindow {
 }
 
 #[cfg(feature = "app-refineitemdetailwindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineItemDetailWindow;
     pub use super::IRefineItemDetailWindowMethods;

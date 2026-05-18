@@ -100,6 +100,7 @@ impl MoonSharpHiddenAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharphiddenattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpHiddenAttribute;
     pub use super::IMoonSharpHiddenAttributeMethods;

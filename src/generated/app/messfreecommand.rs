@@ -221,6 +221,7 @@ impl MessFreeCommand {
 }
 
 #[cfg(feature = "app-messfreecommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMessFreeCommand;
     pub use super::IMessFreeCommandMethods;

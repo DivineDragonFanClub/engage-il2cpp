@@ -707,6 +707,7 @@ impl AkRamp {
 }
 
 #[cfg(feature = "root-akramp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRamp;
     pub use super::IAkRamp;

@@ -454,6 +454,7 @@ impl PixelPerfectCameraInternal {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPixelPerfectCameraInternal;
     pub use super::IPixelPerfectCameraInternalMethods;

@@ -322,6 +322,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AKRESULT;
     pub use crate::system::object::IObject;

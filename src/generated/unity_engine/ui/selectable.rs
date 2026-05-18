@@ -70,6 +70,42 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Selectable")]
+    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+    pub struct Selectable {
+        #[static_field]
+        #[rename(name = "s_Selectables")]
+        pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>,
+        #[static_field]
+        #[rename(name = "s_SelectableCount")]
+        pub s_selectable_count: i32,
+        #[rename(name = "m_EnableCalled")]
+        pub m_enable_called: bool,
+        #[rename(name = "m_Navigation")]
+        pub m_navigation: crate::unity_engine::ui::navigation::Navigation,
+        #[rename(name = "m_Transition")]
+        pub m_transition: crate::unity_engine::ui::selectable::Selectable_Transition,
+        #[rename(name = "m_Colors")]
+        pub m_colors: crate::unity_engine::ui::colorblock::ColorBlock,
+        #[rename(name = "m_SpriteState")]
+        pub m_sprite_state: crate::unity_engine::ui::spritestate::SpriteState,
+        #[rename(name = "m_AnimationTriggers")]
+        pub m_animation_triggers: crate::unity_engine::ui::animationtriggers::AnimationTriggers,
+        #[rename(name = "m_Interactable")]
+        pub m_interactable: bool,
+        #[rename(name = "m_TargetGraphic")]
+        pub m_target_graphic: crate::unity_engine::ui::graphic::Graphic,
+        #[rename(name = "m_GroupsAllowInteraction")]
+        pub m_groups_allow_interaction: bool,
+        #[rename(name = "m_CurrentIndex")]
+        pub m_current_index: i32,
+        #[rename(name = "m_CanvasGroupCache")]
+        pub m_canvas_group_cache: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::canvasgroup::CanvasGroup,
+        >,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/selectable/Selectable_Transition.md"))]
     #[repr(C)]
     #[derive(
@@ -120,42 +156,6 @@ mod __types {
         pub fn animation() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/selectable/Selectable.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Selectable")]
-    #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
-    pub struct Selectable {
-        #[static_field]
-        #[rename(name = "s_Selectables")]
-        pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>,
-        #[static_field]
-        #[rename(name = "s_SelectableCount")]
-        pub s_selectable_count: i32,
-        #[rename(name = "m_EnableCalled")]
-        pub m_enable_called: bool,
-        #[rename(name = "m_Navigation")]
-        pub m_navigation: crate::unity_engine::ui::navigation::Navigation,
-        #[rename(name = "m_Transition")]
-        pub m_transition: crate::unity_engine::ui::selectable::Selectable_Transition,
-        #[rename(name = "m_Colors")]
-        pub m_colors: crate::unity_engine::ui::colorblock::ColorBlock,
-        #[rename(name = "m_SpriteState")]
-        pub m_sprite_state: crate::unity_engine::ui::spritestate::SpriteState,
-        #[rename(name = "m_AnimationTriggers")]
-        pub m_animation_triggers: crate::unity_engine::ui::animationtriggers::AnimationTriggers,
-        #[rename(name = "m_Interactable")]
-        pub m_interactable: bool,
-        #[rename(name = "m_TargetGraphic")]
-        pub m_target_graphic: crate::unity_engine::ui::graphic::Graphic,
-        #[rename(name = "m_GroupsAllowInteraction")]
-        pub m_groups_allow_interaction: bool,
-        #[rename(name = "m_CurrentIndex")]
-        pub m_current_index: i32,
-        #[rename(name = "m_CanvasGroupCache")]
-        pub m_canvas_group_cache: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::canvasgroup::CanvasGroup,
-        >,
     }
 }
 
@@ -3835,6 +3835,7 @@ impl Selectable {
 }
 
 #[cfg(feature = "unity_engine-ui-selectable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISelectable;
     pub use super::ISelectableMethods;

@@ -1551,6 +1551,7 @@ impl AkAudioFormat {
 }
 
 #[cfg(feature = "root-akaudioformat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAudioFormat;
     pub use super::IAkAudioFormat;

@@ -1749,6 +1749,7 @@ impl AkSpatialAudioInitSettings {
 }
 
 #[cfg(feature = "root-akspatialaudioinitsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSpatialAudioInitSettings;
     pub use super::IAkSpatialAudioInitSettings;

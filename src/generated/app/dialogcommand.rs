@@ -218,6 +218,7 @@ impl DialogCommand {
 }
 
 #[cfg(feature = "app-dialogcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DialogCommand;
     pub use super::IDialogCommand;

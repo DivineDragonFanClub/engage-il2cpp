@@ -835,6 +835,7 @@ impl GmapCinemachineController {
 }
 
 #[cfg(feature = "app-gmapcinemachinecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapCinemachineController;
     pub use super::GmapCinemachineController_PointType;

@@ -159,6 +159,7 @@ impl UnitInfo6MenuItem {
 }
 
 #[cfg(feature = "root-unitinfo6menuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfo6MenuItem;
     pub use super::IUnitInfo6MenuItemMethods;

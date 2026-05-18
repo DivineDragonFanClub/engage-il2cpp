@@ -614,6 +614,7 @@ impl ProfileList {
 }
 
 #[cfg(feature = "app-profilelist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileList;
     pub use super::IProfileListMethods;

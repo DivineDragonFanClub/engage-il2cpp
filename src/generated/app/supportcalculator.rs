@@ -806,6 +806,7 @@ impl SupportCalculator {
 }
 
 #[cfg(feature = "app-supportcalculator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportCalculator;
     pub use super::ISupportCalculatorMethods;

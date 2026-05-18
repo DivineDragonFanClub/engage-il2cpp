@@ -285,6 +285,7 @@ impl GlobalJavaObjectRef {
 }
 
 #[cfg(feature = "unity_engine-globaljavaobjectref")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlobalJavaObjectRef;
     pub use super::IGlobalJavaObjectRef;

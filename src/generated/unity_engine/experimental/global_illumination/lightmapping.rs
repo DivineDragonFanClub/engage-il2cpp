@@ -402,6 +402,7 @@ impl Lightmapping {
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightmapping;
     pub use super::ILightmapping_RequestLightsDelegate;

@@ -173,6 +173,7 @@ impl GrassMeshHolder {
 }
 
 #[cfg(feature = "app-grassmeshholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrassMeshHolder;
     pub use super::IGrassMeshHolder;

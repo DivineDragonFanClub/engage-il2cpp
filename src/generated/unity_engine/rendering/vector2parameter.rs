@@ -200,6 +200,7 @@ impl Vector2Parameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-vector2parameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVector2Parameter;
     pub use super::IVector2ParameterMethods;

@@ -798,6 +798,7 @@ impl MapImageTerrain_MinimapInfo {
 }
 
 #[cfg(feature = "app-mapimageterrain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageTerrain;
     pub use super::IMapImageTerrainMethods;

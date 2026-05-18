@@ -125,6 +125,7 @@ impl TrackColorAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrackColorAttribute;
     pub use super::ITrackColorAttributeMethods;

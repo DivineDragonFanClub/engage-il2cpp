@@ -84,6 +84,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILinkedListIndex_2;
     pub use super::ILinkedListIndex_2Methods;

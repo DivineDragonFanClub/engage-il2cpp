@@ -402,6 +402,7 @@ impl CombatLocationRod {
 }
 
 #[cfg(feature = "combat-combatlocationrod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationRod;
     pub use super::ICombatLocationRod;

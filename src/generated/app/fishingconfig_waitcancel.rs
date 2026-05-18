@@ -115,6 +115,7 @@ impl FishingConfig_WaitCancel {
 }
 
 #[cfg(feature = "app-fishingconfig_waitcancel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_WaitCancel;
     pub use super::IFishingConfig_WaitCancel;

@@ -764,6 +764,7 @@ impl CopyDepthPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CopyDepthPass;
     pub use super::ICopyDepthPass;

@@ -319,6 +319,7 @@ impl MagicSignalTrack {
 }
 
 #[cfg(feature = "combat-magicsignaltrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSignalTrack;
     pub use super::IMagicSignalTrackMethods;

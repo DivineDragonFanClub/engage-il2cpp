@@ -988,6 +988,7 @@ impl ProfileCardFavoriteRelayMapMenuItem {
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteRelayMapMenuItem;
     pub use super::IProfileCardFavoriteRelayMapMenuItemMethods;

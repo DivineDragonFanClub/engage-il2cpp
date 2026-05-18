@@ -423,6 +423,7 @@ impl ObjectCallbackMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectCallbackMemberDescriptor;
     pub use super::IObjectCallbackMemberDescriptorMethods;

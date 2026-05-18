@@ -724,6 +724,7 @@ impl ReflectionCamera {
 }
 
 #[cfg(feature = "app-water-reflectioncamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReflectionCamera;
     pub use super::IReflectionCameraMethods;

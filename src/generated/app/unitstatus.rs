@@ -815,6 +815,7 @@ impl UnitStatus {
 }
 
 #[cfg(feature = "app-unitstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitStatus;
     pub use super::IUnitStatusMethods;

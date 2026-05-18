@@ -724,6 +724,7 @@ impl TMP_Style {
 }
 
 #[cfg(feature = "tm_pro-tmp_style")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Style;
     pub use super::ITMP_StyleMethods;

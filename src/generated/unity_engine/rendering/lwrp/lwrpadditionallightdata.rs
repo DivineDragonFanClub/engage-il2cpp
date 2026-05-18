@@ -105,6 +105,7 @@ impl LWRPAdditionalLightData {
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILWRPAdditionalLightData;
     pub use super::ILWRPAdditionalLightDataMethods;

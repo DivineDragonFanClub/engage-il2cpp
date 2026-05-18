@@ -656,6 +656,7 @@ impl LevelUpWindowController {
 }
 
 #[cfg(feature = "app-levelupwindowcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILevelUpWindowController;
     pub use super::ILevelUpWindowControllerMethods;

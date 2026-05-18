@@ -610,6 +610,7 @@ impl ParentalControl {
 }
 
 #[cfg(feature = "app-parentalcontrol")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParentalControl;
     pub use super::IParentalControl_BeginFCSequence;

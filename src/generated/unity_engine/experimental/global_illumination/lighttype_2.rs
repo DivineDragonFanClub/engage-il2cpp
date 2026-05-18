@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lighttype_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightType_2;
     pub use crate::system::object::IObject;

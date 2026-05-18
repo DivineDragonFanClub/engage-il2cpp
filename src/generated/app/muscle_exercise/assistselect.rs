@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-muscle_exercise-assistselect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssistSelect;
     pub use crate::system::object::IObject;

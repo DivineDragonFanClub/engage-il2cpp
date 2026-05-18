@@ -565,6 +565,7 @@ pub trait IIBitArrayMethods: IIBitArray {
 impl<__T: IIBitArray> IIBitArrayMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-ibitarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IBitArray;
     pub use super::IIBitArray;

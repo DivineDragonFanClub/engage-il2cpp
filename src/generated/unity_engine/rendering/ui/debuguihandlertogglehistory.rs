@@ -305,6 +305,7 @@ impl DebugUIHandlerToggleHistory {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlertogglehistory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerToggleHistory;
     pub use super::IDebugUIHandlerToggleHistory;

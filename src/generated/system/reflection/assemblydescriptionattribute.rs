@@ -112,6 +112,7 @@ impl AssemblyDescriptionAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyDescriptionAttribute;
     pub use super::IAssemblyDescriptionAttribute;

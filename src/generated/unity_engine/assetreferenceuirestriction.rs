@@ -231,6 +231,7 @@ impl AssetReferenceUIRestriction {
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceUIRestriction;
     pub use super::IAssetReferenceUIRestriction;

@@ -230,6 +230,7 @@ impl MessDumpCommand {
 }
 
 #[cfg(feature = "app-messdumpcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMessDumpCommand;
     pub use super::IMessDumpCommandMethods;

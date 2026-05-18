@@ -1376,6 +1376,7 @@ impl AkDiffractionPathInfo {
 }
 
 #[cfg(feature = "root-akdiffractionpathinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDiffractionPathInfo;
     pub use super::IAkDiffractionPathInfo;

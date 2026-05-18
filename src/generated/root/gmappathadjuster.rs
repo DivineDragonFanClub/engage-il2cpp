@@ -12,6 +12,32 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gmappathadjuster/GmapPathAdjuster.md"))]
+    #[::unity2::class(namespace = "", name = "GmapPathAdjuster")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapPathAdjuster {
+        #[rename(name = "両端をモデル位置に合わせる")]
+        pub 両端をモデル位置に合わせる: bool,
+        #[rename(name = "移動時に地面に吸着させる")]
+        pub 移動時に地面に吸着させる: bool,
+        #[rename(name = "吸着対象")]
+        pub 吸着対象: crate::system::collections::generic::list_1::List_1<
+            crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel,
+        >,
+        #[rename(name = "m_TargetColliders")]
+        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::collider::Collider,
+        >,
+        #[rename(name = "m_LastPositions")]
+        pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[rename(name = "m_BothSpotTransforms")]
+        pub m_both_spot_transforms: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::transform::Transform,
+        >,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/gmappathadjuster/GmapPathAdjuster_TargetModel.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -40,32 +66,6 @@ mod __types {
                 ._1
                 .byval_arg
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gmappathadjuster/GmapPathAdjuster.md"))]
-    #[::unity2::class(namespace = "", name = "GmapPathAdjuster")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapPathAdjuster {
-        #[rename(name = "両端をモデル位置に合わせる")]
-        pub 両端をモデル位置に合わせる: bool,
-        #[rename(name = "移動時に地面に吸着させる")]
-        pub 移動時に地面に吸着させる: bool,
-        #[rename(name = "吸着対象")]
-        pub 吸着対象: crate::system::collections::generic::list_1::List_1<
-            crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel,
-        >,
-        #[rename(name = "m_TargetColliders")]
-        pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::collider::Collider,
-        >,
-        #[rename(name = "m_LastPositions")]
-        pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[rename(name = "m_BothSpotTransforms")]
-        pub m_both_spot_transforms: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::transform::Transform,
-        >,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
     }
 }
 
@@ -793,6 +793,7 @@ impl GmapPathAdjuster {
 }
 
 #[cfg(feature = "root-gmappathadjuster")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapPathAdjuster;
     pub use super::GmapPathAdjuster_TargetModel;

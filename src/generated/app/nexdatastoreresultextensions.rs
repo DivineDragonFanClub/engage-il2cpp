@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-nexdatastoreresultextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INexDataStoreResultExtensions;
     pub use super::NexDataStoreResultExtensions;

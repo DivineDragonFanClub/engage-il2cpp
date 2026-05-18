@@ -433,6 +433,7 @@ impl DebugMipmapVisualizer {
 }
 
 #[cfg(feature = "app-debugmipmapvisualizer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugMipmapVisualizer;
     pub use super::IDebugMipmapVisualizer;

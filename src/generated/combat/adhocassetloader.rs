@@ -1102,6 +1102,7 @@ impl AdhocAssetLoader_Asset {
 }
 
 #[cfg(feature = "combat-adhocassetloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AdhocAssetLoader;
     pub use super::AdhocAssetLoader_Asset;

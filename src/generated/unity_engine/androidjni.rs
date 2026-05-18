@@ -3890,6 +3890,7 @@ impl AndroidJNI {
 }
 
 #[cfg(feature = "unity_engine-androidjni")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJNI;
     pub use super::IAndroidJNI;

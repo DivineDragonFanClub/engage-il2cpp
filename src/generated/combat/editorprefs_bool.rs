@@ -238,6 +238,7 @@ impl EditorPrefs_Bool {
 }
 
 #[cfg(feature = "combat-editorprefs_bool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EditorPrefs_Bool;
     pub use super::IEditorPrefs_Bool;

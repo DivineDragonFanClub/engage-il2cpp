@@ -235,6 +235,7 @@ impl ArenaExpUnitSelectMenuContent {
 }
 
 #[cfg(feature = "app-arenaexpunitselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaExpUnitSelectMenuContent;
     pub use super::IArenaExpUnitSelectMenuContent;

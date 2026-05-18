@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-exceptionhandlingclauseoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExceptionHandlingClauseOptions;
     pub use crate::system::object::IObject;

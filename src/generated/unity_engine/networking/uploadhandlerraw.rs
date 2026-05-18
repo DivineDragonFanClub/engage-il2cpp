@@ -179,6 +179,7 @@ impl UploadHandlerRaw {
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandlerraw")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUploadHandlerRaw;
     pub use super::IUploadHandlerRawMethods;

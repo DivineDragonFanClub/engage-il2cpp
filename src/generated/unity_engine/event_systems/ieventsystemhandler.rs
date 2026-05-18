@@ -15,6 +15,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-ieventsystemhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEventSystemHandler;
     pub use super::IIEventSystemHandler;

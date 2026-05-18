@@ -1024,6 +1024,7 @@ impl GUILayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-guilayoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUILayoutGroup;
     pub use super::IGUILayoutGroup;

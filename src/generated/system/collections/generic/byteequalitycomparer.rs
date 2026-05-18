@@ -515,6 +515,7 @@ impl ByteEqualityComparer {
 }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ByteEqualityComparer;
     pub use super::IByteEqualityComparer;

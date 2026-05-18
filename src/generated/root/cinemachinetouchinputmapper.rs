@@ -237,6 +237,7 @@ impl CinemachineTouchInputMapper {
 }
 
 #[cfg(feature = "root-cinemachinetouchinputmapper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineTouchInputMapper;
     pub use super::ICinemachineTouchInputMapper;

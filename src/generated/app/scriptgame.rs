@@ -1470,6 +1470,7 @@ impl ScriptGame {
 }
 
 #[cfg(feature = "app-scriptgame")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptGame;
     pub use super::IScriptGameMethods;

@@ -296,6 +296,7 @@ impl AnimatorControllerParameter {
 }
 
 #[cfg(feature = "unity_engine-animatorcontrollerparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorControllerParameter;
     pub use super::IAnimatorControllerParameter;

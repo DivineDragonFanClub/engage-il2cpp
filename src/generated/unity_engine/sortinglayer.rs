@@ -364,6 +364,7 @@ impl SortingLayer {
 }
 
 #[cfg(feature = "unity_engine-sortinglayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SortingLayer;
     pub use crate::system::object::IObject;

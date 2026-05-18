@@ -73,6 +73,7 @@ impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-treeset_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITreeSet_1;
     pub use super::ITreeSet_1Methods;

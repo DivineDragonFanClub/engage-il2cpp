@@ -652,6 +652,7 @@ impl AutoDescribingUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AutoDescribingUserDataDescriptor;
     pub use super::IAutoDescribingUserDataDescriptor;

@@ -272,6 +272,7 @@ impl ClampCommand {
 }
 
 #[cfg(feature = "app-clampcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClampCommand;
     pub use super::IClampCommand;

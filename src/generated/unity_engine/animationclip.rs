@@ -2053,6 +2053,7 @@ impl AnimationClip {
 }
 
 #[cfg(feature = "unity_engine-animationclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationClip;
     pub use super::IAnimationClip;

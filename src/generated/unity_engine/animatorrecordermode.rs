@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animatorrecordermode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorRecorderMode;
     pub use crate::system::object::IObject;

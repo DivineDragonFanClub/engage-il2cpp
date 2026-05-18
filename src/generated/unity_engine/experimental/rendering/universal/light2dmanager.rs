@@ -510,6 +510,7 @@ impl Light2DManager {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILight2DManager;
     pub use super::Light2DManager;

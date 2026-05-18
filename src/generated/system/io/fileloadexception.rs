@@ -477,6 +477,7 @@ impl FileLoadException {
 }
 
 #[cfg(feature = "system-io-fileloadexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileLoadException;
     pub use super::IFileLoadException;

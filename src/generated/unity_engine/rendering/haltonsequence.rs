@@ -90,6 +90,7 @@ impl HaltonSequence {
 }
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HaltonSequence;
     pub use super::IHaltonSequence;

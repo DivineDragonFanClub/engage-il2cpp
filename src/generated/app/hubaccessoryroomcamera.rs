@@ -12,32 +12,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct HubAccessoryRoomCamera_CameraPositionParam {}
-
-    impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "HubAccessoryRoomCamera.CameraPositionParam";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_BackgroundSettings.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -180,720 +154,36 @@ mod __types {
         #[rename(name = "m_LastRotSpeed")]
         pub m_last_rot_speed: f32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct HubAccessoryRoomCamera_CameraPositionParam {}
+
+    impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "HubAccessoryRoomCamera.CameraPositionParam";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-hubaccessoryroomcamera-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "get_Distance",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "get_Distance",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_distance(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_distance::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_distance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "set_Distance",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "set_Distance",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_distance(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_distance::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_fo_v {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "get_FoV",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "get_FoV",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_fo_v(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fo_v::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_fo_v {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "set_FoV",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "set_FoV",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_fo_v(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fo_v::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "get_Degree",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "get_Degree",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_degree(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_degree::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_degree {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "set_Degree",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "set_Degree",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_degree(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_degree::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "get_TargetPos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "get_TargetPos",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_pos(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_pos::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_pos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "set_TargetPos",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "set_TargetPos",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_pos(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        value: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_pos::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(
-        this: HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubAccessoryRoomCamera_CameraPositionParam,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_multiply {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "op_Multiply",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_multiply(
-        param: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_multiply :: get_offset () as isize) ,) ;
-        inner(param, rate, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_addition {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_addition(
-        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_addition :: get_offset () as isize) ,) ;
-        inner(left, right, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_op_subtraction {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
-                "op_Subtraction",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn op_subtraction(
-        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_subtraction :: get_offset () as isize) ,) ;
-        inner(left, right, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera_CameraPositionParam {
-    #[doc = "`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"]
-    pub fn op_multiply(
-        param: impl ::core::convert::Into<
-            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        >,
-        rate: impl ::core::convert::Into<f32>,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_multiply(
-                ::core::convert::Into::into(param),
-                ::core::convert::Into::into(rate),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
-    pub fn op_addition(
-        left: impl ::core::convert::Into<
-            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        >,
-        right: impl ::core::convert::Into<
-            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        >,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_addition(
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
-    pub fn op_subtraction(
-        left: impl ::core::convert::Into<
-            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        >,
-        right: impl ::core::convert::Into<
-            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
-        >,
-    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_subtraction(
-                ::core::convert::Into::into(left),
-                ::core::convert::Into::into(right),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera_CameraPositionParam {
-    #[doc = "`get_Distance()` overload"]
-    pub fn get_distance(self) -> f32 {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_distance(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Distance(f32)` overload"]
-    pub fn set_distance(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_distance(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_FoV()` overload"]
-    pub fn get_fo_v(self) -> f32 {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_fo_v(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_FoV(f32)` overload"]
-    pub fn set_fo_v(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_fo_v(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Degree()` overload"]
-    pub fn get_degree(self) -> f32 {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_degree(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Degree(f32)` overload"]
-    pub fn set_degree(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_degree(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_TargetPos()` overload"]
-    pub fn get_target_pos(self) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_target_pos(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn set_target_pos(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_target_pos(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe {
-            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::reset(
-                self,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "app-hubaccessoryroomcamera")]
 #[doc(hidden)]
@@ -2985,6 +2275,717 @@ impl HubAccessoryRoomCamera {
 }
 
 #[cfg(feature = "app-hubaccessoryroomcamera")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "get_Distance",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "get_Distance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_distance(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_distance::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_distance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "set_Distance",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "set_Distance",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_distance(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_distance::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fo_v {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "get_FoV",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "get_FoV",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_fo_v(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_fo_v::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fo_v {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "set_FoV",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "set_FoV",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_fo_v(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_fo_v::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "get_Degree",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "get_Degree",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_degree(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_degree::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_degree {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "set_Degree",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "set_Degree",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_degree(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        value: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_degree::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "get_TargetPos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "get_TargetPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_target_pos(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_target_pos::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_pos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "set_TargetPos",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "set_TargetPos",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn set_target_pos(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        value: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_set_target_pos::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "Reset",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn reset(
+        this: HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubAccessoryRoomCamera_CameraPositionParam,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_reset::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_multiply {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "op_Multiply",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "op_Multiply",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_multiply(
+        param: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        rate: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_multiply :: get_offset () as isize) ,) ;
+        inner(param, rate, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_addition {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "op_Addition",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "op_Addition",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_addition(
+        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_addition :: get_offset () as isize) ,) ;
+        inner(left, right, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_op_subtraction {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type () , < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::class(),
+                "op_Subtraction",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubAccessoryRoomCamera_CameraPositionParam as ::unity2::ClassIdentity>::NAME,
+                    "op_Subtraction",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn op_subtraction(
+        left: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        right: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        let inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_subtraction :: get_offset () as isize) ,) ;
+        inner(left, right, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubaccessoryroomcamera")]
+impl HubAccessoryRoomCamera_CameraPositionParam {
+    #[doc = "`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"]
+    pub fn op_multiply(
+        param: impl ::core::convert::Into<
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        >,
+        rate: impl ::core::convert::Into<f32>,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_multiply(
+                ::core::convert::Into::into(param),
+                ::core::convert::Into::into(rate),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
+    pub fn op_addition(
+        left: impl ::core::convert::Into<
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        >,
+        right: impl ::core::convert::Into<
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        >,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_addition(
+                ::core::convert::Into::into(left),
+                ::core::convert::Into::into(right),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]
+    pub fn op_subtraction(
+        left: impl ::core::convert::Into<
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        >,
+        right: impl ::core::convert::Into<
+            crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam,
+        >,
+    ) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::op_subtraction(
+                ::core::convert::Into::into(left),
+                ::core::convert::Into::into(right),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubaccessoryroomcamera")]
+impl HubAccessoryRoomCamera_CameraPositionParam {
+    #[doc = "`get_Distance()` overload"]
+    pub fn get_distance(self) -> f32 {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_distance(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Distance(f32)` overload"]
+    pub fn set_distance(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_distance(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_FoV()` overload"]
+    pub fn get_fo_v(self) -> f32 {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_fo_v(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_FoV(f32)` overload"]
+    pub fn set_fo_v(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_fo_v(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Degree()` overload"]
+    pub fn get_degree(self) -> f32 {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_degree(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_Degree(f32)` overload"]
+    pub fn set_degree(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_degree(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_TargetPos()` overload"]
+    pub fn get_target_pos(self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::get_target_pos(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn set_target_pos(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::set_target_pos(
+                self,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe {
+            __HubAccessoryRoomCamera_CameraPositionParam_unity2_raw::reset(
+                self,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-hubaccessoryroomcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessoryRoomCamera;
     pub use super::HubAccessoryRoomCamera_BackgroundSettings;

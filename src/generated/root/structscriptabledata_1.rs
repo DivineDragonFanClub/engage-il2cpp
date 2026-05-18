@@ -107,6 +107,7 @@ impl<T0: ::unity2::ClassIdentity> StructScriptableData_1<T0> {
 }
 
 #[cfg(feature = "root-structscriptabledata_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructScriptableData_1;
     pub use super::IStructScriptableData_1Methods;

@@ -89,6 +89,7 @@ pub trait ILowerResBlitTextureMethods: ILowerResBlitTexture {
 impl<__T: ILowerResBlitTexture> ILowerResBlitTextureMethods for __T {}
 
 #[cfg(feature = "unity_engine-lowerresblittexture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILowerResBlitTexture;
     pub use super::ILowerResBlitTextureMethods;

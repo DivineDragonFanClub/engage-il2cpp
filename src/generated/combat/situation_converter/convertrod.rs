@@ -194,6 +194,7 @@ impl ConvertRod {
 }
 
 #[cfg(feature = "combat-situation_converter-convertrod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertRod;
     pub use super::IConvertRod;

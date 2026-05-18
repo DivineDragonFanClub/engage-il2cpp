@@ -555,6 +555,7 @@ impl RandomSeed {
 }
 
 #[cfg(feature = "app-randomseed")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RandomSeed;
     pub use super::RandomSeed_CastType_I2F;

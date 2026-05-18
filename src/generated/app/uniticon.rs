@@ -1864,6 +1864,7 @@ impl UnitIcon {
 }
 
 #[cfg(feature = "app-uniticon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitIcon;
     pub use super::IUnitIconMethods;

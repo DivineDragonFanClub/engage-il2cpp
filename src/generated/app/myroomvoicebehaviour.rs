@@ -726,6 +726,7 @@ impl MyRoomVoiceBehaviour {
 }
 
 #[cfg(feature = "app-myroomvoicebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomVoiceBehaviour;
     pub use super::IMyRoomVoiceBehaviourMethods;

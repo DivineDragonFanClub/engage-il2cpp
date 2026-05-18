@@ -1099,6 +1099,7 @@ impl _AndroidJNIHelper {
 }
 
 #[cfg(feature = "unity_engine-_androidjnihelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::_AndroidJNIHelper;
     pub use super::I_AndroidJNIHelper;

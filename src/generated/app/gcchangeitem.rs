@@ -263,6 +263,7 @@ impl GCChangeItem {
 }
 
 #[cfg(feature = "app-gcchangeitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GCChangeItem;
     pub use super::IGCChangeItem;

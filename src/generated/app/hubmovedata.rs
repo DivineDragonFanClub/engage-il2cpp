@@ -1299,6 +1299,7 @@ impl HubMoveData {
 }
 
 #[cfg(feature = "app-hubmovedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveData;
     pub use super::IHubMoveData;

@@ -1000,6 +1000,7 @@ impl UnitGrowSequence {
 }
 
 #[cfg(feature = "app-unitgrowsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitGrowSequence;
     pub use super::IUnitGrowSequenceMethods;

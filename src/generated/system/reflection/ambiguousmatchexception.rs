@@ -177,6 +177,7 @@ impl AmbiguousMatchException {
 }
 
 #[cfg(feature = "system-reflection-ambiguousmatchexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmbiguousMatchException;
     pub use super::IAmbiguousMatchException;

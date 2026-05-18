@@ -237,6 +237,7 @@ impl ChannelMixer {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-channelmixer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChannelMixer;
     pub use super::IChannelMixer;

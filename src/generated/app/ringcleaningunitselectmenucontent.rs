@@ -737,6 +737,7 @@ impl RingCleaningUnitSelectMenuContent {
 }
 
 #[cfg(feature = "app-ringcleaningunitselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningUnitSelectMenuContent;
     pub use super::IRingCleaningUnitSelectMenuContentMethods;

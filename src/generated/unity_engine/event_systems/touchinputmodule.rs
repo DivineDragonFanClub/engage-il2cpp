@@ -929,6 +929,7 @@ impl TouchInputModule {
 }
 
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITouchInputModule;
     pub use super::ITouchInputModuleMethods;

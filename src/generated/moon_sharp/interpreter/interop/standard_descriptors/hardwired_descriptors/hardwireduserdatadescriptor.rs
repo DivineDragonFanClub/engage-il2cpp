@@ -131,6 +131,7 @@ impl HardwiredUserDataDescriptor {
 #[cfg(
     feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HardwiredUserDataDescriptor;
     pub use super::IHardwiredUserDataDescriptor;

@@ -1065,6 +1065,7 @@ impl MapImageDanger {
 }
 
 #[cfg(feature = "app-mapimagedanger")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageDanger;
     pub use super::IMapImageDangerMethods;

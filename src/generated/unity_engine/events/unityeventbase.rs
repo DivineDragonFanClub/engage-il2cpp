@@ -942,6 +942,7 @@ impl UnityEventBase {
 }
 
 #[cfg(feature = "unity_engine-events-unityeventbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEventBase;
     pub use super::IUnityEventBaseMethods;

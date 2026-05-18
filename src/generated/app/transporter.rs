@@ -1543,6 +1543,7 @@ impl Transporter_Data {
 }
 
 #[cfg(feature = "app-transporter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITransporter;
     pub use super::ITransporterMethods;

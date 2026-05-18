@@ -907,6 +907,7 @@ impl InventoryPoolItemMenuContent {
 }
 
 #[cfg(feature = "app-inventorypoolitemmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInventoryPoolItemMenuContent;
     pub use super::IInventoryPoolItemMenuContentMethods;

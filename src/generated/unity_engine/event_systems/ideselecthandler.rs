@@ -96,6 +96,7 @@ pub trait IIDeselectHandlerMethods: IIDeselectHandler {
 impl<__T: IIDeselectHandler> IIDeselectHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDeselectHandler;
     pub use super::IIDeselectHandler;

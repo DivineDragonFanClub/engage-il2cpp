@@ -1436,6 +1436,7 @@ impl BattleSceneList {
 }
 
 #[cfg(feature = "app-battlescenelist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleSceneList;
     pub use super::IBattleSceneList;

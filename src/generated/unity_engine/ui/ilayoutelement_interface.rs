@@ -551,6 +551,7 @@ pub trait IILayoutElement_InterfaceMethods: IILayoutElement_Interface {
 impl<__T: IILayoutElement_Interface> IILayoutElement_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILayoutElement_Interface;
     pub use super::IILayoutElement_InterfaceMethods;

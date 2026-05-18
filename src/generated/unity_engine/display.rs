@@ -1152,6 +1152,7 @@ impl Display_DisplaysUpdatedDelegate {
 }
 
 #[cfg(feature = "unity_engine-display")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Display;
     pub use super::Display_DisplaysUpdatedDelegate;

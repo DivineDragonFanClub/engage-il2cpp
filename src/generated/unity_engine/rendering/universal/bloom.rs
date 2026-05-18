@@ -223,6 +223,7 @@ impl Bloom {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bloom;
     pub use super::IBloom;

@@ -154,6 +154,7 @@ pub trait IIInitializableObjectMethods: IIInitializableObject {
 impl<__T: IIInitializableObject> IIInitializableObjectMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIInitializableObject;
     pub use super::IIInitializableObjectMethods;

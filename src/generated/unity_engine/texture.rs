@@ -1637,6 +1637,7 @@ impl Texture {
 }
 
 #[cfg(feature = "unity_engine-texture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITexture;
     pub use super::ITextureMethods;

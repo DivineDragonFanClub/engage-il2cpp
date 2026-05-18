@@ -810,6 +810,7 @@ impl ScriptLoaderBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-scriptloaderbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptLoaderBase;
     pub use super::IScriptLoaderBaseMethods;

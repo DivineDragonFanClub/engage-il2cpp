@@ -345,6 +345,7 @@ impl ConvertShoot {
 }
 
 #[cfg(feature = "combat-situation_converter-convertshoot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertShoot;
     pub use super::IConvertShoot;

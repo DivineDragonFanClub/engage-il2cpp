@@ -49,6 +49,7 @@ impl<T0: ::unity2::ClassIdentity> ScriptFunctionDelegate_1<T0> {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptFunctionDelegate_1;
     pub use super::IScriptFunctionDelegate_1Methods;

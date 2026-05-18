@@ -375,6 +375,7 @@ impl TroopListRoot {
 }
 
 #[cfg(feature = "app-trooplistroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITroopListRoot;
     pub use super::ITroopListRootMethods;

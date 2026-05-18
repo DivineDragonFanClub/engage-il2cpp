@@ -752,6 +752,7 @@ impl AkSpatialAudioListener {
 }
 
 #[cfg(feature = "root-akspatialaudiolistener")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSpatialAudioListener;
     pub use super::AkSpatialAudioListener_SpatialAudioListenerList;

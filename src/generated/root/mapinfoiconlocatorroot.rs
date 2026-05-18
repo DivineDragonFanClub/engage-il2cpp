@@ -872,6 +872,7 @@ impl MapInfoIconLocatorRoot {
 }
 
 #[cfg(feature = "root-mapinfoiconlocatorroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoIconLocatorRoot;
     pub use super::IMapInfoIconLocatorRootMethods;

@@ -949,6 +949,7 @@ impl ProfileCardTitleMenuItem {
 }
 
 #[cfg(feature = "app-profilecardtitlemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTitleMenuItem;
     pub use super::IProfileCardTitleMenuItemMethods;

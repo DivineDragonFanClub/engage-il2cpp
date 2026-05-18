@@ -105,6 +105,7 @@ impl PrivateEffectCatalog_Bridge {
 }
 
 #[cfg(feature = "root-privateeffectcatalog_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrivateEffectCatalog_Bridge;
     pub use super::IPrivateEffectCatalog_BridgeMethods;

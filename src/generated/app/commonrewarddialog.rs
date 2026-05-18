@@ -200,6 +200,7 @@ impl CommonRewardDialog {
 }
 
 #[cfg(feature = "app-commonrewarddialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonRewardDialog;
     pub use super::ICommonRewardDialog;

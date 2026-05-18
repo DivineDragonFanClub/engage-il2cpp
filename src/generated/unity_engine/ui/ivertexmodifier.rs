@@ -105,6 +105,7 @@ pub trait IIVertexModifierMethods: IIVertexModifier {
 impl<__T: IIVertexModifier> IIVertexModifierMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-ivertexmodifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIVertexModifier;
     pub use super::IIVertexModifierMethods;

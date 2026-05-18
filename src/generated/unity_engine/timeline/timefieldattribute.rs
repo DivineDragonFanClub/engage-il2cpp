@@ -163,6 +163,7 @@ impl TimeFieldAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-timefieldattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimeFieldAttribute;
     pub use super::ITimeFieldAttributeMethods;

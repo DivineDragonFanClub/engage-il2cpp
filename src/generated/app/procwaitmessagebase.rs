@@ -468,6 +468,7 @@ impl ProcWaitMessageBase {
 }
 
 #[cfg(feature = "app-procwaitmessagebase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcWaitMessageBase;
     pub use super::IProcWaitMessageBaseMethods;

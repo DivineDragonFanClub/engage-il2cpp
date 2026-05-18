@@ -921,6 +921,7 @@ impl RingCleaningRingController {
 }
 
 #[cfg(feature = "app-ringcleaningringcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningRingController;
     pub use super::IRingCleaningRingControllerMethods;

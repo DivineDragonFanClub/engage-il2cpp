@@ -1928,6 +1928,7 @@ impl TMP_SpriteAsset {
 }
 
 #[cfg(feature = "tm_pro-tmp_spriteasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_SpriteAsset;
     pub use super::ITMP_SpriteAssetMethods;

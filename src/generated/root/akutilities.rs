@@ -549,6 +549,7 @@ impl AkUtilities_ShortIDGenerator {
 }
 
 #[cfg(feature = "root-akutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkUtilities;
     pub use super::AkUtilities_ShortIDGenerator;

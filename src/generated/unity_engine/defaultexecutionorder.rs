@@ -162,6 +162,7 @@ impl DefaultExecutionOrder {
 }
 
 #[cfg(feature = "unity_engine-defaultexecutionorder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultExecutionOrder;
     pub use super::IDefaultExecutionOrder;

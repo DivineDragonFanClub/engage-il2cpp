@@ -323,6 +323,7 @@ impl BoneWeight1 {
 }
 
 #[cfg(feature = "unity_engine-boneweight1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoneWeight1;
     pub use crate::system::object::IObject;

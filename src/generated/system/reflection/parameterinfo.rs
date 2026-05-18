@@ -965,6 +965,7 @@ pub trait IParameterInfoMethods: IParameterInfo {
 impl<__T: IParameterInfo> IParameterInfoMethods for __T {}
 
 #[cfg(feature = "system-reflection-parameterinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParameterInfo;
     pub use super::IParameterInfoMethods;

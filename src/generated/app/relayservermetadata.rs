@@ -3039,6 +3039,7 @@ impl RelayServerMetaData {
 }
 
 #[cfg(feature = "app-relayservermetadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayServerMetaData;
     pub use super::IRelayServerMetaDataMethods;

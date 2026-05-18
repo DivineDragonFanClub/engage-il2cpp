@@ -190,6 +190,7 @@ impl InterpolatorRotation {
 }
 
 #[cfg(feature = "app-interpolatorrotation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorRotation;
     pub use super::IInterpolatorRotationMethods;

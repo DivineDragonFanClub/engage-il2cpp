@@ -679,6 +679,7 @@ impl DebugUIHandlerVector4 {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerVector4;
     pub use super::IDebugUIHandlerVector4;

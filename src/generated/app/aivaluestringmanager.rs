@@ -673,6 +673,7 @@ impl AIValueStringManager {
 }
 
 #[cfg(feature = "app-aivaluestringmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIValueStringManager;
     pub use super::IAIValueStringManager;

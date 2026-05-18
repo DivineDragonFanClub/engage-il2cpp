@@ -101,6 +101,7 @@ impl MapBake {
 }
 
 #[cfg(feature = "app-mapbake")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBake;
     pub use super::IMapBakeMethods;

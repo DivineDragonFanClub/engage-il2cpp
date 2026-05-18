@@ -316,6 +316,7 @@ impl ReplHistoryInterpreter {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replhistoryinterpreter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReplHistoryInterpreter;
     pub use super::IReplHistoryInterpreterMethods;

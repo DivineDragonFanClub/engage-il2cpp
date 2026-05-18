@@ -925,6 +925,7 @@ impl RingCleaningSelectSequence {
 }
 
 #[cfg(feature = "app-ringcleaningselectsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningSelectSequence;
     pub use super::IRingCleaningSelectSequenceMethods;

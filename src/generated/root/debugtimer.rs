@@ -329,6 +329,7 @@ impl DebugTimer {
 }
 
 #[cfg(feature = "root-debugtimer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugTimer;
     pub use super::IDebugTimer;

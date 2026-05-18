@@ -157,6 +157,7 @@ impl RailEndMarker {
 }
 
 #[cfg(feature = "app-railendmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRailEndMarker;
     pub use super::IRailEndMarkerMethods;

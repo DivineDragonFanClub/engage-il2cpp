@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity> ShortEnumEqualityComparer_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-shortenumequalitycomparer_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShortEnumEqualityComparer_1;
     pub use super::IShortEnumEqualityComparer_1Methods;

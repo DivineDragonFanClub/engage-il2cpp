@@ -1274,6 +1274,7 @@ impl CharacterTimespace {
 }
 
 #[cfg(feature = "combat-charactertimespace")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterTimespace;
     pub use super::ICharacterTimespace;

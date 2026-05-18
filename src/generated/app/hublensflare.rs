@@ -311,6 +311,7 @@ impl HubLensFlare {
 }
 
 #[cfg(feature = "app-hublensflare")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubLensFlare;
     pub use super::HubLensFlare_Flare;

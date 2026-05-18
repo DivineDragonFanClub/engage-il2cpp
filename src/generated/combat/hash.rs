@@ -370,6 +370,7 @@ impl Hash {
 }
 
 #[cfg(feature = "combat-hash")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Hash;
     pub use super::IHash;

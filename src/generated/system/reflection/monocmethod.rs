@@ -1177,6 +1177,7 @@ impl MonoCMethod {
 }
 
 #[cfg(feature = "system-reflection-monocmethod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoCMethod;
     pub use super::IMonoCMethodMethods;

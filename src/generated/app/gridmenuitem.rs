@@ -207,6 +207,7 @@ impl GridMenuItem {
 }
 
 #[cfg(feature = "app-gridmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridMenuItem;
     pub use super::IGridMenuItem;

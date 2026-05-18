@@ -160,6 +160,7 @@ impl VFXExpressionValues {
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVFXExpressionValues;
     pub use super::IVFXExpressionValuesMethods;

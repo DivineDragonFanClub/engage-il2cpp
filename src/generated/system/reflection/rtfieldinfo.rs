@@ -233,6 +233,7 @@ impl RtFieldInfo {
 }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRtFieldInfo;
     pub use super::IRtFieldInfoMethods;

@@ -245,6 +245,7 @@ impl ActionGranEnemyHitTimePredicted {
 }
 
 #[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranEnemyHitTimePredicted;
     pub use super::IActionGranEnemyHitTimePredicted;

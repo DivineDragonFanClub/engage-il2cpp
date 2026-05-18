@@ -5463,6 +5463,7 @@ impl AnimationTrack_AnimationTrackUpgrade {
 }
 
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationTrack;
     pub use super::AnimationTrack_AnimationTrackUpgrade;

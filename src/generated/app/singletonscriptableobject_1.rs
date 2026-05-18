@@ -65,6 +65,7 @@ impl<T0: ::unity2::ClassIdentity> SingletonScriptableObject_1<T0> {
 }
 
 #[cfg(feature = "app-singletonscriptableobject_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISingletonScriptableObject_1;
     pub use super::ISingletonScriptableObject_1Methods;

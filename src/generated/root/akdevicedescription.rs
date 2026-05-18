@@ -1071,6 +1071,7 @@ impl AkDeviceDescription {
 }
 
 #[cfg(feature = "root-akdevicedescription")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDeviceDescription;
     pub use super::IAkDeviceDescription;

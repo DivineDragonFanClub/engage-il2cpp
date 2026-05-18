@@ -105,6 +105,7 @@ impl ShopContent {
 }
 
 #[cfg(feature = "app-shopcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopContent;
     pub use super::IShopContentMethods;

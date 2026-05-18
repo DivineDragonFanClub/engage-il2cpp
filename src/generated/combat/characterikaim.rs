@@ -784,6 +784,7 @@ impl CharacterIKAim {
 }
 
 #[cfg(feature = "combat-characterikaim")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIKAim;
     pub use super::ICharacterIKAim;

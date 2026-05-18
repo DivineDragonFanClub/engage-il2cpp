@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-emit-signaturehelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignatureHelper;
     pub use super::SignatureHelper;

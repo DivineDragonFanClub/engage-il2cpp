@@ -1797,6 +1797,7 @@ impl SceneManager {
 }
 
 #[cfg(feature = "unity_engine-scene_management-scenemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISceneManager;
     pub use super::SceneManager;

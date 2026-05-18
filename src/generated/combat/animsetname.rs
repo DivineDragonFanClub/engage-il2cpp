@@ -93,6 +93,7 @@ impl AnimsetName {
 }
 
 #[cfg(feature = "combat-animsetname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimsetName;
     pub use super::IAnimsetName;

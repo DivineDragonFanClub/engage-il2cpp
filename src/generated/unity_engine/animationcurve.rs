@@ -1890,6 +1890,7 @@ impl AnimationCurve {
 }
 
 #[cfg(feature = "unity_engine-animationcurve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationCurve;
     pub use super::IAnimationCurve;

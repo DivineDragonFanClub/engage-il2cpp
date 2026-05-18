@@ -88,6 +88,7 @@ impl WeightUtility {
 }
 
 #[cfg(feature = "unity_engine-timeline-weightutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeightUtility;
     pub use super::WeightUtility;

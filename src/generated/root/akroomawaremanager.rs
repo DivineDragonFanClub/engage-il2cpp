@@ -572,6 +572,7 @@ impl AkRoomAwareManager {
 }
 
 #[cfg(feature = "root-akroomawaremanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomAwareManager;
     pub use super::IAkRoomAwareManager;

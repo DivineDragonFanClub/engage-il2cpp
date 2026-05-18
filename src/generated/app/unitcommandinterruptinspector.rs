@@ -121,6 +121,7 @@ impl UnitCommandInterruptInspector {
 }
 
 #[cfg(feature = "app-unitcommandinterruptinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitCommandInterruptInspector;
     pub use super::IUnitCommandInterruptInspectorMethods;

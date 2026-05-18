@@ -210,6 +210,7 @@ impl VisitWorld {
 }
 
 #[cfg(feature = "app-visitworld")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisitWorld;
     pub use super::IVisitWorldMethods;

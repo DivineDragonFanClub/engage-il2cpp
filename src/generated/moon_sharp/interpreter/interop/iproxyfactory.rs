@@ -203,6 +203,7 @@ pub trait IIProxyFactoryMethods: IIProxyFactory {
 impl<__T: IIProxyFactory> IIProxyFactoryMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIProxyFactory;
     pub use super::IIProxyFactoryMethods;

@@ -105,6 +105,7 @@ impl InputDevices {
 }
 
 #[cfg(feature = "unity_engine-xr-inputdevices")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInputDevices;
     pub use super::InputDevices;

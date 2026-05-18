@@ -708,6 +708,7 @@ impl MapArrow {
 }
 
 #[cfg(feature = "root-maparrow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapArrow;
     pub use super::IMapArrowMethods;

@@ -857,6 +857,7 @@ impl ShopWeaponModelRenderer {
 }
 
 #[cfg(feature = "app-shopweaponmodelrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopWeaponModelRenderer;
     pub use super::IShopWeaponModelRendererMethods;

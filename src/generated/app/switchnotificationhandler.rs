@@ -594,6 +594,7 @@ impl SwitchNotificationHandler {
 }
 
 #[cfg(feature = "app-switchnotificationhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISwitchNotificationHandler;
     pub use super::SwitchNotificationHandler;

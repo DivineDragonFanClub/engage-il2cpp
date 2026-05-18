@@ -187,6 +187,7 @@ impl ConvertChainGuard {
 }
 
 #[cfg(feature = "combat-situation_converter-convertchainguard")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertChainGuard;
     pub use super::IConvertChainGuard;

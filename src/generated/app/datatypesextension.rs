@@ -661,6 +661,7 @@ impl DataTypesExtension {
 }
 
 #[cfg(feature = "app-datatypesextension")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DataTypesExtension;
     pub use super::IDataTypesExtension;

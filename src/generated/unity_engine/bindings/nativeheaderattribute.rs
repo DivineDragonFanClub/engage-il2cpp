@@ -171,6 +171,7 @@ impl NativeHeaderAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeHeaderAttribute;
     pub use super::INativeHeaderAttributeMethods;

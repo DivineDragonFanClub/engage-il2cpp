@@ -100,6 +100,7 @@ impl TexturePlayableOutput {
 }
 
 #[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TexturePlayableOutput;
     pub use crate::system::object::IObject;

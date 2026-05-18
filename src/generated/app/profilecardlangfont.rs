@@ -343,6 +343,7 @@ impl ProfileCardLangFont {
 }
 
 #[cfg(feature = "app-profilecardlangfont")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardLangFont;
     pub use super::IProfileCardLangFontMethods;

@@ -643,6 +643,7 @@ impl CharacterSignalObserver {
 }
 
 #[cfg(feature = "combat-charactersignalobserver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterSignalObserver;
     pub use super::ICharacterSignalObserver;

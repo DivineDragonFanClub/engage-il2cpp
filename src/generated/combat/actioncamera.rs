@@ -233,6 +233,7 @@ impl ActionCamera {
 }
 
 #[cfg(feature = "combat-actioncamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionCamera;
     pub use super::IActionCamera;

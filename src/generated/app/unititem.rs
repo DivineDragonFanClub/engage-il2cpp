@@ -7022,6 +7022,7 @@ impl UnitItem {
 }
 
 #[cfg(feature = "app-unititem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitItem;
     pub use super::IUnitItemMethods;

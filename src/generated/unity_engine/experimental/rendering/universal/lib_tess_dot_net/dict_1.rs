@@ -163,6 +163,7 @@ impl<T0: ::unity2::ClassIdentity> Dict_1_Node<T0> {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-dict_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Dict_1;
     pub use super::Dict_1_LessOrEqual;

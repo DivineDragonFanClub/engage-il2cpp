@@ -1194,6 +1194,7 @@ impl ColorBlock {
 }
 
 #[cfg(feature = "unity_engine-ui-colorblock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorBlock;
     pub use crate::system::object::IObject;

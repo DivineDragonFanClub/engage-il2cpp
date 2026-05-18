@@ -120,6 +120,7 @@ impl EngageBeforeInspector {
 }
 
 #[cfg(feature = "app-engagebeforeinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EngageBeforeInspector;
     pub use super::IEngageBeforeInspector;

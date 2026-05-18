@@ -838,6 +838,7 @@ impl VolumeComponent {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeComponent;
     pub use super::IVolumeComponentMethods;

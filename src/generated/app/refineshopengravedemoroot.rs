@@ -663,6 +663,7 @@ impl RefineShopEngraveDemoRoot {
 }
 
 #[cfg(feature = "app-refineshopengravedemoroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveDemoRoot;
     pub use super::IRefineShopEngraveDemoRootMethods;

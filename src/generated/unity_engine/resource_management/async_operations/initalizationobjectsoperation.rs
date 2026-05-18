@@ -425,6 +425,7 @@ impl InitalizationObjectsOperation {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInitalizationObjectsOperation;
     pub use super::IInitalizationObjectsOperationMethods;

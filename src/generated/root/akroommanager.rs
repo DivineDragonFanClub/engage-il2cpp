@@ -613,6 +613,7 @@ impl AkRoomManager {
 }
 
 #[cfg(feature = "root-akroommanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomManager;
     pub use super::IAkRoomManager;

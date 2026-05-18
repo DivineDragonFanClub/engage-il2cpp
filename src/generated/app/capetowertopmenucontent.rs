@@ -336,6 +336,7 @@ impl CapeTowerTopMenuContent {
 }
 
 #[cfg(feature = "app-capetowertopmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapeTowerTopMenuContent;
     pub use super::ICapeTowerTopMenuContent;

@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-pinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PInfo;
     pub use crate::system::object::IObject;

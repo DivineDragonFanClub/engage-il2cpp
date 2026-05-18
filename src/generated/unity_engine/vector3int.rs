@@ -767,6 +767,7 @@ impl Vector3Int {
 }
 
 #[cfg(feature = "unity_engine-vector3int")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vector3Int;
     pub use crate::system::object::IObject;

@@ -143,6 +143,7 @@ pub trait IILayoutControllerMethods: IILayoutController {
 impl<__T: IILayoutController> IILayoutControllerMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-ilayoutcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILayoutController;
     pub use super::IILayoutControllerMethods;

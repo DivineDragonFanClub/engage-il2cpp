@@ -163,6 +163,7 @@ impl CombatWorldDisposer {
 }
 
 #[cfg(feature = "combat-combatworlddisposer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatWorldDisposer;
     pub use super::ICombatWorldDisposer;

@@ -329,6 +329,7 @@ impl StaticAccessorAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStaticAccessorAttribute;
     pub use super::IStaticAccessorAttributeMethods;

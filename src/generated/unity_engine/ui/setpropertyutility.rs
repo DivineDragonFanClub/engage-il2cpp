@@ -201,6 +201,7 @@ impl SetPropertyUtility {
 }
 
 #[cfg(feature = "unity_engine-ui-setpropertyutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISetPropertyUtility;
     pub use super::SetPropertyUtility;

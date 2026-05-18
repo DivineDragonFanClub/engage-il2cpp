@@ -160,6 +160,7 @@ impl AkTriggerMouseUp {
 }
 
 #[cfg(feature = "root-aktriggermouseup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerMouseUp;
     pub use super::IAkTriggerMouseUp;

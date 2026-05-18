@@ -332,6 +332,7 @@ impl InvalidScriptLoader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvalidScriptLoader;
     pub use super::IInvalidScriptLoaderMethods;

@@ -121,6 +121,7 @@ impl<T0: ::unity2::ClassIdentity> ChainOperationTypelessDepedency_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChainOperationTypelessDepedency_1;
     pub use super::IChainOperationTypelessDepedency_1;

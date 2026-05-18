@@ -400,6 +400,7 @@ impl Deco_RodWarp {
 }
 
 #[cfg(feature = "combat-deco_rodwarp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_RodWarp;
     pub use super::IDeco_RodWarp;

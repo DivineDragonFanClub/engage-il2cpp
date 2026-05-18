@@ -999,6 +999,7 @@ impl RenderPipelineManager {
 }
 
 #[cfg(feature = "unity_engine-rendering-renderpipelinemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderPipelineManager;
     pub use super::RenderPipelineManager;

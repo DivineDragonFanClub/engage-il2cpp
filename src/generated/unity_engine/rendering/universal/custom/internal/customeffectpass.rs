@@ -396,6 +396,7 @@ impl CustomEffectPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomEffectPass;
     pub use super::ICustomEffectPass;

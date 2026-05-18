@@ -1346,6 +1346,7 @@ impl DebugMesh {
 }
 
 #[cfg(feature = "root-debugmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugMesh;
     pub use super::IDebugMesh;

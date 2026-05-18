@@ -186,6 +186,7 @@ impl PersonInspector {
 }
 
 #[cfg(feature = "app-personinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPersonInspector;
     pub use super::IPersonInspectorMethods;

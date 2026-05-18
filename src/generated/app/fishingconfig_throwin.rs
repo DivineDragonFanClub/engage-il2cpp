@@ -114,6 +114,7 @@ impl FishingConfig_ThrowIn {
 }
 
 #[cfg(feature = "app-fishingconfig_throwin")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_ThrowIn;
     pub use super::IFishingConfig_ThrowIn;

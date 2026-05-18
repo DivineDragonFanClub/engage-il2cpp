@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-magiclevels")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MagicLevels;
     pub use crate::system::object::IObject;

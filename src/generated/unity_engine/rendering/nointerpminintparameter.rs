@@ -251,6 +251,7 @@ impl NoInterpMinIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpMinIntParameter;
     pub use super::INoInterpMinIntParameterMethods;

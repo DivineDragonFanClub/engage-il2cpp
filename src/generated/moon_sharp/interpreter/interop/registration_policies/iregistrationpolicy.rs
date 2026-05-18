@@ -164,6 +164,7 @@ pub trait IIRegistrationPolicyMethods: IIRegistrationPolicy {
 impl<__T: IIRegistrationPolicy> IIRegistrationPolicyMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIRegistrationPolicy;
     pub use super::IIRegistrationPolicyMethods;

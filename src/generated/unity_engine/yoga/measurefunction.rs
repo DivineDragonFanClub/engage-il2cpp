@@ -214,6 +214,7 @@ impl MeasureFunction {
 }
 
 #[cfg(feature = "unity_engine-yoga-measurefunction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeasureFunction;
     pub use super::IMeasureFunctionMethods;

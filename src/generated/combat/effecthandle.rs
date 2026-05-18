@@ -443,6 +443,7 @@ impl EffectHandle {
 }
 
 #[cfg(feature = "combat-effecthandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectHandle;
     pub use super::IEffectHandle;

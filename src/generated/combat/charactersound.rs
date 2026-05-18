@@ -1652,6 +1652,7 @@ impl CharacterSound {
 }
 
 #[cfg(feature = "combat-charactersound")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterSound;
     pub use super::ICharacterSound;

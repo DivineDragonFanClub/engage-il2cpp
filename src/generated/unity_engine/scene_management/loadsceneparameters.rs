@@ -118,6 +118,7 @@ impl LoadSceneParameters {
 }
 
 #[cfg(feature = "unity_engine-scene_management-loadsceneparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LoadSceneParameters;
     pub use crate::system::object::IObject;

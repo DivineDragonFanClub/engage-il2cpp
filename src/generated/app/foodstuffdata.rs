@@ -20,6 +20,11 @@ mod __types {
     # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)]
     pub struct FoodstuffData {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "FoodstuffData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)]
+    pub struct FoodstuffData_FlagField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -71,11 +76,6 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "FoodstuffData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)]
-    pub struct FoodstuffData_FlagField {}
 }
 
 #[cfg(feature = "app-foodstuffdata-types")]
@@ -1540,6 +1540,7 @@ impl FoodstuffData_FlagField {
 }
 
 #[cfg(feature = "app-foodstuffdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FoodstuffData;
     pub use super::FoodstuffData_FlagField;

@@ -814,6 +814,7 @@ impl MiniMapCursor {
 }
 
 #[cfg(feature = "app-minimapcursor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapCursor;
     pub use super::IMiniMapCursorMethods;

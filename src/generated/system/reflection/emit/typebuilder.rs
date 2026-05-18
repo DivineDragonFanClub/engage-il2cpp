@@ -2153,6 +2153,7 @@ pub trait ITypeBuilderMethods: ITypeBuilder {
 impl<__T: ITypeBuilder> ITypeBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-typebuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeBuilder;
     pub use super::ITypeBuilderMethods;

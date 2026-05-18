@@ -205,6 +205,7 @@ impl XRView {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::XRView;
     pub use crate::system::object::IObject;

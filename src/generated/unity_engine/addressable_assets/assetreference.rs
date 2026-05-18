@@ -1549,6 +1549,7 @@ impl AssetReference {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReference;
     pub use super::IAssetReference;

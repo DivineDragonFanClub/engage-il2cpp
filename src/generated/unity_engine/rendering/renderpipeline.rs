@@ -900,6 +900,7 @@ impl RenderPipeline {
 }
 
 #[cfg(feature = "unity_engine-rendering-renderpipeline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderPipeline;
     pub use super::IRenderPipelineMethods;

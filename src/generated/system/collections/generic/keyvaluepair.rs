@@ -93,6 +93,7 @@ impl KeyValuePair {
 }
 
 #[cfg(feature = "system-collections-generic-keyvaluepair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyValuePair;
     pub use super::KeyValuePair;

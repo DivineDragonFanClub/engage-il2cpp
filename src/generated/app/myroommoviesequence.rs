@@ -433,6 +433,7 @@ impl MyRoomMovieSequence {
 }
 
 #[cfg(feature = "app-myroommoviesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomMovieSequence;
     pub use super::IMyRoomMovieSequenceMethods;

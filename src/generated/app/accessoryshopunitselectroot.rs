@@ -686,6 +686,7 @@ impl AccessoryShopUnitSelectRoot {
 }
 
 #[cfg(feature = "app-accessoryshopunitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryShopUnitSelectRoot;
     pub use super::IAccessoryShopUnitSelectRoot;

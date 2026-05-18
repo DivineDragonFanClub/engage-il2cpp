@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-depthaccess")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthAccess;
     pub use crate::system::object::IObject;

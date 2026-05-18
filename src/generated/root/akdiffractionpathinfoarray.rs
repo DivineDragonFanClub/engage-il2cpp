@@ -305,6 +305,7 @@ impl AkDiffractionPathInfoArray {
 }
 
 #[cfg(feature = "root-akdiffractionpathinfoarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDiffractionPathInfoArray;
     pub use super::IAkDiffractionPathInfoArray;

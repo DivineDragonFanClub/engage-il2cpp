@@ -130,6 +130,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-reflection-bindingflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BindingFlags;
     pub use crate::system::object::IObject;

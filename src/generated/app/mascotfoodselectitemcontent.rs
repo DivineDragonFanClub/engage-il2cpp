@@ -355,6 +355,7 @@ impl MascotFoodSelectItemContent {
 }
 
 #[cfg(feature = "app-mascotfoodselectitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFoodSelectItemContent;
     pub use super::IMascotFoodSelectItemContentMethods;

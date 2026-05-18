@@ -467,6 +467,7 @@ impl UnitActors {
 }
 
 #[cfg(feature = "app-unitactors")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitActors;
     pub use super::IUnitActorsMethods;

@@ -186,6 +186,7 @@ impl PickUpMenuItem {
 }
 
 #[cfg(feature = "root-pickupmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPickUpMenuItem;
     pub use super::IPickUpMenuItemMethods;

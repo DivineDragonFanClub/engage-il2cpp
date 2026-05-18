@@ -268,6 +268,7 @@ impl GameMessageClosed {
 }
 
 #[cfg(feature = "root-gamemessageclosed")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameMessageClosed;
     pub use super::IGameMessageClosed;

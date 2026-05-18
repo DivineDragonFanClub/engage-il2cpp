@@ -120,6 +120,7 @@ impl BattleAfterInspector {
 }
 
 #[cfg(feature = "app-battleafterinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleAfterInspector;
     pub use super::IBattleAfterInspector;

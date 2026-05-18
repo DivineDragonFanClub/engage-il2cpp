@@ -105,6 +105,7 @@ impl DebugPlayerLoopViewer {
 }
 
 #[cfg(feature = "app-debugplayerloopviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugPlayerLoopViewer;
     pub use super::IDebugPlayerLoopViewer;

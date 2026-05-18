@@ -2151,6 +2151,7 @@ impl RefineGodWeaponParamMenuItem {
 }
 
 #[cfg(feature = "app-refinegodweaponparammenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponParamMenuItem;
     pub use super::IRefineGodWeaponParamMenuItemMethods;

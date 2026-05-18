@@ -408,6 +408,7 @@ impl BattleRecordSetter {
 }
 
 #[cfg(feature = "app-battlerecordsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleRecordSetter;
     pub use super::IBattleRecordSetter;

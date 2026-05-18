@@ -284,6 +284,7 @@ impl AnimationPosePlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationposeplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPosePlayable;
     pub use crate::system::object::IObject;

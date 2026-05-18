@@ -123,6 +123,7 @@ impl TextureParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-textureparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextureParameter;
     pub use super::ITextureParameterMethods;

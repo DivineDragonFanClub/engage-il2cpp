@@ -3750,6 +3750,7 @@ impl Object_2 {
 }
 
 #[cfg(feature = "unity_engine-object_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObject_2;
     pub use super::IObject_2Methods;

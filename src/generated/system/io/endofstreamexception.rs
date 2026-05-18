@@ -178,6 +178,7 @@ impl EndOfStreamException {
 }
 
 #[cfg(feature = "system-io-endofstreamexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EndOfStreamException;
     pub use super::IEndOfStreamException;

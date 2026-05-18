@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblurquality")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MotionBlurQuality;
     pub use crate::system::object::IObject;

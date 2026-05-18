@@ -265,6 +265,7 @@ impl FreeFunctionAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-freefunctionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FreeFunctionAttribute;
     pub use super::IFreeFunctionAttribute;

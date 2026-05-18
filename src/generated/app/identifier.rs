@@ -1024,6 +1024,7 @@ impl Identifier {
 }
 
 #[cfg(feature = "app-identifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIdentifier;
     pub use super::IIdentifierMethods;

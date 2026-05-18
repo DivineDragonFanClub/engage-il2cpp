@@ -15,6 +15,11 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))]
+    #[::unity2::class(namespace = "App", name = "DisposData.Item")]
+    #[parent(crate::system::object::Object)]
+    pub struct DisposData_Item {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md"))]
     #[repr(C)]
     #[derive(
@@ -86,83 +91,6 @@ mod __types {
             Self { value: 256 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct DisposData_Directions {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for DisposData_Directions {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "DisposData.Directions";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for DisposData_Directions {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl DisposData_Directions {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn up() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn upper_right() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn lower_right() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn lower_left() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn upper_left() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))]
-    #[::unity2::class(namespace = "App", name = "DisposData.Item")]
-    #[parent(crate::system::object::Object)]
-    pub struct DisposData_Item {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Flags.md"))]
     #[repr(C)]
@@ -261,6 +189,88 @@ mod __types {
         pub item_count: i32,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "DisposData.FlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)]
+    pub struct DisposData_FlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct DisposData_Directions {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for DisposData_Directions {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "DisposData.Directions";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for DisposData_Directions {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl DisposData_Directions {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn up() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn upper_right() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn lower_right() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn lower_left() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn upper_left() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))]
+    #[::unity2::class(namespace = "App", name = "DisposData.AIFlagField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)]
+    pub struct DisposData_AIFlagField {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md"))]
     #[repr(C)]
     #[derive(
@@ -308,16 +318,6 @@ mod __types {
             Self { value: -1 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "DisposData.FlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)]
-    pub struct DisposData_FlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))]
-    #[::unity2::class(namespace = "App", name = "DisposData.AIFlagField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)]
-    pub struct DisposData_AIFlagField {}
 }
 
 #[cfg(feature = "app-disposdata-types")]
@@ -8134,6 +8134,7 @@ impl DisposData_AIFlagField {
 }
 
 #[cfg(feature = "app-disposdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisposData;
     pub use super::DisposData_AIFlagField;

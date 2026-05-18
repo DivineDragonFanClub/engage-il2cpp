@@ -2803,6 +2803,7 @@ impl MapBattleInfoParamSetter {
 }
 
 #[cfg(feature = "app-mapbattleinfoparamsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleInfoParamSetter;
     pub use super::IMapBattleInfoParamSetterMethods;

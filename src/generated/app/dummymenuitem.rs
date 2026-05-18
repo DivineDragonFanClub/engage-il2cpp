@@ -267,6 +267,7 @@ impl DummyMenuItem {
 }
 
 #[cfg(feature = "app-dummymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DummyMenuItem;
     pub use super::IDummyMenuItem;

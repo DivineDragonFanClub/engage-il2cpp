@@ -180,6 +180,7 @@ impl OnDemandRendering {
 }
 
 #[cfg(feature = "unity_engine-rendering-ondemandrendering")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IOnDemandRendering;
     pub use super::OnDemandRendering;

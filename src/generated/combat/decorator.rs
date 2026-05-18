@@ -1453,6 +1453,7 @@ impl Decorator {
 }
 
 #[cfg(feature = "combat-decorator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Decorator;
     pub use super::IDecorator;

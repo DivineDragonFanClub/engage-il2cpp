@@ -731,6 +731,7 @@ impl BattleDestory {
 }
 
 #[cfg(feature = "app-battledestory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleDestory;
     pub use super::IBattleDestory;

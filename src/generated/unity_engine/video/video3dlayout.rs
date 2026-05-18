@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-video-video3dlayout")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Video3DLayout;
     pub use crate::system::object::IObject;

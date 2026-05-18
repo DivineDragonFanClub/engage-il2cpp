@@ -6052,6 +6052,7 @@ impl GiftData {
 }
 
 #[cfg(feature = "app-giftdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftData;
     pub use super::IGiftData;

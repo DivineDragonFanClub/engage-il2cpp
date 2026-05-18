@@ -1578,6 +1578,7 @@ impl RenderManager {
 }
 
 #[cfg(feature = "app-rendermanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderManager;
     pub use super::IRenderManagerMethods;

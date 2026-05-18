@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity> ActionInvoke2_1<T0> {
 }
 
 #[cfg(feature = "combat-actioninvoke2_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionInvoke2_1;
     pub use super::IActionInvoke2_1;

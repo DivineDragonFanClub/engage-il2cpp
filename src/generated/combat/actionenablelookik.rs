@@ -212,6 +212,7 @@ impl ActionEnableLookIK {
 }
 
 #[cfg(feature = "combat-actionenablelookik")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionEnableLookIK;
     pub use super::IActionEnableLookIK;

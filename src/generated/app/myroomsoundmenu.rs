@@ -1206,6 +1206,7 @@ impl MyRoomSoundMenu {
 }
 
 #[cfg(feature = "app-myroomsoundmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomSoundMenu;
     pub use super::IMyRoomSoundMenuMethods;

@@ -272,6 +272,7 @@ impl ScaleCommand {
 }
 
 #[cfg(feature = "app-scalecommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScaleCommand;
     pub use super::IScaleCommandMethods;

@@ -60,6 +60,7 @@ impl<T0: ::unity2::ClassIdentity> BaseArrayItem_1<T0> {
 }
 
 #[cfg(feature = "app-struct_object-basearrayitem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseArrayItem_1;
     pub use super::IBaseArrayItem_1;

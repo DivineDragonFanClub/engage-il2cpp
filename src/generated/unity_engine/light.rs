@@ -5774,6 +5774,7 @@ impl Light {
 }
 
 #[cfg(feature = "unity_engine-light")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILight;
     pub use super::ILightMethods;

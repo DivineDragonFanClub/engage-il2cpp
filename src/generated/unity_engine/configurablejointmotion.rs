@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-configurablejointmotion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigurableJointMotion;
     pub use crate::system::object::IObject;

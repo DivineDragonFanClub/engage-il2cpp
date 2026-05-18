@@ -1762,6 +1762,7 @@ impl Texture3D {
 }
 
 #[cfg(feature = "unity_engine-texture3d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITexture3D;
     pub use super::ITexture3DMethods;

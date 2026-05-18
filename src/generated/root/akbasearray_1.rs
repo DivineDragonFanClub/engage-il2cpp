@@ -103,6 +103,7 @@ impl<T0: ::unity2::ClassIdentity> AkBaseArray_1<T0> {
 }
 
 #[cfg(feature = "root-akbasearray_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBaseArray_1;
     pub use super::IAkBaseArray_1;

@@ -1959,6 +1959,7 @@ impl GrassManager {
 }
 
 #[cfg(feature = "app-grassmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrassManager;
     pub use super::GrassManager_MixType;

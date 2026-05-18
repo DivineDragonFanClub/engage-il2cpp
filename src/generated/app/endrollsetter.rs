@@ -1175,6 +1175,7 @@ impl EndRollSetter {
 }
 
 #[cfg(feature = "app-endrollsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EndRollSetter;
     pub use super::IEndRollSetter;

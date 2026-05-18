@@ -152,6 +152,7 @@ impl InteropRegistrationPolicy {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInteropRegistrationPolicy;
     pub use super::InteropRegistrationPolicy;

@@ -242,6 +242,7 @@ impl HubMiniMapLayer {
 }
 
 #[cfg(feature = "app-hubminimaplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMiniMapLayer;
     pub use super::IHubMiniMapLayer;

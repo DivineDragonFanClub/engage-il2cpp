@@ -232,6 +232,7 @@ impl MyRoomPhaseClip {
 }
 
 #[cfg(feature = "app-myroomphaseclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomPhaseClip;
     pub use super::IMyRoomPhaseClipMethods;

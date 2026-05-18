@@ -679,6 +679,7 @@ impl RefineShopExchangeRoot {
 }
 
 #[cfg(feature = "app-refineshopexchangeroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopExchangeRoot;
     pub use super::IRefineShopExchangeRootMethods;

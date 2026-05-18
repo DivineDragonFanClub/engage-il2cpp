@@ -846,6 +846,7 @@ impl PrefetchedSignalStore {
 }
 
 #[cfg(feature = "combat-prefetchedsignalstore")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrefetchedSignalStore;
     pub use super::IPrefetchedSignalStoreMethods;

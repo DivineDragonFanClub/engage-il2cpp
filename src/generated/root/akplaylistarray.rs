@@ -2112,6 +2112,7 @@ impl AkPlaylistArray {
 }
 
 #[cfg(feature = "root-akplaylistarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkPlaylistArray;
     pub use super::IAkPlaylistArray;

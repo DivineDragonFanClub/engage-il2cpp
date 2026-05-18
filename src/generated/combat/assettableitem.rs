@@ -113,6 +113,7 @@ impl AssetTableItem {
 }
 
 #[cfg(feature = "combat-assettableitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetTableItem;
     pub use super::IAssetTableItem;

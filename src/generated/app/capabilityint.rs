@@ -372,6 +372,7 @@ impl CapabilityInt {
 }
 
 #[cfg(feature = "app-capabilityint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilityInt;
     pub use super::ICapabilityInt;

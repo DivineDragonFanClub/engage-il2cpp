@@ -430,6 +430,7 @@ impl EffectCatalog {
 }
 
 #[cfg(feature = "combat-effectcatalog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectCatalog;
     pub use super::IEffectCatalog;

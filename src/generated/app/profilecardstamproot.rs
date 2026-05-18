@@ -2565,6 +2565,7 @@ impl ProfileCardStampRoot {
 }
 
 #[cfg(feature = "app-profilecardstamproot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardStampRoot;
     pub use super::IProfileCardStampRootMethods;

@@ -132,6 +132,7 @@ impl Profiler {
 }
 
 #[cfg(feature = "unity_engine-profiling-profiler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfiler;
     pub use super::Profiler;

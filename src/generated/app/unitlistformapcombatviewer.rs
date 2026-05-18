@@ -523,6 +523,7 @@ impl UnitListForMapCombatViewer {
 }
 
 #[cfg(feature = "app-unitlistformapcombatviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitListForMapCombatViewer;
     pub use super::UnitListForMapCombatViewer;

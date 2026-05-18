@@ -94,6 +94,7 @@ pub trait IStrongNameKeyPairMethods: IStrongNameKeyPair {
 impl<__T: IStrongNameKeyPair> IStrongNameKeyPairMethods for __T {}
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStrongNameKeyPair;
     pub use super::IStrongNameKeyPairMethods;

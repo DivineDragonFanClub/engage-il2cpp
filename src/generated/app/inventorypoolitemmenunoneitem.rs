@@ -463,6 +463,7 @@ impl InventoryPoolItemMenuNoneItem {
 }
 
 #[cfg(feature = "app-inventorypoolitemmenunoneitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInventoryPoolItemMenuNoneItem;
     pub use super::IInventoryPoolItemMenuNoneItemMethods;

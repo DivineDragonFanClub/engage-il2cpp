@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-namespacedoc_9")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INamespaceDoc_9;
     pub use super::NamespaceDoc_9;

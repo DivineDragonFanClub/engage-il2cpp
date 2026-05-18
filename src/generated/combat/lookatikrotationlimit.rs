@@ -270,6 +270,7 @@ impl LookAtIKRotationLimit {
 }
 
 #[cfg(feature = "combat-lookatikrotationlimit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILookAtIKRotationLimit;
     pub use super::ILookAtIKRotationLimitMethods;

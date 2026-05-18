@@ -429,6 +429,7 @@ impl ComputeBufferPool {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeBufferPool;
     pub use super::IComputeBufferPool;

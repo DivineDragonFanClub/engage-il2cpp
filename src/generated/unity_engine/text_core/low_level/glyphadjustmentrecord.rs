@@ -156,6 +156,7 @@ impl GlyphAdjustmentRecord {
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphadjustmentrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphAdjustmentRecord;
     pub use crate::system::object::IObject;

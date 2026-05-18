@@ -1294,6 +1294,7 @@ impl AkOutputSettings {
 }
 
 #[cfg(feature = "root-akoutputsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkOutputSettings;
     pub use super::IAkOutputSettings;

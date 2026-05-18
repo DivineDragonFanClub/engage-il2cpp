@@ -99,6 +99,7 @@ impl ProcDescUser {
 }
 
 #[cfg(feature = "app-procdescuser")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescUser;
     pub use super::IProcDescUserMethods;

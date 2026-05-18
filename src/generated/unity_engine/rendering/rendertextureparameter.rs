@@ -126,6 +126,7 @@ impl RenderTextureParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-rendertextureparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderTextureParameter;
     pub use super::IRenderTextureParameterMethods;

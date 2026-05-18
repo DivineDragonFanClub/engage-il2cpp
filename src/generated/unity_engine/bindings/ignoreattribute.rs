@@ -159,6 +159,7 @@ impl IgnoreAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIgnoreAttribute;
     pub use super::IIgnoreAttributeMethods;

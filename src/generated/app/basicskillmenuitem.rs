@@ -439,6 +439,7 @@ impl BasicSkillMenuItem {
 }
 
 #[cfg(feature = "app-basicskillmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicSkillMenuItem;
     pub use super::IBasicSkillMenuItem;

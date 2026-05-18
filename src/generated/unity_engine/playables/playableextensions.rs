@@ -1303,6 +1303,7 @@ impl PlayableExtensions {
 }
 
 #[cfg(feature = "unity_engine-playables-playableextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayableExtensions;
     pub use super::PlayableExtensions;

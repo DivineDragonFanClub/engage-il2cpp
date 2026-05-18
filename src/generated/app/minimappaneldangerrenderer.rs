@@ -365,6 +365,7 @@ impl MiniMapPanelDangerRenderer {
 }
 
 #[cfg(feature = "app-minimappaneldangerrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelDangerRenderer;
     pub use super::IMiniMapPanelDangerRendererMethods;

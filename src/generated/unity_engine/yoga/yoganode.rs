@@ -190,6 +190,7 @@ impl YogaNode {
 }
 
 #[cfg(feature = "unity_engine-yoga-yoganode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IYogaNode;
     pub use super::YogaNode;

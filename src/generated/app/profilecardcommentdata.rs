@@ -988,6 +988,7 @@ impl ProfileCardCommentData {
 }
 
 #[cfg(feature = "app-profilecardcommentdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardCommentData;
     pub use super::IProfileCardCommentDataMethods;

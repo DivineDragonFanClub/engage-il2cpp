@@ -1010,6 +1010,7 @@ impl SharedCanvas {
 }
 
 #[cfg(feature = "combat-sharedcanvas")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISharedCanvas;
     pub use super::ISharedCanvasMethods;

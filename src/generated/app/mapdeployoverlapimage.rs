@@ -103,6 +103,7 @@ impl MapDeployOverlapImage {
 }
 
 #[cfg(feature = "app-mapdeployoverlapimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployOverlapImage;
     pub use super::IMapDeployOverlapImageMethods;

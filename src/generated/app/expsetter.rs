@@ -727,6 +727,7 @@ impl ExpSetter_ExpWindow {
 }
 
 #[cfg(feature = "app-expsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExpSetter;
     pub use super::ExpSetter_ExpWindow;

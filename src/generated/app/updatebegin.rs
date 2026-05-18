@@ -102,6 +102,7 @@ impl UpdateBegin {
 }
 
 #[cfg(feature = "app-updatebegin")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUpdateBegin;
     pub use super::IUpdateBeginMethods;

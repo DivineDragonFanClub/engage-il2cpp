@@ -96,6 +96,7 @@ pub trait IIPointerExitHandlerMethods: IIPointerExitHandler {
 impl<__T: IIPointerExitHandler> IIPointerExitHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPointerExitHandler;
     pub use super::IIPointerExitHandlerMethods;

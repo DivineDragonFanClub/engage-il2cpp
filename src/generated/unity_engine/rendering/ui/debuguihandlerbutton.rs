@@ -360,6 +360,7 @@ impl DebugUIHandlerButton {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbutton")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerButton;
     pub use super::IDebugUIHandlerButton;

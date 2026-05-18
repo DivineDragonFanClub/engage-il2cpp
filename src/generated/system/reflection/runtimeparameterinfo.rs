@@ -102,6 +102,7 @@ impl RuntimeParameterInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimeparameterinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeParameterInfo;
     pub use super::IRuntimeParameterInfoMethods;

@@ -100,6 +100,7 @@ impl ExcludeFromDocsAttribute {
 }
 
 #[cfg(feature = "unity_engine-internal-excludefromdocsattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExcludeFromDocsAttribute;
     pub use super::IExcludeFromDocsAttribute;

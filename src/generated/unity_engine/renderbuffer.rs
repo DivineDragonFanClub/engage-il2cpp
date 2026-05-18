@@ -42,6 +42,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-renderbuffer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderBuffer;
     pub use crate::system::object::IObject;

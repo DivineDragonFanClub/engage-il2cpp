@@ -176,6 +176,7 @@ impl HumanTrait {
 }
 
 #[cfg(feature = "unity_engine-humantrait")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HumanTrait;
     pub use super::IHumanTrait;

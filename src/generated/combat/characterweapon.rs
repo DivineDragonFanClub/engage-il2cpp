@@ -519,6 +519,7 @@ impl CharacterWeapon {
 }
 
 #[cfg(feature = "combat-characterweapon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterWeapon;
     pub use super::ICharacterWeapon;

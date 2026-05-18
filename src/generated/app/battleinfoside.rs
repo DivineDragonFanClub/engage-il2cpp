@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
-    pub struct BattleInfoSide_BitFieldStatus {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md"))]
     #[repr(C)]
     #[derive(
@@ -188,6 +183,11 @@ mod __types {
             Self { value: 12 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
+    pub struct BattleInfoSide_BitFieldStatus {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide.md"))]
     #[::unity2::class(namespace = "App", name = "BattleInfoSide")]
@@ -8500,6 +8500,7 @@ impl BattleInfoSide {
 }
 
 #[cfg(feature = "app-battleinfoside")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleInfoSide;
     pub use super::BattleInfoSide_BitFieldStatus;

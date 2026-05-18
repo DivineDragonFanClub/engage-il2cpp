@@ -704,6 +704,7 @@ impl AsyncOperation {
 }
 
 #[cfg(feature = "unity_engine-asyncoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AsyncOperation;
     pub use super::IAsyncOperation;

@@ -175,6 +175,7 @@ impl MapNavigationStatusMenuItemContent {
 }
 
 #[cfg(feature = "root-mapnavigationstatusmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationStatusMenuItemContent;
     pub use super::IMapNavigationStatusMenuItemContentMethods;

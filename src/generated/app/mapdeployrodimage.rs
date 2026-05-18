@@ -103,6 +103,7 @@ impl MapDeployRodImage {
 }
 
 #[cfg(feature = "app-mapdeployrodimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployRodImage;
     pub use super::IMapDeployRodImageMethods;

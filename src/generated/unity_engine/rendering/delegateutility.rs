@@ -93,6 +93,7 @@ impl DelegateUtility {
 }
 
 #[cfg(feature = "unity_engine-rendering-delegateutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DelegateUtility;
     pub use super::IDelegateUtility;

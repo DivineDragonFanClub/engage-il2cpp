@@ -747,6 +747,7 @@ impl GodUnitMenuItem {
 }
 
 #[cfg(feature = "app-godunitmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodUnitMenuItem;
     pub use super::IGodUnitMenuItem;

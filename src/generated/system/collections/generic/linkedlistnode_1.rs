@@ -102,6 +102,7 @@ impl<T0: ::unity2::ClassIdentity> LinkedListNode_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-linkedlistnode_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILinkedListNode_1;
     pub use super::ILinkedListNode_1Methods;

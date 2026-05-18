@@ -164,6 +164,7 @@ impl LightProbeGroup {
 }
 
 #[cfg(feature = "unity_engine-lightprobegroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightProbeGroup;
     pub use super::ILightProbeGroupMethods;

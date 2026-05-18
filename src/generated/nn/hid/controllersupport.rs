@@ -115,6 +115,7 @@ impl ControllerSupport {
 }
 
 #[cfg(feature = "nn-hid-controllersupport")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerSupport;
     pub use super::IControllerSupport;

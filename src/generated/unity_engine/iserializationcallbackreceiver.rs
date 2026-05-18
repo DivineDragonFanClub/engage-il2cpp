@@ -145,6 +145,7 @@ pub trait IISerializationCallbackReceiverMethods: IISerializationCallbackReceive
 impl<__T: IISerializationCallbackReceiver> IISerializationCallbackReceiverMethods for __T {}
 
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IISerializationCallbackReceiver;
     pub use super::IISerializationCallbackReceiverMethods;

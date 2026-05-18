@@ -1476,6 +1476,7 @@ impl UndisposableStream {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUndisposableStream;
     pub use super::IUndisposableStreamMethods;

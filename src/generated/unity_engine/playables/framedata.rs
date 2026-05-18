@@ -626,6 +626,7 @@ impl FrameData {
 }
 
 #[cfg(feature = "unity_engine-playables-framedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FrameData;
     pub use super::FrameData_EvaluationType;

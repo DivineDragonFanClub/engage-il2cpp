@@ -9187,6 +9187,7 @@ impl CommandBuffer {
 }
 
 #[cfg(feature = "unity_engine-rendering-commandbuffer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommandBuffer;
     pub use super::ICommandBuffer;

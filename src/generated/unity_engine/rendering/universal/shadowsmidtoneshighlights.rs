@@ -239,6 +239,7 @@ impl ShadowsMidtonesHighlights {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowsmidtoneshighlights")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowsMidtonesHighlights;
     pub use super::IShadowsMidtonesHighlightsMethods;

@@ -929,6 +929,7 @@ impl DepthNormalOnlyPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-depthnormalonlypass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthNormalOnlyPass;
     pub use super::IDepthNormalOnlyPass;

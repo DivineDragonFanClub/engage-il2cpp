@@ -291,6 +291,7 @@ impl TerrainExporter {
 }
 
 #[cfg(feature = "app-terrainexporter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainExporter;
     pub use super::ITerrainExporterMethods;

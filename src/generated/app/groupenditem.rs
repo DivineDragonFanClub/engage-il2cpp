@@ -209,6 +209,7 @@ impl GroupEndItem {
 }
 
 #[cfg(feature = "app-groupenditem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroupEndItem;
     pub use super::IGroupEndItem;

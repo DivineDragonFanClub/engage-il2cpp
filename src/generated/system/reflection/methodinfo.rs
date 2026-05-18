@@ -836,6 +836,7 @@ impl MethodInfo {
 }
 
 #[cfg(feature = "system-reflection-methodinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMethodInfo;
     pub use super::IMethodInfoMethods;

@@ -103,6 +103,7 @@ impl SignalToWhom {
 }
 
 #[cfg(feature = "combat-signaltowhom")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalToWhom;
     pub use super::SignalToWhom;

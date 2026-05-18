@@ -526,6 +526,7 @@ impl TrailVertexSupplier {
 }
 
 #[cfg(feature = "combat-trailvertexsupplier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrailVertexSupplier;
     pub use super::ITrailVertexSupplierMethods;

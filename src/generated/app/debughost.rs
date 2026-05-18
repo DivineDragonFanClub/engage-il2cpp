@@ -755,6 +755,7 @@ impl DebugHost {
 }
 
 #[cfg(feature = "app-debughost")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugHost;
     pub use super::IDebugHost;

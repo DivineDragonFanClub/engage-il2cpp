@@ -2094,6 +2094,7 @@ impl InventoryUnitItemMenu {
 }
 
 #[cfg(feature = "app-inventoryunititemmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInventoryUnitItemMenu;
     pub use super::IInventoryUnitItemMenuMethods;

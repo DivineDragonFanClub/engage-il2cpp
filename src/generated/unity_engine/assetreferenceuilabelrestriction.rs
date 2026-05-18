@@ -313,6 +313,7 @@ impl AssetReferenceUILabelRestriction {
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetReferenceUILabelRestriction;
     pub use super::IAssetReferenceUILabelRestriction;

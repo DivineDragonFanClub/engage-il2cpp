@@ -2088,6 +2088,7 @@ impl BitField64 {
 }
 
 #[cfg(feature = "app-bitfield64")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitField64;
     pub use super::IBitField64;

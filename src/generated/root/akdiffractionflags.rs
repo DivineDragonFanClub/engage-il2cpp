@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akdiffractionflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDiffractionFlags;
     pub use crate::system::object::IObject;

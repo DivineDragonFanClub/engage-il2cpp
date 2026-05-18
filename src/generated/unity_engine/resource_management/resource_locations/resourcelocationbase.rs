@@ -900,6 +900,7 @@ impl ResourceLocationBase {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-resourcelocationbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceLocationBase;
     pub use super::IResourceLocationBaseMethods;

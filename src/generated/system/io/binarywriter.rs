@@ -1388,6 +1388,7 @@ impl BinaryWriter {
 }
 
 #[cfg(feature = "system-io-binarywriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinaryWriter;
     pub use super::IBinaryWriter;

@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-casthelper_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CastHelper_1;
     pub use crate::system::object::IObject;

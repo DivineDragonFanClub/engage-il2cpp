@@ -106,6 +106,7 @@ impl AkSpatialAudioDebugDraw {
 }
 
 #[cfg(feature = "root-akspatialaudiodebugdraw")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSpatialAudioDebugDraw;
     pub use super::IAkSpatialAudioDebugDraw;

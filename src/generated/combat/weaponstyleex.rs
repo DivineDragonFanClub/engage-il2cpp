@@ -201,6 +201,7 @@ impl WeaponStyleEx {
 }
 
 #[cfg(feature = "combat-weaponstyleex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponStyleEx;
     pub use super::WeaponStyleEx;

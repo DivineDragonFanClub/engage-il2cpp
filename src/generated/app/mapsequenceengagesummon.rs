@@ -1202,6 +1202,7 @@ impl MapSequenceEngageSummon {
 }
 
 #[cfg(feature = "app-mapsequenceengagesummon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceEngageSummon;
     pub use super::IMapSequenceEngageSummonMethods;

@@ -175,6 +175,7 @@ pub trait IICustomAttributeProviderMethods: IICustomAttributeProvider {
 impl<__T: IICustomAttributeProvider> IICustomAttributeProviderMethods for __T {}
 
 #[cfg(feature = "system-reflection-icustomattributeprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICustomAttributeProvider;
     pub use super::IICustomAttributeProvider;

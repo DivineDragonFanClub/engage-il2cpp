@@ -162,6 +162,7 @@ impl EventMarker {
 }
 
 #[cfg(feature = "app-eventmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventMarker;
     pub use super::IEventMarker;

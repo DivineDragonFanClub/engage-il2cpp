@@ -580,6 +580,7 @@ pub trait IDynamicMethodMethods: IDynamicMethod {
 impl<__T: IDynamicMethod> IDynamicMethodMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-dynamicmethod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicMethod;
     pub use super::IDynamicMethod;

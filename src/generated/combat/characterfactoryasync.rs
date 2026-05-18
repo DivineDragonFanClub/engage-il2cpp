@@ -236,6 +236,7 @@ impl CharacterFactoryAsync {
 }
 
 #[cfg(feature = "combat-characterfactoryasync")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterFactoryAsync;
     pub use super::ICharacterFactoryAsync;

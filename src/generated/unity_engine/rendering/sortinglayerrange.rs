@@ -338,6 +338,7 @@ impl SortingLayerRange {
 }
 
 #[cfg(feature = "unity_engine-rendering-sortinglayerrange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SortingLayerRange;
     pub use crate::system::object::IObject;

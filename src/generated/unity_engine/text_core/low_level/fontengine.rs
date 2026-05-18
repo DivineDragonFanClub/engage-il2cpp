@@ -1580,6 +1580,7 @@ impl FontEngine {
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontEngine;
     pub use super::IFontEngine;

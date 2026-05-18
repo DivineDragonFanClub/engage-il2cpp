@@ -91,6 +91,7 @@ pub trait IIGeneratorUserDataDescriptorMethods: IIGeneratorUserDataDescriptor {
 impl<__T: IIGeneratorUserDataDescriptor> IIGeneratorUserDataDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IGeneratorUserDataDescriptor;
     pub use super::IIGeneratorUserDataDescriptor;

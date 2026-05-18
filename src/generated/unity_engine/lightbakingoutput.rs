@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightbakingoutput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightBakingOutput;
     pub use crate::system::object::IObject;

@@ -161,6 +161,7 @@ impl GmapMenuManager {
 }
 
 #[cfg(feature = "app-gmapmenumanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapMenuManager;
     pub use super::IGmapMenuManager;

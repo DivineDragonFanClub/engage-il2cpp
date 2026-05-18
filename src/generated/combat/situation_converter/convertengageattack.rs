@@ -271,6 +271,7 @@ impl ConvertEngageAttack {
 }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertEngageAttack;
     pub use super::IConvertEngageAttack;

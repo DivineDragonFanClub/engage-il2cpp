@@ -491,6 +491,7 @@ impl UnknownResourceProviderException {
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnknownResourceProviderException;
     pub use super::IUnknownResourceProviderExceptionMethods;

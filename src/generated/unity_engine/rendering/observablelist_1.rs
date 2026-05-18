@@ -206,6 +206,7 @@ impl<T0: ::unity2::ClassIdentity> ObservableList_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-observablelist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObservableList_1;
     pub use super::IObservableList_1Methods;

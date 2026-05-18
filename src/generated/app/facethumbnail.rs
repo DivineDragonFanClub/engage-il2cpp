@@ -716,6 +716,7 @@ impl FaceThumbnail {
 }
 
 #[cfg(feature = "app-facethumbnail")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FaceThumbnail;
     pub use super::IFaceThumbnail;

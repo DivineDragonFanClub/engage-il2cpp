@@ -224,6 +224,7 @@ impl CaseInsensitiveHashCodeProvider {
 }
 
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CaseInsensitiveHashCodeProvider;
     pub use super::ICaseInsensitiveHashCodeProvider;

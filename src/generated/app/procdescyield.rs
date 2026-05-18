@@ -165,6 +165,7 @@ impl ProcDescYield {
 }
 
 #[cfg(feature = "app-procdescyield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescYield;
     pub use super::IProcDescYieldMethods;

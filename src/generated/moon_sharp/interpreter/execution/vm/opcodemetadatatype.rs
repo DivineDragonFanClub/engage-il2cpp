@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-opcodemetadatatype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::OpCodeMetadataType;
     pub use crate::system::object::IObject;

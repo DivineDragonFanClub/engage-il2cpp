@@ -499,6 +499,7 @@ impl FileNotFoundException {
 }
 
 #[cfg(feature = "system-io-filenotfoundexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileNotFoundException;
     pub use super::IFileNotFoundException;

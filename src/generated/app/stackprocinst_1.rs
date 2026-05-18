@@ -70,6 +70,7 @@ impl<T0: ::unity2::ClassIdentity> StackProcInst_1<T0> {
 }
 
 #[cfg(feature = "app-stackprocinst_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStackProcInst_1;
     pub use super::IStackProcInst_1Methods;

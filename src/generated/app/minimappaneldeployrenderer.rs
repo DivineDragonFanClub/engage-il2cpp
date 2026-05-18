@@ -359,6 +359,7 @@ impl MiniMapPanelDeployRenderer {
 }
 
 #[cfg(feature = "app-minimappaneldeployrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelDeployRenderer;
     pub use super::IMiniMapPanelDeployRendererMethods;

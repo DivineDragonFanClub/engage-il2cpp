@@ -84,6 +84,7 @@ impl InstructionFieldUsage_Extensions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstructionFieldUsage_Extensions;
     pub use super::InstructionFieldUsage_Extensions;

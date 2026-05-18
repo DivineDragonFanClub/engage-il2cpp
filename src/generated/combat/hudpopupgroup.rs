@@ -916,6 +916,7 @@ impl HUDPopupGroup {
 }
 
 #[cfg(feature = "combat-hudpopupgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HUDPopupGroup;
     pub use super::IHUDPopupGroup;

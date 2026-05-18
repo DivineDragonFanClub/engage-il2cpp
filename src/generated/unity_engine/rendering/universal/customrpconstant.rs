@@ -83,6 +83,7 @@ impl CustomRPConstant {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-customrpconstant")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomRPConstant;
     pub use super::ICustomRPConstant;

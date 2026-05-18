@@ -703,6 +703,7 @@ impl GmapWholeMapController {
 }
 
 #[cfg(feature = "app-gmapwholemapcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapWholeMapController;
     pub use super::IGmapWholeMapController;

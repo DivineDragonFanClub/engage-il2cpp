@@ -993,6 +993,7 @@ impl UnitEdit {
 }
 
 #[cfg(feature = "app-unitedit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitEdit;
     pub use super::IUnitEditMethods;

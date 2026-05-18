@@ -102,6 +102,7 @@ impl ColliderDrawer {
 }
 
 #[cfg(feature = "app-colliderdrawer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColliderDrawer;
     pub use super::IColliderDrawer;

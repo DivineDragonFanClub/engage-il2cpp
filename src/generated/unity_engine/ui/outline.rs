@@ -172,6 +172,7 @@ impl Outline {
 }
 
 #[cfg(feature = "unity_engine-ui-outline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IOutline;
     pub use super::IOutlineMethods;

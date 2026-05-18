@@ -9080,6 +9080,7 @@ impl Shader {
 }
 
 #[cfg(feature = "unity_engine-shader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShader;
     pub use super::IShaderMethods;

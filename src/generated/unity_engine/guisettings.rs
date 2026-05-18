@@ -109,6 +109,7 @@ impl GUISettings {
 }
 
 #[cfg(feature = "unity_engine-guisettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUISettings;
     pub use super::IGUISettings;

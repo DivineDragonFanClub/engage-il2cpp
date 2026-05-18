@@ -379,6 +379,7 @@ impl ShopSellEmptyMenuItem {
 }
 
 #[cfg(feature = "app-shopsellemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopSellEmptyMenuItem;
     pub use super::IShopSellEmptyMenuItemMethods;

@@ -452,6 +452,7 @@ impl GodFacePicture {
 }
 
 #[cfg(feature = "app-godfacepicture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodFacePicture;
     pub use super::IGodFacePicture;

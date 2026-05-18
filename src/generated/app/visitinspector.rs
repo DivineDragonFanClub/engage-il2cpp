@@ -330,6 +330,7 @@ impl VisitInspector {
 }
 
 #[cfg(feature = "app-visitinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisitInspector;
     pub use super::IVisitInspectorMethods;

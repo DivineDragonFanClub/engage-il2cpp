@@ -113,6 +113,7 @@ impl SerializedTypeRestrictionAttribute {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-serializedtyperestrictionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISerializedTypeRestrictionAttribute;
     pub use super::ISerializedTypeRestrictionAttributeMethods;

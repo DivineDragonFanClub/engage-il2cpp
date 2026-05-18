@@ -968,6 +968,7 @@ impl MiniMapTerrainRenderer {
 }
 
 #[cfg(feature = "app-minimapterrainrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapTerrainRenderer;
     pub use super::IMiniMapTerrainRendererMethods;

@@ -249,6 +249,7 @@ impl BoundingBoxDrawer {
 }
 
 #[cfg(feature = "app-boundingboxdrawer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoundingBoxDrawer;
     pub use super::IBoundingBoxDrawer;

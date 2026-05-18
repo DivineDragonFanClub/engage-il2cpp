@@ -156,6 +156,7 @@ impl MapBounding {
 }
 
 #[cfg(feature = "app-mapbounding")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBounding;
     pub use super::IMapBoundingMethods;

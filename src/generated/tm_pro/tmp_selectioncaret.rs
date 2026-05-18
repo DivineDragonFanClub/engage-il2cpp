@@ -237,6 +237,7 @@ impl TMP_SelectionCaret {
 }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_SelectionCaret;
     pub use super::ITMP_SelectionCaretMethods;

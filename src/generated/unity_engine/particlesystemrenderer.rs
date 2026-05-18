@@ -3904,6 +3904,7 @@ impl ParticleSystemRenderer {
 }
 
 #[cfg(feature = "unity_engine-particlesystemrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParticleSystemRenderer;
     pub use super::IParticleSystemRendererMethods;

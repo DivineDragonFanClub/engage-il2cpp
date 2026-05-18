@@ -216,6 +216,7 @@ impl MapPanelDebug {
 }
 
 #[cfg(feature = "app-mappaneldebug")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelDebug;
     pub use super::IMapPanelDebugMethods;

@@ -1711,6 +1711,7 @@ impl CameraControllerTransition {
 }
 
 #[cfg(feature = "combat-cameracontrollertransition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerTransition;
     pub use super::ICameraControllerTransition;

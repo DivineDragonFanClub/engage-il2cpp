@@ -114,6 +114,7 @@ impl HeaderAttribute {
 }
 
 #[cfg(feature = "unity_engine-headerattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HeaderAttribute;
     pub use super::IHeaderAttribute;

@@ -690,6 +690,7 @@ impl HubAreaFog {
 }
 
 #[cfg(feature = "app-hubareafog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAreaFog;
     pub use super::IHubAreaFog;

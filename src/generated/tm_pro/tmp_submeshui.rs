@@ -2765,6 +2765,7 @@ impl TMP_SubMeshUI {
 }
 
 #[cfg(feature = "tm_pro-tmp_submeshui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_SubMeshUI;
     pub use super::ITMP_SubMeshUIMethods;

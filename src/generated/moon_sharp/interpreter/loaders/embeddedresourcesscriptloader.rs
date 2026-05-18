@@ -332,6 +332,7 @@ impl EmbeddedResourcesScriptLoader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-embeddedresourcesscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EmbeddedResourcesScriptLoader;
     pub use super::IEmbeddedResourcesScriptLoader;

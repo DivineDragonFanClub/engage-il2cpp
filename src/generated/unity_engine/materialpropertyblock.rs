@@ -1291,6 +1291,7 @@ impl MaterialPropertyBlock {
 }
 
 #[cfg(feature = "unity_engine-materialpropertyblock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialPropertyBlock;
     pub use super::IMaterialPropertyBlockMethods;

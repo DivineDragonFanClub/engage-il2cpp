@@ -11,21 +11,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
-    #[parent(crate::system::object::Object)]
-    pub struct NetworkInterfaceWrapper {
-# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Switch",
-        name = "NetworkInterfaceWrapper.NetworkConnectedHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
     #[repr(C)]
     #[derive(
@@ -73,6 +58,21 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
+    #[parent(crate::system::object::Object)]
+    pub struct NetworkInterfaceWrapper {
+# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Switch",
+        name = "NetworkInterfaceWrapper.NetworkConnectedHandler"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct NetworkInterfaceWrapper_NetworkConnectedHandler {}
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
@@ -1054,6 +1054,7 @@ impl NetworkInterfaceWrapper_NetworkConnectedHandler {
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INetworkInterfaceWrapper;
     pub use super::INetworkInterfaceWrapper_NetworkConnectedHandler;

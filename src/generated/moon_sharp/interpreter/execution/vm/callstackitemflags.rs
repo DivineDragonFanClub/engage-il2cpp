@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitemflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CallStackItemFlags;
     pub use crate::system::object::IObject;

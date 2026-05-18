@@ -96,6 +96,7 @@ impl SerializeField {
 }
 
 #[cfg(feature = "unity_engine-serializefield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISerializeField;
     pub use super::ISerializeFieldMethods;

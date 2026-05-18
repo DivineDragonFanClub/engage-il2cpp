@@ -177,6 +177,7 @@ impl GlyphValueRecord_Legacy {
 }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphValueRecord_Legacy;
     pub use crate::system::object::IObject;

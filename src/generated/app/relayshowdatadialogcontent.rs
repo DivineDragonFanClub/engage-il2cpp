@@ -398,6 +398,7 @@ impl RelayShowDataDialogContent {
 }
 
 #[cfg(feature = "app-relayshowdatadialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayShowDataDialogContent;
     pub use super::IRelayShowDataDialogContentMethods;

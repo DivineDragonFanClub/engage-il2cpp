@@ -220,6 +220,7 @@ impl TypeName {
 }
 
 #[cfg(feature = "app-typename")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeName;
     pub use super::TypeName;

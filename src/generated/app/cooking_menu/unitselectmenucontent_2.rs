@@ -482,6 +482,7 @@ impl UnitSelectMenuContent_2 {
 }
 
 #[cfg(feature = "app-cooking_menu-unitselectmenucontent_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectMenuContent_2;
     pub use super::IUnitSelectMenuContent_2Methods;

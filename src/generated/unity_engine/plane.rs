@@ -339,6 +339,7 @@ impl Plane {
 }
 
 #[cfg(feature = "unity_engine-plane")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Plane;
     pub use crate::system::object::IObject;

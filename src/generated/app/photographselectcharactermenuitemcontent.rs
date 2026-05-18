@@ -360,6 +360,7 @@ impl PhotographSelectCharacterMenuItemContent {
 }
 
 #[cfg(feature = "app-photographselectcharactermenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectCharacterMenuItemContent;
     pub use super::IPhotographSelectCharacterMenuItemContentMethods;

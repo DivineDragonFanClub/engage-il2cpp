@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akchannelconfigtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkChannelConfigType;
     pub use crate::system::object::IObject;

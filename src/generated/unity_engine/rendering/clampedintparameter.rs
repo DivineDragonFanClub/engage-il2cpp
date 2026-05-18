@@ -253,6 +253,7 @@ impl ClampedIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-clampedintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClampedIntParameter;
     pub use super::IClampedIntParameter;

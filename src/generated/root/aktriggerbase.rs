@@ -330,6 +330,7 @@ impl AkTriggerBase_Trigger {
 }
 
 #[cfg(feature = "root-aktriggerbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerBase;
     pub use super::AkTriggerBase_Trigger;

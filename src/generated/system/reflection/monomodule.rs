@@ -465,6 +465,7 @@ impl MonoModule {
 }
 
 #[cfg(feature = "system-reflection-monomodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoModule;
     pub use super::IMonoModuleMethods;

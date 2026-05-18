@@ -102,6 +102,7 @@ impl TerrainEditor {
 }
 
 #[cfg(feature = "app-terraineditor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainEditor;
     pub use super::ITerrainEditorMethods;

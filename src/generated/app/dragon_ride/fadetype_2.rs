@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-dragon_ride-fadetype_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FadeType_2;
     pub use crate::system::object::IObject;

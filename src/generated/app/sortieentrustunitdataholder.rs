@@ -370,6 +370,7 @@ impl SortieEntrustUnitDataHolder {
 }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieEntrustUnitDataHolder;
     pub use super::ISortieEntrustUnitDataHolderMethods;

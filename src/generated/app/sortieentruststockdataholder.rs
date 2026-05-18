@@ -237,6 +237,7 @@ impl SortieEntrustStockDataHolder {
 }
 
 #[cfg(feature = "app-sortieentruststockdataholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieEntrustStockDataHolder;
     pub use super::ISortieEntrustStockDataHolderMethods;

@@ -907,6 +907,7 @@ impl DebugShapes {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugshapes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugShapes;
     pub use super::IDebugShapes;

@@ -906,6 +906,7 @@ impl TradeMenuContent {
 }
 
 #[cfg(feature = "app-trademenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITradeMenuContent;
     pub use super::ITradeMenuContentMethods;

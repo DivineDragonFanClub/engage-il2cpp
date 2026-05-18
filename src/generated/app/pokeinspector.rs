@@ -1469,6 +1469,7 @@ impl PokeInspector {
 }
 
 #[cfg(feature = "app-pokeinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPokeInspector;
     pub use super::IPokeInspectorMethods;

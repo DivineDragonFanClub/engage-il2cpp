@@ -235,6 +235,7 @@ impl BasicDialogItemNo {
 }
 
 #[cfg(feature = "app-basicdialogitemno")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicDialogItemNo;
     pub use super::IBasicDialogItemNo;

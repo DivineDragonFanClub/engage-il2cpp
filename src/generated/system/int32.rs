@@ -571,6 +571,7 @@ impl Int32 {
 }
 
 #[cfg(feature = "system-int32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Int32;
     pub use crate::system::object::IObject;

@@ -688,6 +688,7 @@ impl AkSurfaceReflector {
 }
 
 #[cfg(feature = "root-aksurfacereflector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSurfaceReflector;
     pub use super::IAkSurfaceReflector;

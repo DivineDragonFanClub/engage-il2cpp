@@ -968,6 +968,7 @@ impl MusclePushUpAreaData {
 }
 
 #[cfg(feature = "app-musclepushupareadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMusclePushUpAreaData;
     pub use super::IMusclePushUpAreaDataMethods;

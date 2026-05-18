@@ -1546,6 +1546,7 @@ impl MyRoomWakeupSelectMenuItem_SimpleFade {
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomWakeupSelectMenuItem;
     pub use super::IMyRoomWakeupSelectMenuItemMethods;

@@ -15,7 +15,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -24,14 +24,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct GameUserData_MapModes {
+    pub struct GameUserData_Statuses {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for GameUserData_MapModes {
+    impl ::unity2::ClassIdentity for GameUserData_Statuses {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "GameUserData.MapModes";
+        const NAME: &'static str = "GameUserData.Statuses";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,7 +40,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for GameUserData_MapModes {
+    impl ::unity2::IlType for GameUserData_Statuses {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -49,29 +49,77 @@ mod __types {
         }
     }
 
-    impl GameUserData_MapModes {
-        pub fn story() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn encount() -> Self {
+    impl GameUserData_Statuses {
+        pub fn contents_mounted() -> Self {
             Self { value: 1 }
         }
 
-        pub fn challenge() -> Self {
+        pub fn finished_setup_map() -> Self {
             Self { value: 2 }
         }
 
-        pub fn relay() -> Self {
-            Self { value: 3 }
+        pub fn casual() -> Self {
+            Self { value: 8 }
         }
 
-        pub fn versus() -> Self {
-            Self { value: 4 }
+        pub fn phoenix() -> Self {
+            Self { value: 16 }
         }
 
-        pub fn recollection() -> Self {
-            Self { value: 5 }
+        pub fn encount_map() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn continued_map() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn fixed_grow() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn completed() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn temporary_saved() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn temporary_loaded() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn net_login_once() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn restart_map() -> Self {
+            Self { value: 4096 }
+        }
+
+        pub fn recollection_map() -> Self {
+            Self { value: 8192 }
+        }
+
+        pub fn ignore_kizuna() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn evil_completed() -> Self {
+            Self { value: 32768 }
+        }
+
+        pub fn init_begin_of_map() -> Self {
+            Self { value: 16384 }
+        }
+
+        pub fn init_end_of_map() -> Self {
+            Self { value: 13826 }
+        }
+
+        pub fn init_end_of_contents() -> Self {
+            Self { value: 1537 }
         }
     }
 
@@ -211,6 +259,79 @@ mod __types {
         pub flag_cc_gunner: ::unity2::Il2CppString,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserData.StatusField")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)]
+    pub struct GameUserData_StatusField {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GameUserData.ProcDescSetSequence")]
+    #[parent(crate::app::procdescuser::ProcDescUser)]
+    pub struct GameUserData_ProcDescSetSequence {
+        #[rename(name = "m_Sequence")]
+        pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GameUserData_MapModes {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GameUserData_MapModes {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GameUserData.MapModes";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GameUserData_MapModes {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GameUserData_MapModes {
+        pub fn story() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn encount() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn challenge() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn relay() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn versus() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn recollection() -> Self {
+            Self { value: 5 }
+        }
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md"))]
     #[repr(C)]
     #[derive(
@@ -280,127 +401,6 @@ mod __types {
 
         pub fn num() -> Self {
             Self { value: 8 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserData.ProcDescSetSequence")]
-    #[parent(crate::app::procdescuser::ProcDescUser)]
-    pub struct GameUserData_ProcDescSetSequence {
-        #[rename(name = "m_Sequence")]
-        pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md"))]
-    #[::unity2::class(namespace = "App", name = "GameUserData.StatusField")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)]
-    pub struct GameUserData_StatusField {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GameUserData_Statuses {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GameUserData_Statuses {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GameUserData.Statuses";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GameUserData_Statuses {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GameUserData_Statuses {
-        pub fn contents_mounted() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn finished_setup_map() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn casual() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn phoenix() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn encount_map() -> Self {
-            Self { value: 32 }
-        }
-
-        pub fn continued_map() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn fixed_grow() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn completed() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn temporary_saved() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn temporary_loaded() -> Self {
-            Self { value: 1024 }
-        }
-
-        pub fn net_login_once() -> Self {
-            Self { value: 2048 }
-        }
-
-        pub fn restart_map() -> Self {
-            Self { value: 4096 }
-        }
-
-        pub fn recollection_map() -> Self {
-            Self { value: 8192 }
-        }
-
-        pub fn ignore_kizuna() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn evil_completed() -> Self {
-            Self { value: 32768 }
-        }
-
-        pub fn init_begin_of_map() -> Self {
-            Self { value: 16384 }
-        }
-
-        pub fn init_end_of_map() -> Self {
-            Self { value: 13826 }
-        }
-
-        pub fn init_end_of_contents() -> Self {
-            Self { value: 1537 }
         }
     }
 }
@@ -9421,6 +9421,159 @@ impl GameUserData {
 #[cfg(feature = "app-gameuserdata")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GameUserData_StatusField_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::gameuserdata::GameUserData_Statuses as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserData_StatusField as ::unity2::ClassIdentity>::class(),
+                "ToInt",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUserData_StatusField as ::unity2::ClassIdentity>::NAME,
+                    "ToInt",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: GameUserData_StatusField,
+        value: crate::app::gameuserdata::GameUserData_Statuses,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            GameUserData_StatusField,
+            crate::app::gameuserdata::GameUserData_Statuses,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GameUserData_StatusField as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GameUserData_StatusField as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GameUserData_StatusField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(GameUserData_StatusField, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gameuserdata")]
+pub trait IGameUserData_StatusFieldMethods: IGameUserData_StatusField {
+    #[doc = "`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<crate::app::gameuserdata::GameUserData_Statuses>,
+    ) -> i32 {
+        unsafe {
+            let __receiver =
+                <GameUserData_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameUserData_StatusField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GameUserData_StatusField as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GameUserData_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl<__T: IGameUserData_StatusField> IGameUserData_StatusFieldMethods for __T {}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserData_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gameuserdata")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __GameUserData_ProcDescSetSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
@@ -9585,158 +9738,6 @@ impl GameUserData_ProcDescSetSequence {
 
 #[cfg(feature = "app-gameuserdata")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GameUserData_StatusField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::gameuserdata::GameUserData_Statuses as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserData_StatusField as ::unity2::ClassIdentity>::class(),
-                "ToInt",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserData_StatusField as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: GameUserData_StatusField,
-        value: crate::app::gameuserdata::GameUserData_Statuses,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            GameUserData_StatusField,
-            crate::app::gameuserdata::GameUserData_Statuses,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GameUserData_StatusField as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GameUserData_StatusField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GameUserData_StatusField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(GameUserData_StatusField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gameuserdata")]
-pub trait IGameUserData_StatusFieldMethods: IGameUserData_StatusField {
-    #[doc = "`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::gameuserdata::GameUserData_Statuses>,
-    ) -> i32 {
-        unsafe {
-            let __receiver =
-                <GameUserData_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GameUserData_StatusField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GameUserData_StatusField as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GameUserData_StatusField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-gameuserdata")]
-impl<__T: IGameUserData_StatusField> IGameUserData_StatusFieldMethods for __T {}
-
-#[cfg(feature = "app-gameuserdata")]
-impl GameUserData_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserData_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserData_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-gameuserdata")]
 pub mod prelude {
     pub use super::GameUserData;
     pub use super::GameUserData_MapModes;

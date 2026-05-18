@@ -105,6 +105,7 @@ impl CinemachineCameraOffset {
 }
 
 #[cfg(feature = "root-cinemachinecameraoffset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineCameraOffset;
     pub use super::ICinemachineCameraOffset;

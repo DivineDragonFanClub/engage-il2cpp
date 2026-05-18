@@ -1588,6 +1588,7 @@ impl GmapMapInfoContent_ItemInfo {
 }
 
 #[cfg(feature = "app-gmapmapinfocontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapMapInfoContent;
     pub use super::GmapMapInfoContent_ItemInfo;

@@ -1189,6 +1189,7 @@ impl ProfilingSampler {
 }
 
 #[cfg(feature = "unity_engine-rendering-profilingsampler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfilingSampler;
     pub use super::IProfilingSamplerMethods;

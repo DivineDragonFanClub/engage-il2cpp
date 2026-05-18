@@ -102,6 +102,7 @@ pub trait IIPropertyPreviewMethods: IIPropertyPreview {
 impl<__T: IIPropertyPreview> IIPropertyPreviewMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-ipropertypreview")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPropertyPreview;
     pub use super::IIPropertyPreviewMethods;

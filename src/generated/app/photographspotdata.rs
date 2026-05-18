@@ -1344,6 +1344,7 @@ impl PhotographSpotData {
 }
 
 #[cfg(feature = "app-photographspotdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSpotData;
     pub use super::IPhotographSpotDataMethods;

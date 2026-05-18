@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-meshcollidercookingoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshColliderCookingOptions;
     pub use crate::system::object::IObject;

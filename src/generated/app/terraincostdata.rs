@@ -2045,6 +2045,7 @@ impl TerrainCostData {
 }
 
 #[cfg(feature = "app-terraincostdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainCostData;
     pub use super::ITerrainCostDataMethods;

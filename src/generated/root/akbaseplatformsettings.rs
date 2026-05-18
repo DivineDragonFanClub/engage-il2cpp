@@ -619,6 +619,7 @@ impl AkBasePlatformSettings {
 }
 
 #[cfg(feature = "root-akbaseplatformsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBasePlatformSettings;
     pub use super::IAkBasePlatformSettings;

@@ -322,6 +322,7 @@ impl RaycastResult {
 }
 
 #[cfg(feature = "unity_engine-event_systems-raycastresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RaycastResult;
     pub use crate::system::object::IObject;

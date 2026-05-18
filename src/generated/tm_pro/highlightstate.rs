@@ -428,6 +428,7 @@ impl HighlightState {
 }
 
 #[cfg(feature = "tm_pro-highlightstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HighlightState;
     pub use crate::system::object::IObject;

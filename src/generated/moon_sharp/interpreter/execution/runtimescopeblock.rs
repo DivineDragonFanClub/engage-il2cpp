@@ -505,6 +505,7 @@ impl RuntimeScopeBlock {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeblock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeScopeBlock;
     pub use super::IRuntimeScopeBlockMethods;

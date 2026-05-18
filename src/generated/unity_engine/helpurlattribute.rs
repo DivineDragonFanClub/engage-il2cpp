@@ -115,6 +115,7 @@ impl HelpURLAttribute {
 }
 
 #[cfg(feature = "unity_engine-helpurlattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpURLAttribute;
     pub use super::IHelpURLAttribute;

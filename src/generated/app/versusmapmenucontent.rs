@@ -656,6 +656,7 @@ impl VersusMapMenuContent {
 }
 
 #[cfg(feature = "app-versusmapmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMapMenuContent;
     pub use super::IVersusMapMenuContentMethods;

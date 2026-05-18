@@ -102,6 +102,7 @@ pub trait IILayerableMethods: IILayerable {
 impl<__T: IILayerable> IILayerableMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-ilayerable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILayerable;
     pub use super::IILayerableMethods;

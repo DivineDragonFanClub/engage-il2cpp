@@ -248,6 +248,7 @@ impl InstanceProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-instanceprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstanceProvider;
     pub use super::IInstanceProviderMethods;

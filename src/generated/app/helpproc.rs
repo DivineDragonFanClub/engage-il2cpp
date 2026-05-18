@@ -1206,6 +1206,7 @@ impl HelpProc_EventHandler {
 }
 
 #[cfg(feature = "app-helpproc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpProc;
     pub use super::HelpProc_EventHandler;

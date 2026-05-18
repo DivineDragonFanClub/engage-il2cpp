@@ -26,6 +26,7 @@ impl<T0: ::unity2::ClassIdentity> IReadOnlyCollection_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIReadOnlyCollection_1;
     pub use super::IIReadOnlyCollection_1Methods;

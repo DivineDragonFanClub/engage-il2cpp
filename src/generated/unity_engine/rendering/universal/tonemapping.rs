@@ -217,6 +217,7 @@ impl Tonemapping {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemapping")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITonemapping;
     pub use super::ITonemappingMethods;

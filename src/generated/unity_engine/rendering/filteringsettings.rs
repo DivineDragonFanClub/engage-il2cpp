@@ -530,6 +530,7 @@ impl FilteringSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FilteringSettings;
     pub use crate::system::object::IObject;

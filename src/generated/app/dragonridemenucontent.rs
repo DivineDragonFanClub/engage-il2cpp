@@ -527,6 +527,7 @@ impl DragonRideMenuContent {
 }
 
 #[cfg(feature = "app-dragonridemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideMenuContent;
     pub use super::IDragonRideMenuContent;

@@ -184,6 +184,7 @@ impl RingCleaningNameSetter {
 }
 
 #[cfg(feature = "app-ringcleaningnamesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningNameSetter;
     pub use super::IRingCleaningNameSetterMethods;

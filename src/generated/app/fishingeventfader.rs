@@ -657,6 +657,7 @@ impl FishingEventFader {
 }
 
 #[cfg(feature = "app-fishingeventfader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingEventFader;
     pub use super::IFishingEventFader;

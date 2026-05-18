@@ -108,6 +108,7 @@ impl XRInputSubsystemDescriptor {
 }
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRInputSubsystemDescriptor;
     pub use super::IXRInputSubsystemDescriptorMethods;

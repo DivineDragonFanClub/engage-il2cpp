@@ -470,6 +470,7 @@ impl RawValueStack {
 }
 
 #[cfg(feature = "app-rawvaluestack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawValueStack;
     pub use super::IRawValueStackMethods;

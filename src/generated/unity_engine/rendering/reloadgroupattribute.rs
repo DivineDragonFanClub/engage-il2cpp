@@ -99,6 +99,7 @@ impl ReloadGroupAttribute {
 }
 
 #[cfg(feature = "unity_engine-rendering-reloadgroupattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReloadGroupAttribute;
     pub use super::IReloadGroupAttributeMethods;

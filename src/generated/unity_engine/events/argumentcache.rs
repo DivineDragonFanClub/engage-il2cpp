@@ -566,6 +566,7 @@ impl ArgumentCache {
 }
 
 #[cfg(feature = "unity_engine-events-argumentcache")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArgumentCache;
     pub use super::IArgumentCache;

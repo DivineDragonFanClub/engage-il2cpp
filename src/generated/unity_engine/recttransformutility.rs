@@ -1290,6 +1290,7 @@ impl RectTransformUtility {
 }
 
 #[cfg(feature = "unity_engine-recttransformutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRectTransformUtility;
     pub use super::RectTransformUtility;

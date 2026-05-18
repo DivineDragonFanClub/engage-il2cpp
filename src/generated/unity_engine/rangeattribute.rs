@@ -121,6 +121,7 @@ impl RangeAttribute {
 }
 
 #[cfg(feature = "unity_engine-rangeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRangeAttribute;
     pub use super::IRangeAttributeMethods;

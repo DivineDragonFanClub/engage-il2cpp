@@ -1117,6 +1117,7 @@ impl ActionGranBase {
 }
 
 #[cfg(feature = "combat-actiongranbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranBase;
     pub use super::ActionGranBase_MoveAct;

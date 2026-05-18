@@ -1490,6 +1490,7 @@ impl ItemRefineExchangeData {
 }
 
 #[cfg(feature = "app-itemrefineexchangedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemRefineExchangeData;
     pub use super::IItemRefineExchangeDataMethods;

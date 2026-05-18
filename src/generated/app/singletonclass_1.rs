@@ -155,6 +155,7 @@ impl<T0: ::unity2::ClassIdentity> SingletonClass_1<T0> {
 }
 
 #[cfg(feature = "app-singletonclass_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISingletonClass_1;
     pub use super::ISingletonClass_1Methods;

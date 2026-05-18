@@ -98,6 +98,7 @@ impl StructReader {
 }
 
 #[cfg(feature = "app-structreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructReader;
     pub use super::IStructReaderMethods;

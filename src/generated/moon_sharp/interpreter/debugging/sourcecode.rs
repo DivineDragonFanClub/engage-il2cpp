@@ -1012,6 +1012,7 @@ impl SourceCode {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-sourcecode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISourceCode;
     pub use super::ISourceCodeMethods;

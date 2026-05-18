@@ -439,6 +439,7 @@ impl MascotFoodData {
 }
 
 #[cfg(feature = "app-mascotfooddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFoodData;
     pub use super::IMascotFoodDataMethods;

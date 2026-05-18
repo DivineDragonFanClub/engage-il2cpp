@@ -6220,6 +6220,7 @@ impl TMP_FontAsset {
 }
 
 #[cfg(feature = "tm_pro-tmp_fontasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_FontAsset;
     pub use super::ITMP_FontAssetMethods;

@@ -241,6 +241,7 @@ impl MaxIntParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-maxintparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaxIntParameter;
     pub use super::IMaxIntParameterMethods;

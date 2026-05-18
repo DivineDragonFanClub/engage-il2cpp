@@ -839,6 +839,7 @@ impl FishingRodSelectMenuContent {
 }
 
 #[cfg(feature = "app-fishingrodselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingRodSelectMenuContent;
     pub use super::IFishingRodSelectMenuContent;

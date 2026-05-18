@@ -231,6 +231,7 @@ impl CustomGradationFilter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomGradationFilter;
     pub use super::ICustomGradationFilter;

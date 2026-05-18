@@ -905,6 +905,7 @@ impl AmiiboData {
 }
 
 #[cfg(feature = "app-amiibodata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboData;
     pub use super::IAmiiboData;

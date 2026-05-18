@@ -313,6 +313,7 @@ impl DrawObjectCategoryInfo {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrawObjectCategoryInfo;
     pub use super::IDrawObjectCategoryInfo;

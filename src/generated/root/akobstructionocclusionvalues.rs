@@ -857,6 +857,7 @@ impl AkObstructionOcclusionValues {
 }
 
 #[cfg(feature = "root-akobstructionocclusionvalues")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkObstructionOcclusionValues;
     pub use super::IAkObstructionOcclusionValues;

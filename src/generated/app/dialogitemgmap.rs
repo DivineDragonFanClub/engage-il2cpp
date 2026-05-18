@@ -180,6 +180,7 @@ impl DialogItemGmap {
 }
 
 #[cfg(feature = "app-dialogitemgmap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DialogItemGmap;
     pub use super::IDialogItemGmap;

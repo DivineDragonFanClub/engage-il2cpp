@@ -235,6 +235,7 @@ impl VisibleReflectionProbe {
 }
 
 #[cfg(feature = "unity_engine-rendering-visiblereflectionprobe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VisibleReflectionProbe;
     pub use crate::system::object::IObject;

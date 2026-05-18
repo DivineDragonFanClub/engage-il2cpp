@@ -94,6 +94,7 @@ impl TREx {
 }
 
 #[cfg(feature = "combat-trex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITREx;
     pub use super::TREx;

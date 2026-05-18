@@ -1273,6 +1273,7 @@ impl CameraManager {
 }
 
 #[cfg(feature = "combat-cameramanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraManager;
     pub use super::ICameraManager;

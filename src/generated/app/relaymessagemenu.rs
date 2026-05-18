@@ -900,6 +900,7 @@ impl RelayMessageMenu_MenuItem {
 }
 
 #[cfg(feature = "app-relaymessagemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayMessageMenu;
     pub use super::IRelayMessageMenuMethods;

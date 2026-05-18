@@ -2143,6 +2143,7 @@ impl MuscleSquatScoreListData {
 }
 
 #[cfg(feature = "app-musclesquatscorelistdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleSquatScoreListData;
     pub use super::IMuscleSquatScoreListDataMethods;

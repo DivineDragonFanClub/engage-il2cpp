@@ -350,6 +350,7 @@ impl TileDepthRangePass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITileDepthRangePass;
     pub use super::ITileDepthRangePassMethods;

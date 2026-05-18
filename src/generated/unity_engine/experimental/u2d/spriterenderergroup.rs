@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-u2d-spriterenderergroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteRendererGroup;
     pub use super::SpriteRendererGroup;

@@ -1785,6 +1785,7 @@ impl GUIUtility {
 }
 
 #[cfg(feature = "unity_engine-guiutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIUtility;
     pub use super::IGUIUtility;

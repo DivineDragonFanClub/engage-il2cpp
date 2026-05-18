@@ -570,6 +570,7 @@ impl MapEditorCategoryData {
 }
 
 #[cfg(feature = "app-mapeditorcategorydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapEditorCategoryData;
     pub use super::IMapEditorCategoryDataMethods;

@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-particleconnect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleConnect;
     pub use crate::system::object::IObject;

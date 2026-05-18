@@ -12,24 +12,6 @@ mod __types {
     use crate::unity_engine::tilemaps::tilebase::{ITileBase, TileBase};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tile/Tile.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "Tile")]
-    #[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]
-    pub struct Tile {
-        #[rename(name = "m_Sprite")]
-        pub m_sprite: crate::unity_engine::sprite::Sprite,
-        #[rename(name = "m_Color")]
-        pub m_color: crate::unity_engine::color::Color,
-        #[rename(name = "m_Transform")]
-        pub m_transform: crate::unity_engine::matrix4x4::Matrix4x4,
-        #[rename(name = "m_InstancedGameObject")]
-        pub m_instanced_game_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Flags")]
-        pub m_flags: crate::unity_engine::tilemaps::tileflags::TileFlags,
-        #[rename(name = "m_ColliderType")]
-        pub m_collider_type: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tile/Tile_ColliderType.md"))]
     #[repr(C)]
     #[derive(
@@ -76,6 +58,24 @@ mod __types {
         pub fn grid() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tile/Tile.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "Tile")]
+    #[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]
+    pub struct Tile {
+        #[rename(name = "m_Sprite")]
+        pub m_sprite: crate::unity_engine::sprite::Sprite,
+        #[rename(name = "m_Color")]
+        pub m_color: crate::unity_engine::color::Color,
+        #[rename(name = "m_Transform")]
+        pub m_transform: crate::unity_engine::matrix4x4::Matrix4x4,
+        #[rename(name = "m_InstancedGameObject")]
+        pub m_instanced_game_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Flags")]
+        pub m_flags: crate::unity_engine::tilemaps::tileflags::TileFlags,
+        #[rename(name = "m_ColliderType")]
+        pub m_collider_type: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
     }
 }
 
@@ -972,6 +972,7 @@ impl Tile {
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITile;
     pub use super::ITileMethods;

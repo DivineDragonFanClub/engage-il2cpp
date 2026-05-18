@@ -1101,6 +1101,7 @@ impl TextureCurve {
 }
 
 #[cfg(feature = "unity_engine-rendering-texturecurve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextureCurve;
     pub use super::ITextureCurveMethods;

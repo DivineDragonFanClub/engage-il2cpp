@@ -175,6 +175,7 @@ impl AkTriggerCollisionExit {
 }
 
 #[cfg(feature = "root-aktriggercollisionexit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerCollisionExit;
     pub use super::IAkTriggerCollisionExit;

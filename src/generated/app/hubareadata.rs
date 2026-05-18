@@ -1145,6 +1145,7 @@ impl HubAreaData {
 }
 
 #[cfg(feature = "app-hubareadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAreaData;
     pub use super::IHubAreaData;

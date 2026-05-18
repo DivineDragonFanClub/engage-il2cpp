@@ -163,6 +163,7 @@ impl AkTriggerMouseEnter {
 }
 
 #[cfg(feature = "root-aktriggermouseenter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerMouseEnter;
     pub use super::IAkTriggerMouseEnter;

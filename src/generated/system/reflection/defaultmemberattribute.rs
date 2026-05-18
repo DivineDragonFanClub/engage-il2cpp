@@ -170,6 +170,7 @@ impl DefaultMemberAttribute {
 }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultMemberAttribute;
     pub use super::IDefaultMemberAttribute;

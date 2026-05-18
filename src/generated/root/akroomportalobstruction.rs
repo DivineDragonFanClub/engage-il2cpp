@@ -284,6 +284,7 @@ impl AkRoomPortalObstruction {
 }
 
 #[cfg(feature = "root-akroomportalobstruction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomPortalObstruction;
     pub use super::IAkRoomPortalObstruction;

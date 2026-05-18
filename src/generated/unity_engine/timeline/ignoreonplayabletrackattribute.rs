@@ -106,6 +106,7 @@ impl IgnoreOnPlayableTrackAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIgnoreOnPlayableTrackAttribute;
     pub use super::IIgnoreOnPlayableTrackAttributeMethods;

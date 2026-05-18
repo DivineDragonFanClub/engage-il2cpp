@@ -523,6 +523,7 @@ impl ProfileCardCommentMenu_DisposeEventHandler {
 }
 
 #[cfg(feature = "app-profilecardcommentmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardCommentMenu;
     pub use super::IProfileCardCommentMenuMethods;

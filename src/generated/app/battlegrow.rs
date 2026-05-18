@@ -389,6 +389,7 @@ impl BattleGrow {
 }
 
 #[cfg(feature = "app-battlegrow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleGrow;
     pub use super::IBattleGrow;

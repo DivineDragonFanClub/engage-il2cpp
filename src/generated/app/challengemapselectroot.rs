@@ -1327,6 +1327,7 @@ impl ChallengeMapSelectRoot_ItemDropNum {
 }
 
 #[cfg(feature = "app-challengemapselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeMapSelectRoot;
     pub use super::ChallengeMapSelectRoot_ItemDropNum;

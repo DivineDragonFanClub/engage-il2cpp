@@ -1145,6 +1145,7 @@ impl BitArray32 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray32;
     pub use crate::system::object::IObject;

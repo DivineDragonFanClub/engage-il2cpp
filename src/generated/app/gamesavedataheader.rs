@@ -1739,6 +1739,7 @@ impl GameSaveDataHeader {
 }
 
 #[cfg(feature = "app-gamesavedataheader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameSaveDataHeader;
     pub use super::IGameSaveDataHeader;

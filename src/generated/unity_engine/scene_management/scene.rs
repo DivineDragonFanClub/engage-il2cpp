@@ -984,6 +984,7 @@ impl Scene {
 }
 
 #[cfg(feature = "unity_engine-scene_management-scene")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Scene;
     pub use crate::system::object::IObject;

@@ -336,6 +336,7 @@ impl TalkTagKeyWait {
 }
 
 #[cfg(feature = "app-talk3_d-talktagkeywait")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagKeyWait;
     pub use super::ITalkTagKeyWaitMethods;

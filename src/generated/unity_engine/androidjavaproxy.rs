@@ -563,6 +563,7 @@ impl AndroidJavaProxy {
 }
 
 #[cfg(feature = "unity_engine-androidjavaproxy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaProxy;
     pub use super::IAndroidJavaProxy;

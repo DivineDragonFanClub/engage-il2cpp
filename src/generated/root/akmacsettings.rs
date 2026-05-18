@@ -110,6 +110,7 @@ impl AkMacSettings {
 }
 
 #[cfg(feature = "root-akmacsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMacSettings;
     pub use super::IAkMacSettings;

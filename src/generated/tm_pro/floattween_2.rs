@@ -801,6 +801,7 @@ impl FloatTween_FloatTweenCallback_2 {
 }
 
 #[cfg(feature = "tm_pro-floattween_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FloatTween_2;
     pub use super::FloatTween_FloatTweenCallback_2;

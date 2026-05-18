@@ -218,6 +218,7 @@ impl RuntimeDisplaying {
 }
 
 #[cfg(feature = "combat-runtimedisplaying")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeDisplaying;
     pub use super::IRuntimeDisplayingMethods;

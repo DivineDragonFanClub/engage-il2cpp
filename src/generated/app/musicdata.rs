@@ -1431,6 +1431,7 @@ impl MusicData {
 }
 
 #[cfg(feature = "app-musicdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMusicData;
     pub use super::IMusicDataMethods;

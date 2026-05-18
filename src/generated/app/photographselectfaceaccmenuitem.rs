@@ -446,6 +446,7 @@ impl PhotographSelectFaceAccMenuItem {
 }
 
 #[cfg(feature = "app-photographselectfaceaccmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectFaceAccMenuItem;
     pub use super::IPhotographSelectFaceAccMenuItemMethods;

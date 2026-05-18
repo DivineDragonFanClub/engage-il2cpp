@@ -218,6 +218,7 @@ impl LifespanManager {
 }
 
 #[cfg(feature = "app-lifespanmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILifespanManager;
     pub use super::ILifespanManagerMethods;

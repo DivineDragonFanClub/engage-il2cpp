@@ -659,6 +659,7 @@ impl AkAudioSettings {
 }
 
 #[cfg(feature = "root-akaudiosettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAudioSettings;
     pub use super::IAkAudioSettings;

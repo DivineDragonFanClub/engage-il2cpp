@@ -721,6 +721,7 @@ impl CustomDecalsPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customdecalspass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomDecalsPass;
     pub use super::ICustomDecalsPass;

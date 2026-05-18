@@ -39,6 +39,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-void")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Void;
     pub use crate::system::object::IObject;

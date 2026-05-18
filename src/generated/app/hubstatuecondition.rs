@@ -224,6 +224,7 @@ impl HubStatueCondition {
 }
 
 #[cfg(feature = "app-hubstatuecondition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubStatueCondition;
     pub use super::IHubStatueCondition;

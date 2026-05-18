@@ -299,6 +299,7 @@ impl DebugUIHandlerHBox {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerhbox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerHBox;
     pub use super::IDebugUIHandlerHBox;

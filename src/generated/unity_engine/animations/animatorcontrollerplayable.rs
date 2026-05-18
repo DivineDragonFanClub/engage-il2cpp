@@ -486,6 +486,7 @@ impl AnimatorControllerPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorControllerPlayable;
     pub use crate::system::object::IObject;

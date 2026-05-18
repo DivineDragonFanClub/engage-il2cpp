@@ -166,6 +166,7 @@ impl AtlasSpriteProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-atlasspriteprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AtlasSpriteProvider;
     pub use super::IAtlasSpriteProvider;

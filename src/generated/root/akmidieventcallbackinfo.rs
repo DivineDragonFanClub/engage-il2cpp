@@ -1245,6 +1245,7 @@ impl AkMIDIEventCallbackInfo {
 }
 
 #[cfg(feature = "root-akmidieventcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMIDIEventCallbackInfo;
     pub use super::IAkMIDIEventCallbackInfo;

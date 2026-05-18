@@ -1430,6 +1430,7 @@ impl EventData {
 }
 
 #[cfg(feature = "app-eventdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventData;
     pub use super::EventData_Commands;

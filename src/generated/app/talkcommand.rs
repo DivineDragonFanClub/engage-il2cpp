@@ -216,6 +216,7 @@ impl TalkCommand {
 }
 
 #[cfg(feature = "app-talkcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkCommand;
     pub use super::ITalkCommandMethods;

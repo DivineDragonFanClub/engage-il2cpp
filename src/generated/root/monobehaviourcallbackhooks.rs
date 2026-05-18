@@ -364,6 +364,7 @@ impl MonoBehaviourCallbackHooks {
 }
 
 #[cfg(feature = "root-monobehaviourcallbackhooks")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoBehaviourCallbackHooks;
     pub use super::IMonoBehaviourCallbackHooksMethods;

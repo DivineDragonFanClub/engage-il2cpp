@@ -850,6 +850,7 @@ impl ChapterRecord {
 }
 
 #[cfg(feature = "app-chapterrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChapterRecord;
     pub use super::ChapterRecord_Record;

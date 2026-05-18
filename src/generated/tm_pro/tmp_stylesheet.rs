@@ -470,6 +470,7 @@ impl TMP_StyleSheet {
 }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_StyleSheet;
     pub use super::ITMP_StyleSheetMethods;

@@ -175,6 +175,7 @@ impl PerformDynamicRes {
 }
 
 #[cfg(feature = "unity_engine-rendering-performdynamicres")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPerformDynamicRes;
     pub use super::IPerformDynamicResMethods;

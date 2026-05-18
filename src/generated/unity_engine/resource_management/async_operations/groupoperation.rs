@@ -1070,6 +1070,7 @@ impl GroupOperation {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroupOperation;
     pub use super::GroupOperation_GroupOperationSettings;

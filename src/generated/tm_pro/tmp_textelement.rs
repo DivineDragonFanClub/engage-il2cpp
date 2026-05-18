@@ -756,6 +756,7 @@ impl TMP_TextElement {
 }
 
 #[cfg(feature = "tm_pro-tmp_textelement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_TextElement;
     pub use super::ITMP_TextElementMethods;

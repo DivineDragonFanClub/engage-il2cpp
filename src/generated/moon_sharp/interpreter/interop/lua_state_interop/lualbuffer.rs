@@ -237,6 +237,7 @@ impl LuaLBuffer {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-lualbuffer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILuaLBuffer;
     pub use super::ILuaLBufferMethods;

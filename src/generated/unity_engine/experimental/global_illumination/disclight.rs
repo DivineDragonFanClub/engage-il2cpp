@@ -52,6 +52,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-disclight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiscLight;
     pub use crate::system::object::IObject;

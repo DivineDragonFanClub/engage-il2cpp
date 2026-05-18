@@ -69,6 +69,7 @@ pub use __types::*;
 #[cfg(
     feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-contourorientation"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContourOrientation;
     pub use crate::system::object::IObject;

@@ -2511,6 +2511,7 @@ impl Bit_2 {
 }
 
 #[cfg(feature = "app-bit_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bit_2;
     pub use super::IBit_2;

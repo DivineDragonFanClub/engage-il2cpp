@@ -112,6 +112,7 @@ impl AssemblyProductAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyProductAttribute;
     pub use super::IAssemblyProductAttribute;

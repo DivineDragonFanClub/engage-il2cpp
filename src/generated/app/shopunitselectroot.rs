@@ -694,6 +694,7 @@ impl ShopUnitSelectRoot {
 }
 
 #[cfg(feature = "app-shopunitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopUnitSelectRoot;
     pub use super::IShopUnitSelectRootMethods;

@@ -264,6 +264,7 @@ pub trait IIMarker_InterfaceMethods: IIMarker_Interface {
 impl<__T: IIMarker_Interface> IIMarker_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-imarker_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMarker_Interface;
     pub use super::IIMarker_InterfaceMethods;

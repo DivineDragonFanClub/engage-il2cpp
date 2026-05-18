@@ -531,6 +531,7 @@ impl GodRelianceTalkSequence {
 }
 
 #[cfg(feature = "app-godreliancetalksequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodRelianceTalkSequence;
     pub use super::IGodRelianceTalkSequence;

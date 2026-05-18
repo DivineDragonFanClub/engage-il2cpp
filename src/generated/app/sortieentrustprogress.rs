@@ -118,6 +118,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-sortieentrustprogress")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SortieEntrustProgress;
     pub use crate::system::object::IObject;

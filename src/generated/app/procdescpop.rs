@@ -165,6 +165,7 @@ impl ProcDescPop {
 }
 
 #[cfg(feature = "app-procdescpop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescPop;
     pub use super::IProcDescPopMethods;

@@ -156,6 +156,7 @@ pub trait IProjectorMethods: IProjector {
 impl<__T: IProjector> IProjectorMethods for __T {}
 
 #[cfg(feature = "unity_engine-projector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProjector;
     pub use super::IProjectorMethods;

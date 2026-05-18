@@ -220,6 +220,7 @@ impl Extents {
 }
 
 #[cfg(feature = "tm_pro-extents")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Extents;
     pub use crate::system::object::IObject;

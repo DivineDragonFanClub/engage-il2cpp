@@ -394,6 +394,7 @@ impl RenderTargetBlendState {
 }
 
 #[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderTargetBlendState;
     pub use crate::system::object::IObject;

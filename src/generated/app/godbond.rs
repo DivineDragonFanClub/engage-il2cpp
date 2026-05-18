@@ -3364,6 +3364,7 @@ impl GodBond {
 }
 
 #[cfg(feature = "app-godbond")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodBond;
     pub use super::IGodBond;

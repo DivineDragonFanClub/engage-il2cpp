@@ -215,6 +215,7 @@ impl WhiteBalance {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-whitebalance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWhiteBalance;
     pub use super::IWhiteBalanceMethods;

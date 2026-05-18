@@ -106,6 +106,7 @@ impl AkGameObjPosOffsetData {
 }
 
 #[cfg(feature = "root-akgameobjposoffsetdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkGameObjPosOffsetData;
     pub use super::IAkGameObjPosOffsetData;

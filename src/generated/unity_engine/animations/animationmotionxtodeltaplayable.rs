@@ -699,6 +699,7 @@ impl AnimationMotionXToDeltaPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationmotionxtodeltaplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationMotionXToDeltaPlayable;
     pub use crate::system::object::IObject;

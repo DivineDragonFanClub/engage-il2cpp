@@ -160,6 +160,7 @@ impl AkTriggerDisable {
 }
 
 #[cfg(feature = "root-aktriggerdisable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerDisable;
     pub use super::IAkTriggerDisable;

@@ -100,6 +100,7 @@ impl BridgeBuilder {
 }
 
 #[cfg(feature = "app-bridgebuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BridgeBuilder;
     pub use super::IBridgeBuilder;

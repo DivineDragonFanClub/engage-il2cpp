@@ -672,6 +672,7 @@ impl ProfileCardStampListMenuContent {
 }
 
 #[cfg(feature = "app-profilecardstamplistmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardStampListMenuContent;
     pub use super::IProfileCardStampListMenuContentMethods;

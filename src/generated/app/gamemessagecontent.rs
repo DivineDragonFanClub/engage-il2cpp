@@ -1056,6 +1056,7 @@ impl GameMessageContent {
 }
 
 #[cfg(feature = "app-gamemessagecontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameMessageContent;
     pub use super::IGameMessageContent;

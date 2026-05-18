@@ -626,6 +626,7 @@ impl MapImageHistory_HeatMap {
 }
 
 #[cfg(feature = "app-mapimagehistory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageHistory;
     pub use super::IMapImageHistoryMethods;

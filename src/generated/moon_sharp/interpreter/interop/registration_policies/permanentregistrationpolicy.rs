@@ -241,6 +241,7 @@ impl PermanentRegistrationPolicy {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-permanentregistrationpolicy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPermanentRegistrationPolicy;
     pub use super::IPermanentRegistrationPolicyMethods;

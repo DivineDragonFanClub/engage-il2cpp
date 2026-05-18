@@ -376,6 +376,7 @@ impl CameraControllerDie {
 }
 
 #[cfg(feature = "combat-cameracontrollerdie")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerDie;
     pub use super::ICameraControllerDie;

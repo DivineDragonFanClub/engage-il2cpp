@@ -122,6 +122,7 @@ impl CaretInfo {
 }
 
 #[cfg(feature = "tm_pro-caretinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CaretInfo;
     pub use crate::system::object::IObject;

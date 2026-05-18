@@ -159,6 +159,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ArraySortHelper_2
 }
 
 #[cfg(feature = "system-collections-generic-arraysorthelper_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArraySortHelper_2;
     pub use super::IArraySortHelper_2;

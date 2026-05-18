@@ -42,6 +42,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animations-constraintsource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConstraintSource;
     pub use crate::system::object::IObject;

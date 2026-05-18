@@ -271,6 +271,7 @@ impl RefineShopExchangeResultPopup {
 }
 
 #[cfg(feature = "app-refineshopexchangeresultpopup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopExchangeResultPopup;
     pub use super::IRefineShopExchangeResultPopupMethods;

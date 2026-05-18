@@ -111,6 +111,7 @@ pub trait IILogHandlerMethods: IILogHandler {
 impl<__T: IILogHandler> IILogHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-iloghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILogHandler;
     pub use super::IILogHandlerMethods;

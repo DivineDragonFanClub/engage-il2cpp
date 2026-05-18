@@ -353,6 +353,7 @@ impl CategorySelectRoot {
 }
 
 #[cfg(feature = "root-categoryselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CategorySelectRoot;
     pub use super::ICategorySelectRoot;

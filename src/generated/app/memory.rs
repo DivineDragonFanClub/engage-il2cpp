@@ -440,6 +440,7 @@ impl Memory {
 }
 
 #[cfg(feature = "app-memory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemory;
     pub use super::IMemoryMethods;

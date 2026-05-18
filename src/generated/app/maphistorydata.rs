@@ -614,6 +614,7 @@ impl MapHistoryData {
 }
 
 #[cfg(feature = "app-maphistorydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapHistoryData;
     pub use super::IMapHistoryDataMethods;

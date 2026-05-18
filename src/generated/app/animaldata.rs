@@ -7758,6 +7758,7 @@ impl AnimalData {
 }
 
 #[cfg(feature = "app-animaldata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimalData;
     pub use super::IAnimalData;

@@ -598,6 +598,7 @@ impl ControllerSupportArg {
 }
 
 #[cfg(feature = "nn-hid-controllersupportarg")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerSupportArg;
     pub use super::ControllerSupportArg_Color4u8Array8;

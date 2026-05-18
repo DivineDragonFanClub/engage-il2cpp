@@ -312,6 +312,7 @@ impl SandBox {
 }
 
 #[cfg(feature = "root-sandbox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISandBox;
     pub use super::ISandBoxMethods;

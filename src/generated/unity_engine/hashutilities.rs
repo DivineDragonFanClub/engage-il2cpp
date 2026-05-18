@@ -98,6 +98,7 @@ impl HashUtilities {
 }
 
 #[cfg(feature = "unity_engine-hashutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashUtilities;
     pub use super::IHashUtilities;

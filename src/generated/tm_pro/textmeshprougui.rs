@@ -4476,6 +4476,7 @@ impl TextMeshProUGUI {
 }
 
 #[cfg(feature = "tm_pro-textmeshprougui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextMeshProUGUI;
     pub use super::ITextMeshProUGUIMethods;

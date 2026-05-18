@@ -2325,6 +2325,7 @@ impl UnitItemList {
 }
 
 #[cfg(feature = "app-unititemlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitItemList;
     pub use super::IUnitItemListMethods;

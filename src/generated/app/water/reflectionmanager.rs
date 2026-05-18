@@ -659,6 +659,7 @@ impl ReflectionManager {
 }
 
 #[cfg(feature = "app-water-reflectionmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReflectionManager;
     pub use super::IReflectionManagerMethods;

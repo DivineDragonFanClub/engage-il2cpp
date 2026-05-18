@@ -2677,6 +2677,7 @@ impl BaseCameraController {
 }
 
 #[cfg(feature = "combat-basecameracontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseCameraController;
     pub use super::IBaseCameraController;

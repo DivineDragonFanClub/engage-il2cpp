@@ -55,6 +55,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-u2d-spriteintermediaterendererinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SpriteIntermediateRendererInfo;
     pub use crate::system::object::IObject;

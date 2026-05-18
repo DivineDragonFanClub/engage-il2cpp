@@ -274,6 +274,7 @@ impl HubDistanceAlphaFader {
 }
 
 #[cfg(feature = "app-hubdistancealphafader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubDistanceAlphaFader;
     pub use super::IHubDistanceAlphaFader;

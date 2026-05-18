@@ -280,6 +280,7 @@ impl AmiiboTicketYesNoDialogAccessory {
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogaccessory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboTicketYesNoDialogAccessory;
     pub use super::IAmiiboTicketYesNoDialogAccessory;

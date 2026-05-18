@@ -98,6 +98,7 @@ impl VideoPlayer_2 {
 }
 
 #[cfg(feature = "unity_engine-switch-videoplayer_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVideoPlayer_2;
     pub use super::IVideoPlayer_2Methods;

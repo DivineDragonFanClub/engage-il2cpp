@@ -369,6 +369,7 @@ impl AkObjectInfoArray {
 }
 
 #[cfg(feature = "root-akobjectinfoarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkObjectInfoArray;
     pub use super::IAkObjectInfoArray;

@@ -109,6 +109,7 @@ impl DynamicBonePlaneCollider_Bridge {
 }
 
 #[cfg(feature = "root-dynamicboneplanecollider_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicBonePlaneCollider_Bridge;
     pub use super::IDynamicBonePlaneCollider_Bridge;

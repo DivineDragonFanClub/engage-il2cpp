@@ -819,6 +819,7 @@ impl InterpreterException {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpreterException;
     pub use super::IInterpreterExceptionMethods;

@@ -165,6 +165,7 @@ impl ProcDescHalt {
 }
 
 #[cfg(feature = "app-procdeschalt")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescHalt;
     pub use super::IProcDescHaltMethods;

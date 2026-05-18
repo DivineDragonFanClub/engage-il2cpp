@@ -217,6 +217,7 @@ impl UVFlag {
 }
 
 #[cfg(feature = "root-uvflag")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUVFlag;
     pub use super::IUVFlagMethods;

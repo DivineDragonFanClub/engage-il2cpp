@@ -86,6 +86,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrawObjectCategory;
     pub use crate::system::object::IObject;

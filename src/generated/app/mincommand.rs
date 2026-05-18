@@ -272,6 +272,7 @@ impl MinCommand {
 }
 
 #[cfg(feature = "app-mincommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMinCommand;
     pub use super::IMinCommandMethods;

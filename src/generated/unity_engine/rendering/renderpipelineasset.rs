@@ -1399,6 +1399,7 @@ impl RenderPipelineAsset {
 }
 
 #[cfg(feature = "unity_engine-rendering-renderpipelineasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderPipelineAsset;
     pub use super::IRenderPipelineAssetMethods;

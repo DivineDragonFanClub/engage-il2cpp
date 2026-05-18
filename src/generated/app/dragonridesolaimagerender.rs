@@ -416,6 +416,7 @@ impl DragonRideSolaImageRender {
 }
 
 #[cfg(feature = "app-dragonridesolaimagerender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideSolaImageRender;
     pub use super::IDragonRideSolaImageRender;

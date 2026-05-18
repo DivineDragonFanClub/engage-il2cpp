@@ -928,6 +928,7 @@ impl Geom {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-geom")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Geom;
     pub use super::IGeom;

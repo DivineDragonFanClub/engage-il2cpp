@@ -644,6 +644,7 @@ impl RelayReplayCache {
 }
 
 #[cfg(feature = "app-relayreplaycache")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayReplayCache;
     pub use super::IRelayReplayCacheMethods;

@@ -505,6 +505,7 @@ impl UInt32 {
 }
 
 #[cfg(feature = "system-uint32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UInt32;
     pub use crate::system::object::IObject;

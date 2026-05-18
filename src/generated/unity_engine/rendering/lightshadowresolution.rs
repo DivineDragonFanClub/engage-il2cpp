@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-lightshadowresolution")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightShadowResolution;
     pub use crate::system::object::IObject;

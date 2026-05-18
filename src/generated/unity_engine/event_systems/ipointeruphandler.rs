@@ -96,6 +96,7 @@ pub trait IIPointerUpHandlerMethods: IIPointerUpHandler {
 impl<__T: IIPointerUpHandler> IIPointerUpHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ipointeruphandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPointerUpHandler;
     pub use super::IIPointerUpHandlerMethods;

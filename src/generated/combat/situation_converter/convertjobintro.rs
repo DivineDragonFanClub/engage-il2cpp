@@ -244,6 +244,7 @@ impl ConvertJobIntro {
 }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertJobIntro;
     pub use super::ConvertJobIntro_State;

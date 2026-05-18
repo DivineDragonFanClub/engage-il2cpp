@@ -272,6 +272,7 @@ impl ExpCommand {
 }
 
 #[cfg(feature = "app-expcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExpCommand;
     pub use super::IExpCommand;

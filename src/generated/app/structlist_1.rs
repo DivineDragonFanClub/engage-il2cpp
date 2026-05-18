@@ -59,6 +59,7 @@ impl<T0: ::unity2::ClassIdentity> StructList_1<T0> {
 }
 
 #[cfg(feature = "app-structlist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructList_1;
     pub use super::IStructList_1Methods;

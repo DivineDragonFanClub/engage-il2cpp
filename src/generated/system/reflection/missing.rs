@@ -150,6 +150,7 @@ impl Missing {
 }
 
 #[cfg(feature = "system-reflection-missing")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMissing;
     pub use super::IMissingMethods;

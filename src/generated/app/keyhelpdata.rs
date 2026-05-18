@@ -381,6 +381,7 @@ impl KeyHelpData {
 }
 
 #[cfg(feature = "app-keyhelpdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyHelpData;
     pub use super::IKeyHelpDataMethods;

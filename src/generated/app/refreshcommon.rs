@@ -450,6 +450,7 @@ impl RefreshCommon {
 }
 
 #[cfg(feature = "app-refreshcommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshCommon;
     pub use super::IRefreshCommonMethods;

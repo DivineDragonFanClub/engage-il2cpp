@@ -1522,6 +1522,7 @@ impl DebugWindow {
 }
 
 #[cfg(feature = "app-debugwindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugWindow;
     pub use super::IDebugWindow;

@@ -791,6 +791,7 @@ impl UnitRelianceMapResult {
 }
 
 #[cfg(feature = "app-unitreliancemapresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitRelianceMapResult;
     pub use super::IUnitRelianceMapResultMethods;

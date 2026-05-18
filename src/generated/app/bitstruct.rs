@@ -792,6 +792,7 @@ impl BitStruct {
 }
 
 #[cfg(feature = "app-bitstruct")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitStruct;
     pub use crate::system::object::IObject;

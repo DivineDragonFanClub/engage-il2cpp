@@ -349,6 +349,7 @@ impl HubCameraReverseHorizontalMenuItem {
 }
 
 #[cfg(feature = "root-hubcamerareversehorizontalmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCameraReverseHorizontalMenuItem;
     pub use super::IHubCameraReverseHorizontalMenuItem;

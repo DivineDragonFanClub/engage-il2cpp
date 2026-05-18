@@ -592,6 +592,7 @@ impl TerrainPaintData {
 }
 
 #[cfg(feature = "app-terrainpaintdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainPaintData;
     pub use super::ITerrainPaintDataMethods;

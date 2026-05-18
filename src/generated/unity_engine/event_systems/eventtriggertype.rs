@@ -118,6 +118,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-eventtriggertype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventTriggerType;
     pub use crate::system::object::IObject;

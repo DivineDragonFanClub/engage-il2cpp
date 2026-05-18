@@ -330,6 +330,7 @@ impl EvasionSpeed {
 }
 
 #[cfg(feature = "combat-evasionspeed")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EvasionSpeed;
     pub use super::IEvasionSpeed;

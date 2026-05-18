@@ -1147,6 +1147,7 @@ impl MiniMapPanelBase {
 }
 
 #[cfg(feature = "app-minimappanelbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelBase;
     pub use super::IMiniMapPanelBaseMethods;

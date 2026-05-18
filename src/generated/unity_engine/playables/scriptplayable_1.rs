@@ -128,6 +128,7 @@ impl<T0: ::unity2::ClassIdentity> ScriptPlayable_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-playables-scriptplayable_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ScriptPlayable_1;
     pub use crate::system::object::IObject;

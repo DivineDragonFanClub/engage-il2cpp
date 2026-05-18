@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-shadowmappass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowMapPass;
     pub use crate::system::object::IObject;

@@ -290,6 +290,7 @@ impl VersusRateCalc {
 }
 
 #[cfg(feature = "app-versusratecalc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusRateCalc;
     pub use super::IVersusRateCalcMethods;

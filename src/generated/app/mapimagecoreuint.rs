@@ -167,6 +167,7 @@ impl MapImageCoreUint {
 }
 
 #[cfg(feature = "app-mapimagecoreuint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCoreUint;
     pub use super::IMapImageCoreUintMethods;

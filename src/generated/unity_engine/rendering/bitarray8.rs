@@ -1114,6 +1114,7 @@ impl BitArray8 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray8")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray8;
     pub use crate::system::object::IObject;

@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-dir")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Dir;
     pub use crate::system::object::IObject;

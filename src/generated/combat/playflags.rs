@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-playflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayFlags;
     pub use crate::system::object::IObject;

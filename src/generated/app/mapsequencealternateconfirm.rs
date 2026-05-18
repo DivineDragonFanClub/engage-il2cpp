@@ -626,6 +626,7 @@ impl MapSequenceAlternateConfirm {
 }
 
 #[cfg(feature = "app-mapsequencealternateconfirm")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceAlternateConfirm;
     pub use super::IMapSequenceAlternateConfirmMethods;

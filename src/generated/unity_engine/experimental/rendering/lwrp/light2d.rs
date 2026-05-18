@@ -100,6 +100,7 @@ impl Light2D {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILight2D;
     pub use super::ILight2DMethods;

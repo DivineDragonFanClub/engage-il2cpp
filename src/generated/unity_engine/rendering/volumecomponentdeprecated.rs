@@ -103,6 +103,7 @@ impl VolumeComponentDeprecated {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentdeprecated")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeComponentDeprecated;
     pub use super::IVolumeComponentDeprecatedMethods;

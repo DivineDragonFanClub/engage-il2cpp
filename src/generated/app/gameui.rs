@@ -526,6 +526,7 @@ impl GameUI {
 }
 
 #[cfg(feature = "app-gameui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameUI;
     pub use super::GameUI_Priority;

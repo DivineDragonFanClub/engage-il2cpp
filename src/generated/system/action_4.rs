@@ -66,6 +66,7 @@ impl<
 }
 
 #[cfg(feature = "system-action_4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Action_4;
     pub use super::IAction_4;

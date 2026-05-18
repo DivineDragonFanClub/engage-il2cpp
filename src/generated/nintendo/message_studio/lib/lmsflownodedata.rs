@@ -53,6 +53,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nintendo-message_studio-lib-lmsflownodedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LMSFlowNodeData;
     pub use crate::system::object::IObject;

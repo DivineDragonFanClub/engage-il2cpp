@@ -465,6 +465,7 @@ impl MeshRenderer {
 }
 
 #[cfg(feature = "unity_engine-meshrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshRenderer;
     pub use super::IMeshRendererMethods;

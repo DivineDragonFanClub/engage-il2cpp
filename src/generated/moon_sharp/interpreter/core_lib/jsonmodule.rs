@@ -366,6 +366,7 @@ impl JsonModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-jsonmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJsonModule;
     pub use super::IJsonModuleMethods;

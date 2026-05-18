@@ -152,6 +152,7 @@ impl CombatSubspaceBack {
 }
 
 #[cfg(feature = "combat-combatsubspaceback")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatSubspaceBack;
     pub use super::ICombatSubspaceBack;

@@ -269,6 +269,7 @@ impl PlayerPrefs {
 }
 
 #[cfg(feature = "unity_engine-playerprefs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerPrefs;
     pub use super::PlayerPrefs;

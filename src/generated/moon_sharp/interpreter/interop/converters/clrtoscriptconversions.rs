@@ -291,6 +291,7 @@ impl ClrToScriptConversions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-clrtoscriptconversions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClrToScriptConversions;
     pub use super::IClrToScriptConversions;

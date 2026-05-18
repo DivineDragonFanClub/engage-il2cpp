@@ -458,6 +458,7 @@ impl FunctionCommand {
 }
 
 #[cfg(feature = "app-functioncommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionCommand;
     pub use super::IFunctionCommand;

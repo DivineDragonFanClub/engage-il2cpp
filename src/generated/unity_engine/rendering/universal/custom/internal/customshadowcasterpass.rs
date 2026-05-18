@@ -704,6 +704,7 @@ impl CustomShadowCasterPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomShadowCasterPass;
     pub use super::CustomShadowCasterPass_CustomShadowConstantBuffer;

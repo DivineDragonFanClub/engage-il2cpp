@@ -287,6 +287,7 @@ impl ConvertFortress {
 }
 
 #[cfg(feature = "combat-situation_converter-convertfortress")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertFortress;
     pub use super::IConvertFortress;

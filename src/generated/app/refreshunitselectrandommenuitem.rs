@@ -320,6 +320,7 @@ impl RefreshUnitSelectRandomMenuItem {
 }
 
 #[cfg(feature = "app-refreshunitselectrandommenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSelectRandomMenuItem;
     pub use super::IRefreshUnitSelectRandomMenuItemMethods;

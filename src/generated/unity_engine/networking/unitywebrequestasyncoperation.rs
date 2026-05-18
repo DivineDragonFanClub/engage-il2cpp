@@ -231,6 +231,7 @@ impl UnityWebRequestAsyncOperation {
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestasyncoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityWebRequestAsyncOperation;
     pub use super::IUnityWebRequestAsyncOperationMethods;

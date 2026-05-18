@@ -278,6 +278,7 @@ impl SortieRelianceManager {
 }
 
 #[cfg(feature = "app-sortiereliancemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieRelianceManager;
     pub use super::ISortieRelianceManagerMethods;

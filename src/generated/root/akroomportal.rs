@@ -1915,6 +1915,7 @@ impl AkRoomPortal {
 }
 
 #[cfg(feature = "root-akroomportal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomPortal;
     pub use super::AkRoomPortal_State;

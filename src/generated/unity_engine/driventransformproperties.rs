@@ -150,6 +150,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-driventransformproperties")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DrivenTransformProperties;
     pub use crate::system::object::IObject;

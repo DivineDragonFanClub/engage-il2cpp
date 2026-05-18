@@ -285,6 +285,7 @@ impl Deco_RodWeak {
 }
 
 #[cfg(feature = "combat-deco_rodweak")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_RodWeak;
     pub use super::IDeco_RodWeak;

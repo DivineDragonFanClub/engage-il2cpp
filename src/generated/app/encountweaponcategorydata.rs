@@ -695,6 +695,7 @@ impl EncountWeaponCategoryData {
 }
 
 #[cfg(feature = "app-encountweaponcategorydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountWeaponCategoryData;
     pub use super::IEncountWeaponCategoryData;

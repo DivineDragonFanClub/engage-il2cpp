@@ -350,6 +350,7 @@ impl TargetShowMarkerReciever {
 }
 
 #[cfg(feature = "app-targetshowmarkerreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetShowMarkerReciever;
     pub use super::ITargetShowMarkerRecieverMethods;

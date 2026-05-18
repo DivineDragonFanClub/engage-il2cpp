@@ -121,6 +121,7 @@ impl TextAreaAttribute {
 }
 
 #[cfg(feature = "unity_engine-textareaattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextAreaAttribute;
     pub use super::ITextAreaAttributeMethods;

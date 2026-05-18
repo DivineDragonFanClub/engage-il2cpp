@@ -638,6 +638,7 @@ impl FleaMarketData {
 }
 
 #[cfg(feature = "app-fleamarketdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FleaMarketData;
     pub use super::IFleaMarketData;

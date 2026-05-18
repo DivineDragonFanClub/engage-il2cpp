@@ -880,6 +880,7 @@ impl ProportionParameters {
 }
 
 #[cfg(feature = "combat-proportionparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProportionParameters;
     pub use super::IProportionParametersMethods;

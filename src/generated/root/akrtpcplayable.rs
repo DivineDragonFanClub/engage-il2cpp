@@ -367,6 +367,7 @@ impl AkRTPCPlayable {
 }
 
 #[cfg(feature = "root-akrtpcplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRTPCPlayable;
     pub use super::IAkRTPCPlayable;

@@ -186,6 +186,7 @@ impl BattleMenuItem {
 }
 
 #[cfg(feature = "root-battlemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleMenuItem;
     pub use super::IBattleMenuItem;

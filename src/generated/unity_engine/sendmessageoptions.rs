@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-sendmessageoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SendMessageOptions;
     pub use crate::system::object::IObject;

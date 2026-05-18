@@ -176,6 +176,7 @@ pub trait IIAllocationStrategyMethods: IIAllocationStrategy {
 impl<__T: IIAllocationStrategy> IIAllocationStrategyMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-iallocationstrategy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IAllocationStrategy;
     pub use super::IIAllocationStrategy;

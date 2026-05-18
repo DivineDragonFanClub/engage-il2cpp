@@ -209,6 +209,7 @@ impl DynamicExpressionException {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicExpressionException;
     pub use super::IDynamicExpressionException;

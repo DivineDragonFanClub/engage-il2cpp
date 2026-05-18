@@ -24,6 +24,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWellKnownSymbols;
     pub use super::WellKnownSymbols;

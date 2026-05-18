@@ -198,6 +198,7 @@ impl AddComponentMenu {
 }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AddComponentMenu;
     pub use super::IAddComponentMenu;

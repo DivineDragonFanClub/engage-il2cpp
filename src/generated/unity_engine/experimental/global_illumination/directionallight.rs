@@ -50,6 +50,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-directionallight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DirectionalLight;
     pub use crate::system::object::IObject;

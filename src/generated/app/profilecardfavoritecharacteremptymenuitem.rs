@@ -119,6 +119,7 @@ impl ProfileCardFavoriteCharacterEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardfavoritecharacteremptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteCharacterEmptyMenuItem;
     pub use super::IProfileCardFavoriteCharacterEmptyMenuItemMethods;

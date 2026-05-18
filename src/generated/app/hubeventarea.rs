@@ -579,6 +579,7 @@ impl HubEventArea {
 }
 
 #[cfg(feature = "app-hubeventarea")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubEventArea;
     pub use super::IHubEventArea;

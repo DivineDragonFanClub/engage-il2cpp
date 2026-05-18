@@ -317,6 +317,7 @@ impl ParamItem {
 }
 
 #[cfg(feature = "app-paramitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParamItem;
     pub use super::IParamItemMethods;

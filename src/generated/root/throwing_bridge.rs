@@ -107,6 +107,7 @@ impl Throwing_Bridge {
 }
 
 #[cfg(feature = "root-throwing_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IThrowing_Bridge;
     pub use super::IThrowing_BridgeMethods;

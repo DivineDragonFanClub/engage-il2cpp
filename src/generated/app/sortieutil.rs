@@ -1649,6 +1649,7 @@ impl SortieUtil {
 }
 
 #[cfg(feature = "app-sortieutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieUtil;
     pub use super::ISortieUtilMethods;

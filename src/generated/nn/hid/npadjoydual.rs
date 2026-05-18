@@ -299,6 +299,7 @@ impl NpadJoyDual {
 }
 
 #[cfg(feature = "nn-hid-npadjoydual")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpadJoyDual;
     pub use super::NpadJoyDual;

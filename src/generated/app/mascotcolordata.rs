@@ -552,6 +552,7 @@ impl MascotColorData {
 }
 
 #[cfg(feature = "app-mascotcolordata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotColorData;
     pub use super::IMascotColorDataMethods;

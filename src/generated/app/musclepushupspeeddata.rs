@@ -869,6 +869,7 @@ impl MusclePushUpSpeedData {
 }
 
 #[cfg(feature = "app-musclepushupspeeddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMusclePushUpSpeedData;
     pub use super::IMusclePushUpSpeedDataMethods;

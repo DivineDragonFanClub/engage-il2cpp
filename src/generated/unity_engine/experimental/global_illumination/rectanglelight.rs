@@ -53,6 +53,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-rectanglelight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RectangleLight;
     pub use crate::system::object::IObject;

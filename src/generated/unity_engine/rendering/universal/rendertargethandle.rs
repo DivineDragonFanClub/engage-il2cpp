@@ -961,6 +961,7 @@ impl RenderTargetHandle {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-rendertargethandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderTargetHandle;
     pub use crate::system::object::IObject;

@@ -302,6 +302,7 @@ impl RefineShopEngraveGodEmptyMenuItem {
 }
 
 #[cfg(feature = "app-refineshopengravegodemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveGodEmptyMenuItem;
     pub use super::IRefineShopEngraveGodEmptyMenuItemMethods;

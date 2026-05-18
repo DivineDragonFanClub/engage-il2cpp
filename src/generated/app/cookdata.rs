@@ -2857,6 +2857,7 @@ impl CookData {
 }
 
 #[cfg(feature = "app-cookdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CookData;
     pub use super::CookData_Difficulty;

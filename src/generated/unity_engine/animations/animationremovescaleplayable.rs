@@ -590,6 +590,7 @@ impl AnimationRemoveScalePlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationremovescaleplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationRemoveScalePlayable;
     pub use crate::system::object::IObject;

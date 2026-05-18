@@ -175,6 +175,7 @@ impl YesMenuItem {
 }
 
 #[cfg(feature = "app-yesmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IYesMenuItem;
     pub use super::IYesMenuItemMethods;

@@ -552,6 +552,7 @@ impl Volume {
 }
 
 #[cfg(feature = "unity_engine-rendering-volume")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolume;
     pub use super::IVolumeMethods;

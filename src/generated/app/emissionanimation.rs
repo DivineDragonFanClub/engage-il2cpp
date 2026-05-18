@@ -334,6 +334,7 @@ impl EmissionAnimation {
 }
 
 #[cfg(feature = "app-emissionanimation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EmissionAnimation;
     pub use super::IEmissionAnimation;

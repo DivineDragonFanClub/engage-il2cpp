@@ -94,6 +94,7 @@ impl GUITargetAttribute {
 }
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUITargetAttribute;
     pub use super::IGUITargetAttribute;

@@ -475,6 +475,7 @@ impl AkMusicSettings {
 }
 
 #[cfg(feature = "root-akmusicsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMusicSettings;
     pub use super::IAkMusicSettings;

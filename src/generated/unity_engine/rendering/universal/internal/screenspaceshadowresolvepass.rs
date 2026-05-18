@@ -431,6 +431,7 @@ impl ScreenSpaceShadowResolvePass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScreenSpaceShadowResolvePass;
     pub use super::IScreenSpaceShadowResolvePassMethods;

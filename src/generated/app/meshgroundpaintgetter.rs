@@ -181,6 +181,7 @@ impl MeshGroundPaintGetter {
 }
 
 #[cfg(feature = "app-meshgroundpaintgetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshGroundPaintGetter;
     pub use super::IMeshGroundPaintGetterMethods;

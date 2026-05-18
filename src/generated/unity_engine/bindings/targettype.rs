@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-bindings-targettype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TargetType;
     pub use crate::system::object::IObject;

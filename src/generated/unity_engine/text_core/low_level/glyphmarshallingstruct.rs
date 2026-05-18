@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphmarshallingstruct")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphMarshallingStruct;
     pub use crate::system::object::IObject;

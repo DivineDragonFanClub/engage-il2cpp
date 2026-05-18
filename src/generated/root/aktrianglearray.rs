@@ -369,6 +369,7 @@ impl AkTriangleArray {
 }
 
 #[cfg(feature = "root-aktrianglearray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriangleArray;
     pub use super::IAkTriangleArray;

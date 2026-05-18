@@ -1802,6 +1802,7 @@ impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
 }
 
 #[cfg(feature = "unity_engine-animatoroverridecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorOverrideController;
     pub use super::AnimatorOverrideController_OnOverrideControllerDirtyCallback;

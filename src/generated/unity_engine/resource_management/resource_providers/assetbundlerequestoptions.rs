@@ -1528,6 +1528,7 @@ impl AssetBundleRequestOptions {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlerequestoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundleRequestOptions;
     pub use super::IAssetBundleRequestOptions;

@@ -504,6 +504,7 @@ impl Talk {
 }
 
 #[cfg(feature = "app-talk")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalk;
     pub use super::ITalkMethods;

@@ -101,6 +101,7 @@ pub trait IICanvasRaycastFilterMethods: IICanvasRaycastFilter {
 impl<__T: IICanvasRaycastFilter> IICanvasRaycastFilterMethods for __T {}
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICanvasRaycastFilter;
     pub use super::IICanvasRaycastFilter;

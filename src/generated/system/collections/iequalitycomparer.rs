@@ -164,6 +164,7 @@ pub trait IIEqualityComparerMethods: IIEqualityComparer {
 impl<__T: IIEqualityComparer> IIEqualityComparerMethods for __T {}
 
 #[cfg(feature = "system-collections-iequalitycomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEqualityComparer;
     pub use super::IIEqualityComparer;

@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tagvaluetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TagValueType;
     pub use crate::system::object::IObject;

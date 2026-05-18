@@ -106,6 +106,7 @@ impl AkTriggerEnable {
 }
 
 #[cfg(feature = "root-aktriggerenable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerEnable;
     pub use super::IAkTriggerEnable;

@@ -880,6 +880,7 @@ impl BufferedRTHandleSystem {
 }
 
 #[cfg(feature = "unity_engine-rendering-bufferedrthandlesystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BufferedRTHandleSystem;
     pub use super::IBufferedRTHandleSystem;

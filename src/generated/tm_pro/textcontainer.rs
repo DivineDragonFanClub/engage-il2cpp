@@ -2114,6 +2114,7 @@ impl TextContainer {
 }
 
 #[cfg(feature = "tm_pro-textcontainer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextContainer;
     pub use super::ITextContainerMethods;

@@ -336,6 +336,7 @@ impl IntegratedSubsystem {
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntegratedSubsystem;
     pub use super::IIntegratedSubsystemMethods;

@@ -1662,6 +1662,7 @@ impl TemplateOneData {
 }
 
 #[cfg(feature = "app-templateonedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITemplateOneData;
     pub use super::ITemplateOneDataMethods;

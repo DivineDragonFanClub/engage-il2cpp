@@ -198,6 +198,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-textalignmentoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TextAlignmentOptions;
     pub use crate::system::object::IObject;

@@ -519,6 +519,7 @@ impl Timer {
 }
 
 #[cfg(feature = "app-timer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Timer;
     pub use crate::system::object::IObject;

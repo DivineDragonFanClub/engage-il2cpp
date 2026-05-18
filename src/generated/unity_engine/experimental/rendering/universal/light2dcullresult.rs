@@ -350,6 +350,7 @@ impl Light2DCullResult {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILight2DCullResult;
     pub use super::ILight2DCullResultMethods;

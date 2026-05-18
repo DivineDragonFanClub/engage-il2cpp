@@ -459,6 +459,7 @@ impl DressUtility {
 }
 
 #[cfg(feature = "combat-dressutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DressUtility;
     pub use super::IDressUtility;

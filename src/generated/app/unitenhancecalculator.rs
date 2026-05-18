@@ -796,6 +796,7 @@ impl UnitEnhanceCalculator {
 }
 
 #[cfg(feature = "app-unitenhancecalculator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitEnhanceCalculator;
     pub use super::IUnitEnhanceCalculatorMethods;

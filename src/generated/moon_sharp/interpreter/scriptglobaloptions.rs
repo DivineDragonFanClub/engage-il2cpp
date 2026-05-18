@@ -440,6 +440,7 @@ impl ScriptGlobalOptions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptGlobalOptions;
     pub use super::IScriptGlobalOptionsMethods;

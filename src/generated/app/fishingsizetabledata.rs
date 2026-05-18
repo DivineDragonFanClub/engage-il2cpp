@@ -916,6 +916,7 @@ impl FishingSizeTableData {
 }
 
 #[cfg(feature = "app-fishingsizetabledata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingSizeTableData;
     pub use super::IFishingSizeTableData;

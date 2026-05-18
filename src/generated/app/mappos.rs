@@ -1185,6 +1185,7 @@ impl MapPos {
 }
 
 #[cfg(feature = "app-mappos")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MapPos;
     pub use crate::system::object::IObject;

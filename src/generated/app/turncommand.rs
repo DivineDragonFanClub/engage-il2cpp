@@ -204,6 +204,7 @@ impl TurnCommand {
 }
 
 #[cfg(feature = "app-turncommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITurnCommand;
     pub use super::ITurnCommandMethods;

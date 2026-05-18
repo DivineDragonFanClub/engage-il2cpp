@@ -950,6 +950,7 @@ impl CapsuleCollider {
 }
 
 #[cfg(feature = "unity_engine-capsulecollider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapsuleCollider;
     pub use super::ICapsuleCollider;

@@ -402,6 +402,7 @@ impl JsonUtility {
 }
 
 #[cfg(feature = "unity_engine-jsonutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJsonUtility;
     pub use super::JsonUtility;

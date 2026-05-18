@@ -1486,6 +1486,7 @@ impl PhotographDisposManager {
 }
 
 #[cfg(feature = "app-photographdisposmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographDisposManager;
     pub use super::IPhotographDisposManagerMethods;

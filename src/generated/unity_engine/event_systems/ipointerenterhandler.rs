@@ -96,6 +96,7 @@ pub trait IIPointerEnterHandlerMethods: IIPointerEnterHandler {
 impl<__T: IIPointerEnterHandler> IIPointerEnterHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPointerEnterHandler;
     pub use super::IIPointerEnterHandlerMethods;

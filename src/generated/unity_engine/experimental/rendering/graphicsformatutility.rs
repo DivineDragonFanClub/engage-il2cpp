@@ -609,6 +609,7 @@ impl GraphicsFormatUtility {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-graphicsformatutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicsFormatUtility;
     pub use super::IGraphicsFormatUtility;

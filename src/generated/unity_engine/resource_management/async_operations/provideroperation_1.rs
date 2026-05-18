@@ -190,6 +190,7 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-provideroperation_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProviderOperation_1;
     pub use super::IProviderOperation_1Methods;

@@ -76,6 +76,7 @@ impl DictionaryHashHelpers {
 }
 
 #[cfg(feature = "system-collections-generic-dictionaryhashhelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DictionaryHashHelpers;
     pub use super::IDictionaryHashHelpers;

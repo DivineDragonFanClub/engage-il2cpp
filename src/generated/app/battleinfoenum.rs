@@ -436,6 +436,7 @@ impl BattleInfoEnum {
 }
 
 #[cfg(feature = "app-battleinfoenum")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleInfoEnum;
     pub use crate::system::object::IObject;

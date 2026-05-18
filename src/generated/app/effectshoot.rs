@@ -593,6 +593,7 @@ impl EffectShoot_Callback {
 }
 
 #[cfg(feature = "app-effectshoot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectShoot;
     pub use super::EffectShoot_Callback;

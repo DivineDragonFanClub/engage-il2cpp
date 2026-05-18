@@ -99,6 +99,7 @@ impl<
 }
 
 #[cfg(feature = "unity_engine-events-unityevent_4")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEvent_4;
     pub use super::IUnityEvent_4Methods;

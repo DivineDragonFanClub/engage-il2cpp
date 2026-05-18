@@ -566,6 +566,7 @@ impl LightingSettings {
 }
 
 #[cfg(feature = "unity_engine-lightingsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightingSettings;
     pub use super::ILightingSettingsMethods;

@@ -115,6 +115,7 @@ impl FormerlySerializedAsAttribute {
 }
 
 #[cfg(feature = "unity_engine-serialization-formerlyserializedasattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FormerlySerializedAsAttribute;
     pub use super::IFormerlySerializedAsAttribute;

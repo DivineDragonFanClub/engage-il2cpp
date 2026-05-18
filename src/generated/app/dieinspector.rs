@@ -120,6 +120,7 @@ impl DieInspector {
 }
 
 #[cfg(feature = "app-dieinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DieInspector;
     pub use super::IDieInspector;

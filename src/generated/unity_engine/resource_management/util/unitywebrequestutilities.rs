@@ -163,6 +163,7 @@ impl UnityWebRequestUtilities {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityWebRequestUtilities;
     pub use super::IUnityWebRequestUtilitiesMethods;

@@ -178,6 +178,7 @@ impl AkTimelineEventTrack {
 }
 
 #[cfg(feature = "root-aktimelineeventtrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTimelineEventTrack;
     pub use super::IAkTimelineEventTrack;

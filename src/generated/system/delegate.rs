@@ -2346,6 +2346,7 @@ pub trait IDelegateMethods: IDelegate {
 impl<__T: IDelegate> IDelegateMethods for __T {}
 
 #[cfg(feature = "system-delegate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Delegate;
     pub use super::IDelegate;

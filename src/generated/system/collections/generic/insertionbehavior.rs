@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-insertionbehavior")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::InsertionBehavior;
     pub use crate::system::object::IObject;

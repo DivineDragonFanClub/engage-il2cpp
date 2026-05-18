@@ -398,6 +398,7 @@ impl GodRelianceS {
 }
 
 #[cfg(feature = "app-godreliances")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodRelianceS;
     pub use super::IGodRelianceS;

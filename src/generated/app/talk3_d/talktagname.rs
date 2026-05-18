@@ -389,6 +389,7 @@ impl TalkTagName {
 }
 
 #[cfg(feature = "app-talk3_d-talktagname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagName;
     pub use super::ITalkTagNameMethods;

@@ -2110,6 +2110,7 @@ impl Char {
 }
 
 #[cfg(feature = "system-char")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Char;
     pub use crate::system::object::IObject;

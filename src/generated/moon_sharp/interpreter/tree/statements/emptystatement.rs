@@ -188,6 +188,7 @@ impl EmptyStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-emptystatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EmptyStatement;
     pub use super::IEmptyStatement;

@@ -105,6 +105,7 @@ impl RuntimeMemoryChecker {
 }
 
 #[cfg(feature = "root-runtimememorychecker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeMemoryChecker;
     pub use super::IRuntimeMemoryCheckerMethods;

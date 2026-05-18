@@ -276,6 +276,7 @@ impl ShopUnitSelectStatus {
 }
 
 #[cfg(feature = "app-shopunitselectstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShopUnitSelectStatus;
     pub use super::IShopUnitSelectStatusMethods;

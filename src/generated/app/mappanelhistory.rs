@@ -308,6 +308,7 @@ impl MapPanelHistory {
 }
 
 #[cfg(feature = "app-mappanelhistory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelHistory;
     pub use super::IMapPanelHistoryMethods;

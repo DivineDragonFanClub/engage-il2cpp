@@ -291,6 +291,7 @@ impl RefineShopEngraveGodMenuContent {
 }
 
 #[cfg(feature = "app-refineshopengravegodmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveGodMenuContent;
     pub use super::IRefineShopEngraveGodMenuContentMethods;

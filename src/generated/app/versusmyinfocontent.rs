@@ -605,6 +605,7 @@ impl VersusMyInfoContent {
 }
 
 #[cfg(feature = "app-versusmyinfocontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMyInfoContent;
     pub use super::IVersusMyInfoContentMethods;

@@ -328,6 +328,7 @@ impl HubResourceData {
 }
 
 #[cfg(feature = "app-hubresourcedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubResourceData;
     pub use super::IHubResourceData;

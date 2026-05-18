@@ -163,6 +163,7 @@ impl TargetHideMarker {
 }
 
 #[cfg(feature = "app-targethidemarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetHideMarker;
     pub use super::ITargetHideMarkerMethods;

@@ -48,6 +48,7 @@ impl<T0: ::unity2::ClassIdentity> HashSetPool_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-hashsetpool_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HashSetPool_1;
     pub use super::IHashSetPool_1;

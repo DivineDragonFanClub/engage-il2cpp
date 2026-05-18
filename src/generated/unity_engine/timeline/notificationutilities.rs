@@ -152,6 +152,7 @@ impl NotificationUtilities {
 }
 
 #[cfg(feature = "unity_engine-timeline-notificationutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INotificationUtilities;
     pub use super::NotificationUtilities;

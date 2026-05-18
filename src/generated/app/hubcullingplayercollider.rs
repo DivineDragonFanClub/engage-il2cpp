@@ -904,6 +904,7 @@ impl HubCullingPlayerCollider {
 }
 
 #[cfg(feature = "app-hubcullingplayercollider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCullingPlayerCollider;
     pub use super::IHubCullingPlayerCollider;

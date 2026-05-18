@@ -921,6 +921,7 @@ impl CannonInspector {
 }
 
 #[cfg(feature = "app-cannoninspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CannonInspector;
     pub use super::ICannonInspector;

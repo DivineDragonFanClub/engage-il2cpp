@@ -828,6 +828,7 @@ impl DebugModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-debugmodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugModule;
     pub use super::IDebugModule;

@@ -999,6 +999,7 @@ impl SkillInheritanceSequence {
 }
 
 #[cfg(feature = "app-skillinheritancesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillInheritanceSequence;
     pub use super::ISkillInheritanceSequenceMethods;

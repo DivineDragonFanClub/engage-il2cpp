@@ -234,6 +234,7 @@ impl AudienceController {
 }
 
 #[cfg(feature = "root-audiencecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudienceController;
     pub use super::IAudienceController;

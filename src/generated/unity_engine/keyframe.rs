@@ -621,6 +621,7 @@ impl Keyframe {
 }
 
 #[cfg(feature = "unity_engine-keyframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Keyframe;
     pub use crate::system::object::IObject;

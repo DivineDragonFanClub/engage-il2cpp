@@ -231,6 +231,7 @@ impl ProcDescLabel {
 }
 
 #[cfg(feature = "app-procdesclabel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescLabel;
     pub use super::IProcDescLabelMethods;

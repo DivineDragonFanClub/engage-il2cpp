@@ -774,6 +774,7 @@ impl ProfileCardDeleteOverLimitSequence {
 }
 
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardDeleteOverLimitSequence;
     pub use super::IProfileCardDeleteOverLimitSequenceMethods;

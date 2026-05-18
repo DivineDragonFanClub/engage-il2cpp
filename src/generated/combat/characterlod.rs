@@ -577,6 +577,7 @@ impl CharacterLod {
 }
 
 #[cfg(feature = "combat-characterlod")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterLod;
     pub use super::ICharacterLod;

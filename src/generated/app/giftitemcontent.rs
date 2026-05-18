@@ -339,6 +339,7 @@ impl GiftItemContent {
 }
 
 #[cfg(feature = "app-giftitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftItemContent;
     pub use super::IGiftItemContent;

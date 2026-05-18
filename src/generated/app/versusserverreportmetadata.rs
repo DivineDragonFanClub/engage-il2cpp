@@ -838,6 +838,7 @@ impl VersusServerReportMetaData {
 }
 
 #[cfg(feature = "app-versusserverreportmetadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerReportMetaData;
     pub use super::IVersusServerReportMetaDataMethods;

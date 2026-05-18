@@ -246,6 +246,7 @@ impl MonoPropertyInfo {
 }
 
 #[cfg(feature = "system-reflection-monopropertyinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MonoPropertyInfo;
     pub use crate::system::object::IObject;

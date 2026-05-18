@@ -596,6 +596,7 @@ pub trait IConstructorBuilderMethods: IConstructorBuilder {
 impl<__T: IConstructorBuilder> IConstructorBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-constructorbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConstructorBuilder;
     pub use super::IConstructorBuilder;

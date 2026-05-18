@@ -44,6 +44,7 @@ impl<T0: ::unity2::ClassIdentity> ListChangedEventArgs_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-listchangedeventargs_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IListChangedEventArgs_1;
     pub use super::IListChangedEventArgs_1Methods;

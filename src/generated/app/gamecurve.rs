@@ -163,6 +163,7 @@ impl GameCurve {
 }
 
 #[cfg(feature = "app-gamecurve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameCurve;
     pub use super::IGameCurve;

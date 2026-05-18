@@ -331,6 +331,7 @@ impl PS19_SendTime {
 }
 
 #[cfg(feature = "combat-ps19_sendtime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPS19_SendTime;
     pub use super::IPS19_SendTimeMethods;

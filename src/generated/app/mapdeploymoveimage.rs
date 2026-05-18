@@ -495,6 +495,7 @@ impl MapDeployMoveImage {
 }
 
 #[cfg(feature = "app-mapdeploymoveimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployMoveImage;
     pub use super::IMapDeployMoveImageMethods;

@@ -143,6 +143,7 @@ impl<T0: ::unity2::ClassIdentity> StructDataArray_1<T0> {
 }
 
 #[cfg(feature = "app-structdataarray_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructDataArray_1;
     pub use super::IStructDataArray_1Methods;

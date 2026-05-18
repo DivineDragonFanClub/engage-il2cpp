@@ -524,6 +524,7 @@ impl SpriteAtlasManager_2 {
 }
 
 #[cfg(feature = "app-spriteatlasmanager_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteAtlasManager_2;
     pub use super::ISpriteAtlasManager_2Methods;

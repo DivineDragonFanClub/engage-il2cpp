@@ -6257,6 +6257,7 @@ impl ChapterData {
 }
 
 #[cfg(feature = "app-chapterdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChapterData;
     pub use super::ChapterData_Flags;

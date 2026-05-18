@@ -493,6 +493,7 @@ impl Gradient {
 }
 
 #[cfg(feature = "unity_engine-gradient")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Gradient;
     pub use super::IGradient;

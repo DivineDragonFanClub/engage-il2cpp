@@ -436,6 +436,7 @@ impl ConfirmDialog_ConfirmDialogItemYes {
 }
 
 #[cfg(feature = "app-cooking_menu-confirmdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfirmDialog;
     pub use super::ConfirmDialog_ConfirmDialogItemYes;

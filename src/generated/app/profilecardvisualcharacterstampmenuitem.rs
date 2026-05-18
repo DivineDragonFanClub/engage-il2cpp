@@ -425,6 +425,7 @@ impl ProfileCardVisualCharacterStampMenuItem {
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualCharacterStampMenuItem;
     pub use super::IProfileCardVisualCharacterStampMenuItemMethods;

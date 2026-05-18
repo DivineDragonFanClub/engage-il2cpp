@@ -882,6 +882,7 @@ impl HubFortuneTellingData {
 }
 
 #[cfg(feature = "app-hubfortunetellingdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubFortuneTellingData;
     pub use super::IHubFortuneTellingData;

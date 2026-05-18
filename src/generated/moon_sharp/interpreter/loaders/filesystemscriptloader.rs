@@ -242,6 +242,7 @@ impl FileSystemScriptLoader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-filesystemscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileSystemScriptLoader;
     pub use super::IFileSystemScriptLoader;

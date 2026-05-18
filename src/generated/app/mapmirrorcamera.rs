@@ -236,6 +236,7 @@ impl MapMirrorCamera {
 }
 
 #[cfg(feature = "app-mapmirrorcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapMirrorCamera;
     pub use super::IMapMirrorCameraMethods;

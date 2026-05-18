@@ -107,6 +107,7 @@ impl MyRoomFadeColor {
 }
 
 #[cfg(feature = "app-myroomfadecolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomFadeColor;
     pub use super::IMyRoomFadeColorMethods;

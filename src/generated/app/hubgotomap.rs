@@ -387,6 +387,7 @@ impl HubGoToMap {
 }
 
 #[cfg(feature = "app-hubgotomap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubGoToMap;
     pub use super::HubGoToMap_GoToDialogItem;

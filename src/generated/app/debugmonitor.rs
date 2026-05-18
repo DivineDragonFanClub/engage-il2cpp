@@ -154,6 +154,7 @@ impl DebugMonitor {
 }
 
 #[cfg(feature = "app-debugmonitor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugMonitor;
     pub use super::IDebugMonitor;

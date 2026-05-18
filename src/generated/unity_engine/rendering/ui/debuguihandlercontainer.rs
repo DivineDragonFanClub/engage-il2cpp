@@ -358,6 +358,7 @@ impl DebugUIHandlerContainer {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerContainer;
     pub use super::IDebugUIHandlerContainer;

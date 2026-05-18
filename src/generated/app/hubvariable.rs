@@ -3779,6 +3779,7 @@ impl HubVariable_Mascot {
 }
 
 #[cfg(feature = "app-hubvariable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubVariable;
     pub use super::HubVariable_Mascot;

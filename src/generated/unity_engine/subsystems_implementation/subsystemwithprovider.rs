@@ -104,6 +104,7 @@ impl SubsystemWithProvider {
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemwithprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemWithProvider;
     pub use super::ISubsystemWithProviderMethods;

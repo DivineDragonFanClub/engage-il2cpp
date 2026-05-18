@@ -2046,6 +2046,7 @@ impl MethodBase {
 }
 
 #[cfg(feature = "system-reflection-methodbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMethodBase;
     pub use super::IMethodBaseMethods;

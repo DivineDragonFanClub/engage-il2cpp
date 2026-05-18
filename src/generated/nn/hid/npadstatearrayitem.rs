@@ -107,6 +107,7 @@ impl NpadStateArrayItem {
 }
 
 #[cfg(feature = "nn-hid-npadstatearrayitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadStateArrayItem;
     pub use crate::system::object::IObject;

@@ -175,6 +175,7 @@ impl SpaceAttribute {
 }
 
 #[cfg(feature = "unity_engine-spaceattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpaceAttribute;
     pub use super::ISpaceAttributeMethods;

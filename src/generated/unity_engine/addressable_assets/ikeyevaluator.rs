@@ -142,6 +142,7 @@ pub trait IIKeyEvaluatorMethods: IIKeyEvaluator {
 impl<__T: IIKeyEvaluator> IIKeyEvaluatorMethods for __T {}
 
 #[cfg(feature = "unity_engine-addressable_assets-ikeyevaluator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIKeyEvaluator;
     pub use super::IIKeyEvaluatorMethods;

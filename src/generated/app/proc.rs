@@ -18,6 +18,15 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity> {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
+    #[::unity2::class(namespace = "App", name = "Proc")]
+    #[parent(crate::system::object::Object)]
+    pub struct Proc {
+        #[static_field]
+        #[rename(name = "s_Roots")]
+        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
     #[repr(C)]
     #[derive(
@@ -68,15 +77,6 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 3 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
-    #[::unity2::class(namespace = "App", name = "Proc")]
-    #[parent(crate::system::object::Object)]
-    pub struct Proc {
-        #[static_field]
-        #[rename(name = "s_Roots")]
-        pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
     }
 }
 
@@ -3408,6 +3408,7 @@ impl Proc {
 }
 
 #[cfg(feature = "app-proc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProc;
     pub use super::IProcMethods;

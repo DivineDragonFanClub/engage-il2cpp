@@ -243,6 +243,7 @@ impl EditorPrefs_String {
 }
 
 #[cfg(feature = "combat-editorprefs_string")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EditorPrefs_String;
     pub use super::IEditorPrefs_String;

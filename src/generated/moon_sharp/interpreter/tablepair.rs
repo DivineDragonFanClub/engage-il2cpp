@@ -450,6 +450,7 @@ impl TablePair {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tablepair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TablePair;
     pub use crate::system::object::IObject;

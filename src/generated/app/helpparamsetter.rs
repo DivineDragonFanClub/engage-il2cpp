@@ -2471,6 +2471,7 @@ impl HelpParamSetter {
 }
 
 #[cfg(feature = "app-helpparamsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpParamSetter;
     pub use super::IHelpParamSetter;

@@ -1015,6 +1015,7 @@ impl TutorialListSelectMenuItem {
 }
 
 #[cfg(feature = "root-tutoriallistselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialListSelectMenuItem;
     pub use super::ITutorialListSelectMenuItemMethods;

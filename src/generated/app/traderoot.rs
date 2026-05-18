@@ -550,6 +550,7 @@ impl TradeRoot {
 }
 
 #[cfg(feature = "app-traderoot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITradeRoot;
     pub use super::ITradeRootMethods;

@@ -607,6 +607,7 @@ impl MenuAccessoryContent {
 }
 
 #[cfg(feature = "app-menuaccessorycontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMenuAccessoryContent;
     pub use super::IMenuAccessoryContentMethods;

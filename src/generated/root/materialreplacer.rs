@@ -13,16 +13,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialreplacer/MaterialReplacer.md"))]
-    #[::unity2::class(namespace = "", name = "MaterialReplacer")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct MaterialReplacer {
-        #[rename(name = "m_MaterialBmap")]
-        pub m_material_bmap: crate::unity_engine::material::Material,
-        #[rename(name = "m_MaterialCombat")]
-        pub m_material_combat: crate::unity_engine::material::Material,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/materialreplacer/MaterialReplacer_Mode.md"))]
     #[repr(C)]
     #[derive(
@@ -65,6 +55,16 @@ mod __types {
         pub fn combat() -> Self {
             Self { value: 1 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialreplacer/MaterialReplacer.md"))]
+    #[::unity2::class(namespace = "", name = "MaterialReplacer")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MaterialReplacer {
+        #[rename(name = "m_MaterialBmap")]
+        pub m_material_bmap: crate::unity_engine::material::Material,
+        #[rename(name = "m_MaterialCombat")]
+        pub m_material_combat: crate::unity_engine::material::Material,
     }
 }
 
@@ -332,6 +332,7 @@ impl MaterialReplacer {
 }
 
 #[cfg(feature = "root-materialreplacer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialReplacer;
     pub use super::IMaterialReplacerMethods;

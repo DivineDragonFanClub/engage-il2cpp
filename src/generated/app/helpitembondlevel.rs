@@ -288,6 +288,7 @@ impl HelpItemBondLevel {
 }
 
 #[cfg(feature = "app-helpitembondlevel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemBondLevel;
     pub use super::IHelpItemBondLevel;

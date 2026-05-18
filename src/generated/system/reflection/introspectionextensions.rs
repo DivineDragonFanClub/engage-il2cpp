@@ -87,6 +87,7 @@ impl IntrospectionExtensions {
 }
 
 #[cfg(feature = "system-reflection-introspectionextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntrospectionExtensions;
     pub use super::IntrospectionExtensions;

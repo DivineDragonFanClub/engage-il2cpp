@@ -185,6 +185,7 @@ impl ProcDescMTickEnum {
 }
 
 #[cfg(feature = "app-procdescmtickenum")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMTickEnum;
     pub use super::IProcDescMTickEnumMethods;

@@ -191,6 +191,7 @@ impl<T0: ::unity2::ClassIdentity> Stack_1_Enumerator<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-stack_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStack_1;
     pub use super::IStack_1Methods;

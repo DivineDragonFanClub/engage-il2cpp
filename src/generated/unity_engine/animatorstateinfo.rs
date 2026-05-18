@@ -471,6 +471,7 @@ impl AnimatorStateInfo {
 }
 
 #[cfg(feature = "unity_engine-animatorstateinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorStateInfo;
     pub use crate::system::object::IObject;

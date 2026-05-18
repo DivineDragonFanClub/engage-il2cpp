@@ -238,6 +238,7 @@ impl EditorPrefs_Int {
 }
 
 #[cfg(feature = "combat-editorprefs_int")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EditorPrefs_Int;
     pub use super::IEditorPrefs_Int;

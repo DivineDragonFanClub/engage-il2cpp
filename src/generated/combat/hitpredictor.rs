@@ -293,6 +293,7 @@ impl HitPredictor {
 }
 
 #[cfg(feature = "combat-hitpredictor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HitPredictor;
     pub use super::IHitPredictor;

@@ -290,6 +290,7 @@ impl SortieTradeItemMenuContent {
 }
 
 #[cfg(feature = "app-sortietradeitemmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieTradeItemMenuContent;
     pub use super::ISortieTradeItemMenuContentMethods;

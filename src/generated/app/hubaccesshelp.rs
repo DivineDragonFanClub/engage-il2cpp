@@ -440,6 +440,7 @@ impl HubAccessHelp {
 }
 
 #[cfg(feature = "app-hubaccesshelp")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessHelp;
     pub use super::IHubAccessHelp;

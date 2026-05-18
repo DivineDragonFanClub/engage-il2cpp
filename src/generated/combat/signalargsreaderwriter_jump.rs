@@ -663,6 +663,7 @@ impl SignalArgsReaderWriter_Jump {
 }
 
 #[cfg(feature = "combat-signalargsreaderwriter_jump")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalArgsReaderWriter_Jump;
     pub use super::SignalArgsReaderWriter_Jump;

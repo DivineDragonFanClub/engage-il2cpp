@@ -904,6 +904,7 @@ impl BuildTimeScopeFrame {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BuildTimeScopeFrame;
     pub use super::IBuildTimeScopeFrame;

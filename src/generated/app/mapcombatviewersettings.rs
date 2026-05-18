@@ -844,6 +844,7 @@ impl MapCombatViewerSettings {
 }
 
 #[cfg(feature = "app-mapcombatviewersettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapCombatViewerSettings;
     pub use super::IMapCombatViewerSettingsMethods;

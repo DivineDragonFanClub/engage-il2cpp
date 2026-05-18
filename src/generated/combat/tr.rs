@@ -718,6 +718,7 @@ impl TR {
 }
 
 #[cfg(feature = "combat-tr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TR;
     pub use crate::system::object::IObject;

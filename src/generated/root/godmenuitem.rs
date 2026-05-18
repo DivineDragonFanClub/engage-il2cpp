@@ -186,6 +186,7 @@ impl GodMenuItem {
 }
 
 #[cfg(feature = "root-godmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodMenuItem;
     pub use super::IGodMenuItem;

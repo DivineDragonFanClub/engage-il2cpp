@@ -21,6 +21,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-nexdataid")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INexDataId;
     pub use super::NexDataId;

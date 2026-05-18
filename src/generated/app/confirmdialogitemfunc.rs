@@ -181,6 +181,7 @@ impl ConfirmDialogItemFunc {
 }
 
 #[cfg(feature = "app-confirmdialogitemfunc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfirmDialogItemFunc;
     pub use super::IConfirmDialogItemFunc;

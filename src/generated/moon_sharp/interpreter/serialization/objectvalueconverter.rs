@@ -101,6 +101,7 @@ impl ObjectValueConverter {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectValueConverter;
     pub use super::ObjectValueConverter;

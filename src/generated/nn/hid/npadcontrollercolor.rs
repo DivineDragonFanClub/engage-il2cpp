@@ -101,6 +101,7 @@ impl NpadControllerColor {
 }
 
 #[cfg(feature = "nn-hid-npadcontrollercolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadControllerColor;
     pub use crate::system::object::IObject;

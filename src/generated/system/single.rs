@@ -781,6 +781,7 @@ impl Single {
 }
 
 #[cfg(feature = "system-single")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Single;
     pub use crate::system::object::IObject;

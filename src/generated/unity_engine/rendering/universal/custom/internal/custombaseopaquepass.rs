@@ -1027,6 +1027,7 @@ impl CustomBaseOpaquePass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombaseopaquepass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomBaseOpaquePass;
     pub use super::ICustomBaseOpaquePass;

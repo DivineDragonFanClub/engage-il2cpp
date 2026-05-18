@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-controllerfirmwareupdate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerFirmwareUpdate;
     pub use super::IControllerFirmwareUpdate;

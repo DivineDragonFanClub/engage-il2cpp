@@ -103,6 +103,7 @@ impl ExtensionOfNativeClassAttribute {
 }
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExtensionOfNativeClassAttribute;
     pub use super::IExtensionOfNativeClassAttribute;

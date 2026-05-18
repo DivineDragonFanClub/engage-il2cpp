@@ -2228,6 +2228,7 @@ impl EncountMob {
 }
 
 #[cfg(feature = "app-encountmob")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountMob;
     pub use super::IEncountMob;

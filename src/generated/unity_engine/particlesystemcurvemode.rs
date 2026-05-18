@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystemcurvemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleSystemCurveMode;
     pub use crate::system::object::IObject;

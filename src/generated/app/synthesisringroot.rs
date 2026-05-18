@@ -520,6 +520,7 @@ impl SynthesisRingRoot {
 }
 
 #[cfg(feature = "app-synthesisringroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISynthesisRingRoot;
     pub use super::ISynthesisRingRootMethods;

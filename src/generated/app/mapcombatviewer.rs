@@ -105,6 +105,7 @@ impl MapCombatViewer {
 }
 
 #[cfg(feature = "app-mapcombatviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapCombatViewer;
     pub use super::IMapCombatViewerMethods;

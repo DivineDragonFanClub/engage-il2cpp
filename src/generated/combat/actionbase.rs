@@ -427,6 +427,7 @@ impl ActionBase {
 }
 
 #[cfg(feature = "combat-actionbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionBase;
     pub use super::IActionBase;

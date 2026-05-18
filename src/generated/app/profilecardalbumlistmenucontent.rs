@@ -467,6 +467,7 @@ impl ProfileCardAlbumListMenuContent {
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardAlbumListMenuContent;
     pub use super::IProfileCardAlbumListMenuContentMethods;

@@ -655,6 +655,7 @@ impl Dir_2 {
 }
 
 #[cfg(feature = "app-dir_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Dir_2;
     pub use super::Dir_Type;

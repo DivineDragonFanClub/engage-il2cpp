@@ -12,7 +12,7 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -21,14 +21,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubAccessoryRoom_ViewMode {
+    pub struct HubAccessoryRoom_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode {
+    impl ::unity2::ClassIdentity for HubAccessoryRoom_Label {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubAccessoryRoom.ViewMode";
+        const NAME: &'static str = "HubAccessoryRoom.Label";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubAccessoryRoom_ViewMode {
+    impl ::unity2::IlType for HubAccessoryRoom_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -46,17 +46,21 @@ mod __types {
         }
     }
 
-    impl HubAccessoryRoom_ViewMode {
-        pub fn unit_select() -> Self {
+    impl HubAccessoryRoom_Label {
+        pub fn none() -> Self {
             Self { value: 0 }
         }
 
-        pub fn accessory_select() -> Self {
+        pub fn init() -> Self {
             Self { value: 1 }
         }
 
-        pub fn preview() -> Self {
+        pub fn main() -> Self {
             Self { value: 2 }
+        }
+
+        pub fn exit() -> Self {
+            Self { value: 3 }
         }
     }
 
@@ -126,7 +130,7 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
     #[repr(C)]
     #[derive(
         ::core::clone::Clone,
@@ -135,14 +139,14 @@ mod __types {
         ::core::cmp::PartialEq,
         ::core::cmp::Eq,
     )]
-    pub struct HubAccessoryRoom_Label {
+    pub struct HubAccessoryRoom_ViewMode {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for HubAccessoryRoom_Label {
+    impl ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode {
         const NAMESPACE: &'static str = "App";
 
-        const NAME: &'static str = "HubAccessoryRoom.Label";
+        const NAME: &'static str = "HubAccessoryRoom.ViewMode";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -151,7 +155,7 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for HubAccessoryRoom_Label {
+    impl ::unity2::IlType for HubAccessoryRoom_ViewMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
             &<Self as ::unity2::ClassIdentity>::class()
                 .raw()
@@ -160,21 +164,17 @@ mod __types {
         }
     }
 
-    impl HubAccessoryRoom_Label {
-        pub fn none() -> Self {
+    impl HubAccessoryRoom_ViewMode {
+        pub fn unit_select() -> Self {
             Self { value: 0 }
         }
 
-        pub fn init() -> Self {
+        pub fn accessory_select() -> Self {
             Self { value: 1 }
         }
 
-        pub fn main() -> Self {
+        pub fn preview() -> Self {
             Self { value: 2 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 3 }
         }
     }
 }
@@ -1464,6 +1464,7 @@ impl HubAccessoryRoom {
 }
 
 #[cfg(feature = "app-hubaccessoryroom")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessoryRoom;
     pub use super::HubAccessoryRoom_Label;

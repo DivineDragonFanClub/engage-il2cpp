@@ -217,6 +217,7 @@ impl RefineGodWeaponCommon {
 }
 
 #[cfg(feature = "app-refinegodweaponcommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponCommon;
     pub use super::IRefineGodWeaponCommonMethods;

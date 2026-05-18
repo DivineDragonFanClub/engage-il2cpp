@@ -342,6 +342,7 @@ impl HubSkySelector {
 }
 
 #[cfg(feature = "app-hubskyselector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubSkySelector;
     pub use super::IHubSkySelector;

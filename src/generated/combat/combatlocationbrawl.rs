@@ -482,6 +482,7 @@ impl CombatLocationBrawl {
 }
 
 #[cfg(feature = "combat-combatlocationbrawl")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationBrawl;
     pub use super::ICombatLocationBrawl;

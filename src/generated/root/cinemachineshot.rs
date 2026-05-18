@@ -249,6 +249,7 @@ impl CinemachineShot {
 }
 
 #[cfg(feature = "root-cinemachineshot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineShot;
     pub use super::ICinemachineShot;

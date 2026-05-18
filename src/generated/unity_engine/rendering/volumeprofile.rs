@@ -968,6 +968,7 @@ impl VolumeProfile {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeprofile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeProfile;
     pub use super::IVolumeProfileMethods;

@@ -7443,6 +7443,7 @@ impl Character {
 }
 
 #[cfg(feature = "combat-character")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Character;
     pub use super::ICharacter;

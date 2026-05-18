@@ -868,6 +868,7 @@ impl TalkBuilder {
 }
 
 #[cfg(feature = "app-talk3_d-talkbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkBuilder;
     pub use super::ITalkBuilderMethods;

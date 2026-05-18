@@ -109,6 +109,7 @@ impl AssemblyDelaySignAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblydelaysignattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyDelaySignAttribute;
     pub use super::IAssemblyDelaySignAttribute;

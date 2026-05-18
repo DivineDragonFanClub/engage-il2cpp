@@ -1825,6 +1825,7 @@ impl MagicSignalProcessor {
 }
 
 #[cfg(feature = "combat-magicsignalprocessor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSignalProcessor;
     pub use super::IMagicSignalProcessorMethods;

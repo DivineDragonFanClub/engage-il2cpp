@@ -378,6 +378,7 @@ impl SceneInstance {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneinstance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SceneInstance;
     pub use crate::system::object::IObject;

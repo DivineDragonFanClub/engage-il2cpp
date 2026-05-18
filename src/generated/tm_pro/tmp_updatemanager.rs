@@ -1168,6 +1168,7 @@ impl TMP_UpdateManager {
 }
 
 #[cfg(feature = "tm_pro-tmp_updatemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_UpdateManager;
     pub use super::ITMP_UpdateManagerMethods;

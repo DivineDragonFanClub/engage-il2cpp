@@ -469,6 +469,7 @@ impl ReadOnlyCollectionBase {
 }
 
 #[cfg(feature = "system-collections-readonlycollectionbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReadOnlyCollectionBase;
     pub use super::IReadOnlyCollectionBaseMethods;

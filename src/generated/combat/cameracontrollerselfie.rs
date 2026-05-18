@@ -639,6 +639,7 @@ impl CameraControllerSelfie {
 }
 
 #[cfg(feature = "combat-cameracontrollerselfie")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerSelfie;
     pub use super::ICameraControllerSelfie;

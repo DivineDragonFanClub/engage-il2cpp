@@ -105,6 +105,7 @@ impl DebugGpuStats {
 }
 
 #[cfg(feature = "app-debuggpustats")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugGpuStats;
     pub use super::IDebugGpuStats;

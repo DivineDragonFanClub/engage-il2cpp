@@ -1108,6 +1108,7 @@ impl GmapUtil {
 }
 
 #[cfg(feature = "app-gmaputil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapUtil;
     pub use super::IGmapUtil;

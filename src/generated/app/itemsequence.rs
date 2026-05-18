@@ -159,6 +159,7 @@ impl ItemSequence {
 }
 
 #[cfg(feature = "app-itemsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemSequence;
     pub use super::IItemSequenceMethods;

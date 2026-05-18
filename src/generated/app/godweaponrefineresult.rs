@@ -227,6 +227,7 @@ impl GodWeaponRefineResult {
 }
 
 #[cfg(feature = "app-godweaponrefineresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodWeaponRefineResult;
     pub use super::IGodWeaponRefineResult;

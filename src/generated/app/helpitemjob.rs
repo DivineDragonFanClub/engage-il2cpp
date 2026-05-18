@@ -279,6 +279,7 @@ impl HelpItemJob {
 }
 
 #[cfg(feature = "app-helpitemjob")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemJob;
     pub use super::IHelpItemJob;

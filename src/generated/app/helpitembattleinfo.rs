@@ -231,6 +231,7 @@ impl HelpItemBattleInfo {
 }
 
 #[cfg(feature = "app-helpitembattleinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemBattleInfo;
     pub use super::IHelpItemBattleInfo;

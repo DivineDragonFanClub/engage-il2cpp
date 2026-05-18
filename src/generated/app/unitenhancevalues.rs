@@ -9,20 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitenhancevalues/UnitEnhanceValues.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitEnhanceValues")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitEnhanceValues {
-        #[static_field]
-        #[rename(name = "Num")]
-        pub num: i32,
-        #[static_field]
-        #[rename(name = "Version")]
-        pub version: i32,
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i32>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenhancevalues/UnitEnhanceValues_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -69,6 +55,20 @@ mod __types {
         pub fn num() -> Self {
             Self { value: 11 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitenhancevalues/UnitEnhanceValues.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitEnhanceValues")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitEnhanceValues {
+        #[static_field]
+        #[rename(name = "Num")]
+        pub num: i32,
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+        #[rename(name = "m_Values")]
+        pub m_values: ::unity2::Array<i32>,
     }
 }
 
@@ -1293,6 +1293,7 @@ impl UnitEnhanceValues {
 }
 
 #[cfg(feature = "app-unitenhancevalues")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitEnhanceValues;
     pub use super::IUnitEnhanceValuesMethods;

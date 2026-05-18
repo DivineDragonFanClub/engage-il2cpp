@@ -461,6 +461,7 @@ impl VFXSpawnerState {
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVFXSpawnerState;
     pub use super::IVFXSpawnerStateMethods;

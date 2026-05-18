@@ -834,6 +834,7 @@ pub trait IFontMethods: IFont {
 impl<__T: IFont> IFontMethods for __T {}
 
 #[cfg(feature = "unity_engine-font")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Font;
     pub use super::Font_FontTextureRebuildCallback;

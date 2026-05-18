@@ -295,6 +295,7 @@ impl RefineShopRefineTargetMenuContent {
 }
 
 #[cfg(feature = "app-refineshoprefinetargetmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopRefineTargetMenuContent;
     pub use super::IRefineShopRefineTargetMenuContentMethods;

@@ -164,6 +164,7 @@ impl AssetBundleCreateRequest {
 }
 
 #[cfg(feature = "unity_engine-assetbundlecreaterequest")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundleCreateRequest;
     pub use super::IAssetBundleCreateRequest;

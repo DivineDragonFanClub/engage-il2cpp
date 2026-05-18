@@ -100,6 +100,7 @@ impl Logger_2 {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-logger_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILogger_2;
     pub use super::ILogger_2Methods;

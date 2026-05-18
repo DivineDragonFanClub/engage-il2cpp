@@ -200,6 +200,7 @@ impl RepeatStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-repeatstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRepeatStatement;
     pub use super::IRepeatStatementMethods;

@@ -218,6 +218,7 @@ impl StrlenCommand {
 }
 
 #[cfg(feature = "app-strlencommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStrlenCommand;
     pub use super::IStrlenCommandMethods;

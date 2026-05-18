@@ -330,6 +330,7 @@ impl WeightFader {
 }
 
 #[cfg(feature = "app-weightfader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeightFader;
     pub use super::IWeightFaderMethods;

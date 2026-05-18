@@ -243,6 +243,7 @@ impl ConfigYesNoDialogYesMenuItem {
 }
 
 #[cfg(feature = "root-configyesnodialogyesmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigYesNoDialogYesMenuItem;
     pub use super::IConfigYesNoDialogYesMenuItem;

@@ -94,6 +94,7 @@ impl<__T: IIVirtualTexturingEnabledRenderPipeline> IIVirtualTexturingEnabledRend
 }
 
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIVirtualTexturingEnabledRenderPipeline;
     pub use super::IIVirtualTexturingEnabledRenderPipelineMethods;

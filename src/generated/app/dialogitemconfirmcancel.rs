@@ -104,6 +104,7 @@ impl DialogItemConfirmCancel {
 }
 
 #[cfg(feature = "app-dialogitemconfirmcancel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DialogItemConfirmCancel;
     pub use super::IDialogItemConfirmCancel;

@@ -304,6 +304,7 @@ impl DragonRideStartTelopReciever {
 }
 
 #[cfg(feature = "app-dragonridestarttelopreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideStartTelopReciever;
     pub use super::IDragonRideStartTelopReciever;

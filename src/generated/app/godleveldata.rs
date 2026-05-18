@@ -760,6 +760,7 @@ impl GodLevelData {
 }
 
 #[cfg(feature = "app-godleveldata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodLevelData;
     pub use super::IGodLevelData;

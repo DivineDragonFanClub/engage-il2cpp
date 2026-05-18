@@ -254,6 +254,7 @@ impl NoInterpMinFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpminfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpMinFloatParameter;
     pub use super::INoInterpMinFloatParameterMethods;

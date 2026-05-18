@@ -537,6 +537,7 @@ impl RefineGodWeaponSelectMenuContent {
 }
 
 #[cfg(feature = "app-refinegodweaponselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponSelectMenuContent;
     pub use super::IRefineGodWeaponSelectMenuContentMethods;

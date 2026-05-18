@@ -105,6 +105,7 @@ impl MapInfoDebug {
 }
 
 #[cfg(feature = "root-mapinfodebug")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoDebug;
     pub use super::IMapInfoDebugMethods;

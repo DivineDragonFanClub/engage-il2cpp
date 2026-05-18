@@ -126,6 +126,7 @@ impl SupportsChildTracksAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISupportsChildTracksAttribute;
     pub use super::ISupportsChildTracksAttributeMethods;

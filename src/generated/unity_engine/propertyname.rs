@@ -467,6 +467,7 @@ impl PropertyName {
 }
 
 #[cfg(feature = "unity_engine-propertyname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PropertyName;
     pub use crate::system::object::IObject;

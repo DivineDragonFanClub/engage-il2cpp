@@ -122,6 +122,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-profilecardcondition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ProfileCardCondition;
     pub use crate::system::object::IObject;

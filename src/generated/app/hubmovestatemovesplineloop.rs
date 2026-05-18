@@ -404,6 +404,7 @@ impl HubMoveStateMoveSplineLoop {
 }
 
 #[cfg(feature = "app-hubmovestatemovesplineloop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveStateMoveSplineLoop;
     pub use super::IHubMoveStateMoveSplineLoop;

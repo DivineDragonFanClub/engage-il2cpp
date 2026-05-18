@@ -45,6 +45,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-intervaltreenode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IntervalTreeNode;
     pub use crate::system::object::IObject;

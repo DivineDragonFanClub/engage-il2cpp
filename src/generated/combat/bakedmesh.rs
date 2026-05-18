@@ -483,6 +483,7 @@ impl BakedMesh {
 }
 
 #[cfg(feature = "combat-bakedmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BakedMesh;
     pub use super::IBakedMesh;

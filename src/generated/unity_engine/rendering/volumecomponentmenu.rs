@@ -111,6 +111,7 @@ impl VolumeComponentMenu {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeComponentMenu;
     pub use super::IVolumeComponentMenuMethods;

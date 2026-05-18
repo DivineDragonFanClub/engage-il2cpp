@@ -494,6 +494,7 @@ impl SymbolRefExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-symbolrefexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISymbolRefExpression;
     pub use super::ISymbolRefExpressionMethods;

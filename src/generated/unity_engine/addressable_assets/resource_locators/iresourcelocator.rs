@@ -204,6 +204,7 @@ pub trait IIResourceLocatorMethods: IIResourceLocator {
 impl<__T: IIResourceLocator> IIResourceLocatorMethods for __T {}
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIResourceLocator;
     pub use super::IIResourceLocatorMethods;

@@ -1569,6 +1569,7 @@ impl PropertyInfo {
 }
 
 #[cfg(feature = "system-reflection-propertyinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyInfo;
     pub use super::IPropertyInfoMethods;

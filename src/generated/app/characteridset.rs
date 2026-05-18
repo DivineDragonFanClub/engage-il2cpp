@@ -835,6 +835,7 @@ impl CharacterIdSet {
 }
 
 #[cfg(feature = "app-characteridset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIdSet;
     pub use super::ICharacterIdSet;

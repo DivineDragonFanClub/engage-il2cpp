@@ -2711,6 +2711,7 @@ impl CombatWorld {
 }
 
 #[cfg(feature = "combat-combatworld")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatWorld;
     pub use super::ICombatWorld;

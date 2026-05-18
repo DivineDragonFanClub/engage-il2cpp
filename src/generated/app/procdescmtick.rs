@@ -181,6 +181,7 @@ impl ProcDescMTick {
 }
 
 #[cfg(feature = "app-procdescmtick")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMTick;
     pub use super::IProcDescMTickMethods;

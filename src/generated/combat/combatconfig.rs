@@ -125,6 +125,7 @@ impl CombatConfig {
 }
 
 #[cfg(feature = "combat-combatconfig")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatConfig;
     pub use super::ICombatConfig;

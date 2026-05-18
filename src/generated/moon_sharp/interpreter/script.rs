@@ -3340,6 +3340,7 @@ impl Script {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-script")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScript;
     pub use super::IScriptMethods;

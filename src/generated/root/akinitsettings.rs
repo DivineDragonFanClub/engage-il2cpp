@@ -2132,6 +2132,7 @@ impl AkInitSettings {
 }
 
 #[cfg(feature = "root-akinitsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkInitSettings;
     pub use super::IAkInitSettings;

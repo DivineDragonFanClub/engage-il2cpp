@@ -410,6 +410,7 @@ impl ShadowDrawingSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-shadowdrawingsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowDrawingSettings;
     pub use crate::system::object::IObject;

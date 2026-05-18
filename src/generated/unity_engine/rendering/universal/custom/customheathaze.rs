@@ -228,6 +228,7 @@ impl CustomHeatHaze {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomHeatHaze;
     pub use super::ICustomHeatHaze;

@@ -102,6 +102,7 @@ impl DebugGUI {
 }
 
 #[cfg(feature = "app-debuggui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugGUI;
     pub use super::IDebugGUI;

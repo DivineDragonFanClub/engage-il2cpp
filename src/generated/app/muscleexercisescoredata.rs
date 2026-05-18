@@ -1143,6 +1143,7 @@ impl MuscleExerciseScoreData {
 }
 
 #[cfg(feature = "app-muscleexercisescoredata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleExerciseScoreData;
     pub use super::IMuscleExerciseScoreDataMethods;

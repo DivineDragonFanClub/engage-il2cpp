@@ -100,6 +100,7 @@ impl ExcludeFromPresetAttribute {
 }
 
 #[cfg(feature = "unity_engine-excludefrompresetattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExcludeFromPresetAttribute;
     pub use super::IExcludeFromPresetAttribute;

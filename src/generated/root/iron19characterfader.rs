@@ -1430,6 +1430,7 @@ impl Iron19CharacterFader {
 }
 
 #[cfg(feature = "root-iron19characterfader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIron19CharacterFader;
     pub use super::IIron19CharacterFaderMethods;

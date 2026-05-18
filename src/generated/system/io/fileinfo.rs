@@ -521,6 +521,7 @@ impl FileInfo {
 }
 
 #[cfg(feature = "system-io-fileinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileInfo;
     pub use super::IFileInfo;

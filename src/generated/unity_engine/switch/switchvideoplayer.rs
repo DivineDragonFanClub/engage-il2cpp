@@ -26,14 +26,6 @@ mod __types {
             crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Switch",
-        name = "SwitchVideoPlayer.MovieEventDelegate"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SwitchVideoPlayer_MovieEventDelegate {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]
     #[repr(C)]
     #[derive(
@@ -89,6 +81,14 @@ mod __types {
             Self { value: 4 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
+    #[::unity2::class(
+        namespace = "UnityEngine.Switch",
+        name = "SwitchVideoPlayer.MovieEventDelegate"
+    )]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SwitchVideoPlayer_MovieEventDelegate {}
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer-types")]
@@ -381,6 +381,7 @@ impl SwitchVideoPlayer_MovieEventDelegate {
 }
 
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISwitchVideoPlayer;
     pub use super::ISwitchVideoPlayer_MovieEventDelegate;

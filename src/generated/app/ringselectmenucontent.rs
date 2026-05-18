@@ -403,6 +403,7 @@ impl RingSelectMenuContent {
 }
 
 #[cfg(feature = "app-ringselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingSelectMenuContent;
     pub use super::IRingSelectMenuContentMethods;

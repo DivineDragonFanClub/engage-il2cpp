@@ -99,6 +99,7 @@ impl WritableAttribute {
 }
 
 #[cfg(feature = "unity_engine-writableattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWritableAttribute;
     pub use super::IWritableAttributeMethods;

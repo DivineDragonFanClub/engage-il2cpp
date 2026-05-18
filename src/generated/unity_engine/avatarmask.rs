@@ -334,6 +334,7 @@ pub trait IAvatarMaskMethods: IAvatarMask {
 impl<__T: IAvatarMask> IAvatarMaskMethods for __T {}
 
 #[cfg(feature = "unity_engine-avatarmask")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AvatarMask;
     pub use super::IAvatarMask;

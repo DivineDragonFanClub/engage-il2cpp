@@ -1247,6 +1247,7 @@ impl ProfileCardTextDecoData {
 }
 
 #[cfg(feature = "app-profilecardtextdecodata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTextDecoData;
     pub use super::IProfileCardTextDecoDataMethods;

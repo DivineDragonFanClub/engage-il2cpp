@@ -187,6 +187,7 @@ impl ConvertViewer {
 }
 
 #[cfg(feature = "combat-situation_converter-convertviewer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertViewer;
     pub use super::IConvertViewer;

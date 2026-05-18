@@ -557,6 +557,7 @@ impl UnityAssetsScriptLoader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-unityassetsscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityAssetsScriptLoader;
     pub use super::IUnityAssetsScriptLoaderMethods;

@@ -81,6 +81,7 @@ pub trait IProviderExceptionMethods: IProviderException {
 impl<__T: IProviderException> IProviderExceptionMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProviderException;
     pub use super::IProviderExceptionMethods;

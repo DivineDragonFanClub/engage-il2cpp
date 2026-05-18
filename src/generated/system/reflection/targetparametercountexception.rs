@@ -183,6 +183,7 @@ impl TargetParameterCountException {
 }
 
 #[cfg(feature = "system-reflection-targetparametercountexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetParameterCountException;
     pub use super::ITargetParameterCountExceptionMethods;

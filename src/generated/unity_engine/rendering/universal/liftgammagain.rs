@@ -216,6 +216,7 @@ impl LiftGammaGain {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-liftgammagain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILiftGammaGain;
     pub use super::ILiftGammaGainMethods;

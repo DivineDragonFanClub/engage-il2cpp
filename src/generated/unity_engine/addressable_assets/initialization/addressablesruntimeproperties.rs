@@ -508,6 +508,7 @@ impl AddressablesRuntimeProperties {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-addressablesruntimeproperties")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AddressablesRuntimeProperties;
     pub use super::IAddressablesRuntimeProperties;

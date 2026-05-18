@@ -706,6 +706,7 @@ impl HUDPopup {
 }
 
 #[cfg(feature = "combat-hudpopup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HUDPopup;
     pub use super::IHUDPopup;

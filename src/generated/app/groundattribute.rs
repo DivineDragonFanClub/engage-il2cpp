@@ -685,6 +685,7 @@ impl GroundAttribute {
 }
 
 #[cfg(feature = "app-groundattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroundAttribute;
     pub use super::IGroundAttribute;

@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-meshgenerationstatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshGenerationStatus;
     pub use crate::system::object::IObject;

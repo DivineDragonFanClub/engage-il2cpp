@@ -541,6 +541,7 @@ impl PhotographEditDisposMenuContent {
 }
 
 #[cfg(feature = "app-photographeditdisposmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographEditDisposMenuContent;
     pub use super::IPhotographEditDisposMenuContentMethods;

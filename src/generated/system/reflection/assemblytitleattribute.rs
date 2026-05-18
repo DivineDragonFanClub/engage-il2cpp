@@ -111,6 +111,7 @@ impl AssemblyTitleAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblytitleattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyTitleAttribute;
     pub use super::IAssemblyTitleAttribute;

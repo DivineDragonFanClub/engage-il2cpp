@@ -572,6 +572,7 @@ impl SortieSubMenuContent {
 }
 
 #[cfg(feature = "app-sortiesubmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSubMenuContent;
     pub use super::ISortieSubMenuContentMethods;

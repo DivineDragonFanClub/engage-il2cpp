@@ -174,6 +174,7 @@ impl CalculatorTable {
 }
 
 #[cfg(feature = "app-calculatortable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorTable;
     pub use super::ICalculatorTable;

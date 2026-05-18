@@ -289,6 +289,7 @@ impl CinemachineCustomAxis {
 }
 
 #[cfg(feature = "app-cinemachinecustomaxis")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineCustomAxis;
     pub use super::ICinemachineCustomAxis;

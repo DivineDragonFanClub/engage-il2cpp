@@ -295,6 +295,7 @@ impl MaterialListMenuItemContent {
 }
 
 #[cfg(feature = "app-materiallistmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialListMenuItemContent;
     pub use super::IMaterialListMenuItemContentMethods;

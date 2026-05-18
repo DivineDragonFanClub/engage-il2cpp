@@ -1836,6 +1836,7 @@ impl EventSystem {
 }
 
 #[cfg(feature = "unity_engine-event_systems-eventsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventSystem;
     pub use super::IEventSystem;

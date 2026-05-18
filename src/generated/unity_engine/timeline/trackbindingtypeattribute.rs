@@ -202,6 +202,7 @@ impl TrackBindingTypeAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-trackbindingtypeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrackBindingTypeAttribute;
     pub use super::ITrackBindingTypeAttributeMethods;

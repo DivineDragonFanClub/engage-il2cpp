@@ -240,6 +240,7 @@ impl MapBoundingManager {
 }
 
 #[cfg(feature = "app-mapboundingmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBoundingManager;
     pub use super::IMapBoundingManagerMethods;

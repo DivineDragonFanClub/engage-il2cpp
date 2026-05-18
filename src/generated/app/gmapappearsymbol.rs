@@ -105,6 +105,7 @@ impl GmapAppearSymbol {
 }
 
 #[cfg(feature = "app-gmapappearsymbol")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapAppearSymbol;
     pub use super::IGmapAppearSymbol;

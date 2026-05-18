@@ -104,6 +104,7 @@ impl MapDeployInterferenceImage {
 }
 
 #[cfg(feature = "app-mapdeployinterferenceimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployInterferenceImage;
     pub use super::IMapDeployInterferenceImageMethods;

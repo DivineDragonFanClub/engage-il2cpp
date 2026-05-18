@@ -290,6 +290,7 @@ impl AkCommonCommSettings {
 }
 
 #[cfg(feature = "root-akcommoncommsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCommonCommSettings;
     pub use super::IAkCommonCommSettings;

@@ -648,6 +648,7 @@ impl BattleParam {
 }
 
 #[cfg(feature = "app-battleparam")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BattleParam;
     pub use super::BattleParam_Kinds;

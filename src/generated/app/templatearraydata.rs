@@ -670,6 +670,7 @@ impl TemplateArrayData {
 }
 
 #[cfg(feature = "app-templatearraydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITemplateArrayData;
     pub use super::ITemplateArrayDataMethods;

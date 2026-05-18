@@ -216,6 +216,7 @@ impl ForLoopStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-forloopstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ForLoopStatement;
     pub use super::IForLoopStatement;

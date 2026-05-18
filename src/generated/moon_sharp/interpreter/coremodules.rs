@@ -138,6 +138,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-coremodules")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoreModules;
     pub use crate::system::object::IObject;

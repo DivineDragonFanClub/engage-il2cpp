@@ -700,6 +700,7 @@ impl AccessoryEquipmentInfo {
 }
 
 #[cfg(feature = "app-accessoryequipmentinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryEquipmentInfo;
     pub use super::IAccessoryEquipmentInfo;

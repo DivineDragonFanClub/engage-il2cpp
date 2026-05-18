@@ -653,6 +653,7 @@ impl MonoMethodInfo {
 }
 
 #[cfg(feature = "system-reflection-monomethodinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MonoMethodInfo;
     pub use crate::system::object::IObject;

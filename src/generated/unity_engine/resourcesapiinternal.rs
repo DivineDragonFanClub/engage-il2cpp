@@ -402,6 +402,7 @@ impl ResourcesAPIInternal {
 }
 
 #[cfg(feature = "unity_engine-resourcesapiinternal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourcesAPIInternal;
     pub use super::ResourcesAPIInternal;

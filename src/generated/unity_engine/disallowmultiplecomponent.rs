@@ -100,6 +100,7 @@ impl DisallowMultipleComponent {
 }
 
 #[cfg(feature = "unity_engine-disallowmultiplecomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisallowMultipleComponent;
     pub use super::IDisallowMultipleComponent;

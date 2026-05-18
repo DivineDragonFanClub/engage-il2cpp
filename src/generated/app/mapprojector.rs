@@ -391,6 +391,7 @@ impl MapProjector {
 }
 
 #[cfg(feature = "app-mapprojector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapProjector;
     pub use super::IMapProjectorMethods;

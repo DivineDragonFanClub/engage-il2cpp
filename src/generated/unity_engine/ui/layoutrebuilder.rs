@@ -1291,6 +1291,7 @@ impl LayoutRebuilder {
 }
 
 #[cfg(feature = "unity_engine-ui-layoutrebuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILayoutRebuilder;
     pub use super::ILayoutRebuilderMethods;

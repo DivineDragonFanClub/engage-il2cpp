@@ -205,6 +205,7 @@ impl CombatStyleFuncs {
 }
 
 #[cfg(feature = "combat-combatstylefuncs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatStyleFuncs;
     pub use super::ICombatStyleFuncs;

@@ -595,6 +595,7 @@ impl TrailTrack {
 }
 
 #[cfg(feature = "combat-trailtrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrailTrack;
     pub use super::ITrailTrackMethods;

@@ -1385,6 +1385,7 @@ impl ScriptOptions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptOptions;
     pub use super::IScriptOptionsMethods;

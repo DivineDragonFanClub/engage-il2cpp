@@ -336,6 +336,7 @@ impl CommandBufferExtensions {
 }
 
 #[cfg(feature = "unity_engine-rendering-commandbufferextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommandBufferExtensions;
     pub use super::ICommandBufferExtensions;

@@ -632,6 +632,7 @@ impl CanvasGroup {
 }
 
 #[cfg(feature = "unity_engine-canvasgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasGroup;
     pub use super::ICanvasGroup;

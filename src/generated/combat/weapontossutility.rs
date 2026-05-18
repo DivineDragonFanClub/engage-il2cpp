@@ -379,6 +379,7 @@ impl WeaponTossUtility {
 }
 
 #[cfg(feature = "combat-weapontossutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponTossUtility;
     pub use super::IWeaponTossUtilityMethods;

@@ -1489,6 +1489,7 @@ impl FieldInfo {
 }
 
 #[cfg(feature = "system-reflection-fieldinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FieldInfo;
     pub use super::IFieldInfo;

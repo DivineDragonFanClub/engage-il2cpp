@@ -738,6 +738,7 @@ impl BaseRaycaster {
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseraycaster")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseRaycaster;
     pub use super::IBaseRaycaster;

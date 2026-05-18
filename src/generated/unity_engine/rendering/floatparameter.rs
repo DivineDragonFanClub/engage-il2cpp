@@ -191,6 +191,7 @@ impl FloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-floatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FloatParameter;
     pub use super::IFloatParameter;

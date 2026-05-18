@@ -265,6 +265,7 @@ impl BasicMenuClose {
 }
 
 #[cfg(feature = "root-basicmenuclose")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicMenuClose;
     pub use super::IBasicMenuClose;

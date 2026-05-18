@@ -219,6 +219,7 @@ pub trait IILight2DCullResult_InterfaceMethods: IILight2DCullResult_Interface {
 impl<__T: IILight2DCullResult_Interface> IILight2DCullResult_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILight2DCullResult_Interface;
     pub use super::IILight2DCullResult_InterfaceMethods;

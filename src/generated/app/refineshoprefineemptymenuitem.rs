@@ -495,6 +495,7 @@ impl RefineShopRefineEmptyMenuItem {
 }
 
 #[cfg(feature = "app-refineshoprefineemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopRefineEmptyMenuItem;
     pub use super::IRefineShopRefineEmptyMenuItemMethods;

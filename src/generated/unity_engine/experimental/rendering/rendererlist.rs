@@ -263,6 +263,7 @@ impl RendererList {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RendererList;
     pub use crate::system::object::IObject;

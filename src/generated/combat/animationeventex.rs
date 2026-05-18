@@ -229,6 +229,7 @@ impl AnimationEventEx {
 }
 
 #[cfg(feature = "combat-animationeventex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationEventEx;
     pub use super::IAnimationEventEx;

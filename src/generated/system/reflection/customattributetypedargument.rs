@@ -289,6 +289,7 @@ impl CustomAttributeTypedArgument {
 }
 
 #[cfg(feature = "system-reflection-customattributetypedargument")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomAttributeTypedArgument;
     pub use crate::system::object::IObject;

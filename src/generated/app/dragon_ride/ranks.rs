@@ -90,6 +90,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-dragon_ride-ranks")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Ranks;
     pub use crate::system::object::IObject;

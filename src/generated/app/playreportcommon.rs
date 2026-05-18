@@ -1292,6 +1292,7 @@ impl PlayReportCommon {
 }
 
 #[cfg(feature = "app-playreportcommon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayReportCommon;
     pub use super::IPlayReportCommonMethods;

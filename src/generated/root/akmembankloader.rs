@@ -549,6 +549,7 @@ impl AkMemBankLoader {
 }
 
 #[cfg(feature = "root-akmembankloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMemBankLoader;
     pub use super::IAkMemBankLoader;

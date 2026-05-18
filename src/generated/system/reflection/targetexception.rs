@@ -175,6 +175,7 @@ impl TargetException {
 }
 
 #[cfg(feature = "system-reflection-targetexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITargetException;
     pub use super::ITargetExceptionMethods;

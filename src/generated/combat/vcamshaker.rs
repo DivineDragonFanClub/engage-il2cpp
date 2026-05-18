@@ -534,6 +534,7 @@ impl VCamShaker {
 }
 
 #[cfg(feature = "combat-vcamshaker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVCamShaker;
     pub use super::IVCamShakerMethods;

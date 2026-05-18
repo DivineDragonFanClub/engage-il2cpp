@@ -321,6 +321,7 @@ impl RuntimeClipBase {
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeClipBase;
     pub use super::IRuntimeClipBaseMethods;

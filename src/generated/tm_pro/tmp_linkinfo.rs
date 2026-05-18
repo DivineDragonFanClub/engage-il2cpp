@@ -230,6 +230,7 @@ impl TMP_LinkInfo {
 }
 
 #[cfg(feature = "tm_pro-tmp_linkinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_LinkInfo;
     pub use crate::system::object::IObject;

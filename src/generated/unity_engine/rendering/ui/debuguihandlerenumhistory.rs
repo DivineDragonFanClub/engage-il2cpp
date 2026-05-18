@@ -305,6 +305,7 @@ impl DebugUIHandlerEnumHistory {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerEnumHistory;
     pub use super::IDebugUIHandlerEnumHistory;

@@ -746,6 +746,7 @@ impl MapEditorObjectData {
 }
 
 #[cfg(feature = "app-mapeditorobjectdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapEditorObjectData;
     pub use super::IMapEditorObjectDataMethods;

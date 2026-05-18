@@ -142,6 +142,7 @@ pub trait IIMask_InterfaceMethods: IIMask_Interface {
 impl<__T: IIMask_Interface> IIMask_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMask_Interface;
     pub use super::IIMask_InterfaceMethods;

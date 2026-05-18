@@ -186,6 +186,7 @@ impl XRLayout {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrlayout")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::XRLayout;
     pub use crate::system::object::IObject;

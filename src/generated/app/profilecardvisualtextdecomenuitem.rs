@@ -438,6 +438,7 @@ impl ProfileCardVisualTextDecoMenuItem {
 }
 
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualTextDecoMenuItem;
     pub use super::IProfileCardVisualTextDecoMenuItemMethods;

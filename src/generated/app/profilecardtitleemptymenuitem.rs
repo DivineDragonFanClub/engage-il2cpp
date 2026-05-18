@@ -115,6 +115,7 @@ impl ProfileCardTitleEmptyMenuItem {
 }
 
 #[cfg(feature = "app-profilecardtitleemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardTitleEmptyMenuItem;
     pub use super::IProfileCardTitleEmptyMenuItemMethods;

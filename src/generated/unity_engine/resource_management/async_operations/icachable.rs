@@ -152,6 +152,7 @@ pub trait IICachableMethods: IICachable {
 impl<__T: IICachable> IICachableMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ICachable;
     pub use super::IICachable;

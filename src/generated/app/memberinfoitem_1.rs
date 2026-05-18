@@ -96,6 +96,7 @@ impl<T0: ::unity2::ClassIdentity> MemberInfoItem_1<T0> {
 }
 
 #[cfg(feature = "app-memberinfoitem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMemberInfoItem_1;
     pub use super::IMemberInfoItem_1Methods;

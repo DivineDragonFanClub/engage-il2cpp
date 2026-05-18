@@ -826,6 +826,7 @@ impl JobIntroStatus {
 }
 
 #[cfg(feature = "app-jobintrostatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJobIntroStatus;
     pub use super::IJobIntroStatusMethods;

@@ -981,6 +981,7 @@ impl AkAuxSendArray {
 }
 
 #[cfg(feature = "root-akauxsendarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAuxSendArray;
     pub use super::IAkAuxSendArray;

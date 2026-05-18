@@ -560,6 +560,7 @@ impl TalkTagAddLetter {
 }
 
 #[cfg(feature = "app-talk3_d-talktagaddletter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagAddLetter;
     pub use super::ITalkTagAddLetterMethods;

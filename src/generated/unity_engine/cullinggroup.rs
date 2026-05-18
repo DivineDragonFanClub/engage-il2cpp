@@ -9,11 +9,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup.StateChanged")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct CullingGroup_StateChanged {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup")]
     #[parent(crate::system::object::Object)]
@@ -23,10 +18,96 @@ mod __types {
         #[rename(name = "m_OnStateChanged")]
         pub m_on_state_changed: crate::unity_engine::cullinggroup::CullingGroup_StateChanged,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "CullingGroup.StateChanged")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct CullingGroup_StateChanged {}
 }
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-cullinggroup")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CullingGroup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::cullinggroup::CullingGroup as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CullingGroup as ::unity2::ClassIdentity>::class(),
+                "SendEvents",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <CullingGroup as ::unity2::ClassIdentity>::NAME,
+                    "SendEvents",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn send_events(
+        culling_group: crate::unity_engine::cullinggroup::CullingGroup,
+        events_ptr: ::unity2::IntPtr,
+        count: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::cullinggroup::CullingGroup,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_send_events::get_offset() as isize),
+        );
+        inner(culling_group, events_ptr, count, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-cullinggroup")]
+impl CullingGroup {
+    #[doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]
+    pub fn send_events(
+        culling_group: impl ::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup>,
+        events_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __CullingGroup_unity2_raw::send_events(
+                ::core::convert::Into::into(culling_group),
+                ::core::convert::Into::into(events_ptr),
+                ::core::convert::Into::into(count),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[doc(hidden)]
@@ -199,86 +280,6 @@ impl CullingGroup_StateChanged {
 
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CullingGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_events {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::cullinggroup::CullingGroup as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CullingGroup as ::unity2::ClassIdentity>::class(),
-                "SendEvents",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingGroup as ::unity2::ClassIdentity>::NAME,
-                    "SendEvents",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn send_events(
-        culling_group: crate::unity_engine::cullinggroup::CullingGroup,
-        events_ptr: ::unity2::IntPtr,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::cullinggroup::CullingGroup,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_send_events::get_offset() as isize),
-        );
-        inner(culling_group, events_ptr, count, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-cullinggroup")]
-impl CullingGroup {
-    #[doc = "`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]
-    pub fn send_events(
-        culling_group: impl ::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup>,
-        events_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __CullingGroup_unity2_raw::send_events(
-                ::core::convert::Into::into(culling_group),
-                ::core::convert::Into::into(events_ptr),
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-cullinggroup")]
 pub mod prelude {
     pub use super::CullingGroup;
     pub use super::CullingGroup_StateChanged;

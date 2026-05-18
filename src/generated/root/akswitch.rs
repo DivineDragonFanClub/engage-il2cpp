@@ -396,6 +396,7 @@ impl AkSwitch {
 }
 
 #[cfg(feature = "root-akswitch")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSwitch;
     pub use super::IAkSwitch;

@@ -962,6 +962,7 @@ impl SymbolRef {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-symbolref")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISymbolRef;
     pub use super::ISymbolRefMethods;

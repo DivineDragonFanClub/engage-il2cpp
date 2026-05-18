@@ -303,6 +303,7 @@ impl AkEnvironmentPortal {
 }
 
 #[cfg(feature = "root-akenvironmentportal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEnvironmentPortal;
     pub use super::IAkEnvironmentPortal;

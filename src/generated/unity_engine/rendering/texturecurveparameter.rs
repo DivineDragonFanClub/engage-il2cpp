@@ -177,6 +177,7 @@ impl TextureCurveParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-texturecurveparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextureCurveParameter;
     pub use super::ITextureCurveParameterMethods;

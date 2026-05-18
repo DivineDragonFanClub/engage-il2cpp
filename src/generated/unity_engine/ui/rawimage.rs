@@ -583,6 +583,7 @@ impl RawImage {
 }
 
 #[cfg(feature = "unity_engine-ui-rawimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawImage;
     pub use super::IRawImageMethods;

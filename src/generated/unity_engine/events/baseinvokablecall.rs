@@ -442,6 +442,7 @@ impl BaseInvokableCall {
 }
 
 #[cfg(feature = "unity_engine-events-baseinvokablecall")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseInvokableCall;
     pub use super::IBaseInvokableCall;

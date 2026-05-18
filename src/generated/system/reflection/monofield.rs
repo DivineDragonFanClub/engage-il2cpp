@@ -1193,6 +1193,7 @@ impl MonoField {
 }
 
 #[cfg(feature = "system-reflection-monofield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoField;
     pub use super::IMonoFieldMethods;

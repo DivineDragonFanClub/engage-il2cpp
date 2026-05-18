@@ -104,6 +104,7 @@ impl UIVertex {
 }
 
 #[cfg(feature = "unity_engine-uivertex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UIVertex;
     pub use crate::system::object::IObject;

@@ -114,6 +114,7 @@ impl InspectorNameAttribute {
 }
 
 #[cfg(feature = "unity_engine-inspectornameattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInspectorNameAttribute;
     pub use super::IInspectorNameAttributeMethods;

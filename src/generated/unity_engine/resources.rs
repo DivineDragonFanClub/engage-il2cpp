@@ -667,6 +667,7 @@ impl Resources {
 }
 
 #[cfg(feature = "unity_engine-resources")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResources;
     pub use super::Resources;

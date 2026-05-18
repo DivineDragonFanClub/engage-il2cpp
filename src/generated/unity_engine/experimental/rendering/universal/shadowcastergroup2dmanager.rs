@@ -565,6 +565,7 @@ impl ShadowCasterGroup2DManager {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowCasterGroup2DManager;
     pub use super::IShadowCasterGroup2DManagerMethods;

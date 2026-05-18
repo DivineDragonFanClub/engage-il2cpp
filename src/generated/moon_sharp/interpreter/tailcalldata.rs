@@ -711,6 +711,7 @@ impl TailCallData {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tailcalldata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITailCallData;
     pub use super::ITailCallDataMethods;

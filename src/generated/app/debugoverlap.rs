@@ -363,6 +363,7 @@ impl DebugOverlap {
 }
 
 #[cfg(feature = "app-debugoverlap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugOverlap;
     pub use super::IDebugOverlap;

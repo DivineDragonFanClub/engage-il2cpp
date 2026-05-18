@@ -803,6 +803,7 @@ impl DragonRideInstructionSequence {
 }
 
 #[cfg(feature = "app-dragonrideinstructionsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideInstructionSequence;
     pub use super::DragonRideInstructionSequence_Label;

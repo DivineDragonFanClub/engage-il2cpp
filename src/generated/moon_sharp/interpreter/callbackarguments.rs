@@ -952,6 +952,7 @@ impl CallbackArguments {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-callbackarguments")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CallbackArguments;
     pub use super::ICallbackArguments;

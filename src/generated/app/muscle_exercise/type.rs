@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-muscle_exercise-type")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Type;
     pub use crate::system::object::IObject;

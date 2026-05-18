@@ -215,6 +215,7 @@ impl GodColorRefineEmblem {
 }
 
 #[cfg(feature = "app-godcolorrefineemblem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodColorRefineEmblem;
     pub use super::IGodColorRefineEmblem;

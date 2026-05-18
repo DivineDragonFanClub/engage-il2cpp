@@ -731,6 +731,7 @@ impl HubMapIconData {
 }
 
 #[cfg(feature = "app-hubmapicondata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMapIconData;
     pub use super::IHubMapIconData;

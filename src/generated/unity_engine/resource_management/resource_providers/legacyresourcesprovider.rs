@@ -519,6 +519,7 @@ impl LegacyResourcesProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILegacyResourcesProvider;
     pub use super::ILegacyResourcesProviderMethods;

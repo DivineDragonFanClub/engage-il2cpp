@@ -1264,6 +1264,7 @@ impl StateMachineBehaviour {
 }
 
 #[cfg(feature = "unity_engine-statemachinebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStateMachineBehaviour;
     pub use super::IStateMachineBehaviourMethods;

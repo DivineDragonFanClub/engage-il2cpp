@@ -253,6 +253,7 @@ impl CharacterAsset {
 }
 
 #[cfg(feature = "combat-characterasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAsset;
     pub use super::ICharacterAsset;

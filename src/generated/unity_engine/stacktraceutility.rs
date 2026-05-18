@@ -251,6 +251,7 @@ impl StackTraceUtility {
 }
 
 #[cfg(feature = "unity_engine-stacktraceutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStackTraceUtility;
     pub use super::StackTraceUtility;

@@ -564,6 +564,7 @@ impl SubsystemManager {
 }
 
 #[cfg(feature = "unity_engine-subsystemmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemManager;
     pub use super::SubsystemManager;

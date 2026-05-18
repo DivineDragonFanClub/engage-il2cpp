@@ -212,6 +212,7 @@ impl Coroutine {
 }
 
 #[cfg(feature = "unity_engine-coroutine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Coroutine;
     pub use super::ICoroutine;

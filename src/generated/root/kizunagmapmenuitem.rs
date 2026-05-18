@@ -186,6 +186,7 @@ impl KizunaGmapMenuItem {
 }
 
 #[cfg(feature = "root-kizunagmapmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKizunaGmapMenuItem;
     pub use super::IKizunaGmapMenuItemMethods;

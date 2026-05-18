@@ -127,6 +127,7 @@ impl FixCameraConfig {
 }
 
 #[cfg(feature = "app-fishing-config-fixcameraconfig")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FixCameraConfig;
     pub use super::IFixCameraConfig;

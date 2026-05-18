@@ -275,6 +275,7 @@ impl LuaTypeExtensions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILuaTypeExtensions;
     pub use super::LuaTypeExtensions;

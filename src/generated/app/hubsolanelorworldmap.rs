@@ -273,6 +273,7 @@ impl HubSolanelOrWorldMap {
 }
 
 #[cfg(feature = "app-hubsolanelorworldmap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubSolanelOrWorldMap;
     pub use super::IHubSolanelOrWorldMap;

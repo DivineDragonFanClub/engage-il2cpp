@@ -899,6 +899,7 @@ impl StreamFileUserDataBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-streamfileuserdatabase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStreamFileUserDataBase;
     pub use super::IStreamFileUserDataBaseMethods;

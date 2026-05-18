@@ -281,6 +281,7 @@ impl MeshDeliver {
 }
 
 #[cfg(feature = "root-meshdeliver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshDeliver;
     pub use super::IMeshDeliverMethods;

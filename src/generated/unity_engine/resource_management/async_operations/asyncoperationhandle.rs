@@ -1803,6 +1803,7 @@ impl AsyncOperationHandle {
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AsyncOperationHandle;
     pub use crate::system::object::IObject;

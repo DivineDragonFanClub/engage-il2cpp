@@ -178,6 +178,7 @@ impl CinemachineTrack {
 }
 
 #[cfg(feature = "root-cinemachinetrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineTrack;
     pub use super::ICinemachineTrack;

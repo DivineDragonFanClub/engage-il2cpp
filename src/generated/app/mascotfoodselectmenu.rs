@@ -464,6 +464,7 @@ impl MascotFoodSelectMenu {
 }
 
 #[cfg(feature = "app-mascotfoodselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFoodSelectMenu;
     pub use super::IMascotFoodSelectMenuMethods;

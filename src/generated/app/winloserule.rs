@@ -106,6 +106,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-winloserule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::WinLoseRule;
     pub use crate::system::object::IObject;

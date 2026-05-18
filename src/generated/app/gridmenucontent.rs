@@ -1487,6 +1487,7 @@ impl GridMenuContent {
 }
 
 #[cfg(feature = "app-gridmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridMenuContent;
     pub use super::IGridMenuContent;

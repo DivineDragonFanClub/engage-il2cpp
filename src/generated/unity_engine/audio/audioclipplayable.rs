@@ -169,6 +169,7 @@ impl AudioClipPlayable {
 }
 
 #[cfg(feature = "unity_engine-audio-audioclipplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioClipPlayable;
     pub use crate::system::object::IObject;

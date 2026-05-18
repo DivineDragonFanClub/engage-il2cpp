@@ -165,6 +165,7 @@ impl MyRoomEffectMarker {
 }
 
 #[cfg(feature = "app-myroomeffectmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomEffectMarker;
     pub use super::IMyRoomEffectMarkerMethods;

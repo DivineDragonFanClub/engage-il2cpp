@@ -1377,6 +1377,7 @@ impl HorizontalOrVerticalLayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-horizontalorverticallayoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HorizontalOrVerticalLayoutGroup;
     pub use super::IHorizontalOrVerticalLayoutGroup;

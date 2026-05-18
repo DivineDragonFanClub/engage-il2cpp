@@ -299,6 +299,7 @@ impl BaseEventData {
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseeventdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseEventData;
     pub use super::IBaseEventData;

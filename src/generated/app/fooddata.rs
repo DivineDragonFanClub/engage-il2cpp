@@ -1267,6 +1267,7 @@ impl FoodData {
 }
 
 #[cfg(feature = "app-fooddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FoodData;
     pub use super::FoodData_FoodCountry;

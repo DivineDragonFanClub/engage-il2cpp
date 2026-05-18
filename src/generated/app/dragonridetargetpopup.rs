@@ -312,6 +312,7 @@ impl DragonRideTargetPopup {
 }
 
 #[cfg(feature = "app-dragonridetargetpopup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideTargetPopup;
     pub use super::IDragonRideTargetPopup;

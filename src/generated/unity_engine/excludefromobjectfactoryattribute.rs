@@ -105,6 +105,7 @@ impl ExcludeFromObjectFactoryAttribute {
 }
 
 #[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExcludeFromObjectFactoryAttribute;
     pub use super::IExcludeFromObjectFactoryAttribute;

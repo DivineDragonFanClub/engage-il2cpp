@@ -458,6 +458,7 @@ impl BaseMeshEffect {
 }
 
 #[cfg(feature = "unity_engine-ui-basemesheffect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseMeshEffect;
     pub use super::IBaseMeshEffect;

@@ -285,6 +285,7 @@ impl HelpItemEnchantment {
 }
 
 #[cfg(feature = "app-helpitemenchantment")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemEnchantment;
     pub use super::IHelpItemEnchantment;

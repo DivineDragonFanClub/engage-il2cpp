@@ -598,6 +598,7 @@ impl GUIClip {
 }
 
 #[cfg(feature = "unity_engine-guiclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIClip;
     pub use super::IGUIClip;

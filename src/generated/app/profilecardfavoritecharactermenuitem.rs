@@ -938,6 +938,7 @@ impl ProfileCardFavoriteCharacterMenuItem {
 }
 
 #[cfg(feature = "app-profilecardfavoritecharactermenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFavoriteCharacterMenuItem;
     pub use super::IProfileCardFavoriteCharacterMenuItemMethods;

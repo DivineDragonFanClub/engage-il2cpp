@@ -227,6 +227,7 @@ impl PlayerPrefs_Float {
 }
 
 #[cfg(feature = "combat-playerprefs_float")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerPrefs_Float;
     pub use super::IPlayerPrefs_FloatMethods;

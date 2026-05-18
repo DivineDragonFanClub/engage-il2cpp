@@ -102,6 +102,7 @@ impl AnimatorScope {
 }
 
 #[cfg(feature = "combat-animatorscope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorScope;
     pub use super::IAnimatorScope;

@@ -220,6 +220,7 @@ impl CDSCollectionETWBCLProvider {
 }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CDSCollectionETWBCLProvider;
     pub use super::ICDSCollectionETWBCLProvider;

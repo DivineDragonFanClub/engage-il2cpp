@@ -234,6 +234,7 @@ impl RelayReplayMenuItemContent {
 }
 
 #[cfg(feature = "app-relayreplaymenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayReplayMenuItemContent;
     pub use super::IRelayReplayMenuItemContentMethods;

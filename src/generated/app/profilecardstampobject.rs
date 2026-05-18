@@ -293,6 +293,7 @@ impl ProfileCardStampObject {
 }
 
 #[cfg(feature = "app-profilecardstampobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardStampObject;
     pub use super::IProfileCardStampObjectMethods;

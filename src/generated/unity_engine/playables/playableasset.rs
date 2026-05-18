@@ -414,6 +414,7 @@ impl PlayableAsset {
 }
 
 #[cfg(feature = "unity_engine-playables-playableasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayableAsset;
     pub use super::IPlayableAssetMethods;

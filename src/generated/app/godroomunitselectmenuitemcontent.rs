@@ -358,6 +358,7 @@ impl GodRoomUnitSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-godroomunitselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodRoomUnitSelectMenuItemContent;
     pub use super::IGodRoomUnitSelectMenuItemContent;

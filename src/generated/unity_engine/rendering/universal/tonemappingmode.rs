@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-tonemappingmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TonemappingMode;
     pub use crate::system::object::IObject;

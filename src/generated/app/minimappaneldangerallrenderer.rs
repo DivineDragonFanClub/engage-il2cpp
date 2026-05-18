@@ -360,6 +360,7 @@ impl MiniMapPanelDangerAllRenderer {
 }
 
 #[cfg(feature = "app-minimappaneldangerallrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelDangerAllRenderer;
     pub use super::IMiniMapPanelDangerAllRendererMethods;

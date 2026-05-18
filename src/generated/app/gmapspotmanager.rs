@@ -2060,6 +2060,7 @@ impl GmapSpotManager {
 }
 
 #[cfg(feature = "app-gmapspotmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapSpotManager;
     pub use super::IGmapSpotManager;

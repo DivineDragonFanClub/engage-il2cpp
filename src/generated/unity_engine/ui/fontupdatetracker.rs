@@ -251,6 +251,7 @@ impl FontUpdateTracker {
 }
 
 #[cfg(feature = "unity_engine-ui-fontupdatetracker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontUpdateTracker;
     pub use super::IFontUpdateTracker;

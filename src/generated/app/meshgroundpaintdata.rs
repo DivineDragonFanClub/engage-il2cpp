@@ -905,6 +905,7 @@ impl MeshGroundPaintData {
 }
 
 #[cfg(feature = "app-meshgroundpaintdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshGroundPaintData;
     pub use super::IMeshGroundPaintDataMethods;

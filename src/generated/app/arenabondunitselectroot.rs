@@ -612,6 +612,7 @@ impl ArenaBondUnitSelectRoot {
 }
 
 #[cfg(feature = "app-arenabondunitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondUnitSelectRoot;
     pub use super::IArenaBondUnitSelectRoot;

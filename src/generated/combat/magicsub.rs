@@ -324,6 +324,7 @@ impl MagicSub {
 }
 
 #[cfg(feature = "combat-magicsub")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSub;
     pub use super::IMagicSubMethods;

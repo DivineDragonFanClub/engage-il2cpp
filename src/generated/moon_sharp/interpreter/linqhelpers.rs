@@ -217,6 +217,7 @@ impl LinqHelpers {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-linqhelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILinqHelpers;
     pub use super::LinqHelpers;

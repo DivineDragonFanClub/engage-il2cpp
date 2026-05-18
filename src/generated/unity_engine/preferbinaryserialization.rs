@@ -15,6 +15,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-preferbinaryserialization")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPreferBinarySerialization;
     pub use super::PreferBinarySerialization;

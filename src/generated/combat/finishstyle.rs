@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-finishstyle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FinishStyle;
     pub use crate::system::object::IObject;

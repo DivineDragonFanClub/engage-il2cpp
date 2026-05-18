@@ -1129,6 +1129,7 @@ impl HybridDictionary {
 }
 
 #[cfg(feature = "system-collections-specialized-hybriddictionary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HybridDictionary;
     pub use super::IHybridDictionary;

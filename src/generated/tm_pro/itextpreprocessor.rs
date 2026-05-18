@@ -95,6 +95,7 @@ pub trait IITextPreprocessorMethods: IITextPreprocessor {
 impl<__T: IITextPreprocessor> IITextPreprocessorMethods for __T {}
 
 #[cfg(feature = "tm_pro-itextpreprocessor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITextPreprocessor;
     pub use super::IITextPreprocessorMethods;

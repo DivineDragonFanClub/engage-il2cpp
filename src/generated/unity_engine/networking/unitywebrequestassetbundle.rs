@@ -199,6 +199,7 @@ impl UnityWebRequestAssetBundle {
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityWebRequestAssetBundle;
     pub use super::UnityWebRequestAssetBundle;

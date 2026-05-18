@@ -562,6 +562,7 @@ impl MapEngageConfirmRoot {
 }
 
 #[cfg(feature = "app-mapengageconfirmroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapEngageConfirmRoot;
     pub use super::IMapEngageConfirmRootMethods;

@@ -244,6 +244,7 @@ impl ActionKnockoff {
 }
 
 #[cfg(feature = "combat-actionknockoff")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionKnockoff;
     pub use super::IActionKnockoff;

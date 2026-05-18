@@ -687,6 +687,7 @@ impl MapSequenceEngageConfirm {
 }
 
 #[cfg(feature = "app-mapsequenceengageconfirm")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceEngageConfirm;
     pub use super::IMapSequenceEngageConfirmMethods;

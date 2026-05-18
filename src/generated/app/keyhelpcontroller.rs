@@ -426,6 +426,7 @@ impl KeyHelpController {
 }
 
 #[cfg(feature = "app-keyhelpcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyHelpController;
     pub use super::IKeyHelpControllerMethods;

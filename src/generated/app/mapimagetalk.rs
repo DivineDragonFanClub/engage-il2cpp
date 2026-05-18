@@ -299,6 +299,7 @@ impl MapImageTalk {
 }
 
 #[cfg(feature = "app-mapimagetalk")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageTalk;
     pub use super::IMapImageTalkMethods;

@@ -2881,6 +2881,7 @@ impl Quaternion {
 }
 
 #[cfg(feature = "unity_engine-quaternion")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Quaternion;
     pub use crate::system::object::IObject;

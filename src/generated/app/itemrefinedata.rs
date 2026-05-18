@@ -1307,6 +1307,7 @@ impl ItemRefineData {
 }
 
 #[cfg(feature = "app-itemrefinedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemRefineData;
     pub use super::IItemRefineDataMethods;

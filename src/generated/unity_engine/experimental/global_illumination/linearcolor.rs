@@ -478,6 +478,7 @@ impl LinearColor {
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-linearcolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LinearColor;
     pub use crate::system::object::IObject;

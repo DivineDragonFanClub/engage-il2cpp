@@ -785,6 +785,7 @@ impl ColorUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-colorutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorUtils;
     pub use super::IColorUtils;

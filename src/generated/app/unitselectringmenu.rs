@@ -14,20 +14,29 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_EntrustRingMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.EntrustRingMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct UnitSelectRingMenu_EntrustRingMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogYesMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogYesMenuItem")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct UnitSelectRingMenu_DialogYesMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.ConfirmDialog")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitSelectRingMenu_ConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_CloseEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.CloseEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct UnitSelectRingMenu_CloseEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogNoMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogNoMenuItem")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct UnitSelectRingMenu_DialogNoMenuItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_TakeOffAllRingsMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.TakeOffAllRingsMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct UnitSelectRingMenu_TakeOffAllRingsMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu.md"))]
     #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu")]
@@ -38,10 +47,10 @@ mod __types {
             crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_TakeOffAllRingsMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.TakeOffAllRingsMenuItem")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_EntrustRingMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.EntrustRingMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct UnitSelectRingMenu_TakeOffAllRingsMenuItem {}
+    pub struct UnitSelectRingMenu_EntrustRingMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog_DecideEventHandler.md"))]
     #[::unity2::class(
@@ -51,19 +60,10 @@ mod __types {
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct UnitSelectRingMenu_ConfirmDialog_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.ConfirmDialog")]
-    #[parent(crate::system::object::Object)]
-    pub struct UnitSelectRingMenu_ConfirmDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogYesMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogYesMenuItem")]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct UnitSelectRingMenu_DialogYesMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogNoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogNoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct UnitSelectRingMenu_DialogNoMenuItem {}
 }
 
 #[cfg(feature = "app-unitselectringmenu-types")]
@@ -72,7 +72,7 @@ pub use __types::*;
 #[cfg(feature = "app-unitselectringmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
+mod __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -81,11 +81,11 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                2,
                 param_types,
                 false,
             )
@@ -95,7 +95,7 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -108,112 +108,22 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectRingMenu_EntrustRingMenuItem,
+        this: UnitSelectRingMenu_DialogYesMenuItem,
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_EntrustRingMenuItem,
+            UnitSelectRingMenu_DialogYesMenuItem,
+            ::unity2::Il2CppString,
+            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: UnitSelectRingMenu_EntrustRingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnitSelectRingMenu_EntrustRingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: UnitSelectRingMenu_EntrustRingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            UnitSelectRingMenu_EntrustRingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(this, message, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -224,7 +134,7 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -236,7 +146,7 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -249,11 +159,11 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: UnitSelectRingMenu_EntrustRingMenuItem,
+        this: UnitSelectRingMenu_DialogYesMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_EntrustRingMenuItem,
+            UnitSelectRingMenu_DialogYesMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -265,35 +175,23 @@ mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:
-    IUnitSelectRingMenu_EntrustRingMenuItem
+pub trait IUnitSelectRingMenu_DialogYesMenuItemMethods:
+    IUnitSelectRingMenu_DialogYesMenuItem
 {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+        >,
+    ) -> () {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::ctor(
+            let __receiver = < UnitSelectRingMenu_DialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::build_attribute(
-                __receiver,
+                ::core::convert::Into::into(message),
+                ::core::convert::Into::into(decide_event_handler),
                 ::core::option::Option::None,
             )
         }
@@ -301,8 +199,8 @@ pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::a_call(
+            let __receiver = < UnitSelectRingMenu_DialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -311,23 +209,205 @@ pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl<__T: IUnitSelectRingMenu_EntrustRingMenuItem> IUnitSelectRingMenu_EntrustRingMenuItemMethods
+impl<__T: IUnitSelectRingMenu_DialogYesMenuItem> IUnitSelectRingMenu_DialogYesMenuItemMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_EntrustRingMenuItem {
+impl UnitSelectRingMenu_DialogYesMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_DialogYesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_DialogYesMenuItemMethods>::ctor(
+            this,
+            message,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnitSelectRingMenu_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        confirm_message: ::unity2::Il2CppString,
+        yes_message: ::unity2::Il2CppString,
+        no_messag: ::unity2::Il2CppString,
+        yes_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicdialog::BasicDialog {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicdialog::BasicDialog = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_create_bind::get_offset() as isize),
+        );
+        inner(
+            super_,
+            confirm_message,
+            yes_message,
+            no_messag,
+            yes_event_handler,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: UnitSelectRingMenu_ConfirmDialog,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(UnitSelectRingMenu_ConfirmDialog, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        confirm_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_message: impl ::core::convert::Into<::unity2::Il2CppString>,
+        no_messag: impl ::core::convert::Into<::unity2::Il2CppString>,
+        yes_event_handler: impl ::core::convert::Into<
+            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+        >,
+    ) -> crate::app::basicdialog::BasicDialog {
+        unsafe {
+            __UnitSelectRingMenu_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(confirm_message),
+                ::core::convert::Into::into(yes_message),
+                ::core::convert::Into::into(no_messag),
+                ::core::convert::Into::into(yes_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+pub trait IUnitSelectRingMenu_ConfirmDialogMethods: IUnitSelectRingMenu_ConfirmDialog {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <UnitSelectRingMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectRingMenu_ConfirmDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl<__T: IUnitSelectRingMenu_ConfirmDialog> IUnitSelectRingMenu_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_ConfirmDialog {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectRingMenu_EntrustRingMenuItem),
+                ::core::stringify!(UnitSelectRingMenu_ConfirmDialog),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectRingMenu_EntrustRingMenuItemMethods>::ctor(this);
+        <Self as IUnitSelectRingMenu_ConfirmDialogMethods>::ctor(this);
         this
     }
 }
@@ -497,7 +577,7 @@ impl UnitSelectRingMenu_CloseEventHandler {
 #[cfg(feature = "app-unitselectringmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
+mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -506,12 +586,11 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                0,
                 param_types,
                 false,
             )
@@ -521,7 +600,7 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -534,20 +613,65 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectRingMenu_DialogNoMenuItem,
-        message: ::unity2::Il2CppString,
+        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_DialogNoMenuItem,
-            ::unity2::Il2CppString,
+            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, message, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "GetName",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -558,7 +682,7 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -570,7 +694,7 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -583,11 +707,11 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: UnitSelectRingMenu_DialogNoMenuItem,
+        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_DialogNoMenuItem,
+            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -596,22 +720,75 @@ mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
         );
         inner(this, __unity2_method_info)
     }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:
-    IUnitSelectRingMenu_DialogNoMenuItem
+pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
+    IUnitSelectRingMenu_TakeOffAllRingsMenuItem
 {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    fn ctor(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw::ctor(
+            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::get_name(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -619,11 +796,18 @@ pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver =
-                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw::build_attribute(
+            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::build_attribute(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -632,23 +816,23 @@ pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl<__T: IUnitSelectRingMenu_DialogNoMenuItem> IUnitSelectRingMenu_DialogNoMenuItemMethods
-    for __T
+impl<__T: IUnitSelectRingMenu_TakeOffAllRingsMenuItem>
+    IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_DialogNoMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(message: ::unity2::Il2CppString) -> Self {
+impl UnitSelectRingMenu_TakeOffAllRingsMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectRingMenu_DialogNoMenuItem),
+                ::core::stringify!(UnitSelectRingMenu_TakeOffAllRingsMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectRingMenu_DialogNoMenuItemMethods>::ctor(this, message);
+        <Self as IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -1193,7 +1377,7 @@ impl UnitSelectRingMenu {
 #[cfg(feature = "app-unitselectringmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
+mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1204,7 +1388,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1216,7 +1400,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1229,11 +1413,11 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        this: UnitSelectRingMenu_EntrustRingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            UnitSelectRingMenu_EntrustRingMenuItem,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1251,7 +1435,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -1263,7 +1447,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
                     "GetName",
                     e
                 ),
@@ -1276,11 +1460,11 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         }
     }
     pub unsafe fn get_name(
-        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        this: UnitSelectRingMenu_EntrustRingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            UnitSelectRingMenu_EntrustRingMenuItem,
             ::unity2::OptionalMethod,
         ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1298,7 +1482,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
                 "BuildAttribute",
                 0,
                 param_types,
@@ -1310,7 +1494,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
                     "BuildAttribute",
                     e
                 ),
@@ -1323,11 +1507,11 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         }
     }
     pub unsafe fn build_attribute(
-        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        this: UnitSelectRingMenu_EntrustRingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            UnitSelectRingMenu_EntrustRingMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1345,7 +1529,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -1357,7 +1541,7 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_TakeOffAllRingsMenuItem as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_EntrustRingMenuItem as ::unity2::ClassIdentity>::NAME,
                     "ACall",
                     e
                 ),
@@ -1370,11 +1554,11 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
         }
     }
     pub unsafe fn a_call(
-        this: UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+        this: UnitSelectRingMenu_EntrustRingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_TakeOffAllRingsMenuItem,
+            UnitSelectRingMenu_EntrustRingMenuItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -1386,14 +1570,14 @@ mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
-    IUnitSelectRingMenu_TakeOffAllRingsMenuItem
+pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:
+    IUnitSelectRingMenu_EntrustRingMenuItem
 {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::ctor(
+            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1402,8 +1586,8 @@ pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::get_name(
+            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::get_name(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1412,8 +1596,8 @@ pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::build_attribute(
+            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1422,8 +1606,8 @@ pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_TakeOffAllRingsMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::a_call(
+            let __receiver = < UnitSelectRingMenu_EntrustRingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::a_call(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1432,23 +1616,23 @@ pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl<__T: IUnitSelectRingMenu_TakeOffAllRingsMenuItem>
-    IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods for __T
+impl<__T: IUnitSelectRingMenu_EntrustRingMenuItem> IUnitSelectRingMenu_EntrustRingMenuItemMethods
+    for __T
 {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_TakeOffAllRingsMenuItem {
+impl UnitSelectRingMenu_EntrustRingMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectRingMenu_TakeOffAllRingsMenuItem),
+                ::core::stringify!(UnitSelectRingMenu_EntrustRingMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods>::ctor(this);
+        <Self as IUnitSelectRingMenu_EntrustRingMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -1592,70 +1776,8 @@ impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler {
 #[cfg(feature = "app-unitselectringmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectRingMenu_ConfirmDialog_unity2_raw {
+mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        confirm_message: ::unity2::Il2CppString,
-        yes_message: ::unity2::Il2CppString,
-        no_messag: ::unity2::Il2CppString,
-        yes_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicdialog::BasicDialog {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicdialog::BasicDialog = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            confirm_message,
-            yes_message,
-            no_messag,
-            yes_event_handler,
-            __unity2_method_info,
-        )
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -1663,11 +1785,12 @@ mod __UnitSelectRingMenu_ConfirmDialog_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                0,
+                1,
                 param_types,
                 false,
             )
@@ -1677,7 +1800,7 @@ mod __UnitSelectRingMenu_ConfirmDialog_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                    <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -1690,147 +1813,32 @@ mod __UnitSelectRingMenu_ConfirmDialog_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: UnitSelectRingMenu_ConfirmDialog,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(UnitSelectRingMenu_ConfirmDialog, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        confirm_message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        yes_message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        no_messag: impl ::core::convert::Into<::unity2::Il2CppString>,
-        yes_event_handler: impl ::core::convert::Into<
-            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-        >,
-    ) -> crate::app::basicdialog::BasicDialog {
-        unsafe {
-            __UnitSelectRingMenu_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(confirm_message),
-                ::core::convert::Into::into(yes_message),
-                ::core::convert::Into::into(no_messag),
-                ::core::convert::Into::into(yes_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-unitselectringmenu")]
-pub trait IUnitSelectRingMenu_ConfirmDialogMethods: IUnitSelectRingMenu_ConfirmDialog {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <UnitSelectRingMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UnitSelectRingMenu_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-unitselectringmenu")]
-impl<__T: IUnitSelectRingMenu_ConfirmDialog> IUnitSelectRingMenu_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_ConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectRingMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectRingMenu_ConfirmDialogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-unitselectringmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: UnitSelectRingMenu_DialogYesMenuItem,
+        this: UnitSelectRingMenu_DialogNoMenuItem,
         message: ::unity2::Il2CppString,
-        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_DialogYesMenuItem,
+            UnitSelectRingMenu_DialogNoMenuItem,
             ::unity2::Il2CppString,
-            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, message, decide_event_handler, __unity2_method_info)
+        inner(this, message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_build_attribute {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
+                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
                 0,
                 param_types,
                 false,
@@ -1841,8 +1849,8 @@ mod __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <UnitSelectRingMenu_DialogYesMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
+                    <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::ClassIdentity>::NAME,
+                    "BuildAttribute",
                     e
                 ),
             }
@@ -1853,49 +1861,48 @@ mod __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn a_call(
-        this: UnitSelectRingMenu_DialogYesMenuItem,
+    pub unsafe fn build_attribute(
+        this: UnitSelectRingMenu_DialogNoMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         let inner: extern "C" fn(
-            UnitSelectRingMenu_DialogYesMenuItem,
+            UnitSelectRingMenu_DialogNoMenuItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
+                .offset(__lookup_build_attribute::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-pub trait IUnitSelectRingMenu_DialogYesMenuItemMethods:
-    IUnitSelectRingMenu_DialogYesMenuItem
+pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:
+    IUnitSelectRingMenu_DialogNoMenuItem
 {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-        >,
-    ) -> () {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    fn ctor(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_DialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::ctor(
+            let __receiver =
+                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(message),
-                ::core::convert::Into::into(decide_event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver = < UnitSelectRingMenu_DialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::a_call(
+            let __receiver =
+                <UnitSelectRingMenu_DialogNoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw::build_attribute(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -1904,35 +1911,29 @@ pub trait IUnitSelectRingMenu_DialogYesMenuItemMethods:
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl<__T: IUnitSelectRingMenu_DialogYesMenuItem> IUnitSelectRingMenu_DialogYesMenuItemMethods
+impl<__T: IUnitSelectRingMenu_DialogNoMenuItem> IUnitSelectRingMenu_DialogNoMenuItemMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
-impl UnitSelectRingMenu_DialogYesMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        message: ::unity2::Il2CppString,
-        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
-    ) -> Self {
+impl UnitSelectRingMenu_DialogNoMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(message: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectRingMenu_DialogYesMenuItem),
+                ::core::stringify!(UnitSelectRingMenu_DialogNoMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitSelectRingMenu_DialogYesMenuItemMethods>::ctor(
-            this,
-            message,
-            decide_event_handler,
-        );
+        <Self as IUnitSelectRingMenu_DialogNoMenuItemMethods>::ctor(this, message);
         this
     }
 }
 
 #[cfg(feature = "app-unitselectringmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectRingMenu;
     pub use super::IUnitSelectRingMenuMethods;

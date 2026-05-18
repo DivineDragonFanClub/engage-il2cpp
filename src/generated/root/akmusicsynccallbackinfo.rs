@@ -1131,6 +1131,7 @@ impl AkMusicSyncCallbackInfo {
 }
 
 #[cfg(feature = "root-akmusicsynccallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMusicSyncCallbackInfo;
     pub use super::IAkMusicSyncCallbackInfo;

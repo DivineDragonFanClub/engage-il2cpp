@@ -172,6 +172,7 @@ impl ConvertSky {
 }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertSky;
     pub use super::IConvertSky;

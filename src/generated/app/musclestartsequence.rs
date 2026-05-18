@@ -1442,6 +1442,7 @@ impl MuscleStartSequence {
 }
 
 #[cfg(feature = "app-musclestartsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleStartSequence;
     pub use super::IMuscleStartSequenceMethods;

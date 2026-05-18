@@ -319,6 +319,7 @@ impl Sampler {
 }
 
 #[cfg(feature = "unity_engine-profiling-sampler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISampler;
     pub use super::ISamplerMethods;

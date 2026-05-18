@@ -70,6 +70,7 @@ impl<T0: ::unity2::ClassIdentity> StructTemplate_1<T0> {
 }
 
 #[cfg(feature = "app-structtemplate_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructTemplate_1;
     pub use super::IStructTemplate_1Methods;

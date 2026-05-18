@@ -56,6 +56,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SerializedDiction
 }
 
 #[cfg(feature = "unity_engine-rendering-serializeddictionary_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISerializedDictionary_2;
     pub use super::ISerializedDictionary_2Methods;

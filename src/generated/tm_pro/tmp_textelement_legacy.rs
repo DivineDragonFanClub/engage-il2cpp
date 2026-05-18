@@ -120,6 +120,7 @@ impl TMP_TextElement_Legacy {
 }
 
 #[cfg(feature = "tm_pro-tmp_textelement_legacy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_TextElement_Legacy;
     pub use super::ITMP_TextElement_LegacyMethods;

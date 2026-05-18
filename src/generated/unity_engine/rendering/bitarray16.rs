@@ -1094,6 +1094,7 @@ impl BitArray16 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray16")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray16;
     pub use crate::system::object::IObject;

@@ -179,6 +179,7 @@ impl AndroidJavaException {
 }
 
 #[cfg(feature = "unity_engine-androidjavaexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaException;
     pub use super::IAndroidJavaException;

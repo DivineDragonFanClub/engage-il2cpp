@@ -565,6 +565,7 @@ impl VersusMapEditThemeSelectContent {
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMapEditThemeSelectContent;
     pub use super::IVersusMapEditThemeSelectContentMethods;

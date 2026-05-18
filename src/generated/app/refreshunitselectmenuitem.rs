@@ -874,6 +874,7 @@ impl RefreshUnitSelectMenuItem {
 }
 
 #[cfg(feature = "app-refreshunitselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSelectMenuItem;
     pub use super::IRefreshUnitSelectMenuItemMethods;

@@ -352,6 +352,7 @@ impl TelopInstance {
 }
 
 #[cfg(feature = "app-telopinstance")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITelopInstance;
     pub use super::ITelopInstanceMethods;

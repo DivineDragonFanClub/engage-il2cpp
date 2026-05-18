@@ -111,6 +111,7 @@ impl RenderGraphContext {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphContext;
     pub use super::IRenderGraphContextMethods;

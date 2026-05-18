@@ -272,6 +272,7 @@ impl SinCommand {
 }
 
 #[cfg(feature = "app-sincommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISinCommand;
     pub use super::ISinCommandMethods;

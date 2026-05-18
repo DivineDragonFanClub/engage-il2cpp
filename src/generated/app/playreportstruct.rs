@@ -628,6 +628,7 @@ impl PlayReportStruct {
 }
 
 #[cfg(feature = "app-playreportstruct")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayReportStruct;
     pub use super::IPlayReportStructMethods;

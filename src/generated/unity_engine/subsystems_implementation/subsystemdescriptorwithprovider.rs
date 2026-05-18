@@ -170,6 +170,7 @@ impl SubsystemDescriptorWithProvider {
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystemDescriptorWithProvider;
     pub use super::ISubsystemDescriptorWithProviderMethods;

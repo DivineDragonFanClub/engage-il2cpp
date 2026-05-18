@@ -628,6 +628,7 @@ impl RefineShopGodSymbol {
 }
 
 #[cfg(feature = "app-refineshopgodsymbol")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopGodSymbol;
     pub use super::IRefineShopGodSymbolMethods;

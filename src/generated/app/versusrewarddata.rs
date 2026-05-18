@@ -818,6 +818,7 @@ impl VersusRewardData {
 }
 
 #[cfg(feature = "app-versusrewarddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusRewardData;
     pub use super::IVersusRewardDataMethods;

@@ -264,6 +264,7 @@ impl DataUtility {
 }
 
 #[cfg(feature = "unity_engine-sprites-datautility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DataUtility;
     pub use super::IDataUtility;

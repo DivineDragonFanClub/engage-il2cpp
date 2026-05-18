@@ -212,6 +212,7 @@ impl ProcDescArgS {
 }
 
 #[cfg(feature = "app-procdescargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescArgS;
     pub use super::IProcDescArgSMethods;

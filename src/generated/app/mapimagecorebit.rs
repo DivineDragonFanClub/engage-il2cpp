@@ -825,6 +825,7 @@ impl MapImageCoreBit {
 }
 
 #[cfg(feature = "app-mapimagecorebit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCoreBit;
     pub use super::IMapImageCoreBitMethods;

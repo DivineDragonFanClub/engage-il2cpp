@@ -196,6 +196,7 @@ impl InterruptInspector {
 }
 
 #[cfg(feature = "app-interruptinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterruptInspector;
     pub use super::IInterruptInspectorMethods;

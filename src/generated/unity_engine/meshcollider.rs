@@ -800,6 +800,7 @@ impl MeshCollider {
 }
 
 #[cfg(feature = "unity_engine-meshcollider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshCollider;
     pub use super::IMeshColliderMethods;

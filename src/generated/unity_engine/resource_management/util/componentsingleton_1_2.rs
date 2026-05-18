@@ -84,6 +84,7 @@ impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComponentSingleton_1_2;
     pub use super::IComponentSingleton_1_2;

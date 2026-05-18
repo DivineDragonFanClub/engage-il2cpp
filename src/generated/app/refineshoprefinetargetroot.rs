@@ -1313,6 +1313,7 @@ impl RefineShopRefineTargetRoot {
 }
 
 #[cfg(feature = "app-refineshoprefinetargetroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopRefineTargetRoot;
     pub use super::IRefineShopRefineTargetRootMethods;

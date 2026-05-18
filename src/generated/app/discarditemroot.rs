@@ -880,6 +880,7 @@ impl DiscardItemRoot {
 }
 
 #[cfg(feature = "app-discarditemroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiscardItemRoot;
     pub use super::IDiscardItemRoot;

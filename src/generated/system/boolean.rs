@@ -612,6 +612,7 @@ impl Boolean {
 }
 
 #[cfg(feature = "system-boolean")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Boolean;
     pub use crate::system::object::IObject;

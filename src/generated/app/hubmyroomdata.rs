@@ -1181,6 +1181,7 @@ impl HubMyRoomData {
 }
 
 #[cfg(feature = "app-hubmyroomdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMyRoomData;
     pub use super::IHubMyRoomData;

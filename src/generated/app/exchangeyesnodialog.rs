@@ -3660,6 +3660,7 @@ impl ExchangeYesNoDialog {
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExchangeYesNoDialog;
     pub use super::ExchangeYesNoDialog_ItemParam;

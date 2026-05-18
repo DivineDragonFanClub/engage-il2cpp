@@ -168,6 +168,7 @@ impl MotionSelect {
 }
 
 #[cfg(feature = "combat-motionselect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMotionSelect;
     pub use super::IMotionSelectMethods;

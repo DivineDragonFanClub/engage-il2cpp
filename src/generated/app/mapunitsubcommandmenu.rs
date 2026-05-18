@@ -571,6 +571,7 @@ impl MapUnitSubCommandMenu {
 }
 
 #[cfg(feature = "app-mapunitsubcommandmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUnitSubCommandMenu;
     pub use super::IMapUnitSubCommandMenuMethods;

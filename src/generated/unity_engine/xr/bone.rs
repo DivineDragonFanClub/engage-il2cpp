@@ -314,6 +314,7 @@ impl Bone {
 }
 
 #[cfg(feature = "unity_engine-xr-bone")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bone;
     pub use crate::system::object::IObject;

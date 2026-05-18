@@ -96,6 +96,7 @@ impl ExecuteAlways {
 }
 
 #[cfg(feature = "unity_engine-executealways")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExecuteAlways;
     pub use super::IExecuteAlways;

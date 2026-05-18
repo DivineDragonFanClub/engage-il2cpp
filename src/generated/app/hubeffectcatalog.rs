@@ -426,6 +426,7 @@ impl HubEffectCatalog {
 }
 
 #[cfg(feature = "app-hubeffectcatalog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubEffectCatalog;
     pub use super::IHubEffectCatalog;

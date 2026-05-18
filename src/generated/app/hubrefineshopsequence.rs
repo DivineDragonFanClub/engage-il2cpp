@@ -1660,6 +1660,7 @@ impl HubRefineShopSequence {
 }
 
 #[cfg(feature = "app-hubrefineshopsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubRefineShopSequence;
     pub use super::HubRefineShopSequence_Label2;

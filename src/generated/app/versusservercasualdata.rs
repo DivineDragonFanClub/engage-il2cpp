@@ -1404,6 +1404,7 @@ impl VersusServerCasualData_GodBondBackup {
 }
 
 #[cfg(feature = "app-versusservercasualdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusServerCasualData;
     pub use super::IVersusServerCasualDataMethods;

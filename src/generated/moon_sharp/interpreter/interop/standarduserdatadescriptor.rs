@@ -453,6 +453,7 @@ impl StandardUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::StandardUserDataDescriptor;
     pub use super::IStandardUserDataDescriptor;

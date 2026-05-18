@@ -10,18 +10,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotColorChangeMenu")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MascotColorChangeMenu {
-        #[rename(name = "m_result")]
-        pub m_result: crate::app::basicmenu::BasicMenu_Result,
-        #[rename(name = "m_RootAnim")]
-        pub m_root_anim: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_cursor")]
-        pub m_cursor: crate::app::mascotcolorchangemenu::MascotColorChangeMenu_CursorTop,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -68,6 +56,18 @@ mod __types {
         pub fn exit() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotColorChangeMenu")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MascotColorChangeMenu {
+        #[rename(name = "m_result")]
+        pub m_result: crate::app::basicmenu::BasicMenu_Result,
+        #[rename(name = "m_RootAnim")]
+        pub m_root_anim: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_cursor")]
+        pub m_cursor: crate::app::mascotcolorchangemenu::MascotColorChangeMenu_CursorTop,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_CursorTop.md"))]
@@ -2143,6 +2143,7 @@ impl MascotColorChangeMenu_CursorTop {
 }
 
 #[cfg(feature = "app-mascotcolorchangemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotColorChangeMenu;
     pub use super::IMascotColorChangeMenuMethods;

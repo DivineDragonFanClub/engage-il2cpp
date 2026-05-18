@@ -225,6 +225,7 @@ impl Comparer {
 }
 
 #[cfg(feature = "system-collections-comparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Comparer;
     pub use super::IComparer;

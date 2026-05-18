@@ -92,6 +92,7 @@ impl RuntimeAnimationEventUtility {
 }
 
 #[cfg(feature = "combat-runtimeanimationeventutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeAnimationEventUtility;
     pub use super::RuntimeAnimationEventUtility;

@@ -401,6 +401,7 @@ impl CameraSwitcher {
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraSwitcher;
     pub use super::ICameraSwitcher;

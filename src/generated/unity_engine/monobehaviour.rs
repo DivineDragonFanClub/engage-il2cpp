@@ -1911,6 +1911,7 @@ impl MonoBehaviour {
 }
 
 #[cfg(feature = "unity_engine-monobehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoBehaviour;
     pub use super::IMonoBehaviourMethods;

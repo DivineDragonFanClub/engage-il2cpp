@@ -678,6 +678,7 @@ impl AIEnum {
 }
 
 #[cfg(feature = "app-aienum")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIEnum;
     pub use super::AIEnum_SkillRangeEnemyData;

@@ -223,6 +223,7 @@ impl CinemachineRecomposer {
 }
 
 #[cfg(feature = "root-cinemachinerecomposer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineRecomposer;
     pub use super::ICinemachineRecomposer;

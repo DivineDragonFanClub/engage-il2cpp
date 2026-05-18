@@ -86,6 +86,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> UnityEvent_2<T0, 
 }
 
 #[cfg(feature = "unity_engine-events-unityevent_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityEvent_2;
     pub use super::IUnityEvent_2Methods;

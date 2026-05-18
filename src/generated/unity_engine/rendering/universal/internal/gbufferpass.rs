@@ -464,6 +464,7 @@ impl GBufferPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-gbufferpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GBufferPass;
     pub use super::IGBufferPass;

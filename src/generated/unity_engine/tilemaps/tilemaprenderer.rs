@@ -215,6 +215,7 @@ pub trait ITilemapRendererMethods: ITilemapRenderer {
 impl<__T: ITilemapRenderer> ITilemapRendererMethods for __T {}
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITilemapRenderer;
     pub use super::ITilemapRendererMethods;

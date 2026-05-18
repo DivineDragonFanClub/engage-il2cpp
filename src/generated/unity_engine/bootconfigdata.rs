@@ -173,6 +173,7 @@ impl BootConfigData {
 }
 
 #[cfg(feature = "unity_engine-bootconfigdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BootConfigData;
     pub use super::IBootConfigData;

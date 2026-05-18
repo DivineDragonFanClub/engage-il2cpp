@@ -660,6 +660,7 @@ impl ResourceLocationMap {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceLocationMap;
     pub use super::IResourceLocationMapMethods;

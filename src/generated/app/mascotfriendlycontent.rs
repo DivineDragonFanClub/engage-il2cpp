@@ -628,6 +628,7 @@ impl MascotFriendlyContent {
 }
 
 #[cfg(feature = "app-mascotfriendlycontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFriendlyContent;
     pub use super::IMascotFriendlyContentMethods;

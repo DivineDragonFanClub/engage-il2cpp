@@ -343,6 +343,7 @@ impl DeferredPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DeferredPass;
     pub use super::IDeferredPass;

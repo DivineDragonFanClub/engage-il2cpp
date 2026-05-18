@@ -1034,6 +1034,7 @@ impl HubInvestmentAnimal {
 }
 
 #[cfg(feature = "app-hubinvestmentanimal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubInvestmentAnimal;
     pub use super::IHubInvestmentAnimal;

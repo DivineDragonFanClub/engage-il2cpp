@@ -226,6 +226,7 @@ impl MoonSharpUserDataAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdataattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpUserDataAttribute;
     pub use super::IMoonSharpUserDataAttributeMethods;

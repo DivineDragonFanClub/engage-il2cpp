@@ -296,6 +296,7 @@ impl VersusEditModeBackupData {
 }
 
 #[cfg(feature = "app-versuseditmodebackupdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusEditModeBackupData;
     pub use super::IVersusEditModeBackupDataMethods;

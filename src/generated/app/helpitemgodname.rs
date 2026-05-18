@@ -353,6 +353,7 @@ impl HelpItemGodName {
 }
 
 #[cfg(feature = "app-helpitemgodname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemGodName;
     pub use super::IHelpItemGodName;

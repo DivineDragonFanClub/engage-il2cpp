@@ -211,6 +211,7 @@ impl GCCollectItem {
 }
 
 #[cfg(feature = "app-gccollectitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GCCollectItem;
     pub use super::IGCCollectItem;

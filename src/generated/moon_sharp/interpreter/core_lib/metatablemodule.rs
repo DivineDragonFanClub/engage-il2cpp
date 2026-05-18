@@ -501,6 +501,7 @@ impl MetaTableModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-metatablemodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMetaTableModule;
     pub use super::IMetaTableModuleMethods;

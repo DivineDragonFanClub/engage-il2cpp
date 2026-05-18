@@ -492,6 +492,7 @@ impl DebugStream {
 }
 
 #[cfg(feature = "app-debugstream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugStream;
     pub use super::IDebugStream;

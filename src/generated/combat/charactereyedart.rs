@@ -388,6 +388,7 @@ impl CharacterEyeDart {
 }
 
 #[cfg(feature = "combat-charactereyedart")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterEyeDart;
     pub use super::CharacterEyeDart_State;

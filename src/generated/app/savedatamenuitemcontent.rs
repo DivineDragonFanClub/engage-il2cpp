@@ -108,6 +108,7 @@ impl SaveDataMenuItemContent {
 }
 
 #[cfg(feature = "app-savedatamenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISaveDataMenuItemContent;
     pub use super::ISaveDataMenuItemContentMethods;

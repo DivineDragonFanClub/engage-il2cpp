@@ -559,6 +559,7 @@ impl ShaderTagId {
 }
 
 #[cfg(feature = "unity_engine-rendering-shadertagid")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderTagId;
     pub use crate::system::object::IObject;

@@ -445,6 +445,7 @@ impl InstanceState {
 }
 
 #[cfg(feature = "root-instancestate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstanceState;
     pub use super::IInstanceStateMethods;

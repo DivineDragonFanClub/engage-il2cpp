@@ -546,6 +546,7 @@ impl AkVector {
 }
 
 #[cfg(feature = "root-akvector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkVector;
     pub use super::IAkVector;

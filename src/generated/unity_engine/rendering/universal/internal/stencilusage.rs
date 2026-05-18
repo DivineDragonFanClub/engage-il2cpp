@@ -74,6 +74,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-stencilusage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::StencilUsage;
     pub use crate::system::object::IObject;

@@ -119,6 +119,7 @@ impl AkAmbientLargeModePositioner_Bridge {
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAmbientLargeModePositioner_Bridge;
     pub use super::IAkAmbientLargeModePositioner_Bridge;

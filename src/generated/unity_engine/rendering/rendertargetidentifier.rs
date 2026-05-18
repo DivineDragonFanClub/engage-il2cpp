@@ -1019,6 +1019,7 @@ impl RenderTargetIdentifier {
 }
 
 #[cfg(feature = "unity_engine-rendering-rendertargetidentifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderTargetIdentifier;
     pub use crate::system::object::IObject;

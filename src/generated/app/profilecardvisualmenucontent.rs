@@ -672,6 +672,7 @@ impl ProfileCardVisualMenuContent {
 }
 
 #[cfg(feature = "app-profilecardvisualmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardVisualMenuContent;
     pub use super::IProfileCardVisualMenuContentMethods;

@@ -2914,6 +2914,7 @@ impl Mathf {
 }
 
 #[cfg(feature = "unity_engine-mathf")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Mathf;
     pub use crate::system::object::IObject;

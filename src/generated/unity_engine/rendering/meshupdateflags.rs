@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-meshupdateflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MeshUpdateFlags;
     pub use crate::system::object::IObject;

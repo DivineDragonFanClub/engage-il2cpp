@@ -23,6 +23,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-dictionarykeycollectiondebugview_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DictionaryKeyCollectionDebugView_2;
     pub use super::IDictionaryKeyCollectionDebugView_2;

@@ -160,6 +160,7 @@ impl MapImageIndex {
 }
 
 #[cfg(feature = "app-mapimageindex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageIndex;
     pub use super::IMapImageIndexMethods;

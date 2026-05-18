@@ -303,6 +303,7 @@ impl CustomTransparentsLayerPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtransparentslayerpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomTransparentsLayerPass;
     pub use super::ICustomTransparentsLayerPass;

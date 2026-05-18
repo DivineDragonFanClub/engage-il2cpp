@@ -455,6 +455,7 @@ impl BondsRingFacePicture {
 }
 
 #[cfg(feature = "app-bondsringfacepicture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BondsRingFacePicture;
     pub use super::IBondsRingFacePicture;

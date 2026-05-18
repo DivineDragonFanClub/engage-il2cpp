@@ -86,6 +86,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-xrnode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::XRNode;
     pub use crate::system::object::IObject;

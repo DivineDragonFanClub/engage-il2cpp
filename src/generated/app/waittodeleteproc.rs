@@ -242,6 +242,7 @@ impl WaitToDeleteProc {
 }
 
 #[cfg(feature = "app-waittodeleteproc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaitToDeleteProc;
     pub use super::IWaitToDeleteProcMethods;

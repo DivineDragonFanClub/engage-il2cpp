@@ -160,6 +160,7 @@ impl AkTriggerMouseExit {
 }
 
 #[cfg(feature = "root-aktriggermouseexit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerMouseExit;
     pub use super::IAkTriggerMouseExit;

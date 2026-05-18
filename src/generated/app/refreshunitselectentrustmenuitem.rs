@@ -320,6 +320,7 @@ impl RefreshUnitSelectEntrustMenuItem {
 }
 
 #[cfg(feature = "app-refreshunitselectentrustmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSelectEntrustMenuItem;
     pub use super::IRefreshUnitSelectEntrustMenuItemMethods;

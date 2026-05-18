@@ -90,6 +90,7 @@ pub trait ISearchResultMethods: ISearchResult {
 impl<__T: ISearchResult> ISearchResultMethods for __T {}
 
 #[cfg(feature = "system-io-searchresult")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISearchResult;
     pub use super::ISearchResultMethods;

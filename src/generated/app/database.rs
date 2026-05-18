@@ -612,6 +612,7 @@ impl Database {
 }
 
 #[cfg(feature = "app-database")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Database;
     pub use super::IDatabase;

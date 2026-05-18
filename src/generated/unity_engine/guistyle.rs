@@ -4211,6 +4211,7 @@ impl GUIStyle {
 }
 
 #[cfg(feature = "unity_engine-guistyle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIStyle;
     pub use super::IGUIStyle;

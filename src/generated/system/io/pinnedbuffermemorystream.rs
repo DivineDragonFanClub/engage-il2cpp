@@ -235,6 +235,7 @@ impl PinnedBufferMemoryStream {
 }
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPinnedBufferMemoryStream;
     pub use super::IPinnedBufferMemoryStreamMethods;

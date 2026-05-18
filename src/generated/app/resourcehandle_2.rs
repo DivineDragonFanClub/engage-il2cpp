@@ -850,6 +850,7 @@ impl ResourceHandle_2 {
 }
 
 #[cfg(feature = "app-resourcehandle_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceHandle_2;
     pub use super::IResourceHandle_2Methods;

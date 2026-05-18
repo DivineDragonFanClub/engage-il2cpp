@@ -672,6 +672,7 @@ impl WindManager {
 }
 
 #[cfg(feature = "root-windmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWindManager;
     pub use super::IWindManagerMethods;

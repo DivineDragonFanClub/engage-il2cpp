@@ -171,6 +171,7 @@ impl DialogItemNextChapter {
 }
 
 #[cfg(feature = "app-dialogitemnextchapter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DialogItemNextChapter;
     pub use super::IDialogItemNextChapter;

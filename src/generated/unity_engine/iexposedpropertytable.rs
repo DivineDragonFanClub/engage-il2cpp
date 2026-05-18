@@ -104,6 +104,7 @@ pub trait IIExposedPropertyTableMethods: IIExposedPropertyTable {
 impl<__T: IIExposedPropertyTable> IIExposedPropertyTableMethods for __T {}
 
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IExposedPropertyTable;
     pub use super::IIExposedPropertyTable;

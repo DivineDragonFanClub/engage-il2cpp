@@ -232,6 +232,7 @@ impl ActionDisposerHolder {
 }
 
 #[cfg(feature = "combat-actiondisposerholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionDisposerHolder;
     pub use super::IActionDisposerHolder;

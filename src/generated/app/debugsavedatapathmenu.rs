@@ -215,6 +215,7 @@ impl DebugSaveDataPathMenu {
 }
 
 #[cfg(feature = "app-debugsavedatapathmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugSaveDataPathMenu;
     pub use super::DebugSaveDataPathMenu_Label;

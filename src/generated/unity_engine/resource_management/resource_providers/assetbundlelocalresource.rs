@@ -480,6 +480,7 @@ impl AssetBundleLocalResource {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundleLocalResource;
     pub use super::IAssetBundleLocalResource;

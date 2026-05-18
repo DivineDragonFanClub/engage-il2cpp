@@ -844,6 +844,7 @@ impl DirectoryInfo {
 }
 
 #[cfg(feature = "system-io-directoryinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DirectoryInfo;
     pub use super::IDirectoryInfo;

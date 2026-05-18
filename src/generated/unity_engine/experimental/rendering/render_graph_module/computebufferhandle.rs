@@ -301,6 +301,7 @@ impl ComputeBufferHandle {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ComputeBufferHandle;
     pub use crate::system::object::IObject;

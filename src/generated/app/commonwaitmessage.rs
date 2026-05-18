@@ -509,6 +509,7 @@ impl CommonWaitMessage {
 }
 
 #[cfg(feature = "app-commonwaitmessage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonWaitMessage;
     pub use super::ICommonWaitMessage;

@@ -98,6 +98,7 @@ pub trait IIWireableDescriptorMethods: IIWireableDescriptor {
 impl<__T: IIWireableDescriptor> IIWireableDescriptorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIWireableDescriptor;
     pub use super::IIWireableDescriptorMethods;

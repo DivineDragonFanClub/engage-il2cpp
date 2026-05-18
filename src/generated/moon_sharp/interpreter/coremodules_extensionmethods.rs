@@ -93,6 +93,7 @@ impl CoreModules_ExtensionMethods {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoreModules_ExtensionMethods;
     pub use super::ICoreModules_ExtensionMethods;

@@ -362,6 +362,7 @@ impl PackedPlayModeBuildLogs {
 }
 
 #[cfg(feature = "root-packedplaymodebuildlogs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPackedPlayModeBuildLogs;
     pub use super::IPackedPlayModeBuildLogsMethods;

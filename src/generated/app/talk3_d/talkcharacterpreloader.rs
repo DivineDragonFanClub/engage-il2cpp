@@ -219,6 +219,7 @@ impl TalkCharacterPreLoader {
 }
 
 #[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkCharacterPreLoader;
     pub use super::ITalkCharacterPreLoaderMethods;

@@ -228,6 +228,7 @@ impl MoonSharpVisibleAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-moonsharpvisibleattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpVisibleAttribute;
     pub use super::IMoonSharpVisibleAttributeMethods;

@@ -991,6 +991,7 @@ impl ProfileCardCommentListMenuItem {
 }
 
 #[cfg(feature = "app-profilecardcommentlistmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardCommentListMenuItem;
     pub use super::IProfileCardCommentListMenuItemMethods;

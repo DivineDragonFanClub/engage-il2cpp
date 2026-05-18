@@ -114,6 +114,7 @@ impl AkEnumFlagAttribute {
 }
 
 #[cfg(feature = "root-akenumflagattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEnumFlagAttribute;
     pub use super::IAkEnumFlagAttribute;

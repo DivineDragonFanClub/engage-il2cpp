@@ -281,6 +281,7 @@ impl TrailHand {
 }
 
 #[cfg(feature = "combat-trailhand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TrailHand;
     pub use crate::system::object::IObject;

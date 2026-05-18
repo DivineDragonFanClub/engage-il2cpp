@@ -200,6 +200,7 @@ impl WhileStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-whilestatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWhileStatement;
     pub use super::IWhileStatementMethods;

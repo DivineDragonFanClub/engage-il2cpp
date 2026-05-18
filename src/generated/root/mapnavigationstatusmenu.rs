@@ -689,6 +689,7 @@ impl MapNavigationStatusMenu {
 }
 
 #[cfg(feature = "root-mapnavigationstatusmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationStatusMenu;
     pub use super::IMapNavigationStatusMenuMethods;

@@ -610,6 +610,7 @@ impl CapeTowerTopMenuRoot {
 }
 
 #[cfg(feature = "app-capetowertopmenuroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapeTowerTopMenuRoot;
     pub use super::ICapeTowerTopMenuRoot;

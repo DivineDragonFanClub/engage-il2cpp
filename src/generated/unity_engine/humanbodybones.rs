@@ -274,6 +274,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-humanbodybones")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HumanBodyBones;
     pub use crate::system::object::IObject;

@@ -4535,6 +4535,7 @@ impl CharacterGameStatus {
 }
 
 #[cfg(feature = "combat-charactergamestatus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterGameStatus;
     pub use super::ICharacterGameStatus;

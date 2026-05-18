@@ -148,6 +148,7 @@ impl PrefetchedSignalExMethods {
 }
 
 #[cfg(feature = "combat-prefetchedsignalexmethods")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPrefetchedSignalExMethods;
     pub use super::PrefetchedSignalExMethods;

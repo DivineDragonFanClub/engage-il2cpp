@@ -187,6 +187,7 @@ impl ConvertCannon {
 }
 
 #[cfg(feature = "combat-situation_converter-convertcannon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertCannon;
     pub use super::IConvertCannon;

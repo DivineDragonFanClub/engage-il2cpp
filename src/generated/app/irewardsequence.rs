@@ -214,6 +214,7 @@ impl IRewardSequence {
 }
 
 #[cfg(feature = "app-irewardsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIRewardSequence;
     pub use super::IIRewardSequenceMethods;

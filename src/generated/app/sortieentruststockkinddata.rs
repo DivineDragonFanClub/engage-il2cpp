@@ -297,6 +297,7 @@ impl SortieEntrustStockKindData {
 }
 
 #[cfg(feature = "app-sortieentruststockkinddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieEntrustStockKindData;
     pub use super::ISortieEntrustStockKindDataMethods;

@@ -217,6 +217,7 @@ impl CustomEnvSet {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomEnvSet;
     pub use super::ICustomEnvSet;

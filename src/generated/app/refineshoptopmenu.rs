@@ -66,6 +66,16 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopTopMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RefineShopTopMenu_DecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RefineShopTopMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RefineShopTopMenu {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopExchangeMenuItem.md"))]
     #[::unity2::class(
         namespace = "App",
@@ -73,18 +83,6 @@ mod __types {
     )]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct RefineShopTopMenu_RefineShopTopExchangeMenuItem {
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RefineShopTopMenu.RefineShopTopEngraveMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem {
         #[rename(name = "m_DecideEventHandler")]
         pub m_decide_event_handler:
             crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
@@ -102,15 +100,17 @@ mod __types {
             crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopTopMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RefineShopTopMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RefineShopTopMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RefineShopTopMenu_DecideEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "RefineShopTopMenu.RefineShopTopEngraveMenuItem"
+    )]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler:
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-refineshoptopmenu-types")]
@@ -119,7 +119,7 @@ pub use __types::*;
 #[cfg(feature = "app-refineshoptopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw {
+mod __RefineShopTopMenu_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -128,18 +128,28 @@ mod __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
-                ),
+                <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -148,196 +158,49 @@ mod __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        this: RefineShopTopMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+            RefineShopTopMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, decide_event_handler, __unity2_method_info)
+        inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_invoke {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods:
-    IRefineShopTopMenu_RefineShopTopExchangeMenuItem
-{
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl<__T: IRefineShopTopMenu_RefineShopTopExchangeMenuItem>
-    IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopExchangeMenuItem {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_RefineShopTopExchangeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods>::ctor(
-            this,
-            decide_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
+                <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
                 1,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                    "Invoke",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -345,140 +208,54 @@ mod __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    pub unsafe fn invoke(
+        this: RefineShopTopMenu_DecideEventHandler,
+        result: crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+            RefineShopTopMenu_DecideEventHandler,
+            crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_invoke::get_offset() as isize),
         );
-        inner(this, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+        inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods:
-    IRefineShopTopMenu_RefineShopTopEngraveMenuItem
+pub trait IRefineShopTopMenu_DecideEventHandlerMethods:
+    IRefineShopTopMenu_DecideEventHandler
 {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     fn ctor(
         self,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-        >,
+        object: impl ::core::convert::Into<crate::system::object::Object>,
+        method: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::ctor(
+            let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(decide_event_handler),
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+    #[doc = "`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]
+    fn invoke(
+        self,
+        result: impl ::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>,
+    ) -> () {
         unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::get_name(
+            let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_DecideEventHandler_unity2_raw::invoke(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::a_call(
-                __receiver,
+                ::core::convert::Into::into(result),
                 ::core::option::Option::None,
             )
         }
@@ -486,223 +263,23 @@ pub trait IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods:
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-impl<__T: IRefineShopTopMenu_RefineShopTopEngraveMenuItem>
-    IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods for __T
+impl<__T: IRefineShopTopMenu_DecideEventHandler> IRefineShopTopMenu_DecideEventHandlerMethods
+    for __T
 {
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    ) -> Self {
+impl RefineShopTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_RefineShopTopEngraveMenuItem),
+                ::core::stringify!(RefineShopTopMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods>::ctor(
-            this,
-            decide_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopRefineMenuItem,
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, decide_event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopRefineMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefineShopTopMenu_RefineShopTopRefineMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods:
-    IRefineShopTopMenu_RefineShopTopRefineMenuItem
-{
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl<__T: IRefineShopTopMenu_RefineShopTopRefineMenuItem>
-    IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_RefineShopTopRefineMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods>::ctor(
-            this,
-            decide_event_handler,
-        );
+        <Self as IRefineShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -1161,7 +738,7 @@ impl RefineShopTopMenu {
 #[cfg(feature = "app-refineshoptopmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RefineShopTopMenu_DecideEventHandler_unity2_raw {
+mod __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -1170,28 +747,18 @@ mod __RefineShopTopMenu_DecideEventHandler_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
+                ),
                 ".ctor",
-                2,
+                1,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1200,49 +767,40 @@ mod __RefineShopTopMenu_DecideEventHandler_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: RefineShopTopMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
+        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RefineShopTopMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
+            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
-        inner(this, object, method, __unity2_method_info)
+        inner(this, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
+    pub mod __lookup_get_name {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_Result2 as :: unity2 :: IlType > :: il_type ()] ;
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
+                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
+                ),
+                "GetName",
+                0,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineShopTopMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -1250,54 +808,98 @@ mod __RefineShopTopMenu_DecideEventHandler_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn invoke(
-        this: RefineShopTopMenu_DecideEventHandler,
-        result: crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
+    pub unsafe fn get_name(
+        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            RefineShopTopMenu_DecideEventHandler,
-            crate::app::refineshoptopmenu::RefineShopTopMenu_Result2,
+            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
+                .offset(__lookup_get_name::get_offset() as isize),
         );
-        inner(this, result, __unity2_method_info)
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopExchangeMenuItem as ::unity2::ClassIdentity>::class(
+                ),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RefineShopTopMenu_RefineShopTopExchangeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopExchangeMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-pub trait IRefineShopTopMenu_DecideEventHandlerMethods:
-    IRefineShopTopMenu_DecideEventHandler
+pub trait IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods:
+    IRefineShopTopMenu_RefineShopTopExchangeMenuItem
 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
     fn ctor(
         self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_DecideEventHandler_unity2_raw::ctor(
+            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
+                ::core::convert::Into::into(decide_event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::refineshoptopmenu::RefineShopTopMenu_Result2>,
-    ) -> () {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < RefineShopTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineShopTopMenu_DecideEventHandler_unity2_raw::invoke(
+            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::get_name(
                 __receiver,
-                ::core::convert::Into::into(result),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopExchangeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopExchangeMenuItem_unity2_raw::a_call(
+                __receiver,
                 ::core::option::Option::None,
             )
         }
@@ -1305,28 +907,427 @@ pub trait IRefineShopTopMenu_DecideEventHandlerMethods:
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-impl<__T: IRefineShopTopMenu_DecideEventHandler> IRefineShopTopMenu_DecideEventHandlerMethods
-    for __T
+impl<__T: IRefineShopTopMenu_RefineShopTopExchangeMenuItem>
+    IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods for __T
 {
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl RefineShopTopMenu_RefineShopTopExchangeMenuItem {
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_DecideEventHandler),
+                ::core::stringify!(RefineShopTopMenu_RefineShopTopExchangeMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefineShopTopMenu_RefineShopTopExchangeMenuItemMethods>::ctor(
+            this,
+            decide_event_handler,
+        );
         this
     }
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopRefineMenuItem,
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, decide_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopRefineMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopRefineMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RefineShopTopMenu_RefineShopTopRefineMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopRefineMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+pub trait IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods:
+    IRefineShopTopMenu_RefineShopTopRefineMenuItem
+{
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopRefineMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl<__T: IRefineShopTopMenu_RefineShopTopRefineMenuItem>
+    IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopTopMenu_RefineShopTopRefineMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods>::ctor(
+            this,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: refineshoptopmenu :: RefineShopTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, decide_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
+                ),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn get_name(
+        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_name::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RefineShopTopMenu_RefineShopTopEngraveMenuItem as ::unity2::ClassIdentity>::class(
+                ),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RefineShopTopMenu_RefineShopTopEngraveMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+pub trait IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods:
+    IRefineShopTopMenu_RefineShopTopEngraveMenuItem
+{
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        decide_event_handler: impl ::core::convert::Into<
+            crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::get_name(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < RefineShopTopMenu_RefineShopTopEngraveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __RefineShopTopMenu_RefineShopTopEngraveMenuItem_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl<__T: IRefineShopTopMenu_RefineShopTopEngraveMenuItem>
+    IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopTopMenu_RefineShopTopEngraveMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods>::ctor(
+            this,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopTopMenu;
     pub use super::IRefineShopTopMenuMethods;

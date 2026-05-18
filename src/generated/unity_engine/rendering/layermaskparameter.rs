@@ -123,6 +123,7 @@ impl LayerMaskParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-layermaskparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILayerMaskParameter;
     pub use super::ILayerMaskParameterMethods;

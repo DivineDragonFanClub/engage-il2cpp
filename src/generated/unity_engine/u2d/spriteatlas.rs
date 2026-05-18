@@ -675,6 +675,7 @@ impl SpriteAtlas {
 }
 
 #[cfg(feature = "unity_engine-u2d-spriteatlas")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteAtlas;
     pub use super::ISpriteAtlasMethods;

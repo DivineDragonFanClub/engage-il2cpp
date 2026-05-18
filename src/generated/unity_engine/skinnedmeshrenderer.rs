@@ -1604,6 +1604,7 @@ impl SkinnedMeshRenderer {
 }
 
 #[cfg(feature = "unity_engine-skinnedmeshrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkinnedMeshRenderer;
     pub use super::ISkinnedMeshRendererMethods;

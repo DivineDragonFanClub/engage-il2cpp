@@ -177,6 +177,7 @@ impl TextEditor {
 }
 
 #[cfg(feature = "unity_engine-texteditor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextEditor;
     pub use super::ITextEditorMethods;

@@ -389,6 +389,7 @@ impl SpriteAtlasManager {
 }
 
 #[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteAtlasManager;
     pub use super::SpriteAtlasManager;

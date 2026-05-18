@@ -175,6 +175,7 @@ impl UnitDetailCameraPosition {
 }
 
 #[cfg(feature = "combat-unitdetailcameraposition")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitDetailCameraPosition;
     pub use super::IUnitDetailCameraPositionMethods;

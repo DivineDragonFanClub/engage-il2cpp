@@ -480,6 +480,7 @@ impl MapUI {
 }
 
 #[cfg(feature = "root-mapui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUI;
     pub use super::IMapUIMethods;

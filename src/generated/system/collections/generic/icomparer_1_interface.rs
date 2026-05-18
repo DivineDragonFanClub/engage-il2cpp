@@ -23,6 +23,7 @@ impl<T0: ::unity2::ClassIdentity> IComparer_1_Interface<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-icomparer_1_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IComparer_1_Interface;
     pub use super::IIComparer_1_Interface;

@@ -114,6 +114,7 @@ impl LanguageSettingMenuItemContent {
 }
 
 #[cfg(feature = "app-languagesettingmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILanguageSettingMenuItemContent;
     pub use super::ILanguageSettingMenuItemContentMethods;

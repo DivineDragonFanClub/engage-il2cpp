@@ -694,6 +694,7 @@ impl ProfileCardFrameData {
 }
 
 #[cfg(feature = "app-profilecardframedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFrameData;
     pub use super::IProfileCardFrameDataMethods;

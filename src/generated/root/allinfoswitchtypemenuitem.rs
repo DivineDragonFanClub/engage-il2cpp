@@ -338,6 +338,7 @@ impl AllInfoSwitchTypeMenuItem {
 }
 
 #[cfg(feature = "root-allinfoswitchtypemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AllInfoSwitchTypeMenuItem;
     pub use super::IAllInfoSwitchTypeMenuItem;

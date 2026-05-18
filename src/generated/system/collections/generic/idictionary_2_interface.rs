@@ -34,6 +34,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> IDictionary_2_Int
 }
 
 #[cfg(feature = "system-collections-generic-idictionary_2_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDictionary_2_Interface;
     pub use super::IIDictionary_2_Interface;

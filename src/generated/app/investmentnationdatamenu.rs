@@ -1237,6 +1237,7 @@ impl InvestmentNationDataMenu {
 }
 
 #[cfg(feature = "app-investmentnationdatamenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvestmentNationDataMenu;
     pub use super::IInvestmentNationDataMenuMethods;

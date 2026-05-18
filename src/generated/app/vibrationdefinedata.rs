@@ -517,6 +517,7 @@ impl VibrationDefineData {
 }
 
 #[cfg(feature = "app-vibrationdefinedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVibrationDefineData;
     pub use super::IVibrationDefineDataMethods;

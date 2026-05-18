@@ -876,6 +876,7 @@ impl MyRoomWakeupSelectMenu {
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomWakeupSelectMenu;
     pub use super::IMyRoomWakeupSelectMenuMethods;

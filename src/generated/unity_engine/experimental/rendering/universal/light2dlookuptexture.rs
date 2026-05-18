@@ -250,6 +250,7 @@ impl Light2DLookupTexture {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILight2DLookupTexture;
     pub use super::Light2DLookupTexture;

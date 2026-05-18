@@ -145,6 +145,7 @@ impl GUIStateObjects {
 }
 
 #[cfg(feature = "unity_engine-guistateobjects")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIStateObjects;
     pub use super::IGUIStateObjects;

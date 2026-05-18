@@ -446,6 +446,7 @@ impl ArenaBondGodSelectSkillListSetter {
 }
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaBondGodSelectSkillListSetter;
     pub use super::ArenaBondGodSelectSkillListSetter_AddAbility;

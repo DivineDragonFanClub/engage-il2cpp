@@ -179,6 +179,7 @@ impl MapInfoIconPool {
 }
 
 #[cfg(feature = "root-mapinfoiconpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoIconPool;
     pub use super::IMapInfoIconPoolMethods;

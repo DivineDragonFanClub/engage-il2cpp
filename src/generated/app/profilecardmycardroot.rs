@@ -1045,6 +1045,7 @@ impl ProfileCardMyCardRoot {
 }
 
 #[cfg(feature = "app-profilecardmycardroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardMyCardRoot;
     pub use super::IProfileCardMyCardRootMethods;

@@ -335,6 +335,7 @@ impl SaveDataReadHandle {
 }
 
 #[cfg(feature = "app-savedatareadhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISaveDataReadHandle;
     pub use super::ISaveDataReadHandleMethods;

@@ -324,6 +324,7 @@ impl EvilClearRewardSequence {
 }
 
 #[cfg(feature = "app-evilclearrewardsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EvilClearRewardSequence;
     pub use super::IEvilClearRewardSequence;

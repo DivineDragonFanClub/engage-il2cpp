@@ -39,90 +39,6 @@ mod __types {
         pub engage_count: ::unity2::Array<i32>,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_HitType.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Phase_HitType {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Phase_HitType {
-        const NAMESPACE: &'static str = "Combat";
-
-        const NAME: &'static str = "Phase.HitType";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Phase_HitType {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Phase_HitType {
-        pub fn critical() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn miss() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn guard() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn hit() -> Self {
-            Self { value: 8 }
-        }
-
-        pub fn parry() -> Self {
-            Self { value: 16 }
-        }
-
-        pub fn knockoff() -> Self {
-            Self { value: 64 }
-        }
-
-        pub fn heal() -> Self {
-            Self { value: 128 }
-        }
-
-        pub fn chain_guard() -> Self {
-            Self { value: 256 }
-        }
-
-        pub fn dual_guard() -> Self {
-            Self { value: 512 }
-        }
-
-        pub fn hit_stop有() -> Self {
-            Self { value: 268 }
-        }
-
-        pub fn guard系() -> Self {
-            Self { value: 260 }
-        }
-
-        pub fn miss系() -> Self {
-            Self { value: 82 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_Detail.md"))]
     #[repr(C)]
     #[derive(
@@ -220,6 +136,90 @@ mod __types {
 
         pub fn chain_grd() -> Self {
             Self { value: 245760 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/phase/Phase_HitType.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Phase_HitType {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Phase_HitType {
+        const NAMESPACE: &'static str = "Combat";
+
+        const NAME: &'static str = "Phase.HitType";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Phase_HitType {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Phase_HitType {
+        pub fn critical() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn miss() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn guard() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn hit() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn parry() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn knockoff() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn heal() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn chain_guard() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn dual_guard() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn hit_stop有() -> Self {
+            Self { value: 268 }
+        }
+
+        pub fn guard系() -> Self {
+            Self { value: 260 }
+        }
+
+        pub fn miss系() -> Self {
+            Self { value: 82 }
         }
     }
 
@@ -2193,6 +2193,7 @@ impl Phase {
 }
 
 #[cfg(feature = "combat-phase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhase;
     pub use super::IPhaseMethods;

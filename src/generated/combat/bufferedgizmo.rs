@@ -354,6 +354,7 @@ impl BufferedGizmo {
 }
 
 #[cfg(feature = "combat-bufferedgizmo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BufferedGizmo;
     pub use super::BufferedGizmo_Segment;

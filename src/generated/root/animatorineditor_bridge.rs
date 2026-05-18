@@ -107,6 +107,7 @@ impl AnimatorInEditor_Bridge {
 }
 
 #[cfg(feature = "root-animatorineditor_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorInEditor_Bridge;
     pub use super::IAnimatorInEditor_Bridge;

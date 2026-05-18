@@ -19,6 +19,11 @@ mod __types {
     #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
     pub struct MascotFoodSelectMenuItem_ConfirmDialogNo {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct MascotFoodSelectMenuItem_ConfirmDialog {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md"))]
     #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogYes")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -26,11 +31,6 @@ mod __types {
         #[rename(name = "m_foodStuffData")]
         pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct MascotFoodSelectMenuItem_ConfirmDialog {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem")]
@@ -132,162 +132,6 @@ impl MascotFoodSelectMenuItem_ConfirmDialogNo {
             )
         });
         <Self as IMascotFoodSelectMenuItem_ConfirmDialogNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MascotFoodSelectMenuItem_ConfirmDialogYes,
-        foodstuff_data: crate::app::foodstuffdata::FoodstuffData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MascotFoodSelectMenuItem_ConfirmDialogYes,
-            crate::app::foodstuffdata::FoodstuffData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, foodstuff_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: MascotFoodSelectMenuItem_ConfirmDialogYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MascotFoodSelectMenuItem_ConfirmDialogYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-pub trait IMascotFoodSelectMenuItem_ConfirmDialogYesMethods:
-    IMascotFoodSelectMenuItem_ConfirmDialogYes
-{
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]
-    fn ctor(
-        self,
-        foodstuff_data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < MascotFoodSelectMenuItem_ConfirmDialogYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(foodstuff_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < MascotFoodSelectMenuItem_ConfirmDialogYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-impl<__T: IMascotFoodSelectMenuItem_ConfirmDialogYes>
-    IMascotFoodSelectMenuItem_ConfirmDialogYesMethods for __T
-{
-}
-
-#[cfg(feature = "app-mascotfoodselectmenuitem")]
-impl MascotFoodSelectMenuItem_ConfirmDialogYes {
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]
-    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods>::ctor(this, foodstuff_data);
         this
     }
 }
@@ -473,6 +317,162 @@ impl MascotFoodSelectMenuItem_ConfirmDialog {
             menu_item_list,
             menu_content,
         );
+        this
+    }
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::foodstuffdata::FoodstuffData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MascotFoodSelectMenuItem_ConfirmDialogYes,
+        foodstuff_data: crate::app::foodstuffdata::FoodstuffData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MascotFoodSelectMenuItem_ConfirmDialogYes,
+            crate::app::foodstuffdata::FoodstuffData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, foodstuff_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MascotFoodSelectMenuItem_ConfirmDialogYes as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn a_call(
+        this: MascotFoodSelectMenuItem_ConfirmDialogYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            MascotFoodSelectMenuItem_ConfirmDialogYes,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+pub trait IMascotFoodSelectMenuItem_ConfirmDialogYesMethods:
+    IMascotFoodSelectMenuItem_ConfirmDialogYes
+{
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]
+    fn ctor(
+        self,
+        foodstuff_data: impl ::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> () {
+        unsafe {
+            let __receiver = < MascotFoodSelectMenuItem_ConfirmDialogYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(foodstuff_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = < MascotFoodSelectMenuItem_ConfirmDialogYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __MascotFoodSelectMenuItem_ConfirmDialogYes_unity2_raw::a_call(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl<__T: IMascotFoodSelectMenuItem_ConfirmDialogYes>
+    IMascotFoodSelectMenuItem_ConfirmDialogYesMethods for __T
+{
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem_ConfirmDialogYes {
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]
+    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods>::ctor(this, foodstuff_data);
         this
     }
 }
@@ -1225,6 +1225,7 @@ impl MascotFoodSelectMenuItem {
 }
 
 #[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFoodSelectMenuItem;
     pub use super::IMascotFoodSelectMenuItemMethods;

@@ -371,6 +371,7 @@ impl HelpItemUnitItem {
 }
 
 #[cfg(feature = "app-helpitemunititem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemUnitItem;
     pub use super::IHelpItemUnitItem;

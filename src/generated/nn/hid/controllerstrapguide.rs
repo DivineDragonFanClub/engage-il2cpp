@@ -17,6 +17,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-controllerstrapguide")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerStrapGuide;
     pub use super::IControllerStrapGuide;

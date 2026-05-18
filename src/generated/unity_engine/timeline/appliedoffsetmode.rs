@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-appliedoffsetmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AppliedOffsetMode;
     pub use crate::system::object::IObject;

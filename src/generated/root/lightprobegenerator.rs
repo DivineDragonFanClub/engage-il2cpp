@@ -466,6 +466,7 @@ impl LightProbeGenerator_LightProbeArea {
 }
 
 #[cfg(feature = "root-lightprobegenerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightProbeGenerator;
     pub use super::ILightProbeGeneratorMethods;

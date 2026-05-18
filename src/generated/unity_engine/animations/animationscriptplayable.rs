@@ -284,6 +284,7 @@ impl AnimationScriptPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationscriptplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationScriptPlayable;
     pub use crate::system::object::IObject;

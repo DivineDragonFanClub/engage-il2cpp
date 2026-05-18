@@ -480,6 +480,7 @@ impl Utility_2 {
 }
 
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUtility_2;
     pub use super::IUtility_GPUBuffer_1;

@@ -490,6 +490,7 @@ impl PhotographCameraController {
 }
 
 #[cfg(feature = "app-photographcameracontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographCameraController;
     pub use super::IPhotographCameraControllerMethods;

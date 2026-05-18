@@ -577,6 +577,7 @@ impl VersusUserData {
 }
 
 #[cfg(feature = "app-versususerdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusUserData;
     pub use super::IVersusUserDataMethods;

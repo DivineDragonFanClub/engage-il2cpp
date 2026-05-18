@@ -111,6 +111,7 @@ impl Wireframe {
 }
 
 #[cfg(feature = "root-wireframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWireframe;
     pub use super::IWireframeMethods;

@@ -112,6 +112,7 @@ impl ModeSelectMenuContent {
 }
 
 #[cfg(feature = "app-modeselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IModeSelectMenuContent;
     pub use super::IModeSelectMenuContentMethods;

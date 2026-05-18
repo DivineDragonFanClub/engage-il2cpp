@@ -215,6 +215,7 @@ impl TMP_Math {
 }
 
 #[cfg(feature = "tm_pro-tmp_math")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Math;
     pub use super::TMP_Math;

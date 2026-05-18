@@ -86,6 +86,7 @@ impl MatchTargetFieldConstants {
 }
 
 #[cfg(feature = "unity_engine-timeline-matchtargetfieldconstants")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMatchTargetFieldConstants;
     pub use super::MatchTargetFieldConstants;

@@ -369,6 +369,7 @@ impl GraphicsFence {
 }
 
 #[cfg(feature = "unity_engine-rendering-graphicsfence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicsFence;
     pub use crate::system::object::IObject;

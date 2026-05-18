@@ -165,6 +165,7 @@ impl DebugInfo {
 }
 
 #[cfg(feature = "app-debuginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugInfo;
     pub use super::IDebugInfo;

@@ -559,6 +559,7 @@ impl CharacterIKLookAt {
 }
 
 #[cfg(feature = "combat-characteriklookat")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIKLookAt;
     pub use super::ICharacterIKLookAt;

@@ -372,6 +372,7 @@ impl Capability {
 }
 
 #[cfg(feature = "app-capability")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Capability;
     pub use super::ICapability;

@@ -418,6 +418,7 @@ impl DragonRideEventFader {
 }
 
 #[cfg(feature = "app-dragonrideeventfader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideEventFader;
     pub use super::IDragonRideEventFader;

@@ -300,6 +300,7 @@ impl NpadHandheld {
 }
 
 #[cfg(feature = "nn-hid-npadhandheld")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpadHandheld;
     pub use super::NpadHandheld;

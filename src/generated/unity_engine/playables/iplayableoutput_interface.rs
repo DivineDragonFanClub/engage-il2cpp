@@ -84,6 +84,7 @@ pub trait IIPlayableOutput_InterfaceMethods: IIPlayableOutput_Interface {
 impl<__T: IIPlayableOutput_Interface> IIPlayableOutput_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-iplayableoutput_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlayableOutput_Interface;
     pub use super::IIPlayableOutput_InterfaceMethods;

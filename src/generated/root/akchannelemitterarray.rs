@@ -479,6 +479,7 @@ impl AkChannelEmitterArray {
 }
 
 #[cfg(feature = "root-akchannelemitterarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkChannelEmitterArray;
     pub use super::IAkChannelEmitterArray;

@@ -333,6 +333,7 @@ impl SortieSequenceItemShop {
 }
 
 #[cfg(feature = "app-sortiesequenceitemshop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieSequenceItemShop;
     pub use super::ISortieSequenceItemShopMethods;

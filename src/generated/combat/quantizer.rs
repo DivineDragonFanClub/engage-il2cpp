@@ -257,6 +257,7 @@ impl Quantizer {
 }
 
 #[cfg(feature = "combat-quantizer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IQuantizer;
     pub use super::Quantizer;

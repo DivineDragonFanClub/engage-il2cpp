@@ -11,19 +11,6 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
-    #[parent(crate::system::object::Object)]
-    pub struct ItemListYesNoDialog_MoneyParam {
-        #[rename(name = "num")]
-        pub num: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
-    #[parent(crate::app::yesnodialog::YesNoDialog)]
-    pub struct ItemListYesNoDialog {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))]
     #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.ItemParam")]
     #[parent(crate::system::object::Object)]
@@ -35,6 +22,19 @@ mod __types {
         #[rename(name = "num")]
         pub num: i32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct ItemListYesNoDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
+    #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
+    #[parent(crate::system::object::Object)]
+    pub struct ItemListYesNoDialog_MoneyParam {
+        #[rename(name = "num")]
+        pub num: i32,
+    }
 }
 
 #[cfg(feature = "app-itemlistyesnodialog-types")]
@@ -43,7 +43,7 @@ pub use __types::*;
 #[cfg(feature = "app-itemlistyesnodialog")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
+mod __ItemListYesNoDialog_ItemParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -54,7 +54,7 @@ mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
+                <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -66,7 +66,7 @@ mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
+                    <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -79,10 +79,10 @@ mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ItemListYesNoDialog_MoneyParam,
+        this: ItemListYesNoDialog_ItemParam,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ItemListYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(ItemListYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -93,15 +93,15 @@ mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialog_MoneyParamMethods: IItemListYesNoDialog_MoneyParam {
+pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ItemListYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(
+                <ItemListYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ItemListYesNoDialog_MoneyParam_unity2_raw::ctor(
+            __ItemListYesNoDialog_ItemParam_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -110,20 +110,20 @@ pub trait IItemListYesNoDialog_MoneyParamMethods: IItemListYesNoDialog_MoneyPara
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-impl<__T: IItemListYesNoDialog_MoneyParam> IItemListYesNoDialog_MoneyParamMethods for __T {}
+impl<__T: IItemListYesNoDialog_ItemParam> IItemListYesNoDialog_ItemParamMethods for __T {}
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_MoneyParam {
+impl ItemListYesNoDialog_ItemParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
+                ::core::stringify!(ItemListYesNoDialog_ItemParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
+        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
         this
     }
 }
@@ -639,7 +639,7 @@ impl ItemListYesNoDialog {
 #[cfg(feature = "app-itemlistyesnodialog")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ItemListYesNoDialog_ItemParam_unity2_raw {
+mod __ItemListYesNoDialog_MoneyParam_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -650,7 +650,7 @@ mod __ItemListYesNoDialog_ItemParam_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::class(),
+                <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -662,7 +662,7 @@ mod __ItemListYesNoDialog_ItemParam_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <ItemListYesNoDialog_ItemParam as ::unity2::ClassIdentity>::NAME,
+                    <ItemListYesNoDialog_MoneyParam as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -675,10 +675,10 @@ mod __ItemListYesNoDialog_ItemParam_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: ItemListYesNoDialog_ItemParam,
+        this: ItemListYesNoDialog_MoneyParam,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(ItemListYesNoDialog_ItemParam, ::unity2::OptionalMethod) -> () =
+        let inner: extern "C" fn(ItemListYesNoDialog_MoneyParam, ::unity2::OptionalMethod) -> () =
             ::core::mem::transmute(
                 (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                     as *const u8)
@@ -689,15 +689,15 @@ mod __ItemListYesNoDialog_ItemParam_unity2_raw {
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam {
+pub trait IItemListYesNoDialog_MoneyParamMethods: IItemListYesNoDialog_MoneyParam {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ItemListYesNoDialog_ItemParam as ::unity2::FromIlInstance>::from_il_instance(
+                <ItemListYesNoDialog_MoneyParam as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __ItemListYesNoDialog_ItemParam_unity2_raw::ctor(
+            __ItemListYesNoDialog_MoneyParam_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -706,25 +706,26 @@ pub trait IItemListYesNoDialog_ItemParamMethods: IItemListYesNoDialog_ItemParam 
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-impl<__T: IItemListYesNoDialog_ItemParam> IItemListYesNoDialog_ItemParamMethods for __T {}
+impl<__T: IItemListYesNoDialog_MoneyParam> IItemListYesNoDialog_MoneyParamMethods for __T {}
 
 #[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_ItemParam {
+impl ItemListYesNoDialog_MoneyParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_ItemParam),
+                ::core::stringify!(ItemListYesNoDialog_MoneyParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
+        <Self as IItemListYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemListYesNoDialog;
     pub use super::IItemListYesNoDialogMethods;

@@ -105,6 +105,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> InvokableCall_2<T
 }
 
 #[cfg(feature = "unity_engine-events-invokablecall_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvokableCall_2;
     pub use super::IInvokableCall_2Methods;

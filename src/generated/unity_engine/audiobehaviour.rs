@@ -101,6 +101,7 @@ impl AudioBehaviour {
 }
 
 #[cfg(feature = "unity_engine-audiobehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioBehaviour;
     pub use super::IAudioBehaviour;

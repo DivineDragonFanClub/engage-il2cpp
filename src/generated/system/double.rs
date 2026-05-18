@@ -877,6 +877,7 @@ impl Double {
 }
 
 #[cfg(feature = "system-double")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Double;
     pub use crate::system::object::IObject;

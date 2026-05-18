@@ -376,6 +376,7 @@ impl ConfigYesNoDialog {
 }
 
 #[cfg(feature = "root-configyesnodialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfigYesNoDialog;
     pub use super::ConfigYesNoDialog_YesEventHandler;

@@ -810,6 +810,7 @@ impl VertexAttributeDescriptor {
 }
 
 #[cfg(feature = "unity_engine-rendering-vertexattributedescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VertexAttributeDescriptor;
     pub use crate::system::object::IObject;

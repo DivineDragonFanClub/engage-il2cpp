@@ -159,6 +159,7 @@ impl PositionOffset {
 }
 
 #[cfg(feature = "combat-positionoffset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPositionOffset;
     pub use super::IPositionOffsetMethods;

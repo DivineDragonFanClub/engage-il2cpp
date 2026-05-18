@@ -553,6 +553,7 @@ impl CameraControllerSolo {
 }
 
 #[cfg(feature = "combat-cameracontrollersolo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerSolo;
     pub use super::ICameraControllerSolo;

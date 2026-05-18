@@ -366,6 +366,7 @@ impl HubMaterialSelector {
 }
 
 #[cfg(feature = "app-hubmaterialselector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMaterialSelector;
     pub use super::IHubMaterialSelector;

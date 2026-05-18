@@ -324,6 +324,7 @@ pub trait ICStreamReaderMethods: ICStreamReader {
 impl<__T: ICStreamReader> ICStreamReaderMethods for __T {}
 
 #[cfg(feature = "system-io-cstreamreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CStreamReader;
     pub use super::ICStreamReader;

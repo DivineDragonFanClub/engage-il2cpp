@@ -572,6 +572,7 @@ impl DiagnosticEventCollectorSingleton {
 }
 
 #[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DiagnosticEventCollectorSingleton;
     pub use super::IDiagnosticEventCollectorSingleton;

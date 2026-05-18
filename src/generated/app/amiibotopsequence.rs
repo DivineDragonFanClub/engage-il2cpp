@@ -11,6 +11,17 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopsequence/AmiiboTopSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "AmiiboTopSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibotopsequence :: AmiiboTopSequence >)]
+    pub struct AmiiboTopSequence {
+        #[rename(name = "m_menuResult")]
+        pub m_menu_result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
+        #[rename(name = "m_AccessoryShopChangeRoot")]
+        pub m_accessory_shop_change_root:
+            crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopsequence/AmiiboTopSequence_Label.md"))]
     #[repr(C)]
     #[derive(
@@ -73,17 +84,6 @@ mod __types {
         pub fn end() -> Self {
             Self { value: 6 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopsequence/AmiiboTopSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "AmiiboTopSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibotopsequence :: AmiiboTopSequence >)]
-    pub struct AmiiboTopSequence {
-        #[rename(name = "m_menuResult")]
-        pub m_menu_result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult,
-        #[rename(name = "m_AccessoryShopChangeRoot")]
-        pub m_accessory_shop_change_root:
-            crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
     }
 }
 
@@ -680,6 +680,7 @@ impl AmiiboTopSequence {
 }
 
 #[cfg(feature = "app-amiibotopsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboTopSequence;
     pub use super::AmiiboTopSequence_Label;

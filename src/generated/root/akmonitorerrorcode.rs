@@ -442,6 +442,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akmonitorerrorcode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMonitorErrorCode;
     pub use crate::system::object::IObject;

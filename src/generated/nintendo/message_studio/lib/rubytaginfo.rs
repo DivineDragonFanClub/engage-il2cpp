@@ -446,6 +446,7 @@ impl RubyTagInfo {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRubyTagInfo;
     pub use super::IRubyTagInfoMethods;

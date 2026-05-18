@@ -598,6 +598,7 @@ impl AkChannelEmitter {
 }
 
 #[cfg(feature = "root-akchannelemitter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkChannelEmitter;
     pub use super::IAkChannelEmitter;

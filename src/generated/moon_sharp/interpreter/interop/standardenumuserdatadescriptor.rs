@@ -2186,6 +2186,7 @@ impl StandardEnumUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::StandardEnumUserDataDescriptor;
     pub use super::IStandardEnumUserDataDescriptor;

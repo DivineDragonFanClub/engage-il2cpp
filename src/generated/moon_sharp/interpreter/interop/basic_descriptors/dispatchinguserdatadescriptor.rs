@@ -2889,6 +2889,7 @@ impl DispatchingUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DispatchingUserDataDescriptor;
     pub use super::IDispatchingUserDataDescriptor;

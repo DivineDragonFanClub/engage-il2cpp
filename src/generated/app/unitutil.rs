@@ -4324,6 +4324,7 @@ impl UnitUtil {
 }
 
 #[cfg(feature = "app-unitutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitUtil;
     pub use super::IUnitUtilMethods;

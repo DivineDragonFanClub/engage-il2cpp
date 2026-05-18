@@ -356,6 +356,7 @@ impl MiniMapPanelFrameForDangerAllRenderer {
 }
 
 #[cfg(feature = "app-minimappanelframefordangerallrenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapPanelFrameForDangerAllRenderer;
     pub use super::IMiniMapPanelFrameForDangerAllRendererMethods;

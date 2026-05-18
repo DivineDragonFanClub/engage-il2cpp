@@ -227,6 +227,7 @@ impl PlayerPrefs_Int {
 }
 
 #[cfg(feature = "combat-playerprefs_int")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerPrefs_Int;
     pub use super::IPlayerPrefs_IntMethods;

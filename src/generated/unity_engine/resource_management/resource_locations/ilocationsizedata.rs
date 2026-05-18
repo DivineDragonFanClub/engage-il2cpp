@@ -94,6 +94,7 @@ pub trait IILocationSizeDataMethods: IILocationSizeData {
 impl<__T: IILocationSizeData> IILocationSizeDataMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-ilocationsizedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILocationSizeData;
     pub use super::IILocationSizeDataMethods;

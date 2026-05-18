@@ -120,6 +120,7 @@ impl TurnInspector {
 }
 
 #[cfg(feature = "app-turninspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITurnInspector;
     pub use super::ITurnInspectorMethods;

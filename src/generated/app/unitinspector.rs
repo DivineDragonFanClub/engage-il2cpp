@@ -196,6 +196,7 @@ impl UnitInspector {
 }
 
 #[cfg(feature = "app-unitinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInspector;
     pub use super::IUnitInspectorMethods;

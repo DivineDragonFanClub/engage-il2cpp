@@ -1053,6 +1053,7 @@ impl PhotographPauseData {
 }
 
 #[cfg(feature = "app-photographpausedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographPauseData;
     pub use super::IPhotographPauseDataMethods;

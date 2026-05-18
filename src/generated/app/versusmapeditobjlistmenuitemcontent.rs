@@ -503,6 +503,7 @@ impl VersusMapEditObjListMenuItemContent {
 }
 
 #[cfg(feature = "app-versusmapeditobjlistmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMapEditObjListMenuItemContent;
     pub use super::IVersusMapEditObjListMenuItemContentMethods;

@@ -174,6 +174,7 @@ impl CollectionExtensions {
 }
 
 #[cfg(feature = "system-collections-generic-collectionextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CollectionExtensions;
     pub use super::ICollectionExtensions;

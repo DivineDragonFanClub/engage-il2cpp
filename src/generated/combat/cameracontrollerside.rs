@@ -289,6 +289,7 @@ impl CameraControllerSide {
 }
 
 #[cfg(feature = "combat-cameracontrollerside")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerSide;
     pub use super::ICameraControllerSide;

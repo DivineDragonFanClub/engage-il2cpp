@@ -221,6 +221,7 @@ impl MapImageCoreByte {
 }
 
 #[cfg(feature = "app-mapimagecorebyte")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCoreByte;
     pub use super::IMapImageCoreByteMethods;

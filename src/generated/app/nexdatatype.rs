@@ -75,6 +75,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-nexdatatype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INexDataType;
     pub use super::NexDataType;

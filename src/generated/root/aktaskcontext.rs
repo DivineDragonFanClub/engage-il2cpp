@@ -536,6 +536,7 @@ impl AkTaskContext {
 }
 
 #[cfg(feature = "root-aktaskcontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTaskContext;
     pub use super::IAkTaskContext;

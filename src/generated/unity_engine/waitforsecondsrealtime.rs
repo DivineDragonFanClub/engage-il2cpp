@@ -341,6 +341,7 @@ impl WaitForSecondsRealtime {
 }
 
 #[cfg(feature = "unity_engine-waitforsecondsrealtime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaitForSecondsRealtime;
     pub use super::IWaitForSecondsRealtimeMethods;

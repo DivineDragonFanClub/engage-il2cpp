@@ -105,6 +105,7 @@ impl LockComponent {
 }
 
 #[cfg(feature = "app-lockcomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILockComponent;
     pub use super::ILockComponentMethods;

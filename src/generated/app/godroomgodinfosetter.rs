@@ -191,6 +191,7 @@ impl GodRoomGodInfoSetter {
 }
 
 #[cfg(feature = "app-godroomgodinfosetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodRoomGodInfoSetter;
     pub use super::IGodRoomGodInfoSetter;

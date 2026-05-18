@@ -106,6 +106,7 @@ impl AnimationClipPair {
 }
 
 #[cfg(feature = "unity_engine-animationclippair")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationClipPair;
     pub use super::IAnimationClipPair;

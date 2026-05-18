@@ -222,6 +222,7 @@ impl ActionInvoke {
 }
 
 #[cfg(feature = "combat-actioninvoke")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionInvoke;
     pub use super::IActionInvoke;

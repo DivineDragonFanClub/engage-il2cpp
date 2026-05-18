@@ -52,6 +52,7 @@ impl<T0: ::unity2::ClassIdentity> TreeWalkPredicate_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-treewalkpredicate_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITreeWalkPredicate_1;
     pub use super::ITreeWalkPredicate_1Methods;

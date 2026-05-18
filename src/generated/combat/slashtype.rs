@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-slashtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SlashType;
     pub use crate::system::object::IObject;

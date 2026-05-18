@@ -704,6 +704,7 @@ impl FSM {
 }
 
 #[cfg(feature = "combat-fsm")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IFSMMethods;
     pub use super::FSM;

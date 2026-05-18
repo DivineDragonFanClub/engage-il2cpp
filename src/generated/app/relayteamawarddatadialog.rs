@@ -201,6 +201,7 @@ impl RelayTeamAwardDataDialog {
 }
 
 #[cfg(feature = "app-relayteamawarddatadialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayTeamAwardDataDialog;
     pub use super::IRelayTeamAwardDataDialogMethods;

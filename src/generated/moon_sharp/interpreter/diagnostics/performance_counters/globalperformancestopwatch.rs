@@ -335,6 +335,7 @@ impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
 #[cfg(
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlobalPerformanceStopwatch;
     pub use super::GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject;

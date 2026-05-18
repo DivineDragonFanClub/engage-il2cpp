@@ -830,6 +830,7 @@ impl ProfileCardAlbumRoot {
 }
 
 #[cfg(feature = "app-profilecardalbumroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardAlbumRoot;
     pub use super::IProfileCardAlbumRootMethods;

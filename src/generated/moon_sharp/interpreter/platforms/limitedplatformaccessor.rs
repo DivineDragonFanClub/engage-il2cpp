@@ -820,6 +820,7 @@ impl LimitedPlatformAccessor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-limitedplatformaccessor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILimitedPlatformAccessor;
     pub use super::ILimitedPlatformAccessorMethods;

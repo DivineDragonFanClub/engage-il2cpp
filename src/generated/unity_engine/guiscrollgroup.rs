@@ -369,6 +369,7 @@ impl GUIScrollGroup {
 }
 
 #[cfg(feature = "unity_engine-guiscrollgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GUIScrollGroup;
     pub use super::IGUIScrollGroup;

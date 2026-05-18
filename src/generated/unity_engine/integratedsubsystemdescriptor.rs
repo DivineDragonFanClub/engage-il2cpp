@@ -168,6 +168,7 @@ impl IntegratedSubsystemDescriptor {
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntegratedSubsystemDescriptor;
     pub use super::IIntegratedSubsystemDescriptorMethods;

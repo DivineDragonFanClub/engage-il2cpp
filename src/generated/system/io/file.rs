@@ -837,6 +837,7 @@ impl File {
 }
 
 #[cfg(feature = "system-io-file")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::File;
     pub use super::IFile;

@@ -1222,6 +1222,7 @@ impl CustomAttributeData_LazyCAttrData {
 }
 
 #[cfg(feature = "system-reflection-customattributedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomAttributeData;
     pub use super::CustomAttributeData_LazyCAttrData;

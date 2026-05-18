@@ -107,6 +107,7 @@ impl NpadFullKeyState {
 }
 
 #[cfg(feature = "nn-hid-npadfullkeystate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadFullKeyState;
     pub use crate::system::object::IObject;

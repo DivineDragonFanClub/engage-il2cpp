@@ -431,6 +431,7 @@ impl DebugLodVisualizer {
 }
 
 #[cfg(feature = "app-debuglodvisualizer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugLodVisualizer;
     pub use super::IDebugLodVisualizer;

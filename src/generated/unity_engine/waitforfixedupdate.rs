@@ -102,6 +102,7 @@ impl WaitForFixedUpdate {
 }
 
 #[cfg(feature = "unity_engine-waitforfixedupdate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaitForFixedUpdate;
     pub use super::IWaitForFixedUpdateMethods;

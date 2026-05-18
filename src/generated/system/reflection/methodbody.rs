@@ -114,6 +114,7 @@ impl MethodBody {
 }
 
 #[cfg(feature = "system-reflection-methodbody")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMethodBody;
     pub use super::IMethodBodyMethods;

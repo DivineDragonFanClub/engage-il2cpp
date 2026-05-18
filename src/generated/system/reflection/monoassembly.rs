@@ -316,6 +316,7 @@ impl MonoAssembly {
 }
 
 #[cfg(feature = "system-reflection-monoassembly")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoAssembly;
     pub use super::IMonoAssemblyMethods;

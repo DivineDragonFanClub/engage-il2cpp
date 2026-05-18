@@ -576,6 +576,7 @@ impl Graphics {
 }
 
 #[cfg(feature = "unity_engine-graphics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Graphics;
     pub use super::IGraphics;

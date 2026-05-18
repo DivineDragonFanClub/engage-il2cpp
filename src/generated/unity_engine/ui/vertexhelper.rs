@@ -1477,6 +1477,7 @@ impl VertexHelper {
 }
 
 #[cfg(feature = "unity_engine-ui-vertexhelper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVertexHelper;
     pub use super::IVertexHelperMethods;

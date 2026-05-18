@@ -321,6 +321,7 @@ impl MiniMapMenuItem {
 }
 
 #[cfg(feature = "root-minimapmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMiniMapMenuItem;
     pub use super::IMiniMapMenuItemMethods;

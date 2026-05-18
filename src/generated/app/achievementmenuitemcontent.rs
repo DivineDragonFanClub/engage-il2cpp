@@ -369,6 +369,7 @@ impl AchievementMenuItemContent {
 }
 
 #[cfg(feature = "app-achievementmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AchievementMenuItemContent;
     pub use super::IAchievementMenuItemContent;

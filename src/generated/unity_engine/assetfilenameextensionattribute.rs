@@ -130,6 +130,7 @@ impl AssetFileNameExtensionAttribute {
 }
 
 #[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetFileNameExtensionAttribute;
     pub use super::IAssetFileNameExtensionAttribute;

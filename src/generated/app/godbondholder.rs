@@ -1267,6 +1267,7 @@ impl GodBondHolder {
 }
 
 #[cfg(feature = "app-godbondholder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodBondHolder;
     pub use super::IGodBondHolder;

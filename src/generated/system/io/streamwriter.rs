@@ -1054,6 +1054,7 @@ impl StreamWriter {
 }
 
 #[cfg(feature = "system-io-streamwriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStreamWriter;
     pub use super::IStreamWriterMethods;

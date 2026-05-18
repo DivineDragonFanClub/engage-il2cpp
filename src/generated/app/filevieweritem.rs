@@ -9,10 +9,19 @@ mod __types {
     use crate::system::object::{IObject, Object};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_FileItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FileViewerItem.FileItem")]
-    #[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]
-    pub struct FileViewerItem_FileItem {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_PathItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FileViewerItem.PathItem")]
+    #[parent(crate::app::stringitem::StringItem)]
+    pub struct FileViewerItem_PathItem {
+        #[rename(name = "m_Path")]
+        pub m_path: ::unity2::Il2CppString,
+        #[rename(name = "m_Func")]
+        pub m_func: crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        >,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem.md"))]
     #[::unity2::class(namespace = "App", name = "FileViewerItem")]
@@ -28,19 +37,10 @@ mod __types {
         >,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_PathItem.md"))]
-    #[::unity2::class(namespace = "App", name = "FileViewerItem.PathItem")]
-    #[parent(crate::app::stringitem::StringItem)]
-    pub struct FileViewerItem_PathItem {
-        #[rename(name = "m_Path")]
-        pub m_path: ::unity2::Il2CppString,
-        #[rename(name = "m_Func")]
-        pub m_func: crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        >,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_FileItem.md"))]
+    #[::unity2::class(namespace = "App", name = "FileViewerItem.FileItem")]
+    #[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]
+    pub struct FileViewerItem_FileItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_DirectoryItem.md"))]
     #[::unity2::class(namespace = "App", name = "FileViewerItem.DirectoryItem")]
@@ -54,7 +54,7 @@ pub use __types::*;
 #[cfg(feature = "app-filevieweritem")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FileViewerItem_FileItem_unity2_raw {
+mod __FileViewerItem_PathItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -73,7 +73,7 @@ mod __FileViewerItem_FileItem_unity2_raw {
                 > as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
+                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 3,
                 param_types,
@@ -85,7 +85,7 @@ mod __FileViewerItem_FileItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
+                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -98,7 +98,7 @@ mod __FileViewerItem_FileItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: FileViewerItem_FileItem,
+        this: FileViewerItem_PathItem,
         path: ::unity2::Il2CppString,
         name: ::unity2::Il2CppString,
         func: crate::system::func_3::Func_3<
@@ -109,7 +109,7 @@ mod __FileViewerItem_FileItem_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FileViewerItem_FileItem,
+            FileViewerItem_PathItem,
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             crate::system::func_3::Func_3<
@@ -127,15 +127,15 @@ mod __FileViewerItem_FileItem_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
+    pub mod __lookup_get_full_path {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
+                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
+                "GetFullPath",
                 0,
                 param_types,
                 false,
@@ -146,8 +146,8 @@ mod __FileViewerItem_FileItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
+                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
+                    "GetFullPath",
                     e
                 ),
             }
@@ -158,31 +158,31 @@ mod __FileViewerItem_FileItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn a_call(
-        this: FileViewerItem_FileItem,
+    pub unsafe fn get_full_path(
+        this: FileViewerItem_PathItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::menuitem::MenuItem_Result {
+    ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(
-            FileViewerItem_FileItem,
+            FileViewerItem_PathItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
+                .offset(__lookup_get_full_path::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
+    pub mod __lookup_get_func {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
-                "XCall",
+                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
+                "GetFunc",
                 0,
                 param_types,
                 false,
@@ -193,8 +193,8 @@ mod __FileViewerItem_FileItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
+                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
+                    "GetFunc",
                     e
                 ),
             }
@@ -205,24 +205,79 @@ mod __FileViewerItem_FileItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn x_call(
-        this: FileViewerItem_FileItem,
+    pub unsafe fn get_func(
+        this: FileViewerItem_PathItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::func_3::Func_3<
+        crate::app::debugmenu::DebugMenu,
+        ::unity2::Il2CppString,
+        crate::app::menuitem::MenuItem_Result,
+    > {
+        let inner: extern "C" fn(
+            FileViewerItem_PathItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::func_3::Func_3<
+            crate::app::debugmenu::DebugMenu,
+            ::unity2::Il2CppString,
+            crate::app::menuitem::MenuItem_Result,
+        > = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_get_func::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_do_func {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
+                "DoFunc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
+                    "DoFunc",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn do_func(
+        this: FileViewerItem_PathItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
         let inner: extern "C" fn(
-            FileViewerItem_FileItem,
+            FileViewerItem_PathItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
+                .offset(__lookup_do_func::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItem_FileItemMethods: IFileViewerItem_FileItem {
+pub trait IFileViewerItem_PathItemMethods: IFileViewerItem_PathItem {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
     fn ctor(
         self,
@@ -238,10 +293,10 @@ pub trait IFileViewerItem_FileItemMethods: IFileViewerItem_FileItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_FileItem_unity2_raw::ctor(
+            __FileViewerItem_PathItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(path),
                 ::core::convert::Into::into(name),
@@ -250,33 +305,52 @@ pub trait IFileViewerItem_FileItemMethods: IFileViewerItem_FileItem {
             )
         }
     }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
+    #[doc = "`GetFullPath()` overload"]
+    fn get_full_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_FileItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+            __FileViewerItem_PathItem_unity2_raw::get_full_path(
+                __receiver,
+                ::core::option::Option::None,
+            )
         }
     }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
+    #[doc = "`GetFunc()` overload"]
+    fn get_func(
+        self,
+    ) -> crate::system::func_3::Func_3<
+        crate::app::debugmenu::DebugMenu,
+        ::unity2::Il2CppString,
+        crate::app::menuitem::MenuItem_Result,
+    > {
         unsafe {
             let __receiver =
-                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_FileItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+            __FileViewerItem_PathItem_unity2_raw::get_func(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DoFunc()` overload"]
+    fn do_func(self) -> crate::app::menuitem::MenuItem_Result {
+        unsafe {
+            let __receiver =
+                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __FileViewerItem_PathItem_unity2_raw::do_func(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-filevieweritem")]
-impl<__T: IFileViewerItem_FileItem> IFileViewerItem_FileItemMethods for __T {}
+impl<__T: IFileViewerItem_PathItem> IFileViewerItem_PathItemMethods for __T {}
 
 #[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_FileItem {
+impl FileViewerItem_PathItem {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
     pub fn new(
         path: ::unity2::Il2CppString,
@@ -290,11 +364,11 @@ impl FileViewerItem_FileItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FileViewerItem_FileItem),
+                ::core::stringify!(FileViewerItem_PathItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFileViewerItem_FileItemMethods>::ctor(this, path, name, func);
+        <Self as IFileViewerItem_PathItemMethods>::ctor(this, path, name, func);
         this
     }
 }
@@ -698,7 +772,7 @@ impl FileViewerItem {
 #[cfg(feature = "app-filevieweritem")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __FileViewerItem_PathItem_unity2_raw {
+mod __FileViewerItem_FileItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
@@ -717,7 +791,7 @@ mod __FileViewerItem_PathItem_unity2_raw {
                 > as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
+                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 3,
                 param_types,
@@ -729,7 +803,7 @@ mod __FileViewerItem_PathItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
+                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
                     ".ctor",
                     e
                 ),
@@ -742,7 +816,7 @@ mod __FileViewerItem_PathItem_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: FileViewerItem_PathItem,
+        this: FileViewerItem_FileItem,
         path: ::unity2::Il2CppString,
         name: ::unity2::Il2CppString,
         func: crate::system::func_3::Func_3<
@@ -753,7 +827,7 @@ mod __FileViewerItem_PathItem_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            FileViewerItem_PathItem,
+            FileViewerItem_FileItem,
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             crate::system::func_3::Func_3<
@@ -771,15 +845,15 @@ mod __FileViewerItem_PathItem_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_full_path {
+    pub mod __lookup_a_call {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
-                "GetFullPath",
+                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
                 0,
                 param_types,
                 false,
@@ -790,8 +864,8 @@ mod __FileViewerItem_PathItem_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
-                    "GetFullPath",
+                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
+                    "ACall",
                     e
                 ),
             }
@@ -802,126 +876,71 @@ mod __FileViewerItem_PathItem_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn get_full_path(
-        this: FileViewerItem_PathItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            FileViewerItem_PathItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_full_path::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_func {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
-                "GetFunc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
-                    "GetFunc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_func(
-        this: FileViewerItem_PathItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::func_3::Func_3<
-        crate::app::debugmenu::DebugMenu,
-        ::unity2::Il2CppString,
-        crate::app::menuitem::MenuItem_Result,
-    > {
-        let inner: extern "C" fn(
-            FileViewerItem_PathItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::func_3::Func_3<
-            crate::app::debugmenu::DebugMenu,
-            ::unity2::Il2CppString,
-            crate::app::menuitem::MenuItem_Result,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_func::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_do_func {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FileViewerItem_PathItem as ::unity2::ClassIdentity>::class(),
-                "DoFunc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FileViewerItem_PathItem as ::unity2::ClassIdentity>::NAME,
-                    "DoFunc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn do_func(
-        this: FileViewerItem_PathItem,
+    pub unsafe fn a_call(
+        this: FileViewerItem_FileItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::menuitem::MenuItem_Result {
         let inner: extern "C" fn(
-            FileViewerItem_PathItem,
+            FileViewerItem_FileItem,
             ::unity2::OptionalMethod,
         ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_do_func::get_offset() as isize),
+                .offset(__lookup_a_call::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <FileViewerItem_FileItem as ::unity2::ClassIdentity>::class(),
+                "XCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <FileViewerItem_FileItem as ::unity2::ClassIdentity>::NAME,
+                    "XCall",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn x_call(
+        this: FileViewerItem_FileItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::menuitem::MenuItem_Result {
+        let inner: extern "C" fn(
+            FileViewerItem_FileItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::menuitem::MenuItem_Result = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_x_call::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItem_PathItemMethods: IFileViewerItem_PathItem {
+pub trait IFileViewerItem_FileItemMethods: IFileViewerItem_FileItem {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]
     fn ctor(
         self,
@@ -937,10 +956,10 @@ pub trait IFileViewerItem_PathItemMethods: IFileViewerItem_PathItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_PathItem_unity2_raw::ctor(
+            __FileViewerItem_FileItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(path),
                 ::core::convert::Into::into(name),
@@ -949,52 +968,33 @@ pub trait IFileViewerItem_PathItemMethods: IFileViewerItem_PathItem {
             )
         }
     }
-    #[doc = "`GetFullPath()` overload"]
-    fn get_full_path(self) -> ::unity2::Il2CppString {
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
             let __receiver =
-                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_PathItem_unity2_raw::get_full_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            __FileViewerItem_FileItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`GetFunc()` overload"]
-    fn get_func(
-        self,
-    ) -> crate::system::func_3::Func_3<
-        crate::app::debugmenu::DebugMenu,
-        ::unity2::Il2CppString,
-        crate::app::menuitem::MenuItem_Result,
-    > {
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::menuitem::MenuItem_Result {
         unsafe {
             let __receiver =
-                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
+                <FileViewerItem_FileItem as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __FileViewerItem_PathItem_unity2_raw::get_func(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DoFunc()` overload"]
-    fn do_func(self) -> crate::app::menuitem::MenuItem_Result {
-        unsafe {
-            let __receiver =
-                <FileViewerItem_PathItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __FileViewerItem_PathItem_unity2_raw::do_func(__receiver, ::core::option::Option::None)
+            __FileViewerItem_FileItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-filevieweritem")]
-impl<__T: IFileViewerItem_PathItem> IFileViewerItem_PathItemMethods for __T {}
+impl<__T: IFileViewerItem_FileItem> IFileViewerItem_FileItemMethods for __T {}
 
 #[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_PathItem {
+impl FileViewerItem_FileItem {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]
     pub fn new(
         path: ::unity2::Il2CppString,
@@ -1008,11 +1008,11 @@ impl FileViewerItem_PathItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FileViewerItem_PathItem),
+                ::core::stringify!(FileViewerItem_FileItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFileViewerItem_PathItemMethods>::ctor(this, path, name, func);
+        <Self as IFileViewerItem_FileItemMethods>::ctor(this, path, name, func);
         this
     }
 }
@@ -1332,6 +1332,7 @@ impl FileViewerItem_DirectoryItem {
 }
 
 #[cfg(feature = "app-filevieweritem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileViewerItem;
     pub use super::FileViewerItem_DirectoryItem;

@@ -275,6 +275,7 @@ impl MapImageCoreSbyte {
 }
 
 #[cfg(feature = "app-mapimagecoresbyte")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapImageCoreSbyte;
     pub use super::IMapImageCoreSbyteMethods;

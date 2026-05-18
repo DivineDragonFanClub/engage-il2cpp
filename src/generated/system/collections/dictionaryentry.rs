@@ -224,6 +224,7 @@ impl DictionaryEntry {
 }
 
 #[cfg(feature = "system-collections-dictionaryentry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DictionaryEntry;
     pub use crate::system::object::IObject;

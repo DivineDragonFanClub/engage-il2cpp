@@ -272,6 +272,7 @@ impl BitCommand {
 }
 
 #[cfg(feature = "app-bitcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitCommand;
     pub use super::IBitCommand;

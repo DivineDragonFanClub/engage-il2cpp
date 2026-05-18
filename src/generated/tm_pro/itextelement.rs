@@ -207,6 +207,7 @@ pub trait IITextElementMethods: IITextElement {
 impl<__T: IITextElement> IITextElementMethods for __T {}
 
 #[cfg(feature = "tm_pro-itextelement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITextElement;
     pub use super::IITextElementMethods;

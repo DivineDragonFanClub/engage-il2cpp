@@ -325,6 +325,7 @@ impl CustomYieldInstruction {
 }
 
 #[cfg(feature = "unity_engine-customyieldinstruction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomYieldInstruction;
     pub use super::ICustomYieldInstruction;

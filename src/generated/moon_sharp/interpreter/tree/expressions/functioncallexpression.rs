@@ -403,6 +403,7 @@ impl FunctionCallExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-functioncallexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionCallExpression;
     pub use super::IFunctionCallExpression;

@@ -167,6 +167,7 @@ impl PlayableTrack {
 }
 
 #[cfg(feature = "unity_engine-timeline-playabletrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayableTrack;
     pub use super::IPlayableTrackMethods;

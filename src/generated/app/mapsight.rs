@@ -1536,6 +1536,7 @@ impl MapSight {
 }
 
 #[cfg(feature = "app-mapsight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSight;
     pub use super::IMapSightMethods;

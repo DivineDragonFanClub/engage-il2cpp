@@ -944,6 +944,7 @@ impl DebugCommandlineRom_Options {
 }
 
 #[cfg(feature = "app-debugcommandlinerom")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugCommandlineRom;
     pub use super::DebugCommandlineRom_Options;

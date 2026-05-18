@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-queuemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::QueueMode;
     pub use crate::system::object::IObject;

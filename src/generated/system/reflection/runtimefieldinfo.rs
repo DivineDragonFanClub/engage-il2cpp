@@ -396,6 +396,7 @@ impl RuntimeFieldInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimefieldinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeFieldInfo;
     pub use super::IRuntimeFieldInfoMethods;

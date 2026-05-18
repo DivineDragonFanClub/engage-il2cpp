@@ -500,6 +500,7 @@ impl AkAudioInterruptionCallbackInfo {
 }
 
 #[cfg(feature = "root-akaudiointerruptioncallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAudioInterruptionCallbackInfo;
     pub use super::IAkAudioInterruptionCallbackInfo;

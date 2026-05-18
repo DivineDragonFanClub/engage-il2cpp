@@ -103,6 +103,7 @@ impl PackAssets {
 }
 
 #[cfg(feature = "app-packassets")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPackAssets;
     pub use super::IPackAssetsMethods;

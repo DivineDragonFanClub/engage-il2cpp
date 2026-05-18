@@ -156,6 +156,7 @@ pub trait IWWWFormMethods: IWWWForm {
 impl<__T: IWWWForm> IWWWFormMethods for __T {}
 
 #[cfg(feature = "unity_engine-wwwform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWWWForm;
     pub use super::IWWWFormMethods;

@@ -128,6 +128,7 @@ impl FishingConfig_Base {
 }
 
 #[cfg(feature = "app-fishingconfig_base")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingConfig_Base;
     pub use super::IFishingConfig_Base;

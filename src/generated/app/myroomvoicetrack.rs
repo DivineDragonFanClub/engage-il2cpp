@@ -178,6 +178,7 @@ impl MyRoomVoiceTrack {
 }
 
 #[cfg(feature = "app-myroomvoicetrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomVoiceTrack;
     pub use super::IMyRoomVoiceTrackMethods;

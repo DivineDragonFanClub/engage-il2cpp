@@ -156,6 +156,7 @@ impl DisposGroup {
 }
 
 #[cfg(feature = "app-disposgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisposGroup;
     pub use super::IDisposGroup;

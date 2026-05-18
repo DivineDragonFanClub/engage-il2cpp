@@ -340,6 +340,7 @@ impl HorizontalLayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HorizontalLayoutGroup;
     pub use super::IHorizontalLayoutGroup;

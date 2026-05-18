@@ -297,6 +297,7 @@ impl ObjectEqualityComparer {
 }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectEqualityComparer;
     pub use super::IObjectEqualityComparerMethods;

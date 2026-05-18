@@ -23,6 +23,7 @@ impl<T0: ::unity2::ClassIdentity> IEnumerator_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-ienumerator_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEnumerator_1;
     pub use super::IIEnumerator_1;

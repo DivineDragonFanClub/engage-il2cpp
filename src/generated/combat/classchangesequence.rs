@@ -1428,6 +1428,7 @@ impl ClassChangeSequence {
 }
 
 #[cfg(feature = "combat-classchangesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClassChangeSequence;
     pub use super::ClassChangeSequence_Label;

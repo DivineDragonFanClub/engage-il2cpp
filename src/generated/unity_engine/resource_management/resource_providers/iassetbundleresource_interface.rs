@@ -104,6 +104,7 @@ impl<__T: IIAssetBundleResource_Interface> IIAssetBundleResource_InterfaceMethod
 #[cfg(
     feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IAssetBundleResource_Interface;
     pub use super::IIAssetBundleResource_Interface;

@@ -168,6 +168,7 @@ impl WwiseAcousticTextureReference {
 }
 
 #[cfg(feature = "root-wwiseacoustictexturereference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseAcousticTextureReference;
     pub use super::IWwiseAcousticTextureReferenceMethods;

@@ -75,6 +75,7 @@ impl<T0: ::unity2::ClassIdentity> IntegerItem_1<T0> {
 }
 
 #[cfg(feature = "app-integeritem_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntegerItem_1;
     pub use super::IIntegerItem_1Methods;

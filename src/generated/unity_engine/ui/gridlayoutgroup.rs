@@ -15,24 +15,6 @@ mod __types {
     use crate::unity_engine::ui::layoutgroup::{ILayoutGroup, LayoutGroup};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "GridLayoutGroup")]
-    #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
-    pub struct GridLayoutGroup {
-        #[rename(name = "m_StartCorner")]
-        pub m_start_corner: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
-        #[rename(name = "m_StartAxis")]
-        pub m_start_axis: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
-        #[rename(name = "m_CellSize")]
-        pub m_cell_size: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Spacing")]
-        pub m_spacing: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Constraint")]
-        pub m_constraint: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
-        #[rename(name = "m_ConstraintCount")]
-        pub m_constraint_count: i32,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
     #[repr(C)]
     #[derive(
@@ -131,6 +113,24 @@ mod __types {
         pub fn fixed_row_count() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "GridLayoutGroup")]
+    #[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]
+    pub struct GridLayoutGroup {
+        #[rename(name = "m_StartCorner")]
+        pub m_start_corner: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner,
+        #[rename(name = "m_StartAxis")]
+        pub m_start_axis: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis,
+        #[rename(name = "m_CellSize")]
+        pub m_cell_size: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Spacing")]
+        pub m_spacing: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Constraint")]
+        pub m_constraint: crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint,
+        #[rename(name = "m_ConstraintCount")]
+        pub m_constraint_count: i32,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
@@ -1274,6 +1274,7 @@ impl GridLayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GridLayoutGroup;
     pub use super::GridLayoutGroup_Axis;

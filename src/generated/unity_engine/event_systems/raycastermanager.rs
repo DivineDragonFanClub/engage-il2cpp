@@ -254,6 +254,7 @@ impl RaycasterManager {
 }
 
 #[cfg(feature = "unity_engine-event_systems-raycastermanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRaycasterManager;
     pub use super::RaycasterManager;

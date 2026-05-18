@@ -105,6 +105,7 @@ impl LWRPAdditionalCameraData {
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILWRPAdditionalCameraData;
     pub use super::ILWRPAdditionalCameraDataMethods;

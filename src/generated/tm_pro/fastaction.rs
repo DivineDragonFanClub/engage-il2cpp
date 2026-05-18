@@ -287,6 +287,7 @@ impl FastAction {
 }
 
 #[cfg(feature = "tm_pro-fastaction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FastAction;
     pub use super::IFastAction;

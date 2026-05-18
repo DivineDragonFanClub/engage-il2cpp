@@ -262,6 +262,7 @@ impl DebugLogHandler {
 }
 
 #[cfg(feature = "unity_engine-debugloghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugLogHandler;
     pub use super::IDebugLogHandler;

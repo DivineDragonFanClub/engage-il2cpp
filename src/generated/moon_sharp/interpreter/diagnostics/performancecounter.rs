@@ -70,6 +70,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performancecounter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PerformanceCounter;
     pub use crate::system::object::IObject;

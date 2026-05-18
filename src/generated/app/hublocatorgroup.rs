@@ -2184,6 +2184,7 @@ impl HubLocatorGroup {
 }
 
 #[cfg(feature = "app-hublocatorgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubLocatorGroup;
     pub use super::IHubLocatorGroup;

@@ -687,6 +687,7 @@ impl MascotFoodEatSequence {
 }
 
 #[cfg(feature = "app-mascotfoodeatsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMascotFoodEatSequence;
     pub use super::IMascotFoodEatSequenceMethods;

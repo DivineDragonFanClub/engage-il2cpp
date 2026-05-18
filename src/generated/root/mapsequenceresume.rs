@@ -450,6 +450,7 @@ impl MapSequenceResume {
 }
 
 #[cfg(feature = "root-mapsequenceresume")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceResume;
     pub use super::IMapSequenceResumeMethods;

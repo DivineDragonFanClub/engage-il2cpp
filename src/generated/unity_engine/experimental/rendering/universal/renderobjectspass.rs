@@ -750,6 +750,7 @@ impl RenderObjectsPass {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderObjectsPass;
     pub use super::IRenderObjectsPassMethods;

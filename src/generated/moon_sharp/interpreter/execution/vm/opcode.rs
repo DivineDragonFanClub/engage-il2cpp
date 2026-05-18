@@ -274,6 +274,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-opcode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::OpCode;
     pub use crate::system::object::IObject;

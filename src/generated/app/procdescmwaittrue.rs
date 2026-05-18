@@ -181,6 +181,7 @@ impl ProcDescMWaitTrue {
 }
 
 #[cfg(feature = "app-procdescmwaittrue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMWaitTrue;
     pub use super::IProcDescMWaitTrueMethods;

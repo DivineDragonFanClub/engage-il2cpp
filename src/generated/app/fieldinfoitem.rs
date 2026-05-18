@@ -297,6 +297,7 @@ impl FieldInfoItem {
 }
 
 #[cfg(feature = "app-fieldinfoitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FieldInfoItem;
     pub use super::IFieldInfoItem;

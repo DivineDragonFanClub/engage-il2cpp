@@ -1254,6 +1254,7 @@ impl DynamicResolutionHandler {
 }
 
 #[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicResolutionHandler;
     pub use super::IDynamicResolutionHandler;

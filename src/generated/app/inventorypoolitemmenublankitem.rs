@@ -343,6 +343,7 @@ impl InventoryPoolItemMenuBlankItem {
 }
 
 #[cfg(feature = "app-inventorypoolitemmenublankitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInventoryPoolItemMenuBlankItem;
     pub use super::IInventoryPoolItemMenuBlankItemMethods;

@@ -14,6 +14,11 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct HubAccessManager_MaterialCalculator {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))]
+    #[::unity2::class(namespace = "App", name = "HubAccessManager")]
+    #[parent(crate::system::object::Object)]
+    pub struct HubAccessManager {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
     #[repr(C)]
     #[derive(
@@ -61,11 +66,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))]
-    #[::unity2::class(namespace = "App", name = "HubAccessManager")]
-    #[parent(crate::system::object::Object)]
-    pub struct HubAccessManager {}
 }
 
 #[cfg(feature = "app-hubaccessmanager-types")]
@@ -2783,6 +2783,7 @@ impl HubAccessManager {
 }
 
 #[cfg(feature = "app-hubaccessmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccessManager;
     pub use super::HubAccessManager_MaterialCalculator;

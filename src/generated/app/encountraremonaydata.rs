@@ -572,6 +572,7 @@ impl EncountRareMonayData {
 }
 
 #[cfg(feature = "app-encountraremonaydata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountRareMonayData;
     pub use super::IEncountRareMonayData;

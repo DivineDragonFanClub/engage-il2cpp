@@ -285,6 +285,7 @@ impl HelpItemUnitLevel {
 }
 
 #[cfg(feature = "app-helpitemunitlevel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemUnitLevel;
     pub use super::IHelpItemUnitLevel;

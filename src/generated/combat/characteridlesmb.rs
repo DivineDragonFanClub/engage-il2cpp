@@ -476,6 +476,7 @@ impl CharacterIdleSMB {
 }
 
 #[cfg(feature = "combat-characteridlesmb")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIdleSMB;
     pub use super::ICharacterIdleSMB;

@@ -570,6 +570,7 @@ pub trait INavMeshAgentMethods: INavMeshAgent {
 impl<__T: INavMeshAgent> INavMeshAgentMethods for __T {}
 
 #[cfg(feature = "unity_engine-ai-navmeshagent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INavMeshAgent;
     pub use super::INavMeshAgentMethods;

@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-xr-connectionchangetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConnectionChangeType;
     pub use crate::system::object::IObject;

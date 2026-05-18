@@ -744,6 +744,7 @@ impl AkCallbackSerializer {
 }
 
 #[cfg(feature = "root-akcallbackserializer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCallbackSerializer;
     pub use super::IAkCallbackSerializer;

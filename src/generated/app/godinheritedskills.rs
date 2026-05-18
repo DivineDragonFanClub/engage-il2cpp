@@ -530,6 +530,7 @@ impl GodInheritedSkills {
 }
 
 #[cfg(feature = "app-godinheritedskills")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodInheritedSkills;
     pub use super::IGodInheritedSkills;

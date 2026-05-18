@@ -355,6 +355,7 @@ impl SpriteManager {
 }
 
 #[cfg(feature = "app-spritemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpriteManager;
     pub use super::ISpriteManagerMethods;

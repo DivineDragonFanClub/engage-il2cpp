@@ -465,6 +465,7 @@ impl MapNavigationStatusBasicMenuItem {
 }
 
 #[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationStatusBasicMenuItem;
     pub use super::IMapNavigationStatusBasicMenuItemMethods;

@@ -228,6 +228,7 @@ impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-queue_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IQueue_1;
     pub use super::IQueue_1Methods;

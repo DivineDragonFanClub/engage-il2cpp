@@ -170,6 +170,7 @@ impl FontList {
 }
 
 #[cfg(feature = "app-fontlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontList;
     pub use super::IFontList;

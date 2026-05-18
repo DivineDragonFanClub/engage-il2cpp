@@ -96,6 +96,7 @@ pub trait IISubmitHandlerMethods: IISubmitHandler {
 impl<__T: IISubmitHandler> IISubmitHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-isubmithandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IISubmitHandler;
     pub use super::IISubmitHandlerMethods;

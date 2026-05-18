@@ -445,6 +445,7 @@ impl GrassManagerWithoutTerrain {
 }
 
 #[cfg(feature = "app-grassmanagerwithoutterrain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrassManagerWithoutTerrain;
     pub use super::IGrassManagerWithoutTerrain;

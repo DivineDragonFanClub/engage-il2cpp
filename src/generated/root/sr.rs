@@ -163,6 +163,7 @@ impl SR {
 }
 
 #[cfg(feature = "root-sr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISR;
     pub use super::SR;

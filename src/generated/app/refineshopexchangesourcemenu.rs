@@ -1351,6 +1351,7 @@ impl RefineShopExchangeSourceMenu_CloseEventHandler {
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopExchangeSourceMenu;
     pub use super::IRefineShopExchangeSourceMenuMethods;

@@ -114,6 +114,7 @@ impl GrowModeSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-growmodeselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GrowModeSelectMenuItemContent;
     pub use super::IGrowModeSelectMenuItemContent;

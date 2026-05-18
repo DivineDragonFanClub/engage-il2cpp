@@ -418,6 +418,7 @@ impl IfStatement_IfBlock {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIfStatement;
     pub use super::IIfStatementMethods;

@@ -978,6 +978,7 @@ impl WeaponShopBuyMenuContent {
 }
 
 #[cfg(feature = "app-weaponshopbuymenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponShopBuyMenuContent;
     pub use super::IWeaponShopBuyMenuContentMethods;

@@ -8,6 +8,21 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_TextUtilities")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_TextUtilities {
+        #[static_field]
+        #[rename(name = "m_rectWorldCorners")]
+        pub m_rect_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        #[static_field]
+        #[rename(name = "k_lookupStringL")]
+        pub k_lookup_string_l: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "k_lookupStringU")]
+        pub k_lookup_string_u: ::unity2::Il2CppString,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textutilities/TMP_TextUtilities_LineSegment.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -36,105 +51,10 @@ mod __types {
                 .byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_TextUtilities")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_TextUtilities {
-        #[static_field]
-        #[rename(name = "m_rectWorldCorners")]
-        pub m_rect_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        #[static_field]
-        #[rename(name = "k_lookupStringL")]
-        pub k_lookup_string_l: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "k_lookupStringU")]
-        pub k_lookup_string_u: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "tm_pro-tmp_textutilities-types")]
 pub use __types::*;
-
-#[cfg(feature = "tm_pro-tmp_textutilities")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_TextUtilities_LineSegment_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_TextUtilities_LineSegment,
-        p1: crate::unity_engine::vector3::Vector3,
-        p2: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_TextUtilities_LineSegment,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, p1, p2, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_textutilities")]
-impl TMP_TextUtilities_LineSegment {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn ctor(
-        self,
-        p1: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        p2: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __TMP_TextUtilities_LineSegment_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(p1),
-                ::core::convert::Into::into(p2),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
 
 #[cfg(feature = "tm_pro-tmp_textutilities")]
 #[doc(hidden)]
@@ -1821,6 +1741,87 @@ impl TMP_TextUtilities {
 }
 
 #[cfg(feature = "tm_pro-tmp_textutilities")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_TextUtilities_LineSegment_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMP_TextUtilities_LineSegment as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TMP_TextUtilities_LineSegment,
+        p1: crate::unity_engine::vector3::Vector3,
+        p2: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TMP_TextUtilities_LineSegment,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, p1, p2, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_textutilities")]
+impl TMP_TextUtilities_LineSegment {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn ctor(
+        self,
+        p1: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        p2: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __TMP_TextUtilities_LineSegment_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(p1),
+                ::core::convert::Into::into(p2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_textutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_TextUtilities;
     pub use super::TMP_TextUtilities;

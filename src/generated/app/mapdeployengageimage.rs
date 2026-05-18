@@ -103,6 +103,7 @@ impl MapDeployEngageImage {
 }
 
 #[cfg(feature = "app-mapdeployengageimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployEngageImage;
     pub use super::IMapDeployEngageImageMethods;

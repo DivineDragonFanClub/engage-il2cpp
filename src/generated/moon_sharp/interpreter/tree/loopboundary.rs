@@ -219,6 +219,7 @@ impl LoopBoundary {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoopBoundary;
     pub use super::ILoopBoundaryMethods;

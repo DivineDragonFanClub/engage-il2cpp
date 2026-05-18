@@ -2740,6 +2740,7 @@ impl MainSequence {
 }
 
 #[cfg(feature = "app-mainsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMainSequence;
     pub use super::IMainSequenceMethods;

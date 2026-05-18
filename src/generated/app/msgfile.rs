@@ -323,6 +323,7 @@ impl MsgFile {
 }
 
 #[cfg(feature = "app-msgfile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMsgFile;
     pub use super::IMsgFileMethods;

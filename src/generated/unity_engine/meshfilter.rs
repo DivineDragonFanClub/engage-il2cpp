@@ -398,6 +398,7 @@ impl MeshFilter {
 }
 
 #[cfg(feature = "unity_engine-meshfilter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMeshFilter;
     pub use super::IMeshFilterMethods;

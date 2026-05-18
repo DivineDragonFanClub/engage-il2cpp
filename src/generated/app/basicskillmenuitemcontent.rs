@@ -807,6 +807,7 @@ impl BasicSkillMenuItemContent {
 }
 
 #[cfg(feature = "app-basicskillmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicSkillMenuItemContent;
     pub use super::BasicSkillMenuItemContent_SubText;

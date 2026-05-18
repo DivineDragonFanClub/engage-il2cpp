@@ -366,6 +366,7 @@ impl PlatformMappingService {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlatformMappingService;
     pub use super::IPlatformMappingServiceMethods;

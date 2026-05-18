@@ -186,6 +186,7 @@ impl LanguageImageSetter {
 }
 
 #[cfg(feature = "app-languageimagesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILanguageImageSetter;
     pub use super::ILanguageImageSetterMethods;

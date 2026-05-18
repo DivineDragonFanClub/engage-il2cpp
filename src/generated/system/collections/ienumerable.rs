@@ -85,6 +85,7 @@ pub trait IIEnumerableMethods: IIEnumerable {
 impl<__T: IIEnumerable> IIEnumerableMethods for __T {}
 
 #[cfg(feature = "system-collections-ienumerable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IEnumerable;
     pub use super::IIEnumerable;

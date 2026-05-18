@@ -156,6 +156,7 @@ impl RawFileHandle {
 }
 
 #[cfg(feature = "app-rawfilehandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawFileHandle;
     pub use super::IRawFileHandleMethods;

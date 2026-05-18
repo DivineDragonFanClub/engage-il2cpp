@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-reflectionprobeclearflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionProbeClearFlags;
     pub use crate::system::object::IObject;

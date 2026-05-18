@@ -133,6 +133,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-wordwrapstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::WordWrapState;
     pub use crate::system::object::IObject;

@@ -768,6 +768,7 @@ impl ProfileCardCharacterStampData {
 }
 
 #[cfg(feature = "app-profilecardcharacterstampdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardCharacterStampData;
     pub use super::IProfileCardCharacterStampDataMethods;

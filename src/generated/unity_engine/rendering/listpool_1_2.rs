@@ -47,6 +47,7 @@ impl<T0: ::unity2::ClassIdentity> ListPool_1_2<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-listpool_1_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IListPool_1_2;
     pub use super::ListPool_1_2;

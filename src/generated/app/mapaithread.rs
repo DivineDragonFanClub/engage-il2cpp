@@ -427,6 +427,7 @@ impl MapAiThread {
 }
 
 #[cfg(feature = "app-mapaithread")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapAiThread;
     pub use super::IMapAiThreadMethods;

@@ -172,6 +172,7 @@ impl ConfirmDialogItemNo {
 }
 
 #[cfg(feature = "app-confirmdialogitemno")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConfirmDialogItemNo;
     pub use super::IConfirmDialogItemNo;

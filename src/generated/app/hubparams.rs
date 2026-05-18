@@ -241,6 +241,7 @@ impl HubParams {
 }
 
 #[cfg(feature = "app-hubparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubParams;
     pub use super::IHubParams;

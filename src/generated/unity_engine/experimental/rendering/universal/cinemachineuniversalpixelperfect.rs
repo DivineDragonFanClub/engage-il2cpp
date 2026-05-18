@@ -174,6 +174,7 @@ impl CinemachineUniversalPixelPerfect {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-cinemachineuniversalpixelperfect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineUniversalPixelPerfect;
     pub use super::ICinemachineUniversalPixelPerfect;

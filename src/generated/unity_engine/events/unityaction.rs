@@ -172,6 +172,7 @@ impl UnityAction {
 }
 
 #[cfg(feature = "unity_engine-events-unityaction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityAction;
     pub use super::IUnityActionMethods;

@@ -1168,6 +1168,7 @@ impl UnitRelianceData {
 }
 
 #[cfg(feature = "app-unitreliancedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitRelianceData;
     pub use super::IUnitRelianceDataMethods;

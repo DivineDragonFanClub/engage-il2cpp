@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-texturedimension")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TextureDimension;
     pub use crate::system::object::IObject;

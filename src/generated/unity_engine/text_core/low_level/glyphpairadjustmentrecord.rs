@@ -160,6 +160,7 @@ impl GlyphPairAdjustmentRecord {
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphPairAdjustmentRecord;
     pub use crate::system::object::IObject;

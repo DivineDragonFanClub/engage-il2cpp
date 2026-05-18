@@ -386,6 +386,7 @@ impl DishResultDialogParamContent {
 }
 
 #[cfg(feature = "app-dishresultdialogparamcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DishResultDialogParamContent;
     pub use super::IDishResultDialogParamContent;

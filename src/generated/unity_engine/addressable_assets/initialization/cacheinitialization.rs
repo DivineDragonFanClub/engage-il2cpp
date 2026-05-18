@@ -574,6 +574,7 @@ impl CacheInitialization {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CacheInitialization;
     pub use super::CacheInitialization_CacheInitOp;

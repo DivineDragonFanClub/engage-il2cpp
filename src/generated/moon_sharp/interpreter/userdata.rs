@@ -2047,6 +2047,7 @@ impl UserData {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-userdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUserData;
     pub use super::IUserDataMethods;

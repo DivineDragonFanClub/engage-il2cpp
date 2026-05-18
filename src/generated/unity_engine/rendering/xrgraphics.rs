@@ -669,6 +669,7 @@ impl XRGraphics {
 }
 
 #[cfg(feature = "unity_engine-rendering-xrgraphics")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRGraphics;
     pub use super::IXRGraphicsMethods;

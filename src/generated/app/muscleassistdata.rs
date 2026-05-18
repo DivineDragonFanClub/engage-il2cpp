@@ -1583,6 +1583,7 @@ impl MuscleAssistData {
 }
 
 #[cfg(feature = "app-muscleassistdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleAssistData;
     pub use super::IMuscleAssistDataMethods;

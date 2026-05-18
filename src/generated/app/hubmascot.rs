@@ -558,6 +558,7 @@ impl HubMascot {
 }
 
 #[cfg(feature = "app-hubmascot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMascot;
     pub use super::IHubMascot;

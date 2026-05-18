@@ -1381,6 +1381,7 @@ impl MoviePlayer {
 }
 
 #[cfg(feature = "app-movieplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoviePlayer;
     pub use super::IMoviePlayerMethods;

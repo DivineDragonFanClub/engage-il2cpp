@@ -639,6 +639,7 @@ impl CombatLocationFortress {
 }
 
 #[cfg(feature = "combat-combatlocationfortress")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationFortress;
     pub use super::ICombatLocationFortress;

@@ -120,6 +120,7 @@ impl PickupInspector {
 }
 
 #[cfg(feature = "app-pickupinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPickupInspector;
     pub use super::IPickupInspectorMethods;

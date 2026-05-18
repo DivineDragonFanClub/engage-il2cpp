@@ -975,6 +975,7 @@ impl AndroidJavaObject {
 }
 
 #[cfg(feature = "unity_engine-androidjavaobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidJavaObject;
     pub use super::IAndroidJavaObject;

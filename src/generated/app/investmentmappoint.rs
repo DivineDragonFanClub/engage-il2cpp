@@ -234,6 +234,7 @@ impl InvestmentMapPoint {
 }
 
 #[cfg(feature = "app-investmentmappoint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvestmentMapPoint;
     pub use super::IInvestmentMapPointMethods;

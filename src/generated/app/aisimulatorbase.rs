@@ -166,6 +166,7 @@ impl AISimulatorBase {
 }
 
 #[cfg(feature = "app-aisimulatorbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AISimulatorBase;
     pub use super::IAISimulatorBase;

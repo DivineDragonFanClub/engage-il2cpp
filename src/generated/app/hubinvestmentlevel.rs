@@ -2041,6 +2041,7 @@ impl HubInvestmentLevel {
 }
 
 #[cfg(feature = "app-hubinvestmentlevel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubInvestmentLevel;
     pub use super::IHubInvestmentLevel;

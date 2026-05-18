@@ -128,6 +128,7 @@ impl TrailVertex {
 }
 
 #[cfg(feature = "combat-trailvertex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TrailVertex;
     pub use crate::system::object::IObject;

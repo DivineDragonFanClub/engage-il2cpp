@@ -415,6 +415,7 @@ impl LightmapData {
 }
 
 #[cfg(feature = "unity_engine-lightmapdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightmapData;
     pub use super::ILightmapDataMethods;

@@ -756,6 +756,7 @@ impl LayoutUtility {
 }
 
 #[cfg(feature = "unity_engine-ui-layoututility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILayoutUtility;
     pub use super::LayoutUtility;

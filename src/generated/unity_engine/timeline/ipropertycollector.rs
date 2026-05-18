@@ -349,6 +349,7 @@ pub trait IIPropertyCollectorMethods: IIPropertyCollector {
 impl<__T: IIPropertyCollector> IIPropertyCollectorMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-ipropertycollector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPropertyCollector;
     pub use super::IIPropertyCollectorMethods;

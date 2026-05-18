@@ -177,6 +177,7 @@ impl BaseVertexEffect {
 }
 
 #[cfg(feature = "unity_engine-ui-basevertexeffect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseVertexEffect;
     pub use super::IBaseVertexEffect;

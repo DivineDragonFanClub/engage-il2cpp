@@ -123,6 +123,7 @@ impl NoInterpFloatParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpfloatparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpFloatParameter;
     pub use super::INoInterpFloatParameterMethods;

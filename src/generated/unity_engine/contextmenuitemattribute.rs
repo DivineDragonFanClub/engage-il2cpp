@@ -126,6 +126,7 @@ impl ContextMenuItemAttribute {
 }
 
 #[cfg(feature = "unity_engine-contextmenuitemattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContextMenuItemAttribute;
     pub use super::IContextMenuItemAttribute;

@@ -178,6 +178,7 @@ impl ProcDescLog {
 }
 
 #[cfg(feature = "app-procdesclog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescLog;
     pub use super::IProcDescLogMethods;

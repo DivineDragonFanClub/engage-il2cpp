@@ -391,6 +391,7 @@ impl GameClearRewardSequence {
 }
 
 #[cfg(feature = "app-gameclearrewardsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameClearRewardSequence;
     pub use super::IGameClearRewardSequence;

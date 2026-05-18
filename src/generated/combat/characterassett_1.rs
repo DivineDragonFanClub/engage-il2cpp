@@ -175,6 +175,7 @@ impl<T0: ::unity2::ClassIdentity> CharacterAssetT_1<T0> {
 }
 
 #[cfg(feature = "combat-characterassett_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterAssetT_1;
     pub use super::ICharacterAssetT_1;

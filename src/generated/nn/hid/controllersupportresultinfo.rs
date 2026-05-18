@@ -109,6 +109,7 @@ impl ControllerSupportResultInfo {
 }
 
 #[cfg(feature = "nn-hid-controllersupportresultinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerSupportResultInfo;
     pub use crate::system::object::IObject;

@@ -286,6 +286,7 @@ impl UnaryOperatorExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnaryOperatorExpression;
     pub use super::IUnaryOperatorExpressionMethods;

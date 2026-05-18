@@ -148,6 +148,7 @@ impl ExCombatCameraType {
 }
 
 #[cfg(feature = "combat-excombatcameratype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExCombatCameraType;
     pub use super::IExCombatCameraType;

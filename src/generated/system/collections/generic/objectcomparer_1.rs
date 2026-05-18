@@ -55,6 +55,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectComparer_1<T0> {
 }
 
 #[cfg(feature = "system-collections-generic-objectcomparer_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IObjectComparer_1;
     pub use super::IObjectComparer_1Methods;

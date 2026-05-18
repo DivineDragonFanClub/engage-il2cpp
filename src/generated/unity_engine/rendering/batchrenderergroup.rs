@@ -217,6 +217,7 @@ impl BatchRendererGroup {
 }
 
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BatchRendererGroup;
     pub use super::BatchRendererGroup_OnPerformCulling;

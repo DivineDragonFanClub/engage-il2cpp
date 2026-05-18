@@ -111,6 +111,7 @@ impl XRDisplaySubsystemDescriptor {
 }
 
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRDisplaySubsystemDescriptor;
     pub use super::IXRDisplaySubsystemDescriptorMethods;

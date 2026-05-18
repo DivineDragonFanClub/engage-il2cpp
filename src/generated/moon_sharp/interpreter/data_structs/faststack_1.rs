@@ -104,6 +104,7 @@ impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FastStack_1;
     pub use super::IFastStack_1;

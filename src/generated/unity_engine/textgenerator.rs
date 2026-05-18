@@ -2422,6 +2422,7 @@ impl TextGenerator {
 }
 
 #[cfg(feature = "unity_engine-textgenerator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextGenerator;
     pub use super::ITextGeneratorMethods;

@@ -1297,6 +1297,7 @@ impl AssetBundle {
 }
 
 #[cfg(feature = "unity_engine-assetbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundle;
     pub use super::IAssetBundle;

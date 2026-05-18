@@ -442,6 +442,7 @@ impl UInt16 {
 }
 
 #[cfg(feature = "system-uint16")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UInt16;
     pub use crate::system::object::IObject;

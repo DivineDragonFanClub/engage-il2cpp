@@ -339,6 +339,7 @@ impl NativePropertyAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativePropertyAttribute;
     pub use super::INativePropertyAttributeMethods;

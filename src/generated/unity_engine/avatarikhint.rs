@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-avatarikhint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AvatarIKHint;
     pub use crate::system::object::IObject;

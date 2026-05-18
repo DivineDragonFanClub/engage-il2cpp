@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-magicarrivaltype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MagicArrivalType;
     pub use crate::system::object::IObject;

@@ -240,6 +240,7 @@ impl GodUnitSelectMenuContent {
 }
 
 #[cfg(feature = "app-godunitselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodUnitSelectMenuContent;
     pub use super::IGodUnitSelectMenuContent;

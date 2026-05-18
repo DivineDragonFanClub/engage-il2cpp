@@ -84,6 +84,7 @@ impl<T0: ::unity2::ClassIdentity> LinkNode_1<T0> {
 }
 
 #[cfg(feature = "app-linknode_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILinkNode_1;
     pub use super::ILinkNode_1Methods;

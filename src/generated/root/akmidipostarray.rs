@@ -626,6 +626,7 @@ impl AkMIDIPostArray {
 }
 
 #[cfg(feature = "root-akmidipostarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMIDIPostArray;
     pub use super::IAkMIDIPostArray;

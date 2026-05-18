@@ -1186,6 +1186,7 @@ impl EffectSequence {
 }
 
 #[cfg(feature = "app-effectsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EffectSequence;
     pub use super::EffectSequence_Kind;

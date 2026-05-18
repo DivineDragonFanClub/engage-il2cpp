@@ -415,6 +415,7 @@ impl RefineShopEngraveItemSelectRoot {
 }
 
 #[cfg(feature = "app-refineshopengraveitemselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopEngraveItemSelectRoot;
     pub use super::IRefineShopEngraveItemSelectRootMethods;

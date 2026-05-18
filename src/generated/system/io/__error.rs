@@ -652,6 +652,7 @@ impl __Error {
 }
 
 #[cfg(feature = "system-io-__error")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::__Error;
     pub use super::I__Error;

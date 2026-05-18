@@ -310,6 +310,7 @@ impl ConvertChainAttack {
 }
 
 #[cfg(feature = "combat-situation_converter-convertchainattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertChainAttack;
     pub use super::IConvertChainAttack;

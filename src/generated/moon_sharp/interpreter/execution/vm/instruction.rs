@@ -838,6 +838,7 @@ impl Instruction {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-instruction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInstruction;
     pub use super::IInstructionMethods;

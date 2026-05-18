@@ -234,6 +234,7 @@ impl SortieClassChangeManager {
 }
 
 #[cfg(feature = "app-sortieclasschangemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieClassChangeManager;
     pub use super::ISortieClassChangeManagerMethods;

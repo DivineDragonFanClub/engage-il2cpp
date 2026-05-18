@@ -85,6 +85,7 @@ impl AnimAssetEx {
 }
 
 #[cfg(feature = "combat-animassetex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimAssetEx;
     pub use super::IAnimAssetEx;

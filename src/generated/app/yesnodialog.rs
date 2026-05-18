@@ -216,6 +216,7 @@ impl YesNoDialog {
 }
 
 #[cfg(feature = "app-yesnodialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IYesNoDialog;
     pub use super::IYesNoDialogMethods;

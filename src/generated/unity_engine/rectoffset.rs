@@ -914,6 +914,7 @@ impl RectOffset {
 }
 
 #[cfg(feature = "unity_engine-rectoffset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRectOffset;
     pub use super::IRectOffsetMethods;

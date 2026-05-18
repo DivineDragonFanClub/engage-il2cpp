@@ -194,6 +194,7 @@ impl VertexGradient {
 }
 
 #[cfg(feature = "tm_pro-vertexgradient")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VertexGradient;
     pub use crate::system::object::IObject;

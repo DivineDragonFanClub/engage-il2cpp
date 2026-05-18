@@ -1208,6 +1208,7 @@ impl GranUtility {
 }
 
 #[cfg(feature = "combat-granutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GranUtility;
     pub use super::IGranUtility;

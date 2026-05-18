@@ -502,6 +502,7 @@ impl Byte {
 }
 
 #[cfg(feature = "system-byte")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Byte;
     pub use crate::system::object::IObject;

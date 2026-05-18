@@ -272,6 +272,7 @@ impl LerpCommand {
 }
 
 #[cfg(feature = "app-lerpcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILerpCommand;
     pub use super::ILerpCommandMethods;

@@ -238,6 +238,7 @@ impl EditorPrefs_Float {
 }
 
 #[cfg(feature = "combat-editorprefs_float")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EditorPrefs_Float;
     pub use super::IEditorPrefs_Float;

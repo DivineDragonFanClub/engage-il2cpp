@@ -235,6 +235,7 @@ impl StringDictionary {
 }
 
 #[cfg(feature = "system-collections-specialized-stringdictionary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringDictionary;
     pub use super::IStringDictionaryMethods;

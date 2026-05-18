@@ -168,6 +168,7 @@ impl RelayMapMenuItemContent {
 }
 
 #[cfg(feature = "app-relaymapmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayMapMenuItemContent;
     pub use super::IRelayMapMenuItemContentMethods;

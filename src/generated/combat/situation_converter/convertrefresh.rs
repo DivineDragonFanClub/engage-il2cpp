@@ -298,6 +298,7 @@ impl ConvertRefresh {
 }
 
 #[cfg(feature = "combat-situation_converter-convertrefresh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConvertRefresh;
     pub use super::IConvertRefresh;

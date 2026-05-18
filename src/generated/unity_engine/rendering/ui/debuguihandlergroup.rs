@@ -305,6 +305,7 @@ impl DebugUIHandlerGroup {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlergroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerGroup;
     pub use super::IDebugUIHandlerGroup;

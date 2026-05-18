@@ -184,6 +184,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2<T
 }
 
 #[cfg(feature = "app-singletonpool_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISingletonPool_2;
     pub use super::ISingletonPool_2Methods;

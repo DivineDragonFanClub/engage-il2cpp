@@ -2214,6 +2214,7 @@ impl BitField32 {
 }
 
 #[cfg(feature = "app-bitfield32")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitField32;
     pub use super::IBitField32;

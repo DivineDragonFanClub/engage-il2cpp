@@ -107,6 +107,7 @@ impl NavMeshHit {
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NavMeshHit;
     pub use crate::system::object::IObject;

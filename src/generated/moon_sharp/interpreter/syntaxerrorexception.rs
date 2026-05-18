@@ -961,6 +961,7 @@ impl SyntaxErrorException {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISyntaxErrorException;
     pub use super::ISyntaxErrorExceptionMethods;

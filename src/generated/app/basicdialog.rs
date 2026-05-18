@@ -729,6 +729,7 @@ impl BasicDialog {
 }
 
 #[cfg(feature = "app-basicdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicDialog;
     pub use super::IBasicDialog;

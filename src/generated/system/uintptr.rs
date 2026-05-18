@@ -420,6 +420,7 @@ impl UIntPtr {
 }
 
 #[cfg(feature = "system-uintptr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UIntPtr;
     pub use crate::system::object::IObject;

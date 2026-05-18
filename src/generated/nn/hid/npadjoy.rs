@@ -819,6 +819,7 @@ impl NpadJoy {
 }
 
 #[cfg(feature = "nn-hid-npadjoy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpadJoy;
     pub use super::NpadJoy;

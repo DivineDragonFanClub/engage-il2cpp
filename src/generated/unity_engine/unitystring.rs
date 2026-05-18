@@ -93,6 +93,7 @@ impl UnityString {
 }
 
 #[cfg(feature = "unity_engine-unitystring")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityString;
     pub use super::UnityString;

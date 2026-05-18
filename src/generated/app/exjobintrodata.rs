@@ -88,6 +88,7 @@ impl ExJobIntroData {
 }
 
 #[cfg(feature = "app-exjobintrodata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExJobIntroData;
     pub use super::IExJobIntroData;

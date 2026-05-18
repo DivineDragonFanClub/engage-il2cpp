@@ -356,6 +356,7 @@ impl SerializationUtilities {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISerializationUtilities;
     pub use super::SerializationUtilities;

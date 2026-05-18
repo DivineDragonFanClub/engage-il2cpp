@@ -243,6 +243,7 @@ impl InterpolatorInt {
 }
 
 #[cfg(feature = "app-interpolatorint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorInt;
     pub use super::IInterpolatorIntMethods;

@@ -582,6 +582,7 @@ impl BondPopUpController {
 }
 
 #[cfg(feature = "app-bondpopupcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BondPopUpController;
     pub use super::IBondPopUpController;

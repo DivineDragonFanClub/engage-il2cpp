@@ -1905,6 +1905,7 @@ impl Path {
 }
 
 #[cfg(feature = "system-io-path")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPath;
     pub use super::Path;

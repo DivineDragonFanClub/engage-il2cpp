@@ -108,6 +108,7 @@ impl AkEventCallbackMsg {
 }
 
 #[cfg(feature = "root-akeventcallbackmsg")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEventCallbackMsg;
     pub use super::IAkEventCallbackMsg;

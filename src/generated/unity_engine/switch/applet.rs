@@ -118,6 +118,7 @@ impl Applet {
 }
 
 #[cfg(feature = "unity_engine-switch-applet")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Applet;
     pub use super::IApplet;

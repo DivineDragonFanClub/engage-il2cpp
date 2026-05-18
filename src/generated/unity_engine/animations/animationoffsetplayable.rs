@@ -644,6 +644,7 @@ impl AnimationOffsetPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationoffsetplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationOffsetPlayable;
     pub use crate::system::object::IObject;

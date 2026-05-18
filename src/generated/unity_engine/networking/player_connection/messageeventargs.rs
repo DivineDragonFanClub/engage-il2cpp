@@ -109,6 +109,7 @@ impl MessageEventArgs {
 }
 
 #[cfg(feature = "unity_engine-networking-player_connection-messageeventargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMessageEventArgs;
     pub use super::IMessageEventArgsMethods;

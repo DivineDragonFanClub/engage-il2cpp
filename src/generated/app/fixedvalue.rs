@@ -1227,6 +1227,7 @@ impl FixedValue {
 }
 
 #[cfg(feature = "app-fixedvalue")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FixedValue;
     pub use crate::system::object::IObject;

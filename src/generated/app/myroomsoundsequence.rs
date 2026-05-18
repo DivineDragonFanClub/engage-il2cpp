@@ -560,6 +560,7 @@ impl MyRoomSoundSequence {
 }
 
 #[cfg(feature = "app-myroomsoundsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomSoundSequence;
     pub use super::IMyRoomSoundSequenceMethods;

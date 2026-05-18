@@ -2156,6 +2156,7 @@ impl CalculatorCommand {
 }
 
 #[cfg(feature = "app-calculatorcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorCommand;
     pub use super::ICalculatorCommand;

@@ -85,6 +85,7 @@ pub trait IINotificationMethods: IINotification {
 impl<__T: IINotification> IINotificationMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-inotification")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IINotification;
     pub use super::IINotificationMethods;

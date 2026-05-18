@@ -1506,6 +1506,7 @@ impl AkChannelConfig {
 }
 
 #[cfg(feature = "root-akchannelconfig")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkChannelConfig;
     pub use super::IAkChannelConfig;

@@ -4479,6 +4479,7 @@ impl AnimSetDB {
 }
 
 #[cfg(feature = "combat-animsetdb")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimSetDB;
     pub use super::IAnimSetDB;

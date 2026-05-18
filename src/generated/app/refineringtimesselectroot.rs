@@ -469,6 +469,7 @@ impl RefineRingTimesSelectRoot {
 }
 
 #[cfg(feature = "app-refineringtimesselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineRingTimesSelectRoot;
     pub use super::IRefineRingTimesSelectRootMethods;

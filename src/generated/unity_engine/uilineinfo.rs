@@ -44,6 +44,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-uilineinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UILineInfo;
     pub use crate::system::object::IObject;

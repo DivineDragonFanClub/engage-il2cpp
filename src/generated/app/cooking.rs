@@ -66,21 +66,6 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct Cooking {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
-    #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
-    #[parent(crate::system::object::Object)]
-    pub struct Cooking_Probability {
-        #[static_field]
-        #[rename(name = "BaseProbability")]
-        pub base_probability: ::unity2::Array<f32>,
-        #[static_field]
-        #[rename(name = "ProbabilityCorrections")]
-        pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
-        #[static_field]
-        #[rename(name = "ProbabilityFromFoodstuff")]
-        pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
     #[repr(C)]
     #[derive(
@@ -143,6 +128,21 @@ mod __types {
         pub fn none() -> Self {
             Self { value: 6 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
+    #[::unity2::class(namespace = "App", name = "Cooking.Probability")]
+    #[parent(crate::system::object::Object)]
+    pub struct Cooking_Probability {
+        #[static_field]
+        #[rename(name = "BaseProbability")]
+        pub base_probability: ::unity2::Array<f32>,
+        #[static_field]
+        #[rename(name = "ProbabilityCorrections")]
+        pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
+        #[static_field]
+        #[rename(name = "ProbabilityFromFoodstuff")]
+        pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
@@ -948,6 +948,7 @@ impl Cooking_Probability {
 }
 
 #[cfg(feature = "app-cooking")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Cooking;
     pub use super::Cooking_ConversationType;

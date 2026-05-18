@@ -348,6 +348,7 @@ pub trait ITextMeshMethods: ITextMesh {
 impl<__T: ITextMesh> ITextMeshMethods for __T {}
 
 #[cfg(feature = "unity_engine-textmesh")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextMesh;
     pub use super::ITextMeshMethods;

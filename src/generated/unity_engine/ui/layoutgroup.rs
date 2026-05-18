@@ -2335,6 +2335,7 @@ impl LayoutGroup {
 }
 
 #[cfg(feature = "unity_engine-ui-layoutgroup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILayoutGroup;
     pub use super::ILayoutGroupMethods;

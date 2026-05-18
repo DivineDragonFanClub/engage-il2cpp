@@ -95,6 +95,7 @@ pub trait IIMaterialModifierMethods: IIMaterialModifier {
 impl<__T: IIMaterialModifier> IIMaterialModifierMethods for __T {}
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMaterialModifier;
     pub use super::IIMaterialModifierMethods;

@@ -216,6 +216,7 @@ impl BillboardSample {
 }
 
 #[cfg(feature = "root-billboardsample")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BillboardSample;
     pub use super::IBillboardSample;

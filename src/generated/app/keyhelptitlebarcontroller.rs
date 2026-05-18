@@ -428,6 +428,7 @@ impl KeyHelpTitleBarController {
 }
 
 #[cfg(feature = "app-keyhelptitlebarcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IKeyHelpTitleBarController;
     pub use super::IKeyHelpTitleBarControllerMethods;

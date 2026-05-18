@@ -621,6 +621,7 @@ impl WeaponFlying {
 }
 
 #[cfg(feature = "combat-weaponflying")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponFlying;
     pub use super::IWeaponFlyingMethods;

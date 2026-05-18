@@ -178,6 +178,7 @@ impl ProcDescVsync {
 }
 
 #[cfg(feature = "app-procdescvsync")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescVsync;
     pub use super::IProcDescVsyncMethods;

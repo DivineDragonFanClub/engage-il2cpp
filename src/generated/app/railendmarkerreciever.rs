@@ -345,6 +345,7 @@ impl RailEndMarkerReciever {
 }
 
 #[cfg(feature = "app-railendmarkerreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRailEndMarkerReciever;
     pub use super::IRailEndMarkerRecieverMethods;

@@ -599,6 +599,7 @@ impl DebugUIHandlerFoldout {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerFoldout;
     pub use super::IDebugUIHandlerFoldout;

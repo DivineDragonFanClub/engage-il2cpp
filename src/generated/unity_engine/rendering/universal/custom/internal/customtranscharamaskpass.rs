@@ -287,6 +287,7 @@ impl CustomTransCharaMaskPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomTransCharaMaskPass;
     pub use super::ICustomTransCharaMaskPass;

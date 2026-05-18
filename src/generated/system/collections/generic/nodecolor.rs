@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "system-collections-generic-nodecolor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NodeColor;
     pub use crate::system::object::IObject;

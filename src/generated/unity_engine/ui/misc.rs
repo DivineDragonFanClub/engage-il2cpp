@@ -144,6 +144,7 @@ impl Misc {
 }
 
 #[cfg(feature = "unity_engine-ui-misc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMisc;
     pub use super::Misc;

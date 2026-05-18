@@ -3667,6 +3667,7 @@ impl PhysicsScene {
 }
 
 #[cfg(feature = "unity_engine-physicsscene")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PhysicsScene;
     pub use crate::system::object::IObject;

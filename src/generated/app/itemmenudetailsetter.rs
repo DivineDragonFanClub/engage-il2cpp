@@ -1281,6 +1281,7 @@ impl ItemMenuDetailSetter {
 }
 
 #[cfg(feature = "app-itemmenudetailsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemMenuDetailSetter;
     pub use super::IItemMenuDetailSetterMethods;

@@ -70,6 +70,7 @@ impl<T0: ::unity2::ClassIdentity> RawClassStack_1<T0> {
 }
 
 #[cfg(feature = "app-rawclassstack_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRawClassStack_1;
     pub use super::IRawClassStack_1Methods;

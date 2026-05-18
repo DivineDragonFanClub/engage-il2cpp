@@ -426,6 +426,7 @@ impl StructBase {
 }
 
 #[cfg(feature = "app-structbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructBase;
     pub use super::IStructBaseMethods;

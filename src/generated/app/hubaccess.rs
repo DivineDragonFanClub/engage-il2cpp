@@ -3409,6 +3409,7 @@ impl HubAccess {
 }
 
 #[cfg(feature = "app-hubaccess")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAccess;
     pub use super::IHubAccess;

@@ -164,6 +164,7 @@ impl SortieTopMenuManager {
 }
 
 #[cfg(feature = "app-sortietopmenumanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieTopMenuManager;
     pub use super::ISortieTopMenuManagerMethods;

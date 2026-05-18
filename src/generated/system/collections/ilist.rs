@@ -651,6 +651,7 @@ pub trait IIListMethods: IIList {
 impl<__T: IIList> IIListMethods for __T {}
 
 #[cfg(feature = "system-collections-ilist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIList;
     pub use super::IIListMethods;

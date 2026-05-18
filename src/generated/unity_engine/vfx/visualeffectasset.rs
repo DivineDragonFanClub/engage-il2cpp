@@ -159,6 +159,7 @@ impl VisualEffectAsset {
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffectasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVisualEffectAsset;
     pub use super::IVisualEffectAssetMethods;

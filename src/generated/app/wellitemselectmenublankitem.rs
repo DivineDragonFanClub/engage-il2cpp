@@ -283,6 +283,7 @@ impl WellItemSelectMenuBlankItem {
 }
 
 #[cfg(feature = "app-wellitemselectmenublankitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWellItemSelectMenuBlankItem;
     pub use super::IWellItemSelectMenuBlankItemMethods;

@@ -570,6 +570,7 @@ impl LoadingManager {
 }
 
 #[cfg(feature = "app-loadingmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoadingManager;
     pub use super::ILoadingManagerMethods;

@@ -159,6 +159,7 @@ impl NativeThrowsAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeThrowsAttribute;
     pub use super::INativeThrowsAttributeMethods;

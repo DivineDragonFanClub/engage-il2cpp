@@ -8,20 +8,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IntervalTree`1")]
-    #[parent(crate::system::object::Object)]
-    pub struct IntervalTree_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Entries")]
-        pub m_entries: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1_Entry<T0>,
-        >,
-        #[rename(name = "m_Nodes")]
-        pub m_nodes: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1_Entry.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -52,6 +38,20 @@ mod __types {
                 ._1
                 .byval_arg
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "IntervalTree`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct IntervalTree_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Entries")]
+        pub m_entries: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::intervaltree_1::IntervalTree_1_Entry<T0>,
+        >,
+        #[rename(name = "m_Nodes")]
+        pub m_nodes: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode,
+        >,
     }
 }
 
@@ -120,6 +120,7 @@ impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-timeline-intervaltree_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntervalTree_1;
     pub use super::IIntervalTree_1Methods;

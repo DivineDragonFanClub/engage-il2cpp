@@ -217,6 +217,7 @@ impl TypeInfo {
 }
 
 #[cfg(feature = "system-reflection-typeinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITypeInfo;
     pub use super::ITypeInfoMethods;

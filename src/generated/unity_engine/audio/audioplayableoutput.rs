@@ -341,6 +341,7 @@ impl AudioPlayableOutput {
 }
 
 #[cfg(feature = "unity_engine-audio-audioplayableoutput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioPlayableOutput;
     pub use crate::system::object::IObject;

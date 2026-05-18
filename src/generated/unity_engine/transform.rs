@@ -8345,6 +8345,7 @@ impl Transform {
 }
 
 #[cfg(feature = "unity_engine-transform")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITransform;
     pub use super::ITransformMethods;

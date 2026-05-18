@@ -709,6 +709,7 @@ impl AkDurationCallbackInfo {
 }
 
 #[cfg(feature = "root-akdurationcallbackinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDurationCallbackInfo;
     pub use super::IAkDurationCallbackInfo;

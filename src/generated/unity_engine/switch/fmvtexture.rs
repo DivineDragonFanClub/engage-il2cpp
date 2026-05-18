@@ -98,6 +98,7 @@ impl FMVTexture {
 }
 
 #[cfg(feature = "unity_engine-switch-fmvtexture")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FMVTexture;
     pub use super::IFMVTexture;

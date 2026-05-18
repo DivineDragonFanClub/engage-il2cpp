@@ -85,6 +85,7 @@ impl EnumerableHelpers {
 }
 
 #[cfg(feature = "system-collections-generic-enumerablehelpers")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EnumerableHelpers;
     pub use super::IEnumerableHelpers;

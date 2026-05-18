@@ -146,6 +146,7 @@ pub trait IILoopMethods: IILoop {
 impl<__T: IILoop> IILoopMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IILoop;
     pub use super::IILoopMethods;

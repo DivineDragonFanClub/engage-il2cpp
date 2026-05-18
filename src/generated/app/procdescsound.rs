@@ -178,6 +178,7 @@ impl ProcDescSound {
 }
 
 #[cfg(feature = "app-procdescsound")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescSound;
     pub use super::IProcDescSoundMethods;

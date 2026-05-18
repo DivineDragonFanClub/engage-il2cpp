@@ -668,6 +668,7 @@ impl UnitySynchronizationContext {
 }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitySynchronizationContext;
     pub use super::IUnitySynchronizationContextMethods;

@@ -8322,6 +8322,7 @@ impl Rigidbody {
 }
 
 #[cfg(feature = "unity_engine-rigidbody")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRigidbody;
     pub use super::IRigidbodyMethods;

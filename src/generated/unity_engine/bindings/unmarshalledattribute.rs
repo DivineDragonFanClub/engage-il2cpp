@@ -99,6 +99,7 @@ impl UnmarshalledAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-unmarshalledattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnmarshalledAttribute;
     pub use super::IUnmarshalledAttributeMethods;

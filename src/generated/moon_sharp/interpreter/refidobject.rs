@@ -273,6 +273,7 @@ impl RefIdObject {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-refidobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefIdObject;
     pub use super::IRefIdObjectMethods;

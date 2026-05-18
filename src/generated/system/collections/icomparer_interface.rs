@@ -101,6 +101,7 @@ pub trait IIComparer_InterfaceMethods: IIComparer_Interface {
 impl<__T: IIComparer_Interface> IIComparer_InterfaceMethods for __T {}
 
 #[cfg(feature = "system-collections-icomparer_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IComparer_Interface;
     pub use super::IIComparer_Interface;

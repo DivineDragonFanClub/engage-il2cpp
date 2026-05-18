@@ -445,6 +445,7 @@ impl IndexExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIndexExpression;
     pub use super::IIndexExpressionMethods;

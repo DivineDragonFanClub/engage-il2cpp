@@ -325,6 +325,7 @@ impl RandomCommand {
 }
 
 #[cfg(feature = "app-randomcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRandomCommand;
     pub use super::IRandomCommandMethods;

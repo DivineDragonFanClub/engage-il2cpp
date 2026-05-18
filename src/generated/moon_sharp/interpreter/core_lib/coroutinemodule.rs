@@ -567,6 +567,7 @@ impl CoroutineModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-coroutinemodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CoroutineModule;
     pub use super::ICoroutineModule;

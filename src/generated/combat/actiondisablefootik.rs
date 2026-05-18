@@ -231,6 +231,7 @@ impl ActionDisableFootIK {
 }
 
 #[cfg(feature = "combat-actiondisablefootik")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionDisableFootIK;
     pub use super::IActionDisableFootIK;

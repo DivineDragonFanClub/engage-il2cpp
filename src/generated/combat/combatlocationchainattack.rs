@@ -411,6 +411,7 @@ impl CombatLocationChainAttack {
 }
 
 #[cfg(feature = "combat-combatlocationchainattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationChainAttack;
     pub use super::ICombatLocationChainAttack;

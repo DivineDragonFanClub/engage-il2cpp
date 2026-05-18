@@ -426,6 +426,7 @@ impl SerializedType {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SerializedType;
     pub use crate::system::object::IObject;

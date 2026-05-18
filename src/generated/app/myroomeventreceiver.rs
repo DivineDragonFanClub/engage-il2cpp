@@ -504,6 +504,7 @@ impl MyRoomEventReceiver {
 }
 
 #[cfg(feature = "app-myroomeventreceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomEventReceiver;
     pub use super::IMyRoomEventReceiverMethods;

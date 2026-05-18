@@ -1028,6 +1028,7 @@ impl ShadowCaster2D {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowCaster2D;
     pub use super::IShadowCaster2DMethods;

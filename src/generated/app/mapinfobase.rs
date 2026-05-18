@@ -219,6 +219,7 @@ impl MapInfoBase {
 }
 
 #[cfg(feature = "app-mapinfobase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoBase;
     pub use super::IMapInfoBaseMethods;

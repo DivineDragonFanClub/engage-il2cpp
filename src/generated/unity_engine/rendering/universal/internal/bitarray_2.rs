@@ -264,6 +264,7 @@ impl BitArray_2 {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-bitarray_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray_2;
     pub use crate::system::object::IObject;

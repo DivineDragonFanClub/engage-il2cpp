@@ -807,6 +807,7 @@ impl EncountDataManager {
 }
 
 #[cfg(feature = "app-encountdatamanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EncountDataManager;
     pub use super::IEncountDataManager;

@@ -389,6 +389,7 @@ impl PhysicsManager {
 }
 
 #[cfg(feature = "app-physicsmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysicsManager;
     pub use super::IPhysicsManagerMethods;

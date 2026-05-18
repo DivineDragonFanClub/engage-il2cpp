@@ -459,6 +459,7 @@ impl TalkTagLocalize {
 }
 
 #[cfg(feature = "app-talk3_d-talktaglocalize")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagLocalize;
     pub use super::ITalkTagLocalizeMethods;

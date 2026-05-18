@@ -391,6 +391,7 @@ impl UnitItemMenuContent {
 }
 
 #[cfg(feature = "app-unititemmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitItemMenuContent;
     pub use super::IUnitItemMenuContentMethods;

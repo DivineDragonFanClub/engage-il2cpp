@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-reflectionprobemode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionProbeMode;
     pub use crate::system::object::IObject;

@@ -44,6 +44,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightstats")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightStats;
     pub use crate::system::object::IObject;

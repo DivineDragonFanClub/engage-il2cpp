@@ -642,6 +642,7 @@ impl DynamicExpression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-dynamicexpression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicExpression;
     pub use super::IDynamicExpression;

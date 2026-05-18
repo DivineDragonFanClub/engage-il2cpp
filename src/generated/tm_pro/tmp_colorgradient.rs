@@ -345,6 +345,7 @@ impl TMP_ColorGradient {
 }
 
 #[cfg(feature = "tm_pro-tmp_colorgradient")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_ColorGradient;
     pub use super::ITMP_ColorGradientMethods;

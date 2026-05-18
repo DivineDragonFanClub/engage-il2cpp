@@ -791,6 +791,7 @@ impl AccessoryShopBuyMenuContent_KindIcon {
 }
 
 #[cfg(feature = "app-accessoryshopbuymenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryShopBuyMenuContent;
     pub use super::AccessoryShopBuyMenuContent_KindIcon;

@@ -853,6 +853,7 @@ impl ScriptHub {
 }
 
 #[cfg(feature = "app-scripthub")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptHub;
     pub use super::IScriptHubMethods;

@@ -3662,6 +3662,7 @@ impl ParticleSystemForceField {
 }
 
 #[cfg(feature = "unity_engine-particlesystemforcefield")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IParticleSystemForceField;
     pub use super::IParticleSystemForceFieldMethods;

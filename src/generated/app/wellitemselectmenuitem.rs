@@ -1414,6 +1414,7 @@ impl WellItemSelectMenuItem {
 }
 
 #[cfg(feature = "app-wellitemselectmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWellItemSelectMenuItem;
     pub use super::IWellItemSelectMenuItemMethods;

@@ -653,6 +653,7 @@ impl CameraController {
 }
 
 #[cfg(feature = "app-cameracontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraController;
     pub use super::ICameraController;

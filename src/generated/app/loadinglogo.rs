@@ -16,6 +16,20 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
+    #[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
+    #[parent(crate::system::object::Object)]
+    pub struct LoadingLogo_UnitDotObject {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+        #[rename(name = "m_Material")]
+        pub m_material: crate::unity_engine::material::Material,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
     #[repr(C)]
     #[derive(
@@ -70,20 +84,6 @@ mod __types {
         pub fn hide() -> Self {
             Self { value: 4 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
-    #[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
-    #[parent(crate::system::object::Object)]
-    pub struct LoadingLogo_UnitDotObject {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Image")]
-        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-        #[rename(name = "m_Material")]
-        pub m_material: crate::unity_engine::material::Material,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
@@ -1698,6 +1698,7 @@ impl LoadingLogo {
 }
 
 #[cfg(feature = "app-loadinglogo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoadingLogo;
     pub use super::ILoadingLogoMethods;

@@ -357,6 +357,7 @@ impl CustomSampler {
 }
 
 #[cfg(feature = "unity_engine-profiling-customsampler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomSampler;
     pub use super::ICustomSampler;

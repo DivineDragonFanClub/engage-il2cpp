@@ -272,6 +272,7 @@ impl CondCommand {
 }
 
 #[cfg(feature = "app-condcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CondCommand;
     pub use super::ICondCommand;

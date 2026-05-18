@@ -205,6 +205,7 @@ impl XRSystemData_ShaderResources {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXRSystemData;
     pub use super::IXRSystemDataMethods;

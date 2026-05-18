@@ -1398,6 +1398,7 @@ impl PropertyMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyMemberDescriptor;
     pub use super::IPropertyMemberDescriptorMethods;

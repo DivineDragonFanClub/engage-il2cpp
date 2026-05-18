@@ -300,6 +300,7 @@ impl CommonSprite {
 }
 
 #[cfg(feature = "app-commonsprite")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CommonSprite;
     pub use super::ICommonSprite;

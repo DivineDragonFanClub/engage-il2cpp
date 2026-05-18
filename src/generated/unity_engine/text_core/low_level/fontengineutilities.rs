@@ -116,6 +116,7 @@ impl FontEngineUtilities {
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontEngineUtilities;
     pub use crate::system::object::IObject;

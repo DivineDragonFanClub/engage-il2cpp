@@ -43,6 +43,7 @@ impl<T0: ::unity2::ClassIdentity> UnsafeGenericPool_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-unsafegenericpool_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnsafeGenericPool_1;
     pub use super::UnsafeGenericPool_1;

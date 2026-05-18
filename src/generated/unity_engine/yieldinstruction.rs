@@ -101,6 +101,7 @@ impl YieldInstruction {
 }
 
 #[cfg(feature = "unity_engine-yieldinstruction")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IYieldInstruction;
     pub use super::IYieldInstructionMethods;

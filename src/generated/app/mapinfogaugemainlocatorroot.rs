@@ -1119,6 +1119,7 @@ impl MapInfoGaugeMainLocatorRoot {
 }
 
 #[cfg(feature = "app-mapinfogaugemainlocatorroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoGaugeMainLocatorRoot;
     pub use super::IMapInfoGaugeMainLocatorRootMethods;

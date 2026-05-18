@@ -1740,6 +1740,7 @@ impl Color {
 }
 
 #[cfg(feature = "unity_engine-color")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Color;
     pub use crate::system::object::IObject;

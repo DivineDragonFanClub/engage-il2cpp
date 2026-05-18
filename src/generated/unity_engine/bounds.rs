@@ -1304,6 +1304,7 @@ impl Bounds {
 }
 
 #[cfg(feature = "unity_engine-bounds")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bounds;
     pub use crate::system::object::IObject;

@@ -930,6 +930,7 @@ impl GotoStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-gotostatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GotoStatement;
     pub use super::IGotoStatement;

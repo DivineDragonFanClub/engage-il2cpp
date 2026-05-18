@@ -247,6 +247,7 @@ impl CutSceneEventReceiver {
 }
 
 #[cfg(feature = "app-cutsceneeventreceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CutSceneEventReceiver;
     pub use super::ICutSceneEventReceiver;

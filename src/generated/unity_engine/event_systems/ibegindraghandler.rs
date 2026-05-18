@@ -96,6 +96,7 @@ pub trait IIBeginDragHandlerMethods: IIBeginDragHandler {
 impl<__T: IIBeginDragHandler> IIBeginDragHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-ibegindraghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IBeginDragHandler;
     pub use super::IIBeginDragHandler;

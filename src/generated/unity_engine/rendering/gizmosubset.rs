@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-gizmosubset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GizmoSubset;
     pub use crate::system::object::IObject;

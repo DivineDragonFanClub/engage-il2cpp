@@ -79,6 +79,7 @@ impl<T0: ::unity2::ClassIdentity> TMP_ObjectPool_1<T0> {
 }
 
 #[cfg(feature = "tm_pro-tmp_objectpool_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_ObjectPool_1;
     pub use super::ITMP_ObjectPool_1Methods;

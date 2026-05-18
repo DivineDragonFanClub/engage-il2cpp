@@ -109,6 +109,7 @@ impl WaterBaseV2 {
 }
 
 #[cfg(feature = "app-water-waterbasev2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWaterBaseV2;
     pub use super::IWaterBaseV2Methods;

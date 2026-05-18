@@ -238,6 +238,7 @@ impl MapUIUnitIndexAsUV2 {
 }
 
 #[cfg(feature = "app-mapuiunitindexasuv2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapUIUnitIndexAsUV2;
     pub use super::IMapUIUnitIndexAsUV2Methods;

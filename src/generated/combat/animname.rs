@@ -9,11 +9,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))]
-    #[::unity2::class(namespace = "Combat", name = "AnimName")]
-    #[parent(crate::system::object::Object)]
-    pub struct AnimName {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animname/AnimName_Race.md"))]
     #[repr(C)]
     #[derive(
@@ -81,6 +76,11 @@ mod __types {
             Self { value: 7 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))]
+    #[::unity2::class(namespace = "Combat", name = "AnimName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimName {}
 }
 
 #[cfg(feature = "combat-animname-types")]
@@ -1068,6 +1068,7 @@ impl AnimName {
 }
 
 #[cfg(feature = "combat-animname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimName;
     pub use super::AnimName_Race;

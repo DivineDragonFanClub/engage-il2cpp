@@ -360,6 +360,7 @@ impl IOException {
 }
 
 #[cfg(feature = "system-io-ioexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIOException;
     pub use super::IIOExceptionMethods;

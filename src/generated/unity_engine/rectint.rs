@@ -648,6 +648,7 @@ impl RectInt {
 }
 
 #[cfg(feature = "unity_engine-rectint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RectInt;
     pub use crate::system::object::IObject;

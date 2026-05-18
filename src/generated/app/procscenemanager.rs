@@ -861,6 +861,7 @@ impl ProcSceneManager {
 }
 
 #[cfg(feature = "app-procscenemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcSceneManager;
     pub use super::IProcSceneManagerMethods;

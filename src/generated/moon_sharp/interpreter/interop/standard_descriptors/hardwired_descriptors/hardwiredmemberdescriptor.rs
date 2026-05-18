@@ -924,6 +924,7 @@ impl HardwiredMemberDescriptor {
 #[cfg(
     feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmemberdescriptor"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HardwiredMemberDescriptor;
     pub use super::IHardwiredMemberDescriptor;

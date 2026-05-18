@@ -418,6 +418,7 @@ impl MapDeployBitImage {
 }
 
 #[cfg(feature = "app-mapdeploybitimage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapDeployBitImage;
     pub use super::IMapDeployBitImageMethods;

@@ -112,6 +112,7 @@ impl AssemblyFileVersionAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyFileVersionAttribute;
     pub use super::IAssemblyFileVersionAttribute;

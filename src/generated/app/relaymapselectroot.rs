@@ -662,6 +662,7 @@ impl RelayMapSelectRoot {
 }
 
 #[cfg(feature = "app-relaymapselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayMapSelectRoot;
     pub use super::IRelayMapSelectRootMethods;

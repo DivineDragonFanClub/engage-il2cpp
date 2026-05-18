@@ -296,6 +296,7 @@ impl CombatLocationEngageAttack {
 }
 
 #[cfg(feature = "combat-combatlocationengageattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatLocationEngageAttack;
     pub use super::ICombatLocationEngageAttack;

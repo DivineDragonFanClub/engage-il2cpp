@@ -2277,6 +2277,7 @@ impl StreamReader_NullStreamReader {
 }
 
 #[cfg(feature = "system-io-streamreader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStreamReader;
     pub use super::IStreamReaderMethods;

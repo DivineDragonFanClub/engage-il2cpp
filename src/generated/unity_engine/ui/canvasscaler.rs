@@ -14,54 +14,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct CanvasScaler_ScreenMatchMode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for CanvasScaler_ScreenMatchMode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl CanvasScaler_ScreenMatchMode {
-        pub fn match_width_or_height() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn expand() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn shrink() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]
     #[repr(C)]
     #[derive(
@@ -106,6 +58,54 @@ mod __types {
         }
 
         pub fn constant_physical_size() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct CanvasScaler_ScreenMatchMode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for CanvasScaler_ScreenMatchMode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl CanvasScaler_ScreenMatchMode {
+        pub fn match_width_or_height() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn expand() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn shrink() -> Self {
             Self { value: 2 }
         }
     }
@@ -1921,6 +1921,7 @@ impl CanvasScaler {
 }
 
 #[cfg(feature = "unity_engine-ui-canvasscaler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasScaler;
     pub use super::CanvasScaler_ScaleMode;

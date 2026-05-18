@@ -358,6 +358,7 @@ impl ItemShopBuyMenuContent {
 }
 
 #[cfg(feature = "app-itemshopbuymenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemShopBuyMenuContent;
     pub use super::IItemShopBuyMenuContentMethods;

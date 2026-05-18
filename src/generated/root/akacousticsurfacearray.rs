@@ -369,6 +369,7 @@ impl AkAcousticSurfaceArray {
 }
 
 #[cfg(feature = "root-akacousticsurfacearray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkAcousticSurfaceArray;
     pub use super::IAkAcousticSurfaceArray;

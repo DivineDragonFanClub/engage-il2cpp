@@ -626,6 +626,7 @@ impl BgmPlayer {
 }
 
 #[cfg(feature = "app-bgmplayer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BgmPlayer;
     pub use super::IBgmPlayer;

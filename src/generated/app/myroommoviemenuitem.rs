@@ -916,6 +916,7 @@ impl MyRoomMovieMenuItem_MyRoomMovieCallSequence {
 }
 
 #[cfg(feature = "app-myroommoviemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItemMethods;

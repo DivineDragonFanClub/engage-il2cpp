@@ -2977,6 +2977,7 @@ impl ScriptableRenderContext {
 }
 
 #[cfg(feature = "unity_engine-rendering-scriptablerendercontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ScriptableRenderContext;
     pub use crate::system::object::IObject;

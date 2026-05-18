@@ -196,6 +196,7 @@ impl XROcclusionMeshPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrocclusionmeshpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IXROcclusionMeshPass;
     pub use super::IXROcclusionMeshPassMethods;

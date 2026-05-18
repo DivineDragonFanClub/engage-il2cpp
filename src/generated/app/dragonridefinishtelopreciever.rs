@@ -304,6 +304,7 @@ impl DragonRideFinishtelopReciever {
 }
 
 #[cfg(feature = "app-dragonridefinishtelopreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideFinishtelopReciever;
     pub use super::IDragonRideFinishtelopReciever;

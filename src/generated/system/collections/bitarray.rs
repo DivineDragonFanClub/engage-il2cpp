@@ -1339,6 +1339,7 @@ impl BitArray_BitArrayEnumeratorSimple {
 }
 
 #[cfg(feature = "system-collections-bitarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray;
     pub use super::BitArray_BitArrayEnumeratorSimple;

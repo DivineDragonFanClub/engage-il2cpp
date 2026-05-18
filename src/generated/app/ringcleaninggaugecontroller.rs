@@ -922,6 +922,7 @@ impl RingCleaningGaugeController {
 }
 
 #[cfg(feature = "app-ringcleaninggaugecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningGaugeController;
     pub use super::IRingCleaningGaugeControllerMethods;

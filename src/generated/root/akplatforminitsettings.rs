@@ -1467,6 +1467,7 @@ impl AkPlatformInitSettings {
 }
 
 #[cfg(feature = "root-akplatforminitsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkPlatformInitSettings;
     pub use super::IAkPlatformInitSettings;

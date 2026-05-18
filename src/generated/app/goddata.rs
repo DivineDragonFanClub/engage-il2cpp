@@ -15,76 +15,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_RelianceLevel.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GodData_RelianceLevel {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GodData_RelianceLevel {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GodData.RelianceLevel";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GodData_RelianceLevel {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GodData_RelianceLevel {
-        pub fn d() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn c() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn b() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn a() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn s() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData.md"))]
-    #[::unity2::class(namespace = "App", name = "GodData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: goddata :: GodData >)]
-    pub struct GodData {
-        #[rename(name = "m_EngageHauntUnit")]
-        pub m_engage_haunt_unit: crate::app::unit::Unit,
-        #[static_field]
-        #[rename(name = "s_LinkDics")]
-        pub s_link_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::goddata::GodData,
-        >,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_Flags.md"))]
     #[repr(C)]
     #[derive(
@@ -223,6 +153,76 @@ mod __types {
         pub fn summon() -> Self {
             Self { value: 9 }
         }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goddata/GodData_RelianceLevel.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GodData_RelianceLevel {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GodData_RelianceLevel {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GodData.RelianceLevel";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GodData_RelianceLevel {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GodData_RelianceLevel {
+        pub fn d() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn c() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn b() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn a() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn s() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData.md"))]
+    #[::unity2::class(namespace = "App", name = "GodData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: goddata :: GodData >)]
+    pub struct GodData {
+        #[rename(name = "m_EngageHauntUnit")]
+        pub m_engage_haunt_unit: crate::app::unit::Unit,
+        #[static_field]
+        #[rename(name = "s_LinkDics")]
+        pub s_link_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::goddata::GodData,
+        >,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/goddata/GodData_FlagField.md"))]
@@ -6841,6 +6841,7 @@ impl GodData_FlagField {
 }
 
 #[cfg(feature = "app-goddata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodData;
     pub use super::GodData_AIEngageAttackTypes;

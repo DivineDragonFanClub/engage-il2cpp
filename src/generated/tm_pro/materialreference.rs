@@ -396,6 +396,7 @@ impl MaterialReference {
 }
 
 #[cfg(feature = "tm_pro-materialreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MaterialReference;
     pub use crate::system::object::IObject;

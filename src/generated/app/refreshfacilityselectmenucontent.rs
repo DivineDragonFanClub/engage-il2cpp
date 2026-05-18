@@ -294,6 +294,7 @@ impl RefreshFacilitySelectMenuContent {
 }
 
 #[cfg(feature = "app-refreshfacilityselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshFacilitySelectMenuContent;
     pub use super::IRefreshFacilitySelectMenuContentMethods;

@@ -1103,6 +1103,7 @@ impl BitArray128 {
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarray128")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BitArray128;
     pub use crate::system::object::IObject;

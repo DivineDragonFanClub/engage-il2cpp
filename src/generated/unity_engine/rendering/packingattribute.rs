@@ -339,6 +339,7 @@ impl PackingAttribute {
 }
 
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPackingAttribute;
     pub use super::IPackingAttributeMethods;

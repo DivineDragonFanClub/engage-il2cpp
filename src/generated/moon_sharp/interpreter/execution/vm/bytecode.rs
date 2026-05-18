@@ -2907,6 +2907,7 @@ impl ByteCode {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ByteCode;
     pub use super::ByteCode_SourceCodeStackGuard;

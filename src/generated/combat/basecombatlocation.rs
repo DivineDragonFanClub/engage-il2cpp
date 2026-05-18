@@ -5861,6 +5861,7 @@ impl BaseCombatLocation {
 }
 
 #[cfg(feature = "combat-basecombatlocation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseCombatLocation;
     pub use super::IBaseCombatLocation;

@@ -321,6 +321,7 @@ impl RendererListHandle {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendererlisthandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RendererListHandle;
     pub use crate::system::object::IObject;

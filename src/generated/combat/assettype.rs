@@ -134,6 +134,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "combat-assettype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssetType;
     pub use crate::system::object::IObject;

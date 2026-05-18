@@ -7136,6 +7136,7 @@ impl Texture2D {
 }
 
 #[cfg(feature = "unity_engine-texture2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITexture2D;
     pub use super::ITexture2DMethods;

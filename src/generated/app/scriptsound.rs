@@ -601,6 +601,7 @@ impl ScriptSound {
 }
 
 #[cfg(feature = "app-scriptsound")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptSound;
     pub use super::IScriptSoundMethods;

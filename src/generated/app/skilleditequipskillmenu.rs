@@ -872,6 +872,7 @@ impl SkillEditEquipSkillMenu {
 }
 
 #[cfg(feature = "app-skilleditequipskillmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillEditEquipSkillMenu;
     pub use super::ISkillEditEquipSkillMenuMethods;

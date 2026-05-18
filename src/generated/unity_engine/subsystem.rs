@@ -98,6 +98,7 @@ impl Subsystem {
 }
 
 #[cfg(feature = "unity_engine-subsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISubsystem;
     pub use super::ISubsystemMethods;

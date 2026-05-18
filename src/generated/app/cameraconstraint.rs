@@ -222,6 +222,7 @@ impl CameraConstraint {
 }
 
 #[cfg(feature = "app-cameraconstraint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraConstraint;
     pub use super::ICameraConstraint;

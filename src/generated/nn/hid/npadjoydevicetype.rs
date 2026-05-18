@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadjoydevicetype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadJoyDeviceType;
     pub use crate::system::object::IObject;

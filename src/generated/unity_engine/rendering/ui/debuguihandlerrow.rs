@@ -222,6 +222,7 @@ impl DebugUIHandlerRow {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerrow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerRow;
     pub use super::IDebugUIHandlerRow;

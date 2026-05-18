@@ -268,6 +268,7 @@ impl GameMessageOpen {
 }
 
 #[cfg(feature = "root-gamemessageopen")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameMessageOpen;
     pub use super::IGameMessageOpen;

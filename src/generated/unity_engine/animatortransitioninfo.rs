@@ -48,6 +48,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-animatortransitioninfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorTransitionInfo;
     pub use crate::system::object::IObject;

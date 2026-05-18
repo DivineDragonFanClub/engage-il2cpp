@@ -1073,6 +1073,7 @@ impl ValueTypeDefaultCtorMemberDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IValueTypeDefaultCtorMemberDescriptor;
     pub use super::IValueTypeDefaultCtorMemberDescriptorMethods;

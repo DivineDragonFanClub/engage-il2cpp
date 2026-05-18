@@ -652,6 +652,7 @@ impl AkSoundEngineController {
 }
 
 #[cfg(feature = "root-aksoundenginecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSoundEngineController;
     pub use super::IAkSoundEngineController;

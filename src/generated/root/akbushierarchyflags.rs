@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akbushierarchyflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBusHierarchyFlags;
     pub use crate::system::object::IObject;

@@ -18,6 +18,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-resource_management-util-ioperationcachekey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIOperationCacheKey;
     pub use super::IOperationCacheKey;

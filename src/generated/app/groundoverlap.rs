@@ -280,6 +280,7 @@ impl GroundOverlap {
 }
 
 #[cfg(feature = "app-groundoverlap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GroundOverlap;
     pub use super::IGroundOverlap;

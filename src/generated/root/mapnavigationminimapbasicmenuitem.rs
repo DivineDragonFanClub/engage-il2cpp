@@ -295,6 +295,7 @@ impl MapNavigationMiniMapBasicMenuItem {
 }
 
 #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationMiniMapBasicMenuItem;
     pub use super::IMapNavigationMiniMapBasicMenuItemMethods;

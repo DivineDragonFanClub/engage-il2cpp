@@ -724,6 +724,7 @@ impl InterpolatorRotationCurve {
 }
 
 #[cfg(feature = "app-interpolatorrotationcurve")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorRotationCurve;
     pub use super::IInterpolatorRotationCurveMethods;

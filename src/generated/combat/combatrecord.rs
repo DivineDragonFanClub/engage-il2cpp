@@ -3574,6 +3574,7 @@ impl CombatRecord {
 }
 
 #[cfg(feature = "combat-combatrecord")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CombatRecord;
     pub use super::ICombatRecord;

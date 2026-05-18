@@ -550,6 +550,7 @@ impl SortieEntrustEnumExtension {
 }
 
 #[cfg(feature = "app-sortieentrustenumextension")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISortieEntrustEnumExtension;
     pub use super::SortieEntrustEnumExtension;

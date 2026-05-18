@@ -82,6 +82,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-clipcaps")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClipCaps;
     pub use crate::system::object::IObject;

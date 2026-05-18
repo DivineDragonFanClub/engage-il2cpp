@@ -60,6 +60,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "tm_pro-tmp_lineinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_LineInfo;
     pub use crate::system::object::IObject;

@@ -469,6 +469,7 @@ impl SphereCollider {
 }
 
 #[cfg(feature = "unity_engine-spherecollider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISphereCollider;
     pub use super::ISphereColliderMethods;

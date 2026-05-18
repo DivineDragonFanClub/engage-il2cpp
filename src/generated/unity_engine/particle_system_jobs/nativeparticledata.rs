@@ -91,6 +91,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particle_system_jobs-nativeparticledata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NativeParticleData;
     pub use super::NativeParticleData_Array3;

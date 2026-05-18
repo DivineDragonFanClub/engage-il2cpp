@@ -436,6 +436,7 @@ impl DynamicResourceLocator {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-dynamicresourcelocator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicResourceLocator;
     pub use super::IDynamicResourceLocator;

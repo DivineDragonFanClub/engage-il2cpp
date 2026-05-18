@@ -1032,6 +1032,7 @@ impl GodSelectRoot {
 }
 
 #[cfg(feature = "app-godselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodSelectRoot;
     pub use super::IGodSelectRoot;

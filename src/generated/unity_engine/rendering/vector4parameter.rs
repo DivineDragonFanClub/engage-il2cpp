@@ -200,6 +200,7 @@ impl Vector4Parameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-vector4parameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVector4Parameter;
     pub use super::IVector4ParameterMethods;

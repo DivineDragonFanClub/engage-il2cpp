@@ -407,6 +407,7 @@ impl CharacterIKFoot {
 }
 
 #[cfg(feature = "combat-characterikfoot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterIKFoot;
     pub use super::ICharacterIKFoot;

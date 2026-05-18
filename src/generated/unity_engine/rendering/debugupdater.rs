@@ -153,6 +153,7 @@ impl DebugUpdater {
 }
 
 #[cfg(feature = "unity_engine-rendering-debugupdater")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUpdater;
     pub use super::IDebugUpdater;

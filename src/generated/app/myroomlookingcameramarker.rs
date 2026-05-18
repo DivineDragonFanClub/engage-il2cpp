@@ -165,6 +165,7 @@ impl MyRoomLookingCameraMarker {
 }
 
 #[cfg(feature = "app-myroomlookingcameramarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomLookingCameraMarker;
     pub use super::IMyRoomLookingCameraMarkerMethods;

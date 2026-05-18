@@ -96,6 +96,7 @@ pub trait IIDragHandlerMethods: IIDragHandler {
 impl<__T: IIDragHandler> IIDragHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-idraghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDragHandler;
     pub use super::IIDragHandler;

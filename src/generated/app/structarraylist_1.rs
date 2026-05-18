@@ -59,6 +59,7 @@ impl<T0: ::unity2::ClassIdentity> StructArrayList_1<T0> {
 }
 
 #[cfg(feature = "app-structarraylist_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructArrayList_1;
     pub use super::IStructArrayList_1Methods;

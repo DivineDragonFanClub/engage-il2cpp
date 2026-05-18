@@ -1073,6 +1073,7 @@ impl RelayAwardeeData {
 }
 
 #[cfg(feature = "app-relayawardeedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayAwardeeData;
     pub use super::IRelayAwardeeDataMethods;

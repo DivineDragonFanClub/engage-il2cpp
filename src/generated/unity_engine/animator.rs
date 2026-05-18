@@ -18030,6 +18030,7 @@ impl Animator {
 }
 
 #[cfg(feature = "unity_engine-animator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Animator;
     pub use super::IAnimator;

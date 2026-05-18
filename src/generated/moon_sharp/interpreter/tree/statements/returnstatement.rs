@@ -287,6 +287,7 @@ impl ReturnStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-returnstatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReturnStatement;
     pub use super::IReturnStatementMethods;

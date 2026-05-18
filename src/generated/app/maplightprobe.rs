@@ -111,6 +111,7 @@ impl MapLightProbe {
 }
 
 #[cfg(feature = "app-maplightprobe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapLightProbe;
     pub use super::IMapLightProbeMethods;

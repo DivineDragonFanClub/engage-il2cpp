@@ -754,6 +754,7 @@ impl CustomConvertersCollection {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomConvertersCollection;
     pub use super::ICustomConvertersCollection;

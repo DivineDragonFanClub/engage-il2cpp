@@ -577,6 +577,7 @@ impl SpriteState {
 }
 
 #[cfg(feature = "unity_engine-ui-spritestate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SpriteState;
     pub use crate::system::object::IObject;

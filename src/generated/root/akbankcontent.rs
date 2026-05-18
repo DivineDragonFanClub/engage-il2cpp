@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akbankcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBankContent;
     pub use crate::system::object::IObject;

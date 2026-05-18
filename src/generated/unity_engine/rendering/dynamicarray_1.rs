@@ -89,6 +89,7 @@ impl<T0: ::unity2::ClassIdentity> DynamicArray_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-rendering-dynamicarray_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DynamicArray_1;
     pub use super::IDynamicArray_1;

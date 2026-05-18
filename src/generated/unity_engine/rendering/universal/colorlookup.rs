@@ -269,6 +269,7 @@ impl ColorLookup {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-colorlookup")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorLookup;
     pub use super::IColorLookup;

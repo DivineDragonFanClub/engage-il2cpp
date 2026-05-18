@@ -802,6 +802,7 @@ impl Npad {
 }
 
 #[cfg(feature = "nn-hid-npad")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INpad;
     pub use super::Npad;

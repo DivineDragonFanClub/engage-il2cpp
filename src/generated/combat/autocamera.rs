@@ -610,6 +610,7 @@ impl AutoCamera {
 }
 
 #[cfg(feature = "combat-autocamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AutoCamera;
     pub use super::IAutoCamera;

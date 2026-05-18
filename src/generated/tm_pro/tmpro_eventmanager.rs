@@ -857,6 +857,7 @@ impl TMPro_EventManager {
 }
 
 #[cfg(feature = "tm_pro-tmpro_eventmanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMPro_EventManager;
     pub use super::TMPro_EventManager;

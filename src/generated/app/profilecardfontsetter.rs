@@ -13,6 +13,30 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfontsetter/ProfileCardFontSetter.md"))]
+    #[::unity2::class(namespace = "App", name = "ProfileCardFontSetter")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ProfileCardFontSetter {
+        #[rename(name = "m_Text")]
+        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TalkSDF")]
+        pub m_talk_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_TalkOutlineMaterial")]
+        pub m_talk_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_TalkProfileUserNameSDF")]
+        pub m_talk_profile_user_name_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_TalkProfileOutlineMaterial")]
+        pub m_talk_profile_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_SystemProfileCommentSDF")]
+        pub m_system_profile_comment_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        #[rename(name = "m_SystemOutlineMaterial")]
+        pub m_system_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_SystemCNOutlineMaterial")]
+        pub m_system_cn_outline_material: crate::unity_engine::material::Material,
+        #[rename(name = "m_FontType")]
+        pub m_font_type: crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardfontsetter/ProfileCardFontSetter_FontType.md"))]
     #[repr(C)]
     #[derive(
@@ -59,30 +83,6 @@ mod __types {
         pub fn system_profile() -> Self {
             Self { value: 2 }
         }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfontsetter/ProfileCardFontSetter.md"))]
-    #[::unity2::class(namespace = "App", name = "ProfileCardFontSetter")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct ProfileCardFontSetter {
-        #[rename(name = "m_Text")]
-        pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_TalkSDF")]
-        pub m_talk_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_TalkOutlineMaterial")]
-        pub m_talk_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_TalkProfileUserNameSDF")]
-        pub m_talk_profile_user_name_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_TalkProfileOutlineMaterial")]
-        pub m_talk_profile_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_SystemProfileCommentSDF")]
-        pub m_system_profile_comment_sdf: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-        #[rename(name = "m_SystemOutlineMaterial")]
-        pub m_system_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_SystemCNOutlineMaterial")]
-        pub m_system_cn_outline_material: crate::unity_engine::material::Material,
-        #[rename(name = "m_FontType")]
-        pub m_font_type: crate::app::profilecardfontsetter::ProfileCardFontSetter_FontType,
     }
 }
 
@@ -373,6 +373,7 @@ impl ProfileCardFontSetter {
 }
 
 #[cfg(feature = "app-profilecardfontsetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProfileCardFontSetter;
     pub use super::IProfileCardFontSetterMethods;

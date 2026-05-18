@@ -227,6 +227,7 @@ impl HelpItemEquipItem {
 }
 
 #[cfg(feature = "app-helpitemequipitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemEquipItem;
     pub use super::IHelpItemEquipItem;

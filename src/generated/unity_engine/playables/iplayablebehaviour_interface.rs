@@ -602,6 +602,7 @@ pub trait IIPlayableBehaviour_InterfaceMethods: IIPlayableBehaviour_Interface {
 impl<__T: IIPlayableBehaviour_Interface> IIPlayableBehaviour_InterfaceMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlayableBehaviour_Interface;
     pub use super::IIPlayableBehaviour_InterfaceMethods;

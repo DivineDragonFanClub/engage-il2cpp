@@ -2484,6 +2484,7 @@ impl BinPrjFile {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binprjfile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinPrjFile;
     pub use super::IBinPrjFile;

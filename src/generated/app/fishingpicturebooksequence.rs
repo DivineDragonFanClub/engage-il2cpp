@@ -631,6 +631,7 @@ impl FishingPictureBookSequence {
 }
 
 #[cfg(feature = "app-fishingpicturebooksequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FishingPictureBookSequence;
     pub use super::FishingPictureBookSequence_Label;

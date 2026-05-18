@@ -176,6 +176,7 @@ impl GoldGainSequence {
 }
 
 #[cfg(feature = "app-goldgainsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GoldGainSequence;
     pub use super::IGoldGainSequence;

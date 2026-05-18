@@ -5648,6 +5648,7 @@ impl UniversalRenderPipelineAsset {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUniversalRenderPipelineAsset;
     pub use super::IUniversalRenderPipelineAssetMethods;

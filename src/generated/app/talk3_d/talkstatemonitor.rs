@@ -679,6 +679,7 @@ impl TalkStateMonitor {
 }
 
 #[cfg(feature = "app-talk3_d-talkstatemonitor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkStateMonitor;
     pub use super::ITalkStateMonitorMethods;

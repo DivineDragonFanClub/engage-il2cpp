@@ -2906,6 +2906,7 @@ impl HubCamera {
 }
 
 #[cfg(feature = "app-hubcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCamera;
     pub use super::IHubCamera;

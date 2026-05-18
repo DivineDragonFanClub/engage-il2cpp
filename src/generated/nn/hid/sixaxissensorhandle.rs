@@ -41,6 +41,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-sixaxissensorhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SixAxisSensorHandle;
     pub use crate::system::object::IObject;

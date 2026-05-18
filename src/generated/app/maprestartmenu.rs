@@ -387,6 +387,7 @@ impl MapRestartMenu_ConfirmRestartItemYes {
 }
 
 #[cfg(feature = "app-maprestartmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapRestartMenu;
     pub use super::IMapRestartMenuMethods;

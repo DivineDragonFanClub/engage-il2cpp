@@ -102,6 +102,7 @@ impl WindSampler {
 }
 
 #[cfg(feature = "root-windsampler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWindSampler;
     pub use super::IWindSamplerMethods;

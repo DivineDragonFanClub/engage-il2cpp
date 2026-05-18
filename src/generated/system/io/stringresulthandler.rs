@@ -253,6 +253,7 @@ impl StringResultHandler {
 }
 
 #[cfg(feature = "system-io-stringresulthandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringResultHandler;
     pub use super::IStringResultHandlerMethods;

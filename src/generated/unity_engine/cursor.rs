@@ -77,6 +77,7 @@ impl Cursor {
 }
 
 #[cfg(feature = "unity_engine-cursor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Cursor;
     pub use super::ICursor;

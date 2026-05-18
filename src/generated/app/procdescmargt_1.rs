@@ -54,6 +54,7 @@ impl<T0: ::unity2::ClassIdentity> ProcDescMArgT_1<T0> {
 }
 
 #[cfg(feature = "app-procdescmargt_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcDescMArgT_1;
     pub use super::IProcDescMArgT_1Methods;

@@ -250,6 +250,7 @@ impl RelayWdwPlayerList {
 }
 
 #[cfg(feature = "app-relaywdwplayerlist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayWdwPlayerList;
     pub use super::IRelayWdwPlayerListMethods;

@@ -2318,6 +2318,7 @@ impl RenderTextureDescriptor {
 }
 
 #[cfg(feature = "unity_engine-rendertexturedescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderTextureDescriptor;
     pub use crate::system::object::IObject;

@@ -781,6 +781,7 @@ impl DownloadHandlerAssetBundle {
 }
 
 #[cfg(feature = "unity_engine-networking-downloadhandlerassetbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DownloadHandlerAssetBundle;
     pub use super::IDownloadHandlerAssetBundle;

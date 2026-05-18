@@ -100,6 +100,7 @@ impl Pointer {
 }
 
 #[cfg(feature = "system-reflection-pointer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPointer;
     pub use super::IPointerMethods;

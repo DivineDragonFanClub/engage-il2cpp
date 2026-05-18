@@ -219,6 +219,7 @@ impl DebugSaveDataMenu {
 }
 
 #[cfg(feature = "app-debugsavedatamenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugSaveDataMenu;
     pub use super::IDebugSaveDataMenu;

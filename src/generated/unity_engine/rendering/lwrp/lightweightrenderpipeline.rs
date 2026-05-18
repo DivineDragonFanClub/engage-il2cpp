@@ -110,6 +110,7 @@ impl LightweightRenderPipeline {
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILightweightRenderPipeline;
     pub use super::ILightweightRenderPipelineMethods;

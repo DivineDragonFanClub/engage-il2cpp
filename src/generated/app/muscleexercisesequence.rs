@@ -1428,6 +1428,7 @@ impl MuscleExerciseSequence {
 }
 
 #[cfg(feature = "app-muscleexercisesequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleExerciseSequence;
     pub use super::IMuscleExerciseSequenceMethods;

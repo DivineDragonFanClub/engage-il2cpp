@@ -916,6 +916,7 @@ impl TalkCharacterSignal {
 }
 
 #[cfg(feature = "app-talkcharactersignal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkCharacterSignal;
     pub use super::ITalkCharacterSignalMethods;

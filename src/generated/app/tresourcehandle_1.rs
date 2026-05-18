@@ -95,6 +95,7 @@ impl<T0: ::unity2::ClassIdentity> TResourceHandle_1<T0> {
 }
 
 #[cfg(feature = "app-tresourcehandle_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITResourceHandle_1;
     pub use super::ITResourceHandle_1Methods;

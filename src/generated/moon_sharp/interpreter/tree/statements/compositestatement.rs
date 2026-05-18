@@ -193,6 +193,7 @@ impl CompositeStatement {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-compositestatement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompositeStatement;
     pub use super::ICompositeStatement;

@@ -112,6 +112,7 @@ impl AssemblyTrademarkAttribute {
 }
 
 #[cfg(feature = "system-reflection-assemblytrademarkattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyTrademarkAttribute;
     pub use super::IAssemblyTrademarkAttribute;

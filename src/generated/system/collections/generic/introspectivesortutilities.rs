@@ -139,6 +139,7 @@ impl IntrospectiveSortUtilities {
 }
 
 #[cfg(feature = "system-collections-generic-introspectivesortutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIntrospectiveSortUtilities;
     pub use super::IntrospectiveSortUtilities;

@@ -707,6 +707,7 @@ impl VersusUserGlobalData {
 }
 
 #[cfg(feature = "app-versususerglobaldata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusUserGlobalData;
     pub use super::IVersusUserGlobalDataMethods;

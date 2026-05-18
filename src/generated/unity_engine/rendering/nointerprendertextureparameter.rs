@@ -130,6 +130,7 @@ impl NoInterpRenderTextureParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerprendertextureparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpRenderTextureParameter;
     pub use super::INoInterpRenderTextureParameterMethods;

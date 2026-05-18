@@ -589,6 +589,7 @@ impl MyRoomWakeupSelectMenuItemContent {
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomWakeupSelectMenuItemContent;
     pub use super::IMyRoomWakeupSelectMenuItemContentMethods;

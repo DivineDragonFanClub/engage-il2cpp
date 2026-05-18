@@ -224,6 +224,7 @@ impl PaniniProjection {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-paniniprojection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPaniniProjection;
     pub use super::IPaniniProjectionMethods;

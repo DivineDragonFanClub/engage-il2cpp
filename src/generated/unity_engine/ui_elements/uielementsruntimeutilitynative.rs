@@ -136,6 +136,7 @@ impl UIElementsRuntimeUtilityNative {
 }
 
 #[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUIElementsRuntimeUtilityNative;
     pub use super::UIElementsRuntimeUtilityNative;

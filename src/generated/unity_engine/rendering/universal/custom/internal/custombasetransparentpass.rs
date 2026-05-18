@@ -554,6 +554,7 @@ impl CustomBaseTransparentPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomBaseTransparentPass;
     pub use super::ICustomBaseTransparentPass;

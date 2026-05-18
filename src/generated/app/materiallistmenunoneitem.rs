@@ -221,6 +221,7 @@ impl MaterialListMenuNoneItem {
 }
 
 #[cfg(feature = "app-materiallistmenunoneitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialListMenuNoneItem;
     pub use super::IMaterialListMenuNoneItemMethods;

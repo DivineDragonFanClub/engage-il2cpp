@@ -114,6 +114,7 @@ impl TooltipAttribute {
 }
 
 #[cfg(feature = "unity_engine-tooltipattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITooltipAttribute;
     pub use super::ITooltipAttributeMethods;

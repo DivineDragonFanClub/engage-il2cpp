@@ -283,6 +283,7 @@ impl UnitSelectMenuContent {
 }
 
 #[cfg(feature = "app-unitselectmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectMenuContent;
     pub use super::IUnitSelectMenuContentMethods;

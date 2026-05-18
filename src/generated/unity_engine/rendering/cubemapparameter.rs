@@ -123,6 +123,7 @@ impl CubemapParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-cubemapparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CubemapParameter;
     pub use super::ICubemapParameter;

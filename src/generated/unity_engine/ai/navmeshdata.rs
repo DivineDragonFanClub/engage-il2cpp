@@ -871,6 +871,7 @@ impl NavMeshData {
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INavMeshData;
     pub use super::INavMeshDataMethods;

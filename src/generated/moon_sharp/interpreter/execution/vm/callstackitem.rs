@@ -128,6 +128,7 @@ impl CallStackItem {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CallStackItem;
     pub use super::ICallStackItem;

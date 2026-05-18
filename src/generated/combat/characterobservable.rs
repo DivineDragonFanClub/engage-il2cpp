@@ -221,6 +221,7 @@ impl CharacterObservable {
 }
 
 #[cfg(feature = "combat-characterobservable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterObservable;
     pub use super::ICharacterObservable;

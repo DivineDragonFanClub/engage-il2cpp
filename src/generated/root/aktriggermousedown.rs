@@ -160,6 +160,7 @@ impl AkTriggerMouseDown {
 }
 
 #[cfg(feature = "root-aktriggermousedown")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTriggerMouseDown;
     pub use super::IAkTriggerMouseDown;

@@ -1774,6 +1774,7 @@ impl RingCleaningCloth {
 }
 
 #[cfg(feature = "app-ringcleaningcloth")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningCloth;
     pub use super::IRingCleaningClothMethods;

@@ -835,6 +835,7 @@ impl AkIterator {
 }
 
 #[cfg(feature = "root-akiterator")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkIterator;
     pub use super::IAkIterator;

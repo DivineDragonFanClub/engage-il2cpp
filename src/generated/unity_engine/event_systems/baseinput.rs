@@ -1058,6 +1058,7 @@ impl BaseInput {
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseinput")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BaseInput;
     pub use super::IBaseInput;

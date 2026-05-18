@@ -163,6 +163,7 @@ impl CinemachineShotPlayable {
 }
 
 #[cfg(feature = "root-cinemachineshotplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CinemachineShotPlayable;
     pub use super::ICinemachineShotPlayable;

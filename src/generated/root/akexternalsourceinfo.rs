@@ -1613,6 +1613,7 @@ impl AkExternalSourceInfo {
 }
 
 #[cfg(feature = "root-akexternalsourceinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkExternalSourceInfo;
     pub use super::IAkExternalSourceInfo;

@@ -678,6 +678,7 @@ impl PersistentCall {
 }
 
 #[cfg(feature = "unity_engine-events-persistentcall")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPersistentCall;
     pub use super::IPersistentCallMethods;

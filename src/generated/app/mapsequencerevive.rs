@@ -1192,6 +1192,7 @@ impl MapSequenceRevive {
 }
 
 #[cfg(feature = "app-mapsequencerevive")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceRevive;
     pub use super::IMapSequenceReviveMethods;

@@ -859,6 +859,7 @@ impl SendItemRoot {
 }
 
 #[cfg(feature = "app-senditemroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISendItemRoot;
     pub use super::ISendItemRootMethods;

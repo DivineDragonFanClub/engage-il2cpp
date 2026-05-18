@@ -81,6 +81,7 @@ impl<T0: ::unity2::ClassIdentity> RenderGraphPass_1<T0> {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphPass_1;
     pub use super::IRenderGraphPass_1Methods;

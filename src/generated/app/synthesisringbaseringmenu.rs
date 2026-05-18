@@ -1448,6 +1448,7 @@ impl SynthesisRingBaseRingMenu_CloseEventHandler {
 }
 
 #[cfg(feature = "app-synthesisringbaseringmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISynthesisRingBaseRingMenu;
     pub use super::ISynthesisRingBaseRingMenuMethods;

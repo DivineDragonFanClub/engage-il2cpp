@@ -748,6 +748,7 @@ impl DishResultDialogContent {
 }
 
 #[cfg(feature = "app-dishresultdialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DishResultDialogContent;
     pub use super::IDishResultDialogContent;

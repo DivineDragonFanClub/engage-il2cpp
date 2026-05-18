@@ -426,6 +426,7 @@ impl EventPictureController {
 }
 
 #[cfg(feature = "app-eventpicturecontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventPictureController;
     pub use super::IEventPictureController;

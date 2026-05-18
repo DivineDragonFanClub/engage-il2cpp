@@ -1680,6 +1680,7 @@ impl FontData {
 }
 
 #[cfg(feature = "unity_engine-ui-fontdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FontData;
     pub use super::IFontData;

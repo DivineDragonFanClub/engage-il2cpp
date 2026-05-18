@@ -163,6 +163,7 @@ impl WwiseEventReference {
 }
 
 #[cfg(feature = "root-wwiseeventreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseEventReference;
     pub use super::IWwiseEventReferenceMethods;

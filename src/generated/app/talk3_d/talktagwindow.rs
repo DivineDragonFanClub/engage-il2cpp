@@ -477,6 +477,7 @@ impl TalkTagWindow {
 }
 
 #[cfg(feature = "app-talk3_d-talktagwindow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagWindow;
     pub use super::ITalkTagWindowMethods;

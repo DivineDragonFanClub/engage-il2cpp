@@ -107,6 +107,7 @@ impl NpadJoyDualState {
 }
 
 #[cfg(feature = "nn-hid-npadjoydualstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadJoyDualState;
     pub use crate::system::object::IObject;

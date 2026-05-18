@@ -133,6 +133,7 @@ impl CustomAttributeExtensions {
 }
 
 #[cfg(feature = "system-reflection-customattributeextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomAttributeExtensions;
     pub use super::ICustomAttributeExtensions;

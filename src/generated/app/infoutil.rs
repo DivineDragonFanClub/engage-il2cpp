@@ -3874,6 +3874,7 @@ impl InfoUtil {
 }
 
 #[cfg(feature = "app-infoutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInfoUtil;
     pub use super::IInfoUtilMethods;

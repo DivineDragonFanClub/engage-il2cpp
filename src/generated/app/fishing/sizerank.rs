@@ -78,6 +78,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-fishing-sizerank")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SizeRank;
     pub use crate::system::object::IObject;

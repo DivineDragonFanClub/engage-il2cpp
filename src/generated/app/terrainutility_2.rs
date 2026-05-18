@@ -164,6 +164,7 @@ impl TerrainUtility_2 {
 }
 
 #[cfg(feature = "app-terrainutility_2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainUtility_2;
     pub use super::ITerrainUtility_2Methods;

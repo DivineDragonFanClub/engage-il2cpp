@@ -275,6 +275,7 @@ impl AkDragDropTriggerHandler {
 }
 
 #[cfg(feature = "root-akdragdroptriggerhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkDragDropTriggerHandler;
     pub use super::IAkDragDropTriggerHandler;

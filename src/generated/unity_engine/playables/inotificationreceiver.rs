@@ -104,6 +104,7 @@ pub trait IINotificationReceiverMethods: IINotificationReceiver {
 impl<__T: IINotificationReceiver> IINotificationReceiverMethods for __T {}
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IINotificationReceiver;
     pub use super::IINotificationReceiverMethods;

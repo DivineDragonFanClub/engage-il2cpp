@@ -382,6 +382,7 @@ impl ReflectionSpecialName {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-reflectionspecialname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ReflectionSpecialName;
     pub use crate::system::object::IObject;

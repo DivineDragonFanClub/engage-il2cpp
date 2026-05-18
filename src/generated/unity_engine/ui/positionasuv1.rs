@@ -172,6 +172,7 @@ impl PositionAsUV1 {
 }
 
 #[cfg(feature = "unity_engine-ui-positionasuv1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPositionAsUV1;
     pub use super::IPositionAsUV1Methods;

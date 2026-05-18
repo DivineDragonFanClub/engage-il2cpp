@@ -582,6 +582,7 @@ impl MapNavigationRoot {
 }
 
 #[cfg(feature = "root-mapnavigationroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationRoot;
     pub use super::IMapNavigationRootMethods;

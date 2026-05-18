@@ -247,6 +247,7 @@ impl RenderGraphDebugParams {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphDebugParams;
     pub use super::IRenderGraphDebugParamsMethods;

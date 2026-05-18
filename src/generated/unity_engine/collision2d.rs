@@ -277,6 +277,7 @@ pub trait ICollision2DMethods: ICollision2D {
 impl<__T: ICollision2D> ICollision2DMethods for __T {}
 
 #[cfg(feature = "unity_engine-collision2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Collision2D;
     pub use super::ICollision2D;

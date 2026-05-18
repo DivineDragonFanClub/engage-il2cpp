@@ -217,6 +217,7 @@ impl AccessoryBlankMenuItem {
 }
 
 #[cfg(feature = "app-accessoryblankmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryBlankMenuItem;
     pub use super::IAccessoryBlankMenuItem;

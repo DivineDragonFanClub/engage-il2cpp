@@ -527,6 +527,7 @@ impl StringRange {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-string_lib-stringrange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringRange;
     pub use super::IStringRangeMethods;

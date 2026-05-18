@@ -107,6 +107,7 @@ impl NpadJoyLeftState {
 }
 
 #[cfg(feature = "nn-hid-npadjoyleftstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadJoyLeftState;
     pub use crate::system::object::IObject;

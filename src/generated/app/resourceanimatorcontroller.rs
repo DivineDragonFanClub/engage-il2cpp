@@ -104,6 +104,7 @@ impl ResourceAnimatorController {
 }
 
 #[cfg(feature = "app-resourceanimatorcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceAnimatorController;
     pub use super::IResourceAnimatorControllerMethods;

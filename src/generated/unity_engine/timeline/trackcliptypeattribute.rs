@@ -198,6 +198,7 @@ impl TrackClipTypeAttribute {
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITrackClipTypeAttribute;
     pub use super::ITrackClipTypeAttributeMethods;

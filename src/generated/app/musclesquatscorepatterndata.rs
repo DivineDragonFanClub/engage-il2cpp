@@ -1521,6 +1521,7 @@ impl MuscleSquatScorePatternData {
 }
 
 #[cfg(feature = "app-musclesquatscorepatterndata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMuscleSquatScorePatternData;
     pub use super::IMuscleSquatScorePatternDataMethods;

@@ -533,6 +533,7 @@ impl VFXEventAttribute {
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVFXEventAttribute;
     pub use super::IVFXEventAttributeMethods;

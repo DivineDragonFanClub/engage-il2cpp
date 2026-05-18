@@ -106,6 +106,7 @@ impl Clipping {
 }
 
 #[cfg(feature = "unity_engine-ui-clipping")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Clipping;
     pub use super::IClipping;

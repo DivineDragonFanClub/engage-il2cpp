@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akmultipositiontype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMultiPositionType;
     pub use crate::system::object::IObject;

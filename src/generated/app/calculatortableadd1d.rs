@@ -5421,6 +5421,7 @@ impl CalculatorTableAdd1D_TableCommand {
 }
 
 #[cfg(feature = "app-calculatortableadd1d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorTableAdd1D;
     pub use super::CalculatorTableAdd1D_TableCommand;

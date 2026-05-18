@@ -830,6 +830,7 @@ impl AssemblyName {
 }
 
 #[cfg(feature = "system-reflection-assemblyname")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AssemblyName;
     pub use super::IAssemblyName;

@@ -216,6 +216,7 @@ impl ChildSuicide {
 }
 
 #[cfg(feature = "app-childsuicide")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChildSuicide;
     pub use super::IChildSuicide;

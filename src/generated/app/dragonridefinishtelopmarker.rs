@@ -165,6 +165,7 @@ impl DragonRideFinishTelopMarker {
 }
 
 #[cfg(feature = "app-dragonridefinishtelopmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideFinishTelopMarker;
     pub use super::IDragonRideFinishTelopMarker;

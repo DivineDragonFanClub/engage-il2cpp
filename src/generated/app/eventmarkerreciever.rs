@@ -345,6 +345,7 @@ impl EventMarkerReciever {
 }
 
 #[cfg(feature = "app-eventmarkerreciever")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventMarkerReciever;
     pub use super::IEventMarkerReciever;

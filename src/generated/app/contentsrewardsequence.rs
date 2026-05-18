@@ -275,6 +275,7 @@ impl ContentsRewardSequence {
 }
 
 #[cfg(feature = "app-contentsrewardsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ContentsRewardSequence;
     pub use super::IContentsRewardSequence;

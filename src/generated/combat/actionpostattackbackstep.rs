@@ -301,6 +301,7 @@ impl ActionPostAttackBackstep {
 }
 
 #[cfg(feature = "combat-actionpostattackbackstep")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionPostAttackBackstep;
     pub use super::IActionPostAttackBackstep;

@@ -270,6 +270,7 @@ impl DragonRideScore {
 }
 
 #[cfg(feature = "app-dragonridescore")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideScore;
     pub use super::IDragonRideScore;

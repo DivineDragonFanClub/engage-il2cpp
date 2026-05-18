@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-multipositiontypelabel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MultiPositionTypeLabel;
     pub use crate::system::object::IObject;

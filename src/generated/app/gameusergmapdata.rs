@@ -2073,6 +2073,7 @@ impl GameUserGmapData {
 }
 
 #[cfg(feature = "app-gameusergmapdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameUserGmapData;
     pub use super::GameUserGmapData_EncountCounterType;

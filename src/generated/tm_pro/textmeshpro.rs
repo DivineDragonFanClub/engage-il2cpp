@@ -4618,6 +4618,7 @@ impl TextMeshPro {
 }
 
 #[cfg(feature = "tm_pro-textmeshpro")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITextMeshPro;
     pub use super::ITextMeshProMethods;

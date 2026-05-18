@@ -1162,6 +1162,7 @@ impl FoodstuffPool {
 }
 
 #[cfg(feature = "app-foodstuffpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FoodstuffPool;
     pub use super::IFoodstuffPool;

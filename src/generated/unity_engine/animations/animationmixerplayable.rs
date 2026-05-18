@@ -620,6 +620,7 @@ impl AnimationMixerPlayable {
 }
 
 #[cfg(feature = "unity_engine-animations-animationmixerplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationMixerPlayable;
     pub use crate::system::object::IObject;

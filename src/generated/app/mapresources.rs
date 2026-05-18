@@ -215,6 +215,7 @@ impl MapResources {
 }
 
 #[cfg(feature = "app-mapresources")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapResources;
     pub use super::IMapResourcesMethods;

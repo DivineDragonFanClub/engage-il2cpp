@@ -216,6 +216,7 @@ impl SignalArgsReaderWriter_AttackRange {
 }
 
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISignalArgsReaderWriter_AttackRange;
     pub use super::SignalArgsReaderWriter_AttackRange;

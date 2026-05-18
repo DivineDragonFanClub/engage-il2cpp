@@ -394,6 +394,7 @@ impl VersusUtil {
 }
 
 #[cfg(feature = "app-versusutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusUtil;
     pub use super::IVersusUtilMethods;

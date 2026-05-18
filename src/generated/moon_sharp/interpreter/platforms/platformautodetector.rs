@@ -880,6 +880,7 @@ impl PlatformAutoDetector {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-platformautodetector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlatformAutoDetector;
     pub use super::PlatformAutoDetector;

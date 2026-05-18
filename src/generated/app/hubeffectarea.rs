@@ -258,6 +258,7 @@ impl HubEffectArea {
 }
 
 #[cfg(feature = "app-hubeffectarea")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubEffectArea;
     pub use super::IHubEffectArea;

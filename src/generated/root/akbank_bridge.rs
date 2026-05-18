@@ -155,6 +155,7 @@ impl AkBank_Bridge {
 }
 
 #[cfg(feature = "root-akbank_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBank_Bridge;
     pub use super::IAkBank_Bridge;

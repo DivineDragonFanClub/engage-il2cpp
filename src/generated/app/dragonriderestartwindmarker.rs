@@ -165,6 +165,7 @@ impl DragonRideRestartWindMarker {
 }
 
 #[cfg(feature = "app-dragonriderestartwindmarker")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideRestartWindMarker;
     pub use super::IDragonRideRestartWindMarker;

@@ -400,6 +400,7 @@ impl TMP_ResourceManager {
 }
 
 #[cfg(feature = "tm_pro-tmp_resourcemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_ResourceManager;
     pub use super::ITMP_ResourceManagerMethods;

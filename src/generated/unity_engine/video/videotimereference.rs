@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-video-videotimereference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VideoTimeReference;
     pub use crate::system::object::IObject;

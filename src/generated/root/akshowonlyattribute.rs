@@ -102,6 +102,7 @@ impl AkShowOnlyAttribute {
 }
 
 #[cfg(feature = "root-akshowonlyattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkShowOnlyAttribute;
     pub use super::IAkShowOnlyAttribute;

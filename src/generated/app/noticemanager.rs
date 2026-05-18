@@ -781,6 +781,7 @@ impl NoticeManager {
 }
 
 #[cfg(feature = "app-noticemanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoticeManager;
     pub use super::INoticeManagerMethods;

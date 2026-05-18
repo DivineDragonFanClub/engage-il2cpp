@@ -106,6 +106,7 @@ impl DebugUIPrefabBundle {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIPrefabBundle;
     pub use super::IDebugUIPrefabBundle;

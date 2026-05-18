@@ -172,6 +172,7 @@ impl UnityException {
 }
 
 #[cfg(feature = "unity_engine-unityexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnityException;
     pub use super::IUnityExceptionMethods;

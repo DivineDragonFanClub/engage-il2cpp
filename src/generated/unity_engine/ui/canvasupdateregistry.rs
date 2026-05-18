@@ -1175,6 +1175,7 @@ impl CanvasUpdateRegistry {
 }
 
 #[cfg(feature = "unity_engine-ui-canvasupdateregistry")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasUpdateRegistry;
     pub use super::ICanvasUpdateRegistry;

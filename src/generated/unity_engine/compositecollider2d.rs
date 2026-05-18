@@ -287,6 +287,7 @@ pub trait ICompositeCollider2DMethods: ICompositeCollider2D {
 impl<__T: ICompositeCollider2D> ICompositeCollider2DMethods for __T {}
 
 #[cfg(feature = "unity_engine-compositecollider2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompositeCollider2D;
     pub use super::ICompositeCollider2D;

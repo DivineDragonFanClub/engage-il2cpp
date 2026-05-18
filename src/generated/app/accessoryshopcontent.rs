@@ -106,6 +106,7 @@ impl AccessoryShopContent {
 }
 
 #[cfg(feature = "app-accessoryshopcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AccessoryShopContent;
     pub use super::IAccessoryShopContent;

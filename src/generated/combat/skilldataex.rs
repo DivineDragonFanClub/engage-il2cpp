@@ -262,6 +262,7 @@ impl SkillDataEx {
 }
 
 #[cfg(feature = "combat-skilldataex")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillDataEx;
     pub use super::SkillDataEx;

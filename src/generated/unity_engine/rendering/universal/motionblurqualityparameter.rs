@@ -129,6 +129,7 @@ impl MotionBlurQualityParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMotionBlurQualityParameter;
     pub use super::IMotionBlurQualityParameterMethods;

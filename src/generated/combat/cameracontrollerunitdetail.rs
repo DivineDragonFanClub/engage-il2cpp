@@ -442,6 +442,7 @@ impl CameraControllerUnitDetail {
 }
 
 #[cfg(feature = "combat-cameracontrollerunitdetail")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraControllerUnitDetail;
     pub use super::ICameraControllerUnitDetail;

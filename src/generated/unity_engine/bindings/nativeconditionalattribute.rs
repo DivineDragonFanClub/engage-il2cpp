@@ -397,6 +397,7 @@ impl NativeConditionalAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeconditionalattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeConditionalAttribute;
     pub use super::INativeConditionalAttributeMethods;

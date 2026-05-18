@@ -500,6 +500,7 @@ impl RingCleaningConditionIcon {
 }
 
 #[cfg(feature = "app-ringcleaningconditionicon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningConditionIcon;
     pub use super::IRingCleaningConditionIconMethods;

@@ -539,6 +539,7 @@ impl EventFacade {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventFacade;
     pub use super::IEventFacade;

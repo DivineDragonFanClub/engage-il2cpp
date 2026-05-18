@@ -271,6 +271,7 @@ impl UnitInfoWindowStateMachine {
 }
 
 #[cfg(feature = "root-unitinfowindowstatemachine")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoWindowStateMachine;
     pub use super::IUnitInfoWindowStateMachineMethods;

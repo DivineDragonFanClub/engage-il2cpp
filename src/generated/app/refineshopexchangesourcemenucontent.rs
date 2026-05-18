@@ -620,6 +620,7 @@ impl RefineShopExchangeSourceMenuContent {
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopExchangeSourceMenuContent;
     pub use super::IRefineShopExchangeSourceMenuContentMethods;

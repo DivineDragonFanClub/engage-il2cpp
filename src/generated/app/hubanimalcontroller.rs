@@ -358,6 +358,7 @@ impl HubAnimalController {
 }
 
 #[cfg(feature = "app-hubanimalcontroller")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubAnimalController;
     pub use super::IHubAnimalController;

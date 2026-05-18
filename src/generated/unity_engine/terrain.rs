@@ -577,6 +577,7 @@ impl Terrain {
 }
 
 #[cfg(feature = "unity_engine-terrain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrain;
     pub use super::ITerrainMethods;

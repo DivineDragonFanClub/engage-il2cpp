@@ -335,6 +335,7 @@ impl TransparentSettingsPass {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITransparentSettingsPass;
     pub use super::ITransparentSettingsPassMethods;

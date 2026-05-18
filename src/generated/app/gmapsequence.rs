@@ -19,227 +19,6 @@ mod __types {
     use crate::unity_engine::object_2::{IObject_2, Object_2};
     use ::unity2::prelude::*;
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapWholeMapSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapWholeMapSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapWholeMapSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapWholeMapSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapWholeMapSequence_Label {
-        pub fn end() -> Self {
-            Self { value: 0 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_EnterChapterSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.EnterChapterSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_EnterChapterSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_EnterChapterSequence_Label {
-        pub fn talk() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn dialog() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.EnterChapterSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_EnterChapterSequence {
-        #[static_field]
-        #[rename(name = "TalkFlagNameM010")]
-        pub talk_flag_name_m010: ::unity2::Il2CppString,
-        #[rename(name = "m_NowSpot")]
-        pub m_now_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_Type")]
-        pub m_type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler: crate::system::action::Action,
-        #[rename(name = "m_DecideEventHandler2")]
-        pub m_decide_event_handler2: crate::system::action::Action,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapSequence.GmapFreeCameraSequence.DirFlagField"
-    )]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag >)]
-    pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapDisposeSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_GmapDisposeSequence {
-        #[rename(name = "m_DisposSpot")]
-        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapTeleportSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapTeleportSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_GmapTeleportSequence {
-        #[rename(name = "m_Destination")]
-        pub m_destination: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_IsClosed")]
-        pub m_is_closed: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence")]
-    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: gmapsequence :: GmapSequence >)]
-    pub struct GmapSequence {
-        #[rename(name = "m_NowSpot")]
-        pub m_now_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_ChangingSpot")]
-        pub m_changing_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_ChangingPath")]
-        pub m_changing_path: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DisposSpot")]
-        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_GmapCamera")]
-        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
-        #[rename(name = "m_PathController")]
-        pub m_path_controller: crate::app::gmapcinemachinecontroller::GmapCinemachineController,
-        #[rename(name = "m_VirtualSphere")]
-        pub m_virtual_sphere: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_WholeMap")]
-        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
-        #[rename(name = "m_MapInfo")]
-        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
-        #[rename(name = "m_EncountIconRoot")]
-        pub m_encount_icon_root: crate::root::encounticonroot::EncountIconRoot,
-        #[rename(name = "m_IsMoveForward")]
-        pub m_is_move_forward: bool,
-        #[rename(name = "m_NextSpot")]
-        pub m_next_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_PrevSpot")]
-        pub m_prev_spot: crate::app::gmapspot::GmapSpot,
-        #[rename(name = "m_Paths")]
-        pub m_paths: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_PathCollection")]
-        pub m_path_collection: crate::app::gmap::gmappathcollection::GmapPathCollection,
-        #[rename(name = "m_AutoMoveRoutes")]
-        pub m_auto_move_routes:
-            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_AppearedSpotList")]
-        pub m_appeared_spot_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
-        #[rename(name = "m_IsAppearedEncount")]
-        pub m_is_appeared_encount: bool,
-        #[rename(name = "m_EffectParent")]
-        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "AppearLineEffectPath")]
-        pub appear_line_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "AppearSymbolEffectPath")]
-        pub appear_symbol_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "AppearSpotEffectPath")]
-        pub appear_spot_effect_path: ::unity2::Il2CppString,
-        #[rename(name = "m_AppearLineEffect")]
-        pub m_appear_line_effect: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IsInitialized")]
-        pub m_is_initialized: bool,
-        #[rename(name = "m_IsSkipping")]
-        pub m_is_skipping: bool,
-        #[rename(name = "m_CinemaScope")]
-        pub m_cinema_scope: crate::app::gmapcinemascope::GmapCinemaScope,
-        #[rename(name = "m_DlcPathHandle")]
-        pub m_dlc_path_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_DlcSpotHandle")]
-        pub m_dlc_spot_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_DlcPath")]
-        pub m_dlc_path: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_DlcSpot")]
-        pub m_dlc_spot: crate::unity_engine::gameobject::GameObject,
-        #[static_field]
-        #[rename(name = "PathLengthMainToGod")]
-        pub path_length_main_to_god: f32,
-        #[static_field]
-        #[rename(name = "PathLengthGodToMain")]
-        pub path_length_god_to_main: f32,
-        #[rename(name = "m_IsEncountAppearOfMain")]
-        pub m_is_encount_appear_of_main: bool,
-        #[rename(name = "m_IsEncountAppearOfGod")]
-        pub m_is_encount_appear_of_god: bool,
-        #[rename(name = "m_IsEncountAppearOfEvil")]
-        pub m_is_encount_appear_of_evil: bool,
-        #[rename(name = "m_G002SymbolPath")]
-        pub m_g002_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G004SymbolPath")]
-        pub m_g004_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G005SymbolPath")]
-        pub m_g005_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G003SymbolPath")]
-        pub m_g003_symbol_path: ::unity2::Il2CppString,
-        #[rename(name = "m_G006SymbolPath")]
-        pub m_g006_symbol_path: ::unity2::Il2CppString,
-    }
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlag.md"))]
     #[repr(C)]
     #[derive(
@@ -289,6 +68,219 @@ mod __types {
 
         pub fn down() -> Self {
             Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.EnterChapterSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_EnterChapterSequence {
+        #[static_field]
+        #[rename(name = "TalkFlagNameM010")]
+        pub talk_flag_name_m010: ::unity2::Il2CppString,
+        #[rename(name = "m_NowSpot")]
+        pub m_now_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_Type")]
+        pub m_type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::system::action::Action,
+        #[rename(name = "m_DecideEventHandler2")]
+        pub m_decide_event_handler2: crate::system::action::Action,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapDisposeSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_GmapDisposeSequence {
+        #[rename(name = "m_DisposSpot")]
+        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapFreeCameraSequence_Dir {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Dir";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapFreeCameraSequence_Dir {
+        pub fn up() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn down() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapWholeMapSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapWholeMapSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapWholeMapSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapWholeMapSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapWholeMapSequence_Label {
+        pub fn end() -> Self {
+            Self { value: 0 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapSequence.GmapFreeCameraSequence.DirFlagField"
+    )]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag >)]
+    pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_EnterChapterSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.EnterChapterSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_EnterChapterSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_EnterChapterSequence_Label {
+        pub fn talk() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn dialog() -> Self {
+            Self { value: 1 }
+        }
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct GmapSequence_GmapFreeCameraSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Label {
+        const NAMESPACE: &'static str = "App";
+
+        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Label";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl GmapSequence_GmapFreeCameraSequence_Label {
+        pub fn end() -> Self {
+            Self { value: 0 }
         }
     }
 
@@ -400,16 +392,119 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapWholeMapSequence")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct GmapSequence_GmapWholeMapSequence {
-        #[rename(name = "m_WholeMap")]
-        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence")]
+    # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: gmapsequence :: GmapSequence >)]
+    pub struct GmapSequence {
+        #[rename(name = "m_NowSpot")]
+        pub m_now_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_ChangingSpot")]
+        pub m_changing_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_ChangingPath")]
+        pub m_changing_path: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DisposSpot")]
+        pub m_dispos_spot: crate::app::gmapspot::GmapSpot,
         #[rename(name = "m_GmapCamera")]
         pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
+        #[rename(name = "m_PathController")]
+        pub m_path_controller: crate::app::gmapcinemachinecontroller::GmapCinemachineController,
+        #[rename(name = "m_VirtualSphere")]
+        pub m_virtual_sphere: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_WholeMap")]
+        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
         #[rename(name = "m_MapInfo")]
         pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
+        #[rename(name = "m_EncountIconRoot")]
+        pub m_encount_icon_root: crate::root::encounticonroot::EncountIconRoot,
+        #[rename(name = "m_IsMoveForward")]
+        pub m_is_move_forward: bool,
+        #[rename(name = "m_NextSpot")]
+        pub m_next_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_PrevSpot")]
+        pub m_prev_spot: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_Paths")]
+        pub m_paths: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_PathCollection")]
+        pub m_path_collection: crate::app::gmap::gmappathcollection::GmapPathCollection,
+        #[rename(name = "m_AutoMoveRoutes")]
+        pub m_auto_move_routes:
+            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
+        #[rename(name = "m_AppearedSpotList")]
+        pub m_appeared_spot_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot>,
+        #[rename(name = "m_IsAppearedEncount")]
+        pub m_is_appeared_encount: bool,
+        #[rename(name = "m_EffectParent")]
+        pub m_effect_parent: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "AppearLineEffectPath")]
+        pub appear_line_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "AppearSymbolEffectPath")]
+        pub appear_symbol_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "AppearSpotEffectPath")]
+        pub appear_spot_effect_path: ::unity2::Il2CppString,
+        #[rename(name = "m_AppearLineEffect")]
+        pub m_appear_line_effect: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IsInitialized")]
+        pub m_is_initialized: bool,
+        #[rename(name = "m_IsSkipping")]
+        pub m_is_skipping: bool,
+        #[rename(name = "m_CinemaScope")]
+        pub m_cinema_scope: crate::app::gmapcinemascope::GmapCinemaScope,
+        #[rename(name = "m_DlcPathHandle")]
+        pub m_dlc_path_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_DlcSpotHandle")]
+        pub m_dlc_spot_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        #[rename(name = "m_DlcPath")]
+        pub m_dlc_path: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_DlcSpot")]
+        pub m_dlc_spot: crate::unity_engine::gameobject::GameObject,
+        #[static_field]
+        #[rename(name = "PathLengthMainToGod")]
+        pub path_length_main_to_god: f32,
+        #[static_field]
+        #[rename(name = "PathLengthGodToMain")]
+        pub path_length_god_to_main: f32,
+        #[rename(name = "m_IsEncountAppearOfMain")]
+        pub m_is_encount_appear_of_main: bool,
+        #[rename(name = "m_IsEncountAppearOfGod")]
+        pub m_is_encount_appear_of_god: bool,
+        #[rename(name = "m_IsEncountAppearOfEvil")]
+        pub m_is_encount_appear_of_evil: bool,
+        #[rename(name = "m_G002SymbolPath")]
+        pub m_g002_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G004SymbolPath")]
+        pub m_g004_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G005SymbolPath")]
+        pub m_g005_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G003SymbolPath")]
+        pub m_g003_symbol_path: ::unity2::Il2CppString,
+        #[rename(name = "m_G006SymbolPath")]
+        pub m_g006_symbol_path: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]
+    #[::unity2::class(
+        namespace = "App",
+        name = "GmapSequence.GmapFreeCameraSequence.SelfDestroy"
+    )]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+        #[rename(name = "m_Animator")]
+        pub m_animator: crate::unity_engine::animator::Animator,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapTeleportSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapTeleportSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_GmapTeleportSequence {
+        #[rename(name = "m_Destination")]
+        pub m_destination: crate::app::gmapspot::GmapSpot,
+        #[rename(name = "m_IsClosed")]
+        pub m_is_closed: bool,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence.md"))]
@@ -441,111 +536,16 @@ mod __types {
         pub m_camera: crate::app::gmapcamera::GmapCamera,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "GmapSequence.GmapFreeCameraSequence.SelfDestroy"
-    )]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy {
-        #[rename(name = "m_Animator")]
-        pub m_animator: crate::unity_engine::animator::Animator,
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapFreeCameraSequence_Dir {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Dir";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapFreeCameraSequence_Dir {
-        pub fn up() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn down() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 4 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct GmapSequence_GmapFreeCameraSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "GmapSequence.GmapFreeCameraSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl GmapSequence_GmapFreeCameraSequence_Label {
-        pub fn end() -> Self {
-            Self { value: 0 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "GmapSequence.GmapWholeMapSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct GmapSequence_GmapWholeMapSequence {
+        #[rename(name = "m_WholeMap")]
+        pub m_whole_map: crate::app::gmapwholemapcontroller::GmapWholeMapController,
+        #[rename(name = "m_GmapCamera")]
+        pub m_gmap_camera: crate::app::gmapcamera::GmapCamera,
+        #[rename(name = "m_MapInfo")]
+        pub m_map_info: crate::app::gmapmapinfocontent::GmapMapInfoContent,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapsequence/GmapSequence_Label.md"))]
@@ -1083,426 +1083,6 @@ impl GmapSequence_EnterChapterSequence {
             r#type,
             decide_event_handler,
         );
-        this
-    }
-}
-
-#[cfg(feature = "app-gmapsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        f: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        f: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(this, f, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_int {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_int(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        value: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_up {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestUp" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestUp" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn test_up(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_up::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_down {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestDown" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestDown" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn test_down(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_down::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_left {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestLeft" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestLeft" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn test_left(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_left::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test_right {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestRight" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestRight" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn test_right(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_right::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_test {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_Dir as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn test(
-        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
-        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_DirFlagField,
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test::get_offset() as isize),
-        );
-        inner(this, dir, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-gmapsequence")]
-pub trait IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods:
-    IGmapSequence_GmapFreeCameraSequence_DirFlagField
-{
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` overload"]
-    fn ctor_2(
-        self,
-        f: impl ::core::convert::Into<
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToInt(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
-        >,
-    ) -> i32 {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TestUp()` overload"]
-    fn test_up(self) -> bool {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_up(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TestDown()` overload"]
-    fn test_down(self) -> bool {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_down(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TestLeft()` overload"]
-    fn test_left(self) -> bool {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_left(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TestRight()` overload"]
-    fn test_right(self) -> bool {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_right(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Test(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
-    fn test(
-        self,
-        dir: impl ::core::convert::Into<
-            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
-        >,
-    ) -> bool {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test(
-                __receiver,
-                ::core::convert::Into::into(dir),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-gmapsequence")]
-impl<__T: IGmapSequence_GmapFreeCameraSequence_DirFlagField>
-    IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods for __T
-{
-}
-
-#[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapFreeCameraSequence_DirFlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_DirFlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` — overload selector"]
-    pub fn new_2(f: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_DirFlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods>::ctor_2(this, f);
         this
     }
 }
@@ -2415,412 +1995,8 @@ impl GmapSequence_GmapDisposeSequence {
 #[cfg(feature = "app-gmapsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapSequence_GmapTeleportSequence_unity2_raw {
+mod __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResources",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_resources(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_resources::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoading",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_loading(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResources",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadResources",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload_resources(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_resources::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_teleport {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "StartTeleport",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartTeleport",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_teleport(
-        this: GmapSequence_GmapTeleportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_teleport::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "OpenMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_menu(
-        this: GmapSequence_GmapTeleportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_open_menu::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_teleport {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "Teleport",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "Teleport",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn teleport(
-        this: GmapSequence_GmapTeleportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_teleport::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "End",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "End",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end(
-        this: GmapSequence_GmapTeleportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_map_and_title_bar {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "CloseMapAndTitleBar",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "CloseMapAndTitleBar",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_map_and_title_bar(
-        this: GmapSequence_GmapTeleportSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_close_map_and_title_bar::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
@@ -2828,25 +2004,12 @@ mod __GmapSequence_GmapTeleportSequence_unity2_raw {
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type()];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -2855,50 +2018,359 @@ mod __GmapSequence_GmapTeleportSequence_unity2_raw {
         }
     }
     pub unsafe fn ctor(
-        this: GmapSequence_GmapTeleportSequence,
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        f: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapTeleportSequence,
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            i32,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
                 .offset(__lookup_ctor::get_offset() as isize),
         );
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor_2(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        f: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor_2::get_offset() as isize),
+        );
+        inner(this, f, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_int {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_DirFlag as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "ToInt" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "ToInt" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn to_int(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        value: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_to_int::get_offset() as isize),
+        );
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test_up {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestUp" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestUp" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn test_up(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_test_up::get_offset() as isize),
+        );
         inner(this, __unity2_method_info)
     }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test_down {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestDown" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestDown" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn test_down(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_test_down::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test_left {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestLeft" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestLeft" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn test_left(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_test_left::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test_right {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "TestRight" , 0 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "TestRight" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn test_right(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_test_right::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_test {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: gmapsequence :: GmapSequence_GmapFreeCameraSequence_Dir as :: unity2 :: IlType > :: il_type ()] ;
+            :: unity2 :: lookup :: method_info_on_class_with_signature (< GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: class () , "Test" , 1 , param_types , false ,)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: ClassIdentity > :: NAME , "Test" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn test(
+        this: GmapSequence_GmapFreeCameraSequence_DirFlagField,
+        dir: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_DirFlagField,
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_test::get_offset() as isize),
+        );
+        inner(this, dir, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapTeleportSequence {
-    #[doc = "`LoadResources()` overload"]
-    pub fn load_resources() -> () {
+pub trait IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods:
+    IGmapSequence_GmapFreeCameraSequence_DirFlagField
+{
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, f: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            __GmapSequence_GmapTeleportSequence_unity2_raw::load_resources(
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(f),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`IsLoading()` overload"]
-    pub fn is_loading() -> bool {
+    #[doc = "`.ctor(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` overload"]
+    fn ctor_2(
+        self,
+        f: impl ::core::convert::Into<
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+        >,
+    ) -> () {
         unsafe {
-            __GmapSequence_GmapTeleportSequence_unity2_raw::is_loading(::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadResources()` overload"]
-    pub fn unload_resources() -> () {
-        unsafe {
-            __GmapSequence_GmapTeleportSequence_unity2_raw::unload_resources(
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::ctor_2(
+                __receiver,
+                ::core::convert::Into::into(f),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+    #[doc = "`ToInt(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` overload"]
+    fn to_int(
+        self,
+        value: impl ::core::convert::Into<
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,
+        >,
+    ) -> i32 {
         unsafe {
-            __GmapSequence_GmapTeleportSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::to_int(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TestUp()` overload"]
+    fn test_up(self) -> bool {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_up(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TestDown()` overload"]
+    fn test_down(self) -> bool {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_down(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TestLeft()` overload"]
+    fn test_left(self) -> bool {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_left(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TestRight()` overload"]
+    fn test_right(self) -> bool {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test_right(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Test(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]
+    fn test(
+        self,
+        dir: impl ::core::convert::Into<
+            crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir,
+        >,
+    ) -> bool {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_DirFlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::test(
+                __receiver,
+                ::core::convert::Into::into(dir),
                 ::core::option::Option::None,
             )
         }
@@ -2906,102 +2378,36 @@ impl GmapSequence_GmapTeleportSequence {
 }
 
 #[cfg(feature = "app-gmapsequence")]
-pub trait IGmapSequence_GmapTeleportSequenceMethods: IGmapSequence_GmapTeleportSequence {
-    #[doc = "`StartTeleport()` overload"]
-    fn start_teleport(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::start_teleport(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenMenu()` overload"]
-    fn open_menu(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::open_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Teleport()` overload"]
-    fn teleport(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::teleport(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::end(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloseMapAndTitleBar()` overload"]
-    fn close_map_and_title_bar(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::close_map_and_title_bar(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __GmapSequence_GmapTeleportSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
+impl<__T: IGmapSequence_GmapFreeCameraSequence_DirFlagField>
+    IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods for __T
+{
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl<__T: IGmapSequence_GmapTeleportSequence> IGmapSequence_GmapTeleportSequenceMethods for __T {}
-
-#[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapTeleportSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl GmapSequence_GmapFreeCameraSequence_DirFlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapTeleportSequence),
+                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_DirFlagField),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_GmapTeleportSequenceMethods>::ctor(this);
+        <Self as IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` — overload selector"]
+    pub fn new_2(f: crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_DirFlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods>::ctor_2(this, f);
         this
     }
 }
@@ -7431,55 +6837,8 @@ impl GmapSequence {
 #[cfg(feature = "app-gmapsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
+mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: GmapSequence_GmapWholeMapSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GmapSequence_GmapWholeMapSequence,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
@@ -7489,7 +6848,8 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
+                ),
                 "Start",
                 0,
                 param_types,
@@ -7497,15 +6857,7 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
-            }
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -7514,11 +6866,11 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
         }
     }
     pub unsafe fn start(
-        this: GmapSequence_GmapWholeMapSequence,
+        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapWholeMapSequence,
+            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -7529,18 +6881,163 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_tick {
+    pub mod __lookup_update {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
+                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
+                ),
+                "Update",
                 0,
                 param_types,
                 false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn update(
+        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_update::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
+                ),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+pub trait IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods:
+    IGmapSequence_GmapFreeCameraSequence_SelfDestroy
+{
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::start(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::update(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+impl<__T: IGmapSequence_GmapFreeCameraSequence_SelfDestroy>
+    IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods for __T
+{
+}
+
+#[cfg(feature = "app-gmapsequence")]
+impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_SelfDestroy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __GmapSequence_GmapTeleportSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "LoadResources",
+                0,
+                param_types,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
@@ -7548,8 +7045,8 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "LoadResources",
                     e
                 ),
             }
@@ -7560,17 +7057,234 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn tick(
-        this: GmapSequence_GmapWholeMapSequence,
+    pub unsafe fn load_resources(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_load_resources::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "IsLoading",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "IsLoading",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn is_loading(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_is_loading::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "UnloadResources",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "UnloadResources",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn unload_resources(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_unload_resources::get_offset() as isize),
+        );
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_teleport {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "StartTeleport",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "StartTeleport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn start_teleport(
+        this: GmapSequence_GmapTeleportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            GmapSequence_GmapTeleportSequence,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_start_teleport::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "OpenMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "OpenMenu",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn open_menu(
+        this: GmapSequence_GmapTeleportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapWholeMapSequence,
+            GmapSequence_GmapTeleportSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_tick::get_offset() as isize),
+                .offset(__lookup_open_menu::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_teleport {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "Teleport",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "Teleport",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn teleport(
+        this: GmapSequence_GmapTeleportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapTeleportSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_teleport::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
@@ -7583,7 +7297,7 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
                 "End",
                 0,
                 param_types,
@@ -7595,7 +7309,7 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
                     "End",
                     e
                 ),
@@ -7608,11 +7322,11 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
         }
     }
     pub unsafe fn end(
-        this: GmapSequence_GmapWholeMapSequence,
+        this: GmapSequence_GmapTeleportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapWholeMapSequence,
+            GmapSequence_GmapTeleportSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -7623,15 +7337,15 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_wait_camera_move_strictly {
+    pub mod __lookup_close_map_and_title_bar {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
-                "WaitCameraMoveStrictly",
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                "CloseMapAndTitleBar",
                 0,
                 param_types,
                 false,
@@ -7642,8 +7356,8 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitCameraMoveStrictly",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    "CloseMapAndTitleBar",
                     e
                 ),
             }
@@ -7654,17 +7368,17 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn wait_camera_move_strictly(
-        this: GmapSequence_GmapWholeMapSequence,
+    pub unsafe fn close_map_and_title_bar(
+        this: GmapSequence_GmapTeleportSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapWholeMapSequence,
+            GmapSequence_GmapTeleportSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_wait_camera_move_strictly::get_offset() as isize),
+                .offset(__lookup_close_map_and_title_bar::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
@@ -7678,7 +7392,7 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
                 1,
                 param_types,
@@ -7690,7 +7404,7 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
                 ::core::result::Result::Ok(mi) => *mi,
                 ::core::result::Result::Err(e) => panic!(
                     "method lookup failed: {}::{}: {}",
-                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
                     "CreateBind",
                     e
                 ),
@@ -7714,14 +7428,83 @@ mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
             );
         inner(super_, __unity2_method_info)
     }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapTeleportSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GmapSequence_GmapTeleportSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapTeleportSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapWholeMapSequence {
+impl GmapSequence_GmapTeleportSequence {
+    #[doc = "`LoadResources()` overload"]
+    pub fn load_resources() -> () {
+        unsafe {
+            __GmapSequence_GmapTeleportSequence_unity2_raw::load_resources(
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsLoading()` overload"]
+    pub fn is_loading() -> bool {
+        unsafe {
+            __GmapSequence_GmapTeleportSequence_unity2_raw::is_loading(::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadResources()` overload"]
+    pub fn unload_resources() -> () {
+        unsafe {
+            __GmapSequence_GmapTeleportSequence_unity2_raw::unload_resources(
+                ::core::option::Option::None,
+            )
+        }
+    }
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::create_bind(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
@@ -7730,41 +7513,41 @@ impl GmapSequence_GmapWholeMapSequence {
 }
 
 #[cfg(feature = "app-gmapsequence")]
-pub trait IGmapSequence_GmapWholeMapSequenceMethods: IGmapSequence_GmapWholeMapSequence {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+pub trait IGmapSequence_GmapTeleportSequenceMethods: IGmapSequence_GmapTeleportSequence {
+    #[doc = "`StartTeleport()` overload"]
+    fn start_teleport(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
             let __receiver =
-                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::ctor(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::start_teleport(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
+    #[doc = "`OpenMenu()` overload"]
+    fn open_menu(self) -> () {
         unsafe {
             let __receiver =
-                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::start(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::open_menu(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
+    #[doc = "`Teleport()` overload"]
+    fn teleport(self) -> () {
         unsafe {
             let __receiver =
-                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::tick(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::teleport(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -7774,23 +7557,36 @@ pub trait IGmapSequence_GmapWholeMapSequenceMethods: IGmapSequence_GmapWholeMapS
     fn end(self) -> () {
         unsafe {
             let __receiver =
-                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::end(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::end(
                 __receiver,
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`WaitCameraMoveStrictly()` overload"]
-    fn wait_camera_move_strictly(self) -> () {
+    #[doc = "`CloseMapAndTitleBar()` overload"]
+    fn close_map_and_title_bar(self) -> () {
         unsafe {
             let __receiver =
-                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
                     <Self as ::unity2::SystemObject>::as_instance(self),
                 );
-            __GmapSequence_GmapWholeMapSequence_unity2_raw::wait_camera_move_strictly(
+            __GmapSequence_GmapTeleportSequence_unity2_raw::close_map_and_title_bar(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapSequence_GmapTeleportSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapTeleportSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -7799,20 +7595,20 @@ pub trait IGmapSequence_GmapWholeMapSequenceMethods: IGmapSequence_GmapWholeMapS
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl<__T: IGmapSequence_GmapWholeMapSequence> IGmapSequence_GmapWholeMapSequenceMethods for __T {}
+impl<__T: IGmapSequence_GmapTeleportSequence> IGmapSequence_GmapTeleportSequenceMethods for __T {}
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapWholeMapSequence {
+impl GmapSequence_GmapTeleportSequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapWholeMapSequence),
+                ::core::stringify!(GmapSequence_GmapTeleportSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_GmapWholeMapSequenceMethods>::ctor(this);
+        <Self as IGmapSequence_GmapTeleportSequenceMethods>::ctor(this);
         this
     }
 }
@@ -9033,8 +8829,55 @@ impl GmapSequence_GmapFreeCameraSequence {
 #[cfg(feature = "app-gmapsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
+mod __GmapSequence_GmapWholeMapSequence_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: GmapSequence_GmapWholeMapSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapWholeMapSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_ctor::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
@@ -9044,8 +8887,7 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
-                ),
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
                 "Start",
                 0,
                 param_types,
@@ -9053,7 +8895,15 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , "Start" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    "Start",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -9062,11 +8912,11 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
         }
     }
     pub unsafe fn start(
-        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+        this: GmapSequence_GmapWholeMapSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+            GmapSequence_GmapWholeMapSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
@@ -9077,23 +8927,30 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_update {
+    pub mod __lookup_tick {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
-                ),
-                "Update",
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                "Tick",
                 0,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , "Update" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    "Tick",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -9101,39 +8958,46 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn update(
-        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+    pub unsafe fn tick(
+        this: GmapSequence_GmapWholeMapSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+            GmapSequence_GmapWholeMapSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
+                .offset(__lookup_tick::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_end {
         use super::*;
         static METHOD: ::std::sync::LazyLock<
             ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
         > = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <GmapSequence_GmapFreeCameraSequence_SelfDestroy as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                "End",
                 0,
                 param_types,
                 false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    "End",
+                    e
+                ),
+            }
         }
         pub fn get_offset() -> usize {
             let method_ptr = get_method_info().method_ptr;
@@ -9141,51 +9005,190 @@ mod __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw {
             unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
-    pub unsafe fn ctor(
-        this: GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+    pub unsafe fn end(
+        this: GmapSequence_GmapWholeMapSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            GmapSequence_GmapFreeCameraSequence_SelfDestroy,
+            GmapSequence_GmapWholeMapSequence,
             ::unity2::OptionalMethod,
         ) -> () = ::core::mem::transmute(
             (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
                 as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
+                .offset(__lookup_end::get_offset() as isize),
         );
         inner(this, __unity2_method_info)
     }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_camera_move_strictly {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                "WaitCameraMoveStrictly",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    "WaitCameraMoveStrictly",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn wait_camera_move_strictly(
+        this: GmapSequence_GmapWholeMapSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            GmapSequence_GmapWholeMapSequence,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                as *const u8)
+                .offset(__lookup_wait_camera_move_strictly::get_offset() as isize),
+        );
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <GmapSequence_GmapWholeMapSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_create_bind::get_offset() as isize),
+            );
+        inner(super_, __unity2_method_info)
+    }
 }
 
 #[cfg(feature = "app-gmapsequence")]
-pub trait IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods:
-    IGmapSequence_GmapFreeCameraSequence_SelfDestroy
-{
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
+impl GmapSequence_GmapWholeMapSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::start(
-                __receiver,
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
+}
+
+#[cfg(feature = "app-gmapsequence")]
+pub trait IGmapSequence_GmapWholeMapSequenceMethods: IGmapSequence_GmapWholeMapSequence {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < GmapSequence_GmapFreeCameraSequence_SelfDestroy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __GmapSequence_GmapFreeCameraSequence_SelfDestroy_unity2_raw::ctor(
+            let __receiver =
+                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::ctor(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::start(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::tick(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`End()` overload"]
+    fn end(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::end(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`WaitCameraMoveStrictly()` overload"]
+    fn wait_camera_move_strictly(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapSequence_GmapWholeMapSequence as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __GmapSequence_GmapWholeMapSequence_unity2_raw::wait_camera_move_strictly(
                 __receiver,
                 ::core::option::Option::None,
             )
@@ -9194,28 +9197,26 @@ pub trait IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods:
 }
 
 #[cfg(feature = "app-gmapsequence")]
-impl<__T: IGmapSequence_GmapFreeCameraSequence_SelfDestroy>
-    IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods for __T
-{
-}
+impl<__T: IGmapSequence_GmapWholeMapSequence> IGmapSequence_GmapWholeMapSequenceMethods for __T {}
 
 #[cfg(feature = "app-gmapsequence")]
-impl GmapSequence_GmapFreeCameraSequence_SelfDestroy {
+impl GmapSequence_GmapWholeMapSequence {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GmapSequence_GmapFreeCameraSequence_SelfDestroy),
+                ::core::stringify!(GmapSequence_GmapWholeMapSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods>::ctor(this);
+        <Self as IGmapSequence_GmapWholeMapSequenceMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "app-gmapsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapSequence;
     pub use super::GmapSequence_EnterChapterSequence;

@@ -416,6 +416,7 @@ impl HelpItemWeaponLevel {
 }
 
 #[cfg(feature = "app-helpitemweaponlevel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HelpItemWeaponLevel;
     pub use super::IHelpItemWeaponLevel;

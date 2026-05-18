@@ -2318,6 +2318,7 @@ impl Rect {
 }
 
 #[cfg(feature = "unity_engine-rect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Rect;
     pub use crate::system::object::IObject;

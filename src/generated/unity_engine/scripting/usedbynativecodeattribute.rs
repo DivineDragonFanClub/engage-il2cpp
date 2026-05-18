@@ -244,6 +244,7 @@ impl UsedByNativeCodeAttribute {
 }
 
 #[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUsedByNativeCodeAttribute;
     pub use super::IUsedByNativeCodeAttributeMethods;

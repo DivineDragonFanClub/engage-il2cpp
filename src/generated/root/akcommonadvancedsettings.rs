@@ -623,6 +623,7 @@ impl AkCommonAdvancedSettings_SpatialAudioSettings {
 }
 
 #[cfg(feature = "root-akcommonadvancedsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkCommonAdvancedSettings;
     pub use super::AkCommonAdvancedSettings_SpatialAudioSettings;

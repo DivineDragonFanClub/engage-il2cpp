@@ -341,6 +341,7 @@ impl WwiseObjectReference {
 }
 
 #[cfg(feature = "root-wwiseobjectreference")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWwiseObjectReference;
     pub use super::IWwiseObjectReferenceMethods;

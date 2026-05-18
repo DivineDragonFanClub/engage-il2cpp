@@ -1743,6 +1743,7 @@ impl MovieDefineData {
 }
 
 #[cfg(feature = "app-moviedefinedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMovieDefineData;
     pub use super::IMovieDefineDataMethods;

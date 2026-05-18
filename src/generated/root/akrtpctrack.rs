@@ -286,6 +286,7 @@ impl AkRTPCTrack {
 }
 
 #[cfg(feature = "root-akrtpctrack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRTPCTrack;
     pub use super::IAkRTPCTrack;

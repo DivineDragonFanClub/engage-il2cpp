@@ -1287,6 +1287,7 @@ impl WWW {
 }
 
 #[cfg(feature = "unity_engine-www")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWWWMethods;
     pub use super::IWWW;

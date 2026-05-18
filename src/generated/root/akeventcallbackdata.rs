@@ -115,6 +115,7 @@ impl AkEventCallbackData {
 }
 
 #[cfg(feature = "root-akeventcallbackdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkEventCallbackData;
     pub use super::IAkEventCallbackData;

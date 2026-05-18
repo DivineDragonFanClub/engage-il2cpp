@@ -928,6 +928,7 @@ impl HubWeaponShopSequence {
 }
 
 #[cfg(feature = "app-hubweaponshopsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubWeaponShopSequence;
     pub use super::HubWeaponShopSequence_Label2;

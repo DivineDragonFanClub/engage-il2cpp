@@ -102,6 +102,7 @@ impl ChildSelector {
 }
 
 #[cfg(feature = "app-childselector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChildSelector;
     pub use super::IChildSelector;

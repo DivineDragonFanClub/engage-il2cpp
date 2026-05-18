@@ -216,6 +216,7 @@ impl GiftDialog {
 }
 
 #[cfg(feature = "app-giftdialog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GiftDialog;
     pub use super::IGiftDialog;

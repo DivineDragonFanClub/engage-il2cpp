@@ -222,6 +222,7 @@ impl ActionSubspaceTrip {
 }
 
 #[cfg(feature = "combat-actionsubspacetrip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionSubspaceTrip;
     pub use super::IActionSubspaceTrip;

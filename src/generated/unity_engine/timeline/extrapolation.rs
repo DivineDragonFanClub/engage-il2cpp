@@ -200,6 +200,7 @@ impl Extrapolation {
 }
 
 #[cfg(feature = "unity_engine-timeline-extrapolation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Extrapolation;
     pub use super::IExtrapolation;

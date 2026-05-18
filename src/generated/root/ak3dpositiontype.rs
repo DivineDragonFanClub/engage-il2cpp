@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-ak3dpositiontype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Ak3DPositionType;
     pub use crate::system::object::IObject;

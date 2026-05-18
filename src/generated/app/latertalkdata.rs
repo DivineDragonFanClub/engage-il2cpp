@@ -616,6 +616,7 @@ impl LaterTalkData {
 }
 
 #[cfg(feature = "app-latertalkdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILaterTalkData;
     pub use super::ILaterTalkDataMethods;

@@ -166,6 +166,7 @@ impl DisableItem {
 }
 
 #[cfg(feature = "app-disableitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DisableItem;
     pub use super::IDisableItem;

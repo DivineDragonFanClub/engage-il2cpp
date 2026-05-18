@@ -947,6 +947,7 @@ impl InterpolatorTime {
 }
 
 #[cfg(feature = "app-interpolatortime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInterpolatorTime;
     pub use super::IInterpolatorTimeMethods;

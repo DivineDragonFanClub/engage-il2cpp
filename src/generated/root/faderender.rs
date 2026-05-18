@@ -210,6 +210,7 @@ impl FadeRender {
 }
 
 #[cfg(feature = "root-faderender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FadeRender;
     pub use super::IFadeRender;

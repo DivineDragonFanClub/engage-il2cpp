@@ -682,6 +682,7 @@ impl GraphicsSettings {
 }
 
 #[cfg(feature = "unity_engine-rendering-graphicssettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicsSettings;
     pub use super::IGraphicsSettings;

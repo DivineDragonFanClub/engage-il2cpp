@@ -582,6 +582,7 @@ pub trait IFieldBuilderMethods: IFieldBuilder {
 impl<__T: IFieldBuilder> IFieldBuilderMethods for __T {}
 
 #[cfg(feature = "system-reflection-emit-fieldbuilder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FieldBuilder;
     pub use super::IFieldBuilder;

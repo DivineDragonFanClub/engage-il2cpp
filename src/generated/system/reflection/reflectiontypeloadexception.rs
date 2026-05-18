@@ -103,6 +103,7 @@ impl ReflectionTypeLoadException {
 }
 
 #[cfg(feature = "system-reflection-reflectiontypeloadexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReflectionTypeLoadException;
     pub use super::IReflectionTypeLoadExceptionMethods;

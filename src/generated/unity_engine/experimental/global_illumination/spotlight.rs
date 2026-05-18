@@ -53,6 +53,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-spotlight")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SpotLight;
     pub use crate::system::object::IObject;

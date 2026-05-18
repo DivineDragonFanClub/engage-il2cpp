@@ -210,6 +210,7 @@ impl PlaceMatADummy {
 }
 
 #[cfg(feature = "root-placematadummy")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlaceMatADummy;
     pub use super::IPlaceMatADummyMethods;

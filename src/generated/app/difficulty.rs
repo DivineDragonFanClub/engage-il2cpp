@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-difficulty")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Difficulty;
     pub use crate::system::object::IObject;

@@ -553,6 +553,7 @@ impl AkInitializer {
 }
 
 #[cfg(feature = "root-akinitializer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkInitializer;
     pub use super::IAkInitializer;

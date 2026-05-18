@@ -1472,6 +1472,7 @@ impl ScriptExecutionContext {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptexecutioncontext")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptExecutionContext;
     pub use super::IScriptExecutionContextMethods;

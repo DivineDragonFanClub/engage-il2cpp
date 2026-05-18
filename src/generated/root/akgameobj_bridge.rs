@@ -106,6 +106,7 @@ impl AkGameObj_Bridge {
 }
 
 #[cfg(feature = "root-akgameobj_bridge")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkGameObj_Bridge;
     pub use super::IAkGameObj_Bridge;

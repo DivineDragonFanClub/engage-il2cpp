@@ -1337,6 +1337,7 @@ impl HubCookingStartMenuSequence {
 }
 
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubCookingStartMenuSequence;
     pub use super::HubCookingStartMenuSequence_DecideEventHandler;

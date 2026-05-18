@@ -168,6 +168,7 @@ impl SetSkinnedMeshAsEmitter {
 }
 
 #[cfg(feature = "combat-setskinnedmeshasemitter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISetSkinnedMeshAsEmitter;
     pub use super::ISetSkinnedMeshAsEmitterMethods;

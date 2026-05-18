@@ -51,6 +51,7 @@ impl<T0: ::unity2::ClassIdentity> CalculatorTable2D_1<T0> {
 }
 
 #[cfg(feature = "app-calculatortable2d_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CalculatorTable2D_1;
     pub use super::ICalculatorTable2D_1;

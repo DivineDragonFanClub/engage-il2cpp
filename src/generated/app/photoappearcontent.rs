@@ -989,6 +989,7 @@ impl PhotoAppearContent {
 }
 
 #[cfg(feature = "app-photoappearcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotoAppearContent;
     pub use super::IPhotoAppearContentMethods;

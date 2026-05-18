@@ -919,6 +919,7 @@ impl SixAxisSensor {
 }
 
 #[cfg(feature = "nn-hid-sixaxissensor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISixAxisSensor;
     pub use super::SixAxisSensor;

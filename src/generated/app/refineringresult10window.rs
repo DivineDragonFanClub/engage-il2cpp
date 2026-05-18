@@ -659,6 +659,7 @@ impl RefineRingResult10Window {
 }
 
 #[cfg(feature = "app-refineringresult10window")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineRingResult10Window;
     pub use super::IRefineRingResult10WindowMethods;

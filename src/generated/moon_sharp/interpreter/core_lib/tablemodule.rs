@@ -699,6 +699,7 @@ impl TableModule {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITableModule;
     pub use super::ITableModuleMethods;

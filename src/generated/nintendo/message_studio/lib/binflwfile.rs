@@ -597,6 +597,7 @@ impl BinFlwFile {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binflwfile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinFlwFile;
     pub use super::IBinFlwFile;

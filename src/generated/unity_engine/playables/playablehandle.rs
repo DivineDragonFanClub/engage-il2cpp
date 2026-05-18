@@ -4172,6 +4172,7 @@ impl PlayableHandle {
 }
 
 #[cfg(feature = "unity_engine-playables-playablehandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::PlayableHandle;
     pub use crate::system::object::IObject;

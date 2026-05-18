@@ -4562,6 +4562,7 @@ impl UnitSignal_Func {
 }
 
 #[cfg(feature = "app-unitsignal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSignal;
     pub use super::IUnitSignalMethods;

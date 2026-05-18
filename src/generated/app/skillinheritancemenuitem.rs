@@ -1331,6 +1331,7 @@ impl SkillInheritanceMenuItem {
 }
 
 #[cfg(feature = "app-skillinheritancemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISkillInheritanceMenuItem;
     pub use super::ISkillInheritanceMenuItemMethods;

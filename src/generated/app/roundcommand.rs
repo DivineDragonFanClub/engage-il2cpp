@@ -272,6 +272,7 @@ impl RoundCommand {
 }
 
 #[cfg(feature = "app-roundcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRoundCommand;
     pub use super::IRoundCommandMethods;

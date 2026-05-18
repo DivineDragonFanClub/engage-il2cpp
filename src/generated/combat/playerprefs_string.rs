@@ -232,6 +232,7 @@ impl PlayerPrefs_String {
 }
 
 #[cfg(feature = "combat-playerprefs_string")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerPrefs_String;
     pub use super::IPlayerPrefs_StringMethods;

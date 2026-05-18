@@ -12,11 +12,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]
-    #[::unity2::class(namespace = "App", name = "GodWeaponRefineData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)]
-    pub struct GodWeaponRefineData {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]
     #[repr(C)]
     #[derive(
@@ -128,6 +123,11 @@ mod __types {
             Self { value: 13 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]
+    #[::unity2::class(namespace = "App", name = "GodWeaponRefineData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)]
+    pub struct GodWeaponRefineData {}
 }
 
 #[cfg(feature = "app-godweaponrefinedata-types")]
@@ -6173,6 +6173,7 @@ impl GodWeaponRefineData {
 }
 
 #[cfg(feature = "app-godweaponrefinedata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodWeaponRefineData;
     pub use super::GodWeaponRefineData_Kind;

@@ -604,6 +604,7 @@ impl NavMeshPath {
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshpath")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INavMeshPath;
     pub use super::INavMeshPathMethods;

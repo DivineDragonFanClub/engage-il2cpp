@@ -411,6 +411,7 @@ impl PhotographSelectBodyAccMenuItemContent {
 }
 
 #[cfg(feature = "app-photographselectbodyaccmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhotographSelectBodyAccMenuItemContent;
     pub use super::IPhotographSelectBodyAccMenuItemContentMethods;

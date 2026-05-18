@@ -372,6 +372,7 @@ impl CapabilityShort {
 }
 
 #[cfg(feature = "app-capabilityshort")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CapabilityShort;
     pub use super::ICapabilityShort;

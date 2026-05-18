@@ -169,6 +169,7 @@ impl VideoClipPlayable {
 }
 
 #[cfg(feature = "unity_engine-experimental-video-videoclipplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VideoClipPlayable;
     pub use crate::system::object::IObject;

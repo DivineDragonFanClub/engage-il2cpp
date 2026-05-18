@@ -1316,6 +1316,7 @@ impl AkReflectionPathInfo {
 }
 
 #[cfg(feature = "root-akreflectionpathinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkReflectionPathInfo;
     pub use super::IAkReflectionPathInfo;

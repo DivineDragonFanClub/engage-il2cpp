@@ -475,6 +475,7 @@ impl TableConstructor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-tableconstructor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITableConstructor;
     pub use super::ITableConstructorMethods;

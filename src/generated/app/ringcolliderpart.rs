@@ -278,6 +278,7 @@ impl RingColliderPart {
 }
 
 #[cfg(feature = "app-ringcolliderpart")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingColliderPart;
     pub use super::IRingColliderPartMethods;

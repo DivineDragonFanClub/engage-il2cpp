@@ -241,6 +241,7 @@ impl SolanelInfoMenuItemContent {
 }
 
 #[cfg(feature = "app-solanelinfomenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISolanelInfoMenuItemContent;
     pub use super::ISolanelInfoMenuItemContentMethods;

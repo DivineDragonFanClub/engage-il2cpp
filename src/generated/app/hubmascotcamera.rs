@@ -450,6 +450,7 @@ impl HubMascotCamera {
 }
 
 #[cfg(feature = "app-hubmascotcamera")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMascotCamera;
     pub use super::IHubMascotCamera;

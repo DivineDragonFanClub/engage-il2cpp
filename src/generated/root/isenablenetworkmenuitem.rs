@@ -456,6 +456,7 @@ impl IsEnableNetworkMenuItem {
 }
 
 #[cfg(feature = "root-isenablenetworkmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIsEnableNetworkMenuItem;
     pub use super::IIsEnableNetworkMenuItemMethods;

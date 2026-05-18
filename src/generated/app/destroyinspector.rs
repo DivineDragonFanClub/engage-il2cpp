@@ -389,6 +389,7 @@ impl DestroyInspector {
 }
 
 #[cfg(feature = "app-destroyinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DestroyInspector;
     pub use super::IDestroyInspector;

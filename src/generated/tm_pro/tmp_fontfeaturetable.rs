@@ -312,6 +312,7 @@ impl TMP_FontFeatureTable {
 }
 
 #[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_FontFeatureTable;
     pub use super::ITMP_FontFeatureTableMethods;

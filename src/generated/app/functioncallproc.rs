@@ -242,6 +242,7 @@ impl FunctionCallProc {
 }
 
 #[cfg(feature = "app-functioncallproc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FunctionCallProc;
     pub use super::IFunctionCallProc;

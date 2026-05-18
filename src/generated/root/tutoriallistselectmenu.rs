@@ -13,11 +13,6 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TutorialListSelectMenu_DecideEventHandler {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_Page.md"))]
     #[repr(C)]
     #[derive(
@@ -61,6 +56,11 @@ mod __types {
             Self { value: 1 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "", name = "TutorialListSelectMenu.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TutorialListSelectMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenu/TutorialListSelectMenu.md"))]
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenu")]
@@ -828,6 +828,7 @@ impl TutorialListSelectMenu {
 }
 
 #[cfg(feature = "root-tutoriallistselectmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITutorialListSelectMenu;
     pub use super::ITutorialListSelectMenuMethods;

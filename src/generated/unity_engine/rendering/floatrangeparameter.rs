@@ -342,6 +342,7 @@ impl FloatRangeParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FloatRangeParameter;
     pub use super::IFloatRangeParameter;

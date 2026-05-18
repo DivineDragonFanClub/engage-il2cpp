@@ -96,6 +96,7 @@ pub trait IIMoveHandlerMethods: IIMoveHandler {
 impl<__T: IIMoveHandler> IIMoveHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMoveHandler;
     pub use super::IIMoveHandlerMethods;

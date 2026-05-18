@@ -736,6 +736,7 @@ impl MapRanking {
 }
 
 #[cfg(feature = "app-mapranking")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapRanking;
     pub use super::IMapRankingMethods;

@@ -339,6 +339,7 @@ impl PostProcessData {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPostProcessData;
     pub use super::IPostProcessDataMethods;

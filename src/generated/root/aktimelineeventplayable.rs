@@ -256,6 +256,7 @@ impl AkTimelineEventPlayable {
 }
 
 #[cfg(feature = "root-aktimelineeventplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkTimelineEventPlayable;
     pub use super::IAkTimelineEventPlayable;

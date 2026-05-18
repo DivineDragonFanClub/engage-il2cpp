@@ -1663,6 +1663,7 @@ impl ItemShopBuyRoot_ReturnEventHandler {
 }
 
 #[cfg(feature = "app-itemshopbuyroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IItemShopBuyRoot;
     pub use super::IItemShopBuyRootMethods;

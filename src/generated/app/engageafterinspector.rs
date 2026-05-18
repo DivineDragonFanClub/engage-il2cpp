@@ -120,6 +120,7 @@ impl EngageAfterInspector {
 }
 
 #[cfg(feature = "app-engageafterinspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EngageAfterInspector;
     pub use super::IEngageAfterInspector;

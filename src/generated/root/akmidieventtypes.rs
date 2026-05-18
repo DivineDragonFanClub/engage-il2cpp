@@ -90,6 +90,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-akmidieventtypes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkMIDIEventTypes;
     pub use crate::system::object::IObject;

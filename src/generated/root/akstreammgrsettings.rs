@@ -357,6 +357,7 @@ impl AkStreamMgrSettings {
 }
 
 #[cfg(feature = "root-akstreammgrsettings")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkStreamMgrSettings;
     pub use super::IAkStreamMgrSettings;

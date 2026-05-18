@@ -4115,6 +4115,7 @@ impl MapSequenceTargetSelect {
 }
 
 #[cfg(feature = "app-mapsequencetargetselect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequenceTargetSelect;
     pub use super::IMapSequenceTargetSelectMethods;

@@ -186,6 +186,7 @@ impl ChallengeMenuItem {
 }
 
 #[cfg(feature = "root-challengemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeMenuItem;
     pub use super::IChallengeMenuItem;

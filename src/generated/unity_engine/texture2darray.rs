@@ -1100,6 +1100,7 @@ impl Texture2DArray {
 }
 
 #[cfg(feature = "unity_engine-texture2darray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITexture2DArray;
     pub use super::ITexture2DArrayMethods;

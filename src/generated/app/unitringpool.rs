@@ -1363,6 +1363,7 @@ impl UnitRingPool {
 }
 
 #[cfg(feature = "app-unitringpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitRingPool;
     pub use super::IUnitRingPoolMethods;

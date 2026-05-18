@@ -102,6 +102,7 @@ impl SpringWind {
 }
 
 #[cfg(feature = "app-springwind")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISpringWind;
     pub use super::ISpringWindMethods;

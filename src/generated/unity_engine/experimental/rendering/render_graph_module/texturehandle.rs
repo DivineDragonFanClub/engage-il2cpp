@@ -297,6 +297,7 @@ impl TextureHandle {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturehandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TextureHandle;
     pub use crate::system::object::IObject;

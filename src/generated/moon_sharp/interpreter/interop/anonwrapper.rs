@@ -98,6 +98,7 @@ impl AnonWrapper {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnonWrapper;
     pub use super::IAnonWrapper;

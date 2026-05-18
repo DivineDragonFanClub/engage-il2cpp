@@ -280,6 +280,7 @@ impl PlayerLoopSystem {
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayerLoopSystem_UpdateFunction;
     pub use super::IPlayerLoopSystem_UpdateFunctionMethods;

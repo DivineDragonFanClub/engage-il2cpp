@@ -110,6 +110,7 @@ impl TMP_Sprite {
 }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Sprite;
     pub use super::ITMP_SpriteMethods;

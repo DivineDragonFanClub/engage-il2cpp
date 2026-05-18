@@ -221,6 +221,7 @@ impl DragonRideLocatorSetting {
 }
 
 #[cfg(feature = "app-dragonridelocatorsetting")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideLocatorSetting;
     pub use super::IDragonRideLocatorSetting;

@@ -186,6 +186,7 @@ impl ReplInterpreterScriptLoader {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IReplInterpreterScriptLoader;
     pub use super::IReplInterpreterScriptLoaderMethods;

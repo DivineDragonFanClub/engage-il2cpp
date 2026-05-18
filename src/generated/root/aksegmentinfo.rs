@@ -1469,6 +1469,7 @@ impl AkSegmentInfo {
 }
 
 #[cfg(feature = "root-aksegmentinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkSegmentInfo;
     pub use super::IAkSegmentInfo;

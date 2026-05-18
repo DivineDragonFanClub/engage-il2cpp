@@ -762,6 +762,7 @@ impl Expression {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Expression;
     pub use super::IExpression;

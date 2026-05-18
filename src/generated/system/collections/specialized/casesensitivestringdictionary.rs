@@ -184,6 +184,7 @@ impl CaseSensitiveStringDictionary {
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CaseSensitiveStringDictionary;
     pub use super::ICaseSensitiveStringDictionary;

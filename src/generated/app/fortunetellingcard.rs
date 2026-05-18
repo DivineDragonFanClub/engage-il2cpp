@@ -306,6 +306,7 @@ impl FortuneTellingCard {
 }
 
 #[cfg(feature = "app-fortunetellingcard")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FortuneTellingCard;
     pub use super::IFortuneTellingCard;

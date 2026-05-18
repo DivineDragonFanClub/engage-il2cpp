@@ -119,6 +119,7 @@ impl BoolParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-boolparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BoolParameter;
     pub use super::IBoolParameter;

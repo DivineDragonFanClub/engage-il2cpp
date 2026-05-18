@@ -1157,6 +1157,7 @@ impl VerticalLayoutUI {
 }
 
 #[cfg(feature = "combat-verticallayoutui")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVerticalLayoutUI;
     pub use super::IVerticalLayoutUIMethods;

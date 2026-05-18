@@ -419,6 +419,7 @@ impl Random {
 }
 
 #[cfg(feature = "unity_engine-random")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRandom;
     pub use super::Random;

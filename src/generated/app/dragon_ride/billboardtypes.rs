@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "app-dragon_ride-billboardtypes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BillboardTypes;
     pub use crate::system::object::IObject;

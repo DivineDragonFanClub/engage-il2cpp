@@ -324,6 +324,7 @@ impl GameSpeedMenuItem {
 }
 
 #[cfg(feature = "root-gamespeedmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GameSpeedMenuItem;
     pub use super::IGameSpeedMenuItem;

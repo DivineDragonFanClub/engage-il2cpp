@@ -2739,6 +2739,7 @@ impl CharPtr {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-charptr")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharPtr;
     pub use super::ICharPtr;

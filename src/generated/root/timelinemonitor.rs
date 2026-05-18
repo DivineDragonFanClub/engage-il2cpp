@@ -105,6 +105,7 @@ impl TimelineMonitor {
 }
 
 #[cfg(feature = "root-timelinemonitor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimelineMonitor;
     pub use super::ITimelineMonitorMethods;

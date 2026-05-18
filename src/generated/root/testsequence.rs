@@ -416,6 +416,7 @@ impl TestSequence {
 }
 
 #[cfg(feature = "root-testsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITestSequence;
     pub use super::ITestSequenceMethods;

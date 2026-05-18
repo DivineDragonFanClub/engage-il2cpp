@@ -359,6 +359,7 @@ impl TMP_Character {
 }
 
 #[cfg(feature = "tm_pro-tmp_character")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITMP_Character;
     pub use super::ITMP_CharacterMethods;

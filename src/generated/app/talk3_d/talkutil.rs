@@ -280,6 +280,7 @@ impl TalkUtil {
 }
 
 #[cfg(feature = "app-talk3_d-talkutil")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkUtil;
     pub use super::ITalkUtilMethods;

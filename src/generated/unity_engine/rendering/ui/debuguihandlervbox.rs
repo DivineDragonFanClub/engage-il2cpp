@@ -299,6 +299,7 @@ impl DebugUIHandlerVBox {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugUIHandlerVBox;
     pub use super::IDebugUIHandlerVBox;

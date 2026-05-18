@@ -667,6 +667,7 @@ impl CharacterLyingPegasus {
 }
 
 #[cfg(feature = "combat-characterlyingpegasus")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterLyingPegasus;
     pub use super::ICharacterLyingPegasus;

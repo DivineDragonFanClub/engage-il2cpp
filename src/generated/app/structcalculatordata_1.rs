@@ -75,6 +75,7 @@ impl<T0: ::unity2::ClassIdentity> StructCalculatorData_1<T0> {
 }
 
 #[cfg(feature = "app-structcalculatordata_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStructCalculatorData_1;
     pub use super::IStructCalculatorData_1Methods;

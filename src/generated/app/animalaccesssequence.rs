@@ -747,6 +747,7 @@ impl AnimalAccessSequence {
 }
 
 #[cfg(feature = "app-animalaccesssequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimalAccessSequence;
     pub use super::AnimalAccessSequence_Label;

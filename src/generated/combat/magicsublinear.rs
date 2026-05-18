@@ -261,6 +261,7 @@ impl MagicSubLinear {
 }
 
 #[cfg(feature = "combat-magicsublinear")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSubLinear;
     pub use super::IMagicSubLinearMethods;

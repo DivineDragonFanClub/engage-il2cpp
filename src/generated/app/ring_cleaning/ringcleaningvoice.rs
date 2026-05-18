@@ -1238,6 +1238,7 @@ impl RingCleaningVoice {
 }
 
 #[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRingCleaningVoice;
     pub use super::IRingCleaningVoiceMethods;

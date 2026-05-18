@@ -173,6 +173,7 @@ impl ShaderKeyword {
 }
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderKeyword;
     pub use crate::system::object::IObject;

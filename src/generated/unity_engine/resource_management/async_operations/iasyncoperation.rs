@@ -1270,6 +1270,7 @@ pub trait IIAsyncOperationMethods: IIAsyncOperation {
 impl<__T: IIAsyncOperation> IIAsyncOperationMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-iasyncoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IAsyncOperation;
     pub use super::IIAsyncOperation;

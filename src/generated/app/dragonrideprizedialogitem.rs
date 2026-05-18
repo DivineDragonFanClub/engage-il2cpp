@@ -228,6 +228,7 @@ impl DragonRidePrizeDialogItem {
 }
 
 #[cfg(feature = "app-dragonrideprizedialogitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRidePrizeDialogItem;
     pub use super::IDragonRidePrizeDialogItem;

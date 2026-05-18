@@ -85,6 +85,7 @@ pub trait IITimelineClipAssetMethods: IITimelineClipAsset {
 impl<__T: IITimelineClipAsset> IITimelineClipAssetMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IITimelineClipAsset;
     pub use super::IITimelineClipAssetMethods;

@@ -175,6 +175,7 @@ impl JobIntroTitleSetter {
 }
 
 #[cfg(feature = "app-jobintrotitlesetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJobIntroTitleSetter;
     pub use super::IJobIntroTitleSetterMethods;

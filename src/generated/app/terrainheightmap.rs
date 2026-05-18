@@ -652,6 +652,7 @@ impl TerrainHeightMap {
 }
 
 #[cfg(feature = "app-terrainheightmap")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITerrainHeightMap;
     pub use super::ITerrainHeightMapMethods;

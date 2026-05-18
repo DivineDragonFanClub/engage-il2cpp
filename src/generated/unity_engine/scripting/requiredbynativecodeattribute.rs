@@ -375,6 +375,7 @@ impl RequiredByNativeCodeAttribute {
 }
 
 #[cfg(feature = "unity_engine-scripting-requiredbynativecodeattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRequiredByNativeCodeAttribute;
     pub use super::IRequiredByNativeCodeAttributeMethods;

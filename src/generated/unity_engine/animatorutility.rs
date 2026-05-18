@@ -93,6 +93,7 @@ impl AnimatorUtility {
 }
 
 #[cfg(feature = "unity_engine-animatorutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorUtility;
     pub use super::IAnimatorUtility;

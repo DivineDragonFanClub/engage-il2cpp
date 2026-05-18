@@ -716,6 +716,7 @@ impl RefreshVariable {
 }
 
 #[cfg(feature = "app-refreshvariable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshVariable;
     pub use super::IRefreshVariableMethods;

@@ -329,6 +329,7 @@ impl TalkTagIcon {
 }
 
 #[cfg(feature = "app-talk3_d-talktagicon")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagIcon;
     pub use super::ITalkTagIconMethods;

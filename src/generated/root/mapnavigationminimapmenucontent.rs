@@ -290,6 +290,7 @@ impl MapNavigationMiniMapMenuContent {
 }
 
 #[cfg(feature = "root-mapnavigationminimapmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationMiniMapMenuContent;
     pub use super::IMapNavigationMiniMapMenuContentMethods;

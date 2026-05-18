@@ -397,6 +397,7 @@ impl ProviderLoadRequestOptions {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProviderLoadRequestOptions;
     pub use super::IProviderLoadRequestOptionsMethods;

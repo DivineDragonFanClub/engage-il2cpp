@@ -1742,6 +1742,7 @@ impl TalkLog {
 }
 
 #[cfg(feature = "app-talk3_d-talklog")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkLog;
     pub use super::ITalkLogMethods;

@@ -296,6 +296,7 @@ impl ActionWaitFunc {
 }
 
 #[cfg(feature = "combat-actionwaitfunc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionWaitFunc;
     pub use super::IActionWaitFunc;

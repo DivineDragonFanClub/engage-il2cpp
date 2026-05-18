@@ -184,6 +184,7 @@ impl PPRadialBlurPlayableAsset {
 }
 
 #[cfg(feature = "root-ppradialblurplayableasset")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPPRadialBlurPlayableAsset;
     pub use super::IPPRadialBlurPlayableAssetMethods;

@@ -396,6 +396,7 @@ impl RuntimeEventInfo {
 }
 
 #[cfg(feature = "system-reflection-runtimeeventinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeEventInfo;
     pub use super::IRuntimeEventInfoMethods;

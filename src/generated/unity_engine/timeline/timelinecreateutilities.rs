@@ -296,6 +296,7 @@ impl TimelineCreateUtilities {
 }
 
 #[cfg(feature = "unity_engine-timeline-timelinecreateutilities")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITimelineCreateUtilities;
     pub use super::TimelineCreateUtilities;

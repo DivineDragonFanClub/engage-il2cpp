@@ -932,6 +932,7 @@ impl ScriptableCullingParameters {
 }
 
 #[cfg(feature = "unity_engine-rendering-scriptablecullingparameters")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ScriptableCullingParameters;
     pub use crate::system::object::IObject;

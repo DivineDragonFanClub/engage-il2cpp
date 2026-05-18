@@ -226,6 +226,7 @@ impl MovedFromAttribute {
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMovedFromAttribute;
     pub use super::IMovedFromAttributeMethods;

@@ -978,6 +978,7 @@ impl ViewMode {
 }
 
 #[cfg(feature = "app-viewmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IViewMode;
     pub use super::IViewModeMethods;

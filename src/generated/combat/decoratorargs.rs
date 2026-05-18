@@ -218,6 +218,7 @@ impl DecoratorArgs {
 }
 
 #[cfg(feature = "combat-decoratorargs")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DecoratorArgs;
     pub use super::IDecoratorArgs;

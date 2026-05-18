@@ -713,6 +713,7 @@ impl MaterialListMenu {
 }
 
 #[cfg(feature = "app-materiallistmenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMaterialListMenu;
     pub use super::IMaterialListMenuMethods;

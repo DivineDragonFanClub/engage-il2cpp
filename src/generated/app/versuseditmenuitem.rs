@@ -672,6 +672,7 @@ impl VersusEditMenuItem {
 }
 
 #[cfg(feature = "app-versuseditmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusEditMenuItem;
     pub use super::IVersusEditMenuItemMethods;

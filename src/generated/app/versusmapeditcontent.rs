@@ -999,6 +999,7 @@ impl VersusMapEditContent {
 }
 
 #[cfg(feature = "app-versusmapeditcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVersusMapEditContent;
     pub use super::IVersusMapEditContentMethods;

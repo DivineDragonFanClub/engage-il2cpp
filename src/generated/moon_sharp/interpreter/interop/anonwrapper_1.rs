@@ -68,6 +68,7 @@ impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnonWrapper_1;
     pub use super::IAnonWrapper_1;

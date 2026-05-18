@@ -121,6 +121,7 @@ impl Framework {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Framework;
     pub use super::IFramework;

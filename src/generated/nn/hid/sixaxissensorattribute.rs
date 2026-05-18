@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-sixaxissensorattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::SixAxisSensorAttribute;
     pub use crate::system::object::IObject;

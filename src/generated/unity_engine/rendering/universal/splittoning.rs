@@ -216,6 +216,7 @@ impl SplitToning {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-splittoning")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISplitToning;
     pub use super::ISplitToningMethods;

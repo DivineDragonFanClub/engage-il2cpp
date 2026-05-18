@@ -406,6 +406,7 @@ impl UpdateCatalogsOperation {
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUpdateCatalogsOperation;
     pub use super::IUpdateCatalogsOperationMethods;

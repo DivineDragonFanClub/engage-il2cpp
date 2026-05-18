@@ -880,6 +880,7 @@ impl RelayMessageMenuContent_KindIcon {
 }
 
 #[cfg(feature = "app-relaymessagemenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRelayMessageMenuContent;
     pub use super::IRelayMessageMenuContentMethods;

@@ -556,6 +556,7 @@ impl Vec3 {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vec3;
     pub use crate::system::object::IObject;

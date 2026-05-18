@@ -876,6 +876,7 @@ impl UnitAccessoryList {
 }
 
 #[cfg(feature = "app-unitaccessorylist")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitAccessoryList;
     pub use super::IUnitAccessoryListMethods;

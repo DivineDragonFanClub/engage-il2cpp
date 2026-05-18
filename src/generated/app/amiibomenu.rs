@@ -461,6 +461,7 @@ impl AmiiboMenu {
 }
 
 #[cfg(feature = "app-amiibomenu")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AmiiboMenu;
     pub use super::AmiiboMenu_Label;

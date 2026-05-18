@@ -3458,6 +3458,7 @@ impl LineRenderer {
 }
 
 #[cfg(feature = "unity_engine-linerenderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILineRenderer;
     pub use super::ILineRendererMethods;

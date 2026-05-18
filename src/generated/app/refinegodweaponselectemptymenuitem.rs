@@ -306,6 +306,7 @@ impl RefineGodWeaponSelectEmptyMenuItem {
 }
 
 #[cfg(feature = "app-refinegodweaponselectemptymenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineGodWeaponSelectEmptyMenuItem;
     pub use super::IRefineGodWeaponSelectEmptyMenuItemMethods;

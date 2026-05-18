@@ -73,6 +73,7 @@ impl ClassLibraryInitializer {
 }
 
 #[cfg(feature = "unity_engine-classlibraryinitializer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ClassLibraryInitializer;
     pub use super::IClassLibraryInitializer;

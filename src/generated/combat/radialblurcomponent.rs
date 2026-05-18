@@ -384,6 +384,7 @@ impl RadialBlurComponent {
 }
 
 #[cfg(feature = "combat-radialblurcomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRadialBlurComponent;
     pub use super::IRadialBlurComponentMethods;

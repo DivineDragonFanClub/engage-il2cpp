@@ -99,6 +99,7 @@ impl HideInInspector {
 }
 
 #[cfg(feature = "unity_engine-hideininspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HideInInspector;
     pub use super::IHideInInspector;

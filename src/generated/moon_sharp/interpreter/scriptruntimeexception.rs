@@ -2000,6 +2000,7 @@ impl ScriptRuntimeException {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptruntimeexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptRuntimeException;
     pub use super::IScriptRuntimeExceptionMethods;

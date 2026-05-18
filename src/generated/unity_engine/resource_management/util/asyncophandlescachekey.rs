@@ -355,6 +355,7 @@ impl AsyncOpHandlesCacheKey {
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-asyncophandlescachekey")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AsyncOpHandlesCacheKey;
     pub use super::IAsyncOpHandlesCacheKey;

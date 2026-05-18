@@ -142,6 +142,7 @@ pub trait IIObjectInitializationDataProviderMethods: IIObjectInitializationDataP
 impl<__T: IIObjectInitializationDataProvider> IIObjectInitializationDataProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIObjectInitializationDataProvider;
     pub use super::IIObjectInitializationDataProviderMethods;

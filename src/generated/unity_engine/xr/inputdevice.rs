@@ -332,6 +332,7 @@ impl InputDevice {
 }
 
 #[cfg(feature = "unity_engine-xr-inputdevice")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::InputDevice;
     pub use crate::system::object::IObject;

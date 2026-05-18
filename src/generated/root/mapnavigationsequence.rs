@@ -780,6 +780,7 @@ impl MapNavigationSequence {
 }
 
 #[cfg(feature = "root-mapnavigationsequence")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapNavigationSequence;
     pub use super::IMapNavigationSequenceMethods;

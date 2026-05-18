@@ -446,6 +446,7 @@ impl FileSystemInfo {
 }
 
 #[cfg(feature = "system-io-filesysteminfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileSystemInfo;
     pub use super::IFileSystemInfo;

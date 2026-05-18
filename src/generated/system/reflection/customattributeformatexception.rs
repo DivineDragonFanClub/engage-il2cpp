@@ -183,6 +183,7 @@ impl CustomAttributeFormatException {
 }
 
 #[cfg(feature = "system-reflection-customattributeformatexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CustomAttributeFormatException;
     pub use super::ICustomAttributeFormatException;

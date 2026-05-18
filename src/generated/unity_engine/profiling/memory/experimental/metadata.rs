@@ -105,6 +105,7 @@ impl MetaData {
 }
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-metadata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMetaData;
     pub use super::IMetaDataMethods;

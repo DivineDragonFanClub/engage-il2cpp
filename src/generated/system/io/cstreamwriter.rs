@@ -491,6 +491,7 @@ pub trait ICStreamWriterMethods: ICStreamWriter {
 impl<__T: ICStreamWriter> ICStreamWriterMethods for __T {}
 
 #[cfg(feature = "system-io-cstreamwriter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CStreamWriter;
     pub use super::ICStreamWriter;

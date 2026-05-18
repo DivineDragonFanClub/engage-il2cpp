@@ -570,6 +570,7 @@ impl AndroidReflection {
 }
 
 #[cfg(feature = "unity_engine-androidreflection")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AndroidReflection;
     pub use super::IAndroidReflection;

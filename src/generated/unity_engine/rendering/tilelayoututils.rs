@@ -308,6 +308,7 @@ impl TileLayoutUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-tilelayoututils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITileLayoutUtils;
     pub use super::TileLayoutUtils;

@@ -66,6 +66,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadcommunicationmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadCommunicationMode;
     pub use crate::system::object::IObject;

@@ -347,6 +347,7 @@ pub trait IAudioSampleProviderMethods: IAudioSampleProvider {
 impl<__T: IAudioSampleProvider> IAudioSampleProviderMethods for __T {}
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AudioSampleProvider;
     pub use super::AudioSampleProvider_SampleFramesHandler;

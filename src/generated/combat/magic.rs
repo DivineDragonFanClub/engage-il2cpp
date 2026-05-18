@@ -957,6 +957,7 @@ impl Magic {
 }
 
 #[cfg(feature = "combat-magic")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagic;
     pub use super::IMagicMethods;

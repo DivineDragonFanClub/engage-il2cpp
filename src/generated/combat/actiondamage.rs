@@ -433,6 +433,7 @@ impl ActionDamage {
 }
 
 #[cfg(feature = "combat-actiondamage")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionDamage;
     pub use super::IActionDamage;

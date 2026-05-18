@@ -726,6 +726,7 @@ impl AkBasePathGetter {
 }
 
 #[cfg(feature = "root-akbasepathgetter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkBasePathGetter;
     pub use super::IAkBasePathGetter;

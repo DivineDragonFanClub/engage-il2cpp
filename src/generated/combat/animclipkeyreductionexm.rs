@@ -293,6 +293,7 @@ impl AnimClipKeyReductionExM {
 }
 
 #[cfg(feature = "combat-animclipkeyreductionexm")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimClipKeyReductionExM;
     pub use super::IAnimClipKeyReductionExM;

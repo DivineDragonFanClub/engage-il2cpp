@@ -182,6 +182,7 @@ impl JsonAssetProvider {
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IJsonAssetProvider;
     pub use super::IJsonAssetProviderMethods;

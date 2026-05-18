@@ -522,6 +522,7 @@ impl ConstructorInfo {
 }
 
 #[cfg(feature = "system-reflection-constructorinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ConstructorInfo;
     pub use super::IConstructorInfo;

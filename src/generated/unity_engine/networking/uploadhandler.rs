@@ -392,6 +392,7 @@ impl UploadHandler {
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUploadHandler;
     pub use super::IUploadHandlerMethods;

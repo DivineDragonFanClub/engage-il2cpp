@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-rendering-graphicstier")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GraphicsTier;
     pub use crate::system::object::IObject;

@@ -857,6 +857,7 @@ impl ShadowUtility {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShadowUtility;
     pub use super::IShadowUtilityMethods;

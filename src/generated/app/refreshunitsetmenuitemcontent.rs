@@ -363,6 +363,7 @@ impl RefreshUnitSetMenuItemContent {
 }
 
 #[cfg(feature = "app-refreshunitsetmenuitemcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefreshUnitSetMenuItemContent;
     pub use super::IRefreshUnitSetMenuItemContentMethods;

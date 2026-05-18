@@ -350,6 +350,7 @@ impl HubMoveStateWait {
 }
 
 #[cfg(feature = "app-hubmovestatewait")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubMoveStateWait;
     pub use super::IHubMoveStateWait;

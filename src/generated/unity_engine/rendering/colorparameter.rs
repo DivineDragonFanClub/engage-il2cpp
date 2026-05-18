@@ -328,6 +328,7 @@ impl ColorParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-colorparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ColorParameter;
     pub use super::IColorParameter;

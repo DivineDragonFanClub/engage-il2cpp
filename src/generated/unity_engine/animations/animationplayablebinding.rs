@@ -152,6 +152,7 @@ impl AnimationPlayableBinding {
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayablebinding")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayableBinding;
     pub use super::IAnimationPlayableBinding;

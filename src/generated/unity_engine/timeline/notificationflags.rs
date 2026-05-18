@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-timeline-notificationflags")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NotificationFlags;
     pub use crate::system::object::IObject;

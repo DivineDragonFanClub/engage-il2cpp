@@ -302,6 +302,7 @@ impl MagicSignal {
 }
 
 #[cfg(feature = "combat-magicsignal")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMagicSignal;
     pub use super::IMagicSignalMethods;

@@ -129,6 +129,7 @@ impl DepthOfFieldModeParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DepthOfFieldModeParameter;
     pub use super::IDepthOfFieldModeParameter;

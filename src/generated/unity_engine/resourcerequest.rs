@@ -220,6 +220,7 @@ impl ResourceRequest {
 }
 
 #[cfg(feature = "unity_engine-resourcerequest")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IResourceRequest;
     pub use super::IResourceRequestMethods;

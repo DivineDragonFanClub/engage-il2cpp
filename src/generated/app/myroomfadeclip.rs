@@ -229,6 +229,7 @@ impl MyRoomFadeClip {
 }
 
 #[cfg(feature = "app-myroomfadeclip")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomFadeClip;
     pub use super::IMyRoomFadeClipMethods;

@@ -65,6 +65,7 @@ impl<T0: ::unity2::ClassIdentity> FastAction_1<T0> {
 }
 
 #[cfg(feature = "tm_pro-fastaction_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FastAction_1;
     pub use super::IFastAction_1;

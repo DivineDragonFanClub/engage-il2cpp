@@ -1491,6 +1491,7 @@ impl LayoutElement {
 }
 
 #[cfg(feature = "unity_engine-ui-layoutelement")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILayoutElement;
     pub use super::ILayoutElementMethods;

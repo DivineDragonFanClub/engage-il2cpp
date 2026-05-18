@@ -100,6 +100,7 @@ pub trait IIInitializePotentialDragHandlerMethods: IIInitializePotentialDragHand
 impl<__T: IIInitializePotentialDragHandler> IIInitializePotentialDragHandlerMethods for __T {}
 
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIInitializePotentialDragHandler;
     pub use super::IIInitializePotentialDragHandlerMethods;

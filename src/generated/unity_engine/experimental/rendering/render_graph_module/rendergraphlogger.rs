@@ -411,6 +411,7 @@ impl RenderGraphLogger {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderGraphLogger;
     pub use super::IRenderGraphLoggerMethods;

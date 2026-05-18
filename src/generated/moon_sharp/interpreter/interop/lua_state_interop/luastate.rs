@@ -874,6 +874,7 @@ impl LuaState {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-luastate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILuaState;
     pub use super::ILuaStateMethods;

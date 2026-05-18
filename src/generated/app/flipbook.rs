@@ -987,6 +987,7 @@ impl Flipbook {
 }
 
 #[cfg(feature = "app-flipbook")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Flipbook;
     pub use super::Flipbook_Mode;

@@ -137,6 +137,7 @@ pub trait IIIntervalMethods: IIInterval {
 impl<__T: IIInterval> IIIntervalMethods for __T {}
 
 #[cfg(feature = "unity_engine-timeline-iinterval")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIInterval;
     pub use super::IIIntervalMethods;

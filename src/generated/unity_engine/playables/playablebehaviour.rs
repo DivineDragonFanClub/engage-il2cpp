@@ -722,6 +722,7 @@ impl PlayableBehaviour {
 }
 
 #[cfg(feature = "unity_engine-playables-playablebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayableBehaviour;
     pub use super::IPlayableBehaviourMethods;

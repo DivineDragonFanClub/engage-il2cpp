@@ -444,6 +444,7 @@ impl UnitSelectRoot {
 }
 
 #[cfg(feature = "app-unitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitSelectRoot;
     pub use super::IUnitSelectRootMethods;

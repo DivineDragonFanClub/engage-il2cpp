@@ -532,6 +532,7 @@ impl Ranking {
 }
 
 #[cfg(feature = "app-ranking")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRanking;
     pub use super::IRankingMethods;

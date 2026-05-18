@@ -183,6 +183,7 @@ impl InvalidFilterCriteriaException {
 }
 
 #[cfg(feature = "system-reflection-invalidfiltercriteriaexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IInvalidFilterCriteriaException;
     pub use super::IInvalidFilterCriteriaExceptionMethods;

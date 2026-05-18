@@ -167,6 +167,7 @@ impl NativeWritableSelfAttribute {
 }
 
 #[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INativeWritableSelfAttribute;
     pub use super::INativeWritableSelfAttributeMethods;

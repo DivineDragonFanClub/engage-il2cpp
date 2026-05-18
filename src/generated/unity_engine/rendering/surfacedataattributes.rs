@@ -277,6 +277,7 @@ impl SurfaceDataAttributes {
 }
 
 #[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISurfaceDataAttributes;
     pub use super::ISurfaceDataAttributesMethods;

@@ -888,6 +888,7 @@ impl Tools {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-tools")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITools;
     pub use super::Tools;

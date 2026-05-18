@@ -85,6 +85,7 @@ pub trait IIReflectableTypeMethods: IIReflectableType {
 impl<__T: IIReflectableType> IIReflectableTypeMethods for __T {}
 
 #[cfg(feature = "system-reflection-ireflectabletype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIReflectableType;
     pub use super::IIReflectableTypeMethods;

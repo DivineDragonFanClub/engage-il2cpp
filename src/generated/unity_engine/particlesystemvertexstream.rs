@@ -234,6 +234,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-particlesystemvertexstream")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleSystemVertexStream;
     pub use crate::system::object::IObject;

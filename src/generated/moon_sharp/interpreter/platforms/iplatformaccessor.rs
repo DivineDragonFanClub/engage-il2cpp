@@ -856,6 +856,7 @@ pub trait IIPlatformAccessorMethods: IIPlatformAccessor {
 impl<__T: IIPlatformAccessor> IIPlatformAccessorMethods for __T {}
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-iplatformaccessor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPlatformAccessor;
     pub use super::IIPlatformAccessorMethods;

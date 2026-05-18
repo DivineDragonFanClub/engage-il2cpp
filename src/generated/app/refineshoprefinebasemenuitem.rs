@@ -1009,6 +1009,7 @@ impl RefineShopRefineBaseMenuItem {
 }
 
 #[cfg(feature = "app-refineshoprefinebasemenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRefineShopRefineBaseMenuItem;
     pub use super::IRefineShopRefineBaseMenuItemMethods;

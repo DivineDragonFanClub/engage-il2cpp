@@ -1012,6 +1012,7 @@ impl MapSequencePhoenix {
 }
 
 #[cfg(feature = "app-mapsequencephoenix")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapSequencePhoenix;
     pub use super::IMapSequencePhoenixMethods;

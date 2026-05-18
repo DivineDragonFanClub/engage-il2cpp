@@ -676,6 +676,7 @@ impl ScriptBattle_ScriptCombatSequence {
 }
 
 #[cfg(feature = "app-scriptbattle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScriptBattle;
     pub use super::IScriptBattleMethods;

@@ -140,6 +140,7 @@ impl CameraTypeUtility {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CameraTypeUtility;
     pub use super::ICameraTypeUtility;

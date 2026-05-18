@@ -384,6 +384,7 @@ impl MapBattleInfoWindowSingle {
 }
 
 #[cfg(feature = "app-mapbattleinfowindowsingle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBattleInfoWindowSingle;
     pub use super::IMapBattleInfoWindowSingleMethods;

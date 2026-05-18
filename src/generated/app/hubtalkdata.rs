@@ -726,6 +726,7 @@ impl HubTalkData {
 }
 
 #[cfg(feature = "app-hubtalkdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubTalkData;
     pub use super::IHubTalkData;

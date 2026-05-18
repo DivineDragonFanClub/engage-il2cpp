@@ -131,6 +131,7 @@ impl<T0: ::unity2::ClassIdentity> SingletonProcInst_1<T0> {
 }
 
 #[cfg(feature = "app-singletonprocinst_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISingletonProcInst_1;
     pub use super::ISingletonProcInst_1Methods;

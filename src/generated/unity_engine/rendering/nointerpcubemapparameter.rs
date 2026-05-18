@@ -124,6 +124,7 @@ impl NoInterpCubemapParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INoInterpCubemapParameter;
     pub use super::INoInterpCubemapParameterMethods;

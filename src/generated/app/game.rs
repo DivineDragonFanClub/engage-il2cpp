@@ -80,6 +80,7 @@ impl Game {
 }
 
 #[cfg(feature = "app-game")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Game;
     pub use super::IGame;

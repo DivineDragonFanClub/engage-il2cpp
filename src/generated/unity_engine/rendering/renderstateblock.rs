@@ -688,6 +688,7 @@ impl RenderStateBlock {
 }
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RenderStateBlock;
     pub use crate::system::object::IObject;

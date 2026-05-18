@@ -98,6 +98,7 @@ impl TalkBind {
 }
 
 #[cfg(feature = "app-talk3_d-talkbind")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkBind;
     pub use super::ITalkBindMethods;

@@ -748,6 +748,7 @@ impl HubTalkRelative {
 }
 
 #[cfg(feature = "app-hubtalkrelative")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HubTalkRelative;
     pub use super::IHubTalkRelative;

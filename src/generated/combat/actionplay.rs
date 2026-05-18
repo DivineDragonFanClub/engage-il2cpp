@@ -359,6 +359,7 @@ impl ActionPlay {
 }
 
 #[cfg(feature = "combat-actionplay")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionPlay;
     pub use super::IActionPlay;

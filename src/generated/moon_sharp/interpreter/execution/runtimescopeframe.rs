@@ -474,6 +474,7 @@ impl RuntimeScopeFrame {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRuntimeScopeFrame;
     pub use super::IRuntimeScopeFrameMethods;

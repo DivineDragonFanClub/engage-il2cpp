@@ -1059,6 +1059,7 @@ impl UnitInfoParamManager {
 }
 
 #[cfg(feature = "app-unitinfoparammanager")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitInfoParamManager;
     pub use super::IUnitInfoParamManagerMethods;

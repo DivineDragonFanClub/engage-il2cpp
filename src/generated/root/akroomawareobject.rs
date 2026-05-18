@@ -682,6 +682,7 @@ impl AkRoomAwareObject {
 }
 
 #[cfg(feature = "root-akroomawareobject")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomAwareObject;
     pub use super::IAkRoomAwareObject;

@@ -114,6 +114,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "root-wwiseobjecttype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::WwiseObjectType;
     pub use crate::system::object::IObject;

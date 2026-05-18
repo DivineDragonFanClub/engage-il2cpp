@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-lightmapbaketype")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LightmapBakeType;
     pub use crate::system::object::IObject;

@@ -201,6 +201,7 @@ impl MapBinder {
 }
 
 #[cfg(feature = "app-mapbinder")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBinder;
     pub use super::IMapBinderMethods;

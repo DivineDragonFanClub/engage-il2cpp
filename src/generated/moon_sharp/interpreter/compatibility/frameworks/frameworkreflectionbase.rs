@@ -764,6 +764,7 @@ impl FrameworkReflectionBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FrameworkReflectionBase;
     pub use super::IFrameworkReflectionBase;

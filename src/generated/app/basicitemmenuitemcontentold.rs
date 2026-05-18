@@ -473,6 +473,7 @@ impl BasicItemMenuItemContentOld {
 }
 
 #[cfg(feature = "app-basicitemmenuitemcontentold")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicItemMenuItemContentOld;
     pub use super::IBasicItemMenuItemContentOld;

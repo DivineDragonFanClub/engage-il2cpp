@@ -77,6 +77,7 @@ impl ExpansionOffset2D {
 }
 
 #[cfg(feature = "combat-expansionoffset2d")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExpansionOffset2D;
     pub use super::IExpansionOffset2D;

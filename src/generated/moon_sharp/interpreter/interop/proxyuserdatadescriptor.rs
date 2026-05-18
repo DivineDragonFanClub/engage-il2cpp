@@ -853,6 +853,7 @@ impl ProxyUserDataDescriptor {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-proxyuserdatadescriptor")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProxyUserDataDescriptor;
     pub use super::IProxyUserDataDescriptorMethods;

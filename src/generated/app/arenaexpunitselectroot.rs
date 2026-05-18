@@ -607,6 +607,7 @@ impl ArenaExpUnitSelectRoot {
 }
 
 #[cfg(feature = "app-arenaexpunitselectroot")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ArenaExpUnitSelectRoot;
     pub use super::IArenaExpUnitSelectRoot;

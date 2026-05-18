@@ -636,6 +636,7 @@ pub trait IIDictionaryMethods: IIDictionary {
 impl<__T: IIDictionary> IIDictionaryMethods for __T {}
 
 #[cfg(feature = "system-collections-idictionary")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IDictionary;
     pub use super::IIDictionary;

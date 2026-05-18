@@ -410,6 +410,7 @@ impl MapTerrainInfoAlignmentMember {
 }
 
 #[cfg(feature = "app-mapterraininfoalignmentmember")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapTerrainInfoAlignmentMember;
     pub use super::IMapTerrainInfoAlignmentMemberMethods;

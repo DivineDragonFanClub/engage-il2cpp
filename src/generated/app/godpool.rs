@@ -852,6 +852,7 @@ impl GodPool {
 }
 
 #[cfg(feature = "app-godpool")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GodPool;
     pub use super::IGodPool;

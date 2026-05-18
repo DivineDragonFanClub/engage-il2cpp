@@ -383,6 +383,7 @@ impl MapBasicMenuItem {
 }
 
 #[cfg(feature = "app-mapbasicmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapBasicMenuItem;
     pub use super::IMapBasicMenuItemMethods;

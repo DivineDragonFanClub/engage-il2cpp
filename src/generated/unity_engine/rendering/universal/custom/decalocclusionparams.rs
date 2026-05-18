@@ -111,6 +111,7 @@ impl DecalOcclusionParams {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-decalocclusionparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DecalOcclusionParams;
     pub use super::IDecalOcclusionParams;

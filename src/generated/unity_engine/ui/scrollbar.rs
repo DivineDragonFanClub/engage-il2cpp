@@ -22,34 +22,48 @@ mod __types {
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
     pub struct Scrollbar_ScrollEvent {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))]
-    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar")]
-    #[parent(crate::unity_engine::ui::selectable::Selectable)]
-    pub struct Scrollbar {
-        #[rename(name = "m_HandleRect")]
-        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Direction")]
-        pub m_direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
-        #[rename(name = "m_Value")]
-        pub m_value: f32,
-        #[rename(name = "m_Size")]
-        pub m_size: f32,
-        #[rename(name = "m_NumberOfSteps")]
-        pub m_number_of_steps: i32,
-        #[rename(name = "m_OnValueChanged")]
-        pub m_on_value_changed: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
-        #[rename(name = "m_ContainerRect")]
-        pub m_container_rect: crate::unity_engine::recttransform::RectTransform,
-        #[rename(name = "m_Offset")]
-        pub m_offset: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "m_Tracker")]
-        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
-        #[rename(name = "m_PointerDownRepeat")]
-        pub m_pointer_down_repeat: crate::unity_engine::coroutine::Coroutine,
-        #[rename(name = "isPointerDownAndNotDragging")]
-        pub is_pointer_down_and_not_dragging: bool,
-        #[rename(name = "m_DelayedUpdateVisuals")]
-        pub m_delayed_update_visuals: bool,
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
+    #[repr(C)]
+    #[derive(
+        ::core::clone::Clone,
+        ::core::marker::Copy,
+        ::core::fmt::Debug,
+        ::core::cmp::PartialEq,
+        ::core::cmp::Eq,
+    )]
+    pub struct Scrollbar_Axis {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for Scrollbar_Axis {
+        const NAMESPACE: &'static str = "UnityEngine.UI";
+
+        const NAME: &'static str = "Scrollbar.Axis";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for Scrollbar_Axis {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class()
+                .raw()
+                ._1
+                .byval_arg
+        }
+    }
+
+    impl Scrollbar_Axis {
+        pub fn horizontal() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn vertical() -> Self {
+            Self { value: 1 }
+        }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Direction.md"))]
@@ -104,48 +118,34 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct Scrollbar_Axis {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for Scrollbar_Axis {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
-        const NAME: &'static str = "Scrollbar.Axis";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for Scrollbar_Axis {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl Scrollbar_Axis {
-        pub fn horizontal() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn vertical() -> Self {
-            Self { value: 1 }
-        }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/scrollbar/Scrollbar.md"))]
+    #[::unity2::class(namespace = "UnityEngine.UI", name = "Scrollbar")]
+    #[parent(crate::unity_engine::ui::selectable::Selectable)]
+    pub struct Scrollbar {
+        #[rename(name = "m_HandleRect")]
+        pub m_handle_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Direction")]
+        pub m_direction: crate::unity_engine::ui::scrollbar::Scrollbar_Direction,
+        #[rename(name = "m_Value")]
+        pub m_value: f32,
+        #[rename(name = "m_Size")]
+        pub m_size: f32,
+        #[rename(name = "m_NumberOfSteps")]
+        pub m_number_of_steps: i32,
+        #[rename(name = "m_OnValueChanged")]
+        pub m_on_value_changed: crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent,
+        #[rename(name = "m_ContainerRect")]
+        pub m_container_rect: crate::unity_engine::recttransform::RectTransform,
+        #[rename(name = "m_Offset")]
+        pub m_offset: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "m_Tracker")]
+        pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+        #[rename(name = "m_PointerDownRepeat")]
+        pub m_pointer_down_repeat: crate::unity_engine::coroutine::Coroutine,
+        #[rename(name = "isPointerDownAndNotDragging")]
+        pub is_pointer_down_and_not_dragging: bool,
+        #[rename(name = "m_DelayedUpdateVisuals")]
+        pub m_delayed_update_visuals: bool,
     }
 }
 
@@ -2931,6 +2931,7 @@ impl Scrollbar {
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IScrollbar;
     pub use super::IScrollbarMethods;

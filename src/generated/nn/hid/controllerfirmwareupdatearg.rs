@@ -109,6 +109,7 @@ impl ControllerFirmwareUpdateArg {
 }
 
 #[cfg(feature = "nn-hid-controllerfirmwareupdatearg")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ControllerFirmwareUpdateArg;
     pub use crate::system::object::IObject;

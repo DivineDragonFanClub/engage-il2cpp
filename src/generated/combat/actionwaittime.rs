@@ -234,6 +234,7 @@ impl ActionWaitTime {
 }
 
 #[cfg(feature = "combat-actionwaittime")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionWaitTime;
     pub use super::IActionWaitTime;

@@ -161,6 +161,7 @@ impl MaterialEffectPlayable {
 }
 
 #[cfg(feature = "unity_engine-experimental-playables-materialeffectplayable")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::MaterialEffectPlayable;
     pub use crate::system::object::IObject;

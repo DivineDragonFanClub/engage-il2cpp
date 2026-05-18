@@ -221,6 +221,7 @@ impl Loop {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-loop")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ILoop;
     pub use super::ILoopMethods;

@@ -345,6 +345,7 @@ impl UIFoldout {
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUIFoldout;
     pub use super::IUIFoldoutMethods;

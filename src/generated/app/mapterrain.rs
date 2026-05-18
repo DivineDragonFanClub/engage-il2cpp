@@ -9,6 +9,18 @@ mod __types {
     use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_OverlapData.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrain.OverlapData")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapTerrain_OverlapData {
+        #[rename(name = "X")]
+        pub x: u8,
+        #[rename(name = "Y")]
+        pub y: u8,
+        #[rename(name = "Attr")]
+        pub attr: ::unity2::Il2CppString,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_LayerData.md"))]
     #[::unity2::class(namespace = "App", name = "MapTerrain.LayerData")]
     #[parent(crate::system::object::Object)]
@@ -53,22 +65,94 @@ mod __types {
         #[rename(name = "m_Terrains")]
         pub m_terrains: ::unity2::Array<::unity2::Il2CppString>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterrain/MapTerrain_OverlapData.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrain.OverlapData")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapTerrain_OverlapData {
-        #[rename(name = "X")]
-        pub x: u8,
-        #[rename(name = "Y")]
-        pub y: u8,
-        #[rename(name = "Attr")]
-        pub attr: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "app-mapterrain-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapterrain")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapTerrain_OverlapData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<
+            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
+        > = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapTerrain_OverlapData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <MapTerrain_OverlapData as ::unity2::ClassIdentity>::NAME,
+                    ".ctor",
+                    e
+                ),
+            }
+        }
+        pub fn get_offset() -> usize {
+            let method_ptr = get_method_info().method_ptr;
+            let text = ::lazysimd::scan::get_text();
+            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MapTerrain_OverlapData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapTerrain_OverlapData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(
+                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
+                    as *const u8)
+                    .offset(__lookup_ctor::get_offset() as isize),
+            );
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapterrain")]
+pub trait IMapTerrain_OverlapDataMethods: IMapTerrain_OverlapData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapTerrain_OverlapData as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrain_OverlapData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapterrain")]
+impl<__T: IMapTerrain_OverlapData> IMapTerrain_OverlapDataMethods for __T {}
+
+#[cfg(feature = "app-mapterrain")]
+impl MapTerrain_OverlapData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrain_OverlapData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrain_OverlapDataMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapterrain")]
 #[doc(hidden)]
@@ -503,89 +587,6 @@ impl MapTerrain {
 
 #[cfg(feature = "app-mapterrain")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapTerrain_OverlapData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapTerrain_OverlapData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrain_OverlapData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapTerrain_OverlapData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapTerrain_OverlapData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapterrain")]
-pub trait IMapTerrain_OverlapDataMethods: IMapTerrain_OverlapData {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapTerrain_OverlapData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapTerrain_OverlapData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapterrain")]
-impl<__T: IMapTerrain_OverlapData> IMapTerrain_OverlapDataMethods for __T {}
-
-#[cfg(feature = "app-mapterrain")]
-impl MapTerrain_OverlapData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrain_OverlapData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrain_OverlapDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapterrain")]
 pub mod prelude {
     pub use super::IMapTerrain;
     pub use super::IMapTerrainMethods;

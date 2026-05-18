@@ -485,6 +485,7 @@ impl PlayableOutputExtensions {
 }
 
 #[cfg(feature = "unity_engine-playables-playableoutputextensions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayableOutputExtensions;
     pub use super::PlayableOutputExtensions;

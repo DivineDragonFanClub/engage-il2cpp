@@ -498,6 +498,7 @@ impl GmapMobUnit {
 }
 
 #[cfg(feature = "app-gmapmobunit")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::GmapMobUnit;
     pub use super::IGmapMobUnit;

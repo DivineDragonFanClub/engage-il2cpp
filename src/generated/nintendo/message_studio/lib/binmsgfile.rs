@@ -1695,6 +1695,7 @@ impl BinMsgFile {
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binmsgfile")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BinMsgFile;
     pub use super::IBinMsgFile;

@@ -213,6 +213,7 @@ impl MapShadow {
 }
 
 #[cfg(feature = "app-mapshadow")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapShadow;
     pub use super::IMapShadowMethods;

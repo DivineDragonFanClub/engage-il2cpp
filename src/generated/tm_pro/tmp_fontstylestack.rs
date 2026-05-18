@@ -236,6 +236,7 @@ impl TMP_FontStyleStack {
 }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_FontStyleStack;
     pub use crate::system::object::IObject;

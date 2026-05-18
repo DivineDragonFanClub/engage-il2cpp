@@ -287,6 +287,7 @@ impl DefaultValueAttribute {
 }
 
 #[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultValueAttribute;
     pub use super::IDefaultValueAttribute;

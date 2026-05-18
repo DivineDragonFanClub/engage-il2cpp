@@ -300,6 +300,7 @@ impl AkVertexArray {
 }
 
 #[cfg(feature = "root-akvertexarray")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkVertexArray;
     pub use super::IAkVertexArray;

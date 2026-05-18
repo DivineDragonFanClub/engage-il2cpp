@@ -558,6 +558,7 @@ impl PPRadialBlurPlayableBehaviour {
 }
 
 #[cfg(feature = "root-ppradialblurplayablebehaviour")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPPRadialBlurPlayableBehaviour;
     pub use super::IPPRadialBlurPlayableBehaviourMethods;

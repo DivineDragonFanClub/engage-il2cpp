@@ -107,6 +107,7 @@ impl NpadHandheldState {
 }
 
 #[cfg(feature = "nn-hid-npadhandheldstate")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadHandheldState;
     pub use crate::system::object::IObject;

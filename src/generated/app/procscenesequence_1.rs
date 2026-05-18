@@ -98,6 +98,7 @@ impl<T0: ::unity2::ClassIdentity> ProcSceneSequence_1<T0> {
 }
 
 #[cfg(feature = "app-procscenesequence_1")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IProcSceneSequence_1;
     pub use super::IProcSceneSequence_1Methods;

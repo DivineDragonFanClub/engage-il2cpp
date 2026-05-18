@@ -682,6 +682,7 @@ impl Mask {
 }
 
 #[cfg(feature = "unity_engine-ui-mask")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMask;
     pub use super::IMaskMethods;

@@ -1311,6 +1311,7 @@ impl UnitEnhanceFactors {
 }
 
 #[cfg(feature = "app-unitenhancefactors")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IUnitEnhanceFactors;
     pub use super::IUnitEnhanceFactorsMethods;

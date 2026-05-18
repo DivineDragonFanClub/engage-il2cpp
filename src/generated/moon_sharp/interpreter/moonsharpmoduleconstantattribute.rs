@@ -230,6 +230,7 @@ impl MoonSharpModuleConstantAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpModuleConstantAttribute;
     pub use super::IMoonSharpModuleConstantAttributeMethods;

@@ -505,6 +505,7 @@ impl UInt64 {
 }
 
 #[cfg(feature = "system-uint64")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::UInt64;
     pub use crate::system::object::IObject;

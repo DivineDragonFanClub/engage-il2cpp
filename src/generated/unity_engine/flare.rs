@@ -161,6 +161,7 @@ impl Flare {
 }
 
 #[cfg(feature = "unity_engine-flare")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Flare;
     pub use super::IFlare;

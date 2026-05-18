@@ -728,6 +728,7 @@ impl RendererListDesc {
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlistdesc")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::RendererListDesc;
     pub use crate::system::object::IObject;

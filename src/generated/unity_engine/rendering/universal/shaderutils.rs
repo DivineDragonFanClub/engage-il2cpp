@@ -248,6 +248,7 @@ impl ShaderUtils {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderUtils;
     pub use super::ShaderUtils;

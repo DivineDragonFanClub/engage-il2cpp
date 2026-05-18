@@ -132,6 +132,7 @@ impl Styles {
 }
 
 #[cfg(feature = "combat-styles")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStyles;
     pub use super::Styles;

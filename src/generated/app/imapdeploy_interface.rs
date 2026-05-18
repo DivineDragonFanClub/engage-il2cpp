@@ -143,6 +143,7 @@ pub trait IIMapDeploy_InterfaceMethods: IIMapDeploy_Interface {
 impl<__T: IIMapDeploy_Interface> IIMapDeploy_InterfaceMethods for __T {}
 
 #[cfg(feature = "app-imapdeploy_interface")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIMapDeploy_Interface;
     pub use super::IIMapDeploy_InterfaceMethods;

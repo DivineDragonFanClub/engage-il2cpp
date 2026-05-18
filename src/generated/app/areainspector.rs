@@ -474,6 +474,7 @@ impl AreaInspector {
 }
 
 #[cfg(feature = "app-areainspector")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AreaInspector;
     pub use super::IAreaInspector;

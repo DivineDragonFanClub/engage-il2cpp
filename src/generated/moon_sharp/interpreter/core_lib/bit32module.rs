@@ -1257,6 +1257,7 @@ impl Bit32Module {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Bit32Module;
     pub use super::IBit32Module;

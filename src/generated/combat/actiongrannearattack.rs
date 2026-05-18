@@ -292,6 +292,7 @@ impl ActionGranNearAttack {
 }
 
 #[cfg(feature = "combat-actiongrannearattack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ActionGranNearAttack;
     pub use super::IActionGranNearAttack;

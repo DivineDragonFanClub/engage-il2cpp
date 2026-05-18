@@ -357,6 +357,7 @@ impl HardwiredMethodMemberDescriptor {
 #[cfg(
     feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor"
 )]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::HardwiredMethodMemberDescriptor;
     pub use super::IHardwiredMethodMemberDescriptor;

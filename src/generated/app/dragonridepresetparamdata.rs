@@ -3604,6 +3604,7 @@ impl DragonRidePresetParamData {
 }
 
 #[cfg(feature = "app-dragonridepresetparamdata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRidePresetParamData;
     pub use super::DragonRidePresetParamData_CourseData;

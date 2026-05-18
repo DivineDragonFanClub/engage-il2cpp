@@ -101,6 +101,7 @@ impl FixedJoint {
 }
 
 #[cfg(feature = "unity_engine-fixedjoint")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FixedJoint;
     pub use super::IFixedJoint;

@@ -166,6 +166,7 @@ impl AnimalMenuContent {
 }
 
 #[cfg(feature = "app-animalmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimalMenuContent;
     pub use super::IAnimalMenuContent;

@@ -57,6 +57,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 }
 
 #[cfg(feature = "system-func_3")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Func_3;
     pub use super::IFunc_3;

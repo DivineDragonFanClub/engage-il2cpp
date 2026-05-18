@@ -128,6 +128,7 @@ impl AnimationCurveParameter {
 }
 
 #[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationCurveParameter;
     pub use super::IAnimationCurveParameter;

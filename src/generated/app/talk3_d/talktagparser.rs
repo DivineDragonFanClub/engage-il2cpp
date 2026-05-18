@@ -475,6 +475,7 @@ impl TalkTagParser {
 }
 
 #[cfg(feature = "app-talk3_d-talktagparser")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITalkTagParser;
     pub use super::ITalkTagParserMethods;

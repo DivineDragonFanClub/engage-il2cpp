@@ -215,6 +215,7 @@ impl YieldRequest {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-yieldrequest")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IYieldRequest;
     pub use super::IYieldRequestMethods;

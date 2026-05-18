@@ -105,6 +105,7 @@ impl MapInfoTerrain {
 }
 
 #[cfg(feature = "app-mapinfoterrain")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapInfoTerrain;
     pub use super::IMapInfoTerrainMethods;

@@ -62,6 +62,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-scene_management-localphysicsmode")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::LocalPhysicsMode;
     pub use crate::system::object::IObject;

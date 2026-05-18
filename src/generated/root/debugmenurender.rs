@@ -718,6 +718,7 @@ impl DebugMenuRender {
 }
 
 #[cfg(feature = "root-debugmenurender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugMenuRender;
     pub use super::IDebugMenuRender;

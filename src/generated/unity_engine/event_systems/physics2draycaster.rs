@@ -192,6 +192,7 @@ impl Physics2DRaycaster {
 }
 
 #[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPhysics2DRaycaster;
     pub use super::IPhysics2DRaycasterMethods;

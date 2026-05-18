@@ -2046,6 +2046,7 @@ impl Renderer {
 }
 
 #[cfg(feature = "unity_engine-renderer")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IRenderer;
     pub use super::IRendererMethods;

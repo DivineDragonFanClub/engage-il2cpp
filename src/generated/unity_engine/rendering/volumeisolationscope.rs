@@ -161,6 +161,7 @@ impl VolumeIsolationScope {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeisolationscope")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::VolumeIsolationScope;
     pub use crate::system::object::IObject;

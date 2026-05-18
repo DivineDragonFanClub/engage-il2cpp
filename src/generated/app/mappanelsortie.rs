@@ -1156,6 +1156,7 @@ impl MapPanelSortie {
 }
 
 #[cfg(feature = "app-mappanelsortie")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapPanelSortie;
     pub use super::IMapPanelSortieMethods;

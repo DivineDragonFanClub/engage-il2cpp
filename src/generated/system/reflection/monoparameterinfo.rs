@@ -326,6 +326,7 @@ impl MonoParameterInfo {
 }
 
 #[cfg(feature = "system-reflection-monoparameterinfo")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoParameterInfo;
     pub use super::IMonoParameterInfoMethods;

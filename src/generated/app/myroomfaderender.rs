@@ -283,6 +283,7 @@ impl MyRoomFadeRender {
 }
 
 #[cfg(feature = "app-myroomfaderender")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMyRoomFadeRender;
     pub use super::IMyRoomFadeRenderMethods;

@@ -170,6 +170,7 @@ impl ShaderPropertyId {
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderpropertyid")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IShaderPropertyId;
     pub use super::ShaderPropertyId;

@@ -236,6 +236,7 @@ impl MoonSharpHideMemberAttribute {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMoonSharpHideMemberAttribute;
     pub use super::IMoonSharpHideMemberAttributeMethods;

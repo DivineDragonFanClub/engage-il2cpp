@@ -2362,6 +2362,7 @@ impl Vector2 {
 }
 
 #[cfg(feature = "unity_engine-vector2")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Vector2;
     pub use crate::system::object::IObject;

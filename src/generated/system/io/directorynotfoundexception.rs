@@ -180,6 +180,7 @@ impl DirectoryNotFoundException {
 }
 
 #[cfg(feature = "system-io-directorynotfoundexception")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DirectoryNotFoundException;
     pub use super::IDirectoryNotFoundException;

@@ -544,6 +544,7 @@ impl PropertyTableAssigner {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPropertyTableAssigner;
     pub use super::IPropertyTableAssignerMethods;

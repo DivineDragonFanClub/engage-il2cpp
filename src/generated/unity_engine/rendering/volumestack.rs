@@ -336,6 +336,7 @@ impl VolumeStack {
 }
 
 #[cfg(feature = "unity_engine-rendering-volumestack")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IVolumeStack;
     pub use super::IVolumeStackMethods;

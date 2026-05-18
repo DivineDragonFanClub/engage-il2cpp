@@ -883,6 +883,7 @@ impl CharacterEffect {
 }
 
 #[cfg(feature = "combat-charactereffect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CharacterEffect;
     pub use super::ICharacterEffect;

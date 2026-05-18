@@ -877,6 +877,7 @@ impl Time {
 }
 
 #[cfg(feature = "unity_engine-time")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ITime;
     pub use super::Time;

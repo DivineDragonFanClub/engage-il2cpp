@@ -290,6 +290,7 @@ impl Deco_RodCollapse {
 }
 
 #[cfg(feature = "combat-deco_rodcollapse")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::Deco_RodCollapse;
     pub use super::IDeco_RodCollapse;

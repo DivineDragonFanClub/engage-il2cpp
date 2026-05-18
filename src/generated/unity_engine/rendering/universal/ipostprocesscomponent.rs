@@ -143,6 +143,7 @@ pub trait IIPostProcessComponentMethods: IIPostProcessComponent {
 impl<__T: IIPostProcessComponent> IIPostProcessComponentMethods for __T {}
 
 #[cfg(feature = "unity_engine-rendering-universal-ipostprocesscomponent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IIPostProcessComponent;
     pub use super::IIPostProcessComponentMethods;

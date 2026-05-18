@@ -518,6 +518,7 @@ impl BasicMenuSelect {
 }
 
 #[cfg(feature = "app-basicmenuselect")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicMenuSelect;
     pub use super::IBasicMenuSelect;

@@ -825,6 +825,7 @@ impl WeaponMask {
 }
 
 #[cfg(feature = "app-weaponmask")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IWeaponMask;
     pub use super::IWeaponMaskMethods;

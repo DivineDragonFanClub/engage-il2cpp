@@ -219,6 +219,7 @@ impl MapCursorAnim {
 }
 
 #[cfg(feature = "root-mapcursoranim")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMapCursorAnim;
     pub use super::IMapCursorAnimMethods;

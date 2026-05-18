@@ -20,6 +20,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-namespacedoc_6")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::INamespaceDoc_6;
     pub use super::NamespaceDoc_6;

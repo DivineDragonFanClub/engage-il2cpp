@@ -859,6 +859,7 @@ impl BasicItemMenuContent {
 }
 
 #[cfg(feature = "app-basicitemmenucontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::BasicItemMenuContent;
     pub use super::IBasicItemMenuContent;

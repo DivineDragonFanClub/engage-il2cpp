@@ -271,6 +271,7 @@ impl PlayReportSendBase {
 }
 
 #[cfg(feature = "app-playreportsendbase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IPlayReportSendBase;
     pub use super::IPlayReportSendBaseMethods;

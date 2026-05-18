@@ -2357,6 +2357,7 @@ impl MonoIO {
 }
 
 #[cfg(feature = "system-io-monoio")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IMonoIO;
     pub use super::MonoIO;

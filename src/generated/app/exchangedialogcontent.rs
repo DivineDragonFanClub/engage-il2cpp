@@ -635,6 +635,7 @@ impl ExchangeDialogContent {
 }
 
 #[cfg(feature = "app-exchangedialogcontent")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ExchangeDialogContent;
     pub use super::IExchangeDialogContent;

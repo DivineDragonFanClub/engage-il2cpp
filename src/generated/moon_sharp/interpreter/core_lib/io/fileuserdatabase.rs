@@ -1170,6 +1170,7 @@ impl FileUserDataBase {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-fileuserdatabase")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::FileUserDataBase;
     pub use super::IFileUserDataBase;

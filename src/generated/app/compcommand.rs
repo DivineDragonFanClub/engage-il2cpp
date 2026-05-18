@@ -272,6 +272,7 @@ impl CompCommand {
 }
 
 #[cfg(feature = "app-compcommand")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::CompCommand;
     pub use super::ICompCommand;

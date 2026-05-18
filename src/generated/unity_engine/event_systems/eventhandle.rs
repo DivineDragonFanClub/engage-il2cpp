@@ -58,6 +58,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-event_systems-eventhandle")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::EventHandle;
     pub use crate::system::object::IObject;

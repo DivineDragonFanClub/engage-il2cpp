@@ -180,6 +180,7 @@ impl DialogItemHubSolanel {
 }
 
 #[cfg(feature = "app-dialogitemhubsolanel")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DialogItemHubSolanel;
     pub use super::IDialogItemHubSolanel;

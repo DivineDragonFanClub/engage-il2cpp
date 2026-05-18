@@ -9,6 +9,14 @@ mod __types {
     use crate::system::valuetype::{IValueType, ValueType};
     use ::unity2::prelude::*;
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]
+    #[::unity2::class(
+        namespace = "MoonSharp.Interpreter.Interop.Converters",
+        name = "StringConversions"
+    )]
+    #[parent(crate::system::object::Object)]
+    pub struct StringConversions {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions_StringSubtype.md"))]
     #[repr(C)]
     #[derive(
@@ -60,14 +68,6 @@ mod __types {
             Self { value: 3 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.Converters",
-        name = "StringConversions"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct StringConversions {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")]
@@ -196,6 +196,7 @@ impl StringConversions {
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::IStringConversions;
     pub use super::StringConversions;

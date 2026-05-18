@@ -714,6 +714,7 @@ impl DebugEditMenuItem {
 }
 
 #[cfg(feature = "app-debugeditmenuitem")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::DebugEditMenuItem;
     pub use super::IDebugEditMenuItem;

@@ -1211,6 +1211,7 @@ impl Side {
 }
 
 #[cfg(feature = "combat-side")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::ISide;
     pub use super::Side;

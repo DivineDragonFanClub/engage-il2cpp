@@ -166,6 +166,7 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature = "nn-hid-npadbutton")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::NpadButton;
     pub use crate::system::object::IObject;

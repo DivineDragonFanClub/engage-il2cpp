@@ -1382,6 +1382,7 @@ impl AIData {
 }
 
 #[cfg(feature = "app-aidata")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AIData;
     pub use super::IAIData;

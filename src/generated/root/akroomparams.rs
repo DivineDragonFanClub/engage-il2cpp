@@ -1325,6 +1325,7 @@ impl AkRoomParams {
 }
 
 #[cfg(feature = "root-akroomparams")]
+#[doc(hidden)]
 pub mod prelude {
     pub use super::AkRoomParams;
     pub use super::IAkRoomParams;
