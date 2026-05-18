@@ -120,17 +120,27 @@ fn rewrite_synthetic_trait(segments: &[String]) -> Vec<String> {
     let mut out = Vec::new();
     let last = segments.last().unwrap();
 
-    if let Some(inner) = last.strip_prefix('I') {
+    let class_name: Option<String> = last.strip_prefix('I').and_then(|inner| {
         if let Some(stripped) = inner.strip_suffix("Methods") {
-            if !stripped.is_empty() {
-                out.push(replace_last_segment(segments, stripped));
-            }
+            (!stripped.is_empty()).then(|| stripped.to_string())
+        } else if !inner.is_empty() {
+            Some(inner.to_string())
+        } else {
+            None
         }
+    });
 
-        if !inner.is_empty() && !inner.ends_with("Methods") {
-            out.push(replace_last_segment(segments, inner));
-        }
-    }
+    let Some(name) = class_name else {
+        return out;
+    };
+
+    out.push(replace_last_segment(segments, &name));
+
+    let mut canonical: Vec<&str> = segments[..segments.len() - 1].iter().map(String::as_str).collect();
+    let lowered = name.to_lowercase();
+    canonical.push(&lowered);
+    canonical.push(&name);
+    out.push(canonical.join("::"));
 
     out
 }

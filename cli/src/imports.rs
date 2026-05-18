@@ -90,7 +90,8 @@ fn process_file(text: &str, manifest: &Manifest) -> (Vec<LocalReport>, Vec<UseEd
 
         match classify_use(&use_item.tree, manifest) {
             UseShape::Single { leaf } => {
-                if !referenced_in_body.contains(&leaf.local_name) {
+                if is_alive(&leaf.local_name, &referenced_in_body) {
+                } else {
                     reports.push(LocalReport {
                         start_line,
                         ident: leaf.local_name.clone(),
@@ -109,7 +110,7 @@ fn process_file(text: &str, manifest: &Manifest) -> (Vec<LocalReport>, Vec<UseEd
                 for m in &members {
                     match &m.kind {
                         MemberKind::Engage { leaf } => {
-                            if referenced_in_body.contains(&leaf.local_name) {
+                            if is_alive(&leaf.local_name, &referenced_in_body) {
                                 live_text_parts.push(m.original_text.clone());
                                 any_live_engage = true;
                             } else {
@@ -281,6 +282,19 @@ fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
             UseTree::Glob(_) => return UseShape::Other,
         }
     }
+}
+
+fn is_alive(local_name: &str, referenced_in_body: &BTreeSet<String>) -> bool {
+    if referenced_in_body.contains(local_name) {
+        return true;
+    }
+
+    let bytes = local_name.as_bytes();
+    if bytes.len() >= 2 && bytes[0] == b'I' && bytes[1].is_ascii_uppercase() {
+        return true;
+    }
+
+    false
 }
 
 fn leading_indent(text: &str, start_line: usize) -> String {
