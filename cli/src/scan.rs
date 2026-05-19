@@ -46,7 +46,20 @@ pub fn collect_paths(
 }
 
 pub fn paths_to_features(paths: &BTreeSet<String>, manifest: &Manifest) -> BTreeSet<String> {
-    paths.iter().filter_map(|p| manifest.paths.get(p)).cloned().collect()
+    let mut out: BTreeSet<String> = paths
+        .iter()
+        .filter_map(|p| manifest.paths.get(p))
+        .cloned()
+        .collect();
+
+    for p in paths {
+        let leaf = p.rsplit("::").next().unwrap_or(p);
+        if let Some(feats) = manifest.ext_wrappers.get(leaf) {
+            out.extend(feats.iter().cloned());
+        }
+    }
+
+    out
 }
 
 struct PathVisitor<'a> {
@@ -100,6 +113,13 @@ impl<'a> PathVisitor<'a> {
             if self.manifest.paths.contains_key(&candidate) {
                 self.out.insert(candidate);
                 return;
+            }
+
+            if let Some(leaf) = segments.get(n - 1) {
+                if self.manifest.ext_wrappers.contains_key(leaf) {
+                    self.out.insert(candidate);
+                    return;
+                }
             }
 
             for rewritten in rewrite_synthetic_trait(&segments[..n]) {

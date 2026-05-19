@@ -2,7 +2,7 @@
   "name": "engage-vscode",
   "displayName": "engage",
   "description": "Manage engage-il2cpp Cargo features from VS Code",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publisher": "DivineDragonFanClub",
   "repository": {
     "type": "git",
