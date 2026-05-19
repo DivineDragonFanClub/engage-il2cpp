@@ -303,17 +303,17 @@ mod proc_void_method_ext {
     use unity2::{FromIlInstance, IlInstance, IntPtr, MethodInfo, OptionalMethod};
 
     pub trait ProcVoidMethodExt: Sized {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(IlInstance, OptionalMethod),
+            callback: extern "C" fn(T, OptionalMethod),
         ) -> Option<Self>;
         fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self>;
     }
 
     impl ProcVoidMethodExt for ProcVoidMethod {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(IlInstance, OptionalMethod),
+            callback: extern "C" fn(T, OptionalMethod),
         ) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
             Some(ProcVoidMethod::new(
@@ -345,18 +345,18 @@ mod proc_void_function_ext {
     use unity2::{FromIlInstance, IlInstance, OptionalMethod};
 
     pub trait ProcVoidFunctionExt: Sized {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(crate::app::procinst::ProcInst, OptionalMethod),
+            callback: extern "C" fn(T, U, OptionalMethod),
         ) -> Option<Self>;
     }
 
     impl ProcVoidFunctionExt for ProcVoidFunction {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(crate::app::procinst::ProcInst, OptionalMethod),
+            callback: extern "C" fn(T, U, OptionalMethod),
         ) -> Option<Self> {
-            let intptr = super::method_info_intptr(callback as *mut u8, 1);
+            let intptr = super::method_info_intptr(callback as *mut u8, 2);
             Some(ProcVoidFunction::new(
                 <Object as FromIlInstance>::from_il_instance(target),
                 intptr,
