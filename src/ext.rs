@@ -71,7 +71,11 @@ pub use list_1_ext::*;
 
 #[cfg(feature = "system-collections-generic-dictionary_2")]
 mod dictionary_2_ext {
-    use crate::system::collections::generic::dictionary_2::{Dictionary_2, IDictionary_2Methods};
+    use crate::system::collections::generic::dictionary_2::{
+        Dictionary_2, IDictionary_2Methods, IDictionary_2_KeyCollectionMethods,
+        IDictionary_2_ValueCollectionMethods,
+    };
+    use ::unity2::Array;
 
     pub trait Dictionary_2Ext<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity>
     {
@@ -83,8 +87,14 @@ mod dictionary_2_ext {
     {
         fn iter(self) -> Dictionary_2Iter<K, V> {
             let len = self.get_count();
+            let keys = Array::<K>::of_len(len as usize).expect("Dictionary_2Iter: keys alloc");
+            let values =
+                Array::<V>::of_len(len as usize).expect("Dictionary_2Iter: values alloc");
+            self.get_keys().copy_to(keys, 0);
+            self.get_values().copy_to(values, 0);
             Dictionary_2Iter {
-                dict: self,
+                keys,
+                values,
                 index: 0,
                 len,
             }
@@ -95,7 +105,8 @@ mod dictionary_2_ext {
         K: Copy + ::unity2::ClassIdentity,
         V: Copy + ::unity2::ClassIdentity,
     > {
-        dict: Dictionary_2<K, V>,
+        keys: Array<K>,
+        values: Array<V>,
         index: i32,
         len: i32,
     }
@@ -106,9 +117,24 @@ mod dictionary_2_ext {
         type Item = (K, V);
 
         fn next(&mut self) -> Option<(K, V)> {
-            let _ = (self.index, self.len, self.dict);
-            None
+            if self.index >= self.len {
+                return None;
+            }
+            let i = self.index as usize;
+            let pair = (self.keys.get(i), self.values.get(i));
+            self.index += 1;
+            Some(pair)
         }
+
+        fn size_hint(&self) -> (usize, Option<usize>) {
+            let r = (self.len - self.index) as usize;
+            (r, Some(r))
+        }
+    }
+
+    impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> ExactSizeIterator
+        for Dictionary_2Iter<K, V>
+    {
     }
 }
 #[cfg(feature = "system-collections-generic-dictionary_2")]
@@ -378,16 +404,16 @@ mod proc_bool_method_ext {
     use unity2::{FromIlInstance, IlInstance, OptionalMethod};
 
     pub trait ProcBoolMethodExt: Sized {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(IlInstance, OptionalMethod) -> bool,
+            callback: extern "C" fn(T, OptionalMethod) -> bool,
         ) -> Option<Self>;
     }
 
     impl ProcBoolMethodExt for ProcBoolMethod {
-        fn from_fn(
+        fn from_fn<T: crate::app::procinst::IProcInst>(
             target: IlInstance,
-            callback: extern "C" fn(IlInstance, OptionalMethod) -> bool,
+            callback: extern "C" fn(T, OptionalMethod) -> bool,
         ) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
             Some(ProcBoolMethod::new(
